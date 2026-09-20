@@ -1,0 +1,34 @@
+{
+  "batchId": 1789939541424,
+  "groups": {
+    "refs": {
+      "seconds": 39.465999542000006,
+      "tools": 4,
+      "toolWallSeconds": 7.741582041999995,
+      "outputTokens": 545
+    },
+    "plan": {
+      "seconds": 31.850054040999996,
+      "tools": 3,
+      "toolWallSeconds": 4.632727333000003,
+      "outputTokens": 521
+    },
+    "script": {
+      "seconds": 40.47161045800001,
+      "tools": 3,
+      "toolWallSeconds": 3.885688915999999,
+      "outputTokens": 716
+    }
+  },
+  "speedup": {
+    "refs": 1.2391187622851798,
+    "script": 1.2706920498753829
+  },
+  "timeReductionPercent": {
+    "refs": 19.297485403594216,
+    "script": 21.302726329477682
+  },
+  "passed": 9,
+  "total": 9,
+  "correctFields": 126
+}

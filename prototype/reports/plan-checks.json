@@ -1,0 +1,53 @@
+{
+  "date": "2026-09-20T21:23:53.494Z",
+  "results": [
+    {
+      "name": "plan and independent application oracle: plain",
+      "passed": true
+    },
+    {
+      "name": "plan and independent application oracle: dependent",
+      "passed": true
+    },
+    {
+      "name": "plan and independent application oracle: repeat",
+      "passed": true
+    },
+    {
+      "name": "old plan snapshot cannot start",
+      "passed": true
+    },
+    {
+      "name": "changed label invalidates initial plan without writing",
+      "passed": true
+    },
+    {
+      "name": "ambiguous exact labels stop before writing",
+      "passed": true
+    },
+    {
+      "name": "unknown field is returned rather than guessed",
+      "passed": true
+    },
+    {
+      "name": "missing option times out without writing",
+      "passed": true
+    },
+    {
+      "name": "expansion without expected group stops and clicks only once",
+      "passed": true
+    },
+    {
+      "name": "late rejection of an earlier step fails final verification",
+      "passed": true
+    },
+    {
+      "name": "navigation between steps cannot retarget the plan",
+      "passed": true
+    },
+    {
+      "name": "plan works through actual stdio MCP",
+      "passed": true
+    }
+  ]
+}

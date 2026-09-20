@@ -1,0 +1,1210 @@
+{
+  "date": "2026-09-20T21:31:24.542Z",
+  "batchId": 1789939541424,
+  "scope": "Codex CLI cold-task end-to-end comparison on fictional local forms; warmed browser. No native Codex browser tool comparison. Default CLI model/config is shared across modes, no model override. Same auto-review approval policy; shell/web disabled; only test MCP server. Balanced Latin-square order. All attempts retained.",
+  "rows": [
+    {
+      "attempt": "1789939541424-repeat-0-refs",
+      "case": "repeat",
+      "repetition": 0,
+      "mode": "refs",
+      "elapsedMs": 49324.8025,
+      "exitCode": 0,
+      "timedOut": false,
+      "passed": true,
+      "correct": 14,
+      "total": 14,
+      "errors": [],
+      "bridgeRequests": 4,
+      "toolCalls": [
+        {
+          "tool": "form_inspect",
+          "status": "completed",
+          "startMs": 8820.902167,
+          "endMs": 8851.126875000002,
+          "durationMs": 30.224708000001556,
+          "returnedBytes": 2094,
+          "executionMs": 3.0999999046325684
+        },
+        {
+          "tool": "form_fill",
+          "status": "completed",
+          "startMs": 27040.787375,
+          "endMs": 30667.735125,
+          "durationMs": 3626.9477499999994,
+          "returnedBytes": 3693,
+          "executionMs": 132.2000002861023,
+          "complete": false
+        },
+        {
+          "tool": "form_fill",
+          "status": "completed",
+          "startMs": 39476.163959,
+          "endMs": 43554.104792,
+          "durationMs": 4077.9408330000006,
+          "returnedBytes": 3562,
+          "executionMs": 84.19999980926514,
+          "complete": true
+        },
+        {
+          "tool": "form_inspect",
+          "status": "completed",
+          "startMs": 43554.860084,
+          "endMs": 43560.620792,
+          "durationMs": 5.760708000001614,
+          "returnedBytes": 3228,
+          "executionMs": 0.5
+        }
+      ],
+      "timeline": [
+        {
+          "atMs": 1517.5605839999998,
+          "event": "thread.started"
+        },
+        {
+          "atMs": 1556.1895,
+          "event": "turn.started"
+        },
+        {
+          "atMs": 7195.373334000001,
+          "event": "item.completed",
+          "itemId": "item_0",
+          "itemType": "agent_message"
+        },
+        {
+          "atMs": 8820.902167,
+          "event": "item.started",
+          "itemId": "item_1",
+          "itemType": "mcp_tool_call",
+          "tool": "form_inspect",
+          "status": "in_progress"
+        },
+        {
+          "atMs": 8851.126875000002,
+          "event": "item.completed",
+          "itemId": "item_1",
+          "itemType": "mcp_tool_call",
+          "tool": "form_inspect",
+          "status": "completed"
+        },
+        {
+          "atMs": 27040.787375,
+          "event": "item.started",
+          "itemId": "item_2",
+          "itemType": "mcp_tool_call",
+          "tool": "form_fill",
+          "status": "in_progress"
+        },
+        {
+          "atMs": 30667.735125,
+          "event": "item.completed",
+          "itemId": "item_2",
+          "itemType": "mcp_tool_call",
+          "tool": "form_fill",
+          "status": "completed"
+        },
+        {
+          "atMs": 39476.163959,
+          "event": "item.started",
+          "itemId": "item_3",
+          "itemType": "mcp_tool_call",
+          "tool": "form_fill",
+          "status": "in_progress"
+        },
+        {
+          "atMs": 43554.104792,
+          "event": "item.completed",
+          "itemId": "item_3",
+          "itemType": "mcp_tool_call",
+          "tool": "form_fill",
+          "status": "completed"
+        },
+        {
+          "atMs": 43554.860084,
+          "event": "item.started",
+          "itemId": "item_4",
+          "itemType": "mcp_tool_call",
+          "tool": "form_inspect",
+          "status": "in_progress"
+        },
+        {
+          "atMs": 43560.620792,
+          "event": "item.completed",
+          "itemId": "item_4",
+          "itemType": "mcp_tool_call",
+          "tool": "form_inspect",
+          "status": "completed"
+        },
+        {
+          "atMs": 47198.531709,
+          "event": "item.completed",
+          "itemId": "item_5",
+          "itemType": "agent_message"
+        },
+        {
+          "atMs": 47217.492334,
+          "event": "turn.completed"
+        }
+      ],
+      "usage": {
+        "input_tokens": 90646,
+        "cached_input_tokens": 77440,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 548,
+        "reasoning_output_tokens": 0
+      }
+    },
+    {
+      "attempt": "1789939541424-repeat-0-plan",
+      "case": "repeat",
+      "repetition": 0,
+      "mode": "plan",
+      "elapsedMs": 33907.984083999996,
+      "exitCode": 0,
+      "timedOut": false,
+      "passed": true,
+      "correct": 14,
+      "total": 14,
+      "errors": [],
+      "bridgeRequests": 3,
+      "toolCalls": [
+        {
+          "tool": "form_inspect",
+          "status": "completed",
+          "startMs": 9477.480666999996,
+          "endMs": 9514.025209,
+          "durationMs": 36.544542000003275,
+          "returnedBytes": 2093,
+          "executionMs": 2.200000286102295
+        },
+        {
+          "tool": "form_execute_plan",
+          "status": "completed",
+          "startMs": 21972.719083999997,
+          "endMs": 26556.479666999992,
+          "durationMs": 4583.760582999996,
+          "returnedBytes": 4024,
+          "executionMs": 268.40000009536743,
+          "complete": true,
+          "primitiveCalls": 5
+        },
+        {
+          "tool": "form_inspect",
+          "status": "completed",
+          "startMs": 28493.116708999994,
+          "endMs": 28505.538916999998,
+          "durationMs": 12.422208000003593,
+          "returnedBytes": 3243,
+          "executionMs": 0.9000000953674316
+        }
+      ],
+      "timeline": [
+        {
+          "atMs": 301.30016699999396,
+          "event": "thread.started"
+        },
+        {
+          "atMs": 312.0037089999969,
+          "event": "turn.started"
+        },
+        {
+          "atMs": 6656.618791999994,
+          "event": "item.completed",
+          "itemId": "item_0",
+          "itemType": "agent_message"
+        },
+        {
+          "atMs": 9477.480666999996,
+          "event": "item.started",
+          "itemId": "item_1",
+          "itemType": "mcp_tool_call",
+          "tool": "form_inspect",
+          "status": "in_progress"
+        },
+        {
+          "atMs": 9514.025209,
+          "event": "item.completed",
+          "itemId": "item_1",
+          "itemType": "mcp_tool_call",
+          "tool": "form_inspect",
+          "status": "completed"
+        },
+        {
+          "atMs": 21972.719083999997,
+          "event": "item.started",
+          "itemId": "item_2",
+          "itemType": "mcp_tool_call",
+          "tool": "form_execute_plan",
+          "status": "in_progress"
+        },
+        {
+          "atMs": 26556.479666999992,
+          "event": "item.completed",
+          "itemId": "item_2",
+          "itemType": "mcp_tool_call",
+          "tool": "form_execute_plan",
+          "status": "completed"
+        },
+        {
+          "atMs": 28493.116708999994,
+          "event": "item.started",
+          "itemId": "item_3",
+          "itemType": "mcp_tool_call",
+          "tool": "form_inspect",
+          "status": "in_progress"
+        },
+        {
+          "atMs": 28505.538916999998,
+          "event": "item.completed",
+          "itemId": "item_3",
+          "itemType": "mcp_tool_call",
+          "tool": "form_inspect",
+          "status": "completed"
+        },
+        {
+          "atMs": 31492.383334,
+          "event": "item.completed",
+          "itemId": "item_4",
+          "itemType": "agent_message"
+        },
+        {
+          "atMs": 31503.913667,
+          "event": "turn.completed"
+        }
+      ],
+      "usage": {
+        "input_tokens": 90108,
+        "cached_input_tokens": 69888,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 519,
+        "reasoning_output_tokens": 0
+      }
+    },
+    {
+      "attempt": "1789939541424-repeat-0-script",
+      "case": "repeat",
+      "repetition": 0,
+      "mode": "script",
+      "elapsedMs": 38157.859708,
+      "exitCode": 0,
+      "timedOut": false,
+      "passed": true,
+      "correct": 14,
+      "total": 14,
+      "errors": [],
+      "bridgeRequests": 4,
+      "toolCalls": [
+        {
+          "tool": "form_inspect",
+          "status": "completed",
+          "startMs": 10113.975582999992,
+          "endMs": 10146.270875000002,
+          "durationMs": 32.295292000009795,
+          "returnedBytes": 2077,
+          "executionMs": 1
+        },
+        {
+          "tool": "browser_script",
+          "status": "completed",
+          "startMs": 29481.102249999996,
+          "endMs": 33321.90354099999,
+          "durationMs": 3840.801290999996,
+          "returnedBytes": 3275,
+          "executionMs": 25.421458000011626
+        },
+        {
+          "tool": "form_inspect",
+          "status": "completed",
+          "startMs": 33323.043875,
+          "endMs": 33335.636207999996,
+          "durationMs": 12.592332999993232,
+          "returnedBytes": 3242,
+          "executionMs": 1.700000286102295
+        }
+      ],
+      "timeline": [
+        {
+          "atMs": 1952.112500000003,
+          "event": "thread.started"
+        },
+        {
+          "atMs": 1955.0653329999914,
+          "event": "turn.started"
+        },
+        {
+          "atMs": 8056.831582999992,
+          "event": "item.completed",
+          "itemId": "item_0",
+          "itemType": "agent_message"
+        },
+        {
+          "atMs": 10113.975582999992,
+          "event": "item.started",
+          "itemId": "item_1",
+          "itemType": "mcp_tool_call",
+          "tool": "form_inspect",
+          "status": "in_progress"
+        },
+        {
+          "atMs": 10146.270875000002,
+          "event": "item.completed",
+          "itemId": "item_1",
+          "itemType": "mcp_tool_call",
+          "tool": "form_inspect",
+          "status": "completed"
+        },
+        {
+          "atMs": 29481.102249999996,
+          "event": "item.started",
+          "itemId": "item_2",
+          "itemType": "mcp_tool_call",
+          "tool": "browser_script",
+          "status": "in_progress"
+        },
+        {
+          "atMs": 33321.90354099999,
+          "event": "item.completed",
+          "itemId": "item_2",
+          "itemType": "mcp_tool_call",
+          "tool": "browser_script",
+          "status": "completed"
+        },
+        {
+          "atMs": 33323.043875,
+          "event": "item.started",
+          "itemId": "item_3",
+          "itemType": "mcp_tool_call",
+          "tool": "form_inspect",
+          "status": "in_progress"
+        },
+        {
+          "atMs": 33335.636207999996,
+          "event": "item.completed",
+          "itemId": "item_3",
+          "itemType": "mcp_tool_call",
+          "tool": "form_inspect",
+          "status": "completed"
+        },
+        {
+          "atMs": 35965.162666000004,
+          "event": "item.completed",
+          "itemId": "item_4",
+          "itemType": "agent_message"
+        },
+        {
+          "atMs": 35982.992165999996,
+          "event": "turn.completed"
+        }
+      ],
+      "usage": {
+        "input_tokens": 53929,
+        "cached_input_tokens": 41984,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 716,
+        "reasoning_output_tokens": 0
+      }
+    },
+    {
+      "attempt": "1789939541424-repeat-1-plan",
+      "case": "repeat",
+      "repetition": 1,
+      "mode": "plan",
+      "elapsedMs": 31850.054040999996,
+      "exitCode": 0,
+      "timedOut": false,
+      "passed": true,
+      "correct": 14,
+      "total": 14,
+      "errors": [],
+      "bridgeRequests": 3,
+      "toolCalls": [
+        {
+          "tool": "form_inspect",
+          "status": "completed",
+          "startMs": 8061.1999999999825,
+          "endMs": 8075.260083000001,
+          "durationMs": 14.060083000018494,
+          "returnedBytes": 2094,
+          "executionMs": 0.5999999046325684
+        },
+        {
+          "tool": "form_execute_plan",
+          "status": "completed",
+          "startMs": 21403.054458,
+          "endMs": 26192.013082999998,
+          "durationMs": 4788.958624999999,
+          "returnedBytes": 4024,
+          "executionMs": 250.89999961853027,
+          "complete": true,
+          "primitiveCalls": 5
+        },
+        {
+          "tool": "form_inspect",
+          "status": "completed",
+          "startMs": 26192.35608299999,
+          "endMs": 26196.961958,
+          "durationMs": 4.605875000008382,
+          "returnedBytes": 3243,
+          "executionMs": 0.2999997138977051
+        }
+      ],
+      "timeline": [
+        {
+          "atMs": 120.0797079999902,
+          "event": "thread.started"
+        },
+        {
+          "atMs": 122.27683299999626,
+          "event": "turn.started"
+        },
+        {
+          "atMs": 6257.885083000001,
+          "event": "item.completed",
+          "itemId": "item_0",
+          "itemType": "agent_message"
+        },
+        {
+          "atMs": 8061.1999999999825,
+          "event": "item.started",
+          "itemId": "item_1",
+          "itemType": "mcp_tool_call",
+          "tool": "form_inspect",
+          "status": "in_progress"
+        },
+        {
+          "atMs": 8075.260083000001,
+          "event": "item.completed",
+          "itemId": "item_1",
+          "itemType": "mcp_tool_call",
+          "tool": "form_inspect",
+          "status": "completed"
+        },
+        {
+          "atMs": 21403.054458,
+          "event": "item.started",
+          "itemId": "item_2",
+          "itemType": "mcp_tool_call",
+          "tool": "form_execute_plan",
+          "status": "in_progress"
+        },
+        {
+          "atMs": 26192.013082999998,
+          "event": "item.completed",
+          "itemId": "item_2",
+          "itemType": "mcp_tool_call",
+          "tool": "form_execute_plan",
+          "status": "completed"
+        },
+        {
+          "atMs": 26192.35608299999,
+          "event": "item.started",
+          "itemId": "item_3",
+          "itemType": "mcp_tool_call",
+          "tool": "form_inspect",
+          "status": "in_progress"
+        },
+        {
+          "atMs": 26196.961958,
+          "event": "item.completed",
+          "itemId": "item_3",
+          "itemType": "mcp_tool_call",
+          "tool": "form_inspect",
+          "status": "completed"
+        },
+        {
+          "atMs": 29156.16962500001,
+          "event": "item.completed",
+          "itemId": "item_4",
+          "itemType": "agent_message"
+        },
+        {
+          "atMs": 29328.248250000004,
+          "event": "turn.completed"
+        }
+      ],
+      "usage": {
+        "input_tokens": 54102,
+        "cached_input_tokens": 42112,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 524,
+        "reasoning_output_tokens": 0
+      }
+    },
+    {
+      "attempt": "1789939541424-repeat-1-script",
+      "case": "repeat",
+      "repetition": 1,
+      "mode": "script",
+      "elapsedMs": 40471.61045800001,
+      "exitCode": 0,
+      "timedOut": false,
+      "passed": true,
+      "correct": 14,
+      "total": 14,
+      "errors": [],
+      "bridgeRequests": 4,
+      "toolCalls": [
+        {
+          "tool": "form_inspect",
+          "status": "completed",
+          "startMs": 9871.096290999994,
+          "endMs": 9918.943040999991,
+          "durationMs": 47.84674999999697,
+          "returnedBytes": 2077,
+          "executionMs": 1
+        },
+        {
+          "tool": "browser_script",
+          "status": "completed",
+          "startMs": 29198.59020800001,
+          "endMs": 32830.315082999994,
+          "durationMs": 3631.7248749999853,
+          "returnedBytes": 3290,
+          "executionMs": 12.474374999990687
+        },
+        {
+          "tool": "form_inspect",
+          "status": "completed",
+          "startMs": 35707.658375,
+          "endMs": 35720.509166,
+          "durationMs": 12.850791000004392,
+          "returnedBytes": 3226,
+          "executionMs": 1
+        }
+      ],
+      "timeline": [
+        {
+          "atMs": 177.70162499998696,
+          "event": "thread.started"
+        },
+        {
+          "atMs": 182.0445410000102,
+          "event": "turn.started"
+        },
+        {
+          "atMs": 5434.745040999987,
+          "event": "item.completed",
+          "itemId": "item_0",
+          "itemType": "agent_message"
+        },
+        {
+          "atMs": 9871.096290999994,
+          "event": "item.started",
+          "itemId": "item_1",
+          "itemType": "mcp_tool_call",
+          "tool": "form_inspect",
+          "status": "in_progress"
+        },
+        {
+          "atMs": 9918.943040999991,
+          "event": "item.completed",
+          "itemId": "item_1",
+          "itemType": "mcp_tool_call",
+          "tool": "form_inspect",
+          "status": "completed"
+        },
+        {
+          "atMs": 29198.59020800001,
+          "event": "item.started",
+          "itemId": "item_2",
+          "itemType": "mcp_tool_call",
+          "tool": "browser_script",
+          "status": "in_progress"
+        },
+        {
+          "atMs": 32830.315082999994,
+          "event": "item.completed",
+          "itemId": "item_2",
+          "itemType": "mcp_tool_call",
+          "tool": "browser_script",
+          "status": "completed"
+        },
+        {
+          "atMs": 35707.658375,
+          "event": "item.started",
+          "itemId": "item_3",
+          "itemType": "mcp_tool_call",
+          "tool": "form_inspect",
+          "status": "in_progress"
+        },
+        {
+          "atMs": 35720.509166,
+          "event": "item.completed",
+          "itemId": "item_3",
+          "itemType": "mcp_tool_call",
+          "tool": "form_inspect",
+          "status": "completed"
+        },
+        {
+          "atMs": 38140.720875,
+          "event": "item.completed",
+          "itemId": "item_4",
+          "itemType": "agent_message"
+        },
+        {
+          "atMs": 38154.24799999999,
+          "event": "turn.completed"
+        }
+      ],
+      "usage": {
+        "input_tokens": 89853,
+        "cached_input_tokens": 77440,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 702,
+        "reasoning_output_tokens": 0
+      }
+    },
+    {
+      "attempt": "1789939541424-repeat-1-refs",
+      "case": "repeat",
+      "repetition": 1,
+      "mode": "refs",
+      "elapsedMs": 36869.653584000014,
+      "exitCode": 0,
+      "timedOut": false,
+      "passed": true,
+      "correct": 14,
+      "total": 14,
+      "errors": [],
+      "bridgeRequests": 4,
+      "toolCalls": [
+        {
+          "tool": "form_inspect",
+          "status": "completed",
+          "startMs": 8970.18654200001,
+          "endMs": 8994.696625000011,
+          "durationMs": 24.510083000001032,
+          "returnedBytes": 2079,
+          "executionMs": 1.5
+        },
+        {
+          "tool": "form_fill",
+          "status": "completed",
+          "startMs": 17442.795584000007,
+          "endMs": 21628.989459000004,
+          "durationMs": 4186.193874999997,
+          "returnedBytes": 3694,
+          "executionMs": 121.09999990463257,
+          "complete": false
+        },
+        {
+          "tool": "form_fill",
+          "status": "completed",
+          "startMs": 28607.699834,
+          "endMs": 32131.518333999993,
+          "durationMs": 3523.818499999994,
+          "returnedBytes": 3562,
+          "executionMs": 80.09999990463257,
+          "complete": true
+        },
+        {
+          "tool": "form_inspect",
+          "status": "completed",
+          "startMs": 32132.141000000003,
+          "endMs": 32139.200584000006,
+          "durationMs": 7.05958400000236,
+          "returnedBytes": 3243,
+          "executionMs": 0.6999998092651367
+        }
+      ],
+      "timeline": [
+        {
+          "atMs": 134.98375000001397,
+          "event": "thread.started"
+        },
+        {
+          "atMs": 137.84758400000283,
+          "event": "turn.started"
+        },
+        {
+          "atMs": 7317.66416700001,
+          "event": "item.completed",
+          "itemId": "item_0",
+          "itemType": "agent_message"
+        },
+        {
+          "atMs": 8970.18654200001,
+          "event": "item.started",
+          "itemId": "item_1",
+          "itemType": "mcp_tool_call",
+          "tool": "form_inspect",
+          "status": "in_progress"
+        },
+        {
+          "atMs": 8994.696625000011,
+          "event": "item.completed",
+          "itemId": "item_1",
+          "itemType": "mcp_tool_call",
+          "tool": "form_inspect",
+          "status": "completed"
+        },
+        {
+          "atMs": 17442.795584000007,
+          "event": "item.started",
+          "itemId": "item_2",
+          "itemType": "mcp_tool_call",
+          "tool": "form_fill",
+          "status": "in_progress"
+        },
+        {
+          "atMs": 21628.989459000004,
+          "event": "item.completed",
+          "itemId": "item_2",
+          "itemType": "mcp_tool_call",
+          "tool": "form_fill",
+          "status": "completed"
+        },
+        {
+          "atMs": 28607.699834,
+          "event": "item.started",
+          "itemId": "item_3",
+          "itemType": "mcp_tool_call",
+          "tool": "form_fill",
+          "status": "in_progress"
+        },
+        {
+          "atMs": 32131.518333999993,
+          "event": "item.completed",
+          "itemId": "item_3",
+          "itemType": "mcp_tool_call",
+          "tool": "form_fill",
+          "status": "completed"
+        },
+        {
+          "atMs": 32132.141000000003,
+          "event": "item.started",
+          "itemId": "item_4",
+          "itemType": "mcp_tool_call",
+          "tool": "form_inspect",
+          "status": "in_progress"
+        },
+        {
+          "atMs": 32139.200584000006,
+          "event": "item.completed",
+          "itemId": "item_4",
+          "itemType": "mcp_tool_call",
+          "tool": "form_inspect",
+          "status": "completed"
+        },
+        {
+          "atMs": 34536.899166999996,
+          "event": "item.completed",
+          "itemId": "item_5",
+          "itemType": "agent_message"
+        },
+        {
+          "atMs": 34551.498584000015,
+          "event": "turn.completed"
+        }
+      ],
+      "usage": {
+        "input_tokens": 73662,
+        "cached_input_tokens": 60544,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 525,
+        "reasoning_output_tokens": 0
+      }
+    },
+    {
+      "attempt": "1789939541424-repeat-2-script",
+      "case": "repeat",
+      "repetition": 2,
+      "mode": "script",
+      "elapsedMs": 42508.57487500002,
+      "exitCode": 0,
+      "timedOut": false,
+      "passed": true,
+      "correct": 14,
+      "total": 14,
+      "errors": [],
+      "bridgeRequests": 4,
+      "toolCalls": [
+        {
+          "tool": "form_inspect",
+          "status": "completed",
+          "startMs": 9561.178749999992,
+          "endMs": 9605.066416999995,
+          "durationMs": 43.88766700000269,
+          "returnedBytes": 2094,
+          "executionMs": 0.9000000953674316
+        },
+        {
+          "tool": "browser_script",
+          "status": "completed",
+          "startMs": 29689.69987500002,
+          "endMs": 34242.71141700001,
+          "durationMs": 4553.011541999993,
+          "returnedBytes": 3275,
+          "executionMs": 12.512916999985464
+        },
+        {
+          "tool": "form_inspect",
+          "status": "completed",
+          "startMs": 37728.00324999998,
+          "endMs": 37735.566542000015,
+          "durationMs": 7.56329200003529,
+          "returnedBytes": 3226,
+          "executionMs": 1
+        }
+      ],
+      "timeline": [
+        {
+          "atMs": 141.34366700000828,
+          "event": "thread.started"
+        },
+        {
+          "atMs": 144.0360830000136,
+          "event": "turn.started"
+        },
+        {
+          "atMs": 5743.521417000011,
+          "event": "item.completed",
+          "itemId": "item_0",
+          "itemType": "agent_message"
+        },
+        {
+          "atMs": 9561.178749999992,
+          "event": "item.started",
+          "itemId": "item_1",
+          "itemType": "mcp_tool_call",
+          "tool": "form_inspect",
+          "status": "in_progress"
+        },
+        {
+          "atMs": 9605.066416999995,
+          "event": "item.completed",
+          "itemId": "item_1",
+          "itemType": "mcp_tool_call",
+          "tool": "form_inspect",
+          "status": "completed"
+        },
+        {
+          "atMs": 29689.69987500002,
+          "event": "item.started",
+          "itemId": "item_2",
+          "itemType": "mcp_tool_call",
+          "tool": "browser_script",
+          "status": "in_progress"
+        },
+        {
+          "atMs": 34242.71141700001,
+          "event": "item.completed",
+          "itemId": "item_2",
+          "itemType": "mcp_tool_call",
+          "tool": "browser_script",
+          "status": "completed"
+        },
+        {
+          "atMs": 37728.00324999998,
+          "event": "item.started",
+          "itemId": "item_3",
+          "itemType": "mcp_tool_call",
+          "tool": "form_inspect",
+          "status": "in_progress"
+        },
+        {
+          "atMs": 37735.566542000015,
+          "event": "item.completed",
+          "itemId": "item_3",
+          "itemType": "mcp_tool_call",
+          "tool": "form_inspect",
+          "status": "completed"
+        },
+        {
+          "atMs": 40415.51016700003,
+          "event": "item.completed",
+          "itemId": "item_4",
+          "itemType": "agent_message"
+        },
+        {
+          "atMs": 40432.74766700002,
+          "event": "turn.completed"
+        }
+      ],
+      "usage": {
+        "input_tokens": 90041,
+        "cached_input_tokens": 77568,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 782,
+        "reasoning_output_tokens": 0
+      }
+    },
+    {
+      "attempt": "1789939541424-repeat-2-refs",
+      "case": "repeat",
+      "repetition": 2,
+      "mode": "refs",
+      "elapsedMs": 39465.999542000005,
+      "exitCode": 0,
+      "timedOut": false,
+      "passed": true,
+      "correct": 14,
+      "total": 14,
+      "errors": [],
+      "bridgeRequests": 4,
+      "toolCalls": [
+        {
+          "tool": "form_inspect",
+          "status": "completed",
+          "startMs": 7551.295707999961,
+          "endMs": 7567.879917000013,
+          "durationMs": 16.584209000051487,
+          "returnedBytes": 2094,
+          "executionMs": 0.6999998092651367
+        },
+        {
+          "tool": "form_fill",
+          "status": "completed",
+          "startMs": 16380.47308299999,
+          "endMs": 22349.308250000002,
+          "durationMs": 5968.835167000012,
+          "returnedBytes": 3694,
+          "executionMs": 117.90000009536743,
+          "complete": false
+        },
+        {
+          "tool": "form_fill",
+          "status": "completed",
+          "startMs": 30919.638957999996,
+          "endMs": 34955.462624999986,
+          "durationMs": 4035.8236669999897,
+          "returnedBytes": 3562,
+          "executionMs": 83.09999990463257,
+          "complete": true
+        },
+        {
+          "tool": "form_inspect",
+          "status": "completed",
+          "startMs": 34956.31224999996,
+          "endMs": 34962.56920799997,
+          "durationMs": 6.256958000012673,
+          "returnedBytes": 3243,
+          "executionMs": 0.6999998092651367
+        }
+      ],
+      "timeline": [
+        {
+          "atMs": 178.0908749999944,
+          "event": "thread.started"
+        },
+        {
+          "atMs": 182.14079199999105,
+          "event": "turn.started"
+        },
+        {
+          "atMs": 5491.949749999971,
+          "event": "item.completed",
+          "itemId": "item_0",
+          "itemType": "agent_message"
+        },
+        {
+          "atMs": 7551.295707999961,
+          "event": "item.started",
+          "itemId": "item_1",
+          "itemType": "mcp_tool_call",
+          "tool": "form_inspect",
+          "status": "in_progress"
+        },
+        {
+          "atMs": 7567.879917000013,
+          "event": "item.completed",
+          "itemId": "item_1",
+          "itemType": "mcp_tool_call",
+          "tool": "form_inspect",
+          "status": "completed"
+        },
+        {
+          "atMs": 16380.47308299999,
+          "event": "item.started",
+          "itemId": "item_2",
+          "itemType": "mcp_tool_call",
+          "tool": "form_fill",
+          "status": "in_progress"
+        },
+        {
+          "atMs": 22349.308250000002,
+          "event": "item.completed",
+          "itemId": "item_2",
+          "itemType": "mcp_tool_call",
+          "tool": "form_fill",
+          "status": "completed"
+        },
+        {
+          "atMs": 30919.638957999996,
+          "event": "item.started",
+          "itemId": "item_3",
+          "itemType": "mcp_tool_call",
+          "tool": "form_fill",
+          "status": "in_progress"
+        },
+        {
+          "atMs": 34955.462624999986,
+          "event": "item.completed",
+          "itemId": "item_3",
+          "itemType": "mcp_tool_call",
+          "tool": "form_fill",
+          "status": "completed"
+        },
+        {
+          "atMs": 34956.31224999996,
+          "event": "item.started",
+          "itemId": "item_4",
+          "itemType": "mcp_tool_call",
+          "tool": "form_inspect",
+          "status": "in_progress"
+        },
+        {
+          "atMs": 34962.56920799997,
+          "event": "item.completed",
+          "itemId": "item_4",
+          "itemType": "mcp_tool_call",
+          "tool": "form_inspect",
+          "status": "completed"
+        },
+        {
+          "atMs": 37060.00691699999,
+          "event": "item.completed",
+          "itemId": "item_5",
+          "itemType": "agent_message"
+        },
+        {
+          "atMs": 37074.69195800001,
+          "event": "turn.completed"
+        }
+      ],
+      "usage": {
+        "input_tokens": 73409,
+        "cached_input_tokens": 60416,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 545,
+        "reasoning_output_tokens": 0
+      }
+    },
+    {
+      "attempt": "1789939541424-repeat-2-plan",
+      "case": "repeat",
+      "repetition": 2,
+      "mode": "plan",
+      "elapsedMs": 29875.434207999962,
+      "exitCode": 0,
+      "timedOut": false,
+      "passed": true,
+      "correct": 14,
+      "total": 14,
+      "errors": [],
+      "bridgeRequests": 3,
+      "toolCalls": [
+        {
+          "tool": "form_inspect",
+          "status": "completed",
+          "startMs": 8004.756165999977,
+          "endMs": 8022.228874999972,
+          "durationMs": 17.47270899999421,
+          "returnedBytes": 2094,
+          "executionMs": 0.9000000953674316
+        },
+        {
+          "tool": "form_execute_plan",
+          "status": "completed",
+          "startMs": 21344.086707999988,
+          "endMs": 24460.195790999976,
+          "durationMs": 3116.1090829999885,
+          "returnedBytes": 4024,
+          "executionMs": 248.90000009536743,
+          "complete": true,
+          "primitiveCalls": 5
+        },
+        {
+          "tool": "form_inspect",
+          "status": "completed",
+          "startMs": 24460.827624999976,
+          "endMs": 24469.502165999962,
+          "durationMs": 8.674540999985766,
+          "returnedBytes": 3243,
+          "executionMs": 0.8000001907348633
+        }
+      ],
+      "timeline": [
+        {
+          "atMs": 167.06729099998483,
+          "event": "thread.started"
+        },
+        {
+          "atMs": 169.8482499999809,
+          "event": "turn.started"
+        },
+        {
+          "atMs": 5799.891040999966,
+          "event": "item.completed",
+          "itemId": "item_0",
+          "itemType": "agent_message"
+        },
+        {
+          "atMs": 8004.756165999977,
+          "event": "item.started",
+          "itemId": "item_1",
+          "itemType": "mcp_tool_call",
+          "tool": "form_inspect",
+          "status": "in_progress"
+        },
+        {
+          "atMs": 8022.228874999972,
+          "event": "item.completed",
+          "itemId": "item_1",
+          "itemType": "mcp_tool_call",
+          "tool": "form_inspect",
+          "status": "completed"
+        },
+        {
+          "atMs": 21344.086707999988,
+          "event": "item.started",
+          "itemId": "item_2",
+          "itemType": "mcp_tool_call",
+          "tool": "form_execute_plan",
+          "status": "in_progress"
+        },
+        {
+          "atMs": 24460.195790999976,
+          "event": "item.completed",
+          "itemId": "item_2",
+          "itemType": "mcp_tool_call",
+          "tool": "form_execute_plan",
+          "status": "completed"
+        },
+        {
+          "atMs": 24460.827624999976,
+          "event": "item.started",
+          "itemId": "item_3",
+          "itemType": "mcp_tool_call",
+          "tool": "form_inspect",
+          "status": "in_progress"
+        },
+        {
+          "atMs": 24469.502165999962,
+          "event": "item.completed",
+          "itemId": "item_3",
+          "itemType": "mcp_tool_call",
+          "tool": "form_inspect",
+          "status": "completed"
+        },
+        {
+          "atMs": 26975.550958000007,
+          "event": "item.completed",
+          "itemId": "item_4",
+          "itemType": "agent_message"
+        },
+        {
+          "atMs": 26996.034707999963,
+          "event": "turn.completed"
+        }
+      ],
+      "usage": {
+        "input_tokens": 54064,
+        "cached_input_tokens": 33152,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 521,
+        "reasoning_output_tokens": 0
+      }
+    }
+  ]
+}

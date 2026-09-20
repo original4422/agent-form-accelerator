@@ -50,7 +50,7 @@ export async function executeFormRequest(request) {
         group: clean(el.closest('fieldset')?.querySelector('legend')?.textContent),
         required: !!el.required || el.getAttribute('aria-required') === 'true',
         disabled: !!el.disabled || el.getAttribute('aria-disabled') === 'true',
-        readOnly: !!el.readOnly, supported: supported.has(kind(el)), value: value(el), options: options(el)};
+        readOnly: !!el.readOnly, supported: supported.has(kind(el)), valid: el.validity?.valid, value: value(el), options: options(el)};
       nodes.set(ref, {el, signature: signature(el)});
       (el.tagName === 'BUTTON' ? controls : fields).push(field);
     }
@@ -69,7 +69,7 @@ export async function executeFormRequest(request) {
     observer.observe(root, {childList: true, subtree: true, attributes: true});
     const deadline = performance.now() + 600;
     let stable = false;
-    while (performance.now() < deadline) {
+    while (performance.now() < deadline && (!request.deadline || Date.now() < request.deadline)) {
       const before = changes;
       await new Promise((r) => setTimeout(r, 35));
       if (changes === before) { stable = true; break; }
@@ -77,7 +77,13 @@ export async function executeFormRequest(request) {
     observer.disconnect();
     return stable;
   };
-  if (request.op === 'inspect') {
+  if (request.op === 'validate') {
+    if (request.snapshot !== state.snapshot || request.url !== location.href) throw new Error('STALE_SNAPSHOT: inspect again');
+    for (const {el, signature: prior} of state.nodes.values()) {
+      if (!visible(el) || signature(el) !== prior) throw new Error('FIELD_CHANGED: inspect again');
+    }
+  }
+  if (request.op === 'inspect' || request.op === 'validate') {
     if (state.busy) throw new Error('BUSY: another fill is running');
     return {...observe(), elapsedMs: performance.now() - started};
   }
@@ -90,6 +96,7 @@ export async function executeFormRequest(request) {
   const results = [], written = [];
   try {
     for (const action of request.actions) {
+      if (request.deadline && Date.now() >= request.deadline) break;
       const record = state.nodes.get(action.ref);
       const el = record?.el;
       let error;

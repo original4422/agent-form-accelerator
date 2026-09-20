@@ -75,7 +75,7 @@ try {
     const transport = new StdioClientTransport({command: process.execPath, args: [path.join(projectRoot, 'prototype/src/mcp.mjs')], env: {...process.env, AFA_SESSION_FILE: h.sessionFile}, stderr: 'pipe'});
     try {
       await client.connect(transport);
-      const tools = await client.listTools(); assert.deepEqual(tools.tools.map((t) => t.name).sort(), ['form_fill', 'form_inspect']);
+      const tools = await client.listTools(); assert.deepEqual(tools.tools.map((t) => t.name).sort(), ['form_execute_plan', 'form_fill', 'form_inspect']);
       const request = async ({op, ...args}) => {
         const response = await client.callTool({name: op === 'inspect' ? 'form_inspect' : 'form_fill', arguments: args});
         if (response.isError) throw new Error(response.content[0].text);

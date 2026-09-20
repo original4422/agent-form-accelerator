@@ -1,4 +1,5 @@
 import {executeFormRequest} from './form-runtime.js';
+import {executePlan} from './plan-executor.js';
 
 let socket, heartbeat, selectedTab;
 let queue = Promise.resolve();
@@ -30,11 +31,17 @@ export async function connect(config) {
       if (message.type !== 'request') return;
       queue = queue.then(async () => {
         try {
-          const [{result, error} = {}] = await chrome.scripting.executeScript({
-            target: {tabId: selectedTab}, world: 'ISOLATED',
-            func: executeFormRequest, args: [message.request],
-          });
-          if (error || !result || result.error) throw new Error(error?.message ?? result?.error ?? 'No result from page; reconnect the intended tab');
+          const tabId = selectedTab;
+          const primitive = async (request) => {
+            if (selectedTab !== tabId || socket !== ws) throw new Error('CONNECTION_CHANGED');
+            const [{result, error} = {}] = await chrome.scripting.executeScript({
+              target: {tabId}, world: 'ISOLATED', func: executeFormRequest, args: [request],
+            });
+            if (error || !result || result.error) throw new Error(error?.message ?? result?.error ?? 'No result from page; reconnect the intended tab');
+            return result;
+          };
+          const result = message.request.op === 'plan'
+            ? await executePlan(message.request, primitive) : await primitive(message.request);
           ws.send(JSON.stringify({type: 'response', id: message.id, result}));
         } catch (e) {
           if (ws.readyState === WebSocket.OPEN) ws.send(JSON.stringify({type: 'response', id: message.id, error: e.message}));

@@ -2,10 +2,11 @@
 
 给 Codex 和 Claude Code 共用的网页填表执行工具。已有 Agent 负责理解资料、匹配字段，本地扩展负责批量填写和回读校验，不另行调用模型 API。
 
-**当前状态：工程原型。相对优化后的批量脚本，尚未证明提速；尚未验证真实招聘网站。**
+**当前状态：工程原型。有界计划在一个 Codex 合成任务中耗时减少约 19%–21%，尚未达到 2 倍目标，也未验证真实招聘网站。**
 
 ## 看结果
 
+- [目标计划与 Codex 对照](prototype/reports/GOAL-PLAN.md)：本轮减少模型往返的实验、脚本强基线和适用边界。
 - [为什么当前原型更慢](prototype/reports/FIRST-PRINCIPLES.md)：第一性原理、等待/传输消融、Codex 时间分布与候选架构。
 - [原型验证结论](prototype/reports/VALIDATION.md)：结论、Codex 实测、Claude 登录阻塞与下一步。
 - [执行层测量报告](prototype/reports/executor-benchmark.md)：三类本地表单、三种执行方式、每组五次。完整失败也保留在 JSON 中。
@@ -30,10 +31,14 @@ npm run demo
 npm run check
 npm run bench
 node prototype/bench/hosts.mjs
+node prototype/bench/plan-check.mjs
+node prototype/bench/codex-plans.mjs repeat
 node prototype/bench/diagnose.mjs
 ```
 
 `hosts.mjs` 当前默认只使用本机已有的 Codex 登录完成一次虚构资料填表；Claude 测试按用户要求暂停。宿主只注入本次运行的 MCP 配置，不改全局配置。该测试是**接入验证**，不是原生浏览器工具的速度基准。原始宿主日志保存在被 Git 忽略的 `prototype/reports/private/`。
+
+`codex-plans.mjs` 只测试 Codex，三种工具表面按平衡顺序各跑三次，计入模型、审批和 CLI 启动/退出；需使用当前 Codex 账户用量。浏览器已启动，数据全为虚构，所有结果留存。脚本基线只在测试环境暴露，产品工具不提供任意代码执行。
 
 `diagnose.mjs` 在临时扩展副本中做等待/传输消融并核验延迟错误，没有把删等待的实验变体写入实际运行时。
 
@@ -66,7 +71,9 @@ claude --mcp-config '{"mcpServers":{"afa":{"command":"node","args":["/ABSOLUTE/P
 
 - 主文档内的原生文本、日期、数字、单选、复选、原生下拉框；观察到的添加行按钮。
 - 返回带分组的字段列表、选项、引用、页面快照；批量填写后回读值并检查 HTML validity。
-- 旧快照、替换的节点、变更的标签/选项会停止旧计划。没有任意脚本、选择器、提交或导航接口。
+- `form_fill` 使用观察到的 ref；旧快照、替换的节点、变更的标签/选项会停止该批次。
+- `form_execute_plan` 使用明确的 fill/expand 阶段，在页面内发生预期变化后重新观察，并按精确 group/label 绑定字段；歧义、类型变化、缺少字段/选项和校验失败会停止。依赖选项每阶段最多等待 1 秒，总预算 8 秒。
+- 产品接口没有任意脚本、选择器、提交或导航操作。
 - 自定义 ARIA 下拉、iframe、shadow DOM、文件上传、跨页流程尚未实现；原型不会把它们报告成已完成。
 - 同一时刻只连接一个标签页；不要让两个宿主同时填写同一张表。
 - 同步回读不能保证应用/服务器接受，也不能捕获任意延迟的异步修改。宿主需最终独立检查。
