@@ -1,0 +1,324 @@
+{
+  "date": "2026-09-20T21:52:02.093Z",
+  "scope": "Read-only; no typing, clicking, file upload, application submission, or logged-in profile",
+  "rows": [
+    {
+      "site": "greenhouse",
+      "requestedUrl": "https://job-boards.greenhouse.io/lusternational/jobs/4807930008",
+      "finalUrl": "https://job-boards.greenhouse.io/lusternational?error=true",
+      "fieldCount": 2,
+      "supportedCount": 1,
+      "observedFields": [
+        {
+          "label": "搜尋",
+          "kind": "text",
+          "group": "",
+          "supported": true
+        },
+        {
+          "label": "辦公室",
+          "kind": "unsupported-combobox",
+          "group": "",
+          "supported": false
+        }
+      ],
+      "controls": [],
+      "structure": [
+        {
+          "tag": "INPUT",
+          "type": "text",
+          "role": null,
+          "name": "",
+          "id": "keyword-filter",
+          "autocomplete": "",
+          "labelledby": null,
+          "labels": [
+            "搜尋"
+          ],
+          "ariaLabel": "搜尋",
+          "fieldset": false,
+          "labelContext": "搜尋"
+        },
+        {
+          "tag": "INPUT",
+          "type": "text",
+          "role": "combobox",
+          "name": "",
+          "id": "office-filter",
+          "autocomplete": "off",
+          "labelledby": "office-filter-label",
+          "labels": [
+            "辦公室"
+          ],
+          "ariaLabel": null,
+          "fieldset": false,
+          "labelContext": ""
+        }
+      ]
+    },
+    {
+      "site": "lever",
+      "requestedUrl": "https://jobs.lever.co/palantir/c34b424e-caf2-455a-b104-ae1096ccca29/apply",
+      "finalUrl": "https://jobs.lever.co/palantir/c34b424e-caf2-455a-b104-ae1096ccca29/apply",
+      "fieldCount": 101,
+      "supportedCount": 100,
+      "observedFields": [
+        {
+          "label": "Resume/CV ✱ATTACH RESUME/CVCouldn't auto-read resume.Analyzing resume...Success!",
+          "kind": "file",
+          "group": "",
+          "supported": false
+        },
+        {
+          "label": "Full name✱",
+          "kind": "text",
+          "group": "",
+          "supported": true
+        },
+        {
+          "label": "Email✱",
+          "kind": "email",
+          "group": "",
+          "supported": true
+        },
+        {
+          "label": "Phone",
+          "kind": "text",
+          "group": "",
+          "supported": true
+        },
+        {
+          "label": "Current location ✱No location found. Try entering a different locationLoading",
+          "kind": "text",
+          "group": "",
+          "supported": true
+        },
+        {
+          "label": "Current company",
+          "kind": "text",
+          "group": "",
+          "supported": true
+        },
+        {
+          "label": "LinkedIn URL",
+          "kind": "text",
+          "group": "",
+          "supported": true
+        },
+        {
+          "label": "GitHub URL",
+          "kind": "text",
+          "group": "",
+          "supported": true
+        },
+        {
+          "label": "Portfolio URL",
+          "kind": "text",
+          "group": "",
+          "supported": true
+        },
+        {
+          "label": "English (ENG)",
+          "kind": "checkbox",
+          "group": "",
+          "supported": true
+        },
+        {
+          "label": "Spanish (SPA)",
+          "kind": "checkbox",
+          "group": "",
+          "supported": true
+        },
+        {
+          "label": "French (FRA)",
+          "kind": "checkbox",
+          "group": "",
+          "supported": true
+        }
+      ],
+      "controls": [],
+      "structure": [
+        {
+          "tag": "INPUT",
+          "type": "file",
+          "role": null,
+          "name": "resume",
+          "id": "resume-upload-input",
+          "autocomplete": "",
+          "labelledby": null,
+          "labels": [
+            "Resume/CV ✱ATTACH RESUME/CVCouldn't auto-read resume.Analyzing resume...Success!"
+          ],
+          "ariaLabel": null,
+          "fieldset": false,
+          "labelContext": "ATTACH RESUME/CV"
+        },
+        {
+          "tag": "INPUT",
+          "type": "text",
+          "role": null,
+          "name": "name",
+          "id": "",
+          "autocomplete": "",
+          "labelledby": null,
+          "labels": [
+            "Full name✱"
+          ],
+          "ariaLabel": null,
+          "fieldset": false,
+          "labelContext": ""
+        },
+        {
+          "tag": "INPUT",
+          "type": "email",
+          "role": null,
+          "name": "email",
+          "id": "",
+          "autocomplete": "",
+          "labelledby": null,
+          "labels": [
+            "Email✱"
+          ],
+          "ariaLabel": null,
+          "fieldset": false,
+          "labelContext": ""
+        },
+        {
+          "tag": "INPUT",
+          "type": "text",
+          "role": null,
+          "name": "phone",
+          "id": "",
+          "autocomplete": "",
+          "labelledby": null,
+          "labels": [
+            "Phone"
+          ],
+          "ariaLabel": null,
+          "fieldset": false,
+          "labelContext": ""
+        },
+        {
+          "tag": "INPUT",
+          "type": "text",
+          "role": null,
+          "name": "location",
+          "id": "location-input",
+          "autocomplete": "",
+          "labelledby": null,
+          "labels": [
+            "Current location ✱No location found. Try entering a different locationLoading"
+          ],
+          "ariaLabel": null,
+          "fieldset": false,
+          "labelContext": "No location found. Try entering a different locationLoading"
+        },
+        {
+          "tag": "INPUT",
+          "type": "text",
+          "role": null,
+          "name": "org",
+          "id": "",
+          "autocomplete": "",
+          "labelledby": null,
+          "labels": [
+            "Current company"
+          ],
+          "ariaLabel": null,
+          "fieldset": false,
+          "labelContext": ""
+        },
+        {
+          "tag": "INPUT",
+          "type": "text",
+          "role": null,
+          "name": "urls[LinkedIn]",
+          "id": "",
+          "autocomplete": "",
+          "labelledby": null,
+          "labels": [
+            "LinkedIn URL"
+          ],
+          "ariaLabel": null,
+          "fieldset": false,
+          "labelContext": ""
+        },
+        {
+          "tag": "INPUT",
+          "type": "text",
+          "role": null,
+          "name": "urls[GitHub]",
+          "id": "",
+          "autocomplete": "",
+          "labelledby": null,
+          "labels": [
+            "GitHub URL"
+          ],
+          "ariaLabel": null,
+          "fieldset": false,
+          "labelContext": ""
+        },
+        {
+          "tag": "INPUT",
+          "type": "text",
+          "role": null,
+          "name": "urls[Portfolio]",
+          "id": "",
+          "autocomplete": "",
+          "labelledby": null,
+          "labels": [
+            "Portfolio URL"
+          ],
+          "ariaLabel": null,
+          "fieldset": false,
+          "labelContext": ""
+        },
+        {
+          "tag": "INPUT",
+          "type": "checkbox",
+          "role": null,
+          "name": "cards[a69a985a-eae9-4c14-90fb-b5a4b891523e][field0]",
+          "id": "",
+          "autocomplete": "",
+          "labelledby": null,
+          "labels": [
+            "English (ENG)"
+          ],
+          "ariaLabel": null,
+          "fieldset": false,
+          "labelContext": "English (ENG)"
+        },
+        {
+          "tag": "INPUT",
+          "type": "checkbox",
+          "role": null,
+          "name": "cards[a69a985a-eae9-4c14-90fb-b5a4b891523e][field0]",
+          "id": "",
+          "autocomplete": "",
+          "labelledby": null,
+          "labels": [
+            "Spanish (SPA)"
+          ],
+          "ariaLabel": null,
+          "fieldset": false,
+          "labelContext": "Spanish (SPA)"
+        },
+        {
+          "tag": "INPUT",
+          "type": "checkbox",
+          "role": null,
+          "name": "cards[a69a985a-eae9-4c14-90fb-b5a4b891523e][field0]",
+          "id": "",
+          "autocomplete": "",
+          "labelledby": null,
+          "labels": [
+            "French (FRA)"
+          ],
+          "ariaLabel": null,
+          "fieldset": false,
+          "labelContext": "French (FRA)"
+        }
+      ]
+    }
+  ]
+}

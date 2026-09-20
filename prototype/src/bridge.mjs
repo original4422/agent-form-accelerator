@@ -45,7 +45,7 @@ export async function createBridge({port = 43187, sessionFile} = {}) {
         if (text.length > 262144) return send(res, 413, {error: 'Request too large'});
       }
       const payload = JSON.parse(text);
-      if (!['inspect', 'fill', 'plan'].includes(payload.op)) return send(res, 400, {error: 'Unknown operation'});
+      if (!['inspect', 'fill', 'plan', 'goal'].includes(payload.op)) return send(res, 400, {error: 'Unknown operation'});
       send(res, 200, await request(payload));
     } catch (e) { send(res, 400, {error: e.message}); }
   });

@@ -1,0 +1,470 @@
+{
+  "batchId": 1789941584035,
+  "variant": "script,cached",
+  "date": "2026-09-20T22:02:33.873Z",
+  "scope": "Already-structured and field-mapped fictional JSON source. Same source visible in prompt for all modes. Inline model copies values; reference passes source ID; script receives facts/expansions variables locally. Artifact serialization/write time measured and included in total; resume extraction and unseen-page mapping NOT measured. No mandatory initial/final host inspect. Equal final 120ms observation window. Same Codex defaults and auto-review. All attempts retained.",
+  "rows": [
+    {
+      "attempt": "1789941584035-plain-0-script",
+      "case": "plain",
+      "repetition": 0,
+      "mode": "script",
+      "preparationMs": 0.43441699999993943,
+      "hostElapsedMs": 31322.034416,
+      "elapsedMs": 31322.468833,
+      "exitCode": 0,
+      "timedOut": false,
+      "passed": true,
+      "correct": 20,
+      "total": 20,
+      "errors": [],
+      "toolCalls": [
+        {
+          "tool": "browser_script",
+          "status": "completed",
+          "startMs": 21569.160375,
+          "endMs": 25952.863125,
+          "durationMs": 4383.70275,
+          "returnedBytes": 4126,
+          "executionMs": 136.11245899999994
+        }
+      ],
+      "usage": {
+        "input_tokens": 52138,
+        "cached_input_tokens": 41600,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 470,
+        "reasoning_output_tokens": 0
+      },
+      "bridgeRequests": 2,
+      "timeline": [
+        {
+          "atMs": 1852.782291,
+          "event": "thread.started"
+        },
+        {
+          "atMs": 1914.3885,
+          "event": "turn.started"
+        },
+        {
+          "atMs": 7582.194000000001,
+          "event": "item.completed",
+          "itemId": "item_0",
+          "itemType": "agent_message"
+        },
+        {
+          "atMs": 21569.160375,
+          "event": "item.started",
+          "itemId": "item_1",
+          "itemType": "mcp_tool_call",
+          "tool": "browser_script",
+          "status": "in_progress"
+        },
+        {
+          "atMs": 25952.863125,
+          "event": "item.completed",
+          "itemId": "item_1",
+          "itemType": "mcp_tool_call",
+          "tool": "browser_script",
+          "status": "completed"
+        },
+        {
+          "atMs": 28549.230625,
+          "event": "item.completed",
+          "itemId": "item_2",
+          "itemType": "agent_message"
+        },
+        {
+          "atMs": 28564.280666,
+          "event": "turn.completed"
+        }
+      ],
+      "sourceHash": "b75620f5b01d98e48cf89f5ec2132867721931637993ea5b367b34a3847a1351"
+    },
+    {
+      "attempt": "1789941584035-plain-0-cached",
+      "case": "plain",
+      "repetition": 0,
+      "mode": "cached",
+      "preparationMs": 0.22420799999963492,
+      "hostElapsedMs": 21996.096833000003,
+      "elapsedMs": 21996.321041000003,
+      "exitCode": 0,
+      "timedOut": false,
+      "passed": true,
+      "correct": 20,
+      "total": 20,
+      "errors": [],
+      "toolCalls": [
+        {
+          "tool": "browser_apply_source",
+          "status": "completed",
+          "startMs": 11573.519583000001,
+          "endMs": 15807.075000000004,
+          "durationMs": 4233.555417000003,
+          "returnedBytes": 4125,
+          "executionMs": 146.10195800000656
+        }
+      ],
+      "usage": {
+        "input_tokens": 51346,
+        "cached_input_tokens": 41472,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 162,
+        "reasoning_output_tokens": 0
+      },
+      "bridgeRequests": 2,
+      "timeline": [
+        {
+          "atMs": 133.7940000000017,
+          "event": "thread.started"
+        },
+        {
+          "atMs": 136.46291600000404,
+          "event": "turn.started"
+        },
+        {
+          "atMs": 6313.296083000001,
+          "event": "item.completed",
+          "itemId": "item_0",
+          "itemType": "agent_message"
+        },
+        {
+          "atMs": 11573.519583000001,
+          "event": "item.started",
+          "itemId": "item_1",
+          "itemType": "mcp_tool_call",
+          "tool": "browser_apply_source",
+          "status": "in_progress"
+        },
+        {
+          "atMs": 15807.075000000004,
+          "event": "item.completed",
+          "itemId": "item_1",
+          "itemType": "mcp_tool_call",
+          "tool": "browser_apply_source",
+          "status": "completed"
+        },
+        {
+          "atMs": 19543.033166,
+          "event": "item.completed",
+          "itemId": "item_2",
+          "itemType": "agent_message"
+        },
+        {
+          "atMs": 19567.734916,
+          "event": "turn.completed"
+        }
+      ],
+      "sourceHash": "b75620f5b01d98e48cf89f5ec2132867721931637993ea5b367b34a3847a1351"
+    },
+    {
+      "attempt": "1789941584035-plain-1-cached",
+      "case": "plain",
+      "repetition": 1,
+      "mode": "cached",
+      "preparationMs": 0.3404579999987618,
+      "hostElapsedMs": 23208.420165999996,
+      "elapsedMs": 23208.760623999995,
+      "exitCode": 0,
+      "timedOut": false,
+      "passed": true,
+      "correct": 20,
+      "total": 20,
+      "errors": [],
+      "toolCalls": [
+        {
+          "tool": "browser_apply_source",
+          "status": "completed",
+          "startMs": 13796.804457999999,
+          "endMs": 17331.751208,
+          "durationMs": 3534.946750000003,
+          "returnedBytes": 4125,
+          "executionMs": 135.58141699999396
+        }
+      ],
+      "usage": {
+        "input_tokens": 51347,
+        "cached_input_tokens": 33280,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 181,
+        "reasoning_output_tokens": 0
+      },
+      "bridgeRequests": 2,
+      "timeline": [
+        {
+          "atMs": 1012.6214160000018,
+          "event": "thread.started"
+        },
+        {
+          "atMs": 1015.9871249999997,
+          "event": "turn.started"
+        },
+        {
+          "atMs": 7072.860790999999,
+          "event": "item.completed",
+          "itemId": "item_0",
+          "itemType": "agent_message"
+        },
+        {
+          "atMs": 13796.804457999999,
+          "event": "item.started",
+          "itemId": "item_1",
+          "itemType": "mcp_tool_call",
+          "tool": "browser_apply_source",
+          "status": "in_progress"
+        },
+        {
+          "atMs": 17331.751208,
+          "event": "item.completed",
+          "itemId": "item_1",
+          "itemType": "mcp_tool_call",
+          "tool": "browser_apply_source",
+          "status": "completed"
+        },
+        {
+          "atMs": 20901.492958000003,
+          "event": "item.completed",
+          "itemId": "item_2",
+          "itemType": "agent_message"
+        },
+        {
+          "atMs": 20908.026583,
+          "event": "turn.completed"
+        }
+      ],
+      "sourceHash": "b75620f5b01d98e48cf89f5ec2132867721931637993ea5b367b34a3847a1351"
+    },
+    {
+      "attempt": "1789941584035-plain-1-script",
+      "case": "plain",
+      "repetition": 1,
+      "mode": "script",
+      "preparationMs": 0.3134589999972377,
+      "hostElapsedMs": 36325.16649999999,
+      "elapsedMs": 36325.47995899999,
+      "exitCode": 0,
+      "timedOut": false,
+      "passed": true,
+      "correct": 20,
+      "total": 20,
+      "errors": [],
+      "toolCalls": [
+        {
+          "tool": "browser_script",
+          "status": "completed",
+          "startMs": 24195.504499999995,
+          "endMs": 28840.892833000005,
+          "durationMs": 4645.38833300001,
+          "returnedBytes": 4125,
+          "executionMs": 132.20300000000861
+        }
+      ],
+      "usage": {
+        "input_tokens": 52119,
+        "cached_input_tokens": 41600,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 510,
+        "reasoning_output_tokens": 0
+      },
+      "bridgeRequests": 2,
+      "timeline": [
+        {
+          "atMs": 137.03399999999965,
+          "event": "thread.started"
+        },
+        {
+          "atMs": 140.52208300000348,
+          "event": "turn.started"
+        },
+        {
+          "atMs": 8684.403082999997,
+          "event": "item.completed",
+          "itemId": "item_0",
+          "itemType": "agent_message"
+        },
+        {
+          "atMs": 24195.504499999995,
+          "event": "item.started",
+          "itemId": "item_1",
+          "itemType": "mcp_tool_call",
+          "tool": "browser_script",
+          "status": "in_progress"
+        },
+        {
+          "atMs": 28840.892833000005,
+          "event": "item.completed",
+          "itemId": "item_1",
+          "itemType": "mcp_tool_call",
+          "tool": "browser_script",
+          "status": "completed"
+        },
+        {
+          "atMs": 34056.371583,
+          "event": "item.completed",
+          "itemId": "item_2",
+          "itemType": "agent_message"
+        },
+        {
+          "atMs": 34088.791625,
+          "event": "turn.completed"
+        }
+      ],
+      "sourceHash": "b75620f5b01d98e48cf89f5ec2132867721931637993ea5b367b34a3847a1351"
+    },
+    {
+      "attempt": "1789941584035-plain-2-script",
+      "case": "plain",
+      "repetition": 2,
+      "mode": "script",
+      "preparationMs": 0.29858400000375696,
+      "hostElapsedMs": 31908.842791999996,
+      "elapsedMs": 31909.141376,
+      "exitCode": 0,
+      "timedOut": false,
+      "passed": true,
+      "correct": 20,
+      "total": 20,
+      "errors": [],
+      "toolCalls": [
+        {
+          "tool": "browser_script",
+          "status": "completed",
+          "startMs": 21110.916584000006,
+          "endMs": 26265.390417000002,
+          "durationMs": 5154.473832999996,
+          "returnedBytes": 4125,
+          "executionMs": 128.54820799999288
+        }
+      ],
+      "usage": {
+        "input_tokens": 51951,
+        "cached_input_tokens": 33664,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 481,
+        "reasoning_output_tokens": 0
+      },
+      "bridgeRequests": 2,
+      "timeline": [
+        {
+          "atMs": 126.25137499999255,
+          "event": "thread.started"
+        },
+        {
+          "atMs": 128.3924999999872,
+          "event": "turn.started"
+        },
+        {
+          "atMs": 6291.989249999999,
+          "event": "item.completed",
+          "itemId": "item_0",
+          "itemType": "agent_message"
+        },
+        {
+          "atMs": 21110.916584000006,
+          "event": "item.started",
+          "itemId": "item_1",
+          "itemType": "mcp_tool_call",
+          "tool": "browser_script",
+          "status": "in_progress"
+        },
+        {
+          "atMs": 26265.390417000002,
+          "event": "item.completed",
+          "itemId": "item_1",
+          "itemType": "mcp_tool_call",
+          "tool": "browser_script",
+          "status": "completed"
+        },
+        {
+          "atMs": 29746.022125000003,
+          "event": "item.completed",
+          "itemId": "item_2",
+          "itemType": "agent_message"
+        },
+        {
+          "atMs": 29806.415208999984,
+          "event": "turn.completed"
+        }
+      ],
+      "sourceHash": "b75620f5b01d98e48cf89f5ec2132867721931637993ea5b367b34a3847a1351"
+    },
+    {
+      "attempt": "1789941584035-plain-2-cached",
+      "case": "plain",
+      "repetition": 2,
+      "mode": "cached",
+      "preparationMs": 0.31674999999813735,
+      "hostElapsedMs": 24740.463875000016,
+      "elapsedMs": 24740.780625000014,
+      "exitCode": 0,
+      "timedOut": false,
+      "passed": true,
+      "correct": 20,
+      "total": 20,
+      "errors": [],
+      "toolCalls": [
+        {
+          "tool": "browser_apply_source",
+          "status": "completed",
+          "startMs": 13847.499083000002,
+          "endMs": 19898.015541,
+          "durationMs": 6050.516457999998,
+          "returnedBytes": 4110,
+          "executionMs": 135.62974999999278
+        }
+      ],
+      "usage": {
+        "input_tokens": 51375,
+        "cached_input_tokens": 41472,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 138,
+        "reasoning_output_tokens": 0
+      },
+      "bridgeRequests": 2,
+      "timeline": [
+        {
+          "atMs": 1321.1441660000128,
+          "event": "thread.started"
+        },
+        {
+          "atMs": 1328.7240410000086,
+          "event": "turn.started"
+        },
+        {
+          "atMs": 6705.520874999987,
+          "event": "item.completed",
+          "itemId": "item_0",
+          "itemType": "agent_message"
+        },
+        {
+          "atMs": 13847.499083000002,
+          "event": "item.started",
+          "itemId": "item_1",
+          "itemType": "mcp_tool_call",
+          "tool": "browser_apply_source",
+          "status": "in_progress"
+        },
+        {
+          "atMs": 19898.015541,
+          "event": "item.completed",
+          "itemId": "item_1",
+          "itemType": "mcp_tool_call",
+          "tool": "browser_apply_source",
+          "status": "completed"
+        },
+        {
+          "atMs": 22488.884041000012,
+          "event": "item.completed",
+          "itemId": "item_2",
+          "itemType": "agent_message"
+        },
+        {
+          "atMs": 22500.107707999996,
+          "event": "turn.completed"
+        }
+      ],
+      "sourceHash": "b75620f5b01d98e48cf89f5ec2132867721931637993ea5b367b34a3847a1351"
+    }
+  ]
+}

@@ -15,3 +15,10 @@ Use the connected MCP tools `form_inspect`, `form_fill`, and (when available) `f
 6. Read back with `form_inspect` after the final batch and check against the requested facts. Report unsupported controls and unresolved fields. `complete` means local DOM checks passed, not server acceptance. The tool intentionally has no submit/navigation operation; finishing a fill leaves the form available for review.
 
 Known prototype boundary: native HTML inputs/selects and add-row buttons in the main document. Custom ARIA widgets, iframes, shadow DOM, attachment upload and cross-page flows may need the host's existing browser tools. Never claim they were completed merely because supported fields succeeded.
+
+
+Experimental fast paths:
+
+- If the exact form groups/labels and values are already known, `form_apply_goal` can observe, execute, wait for dependent native options, and return final read-back evidence in one call. Missing groups require explicit `expansions` with the add-button label and expected group. Do not guess unknown field meanings just to save an inspection.
+- When an explicitly provided JSON source artifact is configured and already mapped, `form_apply_source` can refer to its ID without copying its values through the model again. It is a separate experimental MCP server; it is not always available and does not parse an arbitrary résumé automatically.
+- Verify the returned evidence against the user's facts. A separate inspection is useful when evidence is missing or uncertain; it need not be repeated merely to restate a successful complete read-back. Server acceptance and delayed business validation remain outside local DOM evidence.

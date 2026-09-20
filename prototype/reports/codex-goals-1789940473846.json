@@ -1,0 +1,1435 @@
+{
+  "date": "2026-09-20T21:51:08.293Z",
+  "batchId": 1789940473846,
+  "scope": "Codex CLI cold-task end-to-end comparison on fictional local forms; warmed browser. No native Codex browser tool comparison. Default CLI model/config is shared across modes, no model override. Same auto-review approval policy; shell/web disabled; only test MCP server. Alternating AB/BA/AB order for goal vs one-shot script. Neither mode requires host-side initial or final inspection. Same 120ms local final observation delay; independent app-state oracle. All attempts retained.",
+  "rows": [
+    {
+      "attempt": "1789940473846-plain-0-goal",
+      "case": "plain",
+      "repetition": 0,
+      "mode": "goal",
+      "elapsedMs": 30368.600709,
+      "exitCode": 0,
+      "timedOut": false,
+      "passed": true,
+      "correct": 20,
+      "total": 20,
+      "errors": [],
+      "bridgeRequests": 1,
+      "toolCalls": [
+        {
+          "tool": "form_apply_goal",
+          "status": "completed",
+          "startMs": 22345.345334,
+          "endMs": 25401.257375,
+          "durationMs": 3055.9120409999996,
+          "returnedBytes": 6951,
+          "executionMs": 304,
+          "complete": true,
+          "primitiveCalls": 3
+        }
+      ],
+      "timeline": [
+        {
+          "atMs": 1627.080834,
+          "event": "thread.started"
+        },
+        {
+          "atMs": 1641.264292,
+          "event": "turn.started"
+        },
+        {
+          "atMs": 7476.822458999999,
+          "event": "item.completed",
+          "itemId": "item_0",
+          "itemType": "agent_message"
+        },
+        {
+          "atMs": 22345.345334,
+          "event": "item.started",
+          "itemId": "item_1",
+          "itemType": "mcp_tool_call",
+          "tool": "form_apply_goal",
+          "status": "in_progress"
+        },
+        {
+          "atMs": 25401.257375,
+          "event": "item.completed",
+          "itemId": "item_1",
+          "itemType": "mcp_tool_call",
+          "tool": "form_apply_goal",
+          "status": "completed"
+        },
+        {
+          "atMs": 28174.29525,
+          "event": "item.completed",
+          "itemId": "item_2",
+          "itemType": "agent_message"
+        },
+        {
+          "atMs": 28183.691084,
+          "event": "turn.completed"
+        }
+      ],
+      "usage": {
+        "input_tokens": 52820,
+        "cached_input_tokens": 41600,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 514,
+        "reasoning_output_tokens": 0
+      }
+    },
+    {
+      "attempt": "1789940473846-plain-0-script",
+      "case": "plain",
+      "repetition": 0,
+      "mode": "script",
+      "elapsedMs": 38891.8275,
+      "exitCode": 0,
+      "timedOut": false,
+      "passed": true,
+      "correct": 20,
+      "total": 20,
+      "errors": [],
+      "bridgeRequests": 2,
+      "toolCalls": [
+        {
+          "tool": "browser_script",
+          "status": "completed",
+          "startMs": 25712.704125,
+          "endMs": 33472.813375,
+          "durationMs": 7760.109249999998,
+          "returnedBytes": 4124,
+          "executionMs": 132.8842500000028
+        }
+      ],
+      "timeline": [
+        {
+          "atMs": 143.27020900000207,
+          "event": "thread.started"
+        },
+        {
+          "atMs": 145.64158400000088,
+          "event": "turn.started"
+        },
+        {
+          "atMs": 7222.313209000004,
+          "event": "item.completed",
+          "itemId": "item_0",
+          "itemType": "agent_message"
+        },
+        {
+          "atMs": 25712.704125,
+          "event": "item.started",
+          "itemId": "item_1",
+          "itemType": "mcp_tool_call",
+          "tool": "browser_script",
+          "status": "in_progress"
+        },
+        {
+          "atMs": 33472.813375,
+          "event": "item.completed",
+          "itemId": "item_1",
+          "itemType": "mcp_tool_call",
+          "tool": "browser_script",
+          "status": "completed"
+        },
+        {
+          "atMs": 36738.323625000005,
+          "event": "item.completed",
+          "itemId": "item_2",
+          "itemType": "agent_message"
+        },
+        {
+          "atMs": 36780.104416999995,
+          "event": "turn.completed"
+        }
+      ],
+      "usage": {
+        "input_tokens": 52232,
+        "cached_input_tokens": 41600,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 622,
+        "reasoning_output_tokens": 0
+      }
+    },
+    {
+      "attempt": "1789940473846-plain-1-script",
+      "case": "plain",
+      "repetition": 1,
+      "mode": "script",
+      "elapsedMs": 31522.806958,
+      "exitCode": 0,
+      "timedOut": false,
+      "passed": true,
+      "correct": 20,
+      "total": 20,
+      "errors": [],
+      "bridgeRequests": 2,
+      "toolCalls": [
+        {
+          "tool": "browser_script",
+          "status": "completed",
+          "startMs": 22590.027833,
+          "endMs": 26758.504457999996,
+          "durationMs": 4168.476624999996,
+          "returnedBytes": 4125,
+          "executionMs": 129.51829199999338
+        }
+      ],
+      "timeline": [
+        {
+          "atMs": 141.66095800000767,
+          "event": "thread.started"
+        },
+        {
+          "atMs": 143.56791700000758,
+          "event": "turn.started"
+        },
+        {
+          "atMs": 7497.2277500000055,
+          "event": "item.completed",
+          "itemId": "item_0",
+          "itemType": "agent_message"
+        },
+        {
+          "atMs": 22590.027833,
+          "event": "item.started",
+          "itemId": "item_1",
+          "itemType": "mcp_tool_call",
+          "tool": "browser_script",
+          "status": "in_progress"
+        },
+        {
+          "atMs": 26758.504457999996,
+          "event": "item.completed",
+          "itemId": "item_1",
+          "itemType": "mcp_tool_call",
+          "tool": "browser_script",
+          "status": "completed"
+        },
+        {
+          "atMs": 29345.161625000008,
+          "event": "item.completed",
+          "itemId": "item_2",
+          "itemType": "agent_message"
+        },
+        {
+          "atMs": 29346.329500000007,
+          "event": "turn.completed"
+        }
+      ],
+      "usage": {
+        "input_tokens": 52128,
+        "cached_input_tokens": 41600,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 526,
+        "reasoning_output_tokens": 0
+      }
+    },
+    {
+      "attempt": "1789940473846-plain-1-goal",
+      "case": "plain",
+      "repetition": 1,
+      "mode": "goal",
+      "elapsedMs": 28122.780207999996,
+      "exitCode": 0,
+      "timedOut": false,
+      "passed": true,
+      "correct": 20,
+      "total": 20,
+      "errors": [],
+      "bridgeRequests": 1,
+      "toolCalls": [
+        {
+          "tool": "form_apply_goal",
+          "status": "completed",
+          "startMs": 17713.575790999996,
+          "endMs": 22859.423708000002,
+          "durationMs": 5145.847917000006,
+          "returnedBytes": 6967,
+          "executionMs": 294.19999980926514,
+          "complete": true,
+          "primitiveCalls": 3
+        }
+      ],
+      "timeline": [
+        {
+          "atMs": 1124.6816249999974,
+          "event": "thread.started"
+        },
+        {
+          "atMs": 1127.8559999999998,
+          "event": "turn.started"
+        },
+        {
+          "atMs": 7023.827208000002,
+          "event": "item.completed",
+          "itemId": "item_0",
+          "itemType": "agent_message"
+        },
+        {
+          "atMs": 17713.575790999996,
+          "event": "item.started",
+          "itemId": "item_1",
+          "itemType": "mcp_tool_call",
+          "tool": "form_apply_goal",
+          "status": "in_progress"
+        },
+        {
+          "atMs": 22859.423708000002,
+          "event": "item.completed",
+          "itemId": "item_1",
+          "itemType": "mcp_tool_call",
+          "tool": "form_apply_goal",
+          "status": "completed"
+        },
+        {
+          "atMs": 25325.703958,
+          "event": "item.completed",
+          "itemId": "item_2",
+          "itemType": "agent_message"
+        },
+        {
+          "atMs": 25665.954874999996,
+          "event": "turn.completed"
+        }
+      ],
+      "usage": {
+        "input_tokens": 52685,
+        "cached_input_tokens": 41600,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 361,
+        "reasoning_output_tokens": 0
+      }
+    },
+    {
+      "attempt": "1789940473846-plain-2-goal",
+      "case": "plain",
+      "repetition": 2,
+      "mode": "goal",
+      "elapsedMs": 30582.422457999986,
+      "exitCode": 0,
+      "timedOut": false,
+      "passed": true,
+      "correct": 20,
+      "total": 20,
+      "errors": [],
+      "bridgeRequests": 1,
+      "toolCalls": [
+        {
+          "tool": "form_apply_goal",
+          "status": "completed",
+          "startMs": 20822.38191699999,
+          "endMs": 25286.200332999986,
+          "durationMs": 4463.818415999995,
+          "returnedBytes": 6965,
+          "executionMs": 286.2000002861023,
+          "complete": true,
+          "primitiveCalls": 3
+        }
+      ],
+      "timeline": [
+        {
+          "atMs": 136.1912500000035,
+          "event": "thread.started"
+        },
+        {
+          "atMs": 139.13529199999175,
+          "event": "turn.started"
+        },
+        {
+          "atMs": 6684.913042,
+          "event": "item.completed",
+          "itemId": "item_0",
+          "itemType": "agent_message"
+        },
+        {
+          "atMs": 20822.38191699999,
+          "event": "item.started",
+          "itemId": "item_1",
+          "itemType": "mcp_tool_call",
+          "tool": "form_apply_goal",
+          "status": "in_progress"
+        },
+        {
+          "atMs": 25286.200332999986,
+          "event": "item.completed",
+          "itemId": "item_1",
+          "itemType": "mcp_tool_call",
+          "tool": "form_apply_goal",
+          "status": "completed"
+        },
+        {
+          "atMs": 28251.24016700001,
+          "event": "item.completed",
+          "itemId": "item_2",
+          "itemType": "agent_message"
+        },
+        {
+          "atMs": 28275.653374999994,
+          "event": "turn.completed"
+        }
+      ],
+      "usage": {
+        "input_tokens": 52808,
+        "cached_input_tokens": 41600,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 491,
+        "reasoning_output_tokens": 0
+      }
+    },
+    {
+      "attempt": "1789940473846-plain-2-script",
+      "case": "plain",
+      "repetition": 2,
+      "mode": "script",
+      "elapsedMs": 38793.634374999994,
+      "exitCode": 0,
+      "timedOut": false,
+      "passed": true,
+      "correct": 20,
+      "total": 20,
+      "errors": [],
+      "bridgeRequests": 2,
+      "toolCalls": [
+        {
+          "tool": "browser_script",
+          "status": "completed",
+          "startMs": 28916.692416000005,
+          "endMs": 33606.87554099999,
+          "durationMs": 4690.183124999981,
+          "returnedBytes": 4109,
+          "executionMs": 133.1332499999844
+        }
+      ],
+      "timeline": [
+        {
+          "atMs": 1191.6771660000086,
+          "event": "thread.started"
+        },
+        {
+          "atMs": 1196.864750000008,
+          "event": "turn.started"
+        },
+        {
+          "atMs": 6493.788124999992,
+          "event": "item.completed",
+          "itemId": "item_0",
+          "itemType": "agent_message"
+        },
+        {
+          "atMs": 28916.692416000005,
+          "event": "item.started",
+          "itemId": "item_1",
+          "itemType": "mcp_tool_call",
+          "tool": "browser_script",
+          "status": "in_progress"
+        },
+        {
+          "atMs": 33606.87554099999,
+          "event": "item.completed",
+          "itemId": "item_1",
+          "itemType": "mcp_tool_call",
+          "tool": "browser_script",
+          "status": "completed"
+        },
+        {
+          "atMs": 36184.924833,
+          "event": "item.completed",
+          "itemId": "item_2",
+          "itemType": "agent_message"
+        },
+        {
+          "atMs": 36238.03612500001,
+          "event": "turn.completed"
+        }
+      ],
+      "usage": {
+        "input_tokens": 52370,
+        "cached_input_tokens": 41600,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 767,
+        "reasoning_output_tokens": 0
+      }
+    },
+    {
+      "attempt": "1789940473846-dependent-0-goal",
+      "case": "dependent",
+      "repetition": 0,
+      "mode": "goal",
+      "elapsedMs": 25741.922499999986,
+      "exitCode": 0,
+      "timedOut": false,
+      "passed": true,
+      "correct": 9,
+      "total": 9,
+      "errors": [],
+      "bridgeRequests": 1,
+      "toolCalls": [
+        {
+          "tool": "form_apply_goal",
+          "status": "completed",
+          "startMs": 14845.441541999986,
+          "endMs": 19206.409249999997,
+          "durationMs": 4360.967708000011,
+          "returnedBytes": 3660,
+          "executionMs": 322.2000002861023,
+          "complete": true,
+          "primitiveCalls": 4
+        }
+      ],
+      "timeline": [
+        {
+          "atMs": 1009.2552079999878,
+          "event": "thread.started"
+        },
+        {
+          "atMs": 1014.3542079999752,
+          "event": "turn.started"
+        },
+        {
+          "atMs": 6302.222457999975,
+          "event": "item.completed",
+          "itemId": "item_0",
+          "itemType": "agent_message"
+        },
+        {
+          "atMs": 14845.441541999986,
+          "event": "item.started",
+          "itemId": "item_1",
+          "itemType": "mcp_tool_call",
+          "tool": "form_apply_goal",
+          "status": "in_progress"
+        },
+        {
+          "atMs": 19206.409249999997,
+          "event": "item.completed",
+          "itemId": "item_1",
+          "itemType": "mcp_tool_call",
+          "tool": "form_apply_goal",
+          "status": "completed"
+        },
+        {
+          "atMs": 23466.307042,
+          "event": "item.completed",
+          "itemId": "item_2",
+          "itemType": "agent_message"
+        },
+        {
+          "atMs": 23625.935624999984,
+          "event": "turn.completed"
+        }
+      ],
+      "usage": {
+        "input_tokens": 51157,
+        "cached_input_tokens": 41344,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 302,
+        "reasoning_output_tokens": 0
+      }
+    },
+    {
+      "attempt": "1789940473846-dependent-0-script",
+      "case": "dependent",
+      "repetition": 0,
+      "mode": "script",
+      "elapsedMs": 32391.157666000014,
+      "exitCode": 0,
+      "timedOut": false,
+      "passed": true,
+      "correct": 9,
+      "total": 9,
+      "errors": [],
+      "bridgeRequests": 2,
+      "toolCalls": [
+        {
+          "tool": "browser_script",
+          "status": "completed",
+          "startMs": 21614.28991600001,
+          "endMs": 27580.517333000025,
+          "durationMs": 5966.227417000016,
+          "returnedBytes": 2237,
+          "executionMs": 234.13470799999777
+        }
+      ],
+      "timeline": [
+        {
+          "atMs": 1017.6881660000072,
+          "event": "thread.started"
+        },
+        {
+          "atMs": 1022.3550410000025,
+          "event": "turn.started"
+        },
+        {
+          "atMs": 5999.882166000025,
+          "event": "item.completed",
+          "itemId": "item_0",
+          "itemType": "agent_message"
+        },
+        {
+          "atMs": 21614.28991600001,
+          "event": "item.started",
+          "itemId": "item_1",
+          "itemType": "mcp_tool_call",
+          "tool": "browser_script",
+          "status": "in_progress"
+        },
+        {
+          "atMs": 27580.517333000025,
+          "event": "item.completed",
+          "itemId": "item_1",
+          "itemType": "mcp_tool_call",
+          "tool": "browser_script",
+          "status": "completed"
+        },
+        {
+          "atMs": 30158.590000000026,
+          "event": "item.completed",
+          "itemId": "item_2",
+          "itemType": "agent_message"
+        },
+        {
+          "atMs": 30169.25104100001,
+          "event": "turn.completed"
+        }
+      ],
+      "usage": {
+        "input_tokens": 51023,
+        "cached_input_tokens": 41344,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 537,
+        "reasoning_output_tokens": 0
+      }
+    },
+    {
+      "attempt": "1789940473846-dependent-1-script",
+      "case": "dependent",
+      "repetition": 1,
+      "mode": "script",
+      "elapsedMs": 35024.86200000002,
+      "exitCode": 0,
+      "timedOut": false,
+      "passed": true,
+      "correct": 9,
+      "total": 9,
+      "errors": [],
+      "bridgeRequests": 2,
+      "toolCalls": [
+        {
+          "tool": "browser_script",
+          "status": "completed",
+          "startMs": 24956.355250000022,
+          "endMs": 30071.585708,
+          "durationMs": 5115.230457999976,
+          "returnedBytes": 2236,
+          "executionMs": 235.2069579999661
+        }
+      ],
+      "timeline": [
+        {
+          "atMs": 1213.2607910000079,
+          "event": "thread.started"
+        },
+        {
+          "atMs": 1218.695000000007,
+          "event": "turn.started"
+        },
+        {
+          "atMs": 6542.461750000017,
+          "event": "item.completed",
+          "itemId": "item_0",
+          "itemType": "agent_message"
+        },
+        {
+          "atMs": 24956.355250000022,
+          "event": "item.started",
+          "itemId": "item_1",
+          "itemType": "mcp_tool_call",
+          "tool": "browser_script",
+          "status": "in_progress"
+        },
+        {
+          "atMs": 30071.585708,
+          "event": "item.completed",
+          "itemId": "item_1",
+          "itemType": "mcp_tool_call",
+          "tool": "browser_script",
+          "status": "completed"
+        },
+        {
+          "atMs": 32841.98691600002,
+          "event": "item.completed",
+          "itemId": "item_2",
+          "itemType": "agent_message"
+        },
+        {
+          "atMs": 32874.39837499999,
+          "event": "turn.completed"
+        }
+      ],
+      "usage": {
+        "input_tokens": 51139,
+        "cached_input_tokens": 41344,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 656,
+        "reasoning_output_tokens": 0
+      }
+    },
+    {
+      "attempt": "1789940473846-dependent-1-goal",
+      "case": "dependent",
+      "repetition": 1,
+      "mode": "goal",
+      "elapsedMs": 24342.51670799998,
+      "exitCode": 0,
+      "timedOut": false,
+      "passed": true,
+      "correct": 9,
+      "total": 9,
+      "errors": [],
+      "bridgeRequests": 1,
+      "toolCalls": [
+        {
+          "tool": "form_apply_goal",
+          "status": "completed",
+          "startMs": 15481.972624999995,
+          "endMs": 19418.841166,
+          "durationMs": 3936.8685410000035,
+          "returnedBytes": 3661,
+          "executionMs": 330.40000009536743,
+          "complete": true,
+          "primitiveCalls": 4
+        }
+      ],
+      "timeline": [
+        {
+          "atMs": 127.23541599995224,
+          "event": "thread.started"
+        },
+        {
+          "atMs": 130.42999999999302,
+          "event": "turn.started"
+        },
+        {
+          "atMs": 5367.623082999955,
+          "event": "item.completed",
+          "itemId": "item_0",
+          "itemType": "agent_message"
+        },
+        {
+          "atMs": 15481.972624999995,
+          "event": "item.started",
+          "itemId": "item_1",
+          "itemType": "mcp_tool_call",
+          "tool": "form_apply_goal",
+          "status": "in_progress"
+        },
+        {
+          "atMs": 19418.841166,
+          "event": "item.completed",
+          "itemId": "item_1",
+          "itemType": "mcp_tool_call",
+          "tool": "form_apply_goal",
+          "status": "completed"
+        },
+        {
+          "atMs": 21959.134457999957,
+          "event": "item.completed",
+          "itemId": "item_2",
+          "itemType": "agent_message"
+        },
+        {
+          "atMs": 21970.988083000004,
+          "event": "turn.completed"
+        }
+      ],
+      "usage": {
+        "input_tokens": 51166,
+        "cached_input_tokens": 41344,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 308,
+        "reasoning_output_tokens": 0
+      }
+    },
+    {
+      "attempt": "1789940473846-dependent-2-goal",
+      "case": "dependent",
+      "repetition": 2,
+      "mode": "goal",
+      "elapsedMs": 24572.437167000026,
+      "exitCode": 0,
+      "timedOut": false,
+      "passed": true,
+      "correct": 9,
+      "total": 9,
+      "errors": [],
+      "bridgeRequests": 1,
+      "toolCalls": [
+        {
+          "tool": "form_apply_goal",
+          "status": "completed",
+          "startMs": 16240.397209000017,
+          "endMs": 19375.460625000007,
+          "durationMs": 3135.06341599999,
+          "returnedBytes": 3631,
+          "executionMs": 328.5,
+          "complete": true,
+          "primitiveCalls": 4
+        }
+      ],
+      "timeline": [
+        {
+          "atMs": 145.1634170000325,
+          "event": "thread.started"
+        },
+        {
+          "atMs": 148.17399999999907,
+          "event": "turn.started"
+        },
+        {
+          "atMs": 6991.424375000002,
+          "event": "item.completed",
+          "itemId": "item_0",
+          "itemType": "agent_message"
+        },
+        {
+          "atMs": 16240.397209000017,
+          "event": "item.started",
+          "itemId": "item_1",
+          "itemType": "mcp_tool_call",
+          "tool": "form_apply_goal",
+          "status": "in_progress"
+        },
+        {
+          "atMs": 19375.460625000007,
+          "event": "item.completed",
+          "itemId": "item_1",
+          "itemType": "mcp_tool_call",
+          "tool": "form_apply_goal",
+          "status": "completed"
+        },
+        {
+          "atMs": 22299.045584000007,
+          "event": "item.completed",
+          "itemId": "item_2",
+          "itemType": "agent_message"
+        },
+        {
+          "atMs": 22315.65220900002,
+          "event": "turn.completed"
+        }
+      ],
+      "usage": {
+        "input_tokens": 51119,
+        "cached_input_tokens": 33152,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 334,
+        "reasoning_output_tokens": 0
+      }
+    },
+    {
+      "attempt": "1789940473846-dependent-2-script",
+      "case": "dependent",
+      "repetition": 2,
+      "mode": "script",
+      "elapsedMs": 35002.70325000002,
+      "exitCode": 0,
+      "timedOut": false,
+      "passed": true,
+      "correct": 9,
+      "total": 9,
+      "errors": [],
+      "bridgeRequests": 3,
+      "toolCalls": [
+        {
+          "tool": "form_inspect",
+          "status": "completed",
+          "startMs": 9384.616458000033,
+          "endMs": 9430.30800000002,
+          "durationMs": 45.69154199998593,
+          "returnedBytes": 1970,
+          "executionMs": 1.5
+        },
+        {
+          "tool": "browser_script",
+          "status": "completed",
+          "startMs": 25562.380125000025,
+          "endMs": 29615.209166000015,
+          "durationMs": 4052.82904099999,
+          "returnedBytes": 2252,
+          "executionMs": 240.93183299998054
+        }
+      ],
+      "timeline": [
+        {
+          "atMs": 122.6840830000001,
+          "event": "thread.started"
+        },
+        {
+          "atMs": 126.09754099999554,
+          "event": "turn.started"
+        },
+        {
+          "atMs": 5469.343083000043,
+          "event": "item.completed",
+          "itemId": "item_0",
+          "itemType": "agent_message"
+        },
+        {
+          "atMs": 9384.616458000033,
+          "event": "item.started",
+          "itemId": "item_1",
+          "itemType": "mcp_tool_call",
+          "tool": "form_inspect",
+          "status": "in_progress"
+        },
+        {
+          "atMs": 9430.30800000002,
+          "event": "item.completed",
+          "itemId": "item_1",
+          "itemType": "mcp_tool_call",
+          "tool": "form_inspect",
+          "status": "completed"
+        },
+        {
+          "atMs": 25562.380125000025,
+          "event": "item.started",
+          "itemId": "item_2",
+          "itemType": "mcp_tool_call",
+          "tool": "browser_script",
+          "status": "in_progress"
+        },
+        {
+          "atMs": 29615.209166000015,
+          "event": "item.completed",
+          "itemId": "item_2",
+          "itemType": "mcp_tool_call",
+          "tool": "browser_script",
+          "status": "completed"
+        },
+        {
+          "atMs": 32427.562250000017,
+          "event": "item.completed",
+          "itemId": "item_3",
+          "itemType": "agent_message"
+        },
+        {
+          "atMs": 32432.07016599999,
+          "event": "turn.completed"
+        }
+      ],
+      "usage": {
+        "input_tokens": 69200,
+        "cached_input_tokens": 58624,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 656,
+        "reasoning_output_tokens": 13
+      }
+    },
+    {
+      "attempt": "1789940473846-repeat-0-goal",
+      "case": "repeat",
+      "repetition": 0,
+      "mode": "goal",
+      "elapsedMs": 32425.662291999965,
+      "exitCode": 0,
+      "timedOut": false,
+      "passed": true,
+      "correct": 14,
+      "total": 14,
+      "errors": [],
+      "bridgeRequests": 1,
+      "toolCalls": [
+        {
+          "tool": "form_apply_goal",
+          "status": "completed",
+          "startMs": 20713.221457999956,
+          "endMs": 27203.800707999966,
+          "durationMs": 6490.57925000001,
+          "returnedBytes": 5349,
+          "executionMs": 394.59999990463257,
+          "complete": true,
+          "primitiveCalls": 5
+        }
+      ],
+      "timeline": [
+        {
+          "atMs": 1046.5833329999587,
+          "event": "thread.started"
+        },
+        {
+          "atMs": 1051.8245419999585,
+          "event": "turn.started"
+        },
+        {
+          "atMs": 8332.388582999993,
+          "event": "item.completed",
+          "itemId": "item_0",
+          "itemType": "agent_message"
+        },
+        {
+          "atMs": 20713.221457999956,
+          "event": "item.started",
+          "itemId": "item_1",
+          "itemType": "mcp_tool_call",
+          "tool": "form_apply_goal",
+          "status": "in_progress"
+        },
+        {
+          "atMs": 27203.800707999966,
+          "event": "item.completed",
+          "itemId": "item_1",
+          "itemType": "mcp_tool_call",
+          "tool": "form_apply_goal",
+          "status": "completed"
+        },
+        {
+          "atMs": 30331.603416999977,
+          "event": "item.completed",
+          "itemId": "item_2",
+          "itemType": "agent_message"
+        },
+        {
+          "atMs": 30347.417832999956,
+          "event": "turn.completed"
+        }
+      ],
+      "usage": {
+        "input_tokens": 52102,
+        "cached_input_tokens": 41344,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 430,
+        "reasoning_output_tokens": 0
+      }
+    },
+    {
+      "attempt": "1789940473846-repeat-0-script",
+      "case": "repeat",
+      "repetition": 0,
+      "mode": "script",
+      "elapsedMs": 38203.32920799998,
+      "exitCode": 0,
+      "timedOut": false,
+      "passed": true,
+      "correct": 14,
+      "total": 14,
+      "errors": [],
+      "bridgeRequests": 2,
+      "toolCalls": [
+        {
+          "tool": "browser_script",
+          "status": "completed",
+          "startMs": 30007.384791999997,
+          "endMs": 33532.931291999994,
+          "durationMs": 3525.5464999999967,
+          "returnedBytes": 3290,
+          "executionMs": 130.23333300004015
+        }
+      ],
+      "timeline": [
+        {
+          "atMs": 146.71041699999478,
+          "event": "thread.started"
+        },
+        {
+          "atMs": 149.08741699997336,
+          "event": "turn.started"
+        },
+        {
+          "atMs": 6043.173167000001,
+          "event": "item.completed",
+          "itemId": "item_0",
+          "itemType": "agent_message"
+        },
+        {
+          "atMs": 30007.384791999997,
+          "event": "item.started",
+          "itemId": "item_1",
+          "itemType": "mcp_tool_call",
+          "tool": "browser_script",
+          "status": "in_progress"
+        },
+        {
+          "atMs": 33532.931291999994,
+          "event": "item.completed",
+          "itemId": "item_1",
+          "itemType": "mcp_tool_call",
+          "tool": "browser_script",
+          "status": "completed"
+        },
+        {
+          "atMs": 35934.62020800001,
+          "event": "item.completed",
+          "itemId": "item_2",
+          "itemType": "agent_message"
+        },
+        {
+          "atMs": 35946.438124999986,
+          "event": "turn.completed"
+        }
+      ],
+      "usage": {
+        "input_tokens": 51937,
+        "cached_input_tokens": 41344,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 816,
+        "reasoning_output_tokens": 0
+      }
+    },
+    {
+      "attempt": "1789940473846-repeat-1-script",
+      "case": "repeat",
+      "repetition": 1,
+      "mode": "script",
+      "elapsedMs": 36973.240165999974,
+      "exitCode": 0,
+      "timedOut": false,
+      "passed": true,
+      "correct": 14,
+      "total": 14,
+      "errors": [],
+      "bridgeRequests": 2,
+      "toolCalls": [
+        {
+          "tool": "browser_script",
+          "status": "completed",
+          "startMs": 28587.09470799996,
+          "endMs": 32200.525957999984,
+          "durationMs": 3613.4312500000233,
+          "returnedBytes": 3274,
+          "executionMs": 135.1146670000162
+        }
+      ],
+      "timeline": [
+        {
+          "atMs": 1036.4991659999941,
+          "event": "thread.started"
+        },
+        {
+          "atMs": 1040.118124999979,
+          "event": "turn.started"
+        },
+        {
+          "atMs": 6187.126540999976,
+          "event": "item.completed",
+          "itemId": "item_0",
+          "itemType": "agent_message"
+        },
+        {
+          "atMs": 28587.09470799996,
+          "event": "item.started",
+          "itemId": "item_1",
+          "itemType": "mcp_tool_call",
+          "tool": "browser_script",
+          "status": "in_progress"
+        },
+        {
+          "atMs": 32200.525957999984,
+          "event": "item.completed",
+          "itemId": "item_1",
+          "itemType": "mcp_tool_call",
+          "tool": "browser_script",
+          "status": "completed"
+        },
+        {
+          "atMs": 34813.148832999985,
+          "event": "item.completed",
+          "itemId": "item_2",
+          "itemType": "agent_message"
+        },
+        {
+          "atMs": 34825.90941600001,
+          "event": "turn.completed"
+        }
+      ],
+      "usage": {
+        "input_tokens": 51891,
+        "cached_input_tokens": 32896,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 773,
+        "reasoning_output_tokens": 0
+      }
+    },
+    {
+      "attempt": "1789940473846-repeat-1-goal",
+      "case": "repeat",
+      "repetition": 1,
+      "mode": "goal",
+      "elapsedMs": 27993.911166000005,
+      "exitCode": 0,
+      "timedOut": false,
+      "passed": true,
+      "correct": 14,
+      "total": 14,
+      "errors": [],
+      "bridgeRequests": 1,
+      "toolCalls": [
+        {
+          "tool": "form_apply_goal",
+          "status": "completed",
+          "startMs": 19070.975916000025,
+          "endMs": 23205.50137500005,
+          "durationMs": 4134.525459000026,
+          "returnedBytes": 5348,
+          "executionMs": 391.40000009536743,
+          "complete": true,
+          "primitiveCalls": 5
+        }
+      ],
+      "timeline": [
+        {
+          "atMs": 960.3234159999993,
+          "event": "thread.started"
+        },
+        {
+          "atMs": 962.9712500000023,
+          "event": "turn.started"
+        },
+        {
+          "atMs": 5987.1664580000215,
+          "event": "item.completed",
+          "itemId": "item_0",
+          "itemType": "agent_message"
+        },
+        {
+          "atMs": 19070.975916000025,
+          "event": "item.started",
+          "itemId": "item_1",
+          "itemType": "mcp_tool_call",
+          "tool": "form_apply_goal",
+          "status": "in_progress"
+        },
+        {
+          "atMs": 23205.50137500005,
+          "event": "item.completed",
+          "itemId": "item_1",
+          "itemType": "mcp_tool_call",
+          "tool": "form_apply_goal",
+          "status": "completed"
+        },
+        {
+          "atMs": 25580.26795800001,
+          "event": "item.completed",
+          "itemId": "item_2",
+          "itemType": "agent_message"
+        },
+        {
+          "atMs": 25597.438333000056,
+          "event": "turn.completed"
+        }
+      ],
+      "usage": {
+        "input_tokens": 52133,
+        "cached_input_tokens": 41344,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 451,
+        "reasoning_output_tokens": 22
+      }
+    },
+    {
+      "attempt": "1789940473846-repeat-2-goal",
+      "case": "repeat",
+      "repetition": 2,
+      "mode": "goal",
+      "elapsedMs": 44774.71520799998,
+      "exitCode": 0,
+      "timedOut": false,
+      "passed": true,
+      "correct": 14,
+      "total": 14,
+      "errors": [],
+      "bridgeRequests": 2,
+      "toolCalls": [
+        {
+          "tool": "form_apply_goal",
+          "status": "completed",
+          "startMs": 17945.753666000033,
+          "endMs": 23458.055250000034,
+          "durationMs": 5512.301584000001,
+          "returnedBytes": 4235,
+          "executionMs": 1107.7000002861023,
+          "complete": false,
+          "reason": "FIELDS_NOT_READY",
+          "primitiveCalls": 19
+        },
+        {
+          "tool": "form_apply_goal",
+          "status": "completed",
+          "startMs": 34601.85812499997,
+          "endMs": 38625.33720800007,
+          "durationMs": 4023.4790830001,
+          "returnedBytes": 5189,
+          "executionMs": 299.19999980926514,
+          "complete": true,
+          "primitiveCalls": 4
+        }
+      ],
+      "timeline": [
+        {
+          "atMs": 997.4930830000085,
+          "event": "thread.started"
+        },
+        {
+          "atMs": 1001.177874999994,
+          "event": "turn.started"
+        },
+        {
+          "atMs": 6403.261999999988,
+          "event": "item.completed",
+          "itemId": "item_0",
+          "itemType": "agent_message"
+        },
+        {
+          "atMs": 17945.753666000033,
+          "event": "item.started",
+          "itemId": "item_1",
+          "itemType": "mcp_tool_call",
+          "tool": "form_apply_goal",
+          "status": "in_progress"
+        },
+        {
+          "atMs": 23458.055250000034,
+          "event": "item.completed",
+          "itemId": "item_1",
+          "itemType": "mcp_tool_call",
+          "tool": "form_apply_goal",
+          "status": "completed"
+        },
+        {
+          "atMs": 34601.85812499997,
+          "event": "item.started",
+          "itemId": "item_2",
+          "itemType": "mcp_tool_call",
+          "tool": "form_apply_goal",
+          "status": "in_progress"
+        },
+        {
+          "atMs": 38625.33720800007,
+          "event": "item.completed",
+          "itemId": "item_2",
+          "itemType": "mcp_tool_call",
+          "tool": "form_apply_goal",
+          "status": "completed"
+        },
+        {
+          "atMs": 42548.064083000005,
+          "event": "item.completed",
+          "itemId": "item_3",
+          "itemType": "agent_message"
+        },
+        {
+          "atMs": 42586.20425000001,
+          "event": "turn.completed"
+        }
+      ],
+      "usage": {
+        "input_tokens": 72022,
+        "cached_input_tokens": 59648,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 751,
+        "reasoning_output_tokens": 0
+      }
+    },
+    {
+      "attempt": "1789940473846-repeat-2-script",
+      "case": "repeat",
+      "repetition": 2,
+      "mode": "script",
+      "elapsedMs": 37735.684750000015,
+      "exitCode": 0,
+      "timedOut": false,
+      "passed": true,
+      "correct": 14,
+      "total": 14,
+      "errors": [],
+      "bridgeRequests": 3,
+      "toolCalls": [
+        {
+          "tool": "form_inspect",
+          "status": "completed",
+          "startMs": 9111.082708000089,
+          "endMs": 9167.972625000053,
+          "durationMs": 56.88991699996404,
+          "returnedBytes": 2077,
+          "executionMs": 3
+        },
+        {
+          "tool": "browser_script",
+          "status": "completed",
+          "startMs": 26170.032083000056,
+          "endMs": 32408.724042000016,
+          "durationMs": 6238.69195899996,
+          "returnedBytes": 3290,
+          "executionMs": 137.42820800002664
+        }
+      ],
+      "timeline": [
+        {
+          "atMs": 132.7347080000909,
+          "event": "thread.started"
+        },
+        {
+          "atMs": 135.02208300004713,
+          "event": "turn.started"
+        },
+        {
+          "atMs": 5441.523292000056,
+          "event": "item.completed",
+          "itemId": "item_0",
+          "itemType": "agent_message"
+        },
+        {
+          "atMs": 9111.082708000089,
+          "event": "item.started",
+          "itemId": "item_1",
+          "itemType": "mcp_tool_call",
+          "tool": "form_inspect",
+          "status": "in_progress"
+        },
+        {
+          "atMs": 9167.972625000053,
+          "event": "item.completed",
+          "itemId": "item_1",
+          "itemType": "mcp_tool_call",
+          "tool": "form_inspect",
+          "status": "completed"
+        },
+        {
+          "atMs": 26170.032083000056,
+          "event": "item.started",
+          "itemId": "item_2",
+          "itemType": "mcp_tool_call",
+          "tool": "browser_script",
+          "status": "in_progress"
+        },
+        {
+          "atMs": 32408.724042000016,
+          "event": "item.completed",
+          "itemId": "item_2",
+          "itemType": "mcp_tool_call",
+          "tool": "browser_script",
+          "status": "completed"
+        },
+        {
+          "atMs": 35484.24837500008,
+          "event": "item.completed",
+          "itemId": "item_3",
+          "itemType": "agent_message"
+        },
+        {
+          "atMs": 35502.78379200003,
+          "event": "turn.completed"
+        }
+      ],
+      "usage": {
+        "input_tokens": 70044,
+        "cached_input_tokens": 58880,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 692,
+        "reasoning_output_tokens": 0
+      }
+    }
+  ]
+}

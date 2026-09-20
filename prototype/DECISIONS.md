@@ -53,3 +53,8 @@
 - [Jev Browser Use](https://github.com/wy-coliney/jev-browser-use)
 - [JobApplyAutofill](https://github.com/aaa-wxl/JobApplyAutofill)
 - [Proficiently apply Skill](https://github.com/proficientlyjobs/proficiently-claude-skills)
+
+
+## 持续目标的本轮结论
+
+用户已授权持续探索减少模型往返，直至实际效果达标。一次调用只是必要优化之一；资料引用还能避免模型重抄字段值。本轮已有映射 JSON 的小表单从约 32.5 秒降至 19.1 秒，但可复用脚本已达到约 23.2 秒，不能宣称自研浏览器核心有稳定两倍优势。继续优先验证原始资料到陌生页面的首次映射、真实控件观察和失败恢复，保持成熟批量/缓存脚本作为强基线。完整目标未完成。

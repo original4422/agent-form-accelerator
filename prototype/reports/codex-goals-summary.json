@@ -1,0 +1,31 @@
+{
+  "groups": [
+    {
+      "case": "plain",
+      "mediansSeconds": {
+        "goal": 30.368600709,
+        "script": 38.793634374999996
+      },
+      "timeReductionPercent": 21.71756733220487
+    },
+    {
+      "case": "dependent",
+      "mediansSeconds": {
+        "goal": 24.572437167000025,
+        "script": 35.00270325000002
+      },
+      "timeReductionPercent": 29.798458731898048
+    },
+    {
+      "case": "repeat",
+      "mediansSeconds": {
+        "goal": 32.42566229199996,
+        "script": 37.73568475000001
+      },
+      "timeReductionPercent": 14.071620783295968
+    }
+  ],
+  "passed": 18,
+  "total": 18,
+  "correctFields": 258
+}

@@ -1,0 +1,787 @@
+{
+  "batchId": 1789941150476,
+  "date": "2026-09-20T21:57:11.017Z",
+  "scope": "Already-structured and field-mapped fictional JSON source. Same source visible in prompt for all modes. Inline model copies values; reference passes source ID; script receives facts/expansions variables locally. Artifact serialization/write time measured and included in total; resume extraction and unseen-page mapping NOT measured. No mandatory initial/final host inspect. Equal final 120ms observation window. Same Codex defaults and auto-review. All attempts retained.",
+  "rows": [
+    {
+      "attempt": "1789941150476-plain-0-inline",
+      "case": "plain",
+      "repetition": 0,
+      "mode": "inline",
+      "preparationMs": 0.3425830000001042,
+      "hostElapsedMs": 32474.312040999997,
+      "elapsedMs": 32474.654624,
+      "exitCode": 0,
+      "timedOut": false,
+      "passed": true,
+      "correct": 20,
+      "total": 20,
+      "errors": [],
+      "toolCalls": [
+        {
+          "tool": "form_apply_inline",
+          "status": "completed",
+          "startMs": 24269.555833000002,
+          "endMs": 27071.462458,
+          "durationMs": 2801.9066249999996,
+          "returnedBytes": 7071,
+          "executionMs": 317.69999980926514,
+          "complete": true,
+          "primitiveCalls": 3
+        }
+      ],
+      "usage": {
+        "input_tokens": 52493,
+        "cached_input_tokens": 41472,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 500,
+        "reasoning_output_tokens": 0
+      },
+      "bridgeRequests": 1,
+      "timeline": [
+        {
+          "atMs": 1742.2852910000001,
+          "event": "thread.started"
+        },
+        {
+          "atMs": 1759.193041,
+          "event": "turn.started"
+        },
+        {
+          "atMs": 8186.899582999999,
+          "event": "item.completed",
+          "itemId": "item_0",
+          "itemType": "agent_message"
+        },
+        {
+          "atMs": 24269.555833000002,
+          "event": "item.started",
+          "itemId": "item_1",
+          "itemType": "mcp_tool_call",
+          "tool": "form_apply_inline",
+          "status": "in_progress"
+        },
+        {
+          "atMs": 27071.462458,
+          "event": "item.completed",
+          "itemId": "item_1",
+          "itemType": "mcp_tool_call",
+          "tool": "form_apply_inline",
+          "status": "completed"
+        },
+        {
+          "atMs": 30304.27675,
+          "event": "item.completed",
+          "itemId": "item_2",
+          "itemType": "agent_message"
+        },
+        {
+          "atMs": 30318.126208,
+          "event": "turn.completed"
+        }
+      ],
+      "sourceHash": "b75620f5b01d98e48cf89f5ec2132867721931637993ea5b367b34a3847a1351"
+    },
+    {
+      "attempt": "1789941150476-plain-0-reference",
+      "case": "plain",
+      "repetition": 0,
+      "mode": "reference",
+      "preparationMs": 0.8999580000017886,
+      "hostElapsedMs": 19117.408000000003,
+      "elapsedMs": 19118.307958000005,
+      "exitCode": 0,
+      "timedOut": false,
+      "passed": true,
+      "correct": 20,
+      "total": 20,
+      "errors": [],
+      "toolCalls": [
+        {
+          "tool": "form_apply_source",
+          "status": "completed",
+          "startMs": 11181.759417000001,
+          "endMs": 14470.431292000001,
+          "durationMs": 3288.671875,
+          "returnedBytes": 7070,
+          "executionMs": 290.2000002861023,
+          "complete": true,
+          "primitiveCalls": 3
+        }
+      ],
+      "usage": {
+        "input_tokens": 52248,
+        "cached_input_tokens": 41600,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 170,
+        "reasoning_output_tokens": 0
+      },
+      "bridgeRequests": 1,
+      "timeline": [
+        {
+          "atMs": 1195.255459,
+          "event": "thread.started"
+        },
+        {
+          "atMs": 1198.0339590000003,
+          "event": "turn.started"
+        },
+        {
+          "atMs": 6594.736250000002,
+          "event": "item.completed",
+          "itemId": "item_0",
+          "itemType": "agent_message"
+        },
+        {
+          "atMs": 11181.759417000001,
+          "event": "item.started",
+          "itemId": "item_1",
+          "itemType": "mcp_tool_call",
+          "tool": "form_apply_source",
+          "status": "in_progress"
+        },
+        {
+          "atMs": 14470.431292000001,
+          "event": "item.completed",
+          "itemId": "item_1",
+          "itemType": "mcp_tool_call",
+          "tool": "form_apply_source",
+          "status": "completed"
+        },
+        {
+          "atMs": 16917.215417,
+          "event": "item.completed",
+          "itemId": "item_2",
+          "itemType": "agent_message"
+        },
+        {
+          "atMs": 16922.077125000003,
+          "event": "turn.completed"
+        }
+      ],
+      "sourceHash": "b75620f5b01d98e48cf89f5ec2132867721931637993ea5b367b34a3847a1351"
+    },
+    {
+      "attempt": "1789941150476-plain-0-script",
+      "case": "plain",
+      "repetition": 0,
+      "mode": "script",
+      "preparationMs": 1.0146249999961583,
+      "hostElapsedMs": 41478.251874999994,
+      "elapsedMs": 41479.26649999999,
+      "exitCode": 0,
+      "timedOut": false,
+      "passed": true,
+      "correct": 20,
+      "total": 20,
+      "errors": [],
+      "toolCalls": [
+        {
+          "tool": "browser_script",
+          "status": "completed",
+          "startMs": 18391.692667000003,
+          "endMs": 22010.407417000002,
+          "durationMs": 3618.714749999999,
+          "returnedBytes": 4126,
+          "executionMs": 132.03533400000015
+        },
+        {
+          "tool": "browser_script",
+          "status": "completed",
+          "startMs": 31101.834582999996,
+          "endMs": 35737.837875000005,
+          "durationMs": 4636.0032920000085,
+          "returnedBytes": 4125,
+          "executionMs": 131.45245799999975
+        }
+      ],
+      "usage": {
+        "input_tokens": 71923,
+        "cached_input_tokens": 59904,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 578,
+        "reasoning_output_tokens": 0
+      },
+      "bridgeRequests": 4,
+      "timeline": [
+        {
+          "atMs": 1006.8491250000006,
+          "event": "thread.started"
+        },
+        {
+          "atMs": 1036.2894579999993,
+          "event": "turn.started"
+        },
+        {
+          "atMs": 6344.140958000004,
+          "event": "item.completed",
+          "itemId": "item_0",
+          "itemType": "agent_message"
+        },
+        {
+          "atMs": 18391.692667000003,
+          "event": "item.started",
+          "itemId": "item_1",
+          "itemType": "mcp_tool_call",
+          "tool": "browser_script",
+          "status": "in_progress"
+        },
+        {
+          "atMs": 22010.407417000002,
+          "event": "item.completed",
+          "itemId": "item_1",
+          "itemType": "mcp_tool_call",
+          "tool": "browser_script",
+          "status": "completed"
+        },
+        {
+          "atMs": 31101.834582999996,
+          "event": "item.started",
+          "itemId": "item_2",
+          "itemType": "mcp_tool_call",
+          "tool": "browser_script",
+          "status": "in_progress"
+        },
+        {
+          "atMs": 35737.837875000005,
+          "event": "item.completed",
+          "itemId": "item_2",
+          "itemType": "mcp_tool_call",
+          "tool": "browser_script",
+          "status": "completed"
+        },
+        {
+          "atMs": 38775.710208,
+          "event": "item.completed",
+          "itemId": "item_3",
+          "itemType": "agent_message"
+        },
+        {
+          "atMs": 38795.586458,
+          "event": "turn.completed"
+        }
+      ],
+      "sourceHash": "b75620f5b01d98e48cf89f5ec2132867721931637993ea5b367b34a3847a1351"
+    },
+    {
+      "attempt": "1789941150476-plain-1-reference",
+      "case": "plain",
+      "repetition": 1,
+      "mode": "reference",
+      "preparationMs": 0.2586670000018785,
+      "hostElapsedMs": 19828.940334,
+      "elapsedMs": 19829.199001,
+      "exitCode": 0,
+      "timedOut": false,
+      "passed": true,
+      "correct": 20,
+      "total": 20,
+      "errors": [],
+      "toolCalls": [
+        {
+          "tool": "form_apply_source",
+          "status": "completed",
+          "startMs": 10111.206291999988,
+          "endMs": 15349.323124999995,
+          "durationMs": 5238.116833000007,
+          "returnedBytes": 7041,
+          "executionMs": 315,
+          "complete": true,
+          "primitiveCalls": 3
+        }
+      ],
+      "usage": {
+        "input_tokens": 52298,
+        "cached_input_tokens": 41600,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 134,
+        "reasoning_output_tokens": 0
+      },
+      "bridgeRequests": 1,
+      "timeline": [
+        {
+          "atMs": 352.21166699999594,
+          "event": "thread.started"
+        },
+        {
+          "atMs": 359.34320899999875,
+          "event": "turn.started"
+        },
+        {
+          "atMs": 6128.154874999993,
+          "event": "item.completed",
+          "itemId": "item_0",
+          "itemType": "agent_message"
+        },
+        {
+          "atMs": 10111.206291999988,
+          "event": "item.started",
+          "itemId": "item_1",
+          "itemType": "mcp_tool_call",
+          "tool": "form_apply_source",
+          "status": "in_progress"
+        },
+        {
+          "atMs": 15349.323124999995,
+          "event": "item.completed",
+          "itemId": "item_1",
+          "itemType": "mcp_tool_call",
+          "tool": "form_apply_source",
+          "status": "completed"
+        },
+        {
+          "atMs": 17524.521583999987,
+          "event": "item.completed",
+          "itemId": "item_2",
+          "itemType": "agent_message"
+        },
+        {
+          "atMs": 17526.63804199999,
+          "event": "turn.completed"
+        }
+      ],
+      "sourceHash": "b75620f5b01d98e48cf89f5ec2132867721931637993ea5b367b34a3847a1351"
+    },
+    {
+      "attempt": "1789941150476-plain-1-script",
+      "case": "plain",
+      "repetition": 1,
+      "mode": "script",
+      "preparationMs": 0.5272910000057891,
+      "hostElapsedMs": 39531.86962499999,
+      "elapsedMs": 39532.396916,
+      "exitCode": 0,
+      "timedOut": false,
+      "passed": true,
+      "correct": 20,
+      "total": 20,
+      "errors": [],
+      "toolCalls": [
+        {
+          "tool": "browser_script",
+          "status": "completed",
+          "startMs": 20660.53558299999,
+          "endMs": 25619.76320799999,
+          "durationMs": 4959.2276249999995,
+          "returnedBytes": 4126,
+          "executionMs": 132.75366700001177
+        },
+        {
+          "tool": "browser_script",
+          "status": "completed",
+          "startMs": 31546.709375000006,
+          "endMs": 34485.723,
+          "durationMs": 2939.0136249999923,
+          "returnedBytes": 4124,
+          "executionMs": 132.99729100000695
+        }
+      ],
+      "usage": {
+        "input_tokens": 72048,
+        "cached_input_tokens": 67968,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 643,
+        "reasoning_output_tokens": 0
+      },
+      "bridgeRequests": 4,
+      "timeline": [
+        {
+          "atMs": 958.7755829999951,
+          "event": "thread.started"
+        },
+        {
+          "atMs": 963.4462499999936,
+          "event": "turn.started"
+        },
+        {
+          "atMs": 6337.575165999995,
+          "event": "item.completed",
+          "itemId": "item_0",
+          "itemType": "agent_message"
+        },
+        {
+          "atMs": 20660.53558299999,
+          "event": "item.started",
+          "itemId": "item_1",
+          "itemType": "mcp_tool_call",
+          "tool": "browser_script",
+          "status": "in_progress"
+        },
+        {
+          "atMs": 25619.76320799999,
+          "event": "item.completed",
+          "itemId": "item_1",
+          "itemType": "mcp_tool_call",
+          "tool": "browser_script",
+          "status": "completed"
+        },
+        {
+          "atMs": 31546.709375000006,
+          "event": "item.started",
+          "itemId": "item_2",
+          "itemType": "mcp_tool_call",
+          "tool": "browser_script",
+          "status": "in_progress"
+        },
+        {
+          "atMs": 34485.723,
+          "event": "item.completed",
+          "itemId": "item_2",
+          "itemType": "mcp_tool_call",
+          "tool": "browser_script",
+          "status": "completed"
+        },
+        {
+          "atMs": 37082.170083000005,
+          "event": "item.completed",
+          "itemId": "item_3",
+          "itemType": "agent_message"
+        },
+        {
+          "atMs": 37117.55804100001,
+          "event": "turn.completed"
+        }
+      ],
+      "sourceHash": "b75620f5b01d98e48cf89f5ec2132867721931637993ea5b367b34a3847a1351"
+    },
+    {
+      "attempt": "1789941150476-plain-1-inline",
+      "case": "plain",
+      "repetition": 1,
+      "mode": "inline",
+      "preparationMs": 3.435874999995576,
+      "hostElapsedMs": 31802.78,
+      "elapsedMs": 31806.215874999994,
+      "exitCode": 0,
+      "timedOut": false,
+      "passed": true,
+      "correct": 20,
+      "total": 20,
+      "errors": [],
+      "toolCalls": [
+        {
+          "tool": "form_apply_inline",
+          "status": "completed",
+          "startMs": 20199.090916000016,
+          "endMs": 25576.100250000018,
+          "durationMs": 5377.009334000002,
+          "returnedBytes": 7055,
+          "executionMs": 323.3999996185303,
+          "complete": true,
+          "primitiveCalls": 3
+        }
+      ],
+      "usage": {
+        "input_tokens": 52482,
+        "cached_input_tokens": 41472,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 495,
+        "reasoning_output_tokens": 0
+      },
+      "bridgeRequests": 1,
+      "timeline": [
+        {
+          "atMs": 148.6203749999986,
+          "event": "thread.started"
+        },
+        {
+          "atMs": 150.91391600001953,
+          "event": "turn.started"
+        },
+        {
+          "atMs": 5727.3802500000165,
+          "event": "item.completed",
+          "itemId": "item_0",
+          "itemType": "agent_message"
+        },
+        {
+          "atMs": 20199.090916000016,
+          "event": "item.started",
+          "itemId": "item_1",
+          "itemType": "mcp_tool_call",
+          "tool": "form_apply_inline",
+          "status": "in_progress"
+        },
+        {
+          "atMs": 25576.100250000018,
+          "event": "item.completed",
+          "itemId": "item_1",
+          "itemType": "mcp_tool_call",
+          "tool": "form_apply_inline",
+          "status": "completed"
+        },
+        {
+          "atMs": 29496.703041,
+          "event": "item.completed",
+          "itemId": "item_2",
+          "itemType": "agent_message"
+        },
+        {
+          "atMs": 29508.984916000016,
+          "event": "turn.completed"
+        }
+      ],
+      "sourceHash": "b75620f5b01d98e48cf89f5ec2132867721931637993ea5b367b34a3847a1351"
+    },
+    {
+      "attempt": "1789941150476-plain-2-script",
+      "case": "plain",
+      "repetition": 2,
+      "mode": "script",
+      "preparationMs": 0.20429200000944547,
+      "hostElapsedMs": 45345.901333999995,
+      "elapsedMs": 45346.105626000004,
+      "exitCode": 0,
+      "timedOut": false,
+      "passed": true,
+      "correct": 20,
+      "total": 20,
+      "errors": [],
+      "toolCalls": [
+        {
+          "tool": "browser_script",
+          "status": "completed",
+          "startMs": 18321.617791999975,
+          "endMs": 23702.714874999976,
+          "durationMs": 5381.097083000001,
+          "returnedBytes": 4127,
+          "executionMs": 135.26679199998034
+        },
+        {
+          "tool": "browser_script",
+          "status": "completed",
+          "startMs": 31729.192499999976,
+          "endMs": 39171.95470899998,
+          "durationMs": 7442.762209000008,
+          "returnedBytes": 4125,
+          "executionMs": 131.59933299999102
+        }
+      ],
+      "usage": {
+        "input_tokens": 71994,
+        "cached_input_tokens": 59904,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 647,
+        "reasoning_output_tokens": 0
+      },
+      "bridgeRequests": 4,
+      "timeline": [
+        {
+          "atMs": 126.76499999998487,
+          "event": "thread.started"
+        },
+        {
+          "atMs": 130.02429199998733,
+          "event": "turn.started"
+        },
+        {
+          "atMs": 5721.430499999988,
+          "event": "item.completed",
+          "itemId": "item_0",
+          "itemType": "agent_message"
+        },
+        {
+          "atMs": 18321.617791999975,
+          "event": "item.started",
+          "itemId": "item_1",
+          "itemType": "mcp_tool_call",
+          "tool": "browser_script",
+          "status": "in_progress"
+        },
+        {
+          "atMs": 23702.714874999976,
+          "event": "item.completed",
+          "itemId": "item_1",
+          "itemType": "mcp_tool_call",
+          "tool": "browser_script",
+          "status": "completed"
+        },
+        {
+          "atMs": 31729.192499999976,
+          "event": "item.started",
+          "itemId": "item_2",
+          "itemType": "mcp_tool_call",
+          "tool": "browser_script",
+          "status": "in_progress"
+        },
+        {
+          "atMs": 39171.95470899998,
+          "event": "item.completed",
+          "itemId": "item_2",
+          "itemType": "mcp_tool_call",
+          "tool": "browser_script",
+          "status": "completed"
+        },
+        {
+          "atMs": 42817.761666999984,
+          "event": "item.completed",
+          "itemId": "item_3",
+          "itemType": "agent_message"
+        },
+        {
+          "atMs": 42824.475916999974,
+          "event": "turn.completed"
+        }
+      ],
+      "sourceHash": "b75620f5b01d98e48cf89f5ec2132867721931637993ea5b367b34a3847a1351"
+    },
+    {
+      "attempt": "1789941150476-plain-2-inline",
+      "case": "plain",
+      "repetition": 2,
+      "mode": "inline",
+      "preparationMs": 0.19195800001034513,
+      "hostElapsedMs": 32511.246291999996,
+      "elapsedMs": 32511.438250000007,
+      "exitCode": 0,
+      "timedOut": false,
+      "passed": true,
+      "correct": 20,
+      "total": 20,
+      "errors": [],
+      "toolCalls": [
+        {
+          "tool": "form_apply_inline",
+          "status": "completed",
+          "startMs": 22143.440499999997,
+          "endMs": 27167.710124999983,
+          "durationMs": 5024.269624999986,
+          "returnedBytes": 7070,
+          "executionMs": 300.7000002861023,
+          "complete": true,
+          "primitiveCalls": 3
+        }
+      ],
+      "usage": {
+        "input_tokens": 52512,
+        "cached_input_tokens": 41472,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 513,
+        "reasoning_output_tokens": 0
+      },
+      "bridgeRequests": 1,
+      "timeline": [
+        {
+          "atMs": 127.49687499998254,
+          "event": "thread.started"
+        },
+        {
+          "atMs": 130.19633299999987,
+          "event": "turn.started"
+        },
+        {
+          "atMs": 5755.641124999995,
+          "event": "item.completed",
+          "itemId": "item_0",
+          "itemType": "agent_message"
+        },
+        {
+          "atMs": 22143.440499999997,
+          "event": "item.started",
+          "itemId": "item_1",
+          "itemType": "mcp_tool_call",
+          "tool": "form_apply_inline",
+          "status": "in_progress"
+        },
+        {
+          "atMs": 27167.710124999983,
+          "event": "item.completed",
+          "itemId": "item_1",
+          "itemType": "mcp_tool_call",
+          "tool": "form_apply_inline",
+          "status": "completed"
+        },
+        {
+          "atMs": 30259.828332999983,
+          "event": "item.completed",
+          "itemId": "item_2",
+          "itemType": "agent_message"
+        },
+        {
+          "atMs": 30272.44104199999,
+          "event": "turn.completed"
+        }
+      ],
+      "sourceHash": "b75620f5b01d98e48cf89f5ec2132867721931637993ea5b367b34a3847a1351"
+    },
+    {
+      "attempt": "1789941150476-plain-2-reference",
+      "case": "plain",
+      "repetition": 2,
+      "mode": "reference",
+      "preparationMs": 0.3084169999929145,
+      "hostElapsedMs": 17594.813542000018,
+      "elapsedMs": 17595.12195900001,
+      "exitCode": 0,
+      "timedOut": false,
+      "passed": true,
+      "correct": 20,
+      "total": 20,
+      "errors": [],
+      "toolCalls": [
+        {
+          "tool": "form_apply_source",
+          "status": "completed",
+          "startMs": 9572.872292000044,
+          "endMs": 12770.34616700001,
+          "durationMs": 3197.473874999967,
+          "returnedBytes": 7054,
+          "executionMs": 297.69999980926514,
+          "complete": true,
+          "primitiveCalls": 3
+        }
+      ],
+      "usage": {
+        "input_tokens": 52237,
+        "cached_input_tokens": 47744,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 170,
+        "reasoning_output_tokens": 0
+      },
+      "bridgeRequests": 1,
+      "timeline": [
+        {
+          "atMs": 170.13816700002644,
+          "event": "thread.started"
+        },
+        {
+          "atMs": 172.0592090000282,
+          "event": "turn.started"
+        },
+        {
+          "atMs": 5464.989541999996,
+          "event": "item.completed",
+          "itemId": "item_0",
+          "itemType": "agent_message"
+        },
+        {
+          "atMs": 9572.872292000044,
+          "event": "item.started",
+          "itemId": "item_1",
+          "itemType": "mcp_tool_call",
+          "tool": "form_apply_source",
+          "status": "in_progress"
+        },
+        {
+          "atMs": 12770.34616700001,
+          "event": "item.completed",
+          "itemId": "item_1",
+          "itemType": "mcp_tool_call",
+          "tool": "form_apply_source",
+          "status": "completed"
+        },
+        {
+          "atMs": 15213.704958999995,
+          "event": "item.completed",
+          "itemId": "item_2",
+          "itemType": "agent_message"
+        },
+        {
+          "atMs": 15222.919709000038,
+          "event": "turn.completed"
+        }
+      ],
+      "sourceHash": "b75620f5b01d98e48cf89f5ec2132867721931637993ea5b367b34a3847a1351"
+    }
+  ]
+}

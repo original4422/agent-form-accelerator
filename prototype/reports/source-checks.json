@@ -1,0 +1,37 @@
+{
+  "date": "2026-09-20T21:51:57.137Z",
+  "results": [
+    {
+      "name": "inline source MCP: plain",
+      "passed": true
+    },
+    {
+      "name": "inline source MCP: dependent",
+      "passed": true
+    },
+    {
+      "name": "inline source MCP: repeat",
+      "passed": true
+    },
+    {
+      "name": "reference source MCP: plain",
+      "passed": true
+    },
+    {
+      "name": "reference source MCP: dependent",
+      "passed": true
+    },
+    {
+      "name": "reference source MCP: repeat",
+      "passed": true
+    },
+    {
+      "name": "changed source rejected before page write",
+      "passed": true
+    },
+    {
+      "name": "unregistered source rejected before page write",
+      "passed": true
+    }
+  ]
+}

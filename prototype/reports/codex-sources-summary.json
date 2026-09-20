@@ -1,0 +1,49 @@
+{
+  "groups": [
+    {
+      "label": "逐项输出完整资料",
+      "batchId": 1789941150476,
+      "mode": "inline",
+      "medianSeconds": 32.474654623999996,
+      "medianOutputTokens": 500,
+      "passed": 3
+    },
+    {
+      "label": "引用资料 ID",
+      "batchId": 1789941150476,
+      "mode": "reference",
+      "medianSeconds": 19.118307958000006,
+      "medianOutputTokens": 170,
+      "passed": 3
+    },
+    {
+      "label": "首次脚本（需修复单选）",
+      "batchId": 1789941150476,
+      "mode": "script",
+      "medianSeconds": 41.47926649999999,
+      "medianOutputTokens": 643,
+      "passed": 3
+    },
+    {
+      "label": "补强提示后的新脚本",
+      "batchId": 1789941584035,
+      "mode": "script",
+      "medianSeconds": 31.909141376,
+      "medianOutputTokens": 481,
+      "passed": 3
+    },
+    {
+      "label": "已有可复用脚本",
+      "batchId": 1789941584035,
+      "mode": "cached",
+      "medianSeconds": 23.208760623999996,
+      "medianOutputTokens": 162,
+      "passed": 3
+    }
+  ],
+  "passed": 15,
+  "total": 15,
+  "correctFields": 300,
+  "timeReductionVsInlinePercent": 41.128525678389025,
+  "timeReductionVsCorrectedScriptPercent": 40.08516953583852
+}

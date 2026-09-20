@@ -2,10 +2,12 @@
 
 给 Codex 和 Claude Code 共用的网页填表执行工具。已有 Agent 负责理解资料、匹配字段，本地扩展负责批量填写和回读校验，不另行调用模型 API。
 
-**当前状态：工程原型。有界计划在一个 Codex 合成任务中耗时减少约 19%–21%，尚未达到 2 倍目标，也未验证真实招聘网站。**
+**当前状态：工程原型。已有结构化资料时，来源引用在单个 Codex 合成任务中耗时减少约 40%；强缓存脚本已接近其速度。尚未证明陌生招聘页的完整流程稳定提速 2 倍。**
 
 ## 看结果
 
+- [继续减少模型往返](prototype/reports/ONE-CALL.md)：三类表单的一次调用对照、异常恢复及当前瓶颈。
+- [资料引用实验](prototype/reports/SOURCE-REFERENCES.md)：避免模型重新输出整份资料，并与可复用脚本比较。
 - [目标计划与 Codex 对照](prototype/reports/GOAL-PLAN.md)：本轮减少模型往返的实验、脚本强基线和适用边界。
 - [为什么当前原型更慢](prototype/reports/FIRST-PRINCIPLES.md)：第一性原理、等待/传输消融、Codex 时间分布与候选架构。
 - [原型验证结论](prototype/reports/VALIDATION.md)：结论、Codex 实测、Claude 登录阻塞与下一步。
@@ -32,13 +34,19 @@ npm run check
 npm run bench
 node prototype/bench/hosts.mjs
 node prototype/bench/plan-check.mjs
+node prototype/bench/goal-check.mjs
+node prototype/bench/source-check.mjs
 node prototype/bench/codex-plans.mjs repeat
+node prototype/bench/codex-goals.mjs
+node prototype/bench/codex-sources.mjs plain
 node prototype/bench/diagnose.mjs
 ```
 
 `hosts.mjs` 当前默认只使用本机已有的 Codex 登录完成一次虚构资料填表；Claude 测试按用户要求暂停。宿主只注入本次运行的 MCP 配置，不改全局配置。该测试是**接入验证**，不是原生浏览器工具的速度基准。原始宿主日志保存在被 Git 忽略的 `prototype/reports/private/`。
 
 `codex-plans.mjs` 只测试 Codex，三种工具表面按平衡顺序各跑三次，计入模型、审批和 CLI 启动/退出；需使用当前 Codex 账户用量。浏览器已启动，数据全为虚构，所有结果留存。脚本基线只在测试环境暴露，产品工具不提供任意代码执行。
+
+`codex-goals.mjs` 允许目标执行器和脚本都在一次调用里观察、填写及核验，额外调用仅在宿主判断有必要时发生。`codex-sources.mjs` 比较逐项传值、本地 JSON 资料引用，以及脚本直接引用相同资料；已结构化和已映射字段是本实验的前提，不能代表原始简历解析已完成。每轮结果有独立时间戳文件保留。
 
 `diagnose.mjs` 在临时扩展副本中做等待/传输消融并核验延迟错误，没有把删等待的实验变体写入实际运行时。
 
@@ -73,6 +81,8 @@ claude --mcp-config '{"mcpServers":{"afa":{"command":"node","args":["/ABSOLUTE/P
 - 返回带分组的字段列表、选项、引用、页面快照；批量填写后回读值并检查 HTML validity。
 - `form_fill` 使用观察到的 ref；旧快照、替换的节点、变更的标签/选项会停止该批次。
 - `form_execute_plan` 使用明确的 fill/expand 阶段，在页面内发生预期变化后重新观察，并按精确 group/label 绑定字段；歧义、类型变化、缺少字段/选项和校验失败会停止。依赖选项每阶段最多等待 1 秒，总预算 8 秒。
+- `form_apply_goal` 可在已知精确字段目标时自行观察、填写和核验；处理同义同类型的节点替换，遇到未知语义或拒绝值返回宿主。最终核验等待 120 ms，不等于任意异步校验均已完成。
+- 实验性的 `prototype/src/source-mcp.mjs` 可通过启动时明确设置的 `AFA_SOURCE_FILE` 和 `AFA_SESSION_FILE` 引用本地 JSON 资料，支持 `{id, fields: [{group, label, value}], expansions: []}`。数据文件发生变化会要求重新加载会话；它不是已建成的个人资料管理器。
 - 产品接口没有任意脚本、选择器、提交或导航操作。
 - 自定义 ARIA 下拉、iframe、shadow DOM、文件上传、跨页流程尚未实现；原型不会把它们报告成已完成。
 - 同一时刻只连接一个标签页；不要让两个宿主同时填写同一张表。

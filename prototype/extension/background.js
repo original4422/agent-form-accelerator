@@ -1,5 +1,6 @@
 import {executeFormRequest} from './form-runtime.js';
 import {executePlan} from './plan-executor.js';
+import {executeGoal} from './goal-executor.js';
 
 let socket, heartbeat, selectedTab;
 let queue = Promise.resolve();
@@ -41,7 +42,8 @@ export async function connect(config) {
             return result;
           };
           const result = message.request.op === 'plan'
-            ? await executePlan(message.request, primitive) : await primitive(message.request);
+            ? await executePlan(message.request, primitive) : message.request.op === 'goal'
+              ? await executeGoal(message.request, primitive) : await primitive(message.request);
           ws.send(JSON.stringify({type: 'response', id: message.id, result}));
         } catch (e) {
           if (ws.readyState === WebSocket.OPEN) ws.send(JSON.stringify({type: 'response', id: message.id, error: e.message}));
