@@ -12,7 +12,8 @@
     "mcp": "node prototype/src/mcp.mjs",
     "demo": "node prototype/scripts/demo.mjs",
     "bench": "node prototype/bench/run.mjs",
-    "check": "node prototype/bench/check.mjs"
+    "check": "node prototype/bench/check.mjs",
+    "build:fixtures": "node prototype/scripts/build-fixtures.mjs"
   },
   "dependencies": {
     "@modelcontextprotocol/sdk": "1.30.0",
@@ -21,6 +22,10 @@
   },
   "devDependencies": {
     "@playwright/mcp": "0.0.82",
-    "playwright": "1.63.0"
+    "@radix-ui/react-select": "2.3.7",
+    "esbuild": "0.28.2",
+    "playwright": "1.63.0",
+    "react": "19.3.0",
+    "react-dom": "19.3.0"
   }
 }

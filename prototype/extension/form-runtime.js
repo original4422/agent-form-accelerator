@@ -49,18 +49,29 @@ export async function executeFormRequest(request) {
     return `name:${el.name}`;
   };
   const kind = (el) => {
+    if (el.getAttribute('role') === 'combobox' && el.tagName !== 'SELECT') {
+      // Only select-only buttons. Editable/autocomplete/tree/grid widgets need
+      // a different contract; never treat their text as a selected value.
+      return el.tagName === 'BUTTON' && el.type === 'button' &&
+        (!el.getAttribute('aria-haspopup') || el.getAttribute('aria-haspopup') === 'listbox')
+        ? 'combobox' : 'unsupported-combobox';
+    }
     if (el.tagName === 'BUTTON') return 'add-row';
-    if (el.getAttribute('role') === 'combobox' && el.tagName !== 'SELECT') return 'unsupported-combobox';
     if (el.tagName === 'SELECT') return el.multiple ? 'unsupported-multiselect' : 'select';
     if (el.tagName === 'TEXTAREA') return 'textarea';
     return el.type || 'unsupported';
   };
-  const supported = new Set(['text', 'email', 'tel', 'url', 'number', 'date', 'month', 'time', 'textarea', 'select', 'checkbox', 'radio', 'add-row']);
-  const options = (el) => el.tagName === 'SELECT' ? Array.from(el.options).map((o) => ({value: o.value, label: clean(o.text), disabled: o.disabled})) : undefined;
+  const supported = new Set(['text', 'email', 'tel', 'url', 'number', 'date', 'month', 'time', 'textarea', 'select', 'combobox', 'checkbox', 'radio', 'add-row']);
+  state.comboboxOptions ??= new WeakMap();
+  const options = (el) => el.tagName === 'SELECT' ? Array.from(el.options).map((o) => ({value: o.value, label: clean(o.text), disabled: o.disabled})) : state.comboboxOptions.get(el);
   const signature = (el) => JSON.stringify([label(el), kind(el), el.name, el.getAttribute('role'),
-    group(el), options(el)]);
+    group(el), el.tagName === 'SELECT' ? options(el) : undefined]);
+  const pending = (el) => !!el.closest('[aria-busy="true"]');
+  const disabled = (el) => el.matches(':disabled') || !!el.closest('[aria-disabled="true"]');
+  const valid = (el) => el.validity?.valid !== false && !pending(el) &&
+    (!el.getAttribute('aria-invalid') || el.getAttribute('aria-invalid') === 'false');
   const value = (el) => ['password', 'file'].includes(kind(el)) ? undefined :
-    ['checkbox', 'radio'].includes(kind(el)) ? el.checked : el.value;
+    ['checkbox', 'radio'].includes(kind(el)) ? el.checked : kind(el) === 'combobox' ? textOf(el) : el.value;
   const getRef = (el) => {
     if (!state.ids.has(el)) state.ids.set(el, `f${++state.next}`);
     return state.ids.get(el);
@@ -70,15 +81,15 @@ export async function executeFormRequest(request) {
   const observe = () => {
     const fields = [], controls = [], nodes = new Map();
     for (const el of document.querySelectorAll('input,textarea,select,[role="combobox"],button')) {
-      if (!visible(el) || el.type === 'hidden' || (el.tagName === 'BUTTON' && !isAdd(el))) continue;
+      if (!visible(el) || el.type === 'hidden' || (el.tagName === 'BUTTON' && !isAdd(el) && el.getAttribute('role') !== 'combobox')) continue;
       if (el.tagName === 'INPUT' && ['submit', 'button', 'reset', 'image'].includes(el.type)) continue;
       const ref = getRef(el), field = {ref, label: label(el), kind: kind(el),
         group: group(el), domId: el.id || undefined,
         required: !!el.required || el.getAttribute('aria-required') === 'true',
-        disabled: !!el.disabled || el.getAttribute('aria-disabled') === 'true',
-        readOnly: !!el.readOnly, supported: supported.has(kind(el)), valid: el.validity?.valid, value: value(el), options: options(el)};
+        disabled: disabled(el),
+        readOnly: !!el.readOnly, supported: supported.has(kind(el)), valid: valid(el), pending: pending(el), value: value(el), options: options(el)};
       nodes.set(ref, {el, signature: signature(el)});
-      (el.tagName === 'BUTTON' ? controls : fields).push(field);
+      (kind(el) === 'add-row' ? controls : fields).push(field);
     }
     state.nodes = nodes;
     state.snapshot = crypto.randomUUID();
@@ -102,6 +113,46 @@ export async function executeFormRequest(request) {
     }
     observer.disconnect();
     return stable;
+  };
+  const selectCombobox = async (el, expected) => {
+    const initialSignature = signature(el);
+    const until = Math.min(Date.now() + 1000, request.deadline ?? Infinity);
+    const pause = () => new Promise((r) => setTimeout(r, 20));
+    const key = (node, name) => node.dispatchEvent(new KeyboardEvent('keydown', {key: name, code: name, bubbles: true, cancelable: true}));
+    let popup;
+    try {
+      el.focus();
+      if (el.getAttribute('aria-expanded') !== 'true') key(el, 'ArrowDown');
+      while (Date.now() < until) {
+        const ids = (el.getAttribute('aria-controls') ?? '').split(/\s+/).filter(Boolean);
+        const candidates = ids.map((id) => document.getElementById(id)).filter((n) => n && visible(n) && n.getAttribute('role') === 'listbox');
+        if (candidates.length > 1) throw new Error('AMBIGUOUS_COMBOBOX_POPUP');
+        popup = candidates[0];
+        if (popup && popup.querySelector('[role="option"]') && !pending(popup)) break;
+        await pause();
+      }
+      if (!popup || !visible(popup) || pending(popup)) throw new Error('COMBOBOX_POPUP_NOT_READY_OR_UNLINKED');
+      if (popup.getAttribute('aria-multiselectable') === 'true') throw new Error('UNSUPPORTED_MULTISELECT');
+      const choices = Array.from(popup.querySelectorAll('[role="option"]')).filter(visible).map((node) => ({node, label: ariaName(node) || textOf(node), disabled: disabled(node)}));
+      state.comboboxOptions.set(el, choices.map(({label, disabled}) => ({label, value: label, disabled})));
+      const matches = choices.filter((o) => !o.disabled && o.label === expected);
+      if (matches.length !== 1) throw new Error('OPTION_MISSING_OR_AMBIGUOUS');
+      if (location.href !== request.url || !el.isConnected || signature(el) !== initialSignature || disabled(el)) throw new Error('FIELD_CHANGED');
+      // Keyboard activation still works after real mouse hover; some widgets
+      // intentionally ignore click when their last pointer type was a mouse.
+      matches[0].node.focus();
+      key(matches[0].node, 'Enter');
+      while (el.getAttribute('aria-expanded') === 'true' && Date.now() < until) await pause();
+      if (el.getAttribute('aria-expanded') === 'true') throw new Error('COMBOBOX_NOT_CLOSED');
+    } finally {
+      // Restore UI even on an unknown/disabled option; never search unrelated
+      // popups or click outside the linked listbox to force a selection.
+      if (el.getAttribute('aria-expanded') === 'true') {
+        key(popup ?? el, 'Escape');
+        const closingDeadline = Math.min(Date.now() + 300, request.deadline ?? Infinity);
+        while (el.getAttribute('aria-expanded') === 'true' && Date.now() < closingDeadline) await pause();
+      }
+    }
   };
   if (request.op === 'validate') {
     if (request.snapshot !== state.snapshot || request.url !== location.href) throw new Error('STALE_SNAPSHOT: inspect again');
@@ -128,7 +179,7 @@ export async function executeFormRequest(request) {
       let error;
       if (!el || !el.isConnected || !visible(el)) error = 'STALE_OR_MISSING_FIELD';
       else if (request.url !== location.href || signature(el) !== record.signature) error = 'FIELD_CHANGED';
-      else if (el.disabled || el.readOnly || el.getAttribute('aria-disabled') === 'true') error = 'NOT_EDITABLE';
+      else if (disabled(el) || el.readOnly || el.getAttribute('aria-readonly') === 'true') error = 'NOT_EDITABLE';
       else if (!supported.has(kind(el))) error = 'UNSUPPORTED_CONTROL';
       if (error) {
         results.push({ref: action.ref, status: 'blocked', reason: error});
@@ -147,7 +198,10 @@ export async function executeFormRequest(request) {
         }
         if (action.op !== 'set') throw new Error('Expected set action');
         let expected = action.value;
-        if (type === 'checkbox' || type === 'radio') {
+        if (type === 'combobox') {
+          if (typeof expected !== 'string' || !expected || expected.length > 250) throw new Error('Expected exact option label');
+          await selectCombobox(el, expected);
+        } else if (type === 'checkbox' || type === 'radio') {
           if (typeof expected !== 'boolean' || (type === 'radio' && !expected)) throw new Error('Expected boolean; radio may only be selected');
           if (el.checked !== expected) el.click();
         } else {
@@ -177,9 +231,10 @@ export async function executeFormRequest(request) {
     for (const item of written) {
       const result = results.find((r) => r.ref === item.ref);
       const actual = value(item.el);
-      const valid = item.el.validity?.valid !== false;
-      result.status = item.el.isConnected && visible(item.el) && actual === item.expected && valid ? 'verified' : 'needs-review';
-      if (result.status !== 'verified') result.reason = !item.el.isConnected ? 'FIELD_REPLACED' : actual !== item.expected ? 'VALUE_NOT_RETAINED' : !valid ? 'HTML_VALIDATION_FAILED' : 'FIELD_HIDDEN';
+      const isValid = valid(item.el);
+      const retained = item.el.isConnected && visible(item.el) && actual === item.expected;
+      result.status = retained && isValid ? 'verified' : retained && pending(item.el) && item.el.validity?.valid !== false ? 'pending-validation' : 'needs-review';
+      if (result.status === 'needs-review') result.reason = !item.el.isConnected ? 'FIELD_REPLACED' : actual !== item.expected ? 'VALUE_NOT_RETAINED' : !isValid ? 'HTML_VALIDATION_FAILED' : 'FIELD_HIDDEN';
     }
     const completed = new Set(results.map((r) => r.ref));
     for (const a of request.actions) if (!completed.has(a.ref)) results.push({ref: a.ref, status: 'not-attempted'});

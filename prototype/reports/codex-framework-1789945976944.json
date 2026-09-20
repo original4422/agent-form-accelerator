@@ -1,0 +1,1159 @@
+{
+  "batchId": 1789945976944,
+  "date": "2026-09-20T23:21:49.238Z",
+  "scope": "React 19.3.0 controlled application with Radix Select 2.3.7, portal options, dependent remounted city, 700ms aria-busy validation, and repeated education. Unmapped Markdown parsed inside timed MCP startup. All modes prefetch current context. Explicit bindings require separate expansion; repeat bindings may reuse exact observed template labels/kinds; official Playwright retains full tools and receives same source entries in an explicitly authorized local file. Browser load/bundle build excluded; CLI/model/tools/recovery/exit included. Independent DOM/React-state oracle after timing, zero submits. Three rotated repetitions by default.",
+  "rows": [
+    {
+      "attempt": "1789945976944-0-binding-explicit",
+      "repetition": 0,
+      "mode": "binding-explicit",
+      "elapsedMs": 33878.493708,
+      "exitCode": 0,
+      "timedOut": false,
+      "passed": true,
+      "total": 10,
+      "errors": [],
+      "toolCalls": [
+        {
+          "tool": "form_expand",
+          "status": "completed",
+          "startMs": 11645.828458,
+          "endMs": 17325.69325,
+          "durationMs": 5679.864792,
+          "returnedBytes": 3406
+        },
+        {
+          "tool": "form_apply_bindings",
+          "status": "completed",
+          "startMs": 21789.367333,
+          "endMs": 26753.980333,
+          "durationMs": 4964.613000000001,
+          "returnedBytes": 6185,
+          "executionMs": 878.7000002861023,
+          "complete": true,
+          "primitiveCalls": 12
+        }
+      ],
+      "usage": {
+        "input_tokens": 95447,
+        "cached_input_tokens": 75392,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 278,
+        "reasoning_output_tokens": 0
+      },
+      "timeline": [
+        {
+          "atMs": 1558.878792,
+          "event": "thread.started"
+        },
+        {
+          "atMs": 1570.8937919999998,
+          "event": "turn.started"
+        },
+        {
+          "atMs": 7531.4476669999995,
+          "event": "item.completed",
+          "itemId": "item_0",
+          "itemType": "agent_message"
+        },
+        {
+          "atMs": 11645.828458,
+          "event": "item.started",
+          "itemId": "item_1",
+          "itemType": "mcp_tool_call",
+          "tool": "form_expand",
+          "status": "in_progress"
+        },
+        {
+          "atMs": 17325.69325,
+          "event": "item.completed",
+          "itemId": "item_1",
+          "itemType": "mcp_tool_call",
+          "tool": "form_expand",
+          "status": "completed"
+        },
+        {
+          "atMs": 21789.367333,
+          "event": "item.started",
+          "itemId": "item_2",
+          "itemType": "mcp_tool_call",
+          "tool": "form_apply_bindings",
+          "status": "in_progress"
+        },
+        {
+          "atMs": 26753.980333,
+          "event": "item.completed",
+          "itemId": "item_2",
+          "itemType": "mcp_tool_call",
+          "tool": "form_apply_bindings",
+          "status": "completed"
+        },
+        {
+          "atMs": 31568.083042,
+          "event": "item.completed",
+          "itemId": "item_3",
+          "itemType": "agent_message"
+        },
+        {
+          "atMs": 31582.921582999996,
+          "event": "turn.completed"
+        }
+      ]
+    },
+    {
+      "attempt": "1789945976944-0-binding-repeat",
+      "repetition": 0,
+      "mode": "binding-repeat",
+      "elapsedMs": 24293.492916999996,
+      "exitCode": 0,
+      "timedOut": false,
+      "passed": true,
+      "total": 10,
+      "errors": [],
+      "toolCalls": [
+        {
+          "tool": "form_apply_bindings",
+          "status": "completed",
+          "startMs": 12098.559291999998,
+          "endMs": 18054.689916999996,
+          "durationMs": 5956.130624999998,
+          "returnedBytes": 6260,
+          "executionMs": 870.3000001907349,
+          "complete": true,
+          "primitiveCalls": 11
+        }
+      ],
+      "usage": {
+        "input_tokens": 68330,
+        "cached_input_tokens": 40960,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 257,
+        "reasoning_output_tokens": 0
+      },
+      "timeline": [
+        {
+          "atMs": 108.69350000000122,
+          "event": "thread.started"
+        },
+        {
+          "atMs": 110.89970899999753,
+          "event": "turn.started"
+        },
+        {
+          "atMs": 5404.9468750000015,
+          "event": "item.completed",
+          "itemId": "item_0",
+          "itemType": "agent_message"
+        },
+        {
+          "atMs": 12098.559291999998,
+          "event": "item.started",
+          "itemId": "item_1",
+          "itemType": "mcp_tool_call",
+          "tool": "form_apply_bindings",
+          "status": "in_progress"
+        },
+        {
+          "atMs": 18054.689916999996,
+          "event": "item.completed",
+          "itemId": "item_1",
+          "itemType": "mcp_tool_call",
+          "tool": "form_apply_bindings",
+          "status": "completed"
+        },
+        {
+          "atMs": 21713.748584,
+          "event": "item.completed",
+          "itemId": "item_2",
+          "itemType": "agent_message"
+        },
+        {
+          "atMs": 21725.313084,
+          "event": "turn.completed"
+        }
+      ]
+    },
+    {
+      "attempt": "1789945976944-0-playwright",
+      "repetition": 0,
+      "mode": "playwright",
+      "elapsedMs": 127581.287125,
+      "exitCode": 0,
+      "timedOut": false,
+      "passed": true,
+      "total": 10,
+      "errors": [],
+      "toolCalls": [
+        {
+          "tool": "browser_run_code_unsafe",
+          "status": "completed",
+          "startMs": 14377.717875000002,
+          "endMs": 20615.922208000004,
+          "durationMs": 6238.2043330000015,
+          "returnedBytes": 829
+        },
+        {
+          "tool": "browser_run_code_unsafe",
+          "status": "failed",
+          "startMs": 35478.964332999996,
+          "endMs": 41087.223750000005,
+          "durationMs": 5608.259417000008,
+          "returnedBytes": 48
+        },
+        {
+          "tool": "browser_run_code_unsafe",
+          "status": "failed",
+          "startMs": 55121.978458,
+          "endMs": 58608.785583000004,
+          "durationMs": 3486.8071250000066,
+          "returnedBytes": 106
+        },
+        {
+          "tool": "browser_run_code_unsafe",
+          "status": "completed",
+          "startMs": 80279.16412500001,
+          "endMs": 86379.50058300002,
+          "durationMs": 6100.336458000005,
+          "returnedBytes": 69
+        },
+        {
+          "tool": "browser_run_code_unsafe",
+          "status": "completed",
+          "startMs": 90827.042958,
+          "endMs": 93677.84779100001,
+          "durationMs": 2850.804833000002,
+          "returnedBytes": 69
+        },
+        {
+          "tool": "browser_run_code_unsafe",
+          "status": "completed",
+          "startMs": 97914.16524999999,
+          "endMs": 101396.127041,
+          "durationMs": 3481.961791000009,
+          "returnedBytes": 103
+        },
+        {
+          "tool": "browser_run_code_unsafe",
+          "status": "completed",
+          "startMs": 117697.05929100001,
+          "endMs": 122194.51962500002,
+          "durationMs": 4497.460334000003,
+          "returnedBytes": 2294
+        }
+      ],
+      "usage": {
+        "input_tokens": 301557,
+        "cached_input_tokens": 276992,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 2252,
+        "reasoning_output_tokens": 24
+      },
+      "timeline": [
+        {
+          "atMs": 128.83812500000204,
+          "event": "thread.started"
+        },
+        {
+          "atMs": 131.09083300000202,
+          "event": "turn.started"
+        },
+        {
+          "atMs": 5807.910208000001,
+          "event": "item.completed",
+          "itemId": "item_0",
+          "itemType": "agent_message"
+        },
+        {
+          "atMs": 14377.717875000002,
+          "event": "item.started",
+          "itemId": "item_1",
+          "itemType": "mcp_tool_call",
+          "tool": "browser_run_code_unsafe",
+          "status": "in_progress"
+        },
+        {
+          "atMs": 20615.922208000004,
+          "event": "item.completed",
+          "itemId": "item_1",
+          "itemType": "mcp_tool_call",
+          "tool": "browser_run_code_unsafe",
+          "status": "completed"
+        },
+        {
+          "atMs": 35478.964332999996,
+          "event": "item.started",
+          "itemId": "item_2",
+          "itemType": "mcp_tool_call",
+          "tool": "browser_run_code_unsafe",
+          "status": "in_progress"
+        },
+        {
+          "atMs": 41087.223750000005,
+          "event": "item.completed",
+          "itemId": "item_2",
+          "itemType": "mcp_tool_call",
+          "tool": "browser_run_code_unsafe",
+          "status": "failed"
+        },
+        {
+          "atMs": 55121.978458,
+          "event": "item.started",
+          "itemId": "item_3",
+          "itemType": "mcp_tool_call",
+          "tool": "browser_run_code_unsafe",
+          "status": "in_progress"
+        },
+        {
+          "atMs": 58608.785583000004,
+          "event": "item.completed",
+          "itemId": "item_3",
+          "itemType": "mcp_tool_call",
+          "tool": "browser_run_code_unsafe",
+          "status": "failed"
+        },
+        {
+          "atMs": 80279.16412500001,
+          "event": "item.started",
+          "itemId": "item_4",
+          "itemType": "mcp_tool_call",
+          "tool": "browser_run_code_unsafe",
+          "status": "in_progress"
+        },
+        {
+          "atMs": 86379.50058300002,
+          "event": "item.completed",
+          "itemId": "item_4",
+          "itemType": "mcp_tool_call",
+          "tool": "browser_run_code_unsafe",
+          "status": "completed"
+        },
+        {
+          "atMs": 90827.042958,
+          "event": "item.started",
+          "itemId": "item_5",
+          "itemType": "mcp_tool_call",
+          "tool": "browser_run_code_unsafe",
+          "status": "in_progress"
+        },
+        {
+          "atMs": 93677.84779100001,
+          "event": "item.completed",
+          "itemId": "item_5",
+          "itemType": "mcp_tool_call",
+          "tool": "browser_run_code_unsafe",
+          "status": "completed"
+        },
+        {
+          "atMs": 97914.16524999999,
+          "event": "item.started",
+          "itemId": "item_6",
+          "itemType": "mcp_tool_call",
+          "tool": "browser_run_code_unsafe",
+          "status": "in_progress"
+        },
+        {
+          "atMs": 101396.127041,
+          "event": "item.completed",
+          "itemId": "item_6",
+          "itemType": "mcp_tool_call",
+          "tool": "browser_run_code_unsafe",
+          "status": "completed"
+        },
+        {
+          "atMs": 117697.05929100001,
+          "event": "item.started",
+          "itemId": "item_7",
+          "itemType": "mcp_tool_call",
+          "tool": "browser_run_code_unsafe",
+          "status": "in_progress"
+        },
+        {
+          "atMs": 122194.51962500002,
+          "event": "item.completed",
+          "itemId": "item_7",
+          "itemType": "mcp_tool_call",
+          "tool": "browser_run_code_unsafe",
+          "status": "completed"
+        },
+        {
+          "atMs": 125899.695541,
+          "event": "item.completed",
+          "itemId": "item_8",
+          "itemType": "agent_message"
+        },
+        {
+          "atMs": 125919.05241599999,
+          "event": "turn.completed"
+        }
+      ]
+    },
+    {
+      "attempt": "1789945976944-1-binding-repeat",
+      "repetition": 1,
+      "mode": "binding-repeat",
+      "elapsedMs": 23344.94325000001,
+      "exitCode": 0,
+      "timedOut": false,
+      "passed": true,
+      "total": 10,
+      "errors": [],
+      "toolCalls": [
+        {
+          "tool": "form_apply_bindings",
+          "status": "completed",
+          "startMs": 13239.769875000027,
+          "endMs": 17471.338208,
+          "durationMs": 4231.568332999974,
+          "returnedBytes": 6260,
+          "executionMs": 877.9000000953674,
+          "complete": true,
+          "primitiveCalls": 11
+        }
+      ],
+      "usage": {
+        "input_tokens": 68286,
+        "cached_input_tokens": 55552,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 253,
+        "reasoning_output_tokens": 0
+      },
+      "timeline": [
+        {
+          "atMs": 140.93087500002002,
+          "event": "thread.started"
+        },
+        {
+          "atMs": 142.88283300001058,
+          "event": "turn.started"
+        },
+        {
+          "atMs": 6564.790375000011,
+          "event": "item.completed",
+          "itemId": "item_0",
+          "itemType": "agent_message"
+        },
+        {
+          "atMs": 13239.769875000027,
+          "event": "item.started",
+          "itemId": "item_1",
+          "itemType": "mcp_tool_call",
+          "tool": "form_apply_bindings",
+          "status": "in_progress"
+        },
+        {
+          "atMs": 17471.338208,
+          "event": "item.completed",
+          "itemId": "item_1",
+          "itemType": "mcp_tool_call",
+          "tool": "form_apply_bindings",
+          "status": "completed"
+        },
+        {
+          "atMs": 20793.565541000018,
+          "event": "item.completed",
+          "itemId": "item_2",
+          "itemType": "agent_message"
+        },
+        {
+          "atMs": 20805.233916000027,
+          "event": "turn.completed"
+        }
+      ]
+    },
+    {
+      "attempt": "1789945976944-1-playwright",
+      "repetition": 1,
+      "mode": "playwright",
+      "elapsedMs": 123443.13325000001,
+      "exitCode": 0,
+      "timedOut": false,
+      "passed": true,
+      "total": 10,
+      "errors": [],
+      "toolCalls": [
+        {
+          "tool": "browser_snapshot",
+          "status": "completed",
+          "startMs": 17813.86383399999,
+          "endMs": 17846.620083999995,
+          "durationMs": 32.75625000000582,
+          "returnedBytes": 1688
+        },
+        {
+          "tool": "browser_run_code_unsafe",
+          "status": "failed",
+          "startMs": 33799.017124999984,
+          "endMs": 38619.65925,
+          "durationMs": 4820.642125000013,
+          "returnedBytes": 48
+        },
+        {
+          "tool": "browser_run_code_unsafe",
+          "status": "failed",
+          "startMs": 53775.587624999986,
+          "endMs": 58284.54029199999,
+          "durationMs": 4508.952667000005,
+          "returnedBytes": 106
+        },
+        {
+          "tool": "browser_run_code_unsafe",
+          "status": "completed",
+          "startMs": 76729.91599999997,
+          "endMs": 86999.83629200002,
+          "durationMs": 10269.920292000053,
+          "returnedBytes": 69
+        },
+        {
+          "tool": "browser_run_code_unsafe",
+          "status": "completed",
+          "startMs": 91407.454792,
+          "endMs": 94256.18541699997,
+          "durationMs": 2848.7306249999674,
+          "returnedBytes": 69
+        },
+        {
+          "tool": "browser_run_code_unsafe",
+          "status": "completed",
+          "startMs": 97949.96916699997,
+          "endMs": 100755.54241699999,
+          "durationMs": 2805.573250000016,
+          "returnedBytes": 103
+        },
+        {
+          "tool": "browser_run_code_unsafe",
+          "status": "completed",
+          "startMs": 116157.620375,
+          "endMs": 119505.09233399999,
+          "durationMs": 3347.4719589999877,
+          "returnedBytes": 448
+        }
+      ],
+      "usage": {
+        "input_tokens": 293965,
+        "cached_input_tokens": 259456,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 2237,
+        "reasoning_output_tokens": 16
+      },
+      "timeline": [
+        {
+          "atMs": 109.14287499999045,
+          "event": "thread.started"
+        },
+        {
+          "atMs": 111.02945899998304,
+          "event": "turn.started"
+        },
+        {
+          "atMs": 8521.24437500001,
+          "event": "item.completed",
+          "itemId": "item_0",
+          "itemType": "agent_message"
+        },
+        {
+          "atMs": 17813.86383399999,
+          "event": "item.started",
+          "itemId": "item_1",
+          "itemType": "mcp_tool_call",
+          "tool": "browser_snapshot",
+          "status": "in_progress"
+        },
+        {
+          "atMs": 17846.620083999995,
+          "event": "item.completed",
+          "itemId": "item_1",
+          "itemType": "mcp_tool_call",
+          "tool": "browser_snapshot",
+          "status": "completed"
+        },
+        {
+          "atMs": 33799.017124999984,
+          "event": "item.started",
+          "itemId": "item_2",
+          "itemType": "mcp_tool_call",
+          "tool": "browser_run_code_unsafe",
+          "status": "in_progress"
+        },
+        {
+          "atMs": 38619.65925,
+          "event": "item.completed",
+          "itemId": "item_2",
+          "itemType": "mcp_tool_call",
+          "tool": "browser_run_code_unsafe",
+          "status": "failed"
+        },
+        {
+          "atMs": 53775.587624999986,
+          "event": "item.started",
+          "itemId": "item_3",
+          "itemType": "mcp_tool_call",
+          "tool": "browser_run_code_unsafe",
+          "status": "in_progress"
+        },
+        {
+          "atMs": 58284.54029199999,
+          "event": "item.completed",
+          "itemId": "item_3",
+          "itemType": "mcp_tool_call",
+          "tool": "browser_run_code_unsafe",
+          "status": "failed"
+        },
+        {
+          "atMs": 76729.91599999997,
+          "event": "item.started",
+          "itemId": "item_4",
+          "itemType": "mcp_tool_call",
+          "tool": "browser_run_code_unsafe",
+          "status": "in_progress"
+        },
+        {
+          "atMs": 86999.83629200002,
+          "event": "item.completed",
+          "itemId": "item_4",
+          "itemType": "mcp_tool_call",
+          "tool": "browser_run_code_unsafe",
+          "status": "completed"
+        },
+        {
+          "atMs": 91407.454792,
+          "event": "item.started",
+          "itemId": "item_5",
+          "itemType": "mcp_tool_call",
+          "tool": "browser_run_code_unsafe",
+          "status": "in_progress"
+        },
+        {
+          "atMs": 94256.18541699997,
+          "event": "item.completed",
+          "itemId": "item_5",
+          "itemType": "mcp_tool_call",
+          "tool": "browser_run_code_unsafe",
+          "status": "completed"
+        },
+        {
+          "atMs": 97949.96916699997,
+          "event": "item.started",
+          "itemId": "item_6",
+          "itemType": "mcp_tool_call",
+          "tool": "browser_run_code_unsafe",
+          "status": "in_progress"
+        },
+        {
+          "atMs": 100755.54241699999,
+          "event": "item.completed",
+          "itemId": "item_6",
+          "itemType": "mcp_tool_call",
+          "tool": "browser_run_code_unsafe",
+          "status": "completed"
+        },
+        {
+          "atMs": 116157.620375,
+          "event": "item.started",
+          "itemId": "item_7",
+          "itemType": "mcp_tool_call",
+          "tool": "browser_run_code_unsafe",
+          "status": "in_progress"
+        },
+        {
+          "atMs": 119505.09233399999,
+          "event": "item.completed",
+          "itemId": "item_7",
+          "itemType": "mcp_tool_call",
+          "tool": "browser_run_code_unsafe",
+          "status": "completed"
+        },
+        {
+          "atMs": 121781.036792,
+          "event": "item.completed",
+          "itemId": "item_8",
+          "itemType": "agent_message"
+        },
+        {
+          "atMs": 121793.410875,
+          "event": "turn.completed"
+        }
+      ]
+    },
+    {
+      "attempt": "1789945976944-1-binding-explicit",
+      "repetition": 1,
+      "mode": "binding-explicit",
+      "elapsedMs": 33278.12729199999,
+      "exitCode": 0,
+      "timedOut": false,
+      "passed": true,
+      "total": 10,
+      "errors": [],
+      "toolCalls": [
+        {
+          "tool": "form_expand",
+          "status": "completed",
+          "startMs": 13452.737459000025,
+          "endMs": 18303.80379199999,
+          "durationMs": 4851.066332999966,
+          "returnedBytes": 3406
+        },
+        {
+          "tool": "form_apply_bindings",
+          "status": "completed",
+          "startMs": 22720.664708999975,
+          "endMs": 27933.390375000017,
+          "durationMs": 5212.725666000042,
+          "returnedBytes": 6185,
+          "executionMs": 890.2000002861023,
+          "complete": true,
+          "primitiveCalls": 12
+        }
+      ],
+      "usage": {
+        "input_tokens": 95450,
+        "cached_input_tokens": 75392,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 274,
+        "reasoning_output_tokens": 0
+      },
+      "timeline": [
+        {
+          "atMs": 124.43433399999049,
+          "event": "thread.started"
+        },
+        {
+          "atMs": 126.47025000001304,
+          "event": "turn.started"
+        },
+        {
+          "atMs": 7178.954542000021,
+          "event": "item.completed",
+          "itemId": "item_0",
+          "itemType": "agent_message"
+        },
+        {
+          "atMs": 13452.737459000025,
+          "event": "item.started",
+          "itemId": "item_1",
+          "itemType": "mcp_tool_call",
+          "tool": "form_expand",
+          "status": "in_progress"
+        },
+        {
+          "atMs": 18303.80379199999,
+          "event": "item.completed",
+          "itemId": "item_1",
+          "itemType": "mcp_tool_call",
+          "tool": "form_expand",
+          "status": "completed"
+        },
+        {
+          "atMs": 22720.664708999975,
+          "event": "item.started",
+          "itemId": "item_2",
+          "itemType": "mcp_tool_call",
+          "tool": "form_apply_bindings",
+          "status": "in_progress"
+        },
+        {
+          "atMs": 27933.390375000017,
+          "event": "item.completed",
+          "itemId": "item_2",
+          "itemType": "mcp_tool_call",
+          "tool": "form_apply_bindings",
+          "status": "completed"
+        },
+        {
+          "atMs": 30642.995333999977,
+          "event": "item.completed",
+          "itemId": "item_3",
+          "itemType": "agent_message"
+        },
+        {
+          "atMs": 30658.828709000023,
+          "event": "turn.completed"
+        }
+      ]
+    },
+    {
+      "attempt": "1789945976944-2-playwright",
+      "repetition": 2,
+      "mode": "playwright",
+      "elapsedMs": 109489.83083300001,
+      "exitCode": 0,
+      "timedOut": false,
+      "passed": true,
+      "total": 10,
+      "errors": [],
+      "toolCalls": [
+        {
+          "tool": "browser_snapshot",
+          "status": "completed",
+          "startMs": 16334.706166999997,
+          "endMs": 16366.908082999988,
+          "durationMs": 32.20191599999089,
+          "returnedBytes": 1688
+        },
+        {
+          "tool": "browser_run_code_unsafe",
+          "status": "failed",
+          "startMs": 26799.594958,
+          "endMs": 32330.657499999972,
+          "durationMs": 5531.062541999971,
+          "returnedBytes": 48
+        },
+        {
+          "tool": "browser_run_code_unsafe",
+          "status": "failed",
+          "startMs": 42455.22629199998,
+          "endMs": 46300.62066700001,
+          "durationMs": 3845.3943750000326,
+          "returnedBytes": 106
+        },
+        {
+          "tool": "browser_run_code_unsafe",
+          "status": "completed",
+          "startMs": 58483.78424999997,
+          "endMs": 64113.36912499997,
+          "durationMs": 5629.5848750000005,
+          "returnedBytes": 42
+        },
+        {
+          "tool": "browser_run_code_unsafe",
+          "status": "completed",
+          "startMs": 67986.86329199997,
+          "endMs": 71087.83370800002,
+          "durationMs": 3100.9704160000547,
+          "returnedBytes": 42
+        },
+        {
+          "tool": "browser_run_code_unsafe",
+          "status": "completed",
+          "startMs": 75154.31179199996,
+          "endMs": 78173.25566700002,
+          "durationMs": 3018.9438750000554,
+          "returnedBytes": 51
+        },
+        {
+          "tool": "browser_run_code_unsafe",
+          "status": "completed",
+          "startMs": 100769.8665,
+          "endMs": 104823.12637499999,
+          "durationMs": 4053.259874999989,
+          "returnedBytes": 717
+        }
+      ],
+      "usage": {
+        "input_tokens": 276333,
+        "cached_input_tokens": 252544,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 1772,
+        "reasoning_output_tokens": 34
+      },
+      "timeline": [
+        {
+          "atMs": 945.9035419999855,
+          "event": "thread.started"
+        },
+        {
+          "atMs": 948.6332919999841,
+          "event": "turn.started"
+        },
+        {
+          "atMs": 8571.400499999989,
+          "event": "item.completed",
+          "itemId": "item_0",
+          "itemType": "agent_message"
+        },
+        {
+          "atMs": 16334.706166999997,
+          "event": "item.started",
+          "itemId": "item_1",
+          "itemType": "mcp_tool_call",
+          "tool": "browser_snapshot",
+          "status": "in_progress"
+        },
+        {
+          "atMs": 16366.908082999988,
+          "event": "item.completed",
+          "itemId": "item_1",
+          "itemType": "mcp_tool_call",
+          "tool": "browser_snapshot",
+          "status": "completed"
+        },
+        {
+          "atMs": 26799.594958,
+          "event": "item.started",
+          "itemId": "item_2",
+          "itemType": "mcp_tool_call",
+          "tool": "browser_run_code_unsafe",
+          "status": "in_progress"
+        },
+        {
+          "atMs": 32330.657499999972,
+          "event": "item.completed",
+          "itemId": "item_2",
+          "itemType": "mcp_tool_call",
+          "tool": "browser_run_code_unsafe",
+          "status": "failed"
+        },
+        {
+          "atMs": 42455.22629199998,
+          "event": "item.started",
+          "itemId": "item_3",
+          "itemType": "mcp_tool_call",
+          "tool": "browser_run_code_unsafe",
+          "status": "in_progress"
+        },
+        {
+          "atMs": 46300.62066700001,
+          "event": "item.completed",
+          "itemId": "item_3",
+          "itemType": "mcp_tool_call",
+          "tool": "browser_run_code_unsafe",
+          "status": "failed"
+        },
+        {
+          "atMs": 58483.78424999997,
+          "event": "item.started",
+          "itemId": "item_4",
+          "itemType": "mcp_tool_call",
+          "tool": "browser_run_code_unsafe",
+          "status": "in_progress"
+        },
+        {
+          "atMs": 64113.36912499997,
+          "event": "item.completed",
+          "itemId": "item_4",
+          "itemType": "mcp_tool_call",
+          "tool": "browser_run_code_unsafe",
+          "status": "completed"
+        },
+        {
+          "atMs": 67986.86329199997,
+          "event": "item.started",
+          "itemId": "item_5",
+          "itemType": "mcp_tool_call",
+          "tool": "browser_run_code_unsafe",
+          "status": "in_progress"
+        },
+        {
+          "atMs": 71087.83370800002,
+          "event": "item.completed",
+          "itemId": "item_5",
+          "itemType": "mcp_tool_call",
+          "tool": "browser_run_code_unsafe",
+          "status": "completed"
+        },
+        {
+          "atMs": 75154.31179199996,
+          "event": "item.started",
+          "itemId": "item_6",
+          "itemType": "mcp_tool_call",
+          "tool": "browser_run_code_unsafe",
+          "status": "in_progress"
+        },
+        {
+          "atMs": 78173.25566700002,
+          "event": "item.completed",
+          "itemId": "item_6",
+          "itemType": "mcp_tool_call",
+          "tool": "browser_run_code_unsafe",
+          "status": "completed"
+        },
+        {
+          "atMs": 100769.8665,
+          "event": "item.started",
+          "itemId": "item_7",
+          "itemType": "mcp_tool_call",
+          "tool": "browser_run_code_unsafe",
+          "status": "in_progress"
+        },
+        {
+          "atMs": 104823.12637499999,
+          "event": "item.completed",
+          "itemId": "item_7",
+          "itemType": "mcp_tool_call",
+          "tool": "browser_run_code_unsafe",
+          "status": "completed"
+        },
+        {
+          "atMs": 107556.99024999997,
+          "event": "item.completed",
+          "itemId": "item_8",
+          "itemType": "agent_message"
+        },
+        {
+          "atMs": 107577.57724999997,
+          "event": "turn.completed"
+        }
+      ]
+    },
+    {
+      "attempt": "1789945976944-2-binding-explicit",
+      "repetition": 2,
+      "mode": "binding-explicit",
+      "elapsedMs": 31678.106542000023,
+      "exitCode": 0,
+      "timedOut": false,
+      "passed": true,
+      "total": 10,
+      "errors": [],
+      "toolCalls": [
+        {
+          "tool": "form_expand",
+          "status": "completed",
+          "startMs": 11407.109209000017,
+          "endMs": 17490.094541999977,
+          "durationMs": 6082.9853329999605,
+          "returnedBytes": 3406
+        },
+        {
+          "tool": "form_apply_bindings",
+          "status": "completed",
+          "startMs": 21896.46904200001,
+          "endMs": 26556.325208999973,
+          "durationMs": 4659.856166999962,
+          "returnedBytes": 6185,
+          "executionMs": 860.1999998092651,
+          "complete": true,
+          "primitiveCalls": 12
+        }
+      ],
+      "usage": {
+        "input_tokens": 95447,
+        "cached_input_tokens": 75392,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 282,
+        "reasoning_output_tokens": 0
+      },
+      "timeline": [
+        {
+          "atMs": 130.04816700000083,
+          "event": "thread.started"
+        },
+        {
+          "atMs": 131.85920900001656,
+          "event": "turn.started"
+        },
+        {
+          "atMs": 7425.415417000011,
+          "event": "item.completed",
+          "itemId": "item_0",
+          "itemType": "agent_message"
+        },
+        {
+          "atMs": 11407.109209000017,
+          "event": "item.started",
+          "itemId": "item_1",
+          "itemType": "mcp_tool_call",
+          "tool": "form_expand",
+          "status": "in_progress"
+        },
+        {
+          "atMs": 17490.094541999977,
+          "event": "item.completed",
+          "itemId": "item_1",
+          "itemType": "mcp_tool_call",
+          "tool": "form_expand",
+          "status": "completed"
+        },
+        {
+          "atMs": 21896.46904200001,
+          "event": "item.started",
+          "itemId": "item_2",
+          "itemType": "mcp_tool_call",
+          "tool": "form_apply_bindings",
+          "status": "in_progress"
+        },
+        {
+          "atMs": 26556.325208999973,
+          "event": "item.completed",
+          "itemId": "item_2",
+          "itemType": "mcp_tool_call",
+          "tool": "form_apply_bindings",
+          "status": "completed"
+        },
+        {
+          "atMs": 29401.02999999997,
+          "event": "item.completed",
+          "itemId": "item_3",
+          "itemType": "agent_message"
+        },
+        {
+          "atMs": 29409.88966699998,
+          "event": "turn.completed"
+        }
+      ]
+    },
+    {
+      "attempt": "1789945976944-2-binding-repeat",
+      "repetition": 2,
+      "mode": "binding-repeat",
+      "elapsedMs": 24598.057124999992,
+      "exitCode": 0,
+      "timedOut": false,
+      "passed": true,
+      "total": 10,
+      "errors": [],
+      "toolCalls": [
+        {
+          "tool": "form_apply_bindings",
+          "status": "completed",
+          "startMs": 14731.276874999981,
+          "endMs": 19591.296750000038,
+          "durationMs": 4860.019875000056,
+          "returnedBytes": 6247,
+          "executionMs": 867,
+          "complete": true,
+          "primitiveCalls": 11
+        }
+      ],
+      "usage": {
+        "input_tokens": 68355,
+        "cached_input_tokens": 49408,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 253,
+        "reasoning_output_tokens": 0
+      },
+      "timeline": [
+        {
+          "atMs": 130.1811250000028,
+          "event": "thread.started"
+        },
+        {
+          "atMs": 132.00937500002328,
+          "event": "turn.started"
+        },
+        {
+          "atMs": 6495.854999999981,
+          "event": "item.completed",
+          "itemId": "item_0",
+          "itemType": "agent_message"
+        },
+        {
+          "atMs": 14731.276874999981,
+          "event": "item.started",
+          "itemId": "item_1",
+          "itemType": "mcp_tool_call",
+          "tool": "form_apply_bindings",
+          "status": "in_progress"
+        },
+        {
+          "atMs": 19591.296750000038,
+          "event": "item.completed",
+          "itemId": "item_1",
+          "itemType": "mcp_tool_call",
+          "tool": "form_apply_bindings",
+          "status": "completed"
+        },
+        {
+          "atMs": 22162.425457999983,
+          "event": "item.completed",
+          "itemId": "item_2",
+          "itemType": "agent_message"
+        },
+        {
+          "atMs": 22181.693790999998,
+          "event": "turn.completed"
+        }
+      ]
+    }
+  ]
+}

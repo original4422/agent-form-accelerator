@@ -1,0 +1,190 @@
+{
+  "batchId": 1789946825989,
+  "localLoopHint": true,
+  "date": "2026-09-20T23:29:44.794Z",
+  "scope": "React 19.3.0 controlled application with Radix Select 2.3.7, portal options, dependent remounted city, 700ms aria-busy validation, and repeated education. Unmapped Markdown parsed inside timed MCP startup. All modes prefetch current context. Explicit bindings require separate expansion; repeat bindings may reuse exact observed template labels/kinds; official Playwright retains full tools and receives same source entries passed as a second script argument by a benchmark adapter. No source values are placed in page globals; normal Node imports are unavailable in the official VM. Browser load/bundle build excluded; CLI/model/tools/recovery/exit included. Independent DOM/React-state oracle after timing, zero submits. Three rotated repetitions by default.",
+  "rows": [
+    {
+      "attempt": "1789946825989-0-binding-repeat",
+      "repetition": 0,
+      "mode": "binding-repeat",
+      "elapsedMs": 26022.785625,
+      "exitCode": 0,
+      "timedOut": false,
+      "passed": true,
+      "total": 10,
+      "errors": [],
+      "toolCalls": [
+        {
+          "tool": "form_apply_bindings",
+          "status": "completed",
+          "startMs": 13931.001457999999,
+          "endMs": 21518.906457999998,
+          "durationMs": 7587.904999999999,
+          "returnedBytes": 6260,
+          "executionMs": 883.7999997138977,
+          "complete": true,
+          "primitiveCalls": 11
+        }
+      ],
+      "usage": {
+        "input_tokens": 68772,
+        "cached_input_tokens": 49792,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 243,
+        "reasoning_output_tokens": 0
+      },
+      "timeline": [
+        {
+          "atMs": 451.25637499999993,
+          "event": "thread.started"
+        },
+        {
+          "atMs": 462.26420800000005,
+          "event": "turn.started"
+        },
+        {
+          "atMs": 6669.126292,
+          "event": "item.completed",
+          "itemId": "item_0",
+          "itemType": "agent_message"
+        },
+        {
+          "atMs": 13931.001457999999,
+          "event": "item.started",
+          "itemId": "item_1",
+          "itemType": "mcp_tool_call",
+          "tool": "form_apply_bindings",
+          "status": "in_progress"
+        },
+        {
+          "atMs": 21518.906457999998,
+          "event": "item.completed",
+          "itemId": "item_1",
+          "itemType": "mcp_tool_call",
+          "tool": "form_apply_bindings",
+          "status": "completed"
+        },
+        {
+          "atMs": 23852.204041999998,
+          "event": "item.completed",
+          "itemId": "item_2",
+          "itemType": "agent_message"
+        },
+        {
+          "atMs": 23865.368958,
+          "event": "turn.completed"
+        }
+      ]
+    },
+    {
+      "attempt": "1789946825989-0-playwright-ref",
+      "repetition": 0,
+      "mode": "playwright-ref",
+      "elapsedMs": 132609.91441700002,
+      "exitCode": null,
+      "timedOut": false,
+      "error": "page.evaluate: Target page, context or browser has been closed",
+      "passed": false,
+      "total": 10,
+      "errors": [
+        "oracle unavailable"
+      ],
+      "toolCalls": [
+        {
+          "tool": "browser_run_code_unsafe",
+          "status": "completed",
+          "startMs": 16377.145292000001,
+          "endMs": 22757.279417000005,
+          "durationMs": 6380.134125000004,
+          "returnedBytes": 829
+        },
+        {
+          "tool": "browser_run_code_unsafe",
+          "status": "failed",
+          "startMs": 54845.026708,
+          "endMs": 89816.98641700001,
+          "durationMs": 34971.95970900001,
+          "returnedBytes": 167
+        },
+        {
+          "tool": "browser_run_code_unsafe",
+          "status": "completed",
+          "startMs": 124458.831,
+          "endMs": 131241.04625,
+          "durationMs": 6782.215250000008,
+          "returnedBytes": 1286
+        }
+      ],
+      "timeline": [
+        {
+          "atMs": 108.0802500000027,
+          "event": "thread.started"
+        },
+        {
+          "atMs": 111.0405000000028,
+          "event": "turn.started"
+        },
+        {
+          "atMs": 5628.270208000002,
+          "event": "item.completed",
+          "itemId": "item_0",
+          "itemType": "agent_message"
+        },
+        {
+          "atMs": 16377.145292000001,
+          "event": "item.started",
+          "itemId": "item_1",
+          "itemType": "mcp_tool_call",
+          "tool": "browser_run_code_unsafe",
+          "status": "in_progress"
+        },
+        {
+          "atMs": 22757.279417000005,
+          "event": "item.completed",
+          "itemId": "item_1",
+          "itemType": "mcp_tool_call",
+          "tool": "browser_run_code_unsafe",
+          "status": "completed"
+        },
+        {
+          "atMs": 54845.026708,
+          "event": "item.started",
+          "itemId": "item_2",
+          "itemType": "mcp_tool_call",
+          "tool": "browser_run_code_unsafe",
+          "status": "in_progress"
+        },
+        {
+          "atMs": 89816.98641700001,
+          "event": "item.completed",
+          "itemId": "item_2",
+          "itemType": "mcp_tool_call",
+          "tool": "browser_run_code_unsafe",
+          "status": "failed"
+        },
+        {
+          "atMs": 124458.831,
+          "event": "item.started",
+          "itemId": "item_3",
+          "itemType": "mcp_tool_call",
+          "tool": "browser_run_code_unsafe",
+          "status": "in_progress"
+        },
+        {
+          "atMs": 131241.04625,
+          "event": "item.completed",
+          "itemId": "item_3",
+          "itemType": "mcp_tool_call",
+          "tool": "browser_run_code_unsafe",
+          "status": "completed"
+        }
+      ],
+      "interruptedByHarness": true
+    }
+  ],
+  "interruption": {
+    "date": "2026-09-20T23:30:57.006376+00:00",
+    "reason": "Controller intentionally stopped after discovering that the baseline supplied tab headers rather than an actual form snapshot. The in-flight official-tool row, if present, includes cancellation and unavailable-oracle effects, not a normal task failure. Do not use this partial batch for latency comparisons."
+  }
+}

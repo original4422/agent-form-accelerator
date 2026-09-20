@@ -36,6 +36,7 @@ export async function executeGoal(request, primitive) {
   const resolve = (target) => {
     const f = unique(observation.fields, (o) => key(o) === key(target), `AMBIGUOUS_FIELD: ${target.group}/${target.label}`);
     if (!f) return {target, reason: 'FIELD_NOT_VISIBLE'};
+    if (target.kind && target.kind !== f.kind) throw new Error('FIELD_KIND_CHANGED');
     if (originals.has(key(target)) && originals.get(key(target)) !== f.kind) throw new Error('FIELD_KIND_CHANGED');
     if (!originals.has(key(target)) && !expanded.has(target.group)) return {target, reason: 'UNPLANNED_FIELD'};
     if (!f.supported || f.readOnly) return {target, reason: 'UNSUPPORTED_OR_READONLY_FIELD'};
@@ -45,7 +46,7 @@ export async function executeGoal(request, primitive) {
       if (options.length !== 1) return {target, reason: options.length ? 'AMBIGUOUS_OPTION' : 'OPTION_NOT_READY'};
       value = options[0].value;
     }
-    return {target, field: f, value, reason: f.disabled ? 'FIELD_DISABLED' : undefined};
+    return {target, field: f, value, reason: f.pending ? 'VALIDATION_PENDING' : f.disabled ? 'FIELD_DISABLED' : undefined};
   };
   let reason, finalized = false, lastProgress = Date.now();
   try {
@@ -65,6 +66,7 @@ export async function executeGoal(request, primitive) {
       const actions = [], actionTargets = [];
       for (const s of pending) {
         if (s.reason || !s.field) continue;
+        if (s.field.value === s.value && s.field.valid === false && writes.has(key(s.target))) throw new Error('VALIDATION_FAILED');
         if ((writes.get(key(s.target)) ?? 0) >= 2) throw new Error('WRITE_RETRY_LIMIT');
         actions.push({ref: s.field.ref, op: 'set', value: s.target.value}); actionTargets.push(s.target);
       }
@@ -74,7 +76,7 @@ export async function executeGoal(request, primitive) {
         trace.push({round, operation: 'fill', statuses: r.results.map((x) => x.status)});
         for (let i = 0; i < actionTargets.length; i++) {
           const result = r.results[i];
-          if (result.status === 'verified' || result.status === 'needs-review') {
+          if (['verified', 'needs-review', 'pending-validation'].includes(result.status)) {
             const k = key(actionTargets[i]); writes.set(k, (writes.get(k) ?? 0) + 1);
           }
           if (result.status === 'needs-review' || result.status === 'blocked') {

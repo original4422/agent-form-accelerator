@@ -1,8 +1,11 @@
 import {spawn} from 'node:child_process';
-export function runCodex({cwd,args,prompt,timeoutMs=180000}) {
+export function runCodex({cwd,args,prompt,timeoutMs=180000,signal}) {
   return new Promise((resolve)=>{
     const started=performance.now(), timeline=[];
     const child=spawn('codex',args,{cwd,env:process.env,stdio:['pipe','pipe','pipe']});
+    const abort=()=>child.kill('SIGTERM');
+    signal?.addEventListener('abort',abort,{once:true});
+    if(signal?.aborted)abort();
     let stdout='',stderr='',partial='',timedOut=false;
     const timer=setTimeout(()=>{timedOut=true;child.kill('SIGTERM');},timeoutMs);
     child.stdout.on('data',(x)=>{
@@ -10,8 +13,8 @@ export function runCodex({cwd,args,prompt,timeoutMs=180000}) {
       for(const line of lines)try{const e=JSON.parse(line),item=e.item;timeline.push({atMs:performance.now()-started,event:e.type,itemId:item?.id,itemType:item?.type,tool:item?.tool,status:item?.status});}catch{}
     });
     child.stderr.on('data',(x)=>{stderr+=x;});
-    child.on('error',(e)=>{clearTimeout(timer);resolve({error:e.message,stdout,stderr,timeline,elapsedMs:performance.now()-started});});
-    child.on('close',(exitCode)=>{clearTimeout(timer);resolve({exitCode,timedOut,stdout,stderr,timeline,elapsedMs:performance.now()-started});});
+    child.on('error',(e)=>{clearTimeout(timer);signal?.removeEventListener('abort',abort);resolve({error:e.message,aborted:!!signal?.aborted,stdout,stderr,timeline,elapsedMs:performance.now()-started});});
+    child.on('close',(exitCode)=>{clearTimeout(timer);signal?.removeEventListener('abort',abort);resolve({exitCode,timedOut,aborted:!!signal?.aborted,stdout,stderr,timeline,elapsedMs:performance.now()-started});});
     child.stdin.on('error',()=>{});child.stdin.end(prompt);
   });
 }

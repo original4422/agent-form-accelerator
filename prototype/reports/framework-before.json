@@ -1,0 +1,63 @@
+{
+  "date": "2026-09-20T23:00:28.645Z",
+  "before": {
+    "fields": [
+      {
+        "label": "Applicant name",
+        "kind": "text"
+      },
+      {
+        "label": "Email address",
+        "kind": "email"
+      },
+      {
+        "label": "Institution",
+        "kind": "text"
+      },
+      {
+        "label": "Subject",
+        "kind": "text"
+      },
+      {
+        "label": "Personal statement",
+        "kind": "textarea"
+      }
+    ],
+    "visibleComboboxes": 3
+  },
+  "reported": {
+    "complete": true,
+    "elapsedMs": 170.5,
+    "evidence": [
+      {
+        "group": "",
+        "label": "Email address",
+        "expected": "bad@invalid.example",
+        "actual": "bad@invalid.example",
+        "status": "verified"
+      }
+    ]
+  },
+  "after": {
+    "state": {
+      "fullName": "",
+      "email": "bad@invalid.example",
+      "country": "",
+      "city": "",
+      "degree": "",
+      "schools": [
+        {
+          "school": "",
+          "major": ""
+        }
+      ],
+      "summary": ""
+    },
+    "validation": {
+      "checking": false,
+      "invalid": true,
+      "loading": false
+    },
+    "emailInvalid": "true"
+  }
+}

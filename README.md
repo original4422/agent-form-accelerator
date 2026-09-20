@@ -2,10 +2,11 @@
 
 给 Codex 和 Claude Code 共用的网页填表执行工具。已有 Agent 负责理解资料、匹配字段，本地扩展负责批量填写和回读校验，不另行调用模型 API。
 
-**当前状态：工程原型。已能用 Codex 将未映射的中文 Markdown 资料绑定到英文表单；预取上下文在小样本对照中耗时减少约 16%。已有映射的资料引用曾减少约 40%，强缓存脚本已接近其速度。尚未证明真实招聘页完整流程稳定提速 2 倍。**
+**当前状态：工程原型。已能用 Codex 将未映射的中文 Markdown 资料绑定到英文表单。React/Radix 样本中，复用重复组模板把两次宿主请求合并为一次，完整中位耗时减少约 27%；69 项功能检查通过。官方工具生成脚本出现了定位错误，不能用恢复造成的差距宣称稳定倍数。尚未证明真实招聘页完整流程稳定提速 2 倍。**
 
 ## 看结果
 
+- [React/Radix 动态表单验证](prototype/reports/FRAMEWORK-VALIDATION.md)：受控状态、自定义下拉、重复组和 700 ms 延迟校验。
 - [官方 Playwright MCP 强基线](prototype/reports/OFFICIAL-BASELINE.md)：相同资料引用与预取机会，保留脚本失败、恢复和补强结果。
 - [未映射文档与上下文预取](prototype/reports/DOCUMENT-BINDINGS.md)：九次 Codex 任务、资料/字段打乱与真实页观察修复。
 - [继续减少模型往返](prototype/reports/ONE-CALL.md)：三类表单的一次调用对照、异常恢复及当前瓶颈。
@@ -39,6 +40,9 @@ node prototype/bench/plan-check.mjs
 node prototype/bench/goal-check.mjs
 node prototype/bench/source-check.mjs
 node prototype/bench/document-check.mjs
+node prototype/bench/framework-check.mjs
+node prototype/bench/codex-framework.mjs
+AFA_LOCAL_LOOP_HINT=1 AFA_FRAMEWORK_MODES=binding-repeat,playwright-ref node prototype/bench/codex-framework.mjs
 node prototype/bench/codex-documents.mjs
 node prototype/bench/codex-official.mjs
 node prototype/bench/codex-plans.mjs repeat
@@ -102,10 +106,14 @@ codex -c 'mcp_servers.afa.command="node"' \
 - `form_apply_goal` 可在已知精确字段目标时自行观察、填写和核验；处理同义同类型的节点替换，遇到未知语义或拒绝值返回宿主。最终核验等待 120 ms，不等于任意异步校验均已完成。
 - 实验性的 `prototype/src/source-mcp.mjs` 可通过启动时明确设置的 `AFA_SOURCE_FILE` 和 `AFA_SESSION_FILE` 引用本地 JSON 资料，支持 `{id, fields: [{group, label, value}], expansions: []}`。数据文件发生变化会要求重新加载会话；它不是已建成的个人资料管理器。
 - 实验性的 `bindings-mcp.mjs` 接受启动时指定的 `AFA_DOCUMENT_FILE` 和 `AFA_SESSION_FILE`，读取 Markdown 片段。`form_context` 提供来源及页面，`form_apply_bindings` 让宿主绑定 ref 与来源 ID；`AFA_CONTEXT_MODE=prefetch` 可在临时会话启动时预取上下文。它不是任意 PDF/DOCX 解析器。
+- 资料绑定可使用 `repeatGroups` 复用已观察的重复组模板，展开后核对精确标签和类型；未知结构用 `form_expand` 返回上下文再判断。
+- 原生/组件字段会等待明确的 aria-busy，检查 aria-invalid；无状态信号的任意异步校验仍不能保证完成。
 - 产品接口没有任意脚本、选择器、提交或导航操作。
-- 自定义 ARIA 下拉、iframe、shadow DOM、文件上传、跨页流程尚未实现；原型不会把它们报告成已完成。
+- 已验证 React/Radix 的 select-only 按钮式 combobox：通过 aria-controls 找到关联的 listbox，选择精确且唯一的可用选项，再回读显示值。输入型 autocomplete、其他 ARIA 组件、iframe、shadow DOM、文件上传和跨页流程尚未实现。
 - 同一时刻只连接一个标签页；不要让两个宿主同时填写同一张表。
 - 同步回读不能保证应用/服务器接受，也不能捕获任意延迟的异步修改。宿主需最终独立检查。
+
+React/Radix 本地演示先运行 `npm run build:fixtures`，再运行 `AFA_FIXTURE=react-form npm run demo`，资料使用 `prototype/fixtures/documents/framework-candidate.md`。组件 bundle 由源码生成，不提交编译产物。
 
 资料流向：页面可见字段和值 → 本地连接 → 当前 Agent。执行核心不调用外部模型，但宿主仍会按它的正常机制处理这些资料。扩展不持久保存填写资料；连接码只在扩展会话存储中保留。
 

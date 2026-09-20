@@ -3,7 +3,7 @@ import {createHarness} from '../bench/harness.mjs';
 import {projectRoot} from '../src/bridge.mjs';
 
 const fixture = process.env.AFA_FIXTURE || 'plain';
-if (!['plain', 'dependent', 'repeat', 'unfamiliar', 'permuted'].includes(fixture)) throw new Error('Unknown demo fixture');
+if (!['plain', 'dependent', 'repeat', 'unfamiliar', 'permuted', 'react-form'].includes(fixture)) throw new Error('Unknown demo fixture');
 const harness = await createHarness({headless: false, port: Number(process.env.AFA_PORT || 43187),
   sessionFile: path.join(projectRoot, '.runtime/session.json')});
 await harness.reset(fixture);

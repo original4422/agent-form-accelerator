@@ -4,3 +4,4 @@ node_modules/
 .env*
 *.log
 prototype/reports/private/
+prototype/fixtures/*-bundle.js

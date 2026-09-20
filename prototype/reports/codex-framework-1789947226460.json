@@ -1,0 +1,590 @@
+{
+  "batchId": 1789947226460,
+  "localLoopHint": true,
+  "preflight": [
+    {
+      "mode": "binding-repeat",
+      "passed": true,
+      "tools": 3,
+      "actualSnapshot": true,
+      "repeatSchema": true
+    },
+    {
+      "mode": "playwright-ref",
+      "passed": true,
+      "tools": 25,
+      "actualSnapshot": true,
+      "sourceArgument": true
+    },
+    {
+      "mode": "playwright-ref",
+      "passed": true,
+      "tools": 25,
+      "actualSnapshot": true,
+      "sourceArgument": true
+    },
+    {
+      "mode": "binding-repeat",
+      "passed": true,
+      "tools": 3,
+      "actualSnapshot": true,
+      "repeatSchema": true
+    },
+    {
+      "mode": "binding-repeat",
+      "passed": true,
+      "tools": 3,
+      "actualSnapshot": true,
+      "repeatSchema": true
+    },
+    {
+      "mode": "playwright-ref",
+      "passed": true,
+      "tools": 25,
+      "actualSnapshot": true,
+      "sourceArgument": true
+    }
+  ],
+  "aborted": false,
+  "date": "2026-09-20T23:41:59.490Z",
+  "scope": "React 19.3.0 controlled application with Radix Select 2.3.7, portal options, dependent remounted city, 700ms aria-busy validation, and repeated education. Unmapped Markdown parsed inside timed MCP startup. All modes prefetch current context. Explicit bindings require separate expansion; repeat bindings may reuse exact observed template labels/kinds; official Playwright retains full tools and receives same source entries passed as a second script argument by a benchmark adapter. No source values are placed in page globals; normal Node imports are unavailable in the official VM. Browser load/bundle build excluded; CLI/model/tools/recovery/exit included. Independent DOM/React-state oracle after timing, zero submits. Three rotated repetitions by default.",
+  "rows": [
+    {
+      "attempt": "1789947226460-0-binding-repeat",
+      "repetition": 0,
+      "mode": "binding-repeat",
+      "elapsedMs": 24119.072792000003,
+      "exitCode": 0,
+      "timedOut": false,
+      "aborted": false,
+      "passed": true,
+      "total": 10,
+      "errors": [],
+      "toolCalls": [
+        {
+          "tool": "form_apply_bindings",
+          "status": "completed",
+          "startMs": 13758.431333999999,
+          "endMs": 19438.100667000002,
+          "durationMs": 5679.6693330000035,
+          "returnedBytes": 6260,
+          "executionMs": 883.9000000953674,
+          "complete": true,
+          "primitiveCalls": 11
+        }
+      ],
+      "usage": {
+        "input_tokens": 68826,
+        "cached_input_tokens": 49792,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 246,
+        "reasoning_output_tokens": 0
+      },
+      "timeline": [
+        {
+          "atMs": 1698.277167,
+          "event": "thread.started"
+        },
+        {
+          "atMs": 1709.937459,
+          "event": "turn.started"
+        },
+        {
+          "atMs": 6723.085042,
+          "event": "item.completed",
+          "itemId": "item_0",
+          "itemType": "agent_message"
+        },
+        {
+          "atMs": 13758.431333999999,
+          "event": "item.started",
+          "itemId": "item_1",
+          "itemType": "mcp_tool_call",
+          "tool": "form_apply_bindings",
+          "status": "in_progress"
+        },
+        {
+          "atMs": 19438.100667000002,
+          "event": "item.completed",
+          "itemId": "item_1",
+          "itemType": "mcp_tool_call",
+          "tool": "form_apply_bindings",
+          "status": "completed"
+        },
+        {
+          "atMs": 21886.033959,
+          "event": "item.completed",
+          "itemId": "item_2",
+          "itemType": "agent_message"
+        },
+        {
+          "atMs": 21893.729959,
+          "event": "turn.completed"
+        }
+      ]
+    },
+    {
+      "attempt": "1789947226460-0-playwright-ref",
+      "repetition": 0,
+      "mode": "playwright-ref",
+      "elapsedMs": 140182.501167,
+      "exitCode": 0,
+      "timedOut": false,
+      "aborted": false,
+      "passed": true,
+      "total": 10,
+      "errors": [],
+      "toolCalls": [
+        {
+          "tool": "browser_run_code_unsafe",
+          "status": "failed",
+          "startMs": 46649.95087500001,
+          "endMs": 81607.39058400001,
+          "durationMs": 34957.439709,
+          "returnedBytes": 167
+        },
+        {
+          "tool": "browser_run_code_unsafe",
+          "status": "completed",
+          "startMs": 90670.223834,
+          "endMs": 95170.29741700001,
+          "durationMs": 4500.073583000005,
+          "returnedBytes": 1026
+        },
+        {
+          "tool": "browser_run_code_unsafe",
+          "status": "completed",
+          "startMs": 130090.872042,
+          "endMs": 135303.57425,
+          "durationMs": 5212.702208000002,
+          "returnedBytes": 1348
+        }
+      ],
+      "usage": {
+        "input_tokens": 179289,
+        "cached_input_tokens": 157696,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 2785,
+        "reasoning_output_tokens": 96
+      },
+      "timeline": [
+        {
+          "atMs": 103.88458399999945,
+          "event": "thread.started"
+        },
+        {
+          "atMs": 106.20570900000166,
+          "event": "turn.started"
+        },
+        {
+          "atMs": 5728.832083999998,
+          "event": "item.completed",
+          "itemId": "item_0",
+          "itemType": "agent_message"
+        },
+        {
+          "atMs": 46649.95087500001,
+          "event": "item.started",
+          "itemId": "item_1",
+          "itemType": "mcp_tool_call",
+          "tool": "browser_run_code_unsafe",
+          "status": "in_progress"
+        },
+        {
+          "atMs": 81607.39058400001,
+          "event": "item.completed",
+          "itemId": "item_1",
+          "itemType": "mcp_tool_call",
+          "tool": "browser_run_code_unsafe",
+          "status": "failed"
+        },
+        {
+          "atMs": 90670.223834,
+          "event": "item.started",
+          "itemId": "item_2",
+          "itemType": "mcp_tool_call",
+          "tool": "browser_run_code_unsafe",
+          "status": "in_progress"
+        },
+        {
+          "atMs": 95170.29741700001,
+          "event": "item.completed",
+          "itemId": "item_2",
+          "itemType": "mcp_tool_call",
+          "tool": "browser_run_code_unsafe",
+          "status": "completed"
+        },
+        {
+          "atMs": 98330.810042,
+          "event": "item.completed",
+          "itemId": "item_3",
+          "itemType": "agent_message"
+        },
+        {
+          "atMs": 130090.872042,
+          "event": "item.started",
+          "itemId": "item_4",
+          "itemType": "mcp_tool_call",
+          "tool": "browser_run_code_unsafe",
+          "status": "in_progress"
+        },
+        {
+          "atMs": 135303.57425,
+          "event": "item.completed",
+          "itemId": "item_4",
+          "itemType": "mcp_tool_call",
+          "tool": "browser_run_code_unsafe",
+          "status": "completed"
+        },
+        {
+          "atMs": 138196.894084,
+          "event": "item.completed",
+          "itemId": "item_5",
+          "itemType": "agent_message"
+        },
+        {
+          "atMs": 138238.92291700002,
+          "event": "turn.completed"
+        }
+      ]
+    },
+    {
+      "attempt": "1789947226460-1-playwright-ref",
+      "repetition": 1,
+      "mode": "playwright-ref",
+      "elapsedMs": 131302.11075,
+      "exitCode": 0,
+      "timedOut": false,
+      "aborted": false,
+      "passed": true,
+      "total": 10,
+      "errors": [],
+      "toolCalls": [
+        {
+          "tool": "browser_run_code_unsafe",
+          "status": "failed",
+          "startMs": 41615.51254199998,
+          "endMs": 74994.12179199999,
+          "durationMs": 33378.60925000001,
+          "returnedBytes": 167
+        },
+        {
+          "tool": "browser_run_code_unsafe",
+          "status": "completed",
+          "startMs": 111254.50487499998,
+          "endMs": 117793.28658399999,
+          "durationMs": 6538.781709000003,
+          "returnedBytes": 2064
+        }
+      ],
+      "usage": {
+        "input_tokens": 124774,
+        "cached_input_tokens": 85504,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 2246,
+        "reasoning_output_tokens": 29
+      },
+      "timeline": [
+        {
+          "atMs": 118.83408399997279,
+          "event": "thread.started"
+        },
+        {
+          "atMs": 121.03254200000083,
+          "event": "turn.started"
+        },
+        {
+          "atMs": 5859.4131669999915,
+          "event": "item.completed",
+          "itemId": "item_0",
+          "itemType": "agent_message"
+        },
+        {
+          "atMs": 41615.51254199998,
+          "event": "item.started",
+          "itemId": "item_1",
+          "itemType": "mcp_tool_call",
+          "tool": "browser_run_code_unsafe",
+          "status": "in_progress"
+        },
+        {
+          "atMs": 74994.12179199999,
+          "event": "item.completed",
+          "itemId": "item_1",
+          "itemType": "mcp_tool_call",
+          "tool": "browser_run_code_unsafe",
+          "status": "failed"
+        },
+        {
+          "atMs": 111254.50487499998,
+          "event": "item.started",
+          "itemId": "item_2",
+          "itemType": "mcp_tool_call",
+          "tool": "browser_run_code_unsafe",
+          "status": "in_progress"
+        },
+        {
+          "atMs": 117793.28658399999,
+          "event": "item.completed",
+          "itemId": "item_2",
+          "itemType": "mcp_tool_call",
+          "tool": "browser_run_code_unsafe",
+          "status": "completed"
+        },
+        {
+          "atMs": 129465.111042,
+          "event": "item.completed",
+          "itemId": "item_3",
+          "itemType": "agent_message"
+        },
+        {
+          "atMs": 129473.864834,
+          "event": "turn.completed"
+        }
+      ]
+    },
+    {
+      "attempt": "1789947226460-1-binding-repeat",
+      "repetition": 1,
+      "mode": "binding-repeat",
+      "elapsedMs": 24643.516209000023,
+      "exitCode": 0,
+      "timedOut": false,
+      "aborted": false,
+      "passed": true,
+      "total": 10,
+      "errors": [],
+      "toolCalls": [
+        {
+          "tool": "form_apply_bindings",
+          "status": "completed",
+          "startMs": 13423.970042,
+          "endMs": 19641.77933400002,
+          "durationMs": 6217.80929200002,
+          "returnedBytes": 6229,
+          "executionMs": 878,
+          "complete": true,
+          "primitiveCalls": 11
+        }
+      ],
+      "usage": {
+        "input_tokens": 68740,
+        "cached_input_tokens": 49792,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 252,
+        "reasoning_output_tokens": 0
+      },
+      "timeline": [
+        {
+          "atMs": 116.00795900000958,
+          "event": "thread.started"
+        },
+        {
+          "atMs": 117.69670899998164,
+          "event": "turn.started"
+        },
+        {
+          "atMs": 6056.246458999987,
+          "event": "item.completed",
+          "itemId": "item_0",
+          "itemType": "agent_message"
+        },
+        {
+          "atMs": 13423.970042,
+          "event": "item.started",
+          "itemId": "item_1",
+          "itemType": "mcp_tool_call",
+          "tool": "form_apply_bindings",
+          "status": "in_progress"
+        },
+        {
+          "atMs": 19641.77933400002,
+          "event": "item.completed",
+          "itemId": "item_1",
+          "itemType": "mcp_tool_call",
+          "tool": "form_apply_bindings",
+          "status": "completed"
+        },
+        {
+          "atMs": 22254.13287500001,
+          "event": "item.completed",
+          "itemId": "item_2",
+          "itemType": "agent_message"
+        },
+        {
+          "atMs": 22275.70216699998,
+          "event": "turn.completed"
+        }
+      ]
+    },
+    {
+      "attempt": "1789947226460-2-binding-repeat",
+      "repetition": 2,
+      "mode": "binding-repeat",
+      "elapsedMs": 26811.598667000013,
+      "exitCode": 0,
+      "timedOut": false,
+      "aborted": false,
+      "passed": true,
+      "total": 10,
+      "errors": [],
+      "toolCalls": [
+        {
+          "tool": "form_apply_bindings",
+          "status": "completed",
+          "startMs": 14097.389209000045,
+          "endMs": 19865.1765,
+          "durationMs": 5767.787290999957,
+          "returnedBytes": 6260,
+          "executionMs": 878.0999999046326,
+          "complete": true,
+          "primitiveCalls": 11
+        }
+      ],
+      "usage": {
+        "input_tokens": 68751,
+        "cached_input_tokens": 49792,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 249,
+        "reasoning_output_tokens": 0
+      },
+      "timeline": [
+        {
+          "atMs": 104.41695900005288,
+          "event": "thread.started"
+        },
+        {
+          "atMs": 106.481958999997,
+          "event": "turn.started"
+        },
+        {
+          "atMs": 7559.733625000052,
+          "event": "item.completed",
+          "itemId": "item_0",
+          "itemType": "agent_message"
+        },
+        {
+          "atMs": 14097.389209000045,
+          "event": "item.started",
+          "itemId": "item_1",
+          "itemType": "mcp_tool_call",
+          "tool": "form_apply_bindings",
+          "status": "in_progress"
+        },
+        {
+          "atMs": 19865.1765,
+          "event": "item.completed",
+          "itemId": "item_1",
+          "itemType": "mcp_tool_call",
+          "tool": "form_apply_bindings",
+          "status": "completed"
+        },
+        {
+          "atMs": 24655.145542000013,
+          "event": "item.completed",
+          "itemId": "item_2",
+          "itemType": "agent_message"
+        },
+        {
+          "atMs": 24663.064334000053,
+          "event": "turn.completed"
+        }
+      ]
+    },
+    {
+      "attempt": "1789947226460-2-playwright-ref",
+      "repetition": 2,
+      "mode": "playwright-ref",
+      "elapsedMs": 136418.988708,
+      "exitCode": 0,
+      "timedOut": false,
+      "aborted": false,
+      "passed": true,
+      "total": 10,
+      "errors": [],
+      "toolCalls": [
+        {
+          "tool": "browser_run_code_unsafe",
+          "status": "failed",
+          "startMs": 51149.00437499996,
+          "endMs": 87413.85949999996,
+          "durationMs": 36264.855125,
+          "returnedBytes": 167
+        },
+        {
+          "tool": "browser_run_code_unsafe",
+          "status": "completed",
+          "startMs": 124232.90375,
+          "endMs": 130816.98195799999,
+          "durationMs": 6584.078207999992,
+          "returnedBytes": 821
+        }
+      ],
+      "usage": {
+        "input_tokens": 113669,
+        "cached_input_tokens": 100224,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 2682,
+        "reasoning_output_tokens": 84
+      },
+      "timeline": [
+        {
+          "atMs": 116.72145799995633,
+          "event": "thread.started"
+        },
+        {
+          "atMs": 118.76399999996647,
+          "event": "turn.started"
+        },
+        {
+          "atMs": 6286.845333000005,
+          "event": "item.completed",
+          "itemId": "item_0",
+          "itemType": "agent_message"
+        },
+        {
+          "atMs": 51149.00437499996,
+          "event": "item.started",
+          "itemId": "item_1",
+          "itemType": "mcp_tool_call",
+          "tool": "browser_run_code_unsafe",
+          "status": "in_progress"
+        },
+        {
+          "atMs": 87413.85949999996,
+          "event": "item.completed",
+          "itemId": "item_1",
+          "itemType": "mcp_tool_call",
+          "tool": "browser_run_code_unsafe",
+          "status": "failed"
+        },
+        {
+          "atMs": 124232.90375,
+          "event": "item.started",
+          "itemId": "item_2",
+          "itemType": "mcp_tool_call",
+          "tool": "browser_run_code_unsafe",
+          "status": "in_progress"
+        },
+        {
+          "atMs": 130816.98195799999,
+          "event": "item.completed",
+          "itemId": "item_2",
+          "itemType": "mcp_tool_call",
+          "tool": "browser_run_code_unsafe",
+          "status": "completed"
+        },
+        {
+          "atMs": 134570.43141699996,
+          "event": "item.completed",
+          "itemId": "item_3",
+          "itemType": "agent_message"
+        },
+        {
+          "atMs": 134584.892667,
+          "event": "turn.completed"
+        }
+      ]
+    }
+  ]
+}

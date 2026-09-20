@@ -1,0 +1,27 @@
+{
+  "date": "2026-09-20T23:33:05.337Z",
+  "results": [
+    {
+      "mode": "binding-explicit",
+      "passed": true,
+      "tools": 3,
+      "actualSnapshot": true,
+      "repeatSchema": false
+    },
+    {
+      "mode": "binding-repeat",
+      "passed": true,
+      "tools": 3,
+      "actualSnapshot": true,
+      "repeatSchema": true
+    },
+    {
+      "mode": "playwright-ref",
+      "passed": true,
+      "tools": 25,
+      "actualSnapshot": true,
+      "sourceArgument": true
+    }
+  ],
+  "browserReusable": true
+}

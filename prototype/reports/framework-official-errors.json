@@ -1,0 +1,21 @@
+{
+  "batchId": 1789947226460,
+  "scope": "All failed tool calls in corrected full-snapshot/source-argument batch. All three tasks eventually passed independent oracle; errors are retained in full task latency.",
+  "failures": [
+    {
+      "attempt": "1789947226460-0-playwright-ref",
+      "tool": "browser_run_code_unsafe",
+      "errorText": "### Error\nTimeoutError: locator.getAttribute: Timeout 30000ms exceeded.\nCall log:\n  - waiting for getByRole('combobox', { name: 'Country of residence', exact: true })\n"
+    },
+    {
+      "attempt": "1789947226460-1-playwright-ref",
+      "tool": "browser_run_code_unsafe",
+      "errorText": "### Error\nTimeoutError: locator.getAttribute: Timeout 30000ms exceeded.\nCall log:\n  - waiting for getByRole('combobox', { name: 'Country of residence', exact: true })\n"
+    },
+    {
+      "attempt": "1789947226460-2-playwright-ref",
+      "tool": "browser_run_code_unsafe",
+      "errorText": "### Error\nTimeoutError: locator.getAttribute: Timeout 30000ms exceeded.\nCall log:\n  - waiting for getByRole('combobox', { name: 'Country of residence', exact: true })\n"
+    }
+  ]
+}
