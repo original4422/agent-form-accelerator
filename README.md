@@ -2,10 +2,12 @@
 
 给 Codex 和 Claude Code 共用的网页填表执行工具。已有 Agent 负责理解资料、匹配字段，本地扩展负责批量填写和回读校验，不另行调用模型 API。
 
-**当前状态：工程原型。已有结构化资料时，来源引用在单个 Codex 合成任务中耗时减少约 40%；强缓存脚本已接近其速度。尚未证明陌生招聘页的完整流程稳定提速 2 倍。**
+**当前状态：工程原型。已能用 Codex 将未映射的中文 Markdown 资料绑定到英文表单；预取上下文在小样本对照中耗时减少约 16%。已有映射的资料引用曾减少约 40%，强缓存脚本已接近其速度。尚未证明真实招聘页完整流程稳定提速 2 倍。**
 
 ## 看结果
 
+- [官方 Playwright MCP 强基线](prototype/reports/OFFICIAL-BASELINE.md)：相同资料引用与预取机会，保留脚本失败、恢复和补强结果。
+- [未映射文档与上下文预取](prototype/reports/DOCUMENT-BINDINGS.md)：九次 Codex 任务、资料/字段打乱与真实页观察修复。
 - [继续减少模型往返](prototype/reports/ONE-CALL.md)：三类表单的一次调用对照、异常恢复及当前瓶颈。
 - [资料引用实验](prototype/reports/SOURCE-REFERENCES.md)：避免模型重新输出整份资料，并与可复用脚本比较。
 - [目标计划与 Codex 对照](prototype/reports/GOAL-PLAN.md)：本轮减少模型往返的实验、脚本强基线和适用边界。
@@ -36,6 +38,9 @@ node prototype/bench/hosts.mjs
 node prototype/bench/plan-check.mjs
 node prototype/bench/goal-check.mjs
 node prototype/bench/source-check.mjs
+node prototype/bench/document-check.mjs
+node prototype/bench/codex-documents.mjs
+node prototype/bench/codex-official.mjs
 node prototype/bench/codex-plans.mjs repeat
 node prototype/bench/codex-goals.mjs
 node prototype/bench/codex-sources.mjs plain
@@ -75,6 +80,19 @@ claude --mcp-config '{"mcpServers":{"afa":{"command":"node","args":["/ABSOLUTE/P
 
 替换示例中的绝对路径。日常使用不必修改全局 Skill 或 MCP 配置；第一版的 Skill 是项目内待验证资源。CLI 演示使用的隔离参数见 `prototype/bench/hosts.mjs`。
 
+试用 Markdown 资料绑定时，先用 `AFA_FIXTURE=unfamiliar npm run demo` 打开并连接对应的英文测试页，再用下面的临时命令替代普通 Codex 入口。资料路径可指向仓库中的 `prototype/fixtures/documents/candidate.md`；内容全部虚构。填写普通网站时，先按上述步骤连接当前页，再启动会话。
+
+```bash
+codex -c 'mcp_servers.afa.command="node"' \
+  -c 'mcp_servers.afa.args=["/ABSOLUTE/PATH/agent-form-accelerator/prototype/src/bindings-mcp.mjs"]' \
+  -c 'mcp_servers.afa.env.AFA_SESSION_FILE="/ABSOLUTE/PATH/agent-form-accelerator/.runtime/session.json"' \
+  -c 'mcp_servers.afa.env.AFA_DOCUMENT_FILE="/ABSOLUTE/PATH/candidate.md"' \
+  -c 'mcp_servers.afa.env.AFA_CONTEXT_MODE="prefetch"'
+```
+
+资料支持 Markdown 标题、单行“名称：值”和自然段。让 Codex 根据资料含义填写连接的页面，保留提交供你检查。这个入口只会复制已提供的片段，不负责生成个性化自我介绍或解析 PDF。页面发生变化时通过 `form_context` 刷新；文档变化后需重启资料会话。
+
+
 ## 支持边界
 
 - 主文档内的原生文本、日期、数字、单选、复选、原生下拉框；观察到的添加行按钮。
@@ -83,6 +101,7 @@ claude --mcp-config '{"mcpServers":{"afa":{"command":"node","args":["/ABSOLUTE/P
 - `form_execute_plan` 使用明确的 fill/expand 阶段，在页面内发生预期变化后重新观察，并按精确 group/label 绑定字段；歧义、类型变化、缺少字段/选项和校验失败会停止。依赖选项每阶段最多等待 1 秒，总预算 8 秒。
 - `form_apply_goal` 可在已知精确字段目标时自行观察、填写和核验；处理同义同类型的节点替换，遇到未知语义或拒绝值返回宿主。最终核验等待 120 ms，不等于任意异步校验均已完成。
 - 实验性的 `prototype/src/source-mcp.mjs` 可通过启动时明确设置的 `AFA_SOURCE_FILE` 和 `AFA_SESSION_FILE` 引用本地 JSON 资料，支持 `{id, fields: [{group, label, value}], expansions: []}`。数据文件发生变化会要求重新加载会话；它不是已建成的个人资料管理器。
+- 实验性的 `bindings-mcp.mjs` 接受启动时指定的 `AFA_DOCUMENT_FILE` 和 `AFA_SESSION_FILE`，读取 Markdown 片段。`form_context` 提供来源及页面，`form_apply_bindings` 让宿主绑定 ref 与来源 ID；`AFA_CONTEXT_MODE=prefetch` 可在临时会话启动时预取上下文。它不是任意 PDF/DOCX 解析器。
 - 产品接口没有任意脚本、选择器、提交或导航操作。
 - 自定义 ARIA 下拉、iframe、shadow DOM、文件上传、跨页流程尚未实现；原型不会把它们报告成已完成。
 - 同一时刻只连接一个标签页；不要让两个宿主同时填写同一张表。
@@ -95,7 +114,7 @@ claude --mcp-config '{"mcpServers":{"afa":{"command":"node","args":["/ABSOLUTE/P
 ```text
 prototype/extension/    Chrome 扩展与表单运行时
 prototype/src/          本地桥接和 stdio MCP
-prototype/fixtures/     三个独立可核验的表单应用
+prototype/fixtures/     独立可核验的本地表单和虚构资料
 prototype/bench/        功能、执行层速度和宿主接入验证
 prototype/reports/      可追溯的测量结果
 prototype/skills/       两端共用的工作流说明

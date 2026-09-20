@@ -1,0 +1,230 @@
+{
+  "batchId": 1789943111449,
+  "variant": "permuted",
+  "date": "2026-09-20T22:26:25.558Z",
+  "scope": "Unmapped Markdown document to unfamiliar English form. Parsing and page-context fetch occur inside timed Codex/MCP startup or tools. Browser startup/page load excluded. Same binding API/source/executor in both modes; only context delivery differs. Explicit calls form_context; prefetch includes same source/page data in tool description with freshness guard. Three AB/BA/AB repetitions, same Codex defaults and auto-review. Independent DOM/application-state oracle; no submission.",
+  "rows": [
+    {
+      "attempt": "1789943111449-0-prefetch",
+      "repetition": 0,
+      "mode": "prefetch",
+      "elapsedMs": 22992.880291999998,
+      "exitCode": 0,
+      "timedOut": false,
+      "passed": true,
+      "total": 12,
+      "correct": 12,
+      "errors": [],
+      "toolCalls": [
+        {
+          "tool": "form_apply_bindings",
+          "status": "completed",
+          "startMs": 13062.089750000001,
+          "endMs": 16811.280499999997,
+          "durationMs": 3749.190749999996,
+          "returnedBytes": 9589,
+          "executionMs": 324.30000019073486,
+          "complete": true,
+          "primitiveCalls": 3
+        }
+      ],
+      "usage": {
+        "input_tokens": 54595,
+        "cached_input_tokens": 42112,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 256,
+        "reasoning_output_tokens": 0
+      },
+      "timeline": [
+        {
+          "atMs": 1640.1350830000001,
+          "event": "thread.started"
+        },
+        {
+          "atMs": 1655.364708,
+          "event": "turn.started"
+        },
+        {
+          "atMs": 6708.157292,
+          "event": "item.completed",
+          "itemId": "item_0",
+          "itemType": "agent_message"
+        },
+        {
+          "atMs": 13062.089750000001,
+          "event": "item.started",
+          "itemId": "item_1",
+          "itemType": "mcp_tool_call",
+          "tool": "form_apply_bindings",
+          "status": "in_progress"
+        },
+        {
+          "atMs": 16811.280499999997,
+          "event": "item.completed",
+          "itemId": "item_1",
+          "itemType": "mcp_tool_call",
+          "tool": "form_apply_bindings",
+          "status": "completed"
+        },
+        {
+          "atMs": 20812.710832999997,
+          "event": "item.completed",
+          "itemId": "item_2",
+          "itemType": "agent_message"
+        },
+        {
+          "atMs": 20819.483833,
+          "event": "turn.completed"
+        }
+      ]
+    },
+    {
+      "attempt": "1789943111449-1-prefetch",
+      "repetition": 1,
+      "mode": "prefetch",
+      "elapsedMs": 25539.931834,
+      "exitCode": 0,
+      "timedOut": false,
+      "passed": true,
+      "total": 12,
+      "correct": 12,
+      "errors": [],
+      "toolCalls": [
+        {
+          "tool": "form_apply_bindings",
+          "status": "completed",
+          "startMs": 15225.162417000003,
+          "endMs": 20329.404917000003,
+          "durationMs": 5104.2425,
+          "returnedBytes": 9574,
+          "executionMs": 298.40000009536743,
+          "complete": true,
+          "primitiveCalls": 3
+        }
+      ],
+      "usage": {
+        "input_tokens": 54602,
+        "cached_input_tokens": 42112,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 257,
+        "reasoning_output_tokens": 0
+      },
+      "timeline": [
+        {
+          "atMs": 985.6249590000007,
+          "event": "thread.started"
+        },
+        {
+          "atMs": 988.036458999999,
+          "event": "turn.started"
+        },
+        {
+          "atMs": 6327.300875000001,
+          "event": "item.completed",
+          "itemId": "item_0",
+          "itemType": "agent_message"
+        },
+        {
+          "atMs": 15225.162417000003,
+          "event": "item.started",
+          "itemId": "item_1",
+          "itemType": "mcp_tool_call",
+          "tool": "form_apply_bindings",
+          "status": "in_progress"
+        },
+        {
+          "atMs": 20329.404917000003,
+          "event": "item.completed",
+          "itemId": "item_1",
+          "itemType": "mcp_tool_call",
+          "tool": "form_apply_bindings",
+          "status": "completed"
+        },
+        {
+          "atMs": 23265.112749999997,
+          "event": "item.completed",
+          "itemId": "item_2",
+          "itemType": "agent_message"
+        },
+        {
+          "atMs": 23278.924917,
+          "event": "turn.completed"
+        }
+      ]
+    },
+    {
+      "attempt": "1789943111449-2-prefetch",
+      "repetition": 2,
+      "mode": "prefetch",
+      "elapsedMs": 25418.45595799999,
+      "exitCode": 0,
+      "timedOut": false,
+      "passed": true,
+      "total": 12,
+      "correct": 12,
+      "errors": [],
+      "toolCalls": [
+        {
+          "tool": "form_apply_bindings",
+          "status": "completed",
+          "startMs": 13397.445082999999,
+          "endMs": 18734.171166999993,
+          "durationMs": 5336.726083999994,
+          "returnedBytes": 9576,
+          "executionMs": 299.5,
+          "complete": true,
+          "primitiveCalls": 3
+        }
+      ],
+      "usage": {
+        "input_tokens": 54597,
+        "cached_input_tokens": 42112,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 258,
+        "reasoning_output_tokens": 0
+      },
+      "timeline": [
+        {
+          "atMs": 983.1566669999957,
+          "event": "thread.started"
+        },
+        {
+          "atMs": 997.6369169999962,
+          "event": "turn.started"
+        },
+        {
+          "atMs": 6953.344375000001,
+          "event": "item.completed",
+          "itemId": "item_0",
+          "itemType": "agent_message"
+        },
+        {
+          "atMs": 13397.445082999999,
+          "event": "item.started",
+          "itemId": "item_1",
+          "itemType": "mcp_tool_call",
+          "tool": "form_apply_bindings",
+          "status": "in_progress"
+        },
+        {
+          "atMs": 18734.171166999993,
+          "event": "item.completed",
+          "itemId": "item_1",
+          "itemType": "mcp_tool_call",
+          "tool": "form_apply_bindings",
+          "status": "completed"
+        },
+        {
+          "atMs": 22242.13058299999,
+          "event": "item.completed",
+          "itemId": "item_2",
+          "itemType": "agent_message"
+        },
+        {
+          "atMs": 22252.365542,
+          "event": "turn.completed"
+        }
+      ]
+    }
+  ]
+}

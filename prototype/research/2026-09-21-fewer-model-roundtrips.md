@@ -35,3 +35,11 @@
 ## 后续真实浏览器只读核对
 
 [结构审计数据](../reports/public-form-audit.json) 使用全新 Chromium，无账号、无填写/点击/提交。Luster 的旧职位实际跳转到 `?error=true` 的职位列表，不能用作申请页验证。Lever 的原申请页仍可访问，观察到 101 个控件；100 个落在原生类型集合并不等于语义可填写。其主要问题是：没有 fieldset 分组，必填标记混入标签，地点控件的隐藏提示混入标签，多组 Yes/No 难以仅由当前 group/label 区分。需要改进观察结构并保留歧义停止，不能扩大“支持”声明。
+
+## 文档绑定阶段的补充
+
+- [AccName 1.2](https://www.w3.org/TR/accname-1.2/) 说明隐藏节点与显式 aria-labelledby 引用的区别。观察器只实现保守子集；没有声称完整无障碍名称算法兼容。
+- [官方 Playwright MCP](https://github.com/microsoft/playwright-mcp) 提供结构化快照、批量填表和脚本能力，因此新基线保留全部默认工具，并额外给它同样的资料引用与预取机会。实现使用 npm 锁定的 0.0.82，不依赖未来 latest。
+- 首轮发现：预取可访问快照后生成的 DOM 脚本仍可能误用 label.textContent，节约一次观察反而引入失败恢复。关键是观察与执行共享同一种字段含义及稳定引用；调用数本身不足以定义优化。
+
+详见 [文档绑定](../reports/DOCUMENT-BINDINGS.md) 和 [官方工具强基线](../reports/OFFICIAL-BASELINE.md)。

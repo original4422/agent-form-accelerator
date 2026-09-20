@@ -1,10 +1,10 @@
 import {chromium} from 'playwright';
-import {mkdir, rm} from 'node:fs/promises';
+import {mkdir, rm, readFile} from 'node:fs/promises';
 import {randomUUID} from 'node:crypto';
 import path from 'node:path';
 import {createBridge, projectRoot} from '../src/bridge.mjs';
 
-export async function createHarness({headless = true, sessionFile, port = 0, extensionDirectory} = {}) {
+export async function createHarness({headless = true, sessionFile, port = 0, extensionDirectory, cdp = false} = {}) {
   const runId = randomUUID();
   const profile = path.join(projectRoot, '.profiles', runId);
   const session = sessionFile || path.join(projectRoot, '.runtime', `${runId}.json`);
@@ -15,7 +15,7 @@ export async function createHarness({headless = true, sessionFile, port = 0, ext
   try {
     context = await chromium.launchPersistentContext(profile, {
       channel: 'chromium', headless, viewport: {width: 1280, height: 1000},
-      args: [`--disable-extensions-except=${extensionPath}`, `--load-extension=${extensionPath}`],
+      args: [`--disable-extensions-except=${extensionPath}`, `--load-extension=${extensionPath}`, ...(cdp ? ['--remote-debugging-port=0','--remote-debugging-address=127.0.0.1'] : [])],
     });
     const worker = context.serviceWorkers()[0] || await context.waitForEvent('serviceworker');
     const extensionId = new URL(worker.url()).host;
@@ -36,7 +36,8 @@ export async function createHarness({headless = true, sessionFile, port = 0, ext
       await page.bringToFront();
     };
     const reset = async (name) => { await page.goto(`${bridge.config.bridge}/fixtures/${name}.html`); await attach(); };
-    return {bridge, context, page, extensionPage, sessionFile: session, reset, attach,
+    const cdpEndpoint = cdp ? `http://127.0.0.1:${(await readFile(path.join(profile,'DevToolsActivePort'),'utf8')).split('\n')[0]}` : undefined;
+    return {bridge, context, page, extensionPage, sessionFile: session, reset, attach, cdpEndpoint,
       async close() { await context.close(); await bridge.close(); await rm(profile, {recursive: true, force: true}); await rm(session, {force: true}); },
     };
   } catch (e) { await context?.close(); await bridge.close(); await rm(profile, {recursive: true, force: true}); throw e; }

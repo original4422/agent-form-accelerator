@@ -11,7 +11,7 @@ export async function executeGoal(request, primitive) {
       new Set(expansions.map((e) => e.expectGroup)).size !== expansions.length) throw new Error('Invalid expansions');
   let calls = 0, observation;
   const call = async (r) => { calls++; const value = await primitive(r); if (value.error) throw new Error(value.error); return value; };
-  observation = await call({op: 'inspect'});
+  observation = await call(request.snapshot ? {op: 'validate', snapshot: request.snapshot, url: request.url} : {op: 'inspect'});
   const documentId = observation.documentId;
   if (observation.url !== request.url) throw new Error('WRONG_PAGE');
   const guard = () => {

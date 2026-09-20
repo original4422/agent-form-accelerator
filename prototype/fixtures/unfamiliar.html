@@ -1,0 +1,23 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><title>Independent application specimen</title>
+<style>body{font:16px system-ui;max-width:760px;margin:30px auto}label{display:block;margin:14px 0}input:not([type=radio]){display:block;width:90%;padding:6px}textarea{display:block;width:90%;height:100px}.feedback{display:none}.choice{border:1px solid #bbb;padding:8px;margin:16px 0}.choice label{display:inline-block;margin:8px}</style>
+<h1>Candidate details — local fictional form</h1><form id="application">
+<label for="full">Full name<span aria-hidden="true"> *</span></label><input id="full" name="full" required>
+<label for="mail">Contact email <span class="feedback">Please enter a valid email. Loading…</span></label><input id="mail" name="mail" type="email" required>
+<label>Mobile number<input id="tel" name="tel" type="tel" required></label>
+<label for="home">Current city<span hidden>Failed to load location suggestions.</span></label><input id="home" name="home" required>
+<label for="college">Most recent university</label><input id="college" name="college" required>
+<label for="course">Area of study</label><input id="course" name="course" required>
+<label for="degree">Degree level</label><select id="degree" name="degree" required><option value="">Select</option><option value="ug">Bachelor's degree</option><option value="pg">Master's degree</option></select>
+<label for="grad">Expected graduation</label><input id="grad" name="grad" type="date" required>
+<div class="choice" role="radiogroup" aria-labelledby="move-q"><p id="move-q">Would you relocate for this position?</p><label><input id="move-y" name="move" type="radio" value="yes">Yes</label><label><input id="move-n" name="move" type="radio" value="no">No</label></div>
+<div class="choice"><p>May we share your details with other employers?</p><div><label><input id="share-y" name="share" type="radio" value="yes">Yes</label><label><input id="share-n" name="share" type="radio" value="no">No</label></div></div>
+<label for="intro">Introduce yourself</label><textarea id="intro" name="intro" required></textarea>
+<label for="project">Describe a project you worked on</label><textarea id="project" name="project" required></textarea>
+<button type="submit">Submit application (local counter only)</button></form>
+<script>
+window.applicationState={};window.submissionCount=0;
+const form=document.getElementById('application');
+const capture=e=>{const el=e.target;if(!el.name)return;window.applicationState[el.name]=el.type==='radio'?el.value:el.value;};
+form.addEventListener('input',capture);form.addEventListener('change',capture);
+form.addEventListener('submit',e=>{e.preventDefault();window.submissionCount++;});
+</script></html>

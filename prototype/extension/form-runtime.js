@@ -11,17 +11,43 @@ export async function executeFormRequest(request) {
   const visible = (el) => el.isConnected && el.getClientRects().length > 0 &&
     !el.closest('[hidden],[inert],[aria-hidden="true"]') &&
     getComputedStyle(el).visibility !== 'hidden' && getComputedStyle(el).display !== 'none';
-  const labelText = (el) => {
-    const copy = el.cloneNode(true);
-    for (const control of copy.querySelectorAll('input,select,textarea,button,[role="combobox"]')) control.remove();
-    return copy.textContent;
+  // A conservative subset of accessible-name computation, not a full AccName implementation.
+  // Work on live nodes so display:none/aria-hidden helper text cannot pollute labels.
+  const textOf = (root, includeHidden = false, omit = new Set()) => {
+    if (!root) return '';
+    const walk = (node) => {
+      if (omit.has(node)) return '';
+      if (node.nodeType === Node.TEXT_NODE) return node.textContent;
+      if (node.nodeType !== Node.ELEMENT_NODE) return '';
+      if (node !== root && node.matches('input,select,textarea,button,[role="combobox"],script,style')) return '';
+      if (!includeHidden && (node.hidden || node.getAttribute('aria-hidden') === 'true' ||
+          getComputedStyle(node).display === 'none' || getComputedStyle(node).visibility === 'hidden')) return '';
+      return Array.from(node.childNodes).map(walk).join(' ');
+    };
+    return clean(walk(root));
   };
-  const label = (el) => clean(
-    (el.getAttribute('aria-labelledby') ?? '').split(/\s+/).filter(Boolean)
-      .map((id) => document.getElementById(id)?.textContent ?? '').join(' ') ||
-    el.getAttribute('aria-label') || Array.from(el.labels ?? []).map(labelText).join(' ') ||
-    (el.tagName === 'BUTTON' ? el.textContent : '') || el.getAttribute('placeholder') || el.name || el.id,
-  ).slice(0, 250);
+  const ariaName = (el) => clean((el.getAttribute('aria-labelledby') ?? '').split(/\s+/).filter(Boolean)
+    .map((id) => { const ref = document.getElementById(id); return textOf(ref, !!ref && !visible(ref)); }).join(' ') || el.getAttribute('aria-label'));
+  const label = (el) => clean(ariaName(el) || Array.from(el.labels ?? []).map((l) => textOf(l)).join(' ') ||
+    (el.tagName === 'BUTTON' ? textOf(el) : '') || el.getAttribute('placeholder') || el.name || el.id).slice(0, 250);
+  const group = (el) => {
+    const explicit = el.closest('fieldset,[role="group"],[role="radiogroup"]');
+    if (explicit) return clean(ariaName(explicit) || textOf(explicit.querySelector('legend'))).slice(0, 250);
+    if (!['radio', 'checkbox'].includes(el.type) || !el.name) return '';
+    const scope = el.form ?? document;
+    const peers = Array.from(scope.querySelectorAll('input')).filter((p) => p.name === el.name && p.type === el.type && visible(p));
+    if (peers.length < 2) return '';
+    const omitted = new Set(peers.flatMap((p) => [...Array.from(p.labels ?? []), p]));
+    for (let node = el.parentElement, level = 0; node && node !== scope && level < 7; node = node.parentElement, level++) {
+      if (!peers.every((p) => node.contains(p))) continue;
+      const controls = Array.from(node.querySelectorAll('input,select,textarea')).filter(visible);
+      if (controls.some((p) => !peers.includes(p))) break;
+      const question = textOf(node, false, omitted);
+      if (question) return question.slice(0, 250);
+    }
+    // An opaque but unique group is safer than merging all Yes/No controls.
+    return `name:${el.name}`;
+  };
   const kind = (el) => {
     if (el.tagName === 'BUTTON') return 'add-row';
     if (el.getAttribute('role') === 'combobox' && el.tagName !== 'SELECT') return 'unsupported-combobox';
@@ -32,7 +58,7 @@ export async function executeFormRequest(request) {
   const supported = new Set(['text', 'email', 'tel', 'url', 'number', 'date', 'month', 'time', 'textarea', 'select', 'checkbox', 'radio', 'add-row']);
   const options = (el) => el.tagName === 'SELECT' ? Array.from(el.options).map((o) => ({value: o.value, label: clean(o.text), disabled: o.disabled})) : undefined;
   const signature = (el) => JSON.stringify([label(el), kind(el), el.name, el.getAttribute('role'),
-    clean(el.closest('fieldset')?.querySelector('legend')?.textContent), options(el)]);
+    group(el), options(el)]);
   const value = (el) => ['password', 'file'].includes(kind(el)) ? undefined :
     ['checkbox', 'radio'].includes(kind(el)) ? el.checked : el.value;
   const getRef = (el) => {
@@ -47,7 +73,7 @@ export async function executeFormRequest(request) {
       if (!visible(el) || el.type === 'hidden' || (el.tagName === 'BUTTON' && !isAdd(el))) continue;
       if (el.tagName === 'INPUT' && ['submit', 'button', 'reset', 'image'].includes(el.type)) continue;
       const ref = getRef(el), field = {ref, label: label(el), kind: kind(el),
-        group: clean(el.closest('fieldset')?.querySelector('legend')?.textContent),
+        group: group(el), domId: el.id || undefined,
         required: !!el.required || el.getAttribute('aria-required') === 'true',
         disabled: !!el.disabled || el.getAttribute('aria-disabled') === 'true',
         readOnly: !!el.readOnly, supported: supported.has(kind(el)), valid: el.validity?.valid, value: value(el), options: options(el)};

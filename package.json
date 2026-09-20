@@ -20,6 +20,7 @@
     "zod": "4.6.5"
   },
   "devDependencies": {
+    "@playwright/mcp": "0.0.82",
     "playwright": "1.63.0"
   }
 }
