@@ -254,6 +254,146 @@
       "total": 20,
       "errors": [],
       "configuration": "Ephemeral invocation; explicit afa MCP only; no global config changes. Existing authentication. Default host model; no model override. Codex uses its auto-review approval workflow for synthetic local writes."
+    },
+    {
+      "host": "codex",
+      "attempt": "codex-1789938260656",
+      "date": "2026-09-20T21:04:20.665Z",
+      "elapsedMs": 37074.829542,
+      "exitCode": 0,
+      "timedOut": false,
+      "bridgeRequests": 3,
+      "toolNames": [
+        "form_inspect",
+        "form_fill",
+        "form_inspect"
+      ],
+      "passed": true,
+      "correct": 20,
+      "total": 20,
+      "errors": [],
+      "configuration": "Ephemeral invocation; explicit afa MCP only; no global config changes. Existing authentication. Default host model; no model override. Codex uses its auto-review approval workflow for synthetic local writes.",
+      "timeline": [
+        {
+          "atMs": 1100.4827089999999,
+          "event": "thread.started"
+        },
+        {
+          "atMs": 1111.946125,
+          "event": "turn.started"
+        },
+        {
+          "atMs": 5899.071209,
+          "event": "item.completed",
+          "itemType": "agent_message",
+          "itemId": "item_0"
+        },
+        {
+          "atMs": 10256.403792,
+          "event": "item.started",
+          "itemType": "mcp_tool_call",
+          "itemId": "item_1",
+          "tool": "form_inspect",
+          "status": "in_progress"
+        },
+        {
+          "atMs": 10300.751417,
+          "event": "item.completed",
+          "itemType": "mcp_tool_call",
+          "itemId": "item_1",
+          "tool": "form_inspect",
+          "status": "completed"
+        },
+        {
+          "atMs": 24847.577959,
+          "event": "item.started",
+          "itemType": "mcp_tool_call",
+          "itemId": "item_2",
+          "tool": "form_fill",
+          "status": "in_progress"
+        },
+        {
+          "atMs": 28887.722042,
+          "event": "item.completed",
+          "itemType": "mcp_tool_call",
+          "itemId": "item_2",
+          "tool": "form_fill",
+          "status": "completed"
+        },
+        {
+          "atMs": 31552.726667,
+          "event": "item.started",
+          "itemType": "mcp_tool_call",
+          "itemId": "item_3",
+          "tool": "form_inspect",
+          "status": "in_progress"
+        },
+        {
+          "atMs": 31567.128041999997,
+          "event": "item.completed",
+          "itemType": "mcp_tool_call",
+          "itemId": "item_3",
+          "tool": "form_inspect",
+          "status": "completed"
+        },
+        {
+          "atMs": 34935.533042,
+          "event": "item.completed",
+          "itemType": "agent_message",
+          "itemId": "item_4"
+        },
+        {
+          "atMs": 34985.6395,
+          "event": "turn.completed"
+        }
+      ],
+      "toolSpans": [
+        {
+          "tool": "form_inspect",
+          "status": "completed",
+          "startMs": 10256.403792,
+          "endMs": 10300.751417,
+          "elapsedMs": 44.347625000000335
+        },
+        {
+          "tool": "form_fill",
+          "status": "completed",
+          "startMs": 24847.577959,
+          "endMs": 28887.722042,
+          "elapsedMs": 4040.144083000003
+        },
+        {
+          "tool": "form_inspect",
+          "status": "completed",
+          "startMs": 31552.726667,
+          "endMs": 31567.128041999997,
+          "elapsedMs": 14.401374999997643
+        }
+      ],
+      "pageTimings": [
+        {
+          "tool": "form_inspect",
+          "pageElapsedMs": 3.6999998092651367,
+          "returnedBytes": 3545
+        },
+        {
+          "tool": "form_fill",
+          "pageElapsedMs": 162,
+          "returnedBytes": 4624
+        },
+        {
+          "tool": "form_inspect",
+          "pageElapsedMs": 1.6999998092651367,
+          "returnedBytes": 3818
+        }
+      ],
+      "usage": {
+        "input_tokens": 93703,
+        "cached_input_tokens": 68864,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 553,
+        "reasoning_output_tokens": 0
+      }
     }
   ]
 }

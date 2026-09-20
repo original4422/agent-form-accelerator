@@ -6,6 +6,7 @@
 
 ## 看结果
 
+- [为什么当前原型更慢](prototype/reports/FIRST-PRINCIPLES.md)：第一性原理、等待/传输消融、Codex 时间分布与候选架构。
 - [原型验证结论](prototype/reports/VALIDATION.md)：结论、Codex 实测、Claude 登录阻塞与下一步。
 - [执行层测量报告](prototype/reports/executor-benchmark.md)：三类本地表单、三种执行方式、每组五次。完整失败也保留在 JSON 中。
 - [功能检查](prototype/reports/functional-checks.json)：真实 Chromium 扩展、页面自身数据状态与 MCP 协议。
@@ -29,9 +30,12 @@ npm run demo
 npm run check
 npm run bench
 node prototype/bench/hosts.mjs
+node prototype/bench/diagnose.mjs
 ```
 
-最后一个命令会使用本机已有的 Codex/Claude Code 登录，分别调用模型完成一次虚构资料填表。两端只注入本次运行的 MCP 配置，不改全局配置。该测试是**接入验证**，不是原生浏览器工具的速度基准。原始宿主日志保存在被 Git 忽略的 `prototype/reports/private/`。
+`hosts.mjs` 当前默认只使用本机已有的 Codex 登录完成一次虚构资料填表；Claude 测试按用户要求暂停。宿主只注入本次运行的 MCP 配置，不改全局配置。该测试是**接入验证**，不是原生浏览器工具的速度基准。原始宿主日志保存在被 Git 忽略的 `prototype/reports/private/`。
+
+`diagnose.mjs` 在临时扩展副本中做等待/传输消融并核验延迟错误，没有把删等待的实验变体写入实际运行时。
 
 Codex 测试通过官方 `--approve-for-me` 让自动审查器判断本地表单写入；审批仍可能拒绝操作。Claude 测试显式允许本次连接的两个表单工具。宿主测试的所有尝试都保留在报告中。
 

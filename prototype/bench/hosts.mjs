@@ -20,15 +20,27 @@ const privateDir = path.join(projectRoot, 'prototype/reports/private'); await mk
 const run = (command, args, prompt) => new Promise((resolve) => {
   const started = performance.now();
   const child = spawn(command, args, {cwd: workspace, env: {...process.env, AFA_SESSION_FILE: h.sessionFile}, stdio: ['pipe', 'pipe', 'pipe']});
-  let stdout = '', stderr = '', timedOut = false;
+  let stdout = '', stderr = '', timedOut = false, partial = '';
+  const timeline = [];
   const timer = setTimeout(() => { timedOut = true; child.kill('SIGTERM'); }, 180000);
-  child.stdout.on('data', (x) => { stdout += x; }); child.stderr.on('data', (x) => { stderr += x; });
-  child.on('error', (e) => { clearTimeout(timer); resolve({exitCode: null, error: e.message, stdout, stderr, elapsedMs: performance.now() - started}); });
-  child.on('close', (exitCode) => { clearTimeout(timer); resolve({exitCode, timedOut, stdout, stderr, elapsedMs: performance.now() - started}); });
+  child.stdout.on('data', (x) => {
+    stdout += x; partial += x;
+    const lines = partial.split('\n'); partial = lines.pop();
+    for (const line of lines) {
+      try {
+        const e = JSON.parse(line), item = e.item;
+        // Event receipt timestamps, not a profiler of model internals or network packets.
+        timeline.push({atMs: performance.now() - started, event: e.type, itemType: item?.type,
+          itemId: item?.id, tool: item?.tool, status: item?.status});
+      } catch {}
+    }
+  }); child.stderr.on('data', (x) => { stderr += x; });
+  child.on('error', (e) => { clearTimeout(timer); resolve({exitCode: null, error: e.message, stdout, stderr, timeline, elapsedMs: performance.now() - started}); });
+  child.on('close', (exitCode) => { clearTimeout(timer); resolve({exitCode, timedOut, stdout, stderr, timeline, elapsedMs: performance.now() - started}); });
   child.stdin.on('error', () => {}); child.stdin.end(prompt);
 });
 try {
-  const hosts = process.argv.slice(2).length ? process.argv.slice(2) : ['codex', 'claude'];
+  const hosts = process.argv.slice(2).length ? process.argv.slice(2) : ['codex'];
   for (const host of hosts) {
     if (!['codex', 'claude'].includes(host)) throw new Error('Use codex or claude');
     await h.reset('plain');
@@ -55,19 +67,30 @@ try {
     await writeFile(path.join(privateDir, `${attempt}.stderr.log`), result.stderr, {mode: 0o600});
     const check = await oracle(h.page, task);
     const toolNames = [];
-    let model;
+    let model, usage;
+    const pageTimings = [];
     for (const line of result.stdout.split('\n')) {
       try {
         const event = JSON.parse(line);
         model ??= event.model ?? event.message?.model;
+        if (event.type === 'turn.completed') usage = event.usage;
         if (event.type === 'item.completed' && event.item?.type === 'mcp_tool_call') toolNames.push(event.item.tool);
+        if (event.type === 'item.completed' && event.item?.type === 'mcp_tool_call') {
+          for (const content of event.item.result?.content ?? []) {
+            try { const r = JSON.parse(content.text); pageTimings.push({tool: event.item.tool, pageElapsedMs: r.elapsedMs, returnedBytes: Buffer.byteLength(content.text)}); } catch {}
+          }
+        }
         for (const item of event.message?.content ?? []) if (item.type === 'tool_use') toolNames.push(item.name);
       } catch {}
     }
+    const toolSpans = result.timeline.filter((e) => e.event === 'item.completed' && e.itemType === 'mcp_tool_call').map((end) => {
+      const start = result.timeline.find((e) => e.event === 'item.started' && e.itemId === end.itemId);
+      return {tool: end.tool, status: end.status, startMs: start?.atMs, endMs: end.atMs, elapsedMs: start ? end.atMs - start.atMs : undefined};
+    });
     const row = {host, attempt, date: new Date().toISOString(), elapsedMs: result.elapsedMs, exitCode: result.exitCode,
       timedOut: result.timedOut, model, bridgeRequests: h.bridge.requestCount - before, toolNames, ...check,
       configuration: 'Ephemeral invocation; explicit afa MCP only; no global config changes. Existing authentication. Default host model; no model override. Codex uses its auto-review approval workflow for synthetic local writes.',
-      error: result.error};
+      error: result.error, timeline: result.timeline, toolSpans, pageTimings, usage};
     rows.push(row); currentRows.push(row); console.log(JSON.stringify(row));
   }
 } finally {

@@ -1,0 +1,7 @@
+{
+  "prototype/bench/diagnose.mjs": "3c3d47787613efa041e8a3bf15b60b8932ab20d3a108e144ab633f1e4baf750e",
+  "prototype/bench/repro-slowdown.mjs": "2170020ffbfd4e608469914b0660c2c7e5093f5fed8ed2ad9081c8845760885c",
+  "prototype/bench/hosts.mjs": "765de5c56a8ffeedf005ddf055314e017b6c388dc4251fcb056b7cd4f5553c9c",
+  "prototype/bench/harness.mjs": "b6d150283231012559a1b4701abd4911b331a82ec582b064cd16384b2ad23a8c",
+  "prototype/extension/form-runtime.js": "1aedc451be7ea61c93b6d39550b3e5bceb7e199c904bd7eba22fd7e3a05ca033"
+}

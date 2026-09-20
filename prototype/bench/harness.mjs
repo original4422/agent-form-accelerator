@@ -4,12 +4,12 @@ import {randomUUID} from 'node:crypto';
 import path from 'node:path';
 import {createBridge, projectRoot} from '../src/bridge.mjs';
 
-export async function createHarness({headless = true, sessionFile, port = 0} = {}) {
+export async function createHarness({headless = true, sessionFile, port = 0, extensionDirectory} = {}) {
   const runId = randomUUID();
   const profile = path.join(projectRoot, '.profiles', runId);
   const session = sessionFile || path.join(projectRoot, '.runtime', `${runId}.json`);
   const bridge = await createBridge({port, sessionFile: session});
-  const extensionPath = path.join(projectRoot, 'prototype/extension');
+  const extensionPath = extensionDirectory || path.join(projectRoot, 'prototype/extension');
   await mkdir(profile, {recursive: true});
   let context;
   try {

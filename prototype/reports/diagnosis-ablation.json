@@ -1,0 +1,4834 @@
+{
+  "date": "2026-09-20T21:02:11.343Z",
+  "sourceHash": "1aedc451be7ea61c93b6d39550b3e5bceb7e199c904bd7eba22fd7e3a05ca033",
+  "scope": "Synthetic executor ablations, no LLM. Diagnostic wait removal never applied to the actual runtime. Node wall-clock and page durations are independently measured; residuals are not a packet-level transport profile.",
+  "summary": [
+    {
+      "case": "plain",
+      "mode": "playwright-script",
+      "passed": 5,
+      "elapsedMs": 108.32466699999986,
+      "waitMs": 0,
+      "waitCalls": 0,
+      "observeMs": 0,
+      "inPageMs": 0,
+      "transportResidualMs": 0,
+      "driverAndOracleMs": 108.32466699999986,
+      "bytesReturned": 0,
+      "calls": 0
+    },
+    {
+      "case": "plain",
+      "mode": "playwright-with-observations",
+      "passed": 5,
+      "elapsedMs": 109.39316700000018,
+      "waitMs": 0,
+      "waitCalls": 0,
+      "observeMs": 0,
+      "inPageMs": 0,
+      "transportResidualMs": 0,
+      "driverAndOracleMs": 109.39316700000018,
+      "bytesReturned": 0,
+      "calls": 0
+    },
+    {
+      "case": "plain",
+      "mode": "extension-original",
+      "passed": 5,
+      "elapsedMs": 162.44183299999986,
+      "waitMs": 144.30000019073486,
+      "waitCalls": 4,
+      "observeMs": 1,
+      "inPageMs": 150.80000019073486,
+      "transportResidualMs": 8.105167381469073,
+      "driverAndOracleMs": 2.8401670000002923,
+      "bytesReturned": 8328,
+      "calls": 2
+    },
+    {
+      "case": "plain",
+      "mode": "extension-final-only",
+      "passed": 5,
+      "elapsedMs": 48.83654200000001,
+      "waitMs": 36.700000286102295,
+      "waitCalls": 1,
+      "observeMs": 1.1999998092651367,
+      "inPageMs": 42.299999713897705,
+      "transportResidualMs": 3.7690000953675735,
+      "driverAndOracleMs": 1.6958340000001044,
+      "bytesReturned": 8326,
+      "calls": 2
+    },
+    {
+      "case": "plain",
+      "mode": "extension-no-waits",
+      "passed": 5,
+      "elapsedMs": 12.047000000000025,
+      "waitMs": 0,
+      "waitCalls": 0,
+      "observeMs": 1,
+      "inPageMs": 5.3000006675720215,
+      "transportResidualMs": 4.938376190734743,
+      "driverAndOracleMs": 2.1115420000005543,
+      "bytesReturned": 8325,
+      "calls": 2
+    },
+    {
+      "case": "plain",
+      "mode": "direct-original",
+      "passed": 5,
+      "elapsedMs": 159.07958300000064,
+      "waitMs": 144.60000038146973,
+      "waitCalls": 4,
+      "observeMs": 0.6999998092651367,
+      "inPageMs": 150.2000002861023,
+      "transportResidualMs": 7.333457713897587,
+      "driverAndOracleMs": 1.5461250000007567,
+      "bytesReturned": 8345,
+      "calls": 2
+    },
+    {
+      "case": "plain",
+      "mode": "direct-no-waits",
+      "passed": 5,
+      "elapsedMs": 16.582666000000245,
+      "waitMs": 0,
+      "waitCalls": 0,
+      "observeMs": 0.6000003814697266,
+      "inPageMs": 5,
+      "transportResidualMs": 7.586207999999715,
+      "driverAndOracleMs": 1.9304579999998168,
+      "bytesReturned": 8326,
+      "calls": 2
+    },
+    {
+      "case": "dependent",
+      "mode": "playwright-script",
+      "passed": 5,
+      "elapsedMs": 180.53591600000073,
+      "waitMs": 0,
+      "waitCalls": 0,
+      "observeMs": 0,
+      "inPageMs": 0,
+      "transportResidualMs": 0,
+      "driverAndOracleMs": 180.53591600000073,
+      "bytesReturned": 0,
+      "calls": 0
+    },
+    {
+      "case": "dependent",
+      "mode": "playwright-with-observations",
+      "passed": 5,
+      "elapsedMs": 186.9910830000008,
+      "waitMs": 0,
+      "waitCalls": 0,
+      "observeMs": 0,
+      "inPageMs": 0,
+      "transportResidualMs": 0,
+      "driverAndOracleMs": 186.9910830000008,
+      "bytesReturned": 0,
+      "calls": 0
+    },
+    {
+      "case": "dependent",
+      "mode": "extension-original",
+      "passed": 5,
+      "elapsedMs": 198.32162499999868,
+      "waitMs": 181.40000009536743,
+      "waitCalls": 4,
+      "observeMs": 1.4999995231628418,
+      "inPageMs": 186.69999980926514,
+      "transportResidualMs": 7.393625190736202,
+      "driverAndOracleMs": 2.720416999999543,
+      "bytesReturned": 6856,
+      "calls": 3
+    },
+    {
+      "case": "dependent",
+      "mode": "extension-final-only",
+      "passed": 5,
+      "elapsedMs": 169.93620799999917,
+      "waitMs": 72.69999980926514,
+      "waitCalls": 2,
+      "observeMs": 2.0999999046325684,
+      "inPageMs": 79,
+      "transportResidualMs": 6.313291618527728,
+      "driverAndOracleMs": 84.02291600000171,
+      "bytesReturned": 8876,
+      "calls": 4
+    },
+    {
+      "case": "dependent",
+      "mode": "extension-no-waits",
+      "passed": 5,
+      "elapsedMs": 94.19033300000046,
+      "waitMs": 0,
+      "waitCalls": 0,
+      "observeMs": 1.8000001907348633,
+      "inPageMs": 5.400000095367432,
+      "transportResidualMs": 5.14699890463271,
+      "driverAndOracleMs": 83.37008400000377,
+      "bytesReturned": 8875,
+      "calls": 4
+    },
+    {
+      "case": "dependent",
+      "mode": "direct-original",
+      "passed": 5,
+      "elapsedMs": 195.503917,
+      "waitMs": 180,
+      "waitCalls": 4,
+      "observeMs": 1.200000286102295,
+      "inPageMs": 185.0999994277954,
+      "transportResidualMs": 8.667582904632582,
+      "driverAndOracleMs": 2.0231260000000475,
+      "bytesReturned": 6856,
+      "calls": 3
+    },
+    {
+      "case": "dependent",
+      "mode": "direct-no-waits",
+      "passed": 5,
+      "elapsedMs": 101.16679199999999,
+      "waitMs": 0,
+      "waitCalls": 0,
+      "observeMs": 1,
+      "inPageMs": 4.700000286102295,
+      "transportResidualMs": 12.643541095369073,
+      "driverAndOracleMs": 82.96670799999993,
+      "bytesReturned": 8860,
+      "calls": 4
+    },
+    {
+      "case": "repeat",
+      "mode": "playwright-script",
+      "passed": 5,
+      "elapsedMs": 67.11583299999984,
+      "waitMs": 0,
+      "waitCalls": 0,
+      "observeMs": 0,
+      "inPageMs": 0,
+      "transportResidualMs": 0,
+      "driverAndOracleMs": 67.11583299999984,
+      "bytesReturned": 0,
+      "calls": 0
+    },
+    {
+      "case": "repeat",
+      "mode": "playwright-with-observations",
+      "passed": 5,
+      "elapsedMs": 68.39791700000205,
+      "waitMs": 0,
+      "waitCalls": 0,
+      "observeMs": 0,
+      "inPageMs": 0,
+      "transportResidualMs": 0,
+      "driverAndOracleMs": 68.39791700000205,
+      "bytesReturned": 0,
+      "calls": 0
+    },
+    {
+      "case": "repeat",
+      "mode": "extension-original",
+      "passed": 5,
+      "elapsedMs": 235.760542,
+      "waitMs": 218.00000047683716,
+      "waitCalls": 6,
+      "observeMs": 2.200000286102295,
+      "inPageMs": 226.40000009536743,
+      "transportResidualMs": 6.136084190740803,
+      "driverAndOracleMs": 2.4020420000015292,
+      "bytesReturned": 11314,
+      "calls": 4
+    },
+    {
+      "case": "repeat",
+      "mode": "extension-final-only",
+      "passed": 5,
+      "elapsedMs": 122.96345900000051,
+      "waitMs": 108.00000047683716,
+      "waitCalls": 3,
+      "observeMs": 1.5999999046325684,
+      "inPageMs": 114.7999997138977,
+      "transportResidualMs": 6.4070829046340805,
+      "driverAndOracleMs": 1.9358749999992142,
+      "bytesReturned": 11333,
+      "calls": 4
+    },
+    {
+      "case": "repeat",
+      "mode": "extension-no-waits",
+      "passed": 5,
+      "elapsedMs": 13.36554199999955,
+      "waitMs": 0,
+      "waitCalls": 0,
+      "observeMs": 1.6999998092651367,
+      "inPageMs": 6.1999993324279785,
+      "transportResidualMs": 5.836874999997235,
+      "driverAndOracleMs": 1.3876259999997274,
+      "bytesReturned": 11300,
+      "calls": 4
+    },
+    {
+      "case": "repeat",
+      "mode": "direct-original",
+      "passed": 5,
+      "elapsedMs": 235.84562500000175,
+      "waitMs": 216.10000085830688,
+      "waitCalls": 6,
+      "observeMs": 1.3000001907348633,
+      "inPageMs": 223.69999980926514,
+      "transportResidualMs": 10.29029061852998,
+      "driverAndOracleMs": 1.903707999998005,
+      "bytesReturned": 11348,
+      "calls": 4
+    },
+    {
+      "case": "repeat",
+      "mode": "direct-no-waits",
+      "passed": 5,
+      "elapsedMs": 17.040791999999783,
+      "waitMs": 0,
+      "waitCalls": 0,
+      "observeMs": 1.5999999046325684,
+      "inPageMs": 6.09999942779541,
+      "transportResidualMs": 11.371664523165236,
+      "driverAndOracleMs": 0.754876000000877,
+      "bytesReturned": 11302,
+      "calls": 4
+    }
+  ],
+  "counterexamples": [
+    {
+      "delayMs": 10,
+      "waitMode": "original",
+      "reportedComplete": false,
+      "lateCheckPassed": false
+    },
+    {
+      "delayMs": 10,
+      "waitMode": "none",
+      "reportedComplete": true,
+      "lateCheckPassed": false
+    },
+    {
+      "delayMs": 100,
+      "waitMode": "original",
+      "reportedComplete": true,
+      "lateCheckPassed": false
+    },
+    {
+      "delayMs": 100,
+      "waitMode": "none",
+      "reportedComplete": true,
+      "lateCheckPassed": false
+    }
+  ],
+  "rows": [
+    {
+      "case": "plain",
+      "mode": "playwright-with-observations",
+      "repeat": 1,
+      "elapsedMs": 111.04183299999977,
+      "waitMs": 0,
+      "waitCalls": 0,
+      "observeMs": 0,
+      "inPageMs": 0,
+      "callWallMs": 0,
+      "transportResidualMs": 0,
+      "driverAndOracleMs": 111.04183299999977,
+      "bytesReturned": 0,
+      "calls": 0,
+      "check": {
+        "passed": true,
+        "correct": 20,
+        "total": 20,
+        "errors": []
+      }
+    },
+    {
+      "case": "plain",
+      "mode": "extension-original",
+      "repeat": 1,
+      "elapsedMs": 163.79966699999977,
+      "waitMs": 144.30000019073486,
+      "waitCalls": 4,
+      "observeMs": 0.9000000953674316,
+      "inPageMs": 151,
+      "callWallMs": 162.0241249999999,
+      "transportResidualMs": 11.024124999999913,
+      "driverAndOracleMs": 1.7755419999998594,
+      "bytesReturned": 8301,
+      "calls": 2,
+      "check": {
+        "passed": true,
+        "correct": 20,
+        "total": 20,
+        "errors": []
+      },
+      "trace": {
+        "calls": 2,
+        "rounds": 1,
+        "trace": [
+          {
+            "actions": 20,
+            "results": [
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "case": "plain",
+      "mode": "extension-final-only",
+      "repeat": 1,
+      "elapsedMs": 48.95412499999975,
+      "waitMs": 36.09999990463257,
+      "waitCalls": 1,
+      "observeMs": 1.200000286102295,
+      "inPageMs": 43.5,
+      "callWallMs": 46.67379099999971,
+      "transportResidualMs": 3.17379099999971,
+      "driverAndOracleMs": 2.280334000000039,
+      "bytesReturned": 8342,
+      "calls": 2,
+      "check": {
+        "passed": true,
+        "correct": 20,
+        "total": 20,
+        "errors": []
+      },
+      "trace": {
+        "calls": 2,
+        "rounds": 1,
+        "trace": [
+          {
+            "actions": 20,
+            "results": [
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "case": "plain",
+      "mode": "extension-no-waits",
+      "repeat": 1,
+      "elapsedMs": 10.746708000000126,
+      "waitMs": 0,
+      "waitCalls": 0,
+      "observeMs": 1.0999999046325684,
+      "inPageMs": 6.099999904632568,
+      "callWallMs": 8.635165999999572,
+      "transportResidualMs": 2.5351660953670034,
+      "driverAndOracleMs": 2.1115420000005543,
+      "bytesReturned": 8296,
+      "calls": 2,
+      "check": {
+        "passed": true,
+        "correct": 20,
+        "total": 20,
+        "errors": []
+      },
+      "trace": {
+        "calls": 2,
+        "rounds": 1,
+        "trace": [
+          {
+            "actions": 20,
+            "results": [
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "case": "plain",
+      "mode": "direct-original",
+      "repeat": 1,
+      "elapsedMs": 172.6462919999999,
+      "waitMs": 146.40000009536743,
+      "waitCalls": 4,
+      "observeMs": 0.8000001907348633,
+      "inPageMs": 152.40000009536743,
+      "callWallMs": 169.53033300000016,
+      "transportResidualMs": 17.130332904632724,
+      "driverAndOracleMs": 3.115958999999748,
+      "bytesReturned": 8313,
+      "calls": 2,
+      "check": {
+        "passed": true,
+        "correct": 20,
+        "total": 20,
+        "errors": []
+      },
+      "trace": {
+        "calls": 2,
+        "rounds": 1,
+        "trace": [
+          {
+            "actions": 20,
+            "results": [
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "case": "plain",
+      "mode": "direct-no-waits",
+      "repeat": 1,
+      "elapsedMs": 13.235458000000108,
+      "waitMs": 0,
+      "waitCalls": 0,
+      "observeMs": 0.8000001907348633,
+      "inPageMs": 5.300000190734863,
+      "callWallMs": 11.305000000000291,
+      "transportResidualMs": 6.004999809265428,
+      "driverAndOracleMs": 1.9304579999998168,
+      "bytesReturned": 8326,
+      "calls": 2,
+      "check": {
+        "passed": true,
+        "correct": 20,
+        "total": 20,
+        "errors": []
+      },
+      "trace": {
+        "calls": 2,
+        "rounds": 1,
+        "trace": [
+          {
+            "actions": 20,
+            "results": [
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "case": "plain",
+      "mode": "playwright-script",
+      "repeat": 1,
+      "elapsedMs": 108.32466699999986,
+      "waitMs": 0,
+      "waitCalls": 0,
+      "observeMs": 0,
+      "inPageMs": 0,
+      "callWallMs": 0,
+      "transportResidualMs": 0,
+      "driverAndOracleMs": 108.32466699999986,
+      "bytesReturned": 0,
+      "calls": 0,
+      "check": {
+        "passed": true,
+        "correct": 20,
+        "total": 20,
+        "errors": []
+      }
+    },
+    {
+      "case": "plain",
+      "mode": "extension-original",
+      "repeat": 2,
+      "elapsedMs": 156.01591700000017,
+      "waitMs": 144.7000002861023,
+      "waitCalls": 4,
+      "observeMs": 1,
+      "inPageMs": 150.80000019073486,
+      "callWallMs": 153.17574999999988,
+      "transportResidualMs": 2.3757498092650167,
+      "driverAndOracleMs": 2.8401670000002923,
+      "bytesReturned": 8311,
+      "calls": 2,
+      "check": {
+        "passed": true,
+        "correct": 20,
+        "total": 20,
+        "errors": []
+      },
+      "trace": {
+        "calls": 2,
+        "rounds": 1,
+        "trace": [
+          {
+            "actions": 20,
+            "results": [
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "case": "plain",
+      "mode": "extension-final-only",
+      "repeat": 2,
+      "elapsedMs": 48.064834000000246,
+      "waitMs": 36.90000009536743,
+      "waitCalls": 1,
+      "observeMs": 1.1999998092651367,
+      "inPageMs": 42.59999990463257,
+      "callWallMs": 46.36900000000014,
+      "transportResidualMs": 3.7690000953675735,
+      "driverAndOracleMs": 1.6958340000001044,
+      "bytesReturned": 8326,
+      "calls": 2,
+      "check": {
+        "passed": true,
+        "correct": 20,
+        "total": 20,
+        "errors": []
+      },
+      "trace": {
+        "calls": 2,
+        "rounds": 1,
+        "trace": [
+          {
+            "actions": 20,
+            "results": [
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "case": "plain",
+      "mode": "extension-no-waits",
+      "repeat": 2,
+      "elapsedMs": 12.047000000000025,
+      "waitMs": 0,
+      "waitCalls": 0,
+      "observeMs": 0.9000000953674316,
+      "inPageMs": 5.699999809265137,
+      "callWallMs": 9.911125000000538,
+      "transportResidualMs": 4.211125190735402,
+      "driverAndOracleMs": 2.135874999999487,
+      "bytesReturned": 8325,
+      "calls": 2,
+      "check": {
+        "passed": true,
+        "correct": 20,
+        "total": 20,
+        "errors": []
+      },
+      "trace": {
+        "calls": 2,
+        "rounds": 1,
+        "trace": [
+          {
+            "actions": 20,
+            "results": [
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "case": "plain",
+      "mode": "direct-original",
+      "repeat": 2,
+      "elapsedMs": 157.45358399999986,
+      "waitMs": 144.60000038146973,
+      "waitCalls": 4,
+      "observeMs": 0.6999998092651367,
+      "inPageMs": 151,
+      "callWallMs": 156.10708300000033,
+      "transportResidualMs": 5.10708300000033,
+      "driverAndOracleMs": 1.3465009999995345,
+      "bytesReturned": 8345,
+      "calls": 2,
+      "check": {
+        "passed": true,
+        "correct": 20,
+        "total": 20,
+        "errors": []
+      },
+      "trace": {
+        "calls": 2,
+        "rounds": 1,
+        "trace": [
+          {
+            "actions": 20,
+            "results": [
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "case": "plain",
+      "mode": "direct-no-waits",
+      "repeat": 2,
+      "elapsedMs": 17.733165999999983,
+      "waitMs": 0,
+      "waitCalls": 0,
+      "observeMs": 0.6000003814697266,
+      "inPageMs": 6.400000095367432,
+      "callWallMs": 16.47962600000028,
+      "transportResidualMs": 10.079625904632849,
+      "driverAndOracleMs": 1.2535399999997026,
+      "bytesReturned": 8312,
+      "calls": 2,
+      "check": {
+        "passed": true,
+        "correct": 20,
+        "total": 20,
+        "errors": []
+      },
+      "trace": {
+        "calls": 2,
+        "rounds": 1,
+        "trace": [
+          {
+            "actions": 20,
+            "results": [
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "case": "plain",
+      "mode": "playwright-script",
+      "repeat": 2,
+      "elapsedMs": 105.68775000000005,
+      "waitMs": 0,
+      "waitCalls": 0,
+      "observeMs": 0,
+      "inPageMs": 0,
+      "callWallMs": 0,
+      "transportResidualMs": 0,
+      "driverAndOracleMs": 105.68775000000005,
+      "bytesReturned": 0,
+      "calls": 0,
+      "check": {
+        "passed": true,
+        "correct": 20,
+        "total": 20,
+        "errors": []
+      }
+    },
+    {
+      "case": "plain",
+      "mode": "playwright-with-observations",
+      "repeat": 2,
+      "elapsedMs": 109.39316700000018,
+      "waitMs": 0,
+      "waitCalls": 0,
+      "observeMs": 0,
+      "inPageMs": 0,
+      "callWallMs": 0,
+      "transportResidualMs": 0,
+      "driverAndOracleMs": 109.39316700000018,
+      "bytesReturned": 0,
+      "calls": 0,
+      "check": {
+        "passed": true,
+        "correct": 20,
+        "total": 20,
+        "errors": []
+      }
+    },
+    {
+      "case": "plain",
+      "mode": "extension-final-only",
+      "repeat": 3,
+      "elapsedMs": 52.52162499999986,
+      "waitMs": 36.90000009536743,
+      "waitCalls": 1,
+      "observeMs": 0.8999996185302734,
+      "inPageMs": 41.799999713897705,
+      "callWallMs": 51.23158400000011,
+      "transportResidualMs": 9.431584286102407,
+      "driverAndOracleMs": 1.2900409999997464,
+      "bytesReturned": 8313,
+      "calls": 2,
+      "check": {
+        "passed": true,
+        "correct": 20,
+        "total": 20,
+        "errors": []
+      },
+      "trace": {
+        "calls": 2,
+        "rounds": 1,
+        "trace": [
+          {
+            "actions": 20,
+            "results": [
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "case": "plain",
+      "mode": "extension-no-waits",
+      "repeat": 3,
+      "elapsedMs": 15.748540999999932,
+      "waitMs": 0,
+      "waitCalls": 0,
+      "observeMs": 0.6999998092651367,
+      "inPageMs": 4.899999618530273,
+      "callWallMs": 14.359584000000268,
+      "transportResidualMs": 9.459584381469995,
+      "driverAndOracleMs": 1.3889569999996638,
+      "bytesReturned": 8296,
+      "calls": 2,
+      "check": {
+        "passed": true,
+        "correct": 20,
+        "total": 20,
+        "errors": []
+      },
+      "trace": {
+        "calls": 2,
+        "rounds": 1,
+        "trace": [
+          {
+            "actions": 20,
+            "results": [
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "case": "plain",
+      "mode": "direct-original",
+      "repeat": 3,
+      "elapsedMs": 162.2249999999999,
+      "waitMs": 144.60000038146973,
+      "waitCalls": 4,
+      "observeMs": 0.5999999046325684,
+      "inPageMs": 150,
+      "callWallMs": 158.69287499999973,
+      "transportResidualMs": 8.69287499999973,
+      "driverAndOracleMs": 3.5321250000001783,
+      "bytesReturned": 8346,
+      "calls": 2,
+      "check": {
+        "passed": true,
+        "correct": 20,
+        "total": 20,
+        "errors": []
+      },
+      "trace": {
+        "calls": 2,
+        "rounds": 1,
+        "trace": [
+          {
+            "actions": 20,
+            "results": [
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "case": "plain",
+      "mode": "direct-no-waits",
+      "repeat": 3,
+      "elapsedMs": 19.392124999999396,
+      "waitMs": 0,
+      "waitCalls": 0,
+      "observeMs": 0.5999999046325684,
+      "inPageMs": 4.599999904632568,
+      "callWallMs": 16.55687499999931,
+      "transportResidualMs": 11.95687509536674,
+      "driverAndOracleMs": 2.8352500000000873,
+      "bytesReturned": 8328,
+      "calls": 2,
+      "check": {
+        "passed": true,
+        "correct": 20,
+        "total": 20,
+        "errors": []
+      },
+      "trace": {
+        "calls": 2,
+        "rounds": 1,
+        "trace": [
+          {
+            "actions": 20,
+            "results": [
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "case": "plain",
+      "mode": "playwright-script",
+      "repeat": 3,
+      "elapsedMs": 193.5254159999995,
+      "waitMs": 0,
+      "waitCalls": 0,
+      "observeMs": 0,
+      "inPageMs": 0,
+      "callWallMs": 0,
+      "transportResidualMs": 0,
+      "driverAndOracleMs": 193.5254159999995,
+      "bytesReturned": 0,
+      "calls": 0,
+      "check": {
+        "passed": true,
+        "correct": 20,
+        "total": 20,
+        "errors": []
+      }
+    },
+    {
+      "case": "plain",
+      "mode": "playwright-with-observations",
+      "repeat": 3,
+      "elapsedMs": 123.83462500000041,
+      "waitMs": 0,
+      "waitCalls": 0,
+      "observeMs": 0,
+      "inPageMs": 0,
+      "callWallMs": 0,
+      "transportResidualMs": 0,
+      "driverAndOracleMs": 123.83462500000041,
+      "bytesReturned": 0,
+      "calls": 0,
+      "check": {
+        "passed": true,
+        "correct": 20,
+        "total": 20,
+        "errors": []
+      }
+    },
+    {
+      "case": "plain",
+      "mode": "extension-original",
+      "repeat": 3,
+      "elapsedMs": 182.35641699999996,
+      "waitMs": 142.7000002861023,
+      "waitCalls": 4,
+      "observeMs": 1.0999999046325684,
+      "inPageMs": 150.69999980926514,
+      "callWallMs": 165.5751249999994,
+      "transportResidualMs": 14.875125190734252,
+      "driverAndOracleMs": 16.781292000000576,
+      "bytesReturned": 8343,
+      "calls": 2,
+      "check": {
+        "passed": true,
+        "correct": 20,
+        "total": 20,
+        "errors": []
+      },
+      "trace": {
+        "calls": 2,
+        "rounds": 1,
+        "trace": [
+          {
+            "actions": 20,
+            "results": [
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "case": "plain",
+      "mode": "extension-no-waits",
+      "repeat": 4,
+      "elapsedMs": 14.446833999999399,
+      "waitMs": 0,
+      "waitCalls": 0,
+      "observeMs": 1.0000004768371582,
+      "inPageMs": 5.3000006675720215,
+      "callWallMs": 11.277625000000626,
+      "transportResidualMs": 5.977624332428604,
+      "driverAndOracleMs": 3.169208999998773,
+      "bytesReturned": 8325,
+      "calls": 2,
+      "check": {
+        "passed": true,
+        "correct": 20,
+        "total": 20,
+        "errors": []
+      },
+      "trace": {
+        "calls": 2,
+        "rounds": 1,
+        "trace": [
+          {
+            "actions": 20,
+            "results": [
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "case": "plain",
+      "mode": "direct-original",
+      "repeat": 4,
+      "elapsedMs": 157.40495800000008,
+      "waitMs": 143.19999933242798,
+      "waitCalls": 4,
+      "observeMs": 0.6999998092651367,
+      "inPageMs": 150,
+      "callWallMs": 156.26545699999951,
+      "transportResidualMs": 6.265456999999515,
+      "driverAndOracleMs": 1.139501000000564,
+      "bytesReturned": 8301,
+      "calls": 2,
+      "check": {
+        "passed": true,
+        "correct": 20,
+        "total": 20,
+        "errors": []
+      },
+      "trace": {
+        "calls": 2,
+        "rounds": 1,
+        "trace": [
+          {
+            "actions": 20,
+            "results": [
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "case": "plain",
+      "mode": "direct-no-waits",
+      "repeat": 4,
+      "elapsedMs": 16.582666000000245,
+      "waitMs": 0,
+      "waitCalls": 0,
+      "observeMs": 1.0999999046325684,
+      "inPageMs": 5,
+      "callWallMs": 12.586207999999715,
+      "transportResidualMs": 7.586207999999715,
+      "driverAndOracleMs": 3.99645800000053,
+      "bytesReturned": 8326,
+      "calls": 2,
+      "check": {
+        "passed": true,
+        "correct": 20,
+        "total": 20,
+        "errors": []
+      },
+      "trace": {
+        "calls": 2,
+        "rounds": 1,
+        "trace": [
+          {
+            "actions": 20,
+            "results": [
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "case": "plain",
+      "mode": "playwright-script",
+      "repeat": 4,
+      "elapsedMs": 142.3214590000007,
+      "waitMs": 0,
+      "waitCalls": 0,
+      "observeMs": 0,
+      "inPageMs": 0,
+      "callWallMs": 0,
+      "transportResidualMs": 0,
+      "driverAndOracleMs": 142.3214590000007,
+      "bytesReturned": 0,
+      "calls": 0,
+      "check": {
+        "passed": true,
+        "correct": 20,
+        "total": 20,
+        "errors": []
+      }
+    },
+    {
+      "case": "plain",
+      "mode": "playwright-with-observations",
+      "repeat": 4,
+      "elapsedMs": 102.31716700000015,
+      "waitMs": 0,
+      "waitCalls": 0,
+      "observeMs": 0,
+      "inPageMs": 0,
+      "callWallMs": 0,
+      "transportResidualMs": 0,
+      "driverAndOracleMs": 102.31716700000015,
+      "bytesReturned": 0,
+      "calls": 0,
+      "check": {
+        "passed": true,
+        "correct": 20,
+        "total": 20,
+        "errors": []
+      }
+    },
+    {
+      "case": "plain",
+      "mode": "extension-original",
+      "repeat": 4,
+      "elapsedMs": 158.7157499999994,
+      "waitMs": 143.59999990463257,
+      "waitCalls": 4,
+      "observeMs": 0.9000000953674316,
+      "inPageMs": 149.7000002861023,
+      "callWallMs": 156.54508299999998,
+      "transportResidualMs": 6.845082713897682,
+      "driverAndOracleMs": 2.170666999999412,
+      "bytesReturned": 8328,
+      "calls": 2,
+      "check": {
+        "passed": true,
+        "correct": 20,
+        "total": 20,
+        "errors": []
+      },
+      "trace": {
+        "calls": 2,
+        "rounds": 1,
+        "trace": [
+          {
+            "actions": 20,
+            "results": [
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "case": "plain",
+      "mode": "extension-final-only",
+      "repeat": 4,
+      "elapsedMs": 45.44325000000026,
+      "waitMs": 36.700000286102295,
+      "waitCalls": 1,
+      "observeMs": 1.0000004768371582,
+      "inPageMs": 41.80000019073486,
+      "callWallMs": 43.961709000001065,
+      "transportResidualMs": 2.1617088092662016,
+      "driverAndOracleMs": 1.481540999999197,
+      "bytesReturned": 8342,
+      "calls": 2,
+      "check": {
+        "passed": true,
+        "correct": 20,
+        "total": 20,
+        "errors": []
+      },
+      "trace": {
+        "calls": 2,
+        "rounds": 1,
+        "trace": [
+          {
+            "actions": 20,
+            "results": [
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "case": "plain",
+      "mode": "direct-original",
+      "repeat": 5,
+      "elapsedMs": 159.07958300000064,
+      "waitMs": 145.19999980926514,
+      "waitCalls": 4,
+      "observeMs": 0.5999999046325684,
+      "inPageMs": 150.2000002861023,
+      "callWallMs": 157.53345799999988,
+      "transportResidualMs": 7.333457713897587,
+      "driverAndOracleMs": 1.5461250000007567,
+      "bytesReturned": 8346,
+      "calls": 2,
+      "check": {
+        "passed": true,
+        "correct": 20,
+        "total": 20,
+        "errors": []
+      },
+      "trace": {
+        "calls": 2,
+        "rounds": 1,
+        "trace": [
+          {
+            "actions": 20,
+            "results": [
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "case": "plain",
+      "mode": "direct-no-waits",
+      "repeat": 5,
+      "elapsedMs": 10.876790999999685,
+      "waitMs": 0,
+      "waitCalls": 0,
+      "observeMs": 0.5999999046325684,
+      "inPageMs": 4.300000190734863,
+      "callWallMs": 9.759915999999976,
+      "transportResidualMs": 5.459915809265112,
+      "driverAndOracleMs": 1.116874999999709,
+      "bytesReturned": 8313,
+      "calls": 2,
+      "check": {
+        "passed": true,
+        "correct": 20,
+        "total": 20,
+        "errors": []
+      },
+      "trace": {
+        "calls": 2,
+        "rounds": 1,
+        "trace": [
+          {
+            "actions": 20,
+            "results": [
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "case": "plain",
+      "mode": "playwright-script",
+      "repeat": 5,
+      "elapsedMs": 100.58662499999991,
+      "waitMs": 0,
+      "waitCalls": 0,
+      "observeMs": 0,
+      "inPageMs": 0,
+      "callWallMs": 0,
+      "transportResidualMs": 0,
+      "driverAndOracleMs": 100.58662499999991,
+      "bytesReturned": 0,
+      "calls": 0,
+      "check": {
+        "passed": true,
+        "correct": 20,
+        "total": 20,
+        "errors": []
+      }
+    },
+    {
+      "case": "plain",
+      "mode": "playwright-with-observations",
+      "repeat": 5,
+      "elapsedMs": 104.73191600000064,
+      "waitMs": 0,
+      "waitCalls": 0,
+      "observeMs": 0,
+      "inPageMs": 0,
+      "callWallMs": 0,
+      "transportResidualMs": 0,
+      "driverAndOracleMs": 104.73191600000064,
+      "bytesReturned": 0,
+      "calls": 0,
+      "check": {
+        "passed": true,
+        "correct": 20,
+        "total": 20,
+        "errors": []
+      }
+    },
+    {
+      "case": "plain",
+      "mode": "extension-original",
+      "repeat": 5,
+      "elapsedMs": 162.44183299999986,
+      "waitMs": 145.2000002861023,
+      "waitCalls": 4,
+      "observeMs": 1.1999998092651367,
+      "inPageMs": 151.39999961853027,
+      "callWallMs": 159.50516699999935,
+      "transportResidualMs": 8.105167381469073,
+      "driverAndOracleMs": 2.936666000000514,
+      "bytesReturned": 8341,
+      "calls": 2,
+      "check": {
+        "passed": true,
+        "correct": 20,
+        "total": 20,
+        "errors": []
+      },
+      "trace": {
+        "calls": 2,
+        "rounds": 1,
+        "trace": [
+          {
+            "actions": 20,
+            "results": [
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "case": "plain",
+      "mode": "extension-final-only",
+      "repeat": 5,
+      "elapsedMs": 48.83654200000001,
+      "waitMs": 36,
+      "waitCalls": 1,
+      "observeMs": 1.299999713897705,
+      "inPageMs": 42.299999713897705,
+      "callWallMs": 46.46470800000043,
+      "transportResidualMs": 4.164708286102723,
+      "driverAndOracleMs": 2.3718339999995806,
+      "bytesReturned": 8298,
+      "calls": 2,
+      "check": {
+        "passed": true,
+        "correct": 20,
+        "total": 20,
+        "errors": []
+      },
+      "trace": {
+        "calls": 2,
+        "rounds": 1,
+        "trace": [
+          {
+            "actions": 20,
+            "results": [
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "case": "plain",
+      "mode": "extension-no-waits",
+      "repeat": 5,
+      "elapsedMs": 12.02691700000014,
+      "waitMs": 0,
+      "waitCalls": 0,
+      "observeMs": 1,
+      "inPageMs": 5.199999809265137,
+      "callWallMs": 10.13837599999988,
+      "transportResidualMs": 4.938376190734743,
+      "driverAndOracleMs": 1.8885410000002594,
+      "bytesReturned": 8325,
+      "calls": 2,
+      "check": {
+        "passed": true,
+        "correct": 20,
+        "total": 20,
+        "errors": []
+      },
+      "trace": {
+        "calls": 2,
+        "rounds": 1,
+        "trace": [
+          {
+            "actions": 20,
+            "results": [
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "case": "dependent",
+      "mode": "playwright-with-observations",
+      "repeat": 1,
+      "elapsedMs": 183.7901670000001,
+      "waitMs": 0,
+      "waitCalls": 0,
+      "observeMs": 0,
+      "inPageMs": 0,
+      "callWallMs": 0,
+      "transportResidualMs": 0,
+      "driverAndOracleMs": 183.7901670000001,
+      "bytesReturned": 0,
+      "calls": 0,
+      "check": {
+        "passed": true,
+        "correct": 9,
+        "total": 9,
+        "errors": []
+      }
+    },
+    {
+      "case": "dependent",
+      "mode": "extension-original",
+      "repeat": 1,
+      "elapsedMs": 201.9282919999996,
+      "waitMs": 181.40000009536743,
+      "waitCalls": 4,
+      "observeMs": 2,
+      "inPageMs": 187.59999990463257,
+      "callWallMs": 199.20787500000006,
+      "transportResidualMs": 11.60787509536749,
+      "driverAndOracleMs": 2.720416999999543,
+      "bytesReturned": 6839,
+      "calls": 3,
+      "check": {
+        "passed": true,
+        "correct": 9,
+        "total": 9,
+        "errors": []
+      },
+      "trace": {
+        "calls": 3,
+        "rounds": 2,
+        "trace": [
+          {
+            "actions": 8,
+            "results": [
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified"
+            ]
+          },
+          {
+            "actions": 1,
+            "results": [
+              "verified"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "case": "dependent",
+      "mode": "extension-final-only",
+      "repeat": 1,
+      "elapsedMs": 169.93620799999917,
+      "waitMs": 72.69999980926514,
+      "waitCalls": 2,
+      "observeMs": 2.4000000953674316,
+      "inPageMs": 79.60000038146973,
+      "callWallMs": 85.91329199999745,
+      "transportResidualMs": 6.313291618527728,
+      "driverAndOracleMs": 84.02291600000171,
+      "bytesReturned": 8908,
+      "calls": 4,
+      "check": {
+        "passed": true,
+        "correct": 9,
+        "total": 9,
+        "errors": []
+      },
+      "trace": {
+        "calls": 4,
+        "rounds": 3,
+        "trace": [
+          {
+            "actions": 8,
+            "results": [
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified"
+            ]
+          },
+          {
+            "actions": 1,
+            "results": [
+              "verified"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "case": "dependent",
+      "mode": "extension-no-waits",
+      "repeat": 1,
+      "elapsedMs": 100.63249999999971,
+      "waitMs": 0,
+      "waitCalls": 0,
+      "observeMs": 2.0999999046325684,
+      "inPageMs": 6.500000476837158,
+      "callWallMs": 16.700417999998535,
+      "transportResidualMs": 10.200417523161377,
+      "driverAndOracleMs": 83.93208200000117,
+      "bytesReturned": 8858,
+      "calls": 4,
+      "check": {
+        "passed": true,
+        "correct": 9,
+        "total": 9,
+        "errors": []
+      },
+      "trace": {
+        "calls": 4,
+        "rounds": 3,
+        "trace": [
+          {
+            "actions": 8,
+            "results": [
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified"
+            ]
+          },
+          {
+            "actions": 1,
+            "results": [
+              "verified"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "case": "dependent",
+      "mode": "direct-original",
+      "repeat": 1,
+      "elapsedMs": 195.38108300000022,
+      "waitMs": 181.19999980926514,
+      "waitCalls": 4,
+      "observeMs": 1.200000286102295,
+      "inPageMs": 186.40000009536743,
+      "callWallMs": 194.43179100000089,
+      "transportResidualMs": 8.031790904633453,
+      "driverAndOracleMs": 0.9492919999993319,
+      "bytesReturned": 6840,
+      "calls": 3,
+      "check": {
+        "passed": true,
+        "correct": 9,
+        "total": 9,
+        "errors": []
+      },
+      "trace": {
+        "calls": 3,
+        "rounds": 2,
+        "trace": [
+          {
+            "actions": 8,
+            "results": [
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified"
+            ]
+          },
+          {
+            "actions": 1,
+            "results": [
+              "verified"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "case": "dependent",
+      "mode": "direct-no-waits",
+      "repeat": 1,
+      "elapsedMs": 101.16679199999999,
+      "waitMs": 0,
+      "waitCalls": 0,
+      "observeMs": 1.1000003814697266,
+      "inPageMs": 4.599999904632568,
+      "callWallMs": 18.20008400000006,
+      "transportResidualMs": 13.600084095367492,
+      "driverAndOracleMs": 82.96670799999993,
+      "bytesReturned": 8861,
+      "calls": 4,
+      "check": {
+        "passed": true,
+        "correct": 9,
+        "total": 9,
+        "errors": []
+      },
+      "trace": {
+        "calls": 4,
+        "rounds": 3,
+        "trace": [
+          {
+            "actions": 8,
+            "results": [
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified"
+            ]
+          },
+          {
+            "actions": 1,
+            "results": [
+              "verified"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "case": "dependent",
+      "mode": "playwright-script",
+      "repeat": 1,
+      "elapsedMs": 191.82287499999984,
+      "waitMs": 0,
+      "waitCalls": 0,
+      "observeMs": 0,
+      "inPageMs": 0,
+      "callWallMs": 0,
+      "transportResidualMs": 0,
+      "driverAndOracleMs": 191.82287499999984,
+      "bytesReturned": 0,
+      "calls": 0,
+      "check": {
+        "passed": true,
+        "correct": 9,
+        "total": 9,
+        "errors": []
+      }
+    },
+    {
+      "case": "dependent",
+      "mode": "extension-original",
+      "repeat": 2,
+      "elapsedMs": 192.88591700000143,
+      "waitMs": 181.19999980926514,
+      "waitCalls": 4,
+      "observeMs": 1.4000000953674316,
+      "inPageMs": 186.40000009536743,
+      "callWallMs": 191.50304199999846,
+      "transportResidualMs": 5.103041904631027,
+      "driverAndOracleMs": 1.3828750000029686,
+      "bytesReturned": 6829,
+      "calls": 3,
+      "check": {
+        "passed": true,
+        "correct": 9,
+        "total": 9,
+        "errors": []
+      },
+      "trace": {
+        "calls": 3,
+        "rounds": 2,
+        "trace": [
+          {
+            "actions": 8,
+            "results": [
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified"
+            ]
+          },
+          {
+            "actions": 1,
+            "results": [
+              "verified"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "case": "dependent",
+      "mode": "extension-final-only",
+      "repeat": 2,
+      "elapsedMs": 169.2935839999991,
+      "waitMs": 72.59999990463257,
+      "waitCalls": 2,
+      "observeMs": 1.9000000953674316,
+      "inPageMs": 78.2000002861023,
+      "callWallMs": 84.2936260000024,
+      "transportResidualMs": 6.09362571390011,
+      "driverAndOracleMs": 84.9999579999967,
+      "bytesReturned": 8875,
+      "calls": 4,
+      "check": {
+        "passed": true,
+        "correct": 9,
+        "total": 9,
+        "errors": []
+      },
+      "trace": {
+        "calls": 4,
+        "rounds": 3,
+        "trace": [
+          {
+            "actions": 8,
+            "results": [
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified"
+            ]
+          },
+          {
+            "actions": 1,
+            "results": [
+              "verified"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "case": "dependent",
+      "mode": "extension-no-waits",
+      "repeat": 2,
+      "elapsedMs": 93.26995800000077,
+      "waitMs": 0,
+      "waitCalls": 0,
+      "observeMs": 1.8000001907348633,
+      "inPageMs": 5.299999713897705,
+      "callWallMs": 10.043249999998807,
+      "transportResidualMs": 4.743250286101102,
+      "driverAndOracleMs": 83.22670800000196,
+      "bytesReturned": 8859,
+      "calls": 4,
+      "check": {
+        "passed": true,
+        "correct": 9,
+        "total": 9,
+        "errors": []
+      },
+      "trace": {
+        "calls": 4,
+        "rounds": 3,
+        "trace": [
+          {
+            "actions": 8,
+            "results": [
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified"
+            ]
+          },
+          {
+            "actions": 1,
+            "results": [
+              "verified"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "case": "dependent",
+      "mode": "direct-original",
+      "repeat": 2,
+      "elapsedMs": 195.28612500000054,
+      "waitMs": 179.60000038146973,
+      "waitCalls": 4,
+      "observeMs": 1.0999999046325684,
+      "inPageMs": 184.90000009536743,
+      "callWallMs": 193.567583,
+      "transportResidualMs": 8.667582904632582,
+      "driverAndOracleMs": 1.7185420000005251,
+      "bytesReturned": 6840,
+      "calls": 3,
+      "check": {
+        "passed": true,
+        "correct": 9,
+        "total": 9,
+        "errors": []
+      },
+      "trace": {
+        "calls": 3,
+        "rounds": 2,
+        "trace": [
+          {
+            "actions": 8,
+            "results": [
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified"
+            ]
+          },
+          {
+            "actions": 1,
+            "results": [
+              "verified"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "case": "dependent",
+      "mode": "direct-no-waits",
+      "repeat": 2,
+      "elapsedMs": 111.9819580000003,
+      "waitMs": 0,
+      "waitCalls": 0,
+      "observeMs": 1.2000007629394531,
+      "inPageMs": 4.200000286102295,
+      "callWallMs": 29.074334000000817,
+      "transportResidualMs": 24.874333713898523,
+      "driverAndOracleMs": 82.90762399999949,
+      "bytesReturned": 8846,
+      "calls": 4,
+      "check": {
+        "passed": true,
+        "correct": 9,
+        "total": 9,
+        "errors": []
+      },
+      "trace": {
+        "calls": 4,
+        "rounds": 3,
+        "trace": [
+          {
+            "actions": 8,
+            "results": [
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified"
+            ]
+          },
+          {
+            "actions": 1,
+            "results": [
+              "verified"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "case": "dependent",
+      "mode": "playwright-script",
+      "repeat": 2,
+      "elapsedMs": 180.53591600000073,
+      "waitMs": 0,
+      "waitCalls": 0,
+      "observeMs": 0,
+      "inPageMs": 0,
+      "callWallMs": 0,
+      "transportResidualMs": 0,
+      "driverAndOracleMs": 180.53591600000073,
+      "bytesReturned": 0,
+      "calls": 0,
+      "check": {
+        "passed": true,
+        "correct": 9,
+        "total": 9,
+        "errors": []
+      }
+    },
+    {
+      "case": "dependent",
+      "mode": "playwright-with-observations",
+      "repeat": 2,
+      "elapsedMs": 189.26024999999936,
+      "waitMs": 0,
+      "waitCalls": 0,
+      "observeMs": 0,
+      "inPageMs": 0,
+      "callWallMs": 0,
+      "transportResidualMs": 0,
+      "driverAndOracleMs": 189.26024999999936,
+      "bytesReturned": 0,
+      "calls": 0,
+      "check": {
+        "passed": true,
+        "correct": 9,
+        "total": 9,
+        "errors": []
+      }
+    },
+    {
+      "case": "dependent",
+      "mode": "extension-final-only",
+      "repeat": 3,
+      "elapsedMs": 170.57024999999885,
+      "waitMs": 72.7999997138977,
+      "waitCalls": 2,
+      "observeMs": 2.5999999046325684,
+      "inPageMs": 80.40000009536743,
+      "callWallMs": 87.00504199999887,
+      "transportResidualMs": 6.605041904631435,
+      "driverAndOracleMs": 83.56520799999998,
+      "bytesReturned": 8904,
+      "calls": 4,
+      "check": {
+        "passed": true,
+        "correct": 9,
+        "total": 9,
+        "errors": []
+      },
+      "trace": {
+        "calls": 4,
+        "rounds": 3,
+        "trace": [
+          {
+            "actions": 8,
+            "results": [
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified"
+            ]
+          },
+          {
+            "actions": 1,
+            "results": [
+              "verified"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "case": "dependent",
+      "mode": "extension-no-waits",
+      "repeat": 3,
+      "elapsedMs": 94.19033300000046,
+      "waitMs": 0,
+      "waitCalls": 0,
+      "observeMs": 1.9000000953674316,
+      "inPageMs": 5.699999809265137,
+      "callWallMs": 10.905042999998841,
+      "transportResidualMs": 5.205043190733704,
+      "driverAndOracleMs": 83.28529000000162,
+      "bytesReturned": 8875,
+      "calls": 4,
+      "check": {
+        "passed": true,
+        "correct": 9,
+        "total": 9,
+        "errors": []
+      },
+      "trace": {
+        "calls": 4,
+        "rounds": 3,
+        "trace": [
+          {
+            "actions": 8,
+            "results": [
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified"
+            ]
+          },
+          {
+            "actions": 1,
+            "results": [
+              "verified"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "case": "dependent",
+      "mode": "direct-original",
+      "repeat": 3,
+      "elapsedMs": 200.06512499999917,
+      "waitMs": 181.80000019073486,
+      "waitCalls": 4,
+      "observeMs": 1.6000003814697266,
+      "inPageMs": 187,
+      "callWallMs": 197.51195800000096,
+      "transportResidualMs": 10.51195800000096,
+      "driverAndOracleMs": 2.5531669999982114,
+      "bytesReturned": 6856,
+      "calls": 3,
+      "check": {
+        "passed": true,
+        "correct": 9,
+        "total": 9,
+        "errors": []
+      },
+      "trace": {
+        "calls": 3,
+        "rounds": 2,
+        "trace": [
+          {
+            "actions": 8,
+            "results": [
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified"
+            ]
+          },
+          {
+            "actions": 1,
+            "results": [
+              "verified"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "case": "dependent",
+      "mode": "direct-no-waits",
+      "repeat": 3,
+      "elapsedMs": 96.69266699999935,
+      "waitMs": 0,
+      "waitCalls": 0,
+      "observeMs": 0.9000000953674316,
+      "inPageMs": 4.700000286102295,
+      "callWallMs": 14.974833000000217,
+      "transportResidualMs": 10.274832713897922,
+      "driverAndOracleMs": 81.71783399999913,
+      "bytesReturned": 8860,
+      "calls": 4,
+      "check": {
+        "passed": true,
+        "correct": 9,
+        "total": 9,
+        "errors": []
+      },
+      "trace": {
+        "calls": 4,
+        "rounds": 3,
+        "trace": [
+          {
+            "actions": 8,
+            "results": [
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified"
+            ]
+          },
+          {
+            "actions": 1,
+            "results": [
+              "verified"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "case": "dependent",
+      "mode": "playwright-script",
+      "repeat": 3,
+      "elapsedMs": 180.65849999999955,
+      "waitMs": 0,
+      "waitCalls": 0,
+      "observeMs": 0,
+      "inPageMs": 0,
+      "callWallMs": 0,
+      "transportResidualMs": 0,
+      "driverAndOracleMs": 180.65849999999955,
+      "bytesReturned": 0,
+      "calls": 0,
+      "check": {
+        "passed": true,
+        "correct": 9,
+        "total": 9,
+        "errors": []
+      }
+    },
+    {
+      "case": "dependent",
+      "mode": "playwright-with-observations",
+      "repeat": 3,
+      "elapsedMs": 189.07279200000085,
+      "waitMs": 0,
+      "waitCalls": 0,
+      "observeMs": 0,
+      "inPageMs": 0,
+      "callWallMs": 0,
+      "transportResidualMs": 0,
+      "driverAndOracleMs": 189.07279200000085,
+      "bytesReturned": 0,
+      "calls": 0,
+      "check": {
+        "passed": true,
+        "correct": 9,
+        "total": 9,
+        "errors": []
+      }
+    },
+    {
+      "case": "dependent",
+      "mode": "extension-original",
+      "repeat": 3,
+      "elapsedMs": 199.03529199999866,
+      "waitMs": 181.60000038146973,
+      "waitCalls": 4,
+      "observeMs": 2.5999999046325684,
+      "inPageMs": 189.0999994277954,
+      "callWallMs": 195.23941699999887,
+      "transportResidualMs": 6.139417572203456,
+      "driverAndOracleMs": 3.7958749999997963,
+      "bytesReturned": 6868,
+      "calls": 3,
+      "check": {
+        "passed": true,
+        "correct": 9,
+        "total": 9,
+        "errors": []
+      },
+      "trace": {
+        "calls": 3,
+        "rounds": 2,
+        "trace": [
+          {
+            "actions": 8,
+            "results": [
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified"
+            ]
+          },
+          {
+            "actions": 1,
+            "results": [
+              "verified"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "case": "dependent",
+      "mode": "extension-no-waits",
+      "repeat": 4,
+      "elapsedMs": 94.50354200000038,
+      "waitMs": 0,
+      "waitCalls": 0,
+      "observeMs": 1.700000286102295,
+      "inPageMs": 5.400000095367432,
+      "callWallMs": 10.546999000000142,
+      "transportResidualMs": 5.14699890463271,
+      "driverAndOracleMs": 83.95654300000024,
+      "bytesReturned": 8877,
+      "calls": 4,
+      "check": {
+        "passed": true,
+        "correct": 9,
+        "total": 9,
+        "errors": []
+      },
+      "trace": {
+        "calls": 4,
+        "rounds": 3,
+        "trace": [
+          {
+            "actions": 8,
+            "results": [
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified"
+            ]
+          },
+          {
+            "actions": 1,
+            "results": [
+              "verified"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "case": "dependent",
+      "mode": "direct-original",
+      "repeat": 4,
+      "elapsedMs": 195.503917,
+      "waitMs": 179.99999952316284,
+      "waitCalls": 4,
+      "observeMs": 1.2999992370605469,
+      "inPageMs": 185.0999994277954,
+      "callWallMs": 193.3257509999985,
+      "transportResidualMs": 8.22575157220308,
+      "driverAndOracleMs": 2.178166000001511,
+      "bytesReturned": 6871,
+      "calls": 3,
+      "check": {
+        "passed": true,
+        "correct": 9,
+        "total": 9,
+        "errors": []
+      },
+      "trace": {
+        "calls": 3,
+        "rounds": 2,
+        "trace": [
+          {
+            "actions": 8,
+            "results": [
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified"
+            ]
+          },
+          {
+            "actions": 1,
+            "results": [
+              "verified"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "case": "dependent",
+      "mode": "direct-no-waits",
+      "repeat": 4,
+      "elapsedMs": 97.8544579999998,
+      "waitMs": 0,
+      "waitCalls": 0,
+      "observeMs": 1,
+      "inPageMs": 5,
+      "callWallMs": 14.85358400000041,
+      "transportResidualMs": 9.85358400000041,
+      "driverAndOracleMs": 83.00087399999938,
+      "bytesReturned": 8860,
+      "calls": 4,
+      "check": {
+        "passed": true,
+        "correct": 9,
+        "total": 9,
+        "errors": []
+      },
+      "trace": {
+        "calls": 4,
+        "rounds": 3,
+        "trace": [
+          {
+            "actions": 8,
+            "results": [
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified"
+            ]
+          },
+          {
+            "actions": 1,
+            "results": [
+              "verified"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "case": "dependent",
+      "mode": "playwright-script",
+      "repeat": 4,
+      "elapsedMs": 178.74462499999936,
+      "waitMs": 0,
+      "waitCalls": 0,
+      "observeMs": 0,
+      "inPageMs": 0,
+      "callWallMs": 0,
+      "transportResidualMs": 0,
+      "driverAndOracleMs": 178.74462499999936,
+      "bytesReturned": 0,
+      "calls": 0,
+      "check": {
+        "passed": true,
+        "correct": 9,
+        "total": 9,
+        "errors": []
+      }
+    },
+    {
+      "case": "dependent",
+      "mode": "playwright-with-observations",
+      "repeat": 4,
+      "elapsedMs": 186.9910830000008,
+      "waitMs": 0,
+      "waitCalls": 0,
+      "observeMs": 0,
+      "inPageMs": 0,
+      "callWallMs": 0,
+      "transportResidualMs": 0,
+      "driverAndOracleMs": 186.9910830000008,
+      "bytesReturned": 0,
+      "calls": 0,
+      "check": {
+        "passed": true,
+        "correct": 9,
+        "total": 9,
+        "errors": []
+      }
+    },
+    {
+      "case": "dependent",
+      "mode": "extension-original",
+      "repeat": 4,
+      "elapsedMs": 198.32162499999868,
+      "waitMs": 181.40000009536743,
+      "waitCalls": 4,
+      "observeMs": 1.4999995231628418,
+      "inPageMs": 186.69999980926514,
+      "callWallMs": 194.09362500000134,
+      "transportResidualMs": 7.393625190736202,
+      "driverAndOracleMs": 4.227999999997337,
+      "bytesReturned": 6857,
+      "calls": 3,
+      "check": {
+        "passed": true,
+        "correct": 9,
+        "total": 9,
+        "errors": []
+      },
+      "trace": {
+        "calls": 3,
+        "rounds": 2,
+        "trace": [
+          {
+            "actions": 8,
+            "results": [
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified"
+            ]
+          },
+          {
+            "actions": 1,
+            "results": [
+              "verified"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "case": "dependent",
+      "mode": "extension-final-only",
+      "repeat": 4,
+      "elapsedMs": 174.70845799999915,
+      "waitMs": 71.69999980926514,
+      "waitCalls": 2,
+      "observeMs": 2.0999999046325684,
+      "inPageMs": 79,
+      "callWallMs": 89.29687500000182,
+      "transportResidualMs": 10.296875000001819,
+      "driverAndOracleMs": 85.41158299999734,
+      "bytesReturned": 8876,
+      "calls": 4,
+      "check": {
+        "passed": true,
+        "correct": 9,
+        "total": 9,
+        "errors": []
+      },
+      "trace": {
+        "calls": 4,
+        "rounds": 3,
+        "trace": [
+          {
+            "actions": 8,
+            "results": [
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified"
+            ]
+          },
+          {
+            "actions": 1,
+            "results": [
+              "verified"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "case": "dependent",
+      "mode": "direct-original",
+      "repeat": 5,
+      "elapsedMs": 208.13129200000003,
+      "waitMs": 180,
+      "waitCalls": 4,
+      "observeMs": 0.7999997138977051,
+      "inPageMs": 184.90000009536743,
+      "callWallMs": 206.10816599999998,
+      "transportResidualMs": 21.20816590463255,
+      "driverAndOracleMs": 2.0231260000000475,
+      "bytesReturned": 6875,
+      "calls": 3,
+      "check": {
+        "passed": true,
+        "correct": 9,
+        "total": 9,
+        "errors": []
+      },
+      "trace": {
+        "calls": 3,
+        "rounds": 2,
+        "trace": [
+          {
+            "actions": 8,
+            "results": [
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified"
+            ]
+          },
+          {
+            "actions": 1,
+            "results": [
+              "verified"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "case": "dependent",
+      "mode": "direct-no-waits",
+      "repeat": 5,
+      "elapsedMs": 107.31908300000032,
+      "waitMs": 0,
+      "waitCalls": 0,
+      "observeMs": 0.7000002861022949,
+      "inPageMs": 6.599999904632568,
+      "callWallMs": 19.243541000001642,
+      "transportResidualMs": 12.643541095369073,
+      "driverAndOracleMs": 88.07554199999868,
+      "bytesReturned": 8860,
+      "calls": 4,
+      "check": {
+        "passed": true,
+        "correct": 9,
+        "total": 9,
+        "errors": []
+      },
+      "trace": {
+        "calls": 4,
+        "rounds": 3,
+        "trace": [
+          {
+            "actions": 8,
+            "results": [
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified"
+            ]
+          },
+          {
+            "actions": 1,
+            "results": [
+              "verified"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "case": "dependent",
+      "mode": "playwright-script",
+      "repeat": 5,
+      "elapsedMs": 175.74762499999997,
+      "waitMs": 0,
+      "waitCalls": 0,
+      "observeMs": 0,
+      "inPageMs": 0,
+      "callWallMs": 0,
+      "transportResidualMs": 0,
+      "driverAndOracleMs": 175.74762499999997,
+      "bytesReturned": 0,
+      "calls": 0,
+      "check": {
+        "passed": true,
+        "correct": 9,
+        "total": 9,
+        "errors": []
+      }
+    },
+    {
+      "case": "dependent",
+      "mode": "playwright-with-observations",
+      "repeat": 5,
+      "elapsedMs": 184.15599999999904,
+      "waitMs": 0,
+      "waitCalls": 0,
+      "observeMs": 0,
+      "inPageMs": 0,
+      "callWallMs": 0,
+      "transportResidualMs": 0,
+      "driverAndOracleMs": 184.15599999999904,
+      "bytesReturned": 0,
+      "calls": 0,
+      "check": {
+        "passed": true,
+        "correct": 9,
+        "total": 9,
+        "errors": []
+      }
+    },
+    {
+      "case": "dependent",
+      "mode": "extension-original",
+      "repeat": 5,
+      "elapsedMs": 195.24904100000094,
+      "waitMs": 180.30000019073486,
+      "waitCalls": 4,
+      "observeMs": 0.9999995231628418,
+      "inPageMs": 184.09999990463257,
+      "callWallMs": 193.850166000002,
+      "transportResidualMs": 9.750166095369423,
+      "driverAndOracleMs": 1.3988749999989523,
+      "bytesReturned": 6856,
+      "calls": 3,
+      "check": {
+        "passed": true,
+        "correct": 9,
+        "total": 9,
+        "errors": []
+      },
+      "trace": {
+        "calls": 3,
+        "rounds": 2,
+        "trace": [
+          {
+            "actions": 8,
+            "results": [
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified"
+            ]
+          },
+          {
+            "actions": 1,
+            "results": [
+              "verified"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "case": "dependent",
+      "mode": "extension-final-only",
+      "repeat": 5,
+      "elapsedMs": 167.23020899999938,
+      "waitMs": 73.40000009536743,
+      "waitCalls": 2,
+      "observeMs": 1.700000286102295,
+      "inPageMs": 78.40000009536743,
+      "callWallMs": 83.41329199999745,
+      "transportResidualMs": 5.013291904630023,
+      "driverAndOracleMs": 83.81691700000192,
+      "bytesReturned": 8875,
+      "calls": 4,
+      "check": {
+        "passed": true,
+        "correct": 9,
+        "total": 9,
+        "errors": []
+      },
+      "trace": {
+        "calls": 4,
+        "rounds": 3,
+        "trace": [
+          {
+            "actions": 8,
+            "results": [
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified"
+            ]
+          },
+          {
+            "actions": 1,
+            "results": [
+              "verified"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "case": "dependent",
+      "mode": "extension-no-waits",
+      "repeat": 5,
+      "elapsedMs": 92.58812500000022,
+      "waitMs": 0,
+      "waitCalls": 0,
+      "observeMs": 1.3999996185302734,
+      "inPageMs": 4.5,
+      "callWallMs": 9.218040999996447,
+      "transportResidualMs": 4.718040999996447,
+      "driverAndOracleMs": 83.37008400000377,
+      "bytesReturned": 8893,
+      "calls": 4,
+      "check": {
+        "passed": true,
+        "correct": 9,
+        "total": 9,
+        "errors": []
+      },
+      "trace": {
+        "calls": 4,
+        "rounds": 3,
+        "trace": [
+          {
+            "actions": 8,
+            "results": [
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified"
+            ]
+          },
+          {
+            "actions": 1,
+            "results": [
+              "verified"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "case": "repeat",
+      "mode": "playwright-with-observations",
+      "repeat": 1,
+      "elapsedMs": 77.11995799999931,
+      "waitMs": 0,
+      "waitCalls": 0,
+      "observeMs": 0,
+      "inPageMs": 0,
+      "callWallMs": 0,
+      "transportResidualMs": 0,
+      "driverAndOracleMs": 77.11995799999931,
+      "bytesReturned": 0,
+      "calls": 0,
+      "check": {
+        "passed": true,
+        "correct": 14,
+        "total": 14,
+        "errors": []
+      }
+    },
+    {
+      "case": "repeat",
+      "mode": "extension-original",
+      "repeat": 1,
+      "elapsedMs": 240.58416599999873,
+      "waitMs": 215.59999990463257,
+      "waitCalls": 6,
+      "observeMs": 2.3000006675720215,
+      "inPageMs": 224.30000066757202,
+      "callWallMs": 238.97362500000236,
+      "transportResidualMs": 14.673624332430336,
+      "driverAndOracleMs": 1.610540999996374,
+      "bytesReturned": 11314,
+      "calls": 4,
+      "check": {
+        "passed": true,
+        "correct": 14,
+        "total": 14,
+        "errors": []
+      },
+      "trace": {
+        "calls": 4,
+        "rounds": 3,
+        "trace": [
+          {
+            "actions": 9,
+            "results": [
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified"
+            ]
+          },
+          {
+            "actions": 1,
+            "results": [
+              "expanded"
+            ]
+          },
+          {
+            "actions": 5,
+            "results": [
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "case": "repeat",
+      "mode": "extension-final-only",
+      "repeat": 1,
+      "elapsedMs": 122.96345900000051,
+      "waitMs": 108.00000047683716,
+      "waitCalls": 3,
+      "observeMs": 1.5999999046325684,
+      "inPageMs": 114.40000009536743,
+      "callWallMs": 120.80708300000151,
+      "transportResidualMs": 6.4070829046340805,
+      "driverAndOracleMs": 2.1563759999989998,
+      "bytesReturned": 11333,
+      "calls": 4,
+      "check": {
+        "passed": true,
+        "correct": 14,
+        "total": 14,
+        "errors": []
+      },
+      "trace": {
+        "calls": 4,
+        "rounds": 3,
+        "trace": [
+          {
+            "actions": 9,
+            "results": [
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified"
+            ]
+          },
+          {
+            "actions": 1,
+            "results": [
+              "expanded"
+            ]
+          },
+          {
+            "actions": 5,
+            "results": [
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "case": "repeat",
+      "mode": "extension-no-waits",
+      "repeat": 1,
+      "elapsedMs": 14.159291999998459,
+      "waitMs": 0,
+      "waitCalls": 0,
+      "observeMs": 1.8999996185302734,
+      "inPageMs": 6.1999993324279785,
+      "callWallMs": 12.808958999999959,
+      "transportResidualMs": 6.60895966757198,
+      "driverAndOracleMs": 1.3503329999984999,
+      "bytesReturned": 11317,
+      "calls": 4,
+      "check": {
+        "passed": true,
+        "correct": 14,
+        "total": 14,
+        "errors": []
+      },
+      "trace": {
+        "calls": 4,
+        "rounds": 3,
+        "trace": [
+          {
+            "actions": 9,
+            "results": [
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified"
+            ]
+          },
+          {
+            "actions": 1,
+            "results": [
+              "expanded"
+            ]
+          },
+          {
+            "actions": 5,
+            "results": [
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "case": "repeat",
+      "mode": "direct-original",
+      "repeat": 1,
+      "elapsedMs": 232.1474159999998,
+      "waitMs": 216.00000047683716,
+      "waitCalls": 6,
+      "observeMs": 1.1000003814697266,
+      "inPageMs": 222.90000009536743,
+      "callWallMs": 230.94662600000265,
+      "transportResidualMs": 8.04662590463522,
+      "driverAndOracleMs": 1.2007899999971414,
+      "bytesReturned": 11348,
+      "calls": 4,
+      "check": {
+        "passed": true,
+        "correct": 14,
+        "total": 14,
+        "errors": []
+      },
+      "trace": {
+        "calls": 4,
+        "rounds": 3,
+        "trace": [
+          {
+            "actions": 9,
+            "results": [
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified"
+            ]
+          },
+          {
+            "actions": 1,
+            "results": [
+              "expanded"
+            ]
+          },
+          {
+            "actions": 5,
+            "results": [
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "case": "repeat",
+      "mode": "direct-no-waits",
+      "repeat": 1,
+      "elapsedMs": 19.43537500000093,
+      "waitMs": 0,
+      "waitCalls": 0,
+      "observeMs": 1.2000007629394531,
+      "inPageMs": 4.90000057220459,
+      "callWallMs": 18.680499000000054,
+      "transportResidualMs": 13.780498427795465,
+      "driverAndOracleMs": 0.754876000000877,
+      "bytesReturned": 11302,
+      "calls": 4,
+      "check": {
+        "passed": true,
+        "correct": 14,
+        "total": 14,
+        "errors": []
+      },
+      "trace": {
+        "calls": 4,
+        "rounds": 3,
+        "trace": [
+          {
+            "actions": 9,
+            "results": [
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified"
+            ]
+          },
+          {
+            "actions": 1,
+            "results": [
+              "expanded"
+            ]
+          },
+          {
+            "actions": 5,
+            "results": [
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "case": "repeat",
+      "mode": "playwright-script",
+      "repeat": 1,
+      "elapsedMs": 68.61962499999936,
+      "waitMs": 0,
+      "waitCalls": 0,
+      "observeMs": 0,
+      "inPageMs": 0,
+      "callWallMs": 0,
+      "transportResidualMs": 0,
+      "driverAndOracleMs": 68.61962499999936,
+      "bytesReturned": 0,
+      "calls": 0,
+      "check": {
+        "passed": true,
+        "correct": 14,
+        "total": 14,
+        "errors": []
+      }
+    },
+    {
+      "case": "repeat",
+      "mode": "extension-original",
+      "repeat": 2,
+      "elapsedMs": 232.16741699999875,
+      "waitMs": 215.30000019073486,
+      "waitCalls": 6,
+      "observeMs": 1.4000000953674316,
+      "inPageMs": 222.69999933242798,
+      "callWallMs": 229.9301259999993,
+      "transportResidualMs": 7.230126667571312,
+      "driverAndOracleMs": 2.237290999999459,
+      "bytesReturned": 11319,
+      "calls": 4,
+      "check": {
+        "passed": true,
+        "correct": 14,
+        "total": 14,
+        "errors": []
+      },
+      "trace": {
+        "calls": 4,
+        "rounds": 3,
+        "trace": [
+          {
+            "actions": 9,
+            "results": [
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified"
+            ]
+          },
+          {
+            "actions": 1,
+            "results": [
+              "expanded"
+            ]
+          },
+          {
+            "actions": 5,
+            "results": [
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "case": "repeat",
+      "mode": "extension-final-only",
+      "repeat": 2,
+      "elapsedMs": 121.46912499999962,
+      "waitMs": 108.19999980926514,
+      "waitCalls": 3,
+      "observeMs": 1.5999999046325684,
+      "inPageMs": 114.69999980926514,
+      "callWallMs": 119.64154099999723,
+      "transportResidualMs": 4.941541190732096,
+      "driverAndOracleMs": 1.827584000002389,
+      "bytesReturned": 11291,
+      "calls": 4,
+      "check": {
+        "passed": true,
+        "correct": 14,
+        "total": 14,
+        "errors": []
+      },
+      "trace": {
+        "calls": 4,
+        "rounds": 3,
+        "trace": [
+          {
+            "actions": 9,
+            "results": [
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified"
+            ]
+          },
+          {
+            "actions": 1,
+            "results": [
+              "expanded"
+            ]
+          },
+          {
+            "actions": 5,
+            "results": [
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "case": "repeat",
+      "mode": "extension-no-waits",
+      "repeat": 2,
+      "elapsedMs": 12.390541999997367,
+      "waitMs": 0,
+      "waitCalls": 0,
+      "observeMs": 1.4999995231628418,
+      "inPageMs": 5.5,
+      "callWallMs": 11.336874999997235,
+      "transportResidualMs": 5.836874999997235,
+      "driverAndOracleMs": 1.0536670000001322,
+      "bytesReturned": 11286,
+      "calls": 4,
+      "check": {
+        "passed": true,
+        "correct": 14,
+        "total": 14,
+        "errors": []
+      },
+      "trace": {
+        "calls": 4,
+        "rounds": 3,
+        "trace": [
+          {
+            "actions": 9,
+            "results": [
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified"
+            ]
+          },
+          {
+            "actions": 1,
+            "results": [
+              "expanded"
+            ]
+          },
+          {
+            "actions": 5,
+            "results": [
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "case": "repeat",
+      "mode": "direct-original",
+      "repeat": 2,
+      "elapsedMs": 234.75354100000186,
+      "waitMs": 217.79999923706055,
+      "waitCalls": 6,
+      "observeMs": 1.0000004768371582,
+      "inPageMs": 224.50000047683716,
+      "callWallMs": 233.22016799999983,
+      "transportResidualMs": 8.720167523162672,
+      "driverAndOracleMs": 1.5333730000020296,
+      "bytesReturned": 11349,
+      "calls": 4,
+      "check": {
+        "passed": true,
+        "correct": 14,
+        "total": 14,
+        "errors": []
+      },
+      "trace": {
+        "calls": 4,
+        "rounds": 3,
+        "trace": [
+          {
+            "actions": 9,
+            "results": [
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified"
+            ]
+          },
+          {
+            "actions": 1,
+            "results": [
+              "expanded"
+            ]
+          },
+          {
+            "actions": 5,
+            "results": [
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "case": "repeat",
+      "mode": "direct-no-waits",
+      "repeat": 2,
+      "elapsedMs": 15.681166999998823,
+      "waitMs": 0,
+      "waitCalls": 0,
+      "observeMs": 1.6999998092651367,
+      "inPageMs": 6.099999904632568,
+      "callWallMs": 14.963040999999066,
+      "transportResidualMs": 8.863041095366498,
+      "driverAndOracleMs": 0.7181259999997565,
+      "bytesReturned": 11289,
+      "calls": 4,
+      "check": {
+        "passed": true,
+        "correct": 14,
+        "total": 14,
+        "errors": []
+      },
+      "trace": {
+        "calls": 4,
+        "rounds": 3,
+        "trace": [
+          {
+            "actions": 9,
+            "results": [
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified"
+            ]
+          },
+          {
+            "actions": 1,
+            "results": [
+              "expanded"
+            ]
+          },
+          {
+            "actions": 5,
+            "results": [
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "case": "repeat",
+      "mode": "playwright-script",
+      "repeat": 2,
+      "elapsedMs": 62.96920900000259,
+      "waitMs": 0,
+      "waitCalls": 0,
+      "observeMs": 0,
+      "inPageMs": 0,
+      "callWallMs": 0,
+      "transportResidualMs": 0,
+      "driverAndOracleMs": 62.96920900000259,
+      "bytesReturned": 0,
+      "calls": 0,
+      "check": {
+        "passed": true,
+        "correct": 14,
+        "total": 14,
+        "errors": []
+      }
+    },
+    {
+      "case": "repeat",
+      "mode": "playwright-with-observations",
+      "repeat": 2,
+      "elapsedMs": 68.39791700000205,
+      "waitMs": 0,
+      "waitCalls": 0,
+      "observeMs": 0,
+      "inPageMs": 0,
+      "callWallMs": 0,
+      "transportResidualMs": 0,
+      "driverAndOracleMs": 68.39791700000205,
+      "bytesReturned": 0,
+      "calls": 0,
+      "check": {
+        "passed": true,
+        "correct": 14,
+        "total": 14,
+        "errors": []
+      }
+    },
+    {
+      "case": "repeat",
+      "mode": "extension-final-only",
+      "repeat": 3,
+      "elapsedMs": 120.59829199999876,
+      "waitMs": 108.69999980926514,
+      "waitCalls": 3,
+      "observeMs": 1.4999995231628418,
+      "inPageMs": 114.7999997138977,
+      "callWallMs": 119.06833200000256,
+      "transportResidualMs": 4.268332286104851,
+      "driverAndOracleMs": 1.5299599999962084,
+      "bytesReturned": 11325,
+      "calls": 4,
+      "check": {
+        "passed": true,
+        "correct": 14,
+        "total": 14,
+        "errors": []
+      },
+      "trace": {
+        "calls": 4,
+        "rounds": 3,
+        "trace": [
+          {
+            "actions": 9,
+            "results": [
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified"
+            ]
+          },
+          {
+            "actions": 1,
+            "results": [
+              "expanded"
+            ]
+          },
+          {
+            "actions": 5,
+            "results": [
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "case": "repeat",
+      "mode": "extension-no-waits",
+      "repeat": 3,
+      "elapsedMs": 12.196584000001167,
+      "waitMs": 0,
+      "waitCalls": 0,
+      "observeMs": 1.4000000953674316,
+      "inPageMs": 5.900000095367432,
+      "callWallMs": 10.80895800000144,
+      "transportResidualMs": 4.908957904634008,
+      "driverAndOracleMs": 1.3876259999997274,
+      "bytesReturned": 11288,
+      "calls": 4,
+      "check": {
+        "passed": true,
+        "correct": 14,
+        "total": 14,
+        "errors": []
+      },
+      "trace": {
+        "calls": 4,
+        "rounds": 3,
+        "trace": [
+          {
+            "actions": 9,
+            "results": [
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified"
+            ]
+          },
+          {
+            "actions": 1,
+            "results": [
+              "expanded"
+            ]
+          },
+          {
+            "actions": 5,
+            "results": [
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "case": "repeat",
+      "mode": "direct-original",
+      "repeat": 3,
+      "elapsedMs": 237.9796669999996,
+      "waitMs": 216.10000085830688,
+      "waitCalls": 6,
+      "observeMs": 1.8000001907348633,
+      "inPageMs": 223.69999980926514,
+      "callWallMs": 236.0759590000016,
+      "transportResidualMs": 12.375959190736467,
+      "driverAndOracleMs": 1.903707999998005,
+      "bytesReturned": 11321,
+      "calls": 4,
+      "check": {
+        "passed": true,
+        "correct": 14,
+        "total": 14,
+        "errors": []
+      },
+      "trace": {
+        "calls": 4,
+        "rounds": 3,
+        "trace": [
+          {
+            "actions": 9,
+            "results": [
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified"
+            ]
+          },
+          {
+            "actions": 1,
+            "results": [
+              "expanded"
+            ]
+          },
+          {
+            "actions": 5,
+            "results": [
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "case": "repeat",
+      "mode": "direct-no-waits",
+      "repeat": 3,
+      "elapsedMs": 33.72291699999914,
+      "waitMs": 0,
+      "waitCalls": 0,
+      "observeMs": 1.6000008583068848,
+      "inPageMs": 7.600000381469727,
+      "callWallMs": 31.498082999998587,
+      "transportResidualMs": 23.89808261852886,
+      "driverAndOracleMs": 2.2248340000005555,
+      "bytesReturned": 11320,
+      "calls": 4,
+      "check": {
+        "passed": true,
+        "correct": 14,
+        "total": 14,
+        "errors": []
+      },
+      "trace": {
+        "calls": 4,
+        "rounds": 3,
+        "trace": [
+          {
+            "actions": 9,
+            "results": [
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified"
+            ]
+          },
+          {
+            "actions": 1,
+            "results": [
+              "expanded"
+            ]
+          },
+          {
+            "actions": 5,
+            "results": [
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "case": "repeat",
+      "mode": "playwright-script",
+      "repeat": 3,
+      "elapsedMs": 75.2701249999991,
+      "waitMs": 0,
+      "waitCalls": 0,
+      "observeMs": 0,
+      "inPageMs": 0,
+      "callWallMs": 0,
+      "transportResidualMs": 0,
+      "driverAndOracleMs": 75.2701249999991,
+      "bytesReturned": 0,
+      "calls": 0,
+      "check": {
+        "passed": true,
+        "correct": 14,
+        "total": 14,
+        "errors": []
+      }
+    },
+    {
+      "case": "repeat",
+      "mode": "playwright-with-observations",
+      "repeat": 3,
+      "elapsedMs": 68.20770899999843,
+      "waitMs": 0,
+      "waitCalls": 0,
+      "observeMs": 0,
+      "inPageMs": 0,
+      "callWallMs": 0,
+      "transportResidualMs": 0,
+      "driverAndOracleMs": 68.20770899999843,
+      "bytesReturned": 0,
+      "calls": 0,
+      "check": {
+        "passed": true,
+        "correct": 14,
+        "total": 14,
+        "errors": []
+      }
+    },
+    {
+      "case": "repeat",
+      "mode": "extension-original",
+      "repeat": 3,
+      "elapsedMs": 238.21374999999898,
+      "waitMs": 218.69999980926514,
+      "waitCalls": 6,
+      "observeMs": 2.9000000953674316,
+      "inPageMs": 228.69999980926514,
+      "callWallMs": 234.83608400000594,
+      "transportResidualMs": 6.136084190740803,
+      "driverAndOracleMs": 3.3776659999930416,
+      "bytesReturned": 11287,
+      "calls": 4,
+      "check": {
+        "passed": true,
+        "correct": 14,
+        "total": 14,
+        "errors": []
+      },
+      "trace": {
+        "calls": 4,
+        "rounds": 3,
+        "trace": [
+          {
+            "actions": 9,
+            "results": [
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified"
+            ]
+          },
+          {
+            "actions": 1,
+            "results": [
+              "expanded"
+            ]
+          },
+          {
+            "actions": 5,
+            "results": [
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "case": "repeat",
+      "mode": "extension-no-waits",
+      "repeat": 4,
+      "elapsedMs": 13.36554199999955,
+      "waitMs": 0,
+      "waitCalls": 0,
+      "observeMs": 1.6999998092651367,
+      "inPageMs": 6.399999141693115,
+      "callWallMs": 10.79200000000128,
+      "transportResidualMs": 4.392000858308165,
+      "driverAndOracleMs": 2.5735419999982696,
+      "bytesReturned": 11318,
+      "calls": 4,
+      "check": {
+        "passed": true,
+        "correct": 14,
+        "total": 14,
+        "errors": []
+      },
+      "trace": {
+        "calls": 4,
+        "rounds": 3,
+        "trace": [
+          {
+            "actions": 9,
+            "results": [
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified"
+            ]
+          },
+          {
+            "actions": 1,
+            "results": [
+              "expanded"
+            ]
+          },
+          {
+            "actions": 5,
+            "results": [
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "case": "repeat",
+      "mode": "direct-original",
+      "repeat": 4,
+      "elapsedMs": 235.84562500000175,
+      "waitMs": 216.59999990463257,
+      "waitCalls": 6,
+      "observeMs": 1.3000001907348633,
+      "inPageMs": 223.60000038146973,
+      "callWallMs": 233.8902909999997,
+      "transportResidualMs": 10.29029061852998,
+      "driverAndOracleMs": 1.9553340000020398,
+      "bytesReturned": 11362,
+      "calls": 4,
+      "check": {
+        "passed": true,
+        "correct": 14,
+        "total": 14,
+        "errors": []
+      },
+      "trace": {
+        "calls": 4,
+        "rounds": 3,
+        "trace": [
+          {
+            "actions": 9,
+            "results": [
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified"
+            ]
+          },
+          {
+            "actions": 1,
+            "results": [
+              "expanded"
+            ]
+          },
+          {
+            "actions": 5,
+            "results": [
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "case": "repeat",
+      "mode": "direct-no-waits",
+      "repeat": 4,
+      "elapsedMs": 17.040791999999783,
+      "waitMs": 0,
+      "waitCalls": 0,
+      "observeMs": 1.0999999046325684,
+      "inPageMs": 5.000000476837158,
+      "callWallMs": 16.371665000002395,
+      "transportResidualMs": 11.371664523165236,
+      "driverAndOracleMs": 0.6691269999973883,
+      "bytesReturned": 11302,
+      "calls": 4,
+      "check": {
+        "passed": true,
+        "correct": 14,
+        "total": 14,
+        "errors": []
+      },
+      "trace": {
+        "calls": 4,
+        "rounds": 3,
+        "trace": [
+          {
+            "actions": 9,
+            "results": [
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified"
+            ]
+          },
+          {
+            "actions": 1,
+            "results": [
+              "expanded"
+            ]
+          },
+          {
+            "actions": 5,
+            "results": [
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "case": "repeat",
+      "mode": "playwright-script",
+      "repeat": 4,
+      "elapsedMs": 66.84504100000049,
+      "waitMs": 0,
+      "waitCalls": 0,
+      "observeMs": 0,
+      "inPageMs": 0,
+      "callWallMs": 0,
+      "transportResidualMs": 0,
+      "driverAndOracleMs": 66.84504100000049,
+      "bytesReturned": 0,
+      "calls": 0,
+      "check": {
+        "passed": true,
+        "correct": 14,
+        "total": 14,
+        "errors": []
+      }
+    },
+    {
+      "case": "repeat",
+      "mode": "playwright-with-observations",
+      "repeat": 4,
+      "elapsedMs": 53.94824999999764,
+      "waitMs": 0,
+      "waitCalls": 0,
+      "observeMs": 0,
+      "inPageMs": 0,
+      "callWallMs": 0,
+      "transportResidualMs": 0,
+      "driverAndOracleMs": 53.94824999999764,
+      "bytesReturned": 0,
+      "calls": 0,
+      "check": {
+        "passed": true,
+        "correct": 14,
+        "total": 14,
+        "errors": []
+      }
+    },
+    {
+      "case": "repeat",
+      "mode": "extension-original",
+      "repeat": 4,
+      "elapsedMs": 234.22966599999927,
+      "waitMs": 218.00000047683716,
+      "waitCalls": 6,
+      "observeMs": 2.0999999046325684,
+      "inPageMs": 226.40000009536743,
+      "callWallMs": 230.89620899999863,
+      "transportResidualMs": 4.496208904631203,
+      "driverAndOracleMs": 3.333457000000635,
+      "bytesReturned": 11289,
+      "calls": 4,
+      "check": {
+        "passed": true,
+        "correct": 14,
+        "total": 14,
+        "errors": []
+      },
+      "trace": {
+        "calls": 4,
+        "rounds": 3,
+        "trace": [
+          {
+            "actions": 9,
+            "results": [
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified"
+            ]
+          },
+          {
+            "actions": 1,
+            "results": [
+              "expanded"
+            ]
+          },
+          {
+            "actions": 5,
+            "results": [
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "case": "repeat",
+      "mode": "extension-final-only",
+      "repeat": 4,
+      "elapsedMs": 125.63033400000131,
+      "waitMs": 107.59999990463257,
+      "waitCalls": 3,
+      "observeMs": 2.3000006675720215,
+      "inPageMs": 115.90000057220459,
+      "callWallMs": 123.3357079999987,
+      "transportResidualMs": 7.435707427794114,
+      "driverAndOracleMs": 2.2946260000026086,
+      "bytesReturned": 11363,
+      "calls": 4,
+      "check": {
+        "passed": true,
+        "correct": 14,
+        "total": 14,
+        "errors": []
+      },
+      "trace": {
+        "calls": 4,
+        "rounds": 3,
+        "trace": [
+          {
+            "actions": 9,
+            "results": [
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified"
+            ]
+          },
+          {
+            "actions": 1,
+            "results": [
+              "expanded"
+            ]
+          },
+          {
+            "actions": 5,
+            "results": [
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "case": "repeat",
+      "mode": "direct-original",
+      "repeat": 5,
+      "elapsedMs": 239.87745799999902,
+      "waitMs": 215.9000005722046,
+      "waitCalls": 6,
+      "observeMs": 1.799999713897705,
+      "inPageMs": 225.30000019073486,
+      "callWallMs": 237.74283300000025,
+      "transportResidualMs": 12.442832809265383,
+      "driverAndOracleMs": 2.1346249999987776,
+      "bytesReturned": 11331,
+      "calls": 4,
+      "check": {
+        "passed": true,
+        "correct": 14,
+        "total": 14,
+        "errors": []
+      },
+      "trace": {
+        "calls": 4,
+        "rounds": 3,
+        "trace": [
+          {
+            "actions": 9,
+            "results": [
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified"
+            ]
+          },
+          {
+            "actions": 1,
+            "results": [
+              "expanded"
+            ]
+          },
+          {
+            "actions": 5,
+            "results": [
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "case": "repeat",
+      "mode": "direct-no-waits",
+      "repeat": 5,
+      "elapsedMs": 15.4498339999991,
+      "waitMs": 0,
+      "waitCalls": 0,
+      "observeMs": 1.5999999046325684,
+      "inPageMs": 6.09999942779541,
+      "callWallMs": 14.651166999999987,
+      "transportResidualMs": 8.551167572204577,
+      "driverAndOracleMs": 0.7986669999991136,
+      "bytesReturned": 11288,
+      "calls": 4,
+      "check": {
+        "passed": true,
+        "correct": 14,
+        "total": 14,
+        "errors": []
+      },
+      "trace": {
+        "calls": 4,
+        "rounds": 3,
+        "trace": [
+          {
+            "actions": 9,
+            "results": [
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified"
+            ]
+          },
+          {
+            "actions": 1,
+            "results": [
+              "expanded"
+            ]
+          },
+          {
+            "actions": 5,
+            "results": [
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "case": "repeat",
+      "mode": "playwright-script",
+      "repeat": 5,
+      "elapsedMs": 67.11583299999984,
+      "waitMs": 0,
+      "waitCalls": 0,
+      "observeMs": 0,
+      "inPageMs": 0,
+      "callWallMs": 0,
+      "transportResidualMs": 0,
+      "driverAndOracleMs": 67.11583299999984,
+      "bytesReturned": 0,
+      "calls": 0,
+      "check": {
+        "passed": true,
+        "correct": 14,
+        "total": 14,
+        "errors": []
+      }
+    },
+    {
+      "case": "repeat",
+      "mode": "playwright-with-observations",
+      "repeat": 5,
+      "elapsedMs": 69.85162499999933,
+      "waitMs": 0,
+      "waitCalls": 0,
+      "observeMs": 0,
+      "inPageMs": 0,
+      "callWallMs": 0,
+      "transportResidualMs": 0,
+      "driverAndOracleMs": 69.85162499999933,
+      "bytesReturned": 0,
+      "calls": 0,
+      "check": {
+        "passed": true,
+        "correct": 14,
+        "total": 14,
+        "errors": []
+      }
+    },
+    {
+      "case": "repeat",
+      "mode": "extension-original",
+      "repeat": 5,
+      "elapsedMs": 235.760542,
+      "waitMs": 218.5,
+      "waitCalls": 6,
+      "observeMs": 2.200000286102295,
+      "inPageMs": 227.80000066757202,
+      "callWallMs": 233.35849999999846,
+      "transportResidualMs": 5.558499332426436,
+      "driverAndOracleMs": 2.4020420000015292,
+      "bytesReturned": 11330,
+      "calls": 4,
+      "check": {
+        "passed": true,
+        "correct": 14,
+        "total": 14,
+        "errors": []
+      },
+      "trace": {
+        "calls": 4,
+        "rounds": 3,
+        "trace": [
+          {
+            "actions": 9,
+            "results": [
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified"
+            ]
+          },
+          {
+            "actions": 1,
+            "results": [
+              "expanded"
+            ]
+          },
+          {
+            "actions": 5,
+            "results": [
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "case": "repeat",
+      "mode": "extension-final-only",
+      "repeat": 5,
+      "elapsedMs": 125.44816599999831,
+      "waitMs": 107.7000002861023,
+      "waitCalls": 3,
+      "observeMs": 2.299999713897705,
+      "inPageMs": 116.49999952316284,
+      "callWallMs": 123.5122909999991,
+      "transportResidualMs": 7.012291476836253,
+      "driverAndOracleMs": 1.9358749999992142,
+      "bytesReturned": 11348,
+      "calls": 4,
+      "check": {
+        "passed": true,
+        "correct": 14,
+        "total": 14,
+        "errors": []
+      },
+      "trace": {
+        "calls": 4,
+        "rounds": 3,
+        "trace": [
+          {
+            "actions": 9,
+            "results": [
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified"
+            ]
+          },
+          {
+            "actions": 1,
+            "results": [
+              "expanded"
+            ]
+          },
+          {
+            "actions": 5,
+            "results": [
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "case": "repeat",
+      "mode": "extension-no-waits",
+      "repeat": 5,
+      "elapsedMs": 14.079666000001453,
+      "waitMs": 0,
+      "waitCalls": 0,
+      "observeMs": 2.1000003814697266,
+      "inPageMs": 6.500000476837158,
+      "callWallMs": 12.601666999998997,
+      "transportResidualMs": 6.101666523161839,
+      "driverAndOracleMs": 1.4779990000024554,
+      "bytesReturned": 11300,
+      "calls": 4,
+      "check": {
+        "passed": true,
+        "correct": 14,
+        "total": 14,
+        "errors": []
+      },
+      "trace": {
+        "calls": 4,
+        "rounds": 3,
+        "trace": [
+          {
+            "actions": 9,
+            "results": [
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified"
+            ]
+          },
+          {
+            "actions": 1,
+            "results": [
+              "expanded"
+            ]
+          },
+          {
+            "actions": 5,
+            "results": [
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified"
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
