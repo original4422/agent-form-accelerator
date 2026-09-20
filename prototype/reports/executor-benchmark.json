@@ -1,0 +1,2367 @@
+{
+  "date": "2026-09-20T20:34:43.956Z",
+  "environment": {
+    "node": "v26.8.1",
+    "platform": "darwin",
+    "arch": "arm64",
+    "browser": "153.0.8010.12",
+    "playwright": "1.63.0"
+  },
+  "scope": "Executor-only local synthetic benchmark. Pre-resolved field/value mappings. No LLM calls, no real recruitment site, no native Codex/Claude browser benchmark. No artificial model latency.",
+  "timing": "After page load and extension connection, before inspection/execution, through independent application-state verification. Excludes setup, mapping/LLM time and browser start.",
+  "repeats": 5,
+  "summary": [
+    {
+      "case": "plain",
+      "single-field-control": {
+        "medianMs": 958.1676669999997,
+        "passed": 5,
+        "runs": 5
+      },
+      "playwright-batch-script": {
+        "medianMs": 118.05791700000009,
+        "passed": 5,
+        "runs": 5
+      },
+      "extension-batch": {
+        "medianMs": 162.61733300000014,
+        "passed": 5,
+        "runs": 5
+      },
+      "speedupVsScriptedBatch": 0.7259860607847995,
+      "speedupVsSingleField": 5.892161981281533
+    },
+    {
+      "case": "dependent",
+      "single-field-control": {
+        "medianMs": 484.96537499999977,
+        "passed": 5,
+        "runs": 5
+      },
+      "playwright-batch-script": {
+        "medianMs": 184.09929100000045,
+        "passed": 5,
+        "runs": 5
+      },
+      "extension-batch": {
+        "medianMs": 197.26400000000103,
+        "passed": 5,
+        "runs": 5
+      },
+      "speedupVsScriptedBatch": 0.9332634996755591,
+      "speedupVsSingleField": 2.4584585884905366
+    },
+    {
+      "case": "repeat",
+      "single-field-control": {
+        "medianMs": 739.6595830000006,
+        "passed": 5,
+        "runs": 5
+      },
+      "playwright-batch-script": {
+        "medianMs": 73.59137500000361,
+        "passed": 5,
+        "runs": 5
+      },
+      "extension-batch": {
+        "medianMs": 232.68958399999974,
+        "passed": 5,
+        "runs": 5
+      },
+      "speedupVsScriptedBatch": 0.31626415645662803,
+      "speedupVsSingleField": 3.1787395477057596
+    }
+  ],
+  "rows": [
+    {
+      "case": "plain",
+      "mode": "single-field-control",
+      "repeat": 0,
+      "elapsedMs": 958.1676669999997,
+      "calls": 21,
+      "rounds": 20,
+      "trace": [
+        {
+          "actions": 1,
+          "results": [
+            "verified"
+          ]
+        },
+        {
+          "actions": 1,
+          "results": [
+            "verified"
+          ]
+        },
+        {
+          "actions": 1,
+          "results": [
+            "verified"
+          ]
+        },
+        {
+          "actions": 1,
+          "results": [
+            "verified"
+          ]
+        },
+        {
+          "actions": 1,
+          "results": [
+            "verified"
+          ]
+        },
+        {
+          "actions": 1,
+          "results": [
+            "verified"
+          ]
+        },
+        {
+          "actions": 1,
+          "results": [
+            "verified"
+          ]
+        },
+        {
+          "actions": 1,
+          "results": [
+            "verified"
+          ]
+        },
+        {
+          "actions": 1,
+          "results": [
+            "verified"
+          ]
+        },
+        {
+          "actions": 1,
+          "results": [
+            "verified"
+          ]
+        },
+        {
+          "actions": 1,
+          "results": [
+            "verified"
+          ]
+        },
+        {
+          "actions": 1,
+          "results": [
+            "verified"
+          ]
+        },
+        {
+          "actions": 1,
+          "results": [
+            "verified"
+          ]
+        },
+        {
+          "actions": 1,
+          "results": [
+            "verified"
+          ]
+        },
+        {
+          "actions": 1,
+          "results": [
+            "verified"
+          ]
+        },
+        {
+          "actions": 1,
+          "results": [
+            "verified"
+          ]
+        },
+        {
+          "actions": 1,
+          "results": [
+            "verified"
+          ]
+        },
+        {
+          "actions": 1,
+          "results": [
+            "verified"
+          ]
+        },
+        {
+          "actions": 1,
+          "results": [
+            "verified"
+          ]
+        },
+        {
+          "actions": 1,
+          "results": [
+            "verified"
+          ]
+        }
+      ],
+      "passed": true,
+      "correct": 20,
+      "total": 20,
+      "errors": []
+    },
+    {
+      "case": "plain",
+      "mode": "playwright-batch-script",
+      "repeat": 0,
+      "elapsedMs": 114.58679099999972,
+      "calls": 1,
+      "rounds": 1,
+      "passed": true,
+      "correct": 20,
+      "total": 20,
+      "errors": []
+    },
+    {
+      "case": "plain",
+      "mode": "extension-batch",
+      "repeat": 0,
+      "elapsedMs": 162.61733300000014,
+      "calls": 2,
+      "rounds": 1,
+      "trace": [
+        {
+          "actions": 20,
+          "results": [
+            "verified",
+            "verified",
+            "verified",
+            "verified",
+            "verified",
+            "verified",
+            "verified",
+            "verified",
+            "verified",
+            "verified",
+            "verified",
+            "verified",
+            "verified",
+            "verified",
+            "verified",
+            "verified",
+            "verified",
+            "verified",
+            "verified",
+            "verified"
+          ]
+        }
+      ],
+      "passed": true,
+      "correct": 20,
+      "total": 20,
+      "errors": []
+    },
+    {
+      "case": "plain",
+      "mode": "playwright-batch-script",
+      "repeat": 1,
+      "elapsedMs": 131.73783400000002,
+      "calls": 1,
+      "rounds": 1,
+      "passed": true,
+      "correct": 20,
+      "total": 20,
+      "errors": []
+    },
+    {
+      "case": "plain",
+      "mode": "extension-batch",
+      "repeat": 1,
+      "elapsedMs": 157.9473750000002,
+      "calls": 2,
+      "rounds": 1,
+      "trace": [
+        {
+          "actions": 20,
+          "results": [
+            "verified",
+            "verified",
+            "verified",
+            "verified",
+            "verified",
+            "verified",
+            "verified",
+            "verified",
+            "verified",
+            "verified",
+            "verified",
+            "verified",
+            "verified",
+            "verified",
+            "verified",
+            "verified",
+            "verified",
+            "verified",
+            "verified",
+            "verified"
+          ]
+        }
+      ],
+      "passed": true,
+      "correct": 20,
+      "total": 20,
+      "errors": []
+    },
+    {
+      "case": "plain",
+      "mode": "single-field-control",
+      "repeat": 1,
+      "elapsedMs": 949.8308750000006,
+      "calls": 21,
+      "rounds": 20,
+      "trace": [
+        {
+          "actions": 1,
+          "results": [
+            "verified"
+          ]
+        },
+        {
+          "actions": 1,
+          "results": [
+            "verified"
+          ]
+        },
+        {
+          "actions": 1,
+          "results": [
+            "verified"
+          ]
+        },
+        {
+          "actions": 1,
+          "results": [
+            "verified"
+          ]
+        },
+        {
+          "actions": 1,
+          "results": [
+            "verified"
+          ]
+        },
+        {
+          "actions": 1,
+          "results": [
+            "verified"
+          ]
+        },
+        {
+          "actions": 1,
+          "results": [
+            "verified"
+          ]
+        },
+        {
+          "actions": 1,
+          "results": [
+            "verified"
+          ]
+        },
+        {
+          "actions": 1,
+          "results": [
+            "verified"
+          ]
+        },
+        {
+          "actions": 1,
+          "results": [
+            "verified"
+          ]
+        },
+        {
+          "actions": 1,
+          "results": [
+            "verified"
+          ]
+        },
+        {
+          "actions": 1,
+          "results": [
+            "verified"
+          ]
+        },
+        {
+          "actions": 1,
+          "results": [
+            "verified"
+          ]
+        },
+        {
+          "actions": 1,
+          "results": [
+            "verified"
+          ]
+        },
+        {
+          "actions": 1,
+          "results": [
+            "verified"
+          ]
+        },
+        {
+          "actions": 1,
+          "results": [
+            "verified"
+          ]
+        },
+        {
+          "actions": 1,
+          "results": [
+            "verified"
+          ]
+        },
+        {
+          "actions": 1,
+          "results": [
+            "verified"
+          ]
+        },
+        {
+          "actions": 1,
+          "results": [
+            "verified"
+          ]
+        },
+        {
+          "actions": 1,
+          "results": [
+            "verified"
+          ]
+        }
+      ],
+      "passed": true,
+      "correct": 20,
+      "total": 20,
+      "errors": []
+    },
+    {
+      "case": "plain",
+      "mode": "extension-batch",
+      "repeat": 2,
+      "elapsedMs": 163.23558400000002,
+      "calls": 2,
+      "rounds": 1,
+      "trace": [
+        {
+          "actions": 20,
+          "results": [
+            "verified",
+            "verified",
+            "verified",
+            "verified",
+            "verified",
+            "verified",
+            "verified",
+            "verified",
+            "verified",
+            "verified",
+            "verified",
+            "verified",
+            "verified",
+            "verified",
+            "verified",
+            "verified",
+            "verified",
+            "verified",
+            "verified",
+            "verified"
+          ]
+        }
+      ],
+      "passed": true,
+      "correct": 20,
+      "total": 20,
+      "errors": []
+    },
+    {
+      "case": "plain",
+      "mode": "single-field-control",
+      "repeat": 2,
+      "elapsedMs": 935.4908749999995,
+      "calls": 21,
+      "rounds": 20,
+      "trace": [
+        {
+          "actions": 1,
+          "results": [
+            "verified"
+          ]
+        },
+        {
+          "actions": 1,
+          "results": [
+            "verified"
+          ]
+        },
+        {
+          "actions": 1,
+          "results": [
+            "verified"
+          ]
+        },
+        {
+          "actions": 1,
+          "results": [
+            "verified"
+          ]
+        },
+        {
+          "actions": 1,
+          "results": [
+            "verified"
+          ]
+        },
+        {
+          "actions": 1,
+          "results": [
+            "verified"
+          ]
+        },
+        {
+          "actions": 1,
+          "results": [
+            "verified"
+          ]
+        },
+        {
+          "actions": 1,
+          "results": [
+            "verified"
+          ]
+        },
+        {
+          "actions": 1,
+          "results": [
+            "verified"
+          ]
+        },
+        {
+          "actions": 1,
+          "results": [
+            "verified"
+          ]
+        },
+        {
+          "actions": 1,
+          "results": [
+            "verified"
+          ]
+        },
+        {
+          "actions": 1,
+          "results": [
+            "verified"
+          ]
+        },
+        {
+          "actions": 1,
+          "results": [
+            "verified"
+          ]
+        },
+        {
+          "actions": 1,
+          "results": [
+            "verified"
+          ]
+        },
+        {
+          "actions": 1,
+          "results": [
+            "verified"
+          ]
+        },
+        {
+          "actions": 1,
+          "results": [
+            "verified"
+          ]
+        },
+        {
+          "actions": 1,
+          "results": [
+            "verified"
+          ]
+        },
+        {
+          "actions": 1,
+          "results": [
+            "verified"
+          ]
+        },
+        {
+          "actions": 1,
+          "results": [
+            "verified"
+          ]
+        },
+        {
+          "actions": 1,
+          "results": [
+            "verified"
+          ]
+        }
+      ],
+      "passed": true,
+      "correct": 20,
+      "total": 20,
+      "errors": []
+    },
+    {
+      "case": "plain",
+      "mode": "playwright-batch-script",
+      "repeat": 2,
+      "elapsedMs": 118.05791700000009,
+      "calls": 1,
+      "rounds": 1,
+      "passed": true,
+      "correct": 20,
+      "total": 20,
+      "errors": []
+    },
+    {
+      "case": "plain",
+      "mode": "single-field-control",
+      "repeat": 3,
+      "elapsedMs": 962.9322920000004,
+      "calls": 21,
+      "rounds": 20,
+      "trace": [
+        {
+          "actions": 1,
+          "results": [
+            "verified"
+          ]
+        },
+        {
+          "actions": 1,
+          "results": [
+            "verified"
+          ]
+        },
+        {
+          "actions": 1,
+          "results": [
+            "verified"
+          ]
+        },
+        {
+          "actions": 1,
+          "results": [
+            "verified"
+          ]
+        },
+        {
+          "actions": 1,
+          "results": [
+            "verified"
+          ]
+        },
+        {
+          "actions": 1,
+          "results": [
+            "verified"
+          ]
+        },
+        {
+          "actions": 1,
+          "results": [
+            "verified"
+          ]
+        },
+        {
+          "actions": 1,
+          "results": [
+            "verified"
+          ]
+        },
+        {
+          "actions": 1,
+          "results": [
+            "verified"
+          ]
+        },
+        {
+          "actions": 1,
+          "results": [
+            "verified"
+          ]
+        },
+        {
+          "actions": 1,
+          "results": [
+            "verified"
+          ]
+        },
+        {
+          "actions": 1,
+          "results": [
+            "verified"
+          ]
+        },
+        {
+          "actions": 1,
+          "results": [
+            "verified"
+          ]
+        },
+        {
+          "actions": 1,
+          "results": [
+            "verified"
+          ]
+        },
+        {
+          "actions": 1,
+          "results": [
+            "verified"
+          ]
+        },
+        {
+          "actions": 1,
+          "results": [
+            "verified"
+          ]
+        },
+        {
+          "actions": 1,
+          "results": [
+            "verified"
+          ]
+        },
+        {
+          "actions": 1,
+          "results": [
+            "verified"
+          ]
+        },
+        {
+          "actions": 1,
+          "results": [
+            "verified"
+          ]
+        },
+        {
+          "actions": 1,
+          "results": [
+            "verified"
+          ]
+        }
+      ],
+      "passed": true,
+      "correct": 20,
+      "total": 20,
+      "errors": []
+    },
+    {
+      "case": "plain",
+      "mode": "playwright-batch-script",
+      "repeat": 3,
+      "elapsedMs": 106.56083399999989,
+      "calls": 1,
+      "rounds": 1,
+      "passed": true,
+      "correct": 20,
+      "total": 20,
+      "errors": []
+    },
+    {
+      "case": "plain",
+      "mode": "extension-batch",
+      "repeat": 3,
+      "elapsedMs": 160.74258299999929,
+      "calls": 2,
+      "rounds": 1,
+      "trace": [
+        {
+          "actions": 20,
+          "results": [
+            "verified",
+            "verified",
+            "verified",
+            "verified",
+            "verified",
+            "verified",
+            "verified",
+            "verified",
+            "verified",
+            "verified",
+            "verified",
+            "verified",
+            "verified",
+            "verified",
+            "verified",
+            "verified",
+            "verified",
+            "verified",
+            "verified",
+            "verified"
+          ]
+        }
+      ],
+      "passed": true,
+      "correct": 20,
+      "total": 20,
+      "errors": []
+    },
+    {
+      "case": "plain",
+      "mode": "playwright-batch-script",
+      "repeat": 4,
+      "elapsedMs": 119.46829199999956,
+      "calls": 1,
+      "rounds": 1,
+      "passed": true,
+      "correct": 20,
+      "total": 20,
+      "errors": []
+    },
+    {
+      "case": "plain",
+      "mode": "extension-batch",
+      "repeat": 4,
+      "elapsedMs": 165.70941700000003,
+      "calls": 2,
+      "rounds": 1,
+      "trace": [
+        {
+          "actions": 20,
+          "results": [
+            "verified",
+            "verified",
+            "verified",
+            "verified",
+            "verified",
+            "verified",
+            "verified",
+            "verified",
+            "verified",
+            "verified",
+            "verified",
+            "verified",
+            "verified",
+            "verified",
+            "verified",
+            "verified",
+            "verified",
+            "verified",
+            "verified",
+            "verified"
+          ]
+        }
+      ],
+      "passed": true,
+      "correct": 20,
+      "total": 20,
+      "errors": []
+    },
+    {
+      "case": "plain",
+      "mode": "single-field-control",
+      "repeat": 4,
+      "elapsedMs": 970.661082999999,
+      "calls": 21,
+      "rounds": 20,
+      "trace": [
+        {
+          "actions": 1,
+          "results": [
+            "verified"
+          ]
+        },
+        {
+          "actions": 1,
+          "results": [
+            "verified"
+          ]
+        },
+        {
+          "actions": 1,
+          "results": [
+            "verified"
+          ]
+        },
+        {
+          "actions": 1,
+          "results": [
+            "verified"
+          ]
+        },
+        {
+          "actions": 1,
+          "results": [
+            "verified"
+          ]
+        },
+        {
+          "actions": 1,
+          "results": [
+            "verified"
+          ]
+        },
+        {
+          "actions": 1,
+          "results": [
+            "verified"
+          ]
+        },
+        {
+          "actions": 1,
+          "results": [
+            "verified"
+          ]
+        },
+        {
+          "actions": 1,
+          "results": [
+            "verified"
+          ]
+        },
+        {
+          "actions": 1,
+          "results": [
+            "verified"
+          ]
+        },
+        {
+          "actions": 1,
+          "results": [
+            "verified"
+          ]
+        },
+        {
+          "actions": 1,
+          "results": [
+            "verified"
+          ]
+        },
+        {
+          "actions": 1,
+          "results": [
+            "verified"
+          ]
+        },
+        {
+          "actions": 1,
+          "results": [
+            "verified"
+          ]
+        },
+        {
+          "actions": 1,
+          "results": [
+            "verified"
+          ]
+        },
+        {
+          "actions": 1,
+          "results": [
+            "verified"
+          ]
+        },
+        {
+          "actions": 1,
+          "results": [
+            "verified"
+          ]
+        },
+        {
+          "actions": 1,
+          "results": [
+            "verified"
+          ]
+        },
+        {
+          "actions": 1,
+          "results": [
+            "verified"
+          ]
+        },
+        {
+          "actions": 1,
+          "results": [
+            "verified"
+          ]
+        }
+      ],
+      "passed": true,
+      "correct": 20,
+      "total": 20,
+      "errors": []
+    },
+    {
+      "case": "dependent",
+      "mode": "single-field-control",
+      "repeat": 0,
+      "elapsedMs": 484.96537499999977,
+      "calls": 10,
+      "rounds": 9,
+      "trace": [
+        {
+          "actions": 1,
+          "results": [
+            "verified"
+          ]
+        },
+        {
+          "actions": 1,
+          "results": [
+            "verified"
+          ]
+        },
+        {
+          "actions": 1,
+          "results": [
+            "verified"
+          ]
+        },
+        {
+          "actions": 1,
+          "results": [
+            "verified"
+          ]
+        },
+        {
+          "actions": 1,
+          "results": [
+            "verified"
+          ]
+        },
+        {
+          "actions": 1,
+          "results": [
+            "verified"
+          ]
+        },
+        {
+          "actions": 1,
+          "results": [
+            "verified"
+          ]
+        },
+        {
+          "actions": 1,
+          "results": [
+            "verified"
+          ]
+        },
+        {
+          "actions": 1,
+          "results": [
+            "verified"
+          ]
+        }
+      ],
+      "passed": true,
+      "correct": 9,
+      "total": 9,
+      "errors": []
+    },
+    {
+      "case": "dependent",
+      "mode": "playwright-batch-script",
+      "repeat": 0,
+      "elapsedMs": 177.55754100000013,
+      "calls": 1,
+      "rounds": 1,
+      "passed": true,
+      "correct": 9,
+      "total": 9,
+      "errors": []
+    },
+    {
+      "case": "dependent",
+      "mode": "extension-batch",
+      "repeat": 0,
+      "elapsedMs": 197.26400000000103,
+      "calls": 3,
+      "rounds": 2,
+      "trace": [
+        {
+          "actions": 8,
+          "results": [
+            "verified",
+            "verified",
+            "verified",
+            "verified",
+            "verified",
+            "verified",
+            "verified",
+            "verified"
+          ]
+        },
+        {
+          "actions": 1,
+          "results": [
+            "verified"
+          ]
+        }
+      ],
+      "passed": true,
+      "correct": 9,
+      "total": 9,
+      "errors": []
+    },
+    {
+      "case": "dependent",
+      "mode": "playwright-batch-script",
+      "repeat": 1,
+      "elapsedMs": 188.25112500000068,
+      "calls": 1,
+      "rounds": 1,
+      "passed": true,
+      "correct": 9,
+      "total": 9,
+      "errors": []
+    },
+    {
+      "case": "dependent",
+      "mode": "extension-batch",
+      "repeat": 1,
+      "elapsedMs": 192.52016600000024,
+      "calls": 3,
+      "rounds": 2,
+      "trace": [
+        {
+          "actions": 8,
+          "results": [
+            "verified",
+            "verified",
+            "verified",
+            "verified",
+            "verified",
+            "verified",
+            "verified",
+            "verified"
+          ]
+        },
+        {
+          "actions": 1,
+          "results": [
+            "verified"
+          ]
+        }
+      ],
+      "passed": true,
+      "correct": 9,
+      "total": 9,
+      "errors": []
+    },
+    {
+      "case": "dependent",
+      "mode": "single-field-control",
+      "repeat": 1,
+      "elapsedMs": 480.1530419999999,
+      "calls": 10,
+      "rounds": 9,
+      "trace": [
+        {
+          "actions": 1,
+          "results": [
+            "verified"
+          ]
+        },
+        {
+          "actions": 1,
+          "results": [
+            "verified"
+          ]
+        },
+        {
+          "actions": 1,
+          "results": [
+            "verified"
+          ]
+        },
+        {
+          "actions": 1,
+          "results": [
+            "verified"
+          ]
+        },
+        {
+          "actions": 1,
+          "results": [
+            "verified"
+          ]
+        },
+        {
+          "actions": 1,
+          "results": [
+            "verified"
+          ]
+        },
+        {
+          "actions": 1,
+          "results": [
+            "verified"
+          ]
+        },
+        {
+          "actions": 1,
+          "results": [
+            "verified"
+          ]
+        },
+        {
+          "actions": 1,
+          "results": [
+            "verified"
+          ]
+        }
+      ],
+      "passed": true,
+      "correct": 9,
+      "total": 9,
+      "errors": []
+    },
+    {
+      "case": "dependent",
+      "mode": "extension-batch",
+      "repeat": 2,
+      "elapsedMs": 215.11824999999953,
+      "calls": 3,
+      "rounds": 2,
+      "trace": [
+        {
+          "actions": 8,
+          "results": [
+            "verified",
+            "verified",
+            "verified",
+            "verified",
+            "verified",
+            "verified",
+            "verified",
+            "verified"
+          ]
+        },
+        {
+          "actions": 1,
+          "results": [
+            "verified"
+          ]
+        }
+      ],
+      "passed": true,
+      "correct": 9,
+      "total": 9,
+      "errors": []
+    },
+    {
+      "case": "dependent",
+      "mode": "single-field-control",
+      "repeat": 2,
+      "elapsedMs": 496.01187500000015,
+      "calls": 10,
+      "rounds": 9,
+      "trace": [
+        {
+          "actions": 1,
+          "results": [
+            "verified"
+          ]
+        },
+        {
+          "actions": 1,
+          "results": [
+            "verified"
+          ]
+        },
+        {
+          "actions": 1,
+          "results": [
+            "verified"
+          ]
+        },
+        {
+          "actions": 1,
+          "results": [
+            "verified"
+          ]
+        },
+        {
+          "actions": 1,
+          "results": [
+            "verified"
+          ]
+        },
+        {
+          "actions": 1,
+          "results": [
+            "verified"
+          ]
+        },
+        {
+          "actions": 1,
+          "results": [
+            "verified"
+          ]
+        },
+        {
+          "actions": 1,
+          "results": [
+            "verified"
+          ]
+        },
+        {
+          "actions": 1,
+          "results": [
+            "verified"
+          ]
+        }
+      ],
+      "passed": true,
+      "correct": 9,
+      "total": 9,
+      "errors": []
+    },
+    {
+      "case": "dependent",
+      "mode": "playwright-batch-script",
+      "repeat": 2,
+      "elapsedMs": 181.67308299999968,
+      "calls": 1,
+      "rounds": 1,
+      "passed": true,
+      "correct": 9,
+      "total": 9,
+      "errors": []
+    },
+    {
+      "case": "dependent",
+      "mode": "single-field-control",
+      "repeat": 3,
+      "elapsedMs": 499.3190000000013,
+      "calls": 10,
+      "rounds": 9,
+      "trace": [
+        {
+          "actions": 1,
+          "results": [
+            "verified"
+          ]
+        },
+        {
+          "actions": 1,
+          "results": [
+            "verified"
+          ]
+        },
+        {
+          "actions": 1,
+          "results": [
+            "verified"
+          ]
+        },
+        {
+          "actions": 1,
+          "results": [
+            "verified"
+          ]
+        },
+        {
+          "actions": 1,
+          "results": [
+            "verified"
+          ]
+        },
+        {
+          "actions": 1,
+          "results": [
+            "verified"
+          ]
+        },
+        {
+          "actions": 1,
+          "results": [
+            "verified"
+          ]
+        },
+        {
+          "actions": 1,
+          "results": [
+            "verified"
+          ]
+        },
+        {
+          "actions": 1,
+          "results": [
+            "verified"
+          ]
+        }
+      ],
+      "passed": true,
+      "correct": 9,
+      "total": 9,
+      "errors": []
+    },
+    {
+      "case": "dependent",
+      "mode": "playwright-batch-script",
+      "repeat": 3,
+      "elapsedMs": 184.09929100000045,
+      "calls": 1,
+      "rounds": 1,
+      "passed": true,
+      "correct": 9,
+      "total": 9,
+      "errors": []
+    },
+    {
+      "case": "dependent",
+      "mode": "extension-batch",
+      "repeat": 3,
+      "elapsedMs": 199.93370800000048,
+      "calls": 3,
+      "rounds": 2,
+      "trace": [
+        {
+          "actions": 8,
+          "results": [
+            "verified",
+            "verified",
+            "verified",
+            "verified",
+            "verified",
+            "verified",
+            "verified",
+            "verified"
+          ]
+        },
+        {
+          "actions": 1,
+          "results": [
+            "verified"
+          ]
+        }
+      ],
+      "passed": true,
+      "correct": 9,
+      "total": 9,
+      "errors": []
+    },
+    {
+      "case": "dependent",
+      "mode": "playwright-batch-script",
+      "repeat": 4,
+      "elapsedMs": 199.2791670000006,
+      "calls": 1,
+      "rounds": 1,
+      "passed": true,
+      "correct": 9,
+      "total": 9,
+      "errors": []
+    },
+    {
+      "case": "dependent",
+      "mode": "extension-batch",
+      "repeat": 4,
+      "elapsedMs": 192.8714999999993,
+      "calls": 3,
+      "rounds": 2,
+      "trace": [
+        {
+          "actions": 8,
+          "results": [
+            "verified",
+            "verified",
+            "verified",
+            "verified",
+            "verified",
+            "verified",
+            "verified",
+            "verified"
+          ]
+        },
+        {
+          "actions": 1,
+          "results": [
+            "verified"
+          ]
+        }
+      ],
+      "passed": true,
+      "correct": 9,
+      "total": 9,
+      "errors": []
+    },
+    {
+      "case": "dependent",
+      "mode": "single-field-control",
+      "repeat": 4,
+      "elapsedMs": 484.05216700000165,
+      "calls": 10,
+      "rounds": 9,
+      "trace": [
+        {
+          "actions": 1,
+          "results": [
+            "verified"
+          ]
+        },
+        {
+          "actions": 1,
+          "results": [
+            "verified"
+          ]
+        },
+        {
+          "actions": 1,
+          "results": [
+            "verified"
+          ]
+        },
+        {
+          "actions": 1,
+          "results": [
+            "verified"
+          ]
+        },
+        {
+          "actions": 1,
+          "results": [
+            "verified"
+          ]
+        },
+        {
+          "actions": 1,
+          "results": [
+            "verified"
+          ]
+        },
+        {
+          "actions": 1,
+          "results": [
+            "verified"
+          ]
+        },
+        {
+          "actions": 1,
+          "results": [
+            "verified"
+          ]
+        },
+        {
+          "actions": 1,
+          "results": [
+            "verified"
+          ]
+        }
+      ],
+      "passed": true,
+      "correct": 9,
+      "total": 9,
+      "errors": []
+    },
+    {
+      "case": "repeat",
+      "mode": "single-field-control",
+      "repeat": 0,
+      "elapsedMs": 748.6723750000001,
+      "calls": 16,
+      "rounds": 15,
+      "trace": [
+        {
+          "actions": 1,
+          "results": [
+            "verified"
+          ]
+        },
+        {
+          "actions": 1,
+          "results": [
+            "verified"
+          ]
+        },
+        {
+          "actions": 1,
+          "results": [
+            "verified"
+          ]
+        },
+        {
+          "actions": 1,
+          "results": [
+            "verified"
+          ]
+        },
+        {
+          "actions": 1,
+          "results": [
+            "verified"
+          ]
+        },
+        {
+          "actions": 1,
+          "results": [
+            "verified"
+          ]
+        },
+        {
+          "actions": 1,
+          "results": [
+            "verified"
+          ]
+        },
+        {
+          "actions": 1,
+          "results": [
+            "verified"
+          ]
+        },
+        {
+          "actions": 1,
+          "results": [
+            "verified"
+          ]
+        },
+        {
+          "actions": 1,
+          "results": [
+            "expanded"
+          ]
+        },
+        {
+          "actions": 1,
+          "results": [
+            "verified"
+          ]
+        },
+        {
+          "actions": 1,
+          "results": [
+            "verified"
+          ]
+        },
+        {
+          "actions": 1,
+          "results": [
+            "verified"
+          ]
+        },
+        {
+          "actions": 1,
+          "results": [
+            "verified"
+          ]
+        },
+        {
+          "actions": 1,
+          "results": [
+            "verified"
+          ]
+        }
+      ],
+      "passed": true,
+      "correct": 14,
+      "total": 14,
+      "errors": []
+    },
+    {
+      "case": "repeat",
+      "mode": "playwright-batch-script",
+      "repeat": 0,
+      "elapsedMs": 96.92291699999987,
+      "calls": 1,
+      "rounds": 1,
+      "passed": true,
+      "correct": 14,
+      "total": 14,
+      "errors": []
+    },
+    {
+      "case": "repeat",
+      "mode": "extension-batch",
+      "repeat": 0,
+      "elapsedMs": 232.68958399999974,
+      "calls": 4,
+      "rounds": 3,
+      "trace": [
+        {
+          "actions": 9,
+          "results": [
+            "verified",
+            "verified",
+            "verified",
+            "verified",
+            "verified",
+            "verified",
+            "verified",
+            "verified",
+            "verified"
+          ]
+        },
+        {
+          "actions": 1,
+          "results": [
+            "expanded"
+          ]
+        },
+        {
+          "actions": 5,
+          "results": [
+            "verified",
+            "verified",
+            "verified",
+            "verified",
+            "verified"
+          ]
+        }
+      ],
+      "passed": true,
+      "correct": 14,
+      "total": 14,
+      "errors": []
+    },
+    {
+      "case": "repeat",
+      "mode": "playwright-batch-script",
+      "repeat": 1,
+      "elapsedMs": 79.46025000000009,
+      "calls": 1,
+      "rounds": 1,
+      "passed": true,
+      "correct": 14,
+      "total": 14,
+      "errors": []
+    },
+    {
+      "case": "repeat",
+      "mode": "extension-batch",
+      "repeat": 1,
+      "elapsedMs": 228.22787499999868,
+      "calls": 4,
+      "rounds": 3,
+      "trace": [
+        {
+          "actions": 9,
+          "results": [
+            "verified",
+            "verified",
+            "verified",
+            "verified",
+            "verified",
+            "verified",
+            "verified",
+            "verified",
+            "verified"
+          ]
+        },
+        {
+          "actions": 1,
+          "results": [
+            "expanded"
+          ]
+        },
+        {
+          "actions": 5,
+          "results": [
+            "verified",
+            "verified",
+            "verified",
+            "verified",
+            "verified"
+          ]
+        }
+      ],
+      "passed": true,
+      "correct": 14,
+      "total": 14,
+      "errors": []
+    },
+    {
+      "case": "repeat",
+      "mode": "single-field-control",
+      "repeat": 1,
+      "elapsedMs": 704.3848330000001,
+      "calls": 16,
+      "rounds": 15,
+      "trace": [
+        {
+          "actions": 1,
+          "results": [
+            "verified"
+          ]
+        },
+        {
+          "actions": 1,
+          "results": [
+            "verified"
+          ]
+        },
+        {
+          "actions": 1,
+          "results": [
+            "verified"
+          ]
+        },
+        {
+          "actions": 1,
+          "results": [
+            "verified"
+          ]
+        },
+        {
+          "actions": 1,
+          "results": [
+            "verified"
+          ]
+        },
+        {
+          "actions": 1,
+          "results": [
+            "verified"
+          ]
+        },
+        {
+          "actions": 1,
+          "results": [
+            "verified"
+          ]
+        },
+        {
+          "actions": 1,
+          "results": [
+            "verified"
+          ]
+        },
+        {
+          "actions": 1,
+          "results": [
+            "verified"
+          ]
+        },
+        {
+          "actions": 1,
+          "results": [
+            "expanded"
+          ]
+        },
+        {
+          "actions": 1,
+          "results": [
+            "verified"
+          ]
+        },
+        {
+          "actions": 1,
+          "results": [
+            "verified"
+          ]
+        },
+        {
+          "actions": 1,
+          "results": [
+            "verified"
+          ]
+        },
+        {
+          "actions": 1,
+          "results": [
+            "verified"
+          ]
+        },
+        {
+          "actions": 1,
+          "results": [
+            "verified"
+          ]
+        }
+      ],
+      "passed": true,
+      "correct": 14,
+      "total": 14,
+      "errors": []
+    },
+    {
+      "case": "repeat",
+      "mode": "extension-batch",
+      "repeat": 2,
+      "elapsedMs": 231.8852079999997,
+      "calls": 4,
+      "rounds": 3,
+      "trace": [
+        {
+          "actions": 9,
+          "results": [
+            "verified",
+            "verified",
+            "verified",
+            "verified",
+            "verified",
+            "verified",
+            "verified",
+            "verified",
+            "verified"
+          ]
+        },
+        {
+          "actions": 1,
+          "results": [
+            "expanded"
+          ]
+        },
+        {
+          "actions": 5,
+          "results": [
+            "verified",
+            "verified",
+            "verified",
+            "verified",
+            "verified"
+          ]
+        }
+      ],
+      "passed": true,
+      "correct": 14,
+      "total": 14,
+      "errors": []
+    },
+    {
+      "case": "repeat",
+      "mode": "single-field-control",
+      "repeat": 2,
+      "elapsedMs": 719.025999999998,
+      "calls": 16,
+      "rounds": 15,
+      "trace": [
+        {
+          "actions": 1,
+          "results": [
+            "verified"
+          ]
+        },
+        {
+          "actions": 1,
+          "results": [
+            "verified"
+          ]
+        },
+        {
+          "actions": 1,
+          "results": [
+            "verified"
+          ]
+        },
+        {
+          "actions": 1,
+          "results": [
+            "verified"
+          ]
+        },
+        {
+          "actions": 1,
+          "results": [
+            "verified"
+          ]
+        },
+        {
+          "actions": 1,
+          "results": [
+            "verified"
+          ]
+        },
+        {
+          "actions": 1,
+          "results": [
+            "verified"
+          ]
+        },
+        {
+          "actions": 1,
+          "results": [
+            "verified"
+          ]
+        },
+        {
+          "actions": 1,
+          "results": [
+            "verified"
+          ]
+        },
+        {
+          "actions": 1,
+          "results": [
+            "expanded"
+          ]
+        },
+        {
+          "actions": 1,
+          "results": [
+            "verified"
+          ]
+        },
+        {
+          "actions": 1,
+          "results": [
+            "verified"
+          ]
+        },
+        {
+          "actions": 1,
+          "results": [
+            "verified"
+          ]
+        },
+        {
+          "actions": 1,
+          "results": [
+            "verified"
+          ]
+        },
+        {
+          "actions": 1,
+          "results": [
+            "verified"
+          ]
+        }
+      ],
+      "passed": true,
+      "correct": 14,
+      "total": 14,
+      "errors": []
+    },
+    {
+      "case": "repeat",
+      "mode": "playwright-batch-script",
+      "repeat": 2,
+      "elapsedMs": 65.6593329999996,
+      "calls": 1,
+      "rounds": 1,
+      "passed": true,
+      "correct": 14,
+      "total": 14,
+      "errors": []
+    },
+    {
+      "case": "repeat",
+      "mode": "single-field-control",
+      "repeat": 3,
+      "elapsedMs": 748.4405829999996,
+      "calls": 16,
+      "rounds": 15,
+      "trace": [
+        {
+          "actions": 1,
+          "results": [
+            "verified"
+          ]
+        },
+        {
+          "actions": 1,
+          "results": [
+            "verified"
+          ]
+        },
+        {
+          "actions": 1,
+          "results": [
+            "verified"
+          ]
+        },
+        {
+          "actions": 1,
+          "results": [
+            "verified"
+          ]
+        },
+        {
+          "actions": 1,
+          "results": [
+            "verified"
+          ]
+        },
+        {
+          "actions": 1,
+          "results": [
+            "verified"
+          ]
+        },
+        {
+          "actions": 1,
+          "results": [
+            "verified"
+          ]
+        },
+        {
+          "actions": 1,
+          "results": [
+            "verified"
+          ]
+        },
+        {
+          "actions": 1,
+          "results": [
+            "verified"
+          ]
+        },
+        {
+          "actions": 1,
+          "results": [
+            "expanded"
+          ]
+        },
+        {
+          "actions": 1,
+          "results": [
+            "verified"
+          ]
+        },
+        {
+          "actions": 1,
+          "results": [
+            "verified"
+          ]
+        },
+        {
+          "actions": 1,
+          "results": [
+            "verified"
+          ]
+        },
+        {
+          "actions": 1,
+          "results": [
+            "verified"
+          ]
+        },
+        {
+          "actions": 1,
+          "results": [
+            "verified"
+          ]
+        }
+      ],
+      "passed": true,
+      "correct": 14,
+      "total": 14,
+      "errors": []
+    },
+    {
+      "case": "repeat",
+      "mode": "playwright-batch-script",
+      "repeat": 3,
+      "elapsedMs": 64.10733299999993,
+      "calls": 1,
+      "rounds": 1,
+      "passed": true,
+      "correct": 14,
+      "total": 14,
+      "errors": []
+    },
+    {
+      "case": "repeat",
+      "mode": "extension-batch",
+      "repeat": 3,
+      "elapsedMs": 238.19945799999914,
+      "calls": 4,
+      "rounds": 3,
+      "trace": [
+        {
+          "actions": 9,
+          "results": [
+            "verified",
+            "verified",
+            "verified",
+            "verified",
+            "verified",
+            "verified",
+            "verified",
+            "verified",
+            "verified"
+          ]
+        },
+        {
+          "actions": 1,
+          "results": [
+            "expanded"
+          ]
+        },
+        {
+          "actions": 5,
+          "results": [
+            "verified",
+            "verified",
+            "verified",
+            "verified",
+            "verified"
+          ]
+        }
+      ],
+      "passed": true,
+      "correct": 14,
+      "total": 14,
+      "errors": []
+    },
+    {
+      "case": "repeat",
+      "mode": "playwright-batch-script",
+      "repeat": 4,
+      "elapsedMs": 73.59137500000361,
+      "calls": 1,
+      "rounds": 1,
+      "passed": true,
+      "correct": 14,
+      "total": 14,
+      "errors": []
+    },
+    {
+      "case": "repeat",
+      "mode": "extension-batch",
+      "repeat": 4,
+      "elapsedMs": 239.29375000000073,
+      "calls": 4,
+      "rounds": 3,
+      "trace": [
+        {
+          "actions": 9,
+          "results": [
+            "verified",
+            "verified",
+            "verified",
+            "verified",
+            "verified",
+            "verified",
+            "verified",
+            "verified",
+            "verified"
+          ]
+        },
+        {
+          "actions": 1,
+          "results": [
+            "expanded"
+          ]
+        },
+        {
+          "actions": 5,
+          "results": [
+            "verified",
+            "verified",
+            "verified",
+            "verified",
+            "verified"
+          ]
+        }
+      ],
+      "passed": true,
+      "correct": 14,
+      "total": 14,
+      "errors": []
+    },
+    {
+      "case": "repeat",
+      "mode": "single-field-control",
+      "repeat": 4,
+      "elapsedMs": 739.6595830000006,
+      "calls": 16,
+      "rounds": 15,
+      "trace": [
+        {
+          "actions": 1,
+          "results": [
+            "verified"
+          ]
+        },
+        {
+          "actions": 1,
+          "results": [
+            "verified"
+          ]
+        },
+        {
+          "actions": 1,
+          "results": [
+            "verified"
+          ]
+        },
+        {
+          "actions": 1,
+          "results": [
+            "verified"
+          ]
+        },
+        {
+          "actions": 1,
+          "results": [
+            "verified"
+          ]
+        },
+        {
+          "actions": 1,
+          "results": [
+            "verified"
+          ]
+        },
+        {
+          "actions": 1,
+          "results": [
+            "verified"
+          ]
+        },
+        {
+          "actions": 1,
+          "results": [
+            "verified"
+          ]
+        },
+        {
+          "actions": 1,
+          "results": [
+            "verified"
+          ]
+        },
+        {
+          "actions": 1,
+          "results": [
+            "expanded"
+          ]
+        },
+        {
+          "actions": 1,
+          "results": [
+            "verified"
+          ]
+        },
+        {
+          "actions": 1,
+          "results": [
+            "verified"
+          ]
+        },
+        {
+          "actions": 1,
+          "results": [
+            "verified"
+          ]
+        },
+        {
+          "actions": 1,
+          "results": [
+            "verified"
+          ]
+        },
+        {
+          "actions": 1,
+          "results": [
+            "verified"
+          ]
+        }
+      ],
+      "passed": true,
+      "correct": 14,
+      "total": 14,
+      "errors": []
+    }
+  ]
+}

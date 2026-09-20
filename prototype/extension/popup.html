@@ -1,0 +1,7 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><title>连接填表工具</title>
+<style>body{font:14px system-ui;width:330px;padding:16px;color:#18332b}label{display:block;margin:12px 0}input{box-sizing:border-box;width:100%;padding:8px;margin-top:5px}button{padding:9px;margin:4px 4px 4px 0}#status{white-space:pre-wrap;overflow-wrap:anywhere}</style>
+<h2>连接当前表单</h2><p>仅操作你选择的标签页。资料通过本地连接交给当前 Agent。</p>
+<label>本地连接地址<input id="bridge" value="http://127.0.0.1:43187"></label>
+<label>配对码<input id="token" type="password" autocomplete="off"></label>
+<button id="connect">连接当前页</button><button id="disconnect">断开</button>
+<p id="status">先在项目目录运行 npm start。</p><script src="popup.js" type="module"></script></html>

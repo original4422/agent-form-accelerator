@@ -1,0 +1,11 @@
+{
+  "manifest_version": 3,
+  "name": "Agent Form Accelerator — Prototype",
+  "version": "0.0.1",
+  "description": "Connect one explicitly selected tab to a local form executor.",
+  "permissions": ["activeTab", "scripting", "storage"],
+  "host_permissions": ["http://127.0.0.1/*"],
+  "optional_host_permissions": ["https://*/*", "http://*/*"],
+  "background": {"service_worker": "background.js", "type": "module"},
+  "action": {"default_popup": "popup.html"}
+}

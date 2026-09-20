@@ -1,0 +1,25 @@
+{
+  "name": "agent-form-accelerator-prototype",
+  "version": "0.0.1",
+  "private": true,
+  "type": "module",
+  "description": "Throwaway measurement prototype: shared form executor for Codex and Claude Code",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "start": "node prototype/src/bridge.mjs",
+    "mcp": "node prototype/src/mcp.mjs",
+    "demo": "node prototype/scripts/demo.mjs",
+    "bench": "node prototype/bench/run.mjs",
+    "check": "node prototype/bench/check.mjs"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "1.30.0",
+    "ws": "8.21.3",
+    "zod": "4.6.5"
+  },
+  "devDependencies": {
+    "playwright": "1.63.0"
+  }
+}

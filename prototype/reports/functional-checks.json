@@ -1,0 +1,54 @@
+{
+  "date": "2026-09-20T20:38:37.668Z",
+  "scope": "Real Chromium extension and MCP protocol; not live host model testing",
+  "results": [
+    {
+      "name": "extension path and independent app-state oracle: plain",
+      "passed": true
+    },
+    {
+      "name": "extension path and independent app-state oracle: dependent",
+      "passed": true
+    },
+    {
+      "name": "extension path and independent app-state oracle: repeat",
+      "passed": true
+    },
+    {
+      "name": "stale snapshot rejected after a new inspection",
+      "passed": true
+    },
+    {
+      "name": "page navigation invalidates old references",
+      "passed": true
+    },
+    {
+      "name": "relabelled target stops the batch",
+      "passed": true
+    },
+    {
+      "name": "replaced DOM node is not silently retargeted",
+      "passed": true
+    },
+    {
+      "name": "invalid email is not reported as verified",
+      "passed": true
+    },
+    {
+      "name": "hidden fields omitted; passwords never read or filled; submit excluded",
+      "passed": true
+    },
+    {
+      "name": "read-back detects framework rejecting an input",
+      "passed": true
+    },
+    {
+      "name": "HTTP control endpoint rejects web origins and missing authentication",
+      "passed": true
+    },
+    {
+      "name": "real stdio MCP handshake, schema discovery, inspect and fill",
+      "passed": true
+    }
+  ]
+}

@@ -1,0 +1,6 @@
+node_modules/
+.runtime/
+.profiles/
+.env*
+*.log
+prototype/reports/private/

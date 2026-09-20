@@ -1,0 +1,259 @@
+{
+  "scope": "Single synthetic-form live host integration per host; elapsed times include CLI/model/tool overhead and are not a speedup benchmark. All attempts retained.",
+  "rows": [
+    {
+      "host": "codex",
+      "date": "2026-09-20T20:36:08.473Z",
+      "elapsedMs": 27343.238042,
+      "exitCode": 0,
+      "timedOut": false,
+      "bridgeRequests": 2,
+      "toolNames": [
+        "form_inspect",
+        "form_fill",
+        "form_inspect"
+      ],
+      "passed": false,
+      "correct": 0,
+      "total": 20,
+      "errors": [
+        {
+          "id": "name",
+          "expected": "林示例",
+          "dom": ""
+        },
+        {
+          "id": "email",
+          "expected": "candidate@example.test",
+          "dom": ""
+        },
+        {
+          "id": "phone",
+          "expected": "13800000000",
+          "dom": ""
+        },
+        {
+          "id": "birthday",
+          "expected": "2000-01-02",
+          "dom": ""
+        },
+        {
+          "id": "city",
+          "expected": "北京",
+          "dom": ""
+        },
+        {
+          "id": "school",
+          "expected": "示例大学",
+          "dom": ""
+        },
+        {
+          "id": "major",
+          "expected": "计算机科学",
+          "dom": ""
+        },
+        {
+          "id": "degree",
+          "expected": "master",
+          "dom": ""
+        },
+        {
+          "id": "graduation",
+          "expected": "2027-06-30",
+          "dom": ""
+        },
+        {
+          "id": "company",
+          "expected": "示例科技",
+          "dom": ""
+        },
+        {
+          "id": "role",
+          "expected": "算法实习生",
+          "dom": ""
+        },
+        {
+          "id": "start",
+          "expected": "2025-07-01",
+          "dom": ""
+        },
+        {
+          "id": "end",
+          "expected": "2025-09-30",
+          "dom": ""
+        },
+        {
+          "id": "project",
+          "expected": "网页填表研究",
+          "dom": ""
+        },
+        {
+          "id": "link",
+          "expected": "https://example.test/project",
+          "dom": ""
+        },
+        {
+          "id": "skills",
+          "expected": "Python, TypeScript",
+          "dom": ""
+        },
+        {
+          "id": "language",
+          "expected": "中文、英文",
+          "dom": ""
+        },
+        {
+          "id": "summary",
+          "expected": "这是一份用于本地验证的虚构资料。",
+          "dom": ""
+        },
+        {
+          "id": "relocate",
+          "expected": true,
+          "dom": false
+        },
+        {
+          "id": "fulltime",
+          "expected": true,
+          "dom": false
+        }
+      ],
+      "configuration": "Ephemeral invocation; explicit afa MCP only; no global config changes. Existing authentication. Default host model; no model override."
+    },
+    {
+      "host": "claude",
+      "date": "2026-09-20T20:36:09.871Z",
+      "elapsedMs": 1324.6731670000008,
+      "exitCode": 1,
+      "timedOut": false,
+      "model": "claude-opus-5[1m]",
+      "bridgeRequests": 0,
+      "toolNames": [],
+      "passed": false,
+      "correct": 0,
+      "total": 20,
+      "errors": [
+        {
+          "id": "name",
+          "expected": "林示例",
+          "dom": ""
+        },
+        {
+          "id": "email",
+          "expected": "candidate@example.test",
+          "dom": ""
+        },
+        {
+          "id": "phone",
+          "expected": "13800000000",
+          "dom": ""
+        },
+        {
+          "id": "birthday",
+          "expected": "2000-01-02",
+          "dom": ""
+        },
+        {
+          "id": "city",
+          "expected": "北京",
+          "dom": ""
+        },
+        {
+          "id": "school",
+          "expected": "示例大学",
+          "dom": ""
+        },
+        {
+          "id": "major",
+          "expected": "计算机科学",
+          "dom": ""
+        },
+        {
+          "id": "degree",
+          "expected": "master",
+          "dom": ""
+        },
+        {
+          "id": "graduation",
+          "expected": "2027-06-30",
+          "dom": ""
+        },
+        {
+          "id": "company",
+          "expected": "示例科技",
+          "dom": ""
+        },
+        {
+          "id": "role",
+          "expected": "算法实习生",
+          "dom": ""
+        },
+        {
+          "id": "start",
+          "expected": "2025-07-01",
+          "dom": ""
+        },
+        {
+          "id": "end",
+          "expected": "2025-09-30",
+          "dom": ""
+        },
+        {
+          "id": "project",
+          "expected": "网页填表研究",
+          "dom": ""
+        },
+        {
+          "id": "link",
+          "expected": "https://example.test/project",
+          "dom": ""
+        },
+        {
+          "id": "skills",
+          "expected": "Python, TypeScript",
+          "dom": ""
+        },
+        {
+          "id": "language",
+          "expected": "中文、英文",
+          "dom": ""
+        },
+        {
+          "id": "summary",
+          "expected": "这是一份用于本地验证的虚构资料。",
+          "dom": ""
+        },
+        {
+          "id": "relocate",
+          "expected": true,
+          "dom": false
+        },
+        {
+          "id": "fulltime",
+          "expected": true,
+          "dom": false
+        }
+      ],
+      "configuration": "Ephemeral invocation; explicit afa MCP only; no global config changes. Existing authentication. Default host model; no model override."
+    },
+    {
+      "host": "codex",
+      "attempt": "codex-1789936743555",
+      "date": "2026-09-20T20:39:03.564Z",
+      "elapsedMs": 30919.581334,
+      "exitCode": 0,
+      "timedOut": false,
+      "bridgeRequests": 3,
+      "toolNames": [
+        "form_inspect",
+        "form_fill",
+        "form_inspect"
+      ],
+      "passed": true,
+      "correct": 20,
+      "total": 20,
+      "errors": [],
+      "configuration": "Ephemeral invocation; explicit afa MCP only; no global config changes. Existing authentication. Default host model; no model override. Codex uses its auto-review approval workflow for synthetic local writes."
+    }
+  ]
+}
