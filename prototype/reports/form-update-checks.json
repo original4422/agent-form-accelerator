@@ -1,0 +1,438 @@
+{
+  "date": "2026-09-21T06:59:41.075Z",
+  "scope": "Local controlled protocol fixture; success envelope unconfirmed on live Ashby.",
+  "results": [
+    {
+      "scenario": "success",
+      "passed": true,
+      "complete": true,
+      "elapsedMs": 458.13675,
+      "actual": {
+        "first": "Fictional Place",
+        "second": "Fictional Name",
+        "early": false,
+        "firstEvents": 1,
+        "rendered": true
+      },
+      "accepted": true,
+      "requests": 1,
+      "formUpdate": {
+        "operation": "ApiSetFormValue",
+        "observed": 1,
+        "finished": 1,
+        "pending": 0,
+        "state": "response-observed",
+        "scope": "Observed operation only; not full application acceptance"
+      },
+      "evidence": [
+        {
+          "group": "",
+          "label": "Location",
+          "expected": "Fictional Place",
+          "actual": "Fictional Place",
+          "status": "verified"
+        },
+        {
+          "group": "",
+          "label": "Name",
+          "expected": "Fictional Name",
+          "actual": "Fictional Name",
+          "status": "verified"
+        }
+      ]
+    },
+    {
+      "scenario": "delayed",
+      "passed": true,
+      "complete": true,
+      "elapsedMs": 1127.355708,
+      "actual": {
+        "first": "Fictional Place",
+        "second": "Fictional Name",
+        "early": false,
+        "firstEvents": 1,
+        "rendered": true
+      },
+      "accepted": true,
+      "requests": 1,
+      "formUpdate": {
+        "operation": "ApiSetFormValue",
+        "observed": 1,
+        "finished": 1,
+        "pending": 0,
+        "state": "response-observed",
+        "scope": "Observed operation only; not full application acceptance"
+      },
+      "evidence": [
+        {
+          "group": "",
+          "label": "Location",
+          "expected": "Fictional Place",
+          "actual": "Fictional Place",
+          "status": "verified"
+        },
+        {
+          "group": "",
+          "label": "Name",
+          "expected": "Fictional Name",
+          "actual": "Fictional Name",
+          "status": "verified"
+        }
+      ]
+    },
+    {
+      "scenario": "network-failure",
+      "passed": true,
+      "complete": false,
+      "reason": "FORM_UPDATE_NETWORK_FAILED",
+      "elapsedMs": 84.61166599999979,
+      "actual": {
+        "first": "Fictional Place",
+        "second": "",
+        "early": false,
+        "firstEvents": 1,
+        "rendered": false
+      },
+      "accepted": false,
+      "requests": 1,
+      "formUpdate": {
+        "operation": "ApiSetFormValue",
+        "observed": 1,
+        "finished": 1,
+        "pending": 0,
+        "state": "failed",
+        "reason": "FORM_UPDATE_NETWORK_FAILED",
+        "scope": "Observed operation only; not full application acceptance"
+      },
+      "evidence": [
+        {
+          "group": "",
+          "label": "Location",
+          "expected": "Fictional Place",
+          "actual": "Fictional Place",
+          "status": "unresolved",
+          "reason": "FORM_UPDATE_NETWORK_FAILED"
+        },
+        {
+          "group": "",
+          "label": "Name",
+          "expected": "Fictional Name",
+          "actual": "",
+          "status": "unresolved",
+          "reason": "FORM_UPDATE_NETWORK_FAILED"
+        }
+      ]
+    },
+    {
+      "scenario": "http-failure",
+      "passed": true,
+      "complete": false,
+      "reason": "FORM_UPDATE_HTTP_FAILED",
+      "elapsedMs": 108.52712500000007,
+      "actual": {
+        "first": "Fictional Place",
+        "second": "",
+        "early": false,
+        "firstEvents": 1,
+        "rendered": false
+      },
+      "accepted": false,
+      "requests": 1,
+      "formUpdate": {
+        "operation": "ApiSetFormValue",
+        "observed": 1,
+        "finished": 1,
+        "pending": 0,
+        "state": "failed",
+        "reason": "FORM_UPDATE_HTTP_FAILED",
+        "scope": "Observed operation only; not full application acceptance"
+      },
+      "evidence": [
+        {
+          "group": "",
+          "label": "Location",
+          "expected": "Fictional Place",
+          "actual": "Fictional Place",
+          "status": "unresolved",
+          "reason": "FORM_UPDATE_HTTP_FAILED"
+        },
+        {
+          "group": "",
+          "label": "Name",
+          "expected": "Fictional Name",
+          "actual": "",
+          "status": "unresolved",
+          "reason": "FORM_UPDATE_HTTP_FAILED"
+        }
+      ]
+    },
+    {
+      "scenario": "graphql-failure",
+      "passed": true,
+      "complete": false,
+      "reason": "FORM_UPDATE_GRAPHQL_FAILED",
+      "elapsedMs": 108.69100000000026,
+      "actual": {
+        "first": "Fictional Place",
+        "second": "",
+        "early": false,
+        "firstEvents": 1,
+        "rendered": false
+      },
+      "accepted": false,
+      "requests": 1,
+      "formUpdate": {
+        "operation": "ApiSetFormValue",
+        "observed": 1,
+        "finished": 1,
+        "pending": 0,
+        "state": "failed",
+        "reason": "FORM_UPDATE_GRAPHQL_FAILED",
+        "scope": "Observed operation only; not full application acceptance"
+      },
+      "evidence": [
+        {
+          "group": "",
+          "label": "Location",
+          "expected": "Fictional Place",
+          "actual": "Fictional Place",
+          "status": "unresolved",
+          "reason": "FORM_UPDATE_GRAPHQL_FAILED"
+        },
+        {
+          "group": "",
+          "label": "Name",
+          "expected": "Fictional Name",
+          "actual": "",
+          "status": "unresolved",
+          "reason": "FORM_UPDATE_GRAPHQL_FAILED"
+        }
+      ]
+    },
+    {
+      "scenario": "unknown-response",
+      "passed": true,
+      "complete": false,
+      "reason": "FORM_UPDATE_RESPONSE_UNCONFIRMED",
+      "elapsedMs": 106.13662499999964,
+      "actual": {
+        "first": "Fictional Place",
+        "second": "",
+        "early": false,
+        "firstEvents": 1,
+        "rendered": false
+      },
+      "accepted": false,
+      "requests": 1,
+      "formUpdate": {
+        "operation": "ApiSetFormValue",
+        "observed": 1,
+        "finished": 1,
+        "pending": 0,
+        "state": "failed",
+        "reason": "FORM_UPDATE_RESPONSE_UNCONFIRMED",
+        "scope": "Observed operation only; not full application acceptance"
+      },
+      "evidence": [
+        {
+          "group": "",
+          "label": "Location",
+          "expected": "Fictional Place",
+          "actual": "Fictional Place",
+          "status": "unresolved",
+          "reason": "FORM_UPDATE_RESPONSE_UNCONFIRMED"
+        },
+        {
+          "group": "",
+          "label": "Name",
+          "expected": "Fictional Name",
+          "actual": "",
+          "status": "unresolved",
+          "reason": "FORM_UPDATE_RESPONSE_UNCONFIRMED"
+        }
+      ]
+    },
+    {
+      "scenario": "form-error",
+      "passed": true,
+      "complete": false,
+      "reason": "FORM_UPDATE_REJECTED",
+      "elapsedMs": 104.30579100000023,
+      "actual": {
+        "first": "Fictional Place",
+        "second": "",
+        "early": false,
+        "firstEvents": 1,
+        "rendered": false
+      },
+      "accepted": false,
+      "requests": 1,
+      "formUpdate": {
+        "operation": "ApiSetFormValue",
+        "observed": 1,
+        "finished": 1,
+        "pending": 0,
+        "state": "failed",
+        "reason": "FORM_UPDATE_REJECTED",
+        "scope": "Observed operation only; not full application acceptance"
+      },
+      "evidence": [
+        {
+          "group": "",
+          "label": "Location",
+          "expected": "Fictional Place",
+          "actual": "Fictional Place",
+          "status": "unresolved",
+          "reason": "FORM_UPDATE_REJECTED"
+        },
+        {
+          "group": "",
+          "label": "Name",
+          "expected": "Fictional Name",
+          "actual": "",
+          "status": "unresolved",
+          "reason": "FORM_UPDATE_REJECTED"
+        }
+      ]
+    },
+    {
+      "scenario": "timeout",
+      "passed": true,
+      "complete": false,
+      "reason": "FORM_UPDATE_TIMEOUT",
+      "elapsedMs": 1580.0922919999998,
+      "actual": {
+        "first": "Fictional Place",
+        "second": "",
+        "early": false,
+        "firstEvents": 1,
+        "rendered": false
+      },
+      "accepted": false,
+      "requests": 1,
+      "formUpdate": {
+        "operation": "ApiSetFormValue",
+        "observed": 1,
+        "finished": 0,
+        "pending": 1,
+        "state": "pending",
+        "reason": "FORM_UPDATE_PENDING",
+        "scope": "Observed operation only; not full application acceptance"
+      },
+      "evidence": [
+        {
+          "group": "",
+          "label": "Location",
+          "expected": "Fictional Place",
+          "actual": "Fictional Place",
+          "status": "unresolved",
+          "reason": "FORM_UPDATE_TIMEOUT"
+        },
+        {
+          "group": "",
+          "label": "Name",
+          "expected": "Fictional Name",
+          "actual": "",
+          "status": "unresolved",
+          "reason": "FORM_UPDATE_TIMEOUT"
+        }
+      ]
+    },
+    {
+      "scenario": "new-field",
+      "passed": true,
+      "complete": false,
+      "reason": "SERVER_FORM_CHANGED",
+      "elapsedMs": 314.64841700000034,
+      "actual": {
+        "first": "Fictional Place",
+        "second": "",
+        "early": false,
+        "firstEvents": 1,
+        "rendered": true
+      },
+      "accepted": true,
+      "requests": 1,
+      "formUpdate": {
+        "operation": "ApiSetFormValue",
+        "observed": 1,
+        "finished": 1,
+        "pending": 0,
+        "state": "response-observed",
+        "scope": "Observed operation only; not full application acceptance"
+      },
+      "evidence": [
+        {
+          "group": "",
+          "label": "Location",
+          "expected": "Fictional Place",
+          "actual": "Fictional Place",
+          "status": "unresolved",
+          "reason": "SERVER_FORM_CHANGED"
+        },
+        {
+          "group": "",
+          "label": "Name",
+          "expected": "Fictional Name",
+          "actual": "",
+          "status": "unresolved",
+          "reason": "SERVER_FORM_CHANGED"
+        }
+      ]
+    },
+    {
+      "scenario": "new-rule",
+      "passed": true,
+      "complete": false,
+      "reason": "SERVER_FORM_CHANGED",
+      "elapsedMs": 311.1765830000004,
+      "actual": {
+        "first": "Fictional Place",
+        "second": "",
+        "early": false,
+        "firstEvents": 1,
+        "rendered": true
+      },
+      "accepted": true,
+      "requests": 1,
+      "formUpdate": {
+        "operation": "ApiSetFormValue",
+        "observed": 1,
+        "finished": 1,
+        "pending": 0,
+        "state": "response-observed",
+        "scope": "Observed operation only; not full application acceptance"
+      },
+      "evidence": [
+        {
+          "group": "",
+          "label": "Location",
+          "status": "unresolved",
+          "reason": "SERVER_FORM_CHANGED"
+        },
+        {
+          "group": "",
+          "label": "Name",
+          "status": "unresolved",
+          "reason": "SERVER_FORM_CHANGED"
+        }
+      ]
+    },
+    {
+      "scenario": "primitive-late-failure",
+      "passed": true,
+      "results": [
+        {
+          "ref": "f1",
+          "status": "needs-review",
+          "reason": "FORM_UPDATE_NETWORK_FAILED"
+        },
+        {
+          "ref": "f2",
+          "status": "needs-review",
+          "reason": "FORM_UPDATE_NETWORK_FAILED"
+        }
+      ]
+    }
+  ]
+}

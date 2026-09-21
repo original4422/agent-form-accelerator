@@ -24,6 +24,7 @@ export async function executeGoal(request, primitive) {
   const guard = () => {
     if (observation.url !== request.url || observation.documentId !== documentId) throw new Error('PAGE_CHANGED');
     if (Date.now() >= deadline) throw new Error('GOAL_DEADLINE');
+    if(observation.formUpdate?.reason)throw new Error(observation.formUpdate.reason);
   };
   const refresh = async () => { observation = await call({op: 'inspect'}); guard(); };
   const contextFor = (o,f) => JSON.stringify((o.formContext?.blocks??[]).filter(b=>b.fieldRefs.includes(f.ref)).map(b=>[b.text,b.relation]));
@@ -84,8 +85,11 @@ export async function executeGoal(request, primitive) {
       }
       if (actions.length) {
         const r = await call({op: 'fill', snapshot: observation.snapshot, url: request.url, deadline, actions});
-        observation = r.observation; guard();
+        observation = r.observation;
         trace.push({round, operation: 'fill', statuses: r.results.map((x) => x.status)});
+        const updateBlocked=r.results.find(x=>/^(FORM_UPDATE_|SERVER_FORM_CHANGED)/.test(x.reason??''));
+        if(updateBlocked)throw new Error(updateBlocked.reason);
+        guard();
         for (let i = 0; i < actionTargets.length; i++) {
           const result = r.results[i];
           if (['verified', 'needs-review', 'pending-validation'].includes(result.status)) {
@@ -122,10 +126,11 @@ export async function executeGoal(request, primitive) {
   try {
     evidence = fields.map((target) => {
       const s = resolve(target);
-      const verified = !s.reason && !!s.field && valuesEquivalent(s.field.kind,s.field.value,s.value) && s.field.valid !== false;
+      const updateReason=/^(FORM_UPDATE_|SERVER_FORM_CHANGED)/.test(reason??'')?reason:observation.formUpdate?.reason;
+      const verified = !updateReason && !s.reason && !!s.field && valuesEquivalent(s.field.kind,s.field.value,s.value) && s.field.valid !== false;
       return {group: target.group, label: target.label, expected: target.value, actual: s.field?.value,
         equivalence:verified&&s.field?.value!==s.value?'telephone-punctuation':undefined,
-        status: verified ? 'verified' : 'unresolved', reason: verified ? undefined : s.reason || 'VALUE_OR_VALIDITY_MISMATCH'};
+        status: verified ? 'verified' : 'unresolved', reason: verified ? undefined : updateReason || s.reason || 'VALUE_OR_VALIDITY_MISMATCH'};
     });
   } catch (e) { reason ??= e.message; evidence = fields.map((f) => ({group: f.group, label: f.label, status: 'unresolved', reason})); }
   const complete = !reason && evidence.every((e) => e.status === 'verified');

@@ -1,5 +1,7 @@
 # 真实 Ashby Yes/No 接入一次填写计划
 
+> 2026-09-21 后续证据修正：姓名输入也会触发 ApiSetFormValue，冻结后请求失败但 DOM 保留值。下文六目标及两次 Codex 记录只证明当时的本地控件状态；当前 backend 会在首次失败后停止。原确定性报告另存 ashby-pressed-check-pre-update.json，当前同名脚本已改为验证失败边界；历史 codex-ashby-pressed.mjs 的六目标成功断言不适用于新契约。详见 [FORM-UPDATES.md](FORM-UPDATES.md)。
+
 2026-09-21。Playwright companion 新增受限的 Ashby Yes/No 控件适配。两次实际 Codex 在冻结网络后的真实页面中，各用一次工具调用正确填写六个已知目标，包括相反的签证/经验答案。地点和文件仍未支持，**这不是完整申请完成或提速倍数证据**。
 
 ## 选择契约

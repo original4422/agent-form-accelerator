@@ -1,19 +1,6 @@
 {
-  "date": "2026-09-21T06:45:20.267Z",
-  "scope": "Actual public Ashby DOM after TCP/HTTP/WebSocket freeze. Six-target plan must stop after the first blocked server update. This supersedes the former DOM-only success assertion; no speed comparison.",
-  "operations": [
-    {
-      "operation": "ApiSetFormValue",
-      "path": "_systemfield_name",
-      "variableKeys": [
-        "organizationHostedJobsPageName",
-        "formRenderIdentifier",
-        "path",
-        "value",
-        "formDefinitionIdentifier"
-      ]
-    }
-  ],
+  "date": "2026-09-21T06:44:10.007Z",
+  "scope": "Actual public Ashby DOM after TCP/HTTP/WebSocket freeze. Fictional source, six supported targets only, no upload or submit. No speed comparison.",
   "beforeGuard": {
     "state": "frozen",
     "closed": false,
@@ -24,14 +11,14 @@
     "openedSockets": 0,
     "frozen": true,
     "activeTransportSockets": 0,
-    "openedTunnels": 32,
+    "openedTunnels": 31,
     "rejectedConnections": 0,
     "allowedReadQueries": [
       "ApiJobPosting",
       "ApiOrganizationFromHostedJobsPageName",
       "ApiOrganizationFromHostedJobsPageName"
     ],
-    "blockedLoadWrites": 2,
+    "blockedLoadWrites": 3,
     "blockedLoadSockets": 0
   },
   "observed": [
@@ -471,15 +458,6 @@
           "required": false
         }
       ]
-    },
-    "formUpdate": {
-      "operation": "ApiSetFormValue",
-      "observed": 1,
-      "finished": 1,
-      "pending": 0,
-      "state": "failed",
-      "reason": "FORM_UPDATE_NETWORK_FAILED",
-      "scope": "Observed operation only; not full application acceptance"
     }
   },
   "oracle": {
@@ -571,15 +549,16 @@
     "openedSockets": 0,
     "frozen": true,
     "activeTransportSockets": 0,
-    "openedTunnels": 32,
+    "openedTunnels": 31,
     "rejectedConnections": 0,
     "allowedReadQueries": [
       "ApiJobPosting",
       "ApiOrganizationFromHostedJobsPageName",
       "ApiOrganizationFromHostedJobsPageName"
     ],
-    "blockedLoadWrites": 4,
+    "blockedLoadWrites": 5,
     "blockedLoadSockets": 0
   },
-  "passed": true
+  "error": "AssertionError [ERR_ASSERTION]: FORM_UPDATE_NETWORK_FAILED\n\nfalse !== true\n\n    at file:///Users/original/Project/github/personal_project/agent-form-accelerator/prototype/bench/ashby-pressed-check.mjs:13:9",
+  "passed": false
 }

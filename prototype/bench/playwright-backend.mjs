@@ -5,9 +5,11 @@ import {executeFormRequest} from '../extension/form-runtime.js';
 import {executeGoal,valuesEquivalent} from '../extension/goal-executor.js';
 import {reactSelectState} from './react-select-state.mjs';
 import {ashbyYesNoState} from './ashby-yesno-state.mjs';
+import {trackFormUpdates} from './form-update-tracker.mjs';
 
 export function createPlaywrightBackend(page,{validationMode='guard'}={}) {
   if(!['full','guard'].includes(validationMode))throw new Error('INVALID_VALIDATION_MODE');
+  const updates=trackFormUpdates(page);
   let pressedContracts=new Map();
   const observe = async request => {
     if(['validate','guard'].includes(request.op))for(const [ref,identity] of pressedContracts){
@@ -31,6 +33,7 @@ export function createPlaywrightBackend(page,{validationMode='guard'}={}) {
       }
       pressedContracts=next;
     }
+    if(updates.status().observed)result.formUpdate=updates.status();
     return result;
   };
   const pause = ms => new Promise(resolve => setTimeout(resolve, ms));
@@ -177,10 +180,16 @@ export function createPlaywrightBackend(page,{validationMode='guard'}={}) {
     const initial = await observe({op:'validate',snapshot:request.snapshot,url:request.url});
     let current = initial;
     const results = [], written = [];
+    const contract=o=>{
+      const keys=new Map(o.fields.map(f=>[f.ref,JSON.stringify([f.group,f.label,f.kind])]));
+      const item=({group,label,kind,required,supported,readOnly,options,choiceIdentity})=>({group,label,kind,required,supported,readOnly,options,choiceIdentity});
+      return JSON.stringify({fields:o.fields.map(item),controls:o.controls.map(item),context:(o.formContext?.blocks??[]).map(b=>({text:b.text,relation:b.relation,fields:b.fieldRefs.map(ref=>keys.get(ref))}))});
+    };
     for (const action of request.actions) {
       let el;
       try {
         if (request.deadline && Date.now() >= request.deadline) throw new Error('GOAL_DEADLINE');
+        if(updates.status().reason)throw new Error(updates.status().reason);
         // Full snapshot validation is conservative: if an earlier action changed
         // a dependent node, return to the shared planner for a fresh observation.
         current = await observe({op:validationMode==='guard'?'guard':'validate',snapshot:current.snapshot,url:request.url});
@@ -194,6 +203,7 @@ export function createPlaywrightBackend(page,{validationMode='guard'}={}) {
           await el.click({timeout:1000}); results.push({ref:action.ref,status:'expanded'}); break;
         }
         if (action.op !== 'set' || field.kind === 'add-row') throw new Error('Expected set action');
+        const updateCount=updates.status().observed;
         let expected = action.value;
         if (field.kind === 'autocomplete') await selectAutocomplete(el,field,expected,request,{query:action.query??expected});
         else if(field.kind==='pressed-choice')await selectPressedChoice(el,field,expected,request);
@@ -208,6 +218,32 @@ export function createPlaywrightBackend(page,{validationMode='guard'}={}) {
         } else {
           if (typeof expected !== 'string') throw new Error('Expected text');
           await el.fill(expected, {timeout:1000}); await el.evaluate(el => el.blur());
+        }
+        // Only observed known writes incur this wait. No model polling and no
+        // speculative network calls. Failures remain sticky across inspections.
+        if(updates.status().observed!==updateCount){
+          const deadline=Math.min(Date.now()+1500,request.deadline??Infinity);
+          let settledCount;
+          do{
+          const update=await updates.wait(deadline);
+          if(update.reason)throw new Error(update.reason);
+          settledCount=update.observed;
+          // Give public rendering a bounded quiet window after the body finished.
+          // This cannot prove arbitrary future/debounced work will never occur.
+          await page.evaluate(async deadline=>{
+            let changed=Date.now();const observer=new MutationObserver(()=>changed=Date.now());
+            observer.observe(document.documentElement,{childList:true,subtree:true,attributes:true,characterData:true});
+            try{while(Date.now()<deadline){await new Promise(r=>setTimeout(r,20));if(Date.now()-changed>=120)break;}}
+            finally{observer.disconnect();}
+          },deadline);
+          if(Date.now()>=deadline)throw new Error('FORM_UPDATE_RENDER_TIMEOUT');
+          }while(updates.status().pending||updates.status().observed!==settledCount);
+          const after=await observe({op:'inspect'});
+          if(after.url!==initial.url||after.documentId!==initial.documentId)throw new Error('PAGE_CHANGED');
+          if(contract(after)!==contract(initial))throw new Error('SERVER_FORM_CHANGED');
+          if(after.fields.some(f=>f.pending))throw new Error('FORM_UPDATE_RENDER_PENDING');
+          if(updates.status().reason)throw new Error(updates.status().reason);
+          current=after;
         }
         results.push({ref:action.ref,status:'written'}); written.push({ref:action.ref,expected});
       } catch (e) {
@@ -224,9 +260,11 @@ export function createPlaywrightBackend(page,{validationMode='guard'}={}) {
       finally { observer.disconnect(); }
     }, request.deadline);
     const observation = await observe({op:'inspect'});
+    const updateReason=results.find(r=>/^(FORM_UPDATE_|SERVER_FORM_CHANGED)/.test(r.reason??''))?.reason??observation.formUpdate?.reason;
     for (const {ref,expected} of written) {
       const result=results.find(r=>r.ref===ref),field=observation.fields.find(f=>f.ref===ref);
-      if (!field) Object.assign(result,{status:'needs-review',reason:'FIELD_REPLACED'});
+      if(updateReason)Object.assign(result,{status:'needs-review',reason:updateReason});
+      else if (!field) Object.assign(result,{status:'needs-review',reason:'FIELD_REPLACED'});
       else if (!valuesEquivalent(field.kind,field.value,expected)) Object.assign(result,{status:'needs-review',reason:'VALUE_NOT_RETAINED'});
       else if (field.pending) result.status='pending-validation';
       else if (field.valid===false) Object.assign(result,{status:'needs-review',reason:'HTML_VALIDATION_FAILED'});
@@ -239,6 +277,7 @@ export function createPlaywrightBackend(page,{validationMode='guard'}={}) {
     if(r.op==='discover'){
       if(!Array.isArray(r.queries)||!r.queries.length||r.queries.length>12)throw new Error('INVALID_SEARCH_QUERIES');
       const initial=await observe({op:'validate',snapshot:r.snapshot,url:r.url}),searches=[],deadline=Math.min(Date.now()+8000,Number.isFinite(r.deadline)?r.deadline:Infinity);
+      if(initial.formUpdate?.reason)throw new Error(initial.formUpdate.reason);
       let observation=initial;
       for(const query of r.queries){
         let el;
@@ -271,5 +310,5 @@ export function createPlaywrightBackend(page,{validationMode='guard'}={}) {
     if (r.op==='fill') return fill(r);
     throw new Error('UNSUPPORTED_BACKEND_OPERATION');
   };
-  return {request};
+  return {request,dispose:updates.dispose};
 }

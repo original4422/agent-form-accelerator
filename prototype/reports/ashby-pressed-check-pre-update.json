@@ -1,19 +1,6 @@
 {
-  "date": "2026-09-21T06:45:20.267Z",
-  "scope": "Actual public Ashby DOM after TCP/HTTP/WebSocket freeze. Six-target plan must stop after the first blocked server update. This supersedes the former DOM-only success assertion; no speed comparison.",
-  "operations": [
-    {
-      "operation": "ApiSetFormValue",
-      "path": "_systemfield_name",
-      "variableKeys": [
-        "organizationHostedJobsPageName",
-        "formRenderIdentifier",
-        "path",
-        "value",
-        "formDefinitionIdentifier"
-      ]
-    }
-  ],
+  "date": "2026-09-21T05:42:48.360Z",
+  "scope": "Actual public Ashby DOM after TCP/HTTP/WebSocket freeze. Fictional source, six supported targets only, no upload or submit. No speed comparison.",
   "beforeGuard": {
     "state": "frozen",
     "closed": false,
@@ -24,14 +11,14 @@
     "openedSockets": 0,
     "frozen": true,
     "activeTransportSockets": 0,
-    "openedTunnels": 32,
+    "openedTunnels": 31,
     "rejectedConnections": 0,
     "allowedReadQueries": [
       "ApiJobPosting",
       "ApiOrganizationFromHostedJobsPageName",
       "ApiOrganizationFromHostedJobsPageName"
     ],
-    "blockedLoadWrites": 2,
+    "blockedLoadWrites": 3,
     "blockedLoadSockets": 0
   },
   "observed": [
@@ -363,56 +350,49 @@
     }
   ],
   "result": {
-    "complete": false,
-    "reason": "FORM_UPDATE_NETWORK_FAILED",
+    "complete": true,
     "evidence": [
       {
         "group": "",
         "label": "Name",
         "expected": "Alex Fictional",
         "actual": "Alex Fictional",
-        "status": "unresolved",
-        "reason": "FORM_UPDATE_NETWORK_FAILED"
+        "status": "verified"
       },
       {
         "group": "",
         "label": "Email",
         "expected": "alex.fictional@example.test",
-        "actual": "",
-        "status": "unresolved",
-        "reason": "FORM_UPDATE_NETWORK_FAILED"
+        "actual": "alex.fictional@example.test",
+        "status": "verified"
       },
       {
         "group": "Will you now or in the future require sponsorship for employment visa status to work in this location?",
         "label": "No",
         "expected": true,
-        "actual": false,
-        "status": "unresolved",
-        "reason": "FORM_UPDATE_NETWORK_FAILED"
+        "actual": true,
+        "status": "verified"
       },
       {
         "group": "Do you have 4+ years of experience as a full-time engineer?",
         "label": "Yes",
         "expected": true,
-        "actual": false,
-        "status": "unresolved",
-        "reason": "FORM_UPDATE_NETWORK_FAILED"
+        "actual": true,
+        "status": "verified"
       },
       {
         "group": "",
         "label": "Describe a role you were in or a project you led that brought out your absolute best work? What setup or attributes of the role/project enabled that?",
         "expected": "In a fictional internal library project, I coordinated a small team cleaning duplicate records. Clear ownership, short feedback cycles, and access to librarians helped us resolve inconsistent titles and document decisions.",
-        "actual": "",
-        "status": "unresolved",
-        "reason": "FORM_UPDATE_NETWORK_FAILED"
+        "actual": "In a fictional internal library project, I coordinated a small team cleaning duplicate records. Clear ownership, short feedback cycles, and access to librarians helped us resolve inconsistent titles and document decisions.",
+        "status": "verified"
       },
       {
         "group": "",
         "label": "Describe a choice you made when shipping a product or working on a technical challenge that didn’t come from a product manager or an engineering manager/lead. How did you advocate for it, and what impact did it have on your end users?",
         "expected": "In a fictional registration project, I proposed a preview screen without being asked by a manager. I built a small demonstration and invited volunteers to compare the two flows. The team adopted the preview after volunteers caught incorrect event dates before saving.",
-        "actual": "",
-        "status": "unresolved",
-        "reason": "FORM_UPDATE_NETWORK_FAILED"
+        "actual": "In a fictional registration project, I proposed a preview screen without being asked by a manager. I built a small demonstration and invited volunteers to compare the two flows. The team adopted the preview after volunteers caught incorrect event dates before saving.",
+        "status": "verified"
       }
     ],
     "coverage": {
@@ -423,31 +403,9 @@
         "shadowRoots": false
       },
       "requiredUnits": 3,
-      "verifiedRequiredUnits": 0,
-      "unresolvedRequired": [
-        {
-          "ref": "f2",
-          "group": "",
-          "label": "Name",
-          "kind": "text",
-          "reason": "not-bound-to-source"
-        },
-        {
-          "ref": "f3",
-          "group": "",
-          "label": "Email",
-          "kind": "email",
-          "reason": "not-bound-to-source"
-        },
-        {
-          "ref": "f12",
-          "group": "",
-          "label": "Describe a role you were in or a project you led that brought out your absolute best work? What setup or attributes of the role/project enabled that?",
-          "kind": "textarea",
-          "reason": "not-bound-to-source"
-        }
-      ],
-      "visibleRequiredCovered": false,
+      "verifiedRequiredUnits": 3,
+      "unresolvedRequired": [],
+      "visibleRequiredCovered": true,
       "unsupported": [
         {
           "ref": "f1",
@@ -471,22 +429,13 @@
           "required": false
         }
       ]
-    },
-    "formUpdate": {
-      "operation": "ApiSetFormValue",
-      "observed": 1,
-      "finished": 1,
-      "pending": 0,
-      "state": "failed",
-      "reason": "FORM_UPDATE_NETWORK_FAILED",
-      "scope": "Observed operation only; not full application acceptance"
     }
   },
   "oracle": {
     "url": "https://jobs.ashbyhq.com/ashby/0020099f-9bb3-4da9-9808-4556564f5301/application",
     "diagnostic": {
       "submits": 0,
-      "choiceClicks": 0
+      "choiceClicks": 2
     },
     "choices": [
       {
@@ -499,7 +448,7 @@
           },
           {
             "label": "No",
-            "pressed": "false",
+            "pressed": "true",
             "option": "no"
           }
         ],
@@ -510,7 +459,7 @@
         "states": [
           {
             "label": "Yes",
-            "pressed": "false",
+            "pressed": "true",
             "option": "yes"
           },
           {
@@ -519,7 +468,7 @@
             "option": "no"
           }
         ],
-        "nativeChecked": false
+        "nativeChecked": true
       }
     ],
     "text": [
@@ -529,7 +478,7 @@
       },
       {
         "label": "Email",
-        "value": ""
+        "value": "alex.fictional@example.test"
       },
       {
         "label": "LinkedIn URL",
@@ -541,11 +490,11 @@
       },
       {
         "label": "Describe a role you were in or a project you led that brought out your absolute best work? What setup or attributes of the role/project enabled that?",
-        "value": ""
+        "value": "In a fictional internal library project, I coordinated a small team cleaning duplicate records. Clear ownership, short feedback cycles, and access to librarians helped us resolve inconsistent titles and document decisions."
       },
       {
         "label": "Describe a choice you made when shipping a product or working on a technical challenge that didn’t come from a product manager or an engineering manager/lead.  How did you advocate for it, and what impact did it have on your end users?",
-        "value": ""
+        "value": "In a fictional registration project, I proposed a preview screen without being asked by a manager. I built a small demonstration and invited volunteers to compare the two flows. The team adopted the preview after volunteers caught incorrect event dates before saving."
       },
       {
         "label": "Describe a time you challenged and changed a product request for a better user experience or business outcome.",
@@ -571,14 +520,14 @@
     "openedSockets": 0,
     "frozen": true,
     "activeTransportSockets": 0,
-    "openedTunnels": 32,
+    "openedTunnels": 31,
     "rejectedConnections": 0,
     "allowedReadQueries": [
       "ApiJobPosting",
       "ApiOrganizationFromHostedJobsPageName",
       "ApiOrganizationFromHostedJobsPageName"
     ],
-    "blockedLoadWrites": 4,
+    "blockedLoadWrites": 20,
     "blockedLoadSockets": 0
   },
   "passed": true

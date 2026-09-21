@@ -33,5 +33,5 @@ export async function createBrowserController(page) {
   server.requestTimeout=30000;server.headersTimeout=10000;
   await new Promise((resolve,reject)=>{server.once('error',reject);server.listen(0,'127.0.0.1',resolve);});
   return {endpoint:`http://127.0.0.1:${server.address().port}/request`,token,
-    async close(){if(closing)return;closing=true;server.closeAllConnections();await new Promise(resolve=>server.close(resolve));}};
+    async close(){if(closing)return;closing=true;server.closeAllConnections();await new Promise(resolve=>server.close(resolve));backend.dispose();}};
 }

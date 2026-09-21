@@ -3,7 +3,7 @@
 const normalized=s=>String(s??'').normalize('NFKC').trim().toLowerCase();
 export function projectPage(page,source,{optionMode='full'}={}) {
  const facts=new Set(source.entries.map(e=>normalized(e.value)));
- return {url:page.url,formContext:page.formContext,limitations:page.limitations,fields:page.fields.map(({ref,label,group,kind,required,supported,disabled,readOnly,valid,pending,value,options,adapter,query,displayValue,selectionKey})=>{
+ return {url:page.url,formContext:page.formContext,formUpdate:page.formUpdate,limitations:page.limitations,fields:page.fields.map(({ref,label,group,kind,required,supported,disabled,readOnly,valid,pending,value,options,adapter,query,displayValue,selectionKey})=>{
   const f={ref,label,group,kind,required,supported,disabled,readOnly,valid,pending,value,options,adapter,query,displayValue,selectionKey};
   if(optionMode==='compact'&&kind==='select'&&options?.length>40){
    const selected=options.filter(o=>o.value===value);

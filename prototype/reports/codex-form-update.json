@@ -1,0 +1,233 @@
+{
+  "batchId": 1789973395714,
+  "date": "2026-09-21T06:49:55.714Z",
+  "scope": "Actual Codex, local controlled async protocol. Not a live server acceptance or speed comparison.",
+  "runs": [
+    {
+      "mode": "delayed",
+      "elapsedMs": 36441.461167,
+      "toolCalls": [
+        {
+          "tool": "form_apply_bindings",
+          "status": "completed",
+          "startMs": 20842.351875,
+          "endMs": 30518.677042000003,
+          "durationMs": 9676.325167000003,
+          "returnedBytes": 2190,
+          "executionMs": 1155.0772499999985,
+          "complete": true,
+          "primitiveCalls": 3
+        }
+      ],
+      "usage": {
+        "input_tokens": 66197,
+        "cached_input_tokens": 33024,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 169,
+        "reasoning_output_tokens": 0
+      },
+      "actual": {
+        "first": "Fictional Place",
+        "second": "Fictional Name",
+        "early": false,
+        "firstEvents": 1,
+        "rendered": true
+      },
+      "server": {
+        "accepted": true,
+        "requests": 1
+      },
+      "checks": {
+        "process": true,
+        "oneWrite": true,
+        "noEarlyFollowup": true,
+        "correctFirst": true,
+        "correctSecond": true,
+        "rendered": true,
+        "complete": true
+      },
+      "finalText": "Filled and verified:\n- Location: Fictional Place\n- Name: Fictional Name\n\nNo failures or unresolved visible required fields were reported. Nothing was submitted or navigated. Full application completion and server acceptance remain unverified.",
+      "promptHash": "d5cf209967ffaa1adb9d4f323349c5ec56ab77a0ec870de17d9b528eb8bb2031",
+      "sourceHash": "ca4a7b4bd9a20285bda4952a39bc691b76875a0ad338173350b269f0e0617756",
+      "passed": true
+    },
+    {
+      "mode": "new-field",
+      "elapsedMs": 113161.207417,
+      "toolCalls": [
+        {
+          "tool": "form_apply_bindings",
+          "status": "completed",
+          "startMs": 80820.99783400001,
+          "endMs": 85551.61837499999,
+          "durationMs": 4730.620540999982,
+          "returnedBytes": 2542,
+          "executionMs": 326.44412499999453,
+          "complete": false,
+          "reason": "SERVER_FORM_CHANGED",
+          "primitiveCalls": 2
+        },
+        {
+          "tool": "form_apply_bindings",
+          "status": "completed",
+          "startMs": 96604.503,
+          "endMs": 102357.47879200001,
+          "durationMs": 5752.975792000012,
+          "returnedBytes": 2280,
+          "executionMs": 191.93862500000978,
+          "complete": true,
+          "primitiveCalls": 3
+        }
+      ],
+      "usage": {
+        "input_tokens": 92487,
+        "cached_input_tokens": 74240,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 260,
+        "reasoning_output_tokens": 18
+      },
+      "actual": {
+        "first": "Fictional Place",
+        "second": "Fictional Name",
+        "early": false,
+        "firstEvents": 1,
+        "rendered": true,
+        "newFieldValue": ""
+      },
+      "server": {
+        "accepted": true,
+        "requests": 1
+      },
+      "checks": {
+        "process": true,
+        "oneWrite": true,
+        "noEarlyFollowup": true,
+        "correctFirst": true,
+        "changeReturned": true,
+        "missingFactLeftEmpty": true,
+        "missingFactReported": true
+      },
+      "finalText": "Location shows “Fictional Place”; Name is verified as “Fictional Name”.\n\nThe initial fill stopped with `SERVER_FORM_CHANGED`, revealing required Work authorization. That remains blank because no fact was supplied. The application is incomplete; server acceptance is unconfirmed. Nothing was submitted or navigated.",
+      "promptHash": "d5cf209967ffaa1adb9d4f323349c5ec56ab77a0ec870de17d9b528eb8bb2031",
+      "sourceHash": "ca4a7b4bd9a20285bda4952a39bc691b76875a0ad338173350b269f0e0617756",
+      "passed": true
+    },
+    {
+      "mode": "network-failure",
+      "elapsedMs": 81890.288584,
+      "toolCalls": [
+        {
+          "tool": "form_apply_bindings",
+          "status": "completed",
+          "startMs": 68887.185375,
+          "endMs": 76399.79720899998,
+          "durationMs": 7512.611833999981,
+          "returnedBytes": 2312,
+          "executionMs": 101.74124999999185,
+          "complete": false,
+          "reason": "FORM_UPDATE_NETWORK_FAILED",
+          "primitiveCalls": 2
+        }
+      ],
+      "usage": {
+        "input_tokens": 66250,
+        "cached_input_tokens": 56448,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 151,
+        "reasoning_output_tokens": 0
+      },
+      "actual": {
+        "first": "Fictional Place",
+        "second": "",
+        "early": false,
+        "firstEvents": 1,
+        "rendered": false
+      },
+      "server": {
+        "accepted": false,
+        "requests": 1
+      },
+      "checks": {
+        "process": true,
+        "oneWrite": true,
+        "noEarlyFollowup": true,
+        "correctFirst": true,
+        "failureReturned": true,
+        "noFalseComplete": true,
+        "failureReported": true
+      },
+      "finalText": "Incomplete: the form update failed with `FORM_UPDATE_NETWORK_FAILED`.\n\n- Location displays “Fictional Place,” but saving was not confirmed.\n- Name remains blank; its fill was not attempted after the failure.\n\nNothing was submitted, and no navigation occurred.",
+      "promptHash": "d5cf209967ffaa1adb9d4f323349c5ec56ab77a0ec870de17d9b528eb8bb2031",
+      "sourceHash": "ca4a7b4bd9a20285bda4952a39bc691b76875a0ad338173350b269f0e0617756",
+      "passed": true
+    }
+  ],
+  "before": {
+    "package-lock.json": "b2e3f6468883d35752a9f488e0d290e5647b6aa44fe6d78cb9e6ae0522a51bd2",
+    "prototype/bench/form-update-fixture.mjs": "1d57013d4833eba7569ca0a9b0c7116178d0c174dd2b027cae263f4dc657edac",
+    "prototype/bench/form-update-tracker.mjs": "16bb81c7ce7421505092702edbbae8c74468c560e4135c82a0274a30fe29a479",
+    "prototype/bench/playwright-backend.mjs": "7faca5fb0d51dc6c9dd0e65682ead962b4abe33966cdead9790435b11dffedde",
+    "prototype/extension/background.js": "0c9c955b15cc1bcab0074efe9f0cb74e4378124e9949a3dd904f8224e21a6aeb",
+    "prototype/extension/form-runtime.js": "bd04b91b62941b3fa0ec9ac48dafa738b261f9db93c02f2e651d63ee8f93b2aa",
+    "prototype/extension/goal-executor.js": "84287ede4a45de8b4c6f667170e799db6239e1b220def479868fbb45c3031c58",
+    "prototype/extension/plan-executor.js": "0f50d2ffb7ec7ce0787ef8f158015b0d8ebf33019bb53c76f13da0d0bcee03c4",
+    "prototype/extension/popup.js": "07daaf136fa8b36227024e00d1eb26d5b631e3ee6aa374bd008fe9ac23ca4725",
+    "prototype/src/bindings-mcp.mjs": "1cd1343c4f2b02fb77e09153bbbc3902613754ca42d45f4ded22450ab21413be",
+    "prototype/src/bindings-server.mjs": "63fc8392906000a12e3b862d954ee9eddc1baffd3d0d3640539b41becc327035",
+    "prototype/src/bridge.mjs": "34e2ec16bbcd1ea21553acdae33e18b3ddde811a0121c5989e1b469936af016e",
+    "prototype/src/browser-bindings-mcp.mjs": "cd326d5d2a8ca6c734407c26883f99decc32ba362c1bef4c9c70e80630b6559d",
+    "prototype/src/browser-companion.mjs": "e738b851568471117bb460b4ae77fe0b4c679c58f2fb591d65b0ef50c7ac72d5",
+    "prototype/src/browser-controller.mjs": "557f66ca4f9328913e5003bae3d20fb56e8b4400ac37c2f9c832651489adbb25",
+    "prototype/src/conditional-choice.mjs": "3a401d78465e247e488f0739ac03f67acf773a8ef9d8fd3e677e1ea9b6d327e9",
+    "prototype/src/context-projection.mjs": "fcdfa2e3f9fabb9fefd399b7e5fcaf14a9595c9701c5726f15d9bab925319467",
+    "prototype/src/coverage.mjs": "1c0050e16fa42e10fb395b1e5eaa75d04d13487f2fb92fb2696f27e65c9cce0a",
+    "prototype/src/decision-context.mjs": "52eb7ba8bed761216f2fe66e67d5cc5532d562c69e45c9e920340221d2ad7271",
+    "prototype/src/document-session.mjs": "aee2d6a66d37cde2328ea278aca12167f956bc01e9124ca22b96105a794666b9",
+    "prototype/src/document-source.mjs": "e6426296ce2890903c9acdea172c93dd4d64c3e1a1b2b735ac83b73608d0a993",
+    "prototype/src/freeze-proxy.mjs": "2ec4b6fc528dd4ecfe7483a7e8202ee5ce6c6f163580e8af7367f356b4a0a2ed",
+    "prototype/src/independent-plan.mjs": "9b097fd86472587c9bb005cacb7f8284a0bbaf34c5bf33bf0b498f879c110bdb",
+    "prototype/src/mcp.mjs": "881d66ceece558cff0b0d7c6e0bbee69a25c553eb352da3143c055287bc3f57b",
+    "prototype/src/network-freeze.mjs": "7969ac0a0e1dc35c3bb6d075e93c9749aa7db7dcdbbac442cb9de9e25f892e93",
+    "prototype/src/pdf-source.py": "3bf55ad81bff7e8c584f165feb388ad2b486148218f4e00c8ce47c2ab3818231",
+    "prototype/src/query-variants.mjs": "f6bf27d2149429e4ea73b9092be67f4ba4647172d8b722ceb975a1d046ce61ce",
+    "prototype/src/receipt-projection.mjs": "2c0a51c363db40a04361aa97cd0fb995c4cdcd44fcdf2010d2cd4d7d2b108023",
+    "prototype/src/source-mcp.mjs": "00f13c76817411e2f977688136c034d1353f79cf1bea680589e64fddb9a5bcb5",
+    "prototype/src/source-quote.mjs": "ab2e3f21de130c559eed98be7fb2c591f2e72095bfde43a7343bf6e8dcc3547e",
+    "prototype/src/source-reader.mjs": "1df7dc8672d54928c6f356cf2fc44b4eb6f578bb0c510ad6c38ae86b52bacc7a"
+  },
+  "after": {
+    "package-lock.json": "b2e3f6468883d35752a9f488e0d290e5647b6aa44fe6d78cb9e6ae0522a51bd2",
+    "prototype/bench/form-update-fixture.mjs": "1d57013d4833eba7569ca0a9b0c7116178d0c174dd2b027cae263f4dc657edac",
+    "prototype/bench/form-update-tracker.mjs": "16bb81c7ce7421505092702edbbae8c74468c560e4135c82a0274a30fe29a479",
+    "prototype/bench/playwright-backend.mjs": "7faca5fb0d51dc6c9dd0e65682ead962b4abe33966cdead9790435b11dffedde",
+    "prototype/extension/background.js": "0c9c955b15cc1bcab0074efe9f0cb74e4378124e9949a3dd904f8224e21a6aeb",
+    "prototype/extension/form-runtime.js": "bd04b91b62941b3fa0ec9ac48dafa738b261f9db93c02f2e651d63ee8f93b2aa",
+    "prototype/extension/goal-executor.js": "84287ede4a45de8b4c6f667170e799db6239e1b220def479868fbb45c3031c58",
+    "prototype/extension/plan-executor.js": "0f50d2ffb7ec7ce0787ef8f158015b0d8ebf33019bb53c76f13da0d0bcee03c4",
+    "prototype/extension/popup.js": "07daaf136fa8b36227024e00d1eb26d5b631e3ee6aa374bd008fe9ac23ca4725",
+    "prototype/src/bindings-mcp.mjs": "1cd1343c4f2b02fb77e09153bbbc3902613754ca42d45f4ded22450ab21413be",
+    "prototype/src/bindings-server.mjs": "63fc8392906000a12e3b862d954ee9eddc1baffd3d0d3640539b41becc327035",
+    "prototype/src/bridge.mjs": "34e2ec16bbcd1ea21553acdae33e18b3ddde811a0121c5989e1b469936af016e",
+    "prototype/src/browser-bindings-mcp.mjs": "cd326d5d2a8ca6c734407c26883f99decc32ba362c1bef4c9c70e80630b6559d",
+    "prototype/src/browser-companion.mjs": "e738b851568471117bb460b4ae77fe0b4c679c58f2fb591d65b0ef50c7ac72d5",
+    "prototype/src/browser-controller.mjs": "557f66ca4f9328913e5003bae3d20fb56e8b4400ac37c2f9c832651489adbb25",
+    "prototype/src/conditional-choice.mjs": "3a401d78465e247e488f0739ac03f67acf773a8ef9d8fd3e677e1ea9b6d327e9",
+    "prototype/src/context-projection.mjs": "fcdfa2e3f9fabb9fefd399b7e5fcaf14a9595c9701c5726f15d9bab925319467",
+    "prototype/src/coverage.mjs": "1c0050e16fa42e10fb395b1e5eaa75d04d13487f2fb92fb2696f27e65c9cce0a",
+    "prototype/src/decision-context.mjs": "52eb7ba8bed761216f2fe66e67d5cc5532d562c69e45c9e920340221d2ad7271",
+    "prototype/src/document-session.mjs": "aee2d6a66d37cde2328ea278aca12167f956bc01e9124ca22b96105a794666b9",
+    "prototype/src/document-source.mjs": "e6426296ce2890903c9acdea172c93dd4d64c3e1a1b2b735ac83b73608d0a993",
+    "prototype/src/freeze-proxy.mjs": "2ec4b6fc528dd4ecfe7483a7e8202ee5ce6c6f163580e8af7367f356b4a0a2ed",
+    "prototype/src/independent-plan.mjs": "9b097fd86472587c9bb005cacb7f8284a0bbaf34c5bf33bf0b498f879c110bdb",
+    "prototype/src/mcp.mjs": "881d66ceece558cff0b0d7c6e0bbee69a25c553eb352da3143c055287bc3f57b",
+    "prototype/src/network-freeze.mjs": "7969ac0a0e1dc35c3bb6d075e93c9749aa7db7dcdbbac442cb9de9e25f892e93",
+    "prototype/src/pdf-source.py": "3bf55ad81bff7e8c584f165feb388ad2b486148218f4e00c8ce47c2ab3818231",
+    "prototype/src/query-variants.mjs": "f6bf27d2149429e4ea73b9092be67f4ba4647172d8b722ceb975a1d046ce61ce",
+    "prototype/src/receipt-projection.mjs": "2c0a51c363db40a04361aa97cd0fb995c4cdcd44fcdf2010d2cd4d7d2b108023",
+    "prototype/src/source-mcp.mjs": "00f13c76817411e2f977688136c034d1353f79cf1bea680589e64fddb9a5bcb5",
+    "prototype/src/source-quote.mjs": "ab2e3f21de130c559eed98be7fb2c591f2e72095bfde43a7343bf6e8dcc3547e",
+    "prototype/src/source-reader.mjs": "1df7dc8672d54928c6f356cf2fc44b4eb6f578bb0c510ad6c38ae86b52bacc7a"
+  },
+  "runtimeUnchanged": true,
+  "passed": true
+}

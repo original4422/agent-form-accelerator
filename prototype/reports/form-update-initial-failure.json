@@ -1,0 +1,328 @@
+{
+  "date": "2026-09-21T06:41:09.756Z",
+  "scope": "Local controlled protocol fixture; success envelope unconfirmed on live Ashby.",
+  "results": [
+    {
+      "scenario": "success",
+      "passed": false,
+      "complete": true,
+      "elapsedMs": 323.62962500000003,
+      "actual": {
+        "first": "Fictional Place",
+        "second": "Fictional Name",
+        "early": true,
+        "firstEvents": 1,
+        "rendered": true
+      },
+      "accepted": true,
+      "requests": 1,
+      "evidence": [
+        {
+          "group": "",
+          "label": "Location",
+          "expected": "Fictional Place",
+          "actual": "Fictional Place",
+          "status": "verified"
+        },
+        {
+          "group": "",
+          "label": "Name",
+          "expected": "Fictional Name",
+          "actual": "Fictional Name",
+          "status": "verified"
+        }
+      ],
+      "error": "AssertionError [ERR_ASSERTION]: next field was written before the server response/render\n\ntrue !== false\n\n    at file:///Users/original/Project/github/personal_project/agent-form-accelerator/prototype/bench/form-update-check.mjs:39:158"
+    },
+    {
+      "scenario": "delayed",
+      "passed": false,
+      "complete": true,
+      "elapsedMs": 985.2192500000001,
+      "actual": {
+        "first": "Fictional Place",
+        "second": "Fictional Name",
+        "early": true,
+        "firstEvents": 1,
+        "rendered": true
+      },
+      "accepted": true,
+      "requests": 1,
+      "evidence": [
+        {
+          "group": "",
+          "label": "Location",
+          "expected": "Fictional Place",
+          "actual": "Fictional Place",
+          "status": "verified"
+        },
+        {
+          "group": "",
+          "label": "Name",
+          "expected": "Fictional Name",
+          "actual": "Fictional Name",
+          "status": "verified"
+        }
+      ],
+      "error": "AssertionError [ERR_ASSERTION]: next field was written before the server response/render\n\ntrue !== false\n\n    at file:///Users/original/Project/github/personal_project/agent-form-accelerator/prototype/bench/form-update-check.mjs:39:158"
+    },
+    {
+      "scenario": "network-failure",
+      "passed": false,
+      "complete": true,
+      "elapsedMs": 192.46875,
+      "actual": {
+        "first": "Fictional Place",
+        "second": "Fictional Name",
+        "early": true,
+        "firstEvents": 1,
+        "rendered": false
+      },
+      "accepted": false,
+      "requests": 2,
+      "evidence": [
+        {
+          "group": "",
+          "label": "Location",
+          "expected": "Fictional Place",
+          "actual": "Fictional Place",
+          "status": "verified"
+        },
+        {
+          "group": "",
+          "label": "Name",
+          "expected": "Fictional Name",
+          "actual": "Fictional Name",
+          "status": "verified"
+        }
+      ],
+      "error": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n\n2 !== 1\n\n    at file:///Users/original/Project/github/personal_project/agent-form-accelerator/prototype/bench/form-update-check.mjs:38:11"
+    },
+    {
+      "scenario": "http-failure",
+      "passed": false,
+      "complete": true,
+      "elapsedMs": 229.613875,
+      "actual": {
+        "first": "Fictional Place",
+        "second": "Fictional Name",
+        "early": true,
+        "firstEvents": 1,
+        "rendered": false
+      },
+      "accepted": false,
+      "requests": 1,
+      "evidence": [
+        {
+          "group": "",
+          "label": "Location",
+          "expected": "Fictional Place",
+          "actual": "Fictional Place",
+          "status": "verified"
+        },
+        {
+          "group": "",
+          "label": "Name",
+          "expected": "Fictional Name",
+          "actual": "Fictional Name",
+          "status": "verified"
+        }
+      ],
+      "error": "AssertionError [ERR_ASSERTION]: optimistic UI must not count as completed\n\ntrue !== false\n\n    at file:///Users/original/Project/github/personal_project/agent-form-accelerator/prototype/bench/form-update-check.mjs:40:16"
+    },
+    {
+      "scenario": "graphql-failure",
+      "passed": false,
+      "complete": true,
+      "elapsedMs": 233.86645799999997,
+      "actual": {
+        "first": "Fictional Place",
+        "second": "Fictional Name",
+        "early": true,
+        "firstEvents": 1,
+        "rendered": false
+      },
+      "accepted": false,
+      "requests": 1,
+      "evidence": [
+        {
+          "group": "",
+          "label": "Location",
+          "expected": "Fictional Place",
+          "actual": "Fictional Place",
+          "status": "verified"
+        },
+        {
+          "group": "",
+          "label": "Name",
+          "expected": "Fictional Name",
+          "actual": "Fictional Name",
+          "status": "verified"
+        }
+      ],
+      "error": "AssertionError [ERR_ASSERTION]: optimistic UI must not count as completed\n\ntrue !== false\n\n    at file:///Users/original/Project/github/personal_project/agent-form-accelerator/prototype/bench/form-update-check.mjs:40:16"
+    },
+    {
+      "scenario": "unknown-response",
+      "passed": false,
+      "complete": true,
+      "elapsedMs": 229.51062500000035,
+      "actual": {
+        "first": "Fictional Place",
+        "second": "Fictional Name",
+        "early": true,
+        "firstEvents": 1,
+        "rendered": false
+      },
+      "accepted": false,
+      "requests": 1,
+      "evidence": [
+        {
+          "group": "",
+          "label": "Location",
+          "expected": "Fictional Place",
+          "actual": "Fictional Place",
+          "status": "verified"
+        },
+        {
+          "group": "",
+          "label": "Name",
+          "expected": "Fictional Name",
+          "actual": "Fictional Name",
+          "status": "verified"
+        }
+      ],
+      "error": "AssertionError [ERR_ASSERTION]: optimistic UI must not count as completed\n\ntrue !== false\n\n    at file:///Users/original/Project/github/personal_project/agent-form-accelerator/prototype/bench/form-update-check.mjs:40:16"
+    },
+    {
+      "scenario": "form-error",
+      "passed": false,
+      "complete": true,
+      "elapsedMs": 302.2627499999994,
+      "actual": {
+        "first": "Fictional Place",
+        "second": "Fictional Name",
+        "early": true,
+        "firstEvents": 1,
+        "rendered": true
+      },
+      "accepted": false,
+      "requests": 1,
+      "evidence": [
+        {
+          "group": "",
+          "label": "Location",
+          "expected": "Fictional Place",
+          "actual": "Fictional Place",
+          "status": "verified"
+        },
+        {
+          "group": "",
+          "label": "Name",
+          "expected": "Fictional Name",
+          "actual": "Fictional Name",
+          "status": "verified"
+        }
+      ],
+      "error": "AssertionError [ERR_ASSERTION]: optimistic UI must not count as completed\n\ntrue !== false\n\n    at file:///Users/original/Project/github/personal_project/agent-form-accelerator/prototype/bench/form-update-check.mjs:40:16"
+    },
+    {
+      "scenario": "timeout",
+      "passed": false,
+      "complete": false,
+      "reason": "FIELDS_NOT_READY",
+      "elapsedMs": 1076.0269170000001,
+      "actual": {
+        "first": "Fictional Place",
+        "second": "Fictional Name",
+        "early": true,
+        "firstEvents": 1,
+        "rendered": false
+      },
+      "accepted": false,
+      "requests": 1,
+      "evidence": [
+        {
+          "group": "",
+          "label": "Location",
+          "expected": "Fictional Place",
+          "actual": "Fictional Place",
+          "status": "unresolved",
+          "reason": "VALIDATION_PENDING"
+        },
+        {
+          "group": "",
+          "label": "Name",
+          "expected": "Fictional Name",
+          "actual": "Fictional Name",
+          "status": "unresolved",
+          "reason": "VALIDATION_PENDING"
+        }
+      ],
+      "error": "AssertionError [ERR_ASSERTION]: old plan must stop before the next field\n+ actual - expected\n\n+ 'Fictional Name'\n- ''\n\n    at file:///Users/original/Project/github/personal_project/agent-form-accelerator/prototype/bench/form-update-check.mjs:40:91"
+    },
+    {
+      "scenario": "new-field",
+      "passed": false,
+      "complete": true,
+      "elapsedMs": 304.1536669999996,
+      "actual": {
+        "first": "Fictional Place",
+        "second": "Fictional Name",
+        "early": true,
+        "firstEvents": 1,
+        "rendered": true
+      },
+      "accepted": true,
+      "requests": 1,
+      "evidence": [
+        {
+          "group": "",
+          "label": "Location",
+          "expected": "Fictional Place",
+          "actual": "Fictional Place",
+          "status": "verified"
+        },
+        {
+          "group": "",
+          "label": "Name",
+          "expected": "Fictional Name",
+          "actual": "Fictional Name",
+          "status": "verified"
+        }
+      ],
+      "error": "AssertionError [ERR_ASSERTION]: optimistic UI must not count as completed\n\ntrue !== false\n\n    at file:///Users/original/Project/github/personal_project/agent-form-accelerator/prototype/bench/form-update-check.mjs:40:16"
+    },
+    {
+      "scenario": "new-rule",
+      "passed": false,
+      "complete": false,
+      "reason": "FORM_CONTEXT_CHANGED",
+      "elapsedMs": 173.3737919999994,
+      "actual": {
+        "first": "Fictional Place",
+        "second": "Fictional Name",
+        "early": true,
+        "firstEvents": 1,
+        "rendered": true
+      },
+      "accepted": true,
+      "requests": 1,
+      "evidence": [
+        {
+          "group": "",
+          "label": "Location",
+          "status": "unresolved",
+          "reason": "FORM_CONTEXT_CHANGED"
+        },
+        {
+          "group": "",
+          "label": "Name",
+          "status": "unresolved",
+          "reason": "FORM_CONTEXT_CHANGED"
+        }
+      ],
+      "error": "AssertionError [ERR_ASSERTION]: old plan must stop before the next field\n+ actual - expected\n\n+ 'Fictional Name'\n- ''\n\n    at file:///Users/original/Project/github/personal_project/agent-form-accelerator/prototype/bench/form-update-check.mjs:40:91"
+    }
+  ]
+}

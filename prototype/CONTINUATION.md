@@ -1,5 +1,22 @@
 # 持续探索状态（2026-09-21）
 
+
+## 当前接续点：已观察更新门禁实现，真实姓名输入推翻离线六目标的在线解释
+
+- 本轮 progress：生产backend被动跟踪ApiSetFormValue、有界等待、语义变化停止、失败台账保护；11新本地检查+81原有相关检查通过；2真实冻结检查；3真实Codex受控任务通过。目标仍 active，非阻塞；不宣称完整申请或2×，不得据一次调用结题。
+- bench/form-update-tracker.mjs：主frame/同源/api/non-user-graphql?op=ApiSetFormValue、POST且body operationName和mutation前缀双核对。requestfailed→NETWORK_FAILED；完整body后HTTP/JSON/GraphQL/受限FormRender形态/errors检查。只输出固定reason/计数，不输出变量/服务端题目/错误文本，不主动调用写API。成功形态依据query selection构造，真实成功未观察，null/未知保守UNCONFIRMED。
+- backend动作触发已观察更新后，本地1.5s有界等待、不超goal8s，完整body后120msDOM安静窗口，期间同操作新请求继续等；公开field label/group/kind/required/options/context变化返回SERVER_FORM_CHANGED并停止后续动作。无已知请求不新增该等待。失败同document保留，inspect/相同值重复goal不能消掉，导航新document重置；controller关闭dispose listeners。context投影/tool说明传出formUpdate，goal避免失败值进入verified，session清除旧台账。
+- 不是通用网络依赖证明：监听前请求、未知API、任意迟发/迟渲染不覆盖；120ms仍是启发式稳定窗口。只被动等待，不读React内部状态、不用服务器题目直接回答。地点及文件仍unsupported。
+- 关键真实反例：ashby-location-replay-audit现在生产backend检测冻结后的失败；真实六目标ashby-pressed-check旧complete=true断言失败。进一步记录只含公共path和变量键：第一项Name的ApiSetFormValue path=_systemfield_name 即失败，DOM保留Alex Fictional，邮箱/按钮/段落未填。不能假设只有地点依赖服务器。
+- 保存旧DOM成功报告ashby-pressed-check-pre-update.json，以及本轮首次旧断言失败ashby-pressed-update-initial-failure.json；当前ashby-pressed-check脚本改为负例门禁检查，complete=false、6unresolved、coverageverified0、0choiceclick/上传/提交、socket0通过。历史codex-ashby-pressed两次6目标原轨迹不改，只是局部DOM证据，不能再作为线上成功基线；该旧模型脚本的成功断言不适合当前契约，勿直接反复跑。
+- form-update-fixture.mjs + form-update-check.mjs 十场景成功/700ms延迟/连接中断/HTTP503/GraphQL错误/未知结构/表单错误/超时/新字段/新说明全通过，inspect和重复相同值仍不能绕过失败。初版10红保留form-update-initial-failure.json，断网fixture后来改为先发headers再切连接以避免Chromium传输重试干扰。原pressed15/context12/companion11/question8/conditional11/independent14/offline-ready10共81通过；没有跳过真实六目标失败，而修正其断言范围并保留证据。
+- codex-form-update批次1789973395714：同source/prompt，delayed1apply36.441s，2目标正确、工具1.155s；new-field2apply113.161s，首返回SERVER_FORM_CHANGED，第二填姓名，新工作许可缺来源留空并报告；network-failure1apply81.890s，停止且报告失败，不重复写/不轮询。每个change和服务端请求均1，3/3通过，31运行时等指纹测前测后不变。全部功能检查先结束后模型；原始private，公开编号报告和latest保存。只有一实现的不同场景、没有速度基线，不能算提速。
+- 模型后补充第11项primitive-late-failure先红：低层fill第一项写完第二项更新失败仍给第一项verified，上层goal已有保护。新增fill回执统一降级为needs-review，11项再绿。红保留form-update-primitive-initial-failure.json。这是model批次后的2行production补强，未重跑model；31文件一致只指批次内，最终backend hash不同，不要宣称最终代码等同模型时版本。
+- 报告FORM-UPDATES.md、ADR0017、README和历史Ashby报告有明确限定。没有模型APIKey/全局配置/安装Skill改动，没有实际申请写入联网。真实冻结始终保持，不为测试成功放行或伪造mutation。
+- **下一步方向调整**：冻结真实页能发现控件/失败，不能独自完成服务端表单验证。优先在拥有控制权的在线表单上验证完整source→动态题目→serverstate→可审核未提交结果，并做验证等价的Codex对照。避免继续花模型用量重测已知离线失败的Ashby六目标。考虑借用已有React/Radix/ReactSelect fixture组成完整分支任务，保持服务器独立oracle；真实Ashby成功契约尚未知，不要当作已确认去泛化。未来位置适配仍需目录查询结果/选中状态/服务端更新三层契约，不能仅凭input值。
+- 先前可选实际公司/公开URL问题未回答，不重复催问；仍有可独立完成的实验，无阻塞。所有进程结束，无待轮询句柄。本轮并未满足原三实现完整任务2×门槛。
+
+
 ## 当前接续点：地点调查发现必须处理服务器表单更新，尚未实现适配
 
 - 本轮 progress：实际冻结页面输入/选择行为、独立匿名公共地名读请求及精确回放，证据改变下一步优先级。没有生产代码修改、没有Codex新任务或速度测量，完整目标 active，非阻塞。
