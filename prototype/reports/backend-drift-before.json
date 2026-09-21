@@ -1,0 +1,39 @@
+{
+  "date": "2026-09-20T23:58:08.226Z",
+  "results": [
+    {
+      "backend": "extension",
+      "mutation": "label",
+      "passed": true,
+      "complete": false,
+      "reason": "FIELDS_NOT_READY",
+      "actual": ""
+    },
+    {
+      "backend": "extension",
+      "mutation": "group",
+      "passed": true,
+      "complete": false,
+      "reason": "FIELDS_NOT_READY",
+      "actual": ""
+    },
+    {
+      "backend": "playwright",
+      "mutation": "label",
+      "passed": false,
+      "error": "Changed semantic target was selected\n\n'pg' !== ''\n",
+      "complete": false,
+      "reason": "FIELDS_NOT_READY",
+      "actual": "pg"
+    },
+    {
+      "backend": "playwright",
+      "mutation": "group",
+      "passed": false,
+      "error": "Changed semantic target was selected\n\n'pg' !== ''\n",
+      "complete": false,
+      "reason": "FIELDS_NOT_READY",
+      "actual": "pg"
+    }
+  ]
+}

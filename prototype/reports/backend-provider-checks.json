@@ -1,0 +1,35 @@
+{
+  "date": "2026-09-21T00:00:26.779Z",
+  "results": [
+    {
+      "mode": "binding-repeat",
+      "passed": true,
+      "preflight": {
+        "mode": "binding-repeat",
+        "passed": true,
+        "tools": 3,
+        "actualSnapshot": true,
+        "repeatSchema": true
+      },
+      "targets": 10,
+      "elapsedMs": 866.8000001907349,
+      "primitiveCalls": 11,
+      "identicalModelVisibleTools": true
+    },
+    {
+      "mode": "binding-playwright",
+      "passed": true,
+      "preflight": {
+        "mode": "binding-playwright",
+        "passed": true,
+        "tools": 3,
+        "actualSnapshot": true,
+        "repeatSchema": true
+      },
+      "targets": 10,
+      "elapsedMs": 923.988792,
+      "primitiveCalls": 13,
+      "identicalModelVisibleTools": true
+    }
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "date": "2026-09-20T23:52:02.860Z",
+  "results": [
+    {
+      "name": "one goal, no host inspection: plain",
+      "passed": true
+    },
+    {
+      "name": "one goal, no host inspection: dependent",
+      "passed": true
+    },
+    {
+      "name": "one goal, no host inspection: repeat",
+      "passed": true
+    },
+    {
+      "name": "wrong page rejected before any mutation",
+      "passed": true
+    },
+    {
+      "name": "ambiguous exact labels reject before any mutation",
+      "passed": true
+    },
+    {
+      "name": "unknown target retained as unresolved; no heuristic guess",
+      "passed": true
+    },
+    {
+      "name": "same-semantic field replacement recovers without host",
+      "passed": true
+    },
+    {
+      "name": "replacement with changed meaning never receives old value",
+      "passed": true
+    },
+    {
+      "name": "kind change is not silently repaired",
+      "passed": true
+    },
+    {
+      "name": "100 ms delayed rejection does not become successful completion",
+      "passed": true
+    },
+    {
+      "name": "missing expansion stops after one click",
+      "passed": true
+    },
+    {
+      "name": "goals already satisfied do not fire duplicate change events",
+      "passed": true
+    }
+  ]
+}

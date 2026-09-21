@@ -6,6 +6,7 @@
 
 ## 看结果
 
+- [同一任务接口替换动作后端](prototype/reports/BACKEND-SUBSTITUTION.md)：扩展与可复用 Playwright 均一次调用成功；速度接近，不支持自研动作层有倍数优势。
 - [React/Radix 动态表单验证](prototype/reports/FRAMEWORK-VALIDATION.md)：受控状态、自定义下拉、重复组和 700 ms 延迟校验。
 - [官方 Playwright MCP 强基线](prototype/reports/OFFICIAL-BASELINE.md)：相同资料引用与预取机会，保留脚本失败、恢复和补强结果。
 - [未映射文档与上下文预取](prototype/reports/DOCUMENT-BINDINGS.md)：九次 Codex 任务、资料/字段打乱与真实页观察修复。
@@ -41,8 +42,12 @@ node prototype/bench/goal-check.mjs
 node prototype/bench/source-check.mjs
 node prototype/bench/document-check.mjs
 node prototype/bench/framework-check.mjs
+AFA_BACKEND=playwright node prototype/bench/framework-check.mjs
+node prototype/bench/backend-provider-check.mjs
+node prototype/bench/backend-drift-check.mjs
 node prototype/bench/codex-framework.mjs
 AFA_LOCAL_LOOP_HINT=1 AFA_FRAMEWORK_MODES=binding-repeat,playwright-ref node prototype/bench/codex-framework.mjs
+AFA_LOCAL_LOOP_HINT=1 AFA_FRAMEWORK_MODES=binding-repeat,binding-playwright node prototype/bench/codex-framework.mjs
 node prototype/bench/codex-documents.mjs
 node prototype/bench/codex-official.mjs
 node prototype/bench/codex-plans.mjs repeat
@@ -58,6 +63,8 @@ node prototype/bench/diagnose.mjs
 `codex-goals.mjs` 允许目标执行器和脚本都在一次调用里观察、填写及核验，额外调用仅在宿主判断有必要时发生。`codex-sources.mjs` 比较逐项传值、本地 JSON 资料引用，以及脚本直接引用相同资料；已结构化和已映射字段是本实验的前提，不能代表原始简历解析已完成。每轮结果有独立时间戳文件保留。
 
 `diagnose.mjs` 在临时扩展副本中做等待/传输消融并核验延迟错误，没有把删等待的实验变体写入实际运行时。
+
+`binding-playwright` 使用与扩展相同的资料绑定工具、观察器和目标协调器，替换为预先编写的 Playwright 动作后端；它是动作层消融，不是独立竞品或官方 MCP。初次配对两边 6 次均一次调用正确完成，完整中位耗时 24.02 / 27.07 秒。之后增加了弹层期间语义变化的保护；修复版已检查正确性，未重新测 Codex 时延，原计时源码另有归档。
 
 Codex 测试通过官方 `--approve-for-me` 让自动审查器判断本地表单写入；审批仍可能拒绝操作。Claude 测试显式允许本次连接的两个表单工具。宿主测试的所有尝试都保留在报告中。
 

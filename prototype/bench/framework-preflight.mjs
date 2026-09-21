@@ -25,7 +25,8 @@ export async function checkFrameworkProvider({script,env,mode}) {
     assert.equal(metadata.source.entries.length,10);
     assert.equal(metadata.page.fields.filter(f=>f.kind==='combobox').length,3);
     assert.ok(metadata.page.fields.some(f=>f.group==='Education 1'));
-    assert.equal(!!tool.inputSchema.properties.repeatGroups,mode==='binding-repeat');
-    return {mode,passed:true,tools:tools.length,actualSnapshot:true,repeatSchema:mode==='binding-repeat'};
+    const repeatSchema=mode!=='binding-explicit';
+    assert.equal(!!tool.inputSchema.properties.repeatGroups,repeatSchema);
+    return {mode,passed:true,tools:tools.length,actualSnapshot:true,repeatSchema};
   }finally{await client.close();}
 }

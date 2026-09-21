@@ -23,7 +23,7 @@
 - `document-source.mjs`、`document-session.mjs`、`bindings-mcp.mjs`：有限格式 Markdown 片段 ID 与现场字段绑定、源 hash 和旧快照保护、可选启动预取。
 - 前一轮 53 项浏览器/MCP功能检查已通过（原有 12、阶段计划 12、目标 13、来源 8、文档 8）。
 
-## 本轮新增：React/Radix 已完成首轮
+## 前一轮：React/Radix 首轮
 
 - 已锁定 React 19.3.0 / Radix Select 2.3.7 的独立真实组件样本；业务异步由本地模拟，不是招聘厂商克隆或真实网站兼容证明。
 - 旧执行器遗漏三个自定义下拉，还会在 700 ms 邮箱校验前约 170 ms 误报成功。现在处理明确的 button combobox → aria-controls listbox、唯一可用选项、键盘交互、依赖节点替换和 aria-busy/invalid。
@@ -36,19 +36,36 @@
 - 原型本地执行约 0.878 s；约 25 s 的完整耗时主要仍在宿主外层。官方每次输出脚本，原型传来源映射，不能将代码生成/恢复成本归为浏览器引擎慢。
 - 所有本轮宿主进程已结束；没有需要继续轮询的 exec 会话。源码在整个正式配对期间冻结，`source-hashes-framework-measured.json` 中全部 60 个源码/依赖指纹及 bundle 均已核实一致。
 
+## 本轮：动作后端替换完成
+
+- `bindings-server.mjs` 提取共享 MCP 入口，扩展 `bindings-mcp.mjs` 的模型侧行为保留。controls 元数据显式定序，实际 stdio `tools/list` 已断言两套后端全部 schema、说明与初始来源/页面完全相同。
+- `playwright-backend.mjs` 是通用缓存动作后端，没有字段名/来源 ID/答案。复用原观察器（仅 inspect/validate）和 executeGoal，写入使用 Playwright 1.63.0。`playwright-bindings-mcp.mjs` 只连接隔离 localhost 测试浏览器的 CDP。
+- 这是一项动作后端替换实验，不是完全独立竞品，更不是官方 MCP 的新测量。它有意保留共享语义层，检验自研动作本身是否必要。
+- 三组配对 `1789948433822`：扩展 24.02 / 26.06 / 22.70 s（中位 24.02）；Playwright 27.07 / 24.61 / 31.60 s（中位 27.07）。6/6 均一次调用成功，60 个目标全部正确、零提交，无生成脚本或失败恢复。本地中位 0.876 / 0.947 s，输出 token 中位 251 / 256。
+- 功能验证：16 个框架 + 12 个目标 + 8 个文档检查；两个实际 MCP 接入和独立应用状态检查；4 个弹层期间语义变化检查。全部最终通过。
+- 初次 helper 错用验证后的旧 snapshot，已修正并保留初始失败报告。测量之后新增的针对性检查发现：弹层打开时字段标签/分组改变，helper 会先选中再报告失败。已补选择前语义身份保护，并重新跑16项框架、4项变化和2套MCP检查。
+- **时延属于补语义保护之前的 helper。** 原实测版本存于 `reports/source-snapshots/backend-measured/playwright-backend.mjs`；`source-hashes-backends-measured.json` 记录64个源文件及归档映射。修复版不冒充已经重新测过速度；最终代码另存指纹。
+- 本轮所有宿主执行已结束，没有需继续轮询的执行句柄。详见 BACKEND-SUBSTITUTION.md、ADR-0005。
+
 ## 下一轮按证据推进
 
-1. **优先实现已审核的通用 Playwright helper 强基线**：让 Codex 仅生成来源到实际页面的映射，通用 helper 负责明确控件的选择、依赖等待、重复组和最终验证，不包含本 fixture 的标签、顺序或答案。借此隔离“每次写代码”与“自研执行引擎”的成本。先做无模型的功能和元数据预检，通过后才进行小规模配对。不得继续靠失败脚本基线制造大倍数。
-2. 若强 helper 与原型接近，产品应聚焦任务接口、上下文预取、资料引用与错误恢复；优先复用成熟执行层，避免无证据地维护第二套浏览器引擎。
-3. 再增加不同组件实现或真实招聘流程，尤其输入型搜索建议、文件上传、跨页状态；沿用完整资料→语义匹配→填写→应用状态验证，不退回预映射答案隐藏成本。真实申请提交不在授权内。
-4. 早先 SOURCE-REFERENCES.md 的 cached 脚本 23.21 s 仍是必须保留的证据；它与本次不同表单不能直接排名。资料解析仍只支持有限 Markdown，不等同通用简历抽取。
-5. 默认只测 Codex，复用已有登录，不另配模型 API Key。保持目标 active，三种不同实现上的稳定好效果仍未证明。
+1. **增加独立组件实现和真实招聘中的输入型搜索建议**。先读官方组件文档/真实公开页面的只读结构，构造独立组件样本，验证“输入字符串”与“选中合法实体”的区别。沿用未映射原始资料→首次语义匹配→局部执行→独立应用状态验证。不要用更多相同 Radix 测量替代范围扩展。
+2. Playwright 后端已经表明成熟动作能够复用；下一项控件实验可以优先用它。不要为了两个后端功能完全同宽，同时再造一套通用浏览器引擎。旧扩展未支持的新控件应明确保持 unsupported；部署选择仍需实际 activeTab/用户会话体验证据。
+3. 保留共享任务接口、来源引用、上下文预取和有界计划；比较时明确是否共享这些层。若比较共享接口的后端，不能把结果叫独立竞品。如果比较临时生成脚本，必须保留恢复并说明代码生成这个变量。
+4. 仍需至少三种不同实现上的完整效果，以及更贴近真实秋招流程的任务。当前有限 Markdown 不等于通用简历解析，真实招聘页未填写/上传/提交。默认只测 Codex、复用登录、不新增 API Key。
+5. 原完整目标保持 active，没有将“一个后端可以替换”当成完成，也没有用带失败的5倍数字降低成功门槛。
 
 ## 测量规则
 
 所有宿主尝试保留，错误恢复计入时延，独立应用状态 oracle 校验，禁止提交申请。耗时明确分出浏览器启动、CLI启动、模型/工具、资料准备。研究和其他浏览器测试不与宿主计时并行争用本地执行资源。不得修改已安装的 Skill 或全局 MCP 配置。
 
 ## 可复现入口
+
+- `AFA_BACKEND=playwright node prototype/bench/framework-check.mjs`：Playwright 16 项框架检查。
+- 同样可给 `goal-check.mjs` / `document-check.mjs` 设置该变量，分别执行12/8项。
+- `node prototype/bench/backend-provider-check.mjs`：实际工具元数据完全一致及10字段应用状态。
+- `node prototype/bench/backend-drift-check.mjs`：两后端弹层期间标签/分组变更均不选择。
+- `AFA_LOCAL_LOOP_HINT=1 AFA_FRAMEWORK_MODES=binding-repeat,binding-playwright node prototype/bench/codex-framework.mjs`：缓存动作后端配对。
 
 - `node prototype/bench/framework-check.mjs`：16 项真实框架检查。
 - `node prototype/bench/codex-framework.mjs`：显式展开、重复模板、官方脚本三种入口。
@@ -60,4 +77,4 @@
 - `node prototype/bench/codex-official.mjs`：初始官方工具三组轮换。
 - `AFA_BASELINE_HINT=accessible AFA_EVIDENCE_MODE=dom AFA_DOCUMENT_MODES=afa,pw-prefetch node prototype/bench/codex-official.mjs`：验证要求对齐组。
 
-所有宿主尝试都必须保留。source-hashes-documents.json 属于前一轮；本轮使用 source-hashes-framework-measured.json。早期驱动和原始批次另有归档。不要重复消耗同样小样本来追求宣传倍数，下一轮先消除重复生成脚本这个基线混杂因素，再扩展场景。
+所有宿主尝试必须保留。旧轮次的源码指纹对应各自报告/提交，不能要求它们与当前源码相同；本轮 backend 测量清单通过归档保留实测代码。不要重复消耗同样小样本追求宣传倍数；下一轮转向独立组件和实际流程。

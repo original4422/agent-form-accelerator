@@ -1,0 +1,76 @@
+{
+  "date": "2026-09-20T23:59:32.824Z",
+  "backend": "playwright",
+  "framework": "React 19.3.0 + Radix Select 2.3.7",
+  "results": [
+    {
+      "name": "React controlled inputs update actual component state",
+      "passed": true
+    },
+    {
+      "name": "select-only Radix buttons are observed as fields",
+      "passed": true
+    },
+    {
+      "name": "Radix portal options use local keyboard selection and React state",
+      "passed": true
+    },
+    {
+      "name": "same goal waits for a dependent remounted city combobox",
+      "passed": true,
+      "elapsedMs": 488.88445799999977,
+      "primitiveCalls": 8
+    },
+    {
+      "name": "700ms successful validation is awaited without repeated typing",
+      "passed": true,
+      "elapsedMs": 854.9822920000001
+    },
+    {
+      "name": "700ms rejected email cannot be reported as complete",
+      "passed": true,
+      "reason": "VALIDATION_FAILED",
+      "elapsedMs": 734.8367920000001
+    },
+    {
+      "name": "busy field has a bounded timeout rather than false success",
+      "passed": true
+    },
+    {
+      "name": "unknown and disabled options return choices without selecting",
+      "passed": true
+    },
+    {
+      "name": "duplicate option labels stop instead of choosing the first",
+      "passed": true
+    },
+    {
+      "name": "keyboard selection survives mouse pointer mode",
+      "passed": true
+    },
+    {
+      "name": "disabled fieldset descendants are not written",
+      "passed": true
+    },
+    {
+      "name": "editable combobox remains unsupported",
+      "passed": true
+    },
+    {
+      "name": "document expansion refreshes refs before both education bindings",
+      "passed": true
+    },
+    {
+      "name": "source bindings can fill a repeated template in one goal",
+      "passed": true
+    },
+    {
+      "name": "a new repeated field with different kind is not filled",
+      "passed": true
+    },
+    {
+      "name": "unknown template refs and arbitrary add controls fail before expansion",
+      "passed": true
+    }
+  ]
+}
