@@ -1,0 +1,141 @@
+{
+  "events": [
+    {
+      "cdp": "requestWillBeSent",
+      "id": "26820.2",
+      "path": "/favicon.ico"
+    },
+    {
+      "cdp": "loadingFailed",
+      "id": "26820.2",
+      "cancelled": true
+    },
+    {
+      "cdp": "requestWillBeSent",
+      "id": "26820.3",
+      "path": "/test-login"
+    },
+    {
+      "event": "request",
+      "path": "/test-login",
+      "type": "fetch"
+    },
+    {
+      "event": "response",
+      "path": "/test-login",
+      "type": "fetch"
+    },
+    {
+      "cdp": "requestWillBeSent",
+      "id": "362D4E12B797788F5D2CBECE6F8AB75F",
+      "path": "/form"
+    },
+    {
+      "event": "request",
+      "path": "/form",
+      "type": "document"
+    },
+    {
+      "event": "response",
+      "path": "/form",
+      "type": "document"
+    },
+    {
+      "cdp": "requestWillBeSent",
+      "id": "26820.5",
+      "path": "/form.js"
+    },
+    {
+      "event": "request",
+      "path": "/form.js",
+      "type": "script"
+    },
+    {
+      "event": "requestfinished",
+      "path": "/form",
+      "type": "document"
+    },
+    {
+      "finished": "/form",
+      "error": "null"
+    },
+    {
+      "cdp": "loadingFinished",
+      "id": "362D4E12B797788F5D2CBECE6F8AB75F"
+    },
+    {
+      "cdp": "requestWillBeSent",
+      "id": "26820.7",
+      "path": "<non-http>"
+    },
+    {
+      "cdp": "loadingFinished",
+      "id": "26820.7"
+    },
+    {
+      "event": "response",
+      "path": "/form.js",
+      "type": "script"
+    },
+    {
+      "event": "requestfinished",
+      "path": "/form.js",
+      "type": "script"
+    },
+    {
+      "finished": "/form.js",
+      "error": "null"
+    },
+    {
+      "cdp": "loadingFinished",
+      "id": "26820.5"
+    },
+    {
+      "cdp": "requestWillBeSent",
+      "id": "BB717088B449C4522CA6545CEEC88513",
+      "path": "/worker.js"
+    },
+    {
+      "event": "request",
+      "path": "/worker.js",
+      "type": "script"
+    },
+    {
+      "cdp": "requestWillBeSent",
+      "id": "26820.8",
+      "path": "/favicon.ico"
+    },
+    {
+      "cdp": "loadingFailed",
+      "id": "26820.8",
+      "cancelled": true
+    },
+    {
+      "event": "response",
+      "path": "/worker.js",
+      "type": "script"
+    },
+    {
+      "event": "requestfinished",
+      "path": "/worker.js",
+      "type": "script"
+    },
+    {
+      "finished": "/worker.js",
+      "error": "null"
+    }
+  ],
+  "state": {
+    "state": "frozen",
+    "closed": false,
+    "observedUnfinishedRequests": 1,
+    "openSockets": 0,
+    "blockedRequests": 0,
+    "blockedSockets": 0,
+    "openedSockets": 1,
+    "frozen": true,
+    "activeTransportSockets": 0,
+    "openedTunnels": 15,
+    "rejectedConnections": 2
+  }
+}

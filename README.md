@@ -6,6 +6,8 @@
 
 ## 看结果
 
+- [登录后再冻结的诊断入口](prototype/reports/OFFLINE-AFTER-READY.md)：手动登录并加载表单后才开放 Codex；页面 HTTP(S)/WebSocket 断开，临时资料退出删除。24 项本地检查通过，无新的速度测量。
+
 - [中文秋招入口审计](prototype/reports/CHINESE-RECRUITMENT-AUDIT.md)：绿盟科技和 MiniMax 的具体申请页都先要求登录；职位列表读取也可能使用 POST，拦截后会出现误导性空页或“停止招聘”。尚未进入登录后的简历表单，不作填写兼容或速度结论。
 
 - [空结果查询的本地恢复](prototype/reports/QUERY-VARIANTS.md)：两个检索语言互换的组件样本，Codex 从两次调用变为一次，47.04→29.17 秒、48.22→35.36 秒；四次全部正确，实际搜索次数相同。查询变体保持地区条件，不自动放宽或猜选；仍是小样本实验。
@@ -66,6 +68,8 @@ npm run browser -- --url "https://招聘页地址" --source "/绝对路径/资�
 资料格式支持标题、单行“名称：值”和自然段，最多 10 万字符、100 个条目，不支持 PDF/DOCX。页面字段及指定资料会提供给当前 Codex。原型只控制最初打开的标签页；手动导航后让 Codex 调用 `form_context` 刷新，修改资料后重新启动 Codex 连接。在线页面可能在输入时自动保存；本项目的虚构公开页实验均在断网后进行，演示只用 localhost。
 
 这个入口复用 Playwright 后端，已接入条件搜索、重复组和独立分组，默认完整回执。独立分组不能与重复组混用；未知组件仍可能需要手工处理。没有提交、文件上传或跨页导航工具，最终申请由你检查处理。命令仅为当前 Codex 进程添加配置，无需新的模型 API Key。
+
+如需在登录后用虚构资料诊断已加载的表单，加 `--offline-after-ready`：先手动进入最终表单，回终端按 Enter，冻结页面 HTTP(S)/WebSocket 后才打印 Codex 命令，并强制临时 profile。远程搜索和跨页可能不可用；这不是系统级网络沙箱，详见[验证范围](prototype/reports/OFFLINE-AFTER-READY.md)。
 
 接入检查：`node prototype/bench/companion-check.mjs`。真实 Codex 集成检查：`node prototype/bench/codex-companion.mjs`，会使用当前 Codex 账户用量。
 

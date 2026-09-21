@@ -1,0 +1,68 @@
+{
+  "events": [
+    {
+      "event": "request",
+      "path": "/test-login",
+      "type": "fetch"
+    },
+    {
+      "event": "response",
+      "path": "/test-login",
+      "type": "fetch"
+    },
+    {
+      "event": "request",
+      "path": "/form",
+      "type": "document"
+    },
+    {
+      "event": "response",
+      "path": "/form",
+      "type": "document"
+    },
+    {
+      "event": "requestfinished",
+      "path": "/form",
+      "type": "document"
+    },
+    {
+      "event": "request",
+      "path": "/form.js",
+      "type": "script"
+    },
+    {
+      "event": "response",
+      "path": "/form.js",
+      "type": "script"
+    },
+    {
+      "event": "requestfinished",
+      "path": "/form.js",
+      "type": "script"
+    },
+    {
+      "event": "request",
+      "path": "/worker.js",
+      "type": "script"
+    },
+    {
+      "event": "response",
+      "path": "/worker.js",
+      "type": "script"
+    },
+    {
+      "event": "requestfinished",
+      "path": "/worker.js",
+      "type": "script"
+    }
+  ],
+  "state": {
+    "state": "failed",
+    "closed": false,
+    "pendingRequests": 1,
+    "openSockets": 0,
+    "blockedRequests": 0,
+    "blockedSockets": 0,
+    "openedSockets": 1
+  }
+}

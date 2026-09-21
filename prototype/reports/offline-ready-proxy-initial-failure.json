@@ -1,0 +1,49 @@
+{
+  "date": "2026-09-21T04:29:19.930Z",
+  "results": [
+    {
+      "name": "preparation has no connection file and uses a fresh temporary profile",
+      "passed": true
+    },
+    {
+      "name": "manual local login, lazy form script and WebSocket work before freeze",
+      "passed": true
+    },
+    {
+      "name": "freeze closes existing sockets and only then publishes a private MCP connection",
+      "passed": false,
+      "error": "Error: PROXY_CONNECTIONS_REMAIN\n    at file:///Users/original/Project/github/personal_project/agent-form-accelerator/prototype/src/network-freeze.mjs:33:55\n    at runNextTicks (node:internal/process/task_queues:65:5)\n    at process.processImmediate (node:internal/timers:541:9)\n    at async file:///Users/original/Project/github/personal_project/agent-form-accelerator/prototype/src/browser-companion.mjs:46:26\n    at async file:///Users/original/Project/github/personal_project/agent-form-accelerator/prototype/bench/offline-ready-check.mjs:14:106\n    at async check (file:///Users/original/Project/github/personal_project/agent-form-accelerator/prototype/bench/offline-ready-check.mjs:9:34)\n    at async file:///Users/original/Project/github/personal_project/agent-form-accelerator/prototype/bench/offline-ready-check.mjs:14:2"
+    },
+    {
+      "name": "actual MCP fills guarded fields while HTTP, beacon, worker, iframe and new WebSocket writes stay local",
+      "passed": false,
+      "error": "McpError: MCP error -32000: Connection closed\n    at McpError.fromError (file:///Users/original/Project/github/personal_project/agent-form-accelerator/node_modules/@modelcontextprotocol/sdk/dist/esm/types.js:2048:16)\n    at Client._onclose (file:///Users/original/Project/github/personal_project/agent-form-accelerator/node_modules/@modelcontextprotocol/sdk/dist/esm/shared/protocol.js:263:32)\n    at _transport.onclose (file:///Users/original/Project/github/personal_project/agent-form-accelerator/node_modules/@modelcontextprotocol/sdk/dist/esm/shared/protocol.js:223:18)\n    at ChildProcess.<anonymous> (file:///Users/original/Project/github/personal_project/agent-form-accelerator/node_modules/@modelcontextprotocol/sdk/dist/esm/client/stdio.js:85:31)\n    at ChildProcess.emit (node:events:514:20)\n    at maybeClose (node:internal/child_process:1125:16)\n    at ChildProcess._handle.onexit (node:internal/child_process:305:5)"
+    },
+    {
+      "name": "offline browser storage and session are removed on close",
+      "passed": false,
+      "error": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n+ actual - expected\n\n+ null\n- 'must-be-deleted'\n\n    at file:///Users/original/Project/github/personal_project/agent-form-accelerator/prototype/bench/offline-ready-check.mjs:22:142\n    at async check (file:///Users/original/Project/github/personal_project/agent-form-accelerator/prototype/bench/offline-ready-check.mjs:9:34)\n    at async file:///Users/original/Project/github/personal_project/agent-form-accelerator/prototype/bench/offline-ready-check.mjs:22:2"
+    },
+    {
+      "name": "unsettled pre-freeze request never opens Codex prematurely",
+      "passed": false,
+      "error": "Error: PROXY_CONNECTIONS_REMAIN\n    at file:///Users/original/Project/github/personal_project/agent-form-accelerator/prototype/src/network-freeze.mjs:33:55\n    at runNextTicks (node:internal/process/task_queues:65:5)\n    at process.processImmediate (node:internal/timers:541:9)\n    at async file:///Users/original/Project/github/personal_project/agent-form-accelerator/prototype/src/browser-companion.mjs:46:26\n    at async file:///Users/original/Project/github/personal_project/agent-form-accelerator/prototype/bench/offline-ready-check.mjs:23:238\n    at async check (file:///Users/original/Project/github/personal_project/agent-form-accelerator/prototype/bench/offline-ready-check.mjs:9:34)\n    at async file:///Users/original/Project/github/personal_project/agent-form-accelerator/prototype/bench/offline-ready-check.mjs:23:2"
+    },
+    {
+      "name": "closing the selected page while preparing leaves no connection or profile",
+      "passed": true
+    },
+    {
+      "name": "offline CLI enter honors readiness and cleans up",
+      "passed": true
+    },
+    {
+      "name": "offline CLI eof honors readiness and cleans up",
+      "passed": true
+    },
+    {
+      "name": "offline CLI interrupt honors readiness and cleans up",
+      "passed": true
+    }
+  ]
+}

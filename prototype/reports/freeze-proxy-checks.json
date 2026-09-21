@@ -1,0 +1,17 @@
+{
+  "date": "2026-09-21T04:30:29.557Z",
+  "results": [
+    {
+      "name": "fragmented SOCKS handshake and opaque TCP forwarding",
+      "passed": true
+    },
+    {
+      "name": "TLS remains end-to-end with certificate verification",
+      "passed": true
+    },
+    {
+      "name": "freeze closes an active TLS stream and cannot reopen tunnels",
+      "passed": true
+    }
+  ]
+}

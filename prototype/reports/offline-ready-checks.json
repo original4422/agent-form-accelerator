@@ -1,0 +1,45 @@
+{
+  "date": "2026-09-21T04:30:47.371Z",
+  "results": [
+    {
+      "name": "preparation has no connection file and uses a fresh temporary profile",
+      "passed": true
+    },
+    {
+      "name": "manual local login, lazy form script and WebSocket work before freeze",
+      "passed": true
+    },
+    {
+      "name": "freeze closes existing sockets and only then publishes a private MCP connection",
+      "passed": true
+    },
+    {
+      "name": "actual MCP fills guarded fields while HTTP, beacon, worker, iframe and new WebSocket writes stay local",
+      "passed": true
+    },
+    {
+      "name": "offline browser storage and session are removed on close",
+      "passed": true
+    },
+    {
+      "name": "unsettled pre-freeze request never opens Codex prematurely",
+      "passed": true
+    },
+    {
+      "name": "closing the selected page while preparing leaves no connection or profile",
+      "passed": true
+    },
+    {
+      "name": "offline CLI enter honors readiness and cleans up",
+      "passed": true
+    },
+    {
+      "name": "offline CLI eof honors readiness and cleans up",
+      "passed": true
+    },
+    {
+      "name": "offline CLI interrupt honors readiness and cleans up",
+      "passed": true
+    }
+  ]
+}
