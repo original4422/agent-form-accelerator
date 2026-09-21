@@ -6,6 +6,8 @@
 
 ## 看结果
 
+- [中文秋招入口审计](prototype/reports/CHINESE-RECRUITMENT-AUDIT.md)：绿盟科技和 MiniMax 的具体申请页都先要求登录；职位列表读取也可能使用 POST，拦截后会出现误导性空页或“停止招聘”。尚未进入登录后的简历表单，不作填写兼容或速度结论。
+
 - [空结果查询的本地恢复](prototype/reports/QUERY-VARIANTS.md)：两个检索语言互换的组件样本，Codex 从两次调用变为一次，47.04→29.17 秒、48.22→35.36 秒；四次全部正确，实际搜索次数相同。查询变体保持地区条件，不自动放宽或猜选；仍是小样本实验。
 
 - [独立浏览器试用入口](prototype/reports/BROWSER-COMPANION.md)：已有条件搜索、重复组和回读检查接入临时 Codex 会话；11 项检查通过，真实 Codex 本地任务两次调用完成 10 个目标。单次集成结果不作速度对照。

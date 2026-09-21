@@ -1,0 +1,859 @@
+{
+  "date": "2026-09-21T04:05:57.437Z",
+  "scope": "Read-only browser loads in fresh unauthenticated contexts, GET/HEAD plus explicitly observed same-origin public job/config lookup POSTs; all other writes, WebSockets and service workers blocked. No typing/click/upload/submit. Initial blocked-read attempts retained separately.",
+  "rows": [
+    {
+      "site": "moka-nsfocus",
+      "url": "https://app.mokahr.com/campus_apply/nsfocus/29118#/jobs?zhineng%5B0%5D=51908",
+      "finalUrl": "https://app.mokahr.com/campus_apply/nsfocus/29118#/jobs?zhineng%5B0%5D=51908",
+      "structure": {
+        "title": "绿盟科技2027校园招聘",
+        "links": [
+          {
+            "text": "京公网安备 11010802024479号",
+            "href": "http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11010802024479"
+          },
+          {
+            "text": "京ICP备15060035号-3",
+            "href": "https://beian.miit.gov.cn/"
+          }
+        ],
+        "buttons": [
+          "",
+          "登录",
+          "清除",
+          "分享"
+        ],
+        "signals": {
+          "loginVisible": true,
+          "applyVisible": false,
+          "years": []
+        },
+        "candidates": [
+          {
+            "tag": "DIV",
+            "class": "jobs-list-WmE84RgZxp normal-eVfpQ9teXJ",
+            "text": "在招职位\n分享\n暂无匹配职位",
+            "role": null
+          },
+          {
+            "tag": "DIV",
+            "class": "jobs-AkItzswt6b",
+            "text": "暂无匹配职位",
+            "role": null
+          }
+        ],
+        "iframes": []
+      },
+      "fields": [
+        {
+          "label": "输入职位关键字",
+          "kind": "text",
+          "supported": true,
+          "group": ""
+        },
+        {
+          "label": "输入职位关键字",
+          "kind": "text",
+          "supported": true,
+          "group": ""
+        },
+        {
+          "label": "职位搜索",
+          "kind": "text",
+          "supported": true,
+          "group": ""
+        },
+        {
+          "label": "搜索地点关键词",
+          "kind": "text",
+          "supported": true,
+          "group": ""
+        },
+        {
+          "label": "北京市 北京市",
+          "kind": "checkbox",
+          "supported": true,
+          "group": ""
+        },
+        {
+          "label": "西安市 西安市",
+          "kind": "checkbox",
+          "supported": true,
+          "group": ""
+        },
+        {
+          "label": "武汉市 武汉市",
+          "kind": "checkbox",
+          "supported": true,
+          "group": ""
+        },
+        {
+          "label": "上海市 上海市",
+          "kind": "checkbox",
+          "supported": true,
+          "group": ""
+        },
+        {
+          "label": "南京市 南京市",
+          "kind": "checkbox",
+          "supported": true,
+          "group": ""
+        },
+        {
+          "label": "郑州市 郑州市",
+          "kind": "checkbox",
+          "supported": true,
+          "group": ""
+        },
+        {
+          "label": "成都市 成都市",
+          "kind": "checkbox",
+          "supported": true,
+          "group": ""
+        },
+        {
+          "label": "深圳市 深圳市",
+          "kind": "checkbox",
+          "supported": true,
+          "group": ""
+        },
+        {
+          "label": "广州市 广州市",
+          "kind": "checkbox",
+          "supported": true,
+          "group": ""
+        },
+        {
+          "label": "四川 四川",
+          "kind": "checkbox",
+          "supported": true,
+          "group": ""
+        },
+        {
+          "label": "贵阳市 贵阳市",
+          "kind": "checkbox",
+          "supported": true,
+          "group": ""
+        },
+        {
+          "label": "长春市 长春市",
+          "kind": "checkbox",
+          "supported": true,
+          "group": ""
+        },
+        {
+          "label": "银川市 银川市",
+          "kind": "checkbox",
+          "supported": true,
+          "group": ""
+        },
+        {
+          "label": "南昌市 南昌市",
+          "kind": "checkbox",
+          "supported": true,
+          "group": ""
+        },
+        {
+          "label": "石家庄市 石家庄市",
+          "kind": "checkbox",
+          "supported": true,
+          "group": ""
+        },
+        {
+          "label": "合肥市 合肥市",
+          "kind": "checkbox",
+          "supported": true,
+          "group": ""
+        },
+        {
+          "label": "海口市 海口市",
+          "kind": "checkbox",
+          "supported": true,
+          "group": ""
+        },
+        {
+          "label": "乌鲁木齐市 乌鲁木齐市",
+          "kind": "checkbox",
+          "supported": true,
+          "group": ""
+        },
+        {
+          "label": "哈尔滨市 哈尔滨市",
+          "kind": "checkbox",
+          "supported": true,
+          "group": ""
+        },
+        {
+          "label": "沈阳市 沈阳市",
+          "kind": "checkbox",
+          "supported": true,
+          "group": ""
+        },
+        {
+          "label": "杭州市 杭州市",
+          "kind": "checkbox",
+          "supported": true,
+          "group": ""
+        },
+        {
+          "label": "拉萨市 拉萨市",
+          "kind": "checkbox",
+          "supported": true,
+          "group": ""
+        },
+        {
+          "label": "呼和浩特市 呼和浩特市",
+          "kind": "checkbox",
+          "supported": true,
+          "group": ""
+        },
+        {
+          "label": "重庆市 重庆市",
+          "kind": "checkbox",
+          "supported": true,
+          "group": ""
+        },
+        {
+          "label": "福州市 福州市",
+          "kind": "checkbox",
+          "supported": true,
+          "group": ""
+        },
+        {
+          "label": "兰州市 兰州市",
+          "kind": "checkbox",
+          "supported": true,
+          "group": ""
+        },
+        {
+          "label": "西宁市 西宁市",
+          "kind": "checkbox",
+          "supported": true,
+          "group": ""
+        },
+        {
+          "label": "昆明市 昆明市",
+          "kind": "checkbox",
+          "supported": true,
+          "group": ""
+        },
+        {
+          "label": "长沙市 长沙市",
+          "kind": "checkbox",
+          "supported": true,
+          "group": ""
+        },
+        {
+          "label": "天津市 天津市",
+          "kind": "checkbox",
+          "supported": true,
+          "group": ""
+        },
+        {
+          "label": "南宁市 南宁市",
+          "kind": "checkbox",
+          "supported": true,
+          "group": ""
+        },
+        {
+          "label": "济南市 济南市",
+          "kind": "checkbox",
+          "supported": true,
+          "group": ""
+        },
+        {
+          "label": "其他 其他",
+          "kind": "checkbox",
+          "supported": true,
+          "group": ""
+        },
+        {
+          "label": "研发类",
+          "kind": "text",
+          "supported": true,
+          "group": ""
+        }
+      ],
+      "blocked": [
+        {
+          "method": "POST",
+          "host": "sentry-fe.mokahr.com",
+          "path": "/api/98/envelope/"
+        },
+        {
+          "method": "POST",
+          "host": "app.mokahr.com",
+          "path": "/api/outer/ats-apply/store/filters",
+          "bodyKeys": [
+            "orgId",
+            "siteId",
+            "locale"
+          ]
+        },
+        {
+          "method": "POST",
+          "host": "app.mokahr.com",
+          "path": "/api/outer/ats-apply/website/jobs/v2",
+          "bodyKeys": [
+            "orgId",
+            "siteId",
+            "limit",
+            "offset",
+            "needStat",
+            "jobIdTopList",
+            "zhinengIds",
+            "customFields",
+            "site",
+            "locale"
+          ]
+        },
+        {
+          "method": "POST",
+          "host": "sentry-fe.mokahr.com",
+          "path": "/api/98/envelope/"
+        },
+        {
+          "method": "POST",
+          "host": "app.mokahr.com",
+          "path": "/api/outer/ats-apply/store/filters",
+          "bodyKeys": [
+            "orgId",
+            "siteId",
+            "locale"
+          ]
+        },
+        {
+          "method": "POST",
+          "host": "app.mokahr.com",
+          "path": "/api/outer/ats-apply/website/jobs/v2",
+          "bodyKeys": [
+            "orgId",
+            "siteId",
+            "limit",
+            "offset",
+            "needStat",
+            "jobIdTopList",
+            "zhinengIds",
+            "customFields",
+            "site",
+            "locale"
+          ]
+        },
+        {
+          "method": "POST",
+          "host": "app.mokahr.com",
+          "path": "/api/outer/ats-apply/store/filters",
+          "bodyKeys": [
+            "orgId",
+            "siteId",
+            "locale"
+          ]
+        },
+        {
+          "method": "POST",
+          "host": "app.mokahr.com",
+          "path": "/api/outer/ats-apply/website/jobs/v2",
+          "bodyKeys": [
+            "orgId",
+            "siteId",
+            "limit",
+            "offset",
+            "needStat",
+            "jobIdTopList",
+            "zhinengIds",
+            "customFields",
+            "site",
+            "locale"
+          ]
+        },
+        {
+          "method": "POST",
+          "host": "app.mokahr.com",
+          "path": "/api/outer/ats-apply/store/filters",
+          "bodyKeys": [
+            "orgId",
+            "siteId",
+            "locale"
+          ]
+        },
+        {
+          "method": "POST",
+          "host": "app.mokahr.com",
+          "path": "/api/outer/ats-apply/website/jobs/v2",
+          "bodyKeys": [
+            "orgId",
+            "siteId",
+            "limit",
+            "offset",
+            "needStat",
+            "jobIdTopList",
+            "zhinengIds",
+            "customFields",
+            "site",
+            "locale"
+          ]
+        }
+      ],
+      "allowedPostReads": [
+        {
+          "method": "POST",
+          "host": "app.mokahr.com",
+          "path": "/api/outer/ats-jc-apply/website/feature-switches",
+          "bodyKeys": [
+            "orgId"
+          ]
+        },
+        {
+          "method": "POST",
+          "host": "app.mokahr.com",
+          "path": "/api/outer/ats-apply/privacy-policy/get",
+          "bodyKeys": [
+            "orgId",
+            "scope",
+            "locale",
+            "businessId"
+          ]
+        },
+        {
+          "method": "POST",
+          "host": "app.mokahr.com",
+          "path": "/api/outer/ats-apply/website/group-by-job",
+          "bodyKeys": [
+            "orgId",
+            "siteId",
+            "locale"
+          ]
+        },
+        {
+          "method": "POST",
+          "host": "app.mokahr.com",
+          "path": "/api/outer/ats-apply/website/jobs/departments/flat",
+          "bodyKeys": [
+            "orgId",
+            "siteId",
+            "locale"
+          ]
+        },
+        {
+          "method": "POST",
+          "host": "app.mokahr.com",
+          "path": "/api/outer/ats-apply/website/jobs/departments/structure",
+          "bodyKeys": [
+            "orgId",
+            "siteId",
+            "locale"
+          ]
+        },
+        {
+          "method": "POST",
+          "host": "app.mokahr.com",
+          "path": "/api/outer/ats-apply/website/listCountryCallingCodes",
+          "bodyKeys": [
+            "orgId"
+          ]
+        },
+        {
+          "method": "POST",
+          "host": "app.mokahr.com",
+          "path": "/api/outer/ats-apply/privacy-policy/get",
+          "bodyKeys": [
+            "orgId",
+            "scope",
+            "locale",
+            "businessId"
+          ]
+        }
+      ]
+    },
+    {
+      "site": "feishu-minimax",
+      "url": "https://vrfi1sk8a0.jobs.feishu.cn/379481/?project=7495675705720965415",
+      "finalUrl": "https://vrfi1sk8a0.jobs.feishu.cn/379481/?project=7495675705720965415",
+      "structure": {
+        "title": "加入MiniMax",
+        "links": [
+          {
+            "text": "MiniMax校园招聘",
+            "href": "https://vrfi1sk8a0.jobs.feishu.cn/379481/"
+          },
+          {
+            "text": "MiniMax社招",
+            "href": "https://vrfi1sk8a0.jobs.feishu.cn/index/"
+          },
+          {
+            "text": "登录",
+            "href": "https://vrfi1sk8a0.jobs.feishu.cn/379481/login"
+          },
+          {
+            "text": "大模型算法工程师-预训练-2027届校招",
+            "href": "https://vrfi1sk8a0.jobs.feishu.cn/379481/position/7681599148466571566/detail"
+          },
+          {
+            "text": "大模型算法工程师-2028届实习",
+            "href": "https://vrfi1sk8a0.jobs.feishu.cn/379481/position/7674980747073095986/detail"
+          },
+          {
+            "text": "AI Talent Partner（招聘与运营）",
+            "href": "https://vrfi1sk8a0.jobs.feishu.cn/379481/position/7670898993803970825/detail"
+          },
+          {
+            "text": "存储平台研发工程师-2027 届",
+            "href": "https://vrfi1sk8a0.jobs.feishu.cn/379481/position/7670838753011550507/detail"
+          },
+          {
+            "text": "资源调度研发工程师-2027届",
+            "href": "https://vrfi1sk8a0.jobs.feishu.cn/379481/position/7662380007045761343/detail"
+          },
+          {
+            "text": "可观测平台研发工程师-2027届",
+            "href": "https://vrfi1sk8a0.jobs.feishu.cn/379481/position/7662376183711222058/detail"
+          },
+          {
+            "text": "K8S 研发工程师-2027届",
+            "href": "https://vrfi1sk8a0.jobs.feishu.cn/379481/position/7662375990618556691/detail"
+          },
+          {
+            "text": "DBA 数据库工程师-2027届",
+            "href": "https://vrfi1sk8a0.jobs.feishu.cn/379481/position/7662375990605908265/detail"
+          },
+          {
+            "text": "云原生 DevOps 研发工程师-2027届",
+            "href": "https://vrfi1sk8a0.jobs.feishu.cn/379481/position/7662375475701188905/detail"
+          },
+          {
+            "text": "系统研发工程师- AI infra-2027届",
+            "href": "https://vrfi1sk8a0.jobs.feishu.cn/379481/position/7659321008591259946/detail"
+          }
+        ],
+        "buttons": [
+          "搜索"
+        ],
+        "signals": {
+          "loginVisible": true,
+          "applyVisible": false,
+          "years": [
+            "2028届",
+            "2027届"
+          ]
+        },
+        "candidates": [
+          {
+            "tag": "DIV",
+            "class": "position-main-info-container",
+            "text": "大模型算法工程师-预训练-2027届校招",
+            "role": null
+          },
+          {
+            "tag": "DIV",
+            "class": "title__fca8c0 positionItem-title sofiaBold",
+            "text": "大模型算法工程师-预训练-2027届校招",
+            "role": null
+          },
+          {
+            "tag": "SPAN",
+            "class": "positionItem-title-text",
+            "text": "大模型算法工程师-预训练-2027届校招",
+            "role": null
+          },
+          {
+            "tag": "DIV",
+            "class": "subTitle__fca8c0 positionItem-subTitle",
+            "text": "北京、上海校招正式研发 - 算法2027届校园招聘",
+            "role": null
+          },
+          {
+            "tag": "DIV",
+            "class": "position-main-info-container",
+            "text": "大模型算法工程师-2028届实习",
+            "role": null
+          },
+          {
+            "tag": "DIV",
+            "class": "title__fca8c0 positionItem-title sofiaBold",
+            "text": "大模型算法工程师-2028届实习",
+            "role": null
+          },
+          {
+            "tag": "SPAN",
+            "class": "positionItem-title-text",
+            "text": "大模型算法工程师-2028届实习",
+            "role": null
+          },
+          {
+            "tag": "DIV",
+            "class": "subTitle__fca8c0 positionItem-subTitle",
+            "text": "北京、上海校招实习研发 - 算法2027届校园招聘",
+            "role": null
+          },
+          {
+            "tag": "DIV",
+            "class": "position-main-info-container",
+            "text": "AI Talent Partner（招聘与运营）",
+            "role": null
+          },
+          {
+            "tag": "DIV",
+            "class": "title__fca8c0 positionItem-title sofiaBold",
+            "text": "AI Talent Partner（招聘与运营）",
+            "role": null
+          },
+          {
+            "tag": "SPAN",
+            "class": "positionItem-title-text",
+            "text": "AI Talent Partner（招聘与运营）",
+            "role": null
+          },
+          {
+            "tag": "DIV",
+            "class": "subTitle__fca8c0 positionItem-subTitle",
+            "text": "上海校招正式互联网 / 电子 / 网游2027届校园招聘",
+            "role": null
+          },
+          {
+            "tag": "DIV",
+            "class": "position-main-info-container",
+            "text": "存储平台研发工程师-2027 届",
+            "role": null
+          },
+          {
+            "tag": "DIV",
+            "class": "title__fca8c0 positionItem-title sofiaBold",
+            "text": "存储平台研发工程师-2027 届",
+            "role": null
+          },
+          {
+            "tag": "SPAN",
+            "class": "positionItem-title-text",
+            "text": "存储平台研发工程师-2027 届",
+            "role": null
+          },
+          {
+            "tag": "DIV",
+            "class": "subTitle__fca8c0 positionItem-subTitle",
+            "text": "北京、上海校招正式研发 - 后端开发2027届校园招聘",
+            "role": null
+          },
+          {
+            "tag": "DIV",
+            "class": "position-main-info-container",
+            "text": "资源调度研发工程师-2027届",
+            "role": null
+          },
+          {
+            "tag": "DIV",
+            "class": "title__fca8c0 positionItem-title sofiaBold",
+            "text": "资源调度研发工程师-2027届",
+            "role": null
+          },
+          {
+            "tag": "SPAN",
+            "class": "positionItem-title-text",
+            "text": "资源调度研发工程师-2027届",
+            "role": null
+          },
+          {
+            "tag": "DIV",
+            "class": "subTitle__fca8c0 positionItem-subTitle",
+            "text": "北京、上海校招正式研发 - 后端开发2027届校园招聘",
+            "role": null
+          },
+          {
+            "tag": "DIV",
+            "class": "position-main-info-container",
+            "text": "可观测平台研发工程师-2027届",
+            "role": null
+          },
+          {
+            "tag": "DIV",
+            "class": "title__fca8c0 positionItem-title sofiaBold",
+            "text": "可观测平台研发工程师-2027届",
+            "role": null
+          },
+          {
+            "tag": "SPAN",
+            "class": "positionItem-title-text",
+            "text": "可观测平台研发工程师-2027届",
+            "role": null
+          },
+          {
+            "tag": "DIV",
+            "class": "subTitle__fca8c0 positionItem-subTitle",
+            "text": "北京、上海校招正式研发 - 后端开发2027届校园招聘",
+            "role": null
+          },
+          {
+            "tag": "DIV",
+            "class": "position-main-info-container",
+            "text": "K8S 研发工程师-2027届",
+            "role": null
+          },
+          {
+            "tag": "DIV",
+            "class": "title__fca8c0 positionItem-title sofiaBold",
+            "text": "K8S 研发工程师-2027届",
+            "role": null
+          },
+          {
+            "tag": "SPAN",
+            "class": "positionItem-title-text",
+            "text": "K8S 研发工程师-2027届",
+            "role": null
+          },
+          {
+            "tag": "DIV",
+            "class": "subTitle__fca8c0 positionItem-subTitle",
+            "text": "北京、上海校招正式研发 - 后端开发2027届校园招聘",
+            "role": null
+          },
+          {
+            "tag": "DIV",
+            "class": "position-main-info-container",
+            "text": "DBA 数据库工程师-2027届",
+            "role": null
+          },
+          {
+            "tag": "DIV",
+            "class": "title__fca8c0 positionItem-title sofiaBold",
+            "text": "DBA 数据库工程师-2027届",
+            "role": null
+          },
+          {
+            "tag": "SPAN",
+            "class": "positionItem-title-text",
+            "text": "DBA 数据库工程师-2027届",
+            "role": null
+          },
+          {
+            "tag": "DIV",
+            "class": "subTitle__fca8c0 positionItem-subTitle",
+            "text": "北京、上海校招正式研发 - 后端开发2027届校园招聘",
+            "role": null
+          },
+          {
+            "tag": "DIV",
+            "class": "position-main-info-container",
+            "text": "云原生 DevOps 研发工程师-2027届",
+            "role": null
+          },
+          {
+            "tag": "DIV",
+            "class": "title__fca8c0 positionItem-title sofiaBold",
+            "text": "云原生 DevOps 研发工程师-2027届",
+            "role": null
+          },
+          {
+            "tag": "SPAN",
+            "class": "positionItem-title-text",
+            "text": "云原生 DevOps 研发工程师-2027届",
+            "role": null
+          }
+        ],
+        "iframes": [
+          {
+            "title": "",
+            "src": ""
+          },
+          {
+            "title": "",
+            "src": ""
+          }
+        ]
+      },
+      "fields": [
+        {
+          "label": "搜索职位",
+          "kind": "text",
+          "supported": true,
+          "group": ""
+        },
+        {
+          "label": "",
+          "kind": "unsupported-combobox",
+          "supported": false,
+          "group": ""
+        }
+      ],
+      "blocked": [
+        {
+          "method": "POST",
+          "host": "vcs.snssdk.com",
+          "path": "/vc/setting",
+          "bodyKeys": []
+        },
+        {
+          "method": "POST",
+          "host": "mcs.snssdk.com",
+          "path": "/v1/user/webid",
+          "bodyKeys": [
+            "app_id",
+            "url",
+            "user_agent",
+            "referer",
+            "user_unique_id"
+          ]
+        },
+        {
+          "method": "POST",
+          "host": "vcs.snssdk.com",
+          "path": "/vc/setting",
+          "bodyKeys": []
+        },
+        {
+          "method": "POST",
+          "host": "verify.snssdk.com",
+          "path": "/captcha/reportFrontend",
+          "bodyKeys": [
+            "logs"
+          ]
+        },
+        {
+          "method": "POST",
+          "host": "mcs.snssdk.com",
+          "path": "/v1/list",
+          "bodyKeys": [
+            "0"
+          ]
+        },
+        {
+          "method": "POST",
+          "host": "mcs.snssdk.com",
+          "path": "/v1/list",
+          "bodyKeys": [
+            "0"
+          ]
+        },
+        {
+          "method": "POST",
+          "host": "mon.zijieapi.com",
+          "path": "/monitor_browser/collect/batch/",
+          "bodyKeys": [
+            "ev_type",
+            "list"
+          ]
+        }
+      ],
+      "allowedPostReads": [
+        {
+          "method": "POST",
+          "host": "vrfi1sk8a0.jobs.feishu.cn",
+          "path": "/api/v1/search/job/posts",
+          "bodyKeys": [
+            "keyword",
+            "limit",
+            "offset",
+            "job_category_id_list",
+            "tag_id_list",
+            "location_code_list",
+            "subject_id_list",
+            "recruitment_id_list",
+            "portal_type",
+            "job_function_id_list",
+            "storefront_id_list",
+            "portal_entrance"
+          ]
+        }
+      ]
+    }
+  ]
+}

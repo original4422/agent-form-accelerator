@@ -1,0 +1,142 @@
+{
+  "date": "2026-09-21T04:02:41.853Z",
+  "scope": "Read-only browser loads in fresh unauthenticated contexts, GET/HEAD only, WebSockets/service workers blocked; no typing/click/upload/submit. Blocked POST reads may limit content.",
+  "rows": [
+    {
+      "site": "moka-wesure",
+      "url": "https://app-tc.mokahr.com/campus_apply/wesure/6017",
+      "finalUrl": "https://app-tc.mokahr.com/campus_apply/wesure/6017#/",
+      "structure": {
+        "title": "腾讯微保 - 校园招聘",
+        "links": [
+          {
+            "text": "校招首页",
+            "href": "https://app-tc.mokahr.com/campus_apply/wesure/6017#/?anchorName=default_banner&sourceToken="
+          },
+          {
+            "text": "招聘岗位",
+            "href": "https://app-tc.mokahr.com/campus_apply/wesure/6017#/?anchorName=default_joblist&sourceToken="
+          },
+          {
+            "text": "企业愿景",
+            "href": "https://app-tc.mokahr.com/campus_apply/wesure/6017#/?anchorName=8202673102&sourceToken="
+          },
+          {
+            "text": "发展历程",
+            "href": "https://app-tc.mokahr.com/campus_apply/wesure/6017#/?anchorName=9499875205&sourceToken="
+          },
+          {
+            "text": "公司福利",
+            "href": "https://app-tc.mokahr.com/campus_apply/wesure/6017#/?anchorName=4957187604&sourceToken="
+          },
+          {
+            "text": "走进微保",
+            "href": "https://app-tc.mokahr.com/campus_apply/wesure/6017#/?anchorName=4938046875&sourceToken="
+          },
+          {
+            "text": "社会招聘",
+            "href": "https://app-tc.mokahr.com/apply/wesure"
+          },
+          {
+            "text": "https://app.mokahr.com/m/candidate/applications/deliver-quer",
+            "href": "https://app.mokahr.com/m/candidate/applications/deliver-query/wesure"
+          },
+          {
+            "text": "京公网安备 11010802024479号",
+            "href": "http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11010802024479"
+          },
+          {
+            "text": "京ICP备15060035号-3",
+            "href": "https://beian.miit.gov.cn/"
+          }
+        ],
+        "buttons": [
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        "iframes": [],
+        "signals": {
+          "loginVisible": true,
+          "oldCampusYear2022": true
+        }
+      },
+      "fields": [
+        {
+          "label": "搜索职位",
+          "kind": "text",
+          "supported": true,
+          "group": ""
+        }
+      ],
+      "blocked": [
+        {
+          "method": "POST",
+          "host": "app-tc.mokahr.com",
+          "path": "/api/outer/ats-apply/website/listCountryCallingCodes"
+        },
+        {
+          "method": "POST",
+          "host": "sentry-fe.mokahr.com",
+          "path": "/api/96/store/"
+        }
+      ]
+    },
+    {
+      "site": "feishu-fastlane",
+      "url": "https://fastbase.jobs.feishu.cn/",
+      "finalUrl": "https://fastbase.jobs.feishu.cn/index",
+      "error": "page.goto: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - navigating to \"https://fastbase.jobs.feishu.cn/\", waiting until \"load\"\u001b[22m\n",
+      "blocked": [
+        {
+          "method": "POST",
+          "host": "vcs.snssdk.com",
+          "path": "/vc/setting"
+        },
+        {
+          "method": "POST",
+          "host": "mcs.snssdk.com",
+          "path": "/v1/user/webid"
+        },
+        {
+          "method": "POST",
+          "host": "vcs.snssdk.com",
+          "path": "/vc/setting"
+        },
+        {
+          "method": "POST",
+          "host": "verify.snssdk.com",
+          "path": "/captcha/reportFrontend"
+        },
+        {
+          "method": "POST",
+          "host": "mcs.snssdk.com",
+          "path": "/v1/list"
+        },
+        {
+          "method": "POST",
+          "host": "fastbase.jobs.feishu.cn",
+          "path": "/api/v1/search/job/posts"
+        },
+        {
+          "method": "POST",
+          "host": "mcs.snssdk.com",
+          "path": "/v1/list"
+        },
+        {
+          "method": "POST",
+          "host": "mon.zijieapi.com",
+          "path": "/monitor_browser/collect/batch/"
+        },
+        {
+          "method": "POST",
+          "host": "mon.zijieapi.com",
+          "path": "/monitor_browser/collect/batch/"
+        }
+      ]
+    }
+  ]
+}

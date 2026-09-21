@@ -1,0 +1,367 @@
+{
+  "date": "2026-09-21T04:10:06.920Z",
+  "scope": "Read-only browser loads in fresh unauthenticated contexts, GET/HEAD plus explicitly observed same-origin public job/config lookup POSTs; all other writes, WebSockets and service workers blocked. No typing/upload/submit. Optional observed entry button is clicked only after all network is frozen. Initial blocked-read attempts retained separately.",
+  "rows": [
+    {
+      "site": "moka-nsfocus",
+      "url": "https://app.mokahr.com/campus_apply/nsfocus/29118#/job/16f71a5c-c465-43f7-897c-8812501aef8c/apply",
+      "finalUrl": "https://app.mokahr.com/campus_apply/nsfocus/29118#/job/16f71a5c-c465-43f7-897c-8812501aef8c/apply",
+      "structure": {
+        "title": "绿盟科技2027校园招聘",
+        "links": [
+          {
+            "text": "首页",
+            "href": "https://app.mokahr.com/campus_apply/nsfocus/29118#/"
+          },
+          {
+            "text": "职位列表",
+            "href": "https://app.mokahr.com/campus_apply/nsfocus/29118#/jobs"
+          },
+          {
+            "text": "职位详情",
+            "href": "https://app.mokahr.com/campus_apply/nsfocus/29118#/job/16f71a5c-c465-43f7-897c-8812501aef8c"
+          },
+          {
+            "text": "京公网安备 11010802024479号",
+            "href": "http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11010802024479"
+          },
+          {
+            "text": "京ICP备15060035号-3",
+            "href": "https://beian.miit.gov.cn/"
+          }
+        ],
+        "buttons": [
+          "",
+          "登录",
+          "",
+          "获取验证码",
+          "登录",
+          "微信登录"
+        ],
+        "inputs": [
+          {
+            "tag": "INPUT",
+            "type": "text",
+            "role": null,
+            "class": "op-search-input-jtazc1f_Hx",
+            "placeholder": "输入职位关键字",
+            "ariaLabel": null,
+            "labels": []
+          },
+          {
+            "tag": "INPUT",
+            "type": "text",
+            "role": null,
+            "class": "navbar-search-input-JsaVlauxLX",
+            "placeholder": "输入职位关键字",
+            "ariaLabel": null,
+            "labels": []
+          },
+          {
+            "tag": "INPUT",
+            "type": "text",
+            "role": null,
+            "class": "sd-Input-input-10L0t sd-Input-common-input-1XimE",
+            "placeholder": "请输入邮箱",
+            "ariaLabel": null,
+            "labels": [
+              ""
+            ]
+          },
+          {
+            "tag": "INPUT",
+            "type": "text",
+            "role": null,
+            "class": "sd-Input-input-10L0t sd-Input-common-input-1XimE",
+            "placeholder": "请输入验证码",
+            "ariaLabel": null,
+            "labels": [
+              ""
+            ]
+          }
+        ],
+        "signals": {
+          "loginVisible": true,
+          "applyVisible": false,
+          "years": []
+        },
+        "candidates": [
+          {
+            "tag": "DIV",
+            "class": "job-form__wrapper",
+            "text": "绿盟科技集团股份有限公司",
+            "role": null
+          },
+          {
+            "tag": "DIV",
+            "class": "job-form__title",
+            "text": "绿盟科技集团股份有限公司",
+            "role": null
+          },
+          {
+            "tag": "DIV",
+            "class": "sd-NewTabs-nav-wrapper-2lmsa sd-NewTabs-position-vertical-1YNAF sd-NewTabs-md-2Ohjq",
+            "text": "邮箱登录\n手机号登录",
+            "role": null
+          },
+          {
+            "tag": "DIV",
+            "class": "sd-NewTabs-item-1H2nN  sd-NewTabs-item-md-1PIQi sd-NewTabs-active-item-3Q5Ki sd-NewTabs-active-item-md-2i9fV sd-NewTabs-bottom-1Ytru sd-NewTabs-position-vertical-1YNAF",
+            "text": "邮箱登录",
+            "role": null
+          },
+          {
+            "tag": "DIV",
+            "class": "sd-NewTabs-item-1H2nN sd-NewTabs-item-md-1PIQi sd-NewTabs-bottom-1Ytru sd-NewTabs-position-vertical-1YNAF",
+            "text": "手机号登录",
+            "role": null
+          }
+        ],
+        "iframes": []
+      },
+      "blocked": [
+        {
+          "method": "POST",
+          "host": "sentry-fe.mokahr.com",
+          "path": "/api/98/envelope/"
+        },
+        {
+          "method": "POST",
+          "host": "app.mokahr.com",
+          "path": "/api/outer/ats-candidate/exclusive-features/eeo-dei/candidate/getQuestionDetailList",
+          "bodyKeys": [
+            "orgId",
+            "jobId"
+          ]
+        }
+      ],
+      "allowedPostReads": [
+        {
+          "method": "POST",
+          "host": "app.mokahr.com",
+          "path": "/api/outer/ats-jc-apply/website/feature-switches",
+          "bodyKeys": [
+            "orgId"
+          ]
+        },
+        {
+          "method": "POST",
+          "host": "app.mokahr.com",
+          "path": "/api/outer/ats-apply/privacy-policy/get",
+          "bodyKeys": [
+            "orgId",
+            "scope",
+            "locale",
+            "businessId"
+          ]
+        },
+        {
+          "method": "POST",
+          "host": "app.mokahr.com",
+          "path": "/api/outer/ats-apply/website/group-by-job",
+          "bodyKeys": [
+            "orgId",
+            "siteId",
+            "locale"
+          ]
+        },
+        {
+          "method": "POST",
+          "host": "app.mokahr.com",
+          "path": "/api/outer/ats-apply/website/jobs/departments/flat",
+          "bodyKeys": [
+            "orgId",
+            "siteId",
+            "locale"
+          ]
+        },
+        {
+          "method": "POST",
+          "host": "app.mokahr.com",
+          "path": "/api/outer/ats-apply/website/jobs/departments/structure",
+          "bodyKeys": [
+            "orgId",
+            "siteId",
+            "locale"
+          ]
+        },
+        {
+          "method": "POST",
+          "host": "app.mokahr.com",
+          "path": "/api/outer/ats-apply/website/listCountryCallingCodes",
+          "bodyKeys": [
+            "orgId"
+          ]
+        },
+        {
+          "method": "POST",
+          "host": "app.mokahr.com",
+          "path": "/api/outer/ats-apply/privacy-policy/get",
+          "bodyKeys": [
+            "orgId",
+            "scope",
+            "locale",
+            "businessId"
+          ]
+        },
+        {
+          "method": "POST",
+          "host": "app.mokahr.com",
+          "path": "/api/outer/ats-apply/website/job",
+          "bodyKeys": [
+            "orgId",
+            "jobId",
+            "siteId",
+            "locale"
+          ]
+        }
+      ]
+    },
+    {
+      "site": "feishu-minimax",
+      "url": "https://vrfi1sk8a0.jobs.feishu.cn/379481/resume/7681599148466571566/apply",
+      "finalUrl": "https://vrfi1sk8a0.jobs.feishu.cn/379481/login?redirect_path=%2Fresume%2F7681599148466571566%2Fapply",
+      "structure": {
+        "title": "登录 - 加入MiniMax",
+        "links": [
+          {
+            "text": "MiniMax校园招聘",
+            "href": "https://vrfi1sk8a0.jobs.feishu.cn/379481/"
+          },
+          {
+            "text": "MiniMax社招",
+            "href": "https://vrfi1sk8a0.jobs.feishu.cn/index/"
+          }
+        ],
+        "buttons": [
+          "获取验证码",
+          "登录"
+        ],
+        "inputs": [
+          {
+            "tag": "DIV",
+            "role": "combobox",
+            "class": "atsx-select-selection\n            atsx-select-selection--single",
+            "placeholder": null,
+            "ariaLabel": null,
+            "labels": []
+          },
+          {
+            "tag": "INPUT",
+            "type": "text",
+            "role": null,
+            "class": "atsx-input atsx-input-lg atsx-phone-input",
+            "placeholder": "手机号码",
+            "ariaLabel": null,
+            "labels": []
+          },
+          {
+            "tag": "INPUT",
+            "type": "text",
+            "role": null,
+            "class": "atsx-input atsx-input-lg",
+            "placeholder": "验证码",
+            "ariaLabel": null,
+            "labels": []
+          },
+          {
+            "tag": "INPUT",
+            "type": "checkbox",
+            "role": null,
+            "class": "atsx-checkbox-input",
+            "placeholder": null,
+            "ariaLabel": null,
+            "labels": [
+              ""
+            ]
+          }
+        ],
+        "signals": {
+          "loginVisible": true,
+          "applyVisible": false,
+          "years": []
+        },
+        "candidates": [],
+        "iframes": [
+          {
+            "title": "",
+            "src": ""
+          },
+          {
+            "title": "",
+            "src": ""
+          }
+        ]
+      },
+      "blocked": [
+        {
+          "method": "POST",
+          "host": "vcs.snssdk.com",
+          "path": "/vc/setting",
+          "bodyKeys": []
+        },
+        {
+          "method": "POST",
+          "host": "mcs.snssdk.com",
+          "path": "/v1/user/webid",
+          "bodyKeys": [
+            "app_id",
+            "url",
+            "user_agent",
+            "referer",
+            "user_unique_id"
+          ]
+        },
+        {
+          "method": "POST",
+          "host": "vcs.snssdk.com",
+          "path": "/vc/setting",
+          "bodyKeys": []
+        },
+        {
+          "method": "POST",
+          "host": "verify.snssdk.com",
+          "path": "/captcha/reportFrontend",
+          "bodyKeys": [
+            "logs"
+          ]
+        },
+        {
+          "method": "POST",
+          "host": "mcs.snssdk.com",
+          "path": "/v1/list",
+          "bodyKeys": [
+            "0"
+          ]
+        },
+        {
+          "method": "POST",
+          "host": "mon.zijieapi.com",
+          "path": "/monitor_browser/collect/batch/",
+          "bodyKeys": [
+            "ev_type",
+            "list"
+          ]
+        },
+        {
+          "method": "POST",
+          "host": "mcs.snssdk.com",
+          "path": "/v1/list",
+          "bodyKeys": [
+            "0"
+          ]
+        },
+        {
+          "method": "POST",
+          "host": "mon.zijieapi.com",
+          "path": "/monitor_browser/collect/batch/",
+          "bodyKeys": [
+            "ev_type",
+            "list"
+          ]
+        }
+      ],
+      "allowedPostReads": []
+    }
+  ]
+}

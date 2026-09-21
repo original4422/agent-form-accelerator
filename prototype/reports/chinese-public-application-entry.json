@@ -1,0 +1,219 @@
+{
+  "date": "2026-09-21T04:08:46.109Z",
+  "scope": "Read-only browser loads in fresh unauthenticated contexts, GET/HEAD plus explicitly observed same-origin public job/config lookup POSTs; all other writes, WebSockets and service workers blocked. No typing/upload/submit. Optional observed entry button is clicked only after all network is frozen. Initial blocked-read attempts retained separately.",
+  "rows": [
+    {
+      "site": "moka-nsfocus",
+      "url": "https://app.mokahr.com/campus_apply/nsfocus/29118#/job/16f71a5c-c465-43f7-897c-8812501aef8c",
+      "finalUrl": "https://app.mokahr.com/campus_apply/nsfocus/29118#/job/16f71a5c-c465-43f7-897c-8812501aef8c",
+      "structure": {
+        "title": "绿盟科技2027校园招聘",
+        "links": [
+          {
+            "text": "首页",
+            "href": "https://app.mokahr.com/campus_apply/nsfocus/29118#/"
+          },
+          {
+            "text": "职位列表",
+            "href": "https://app.mokahr.com/campus_apply/nsfocus/29118#/jobs"
+          },
+          {
+            "text": "京公网安备 11010802024479号",
+            "href": "http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11010802024479"
+          },
+          {
+            "text": "京ICP备15060035号-3",
+            "href": "https://beian.miit.gov.cn/"
+          }
+        ],
+        "buttons": [
+          "",
+          "登录",
+          "查看其他职位"
+        ],
+        "signals": {
+          "loginVisible": true,
+          "applyVisible": false,
+          "years": []
+        },
+        "candidates": [
+          {
+            "tag": "DIV",
+            "class": "apply-panel apply-panel--jobs row",
+            "text": "抱歉，该职位已停止招聘，去看看其他机会吧！\n查看其他职位",
+            "role": null
+          }
+        ],
+        "iframes": []
+      },
+      "fields": [
+        {
+          "label": "输入职位关键字",
+          "kind": "text",
+          "supported": true,
+          "group": ""
+        },
+        {
+          "label": "输入职位关键字",
+          "kind": "text",
+          "supported": true,
+          "group": ""
+        }
+      ],
+      "blocked": [
+        {
+          "method": "POST",
+          "host": "sentry-fe.mokahr.com",
+          "path": "/api/98/envelope/"
+        },
+        {
+          "method": "POST",
+          "host": "app.mokahr.com",
+          "path": "/api/outer/ats-apply/website/job",
+          "bodyKeys": [
+            "orgId",
+            "jobId",
+            "siteId",
+            "locale"
+          ]
+        }
+      ],
+      "allowedPostReads": [
+        {
+          "method": "POST",
+          "host": "app.mokahr.com",
+          "path": "/api/outer/ats-jc-apply/website/feature-switches",
+          "bodyKeys": [
+            "orgId"
+          ]
+        },
+        {
+          "method": "POST",
+          "host": "app.mokahr.com",
+          "path": "/api/outer/ats-apply/privacy-policy/get",
+          "bodyKeys": [
+            "orgId",
+            "scope",
+            "locale",
+            "businessId"
+          ]
+        },
+        {
+          "method": "POST",
+          "host": "app.mokahr.com",
+          "path": "/api/outer/ats-apply/website/group-by-job",
+          "bodyKeys": [
+            "orgId",
+            "siteId",
+            "locale"
+          ]
+        },
+        {
+          "method": "POST",
+          "host": "app.mokahr.com",
+          "path": "/api/outer/ats-apply/website/jobs/departments/flat",
+          "bodyKeys": [
+            "orgId",
+            "siteId",
+            "locale"
+          ]
+        },
+        {
+          "method": "POST",
+          "host": "app.mokahr.com",
+          "path": "/api/outer/ats-apply/website/jobs/departments/structure",
+          "bodyKeys": [
+            "orgId",
+            "siteId",
+            "locale"
+          ]
+        },
+        {
+          "method": "POST",
+          "host": "app.mokahr.com",
+          "path": "/api/outer/ats-apply/website/listCountryCallingCodes",
+          "bodyKeys": [
+            "orgId"
+          ]
+        },
+        {
+          "method": "POST",
+          "host": "app.mokahr.com",
+          "path": "/api/outer/ats-apply/privacy-policy/get",
+          "bodyKeys": [
+            "orgId",
+            "scope",
+            "locale",
+            "businessId"
+          ]
+        }
+      ]
+    },
+    {
+      "site": "feishu-minimax",
+      "url": "https://vrfi1sk8a0.jobs.feishu.cn/379481/position/7681599148466571566/detail",
+      "finalUrl": "https://vrfi1sk8a0.jobs.feishu.cn/379481/resume/7681599148466571566/apply",
+      "error": "page.evaluate: Target crashed ",
+      "blocked": [
+        {
+          "method": "POST",
+          "host": "vcs.snssdk.com",
+          "path": "/vc/setting",
+          "bodyKeys": []
+        },
+        {
+          "method": "POST",
+          "host": "mcs.snssdk.com",
+          "path": "/v1/user/webid",
+          "bodyKeys": [
+            "app_id",
+            "url",
+            "user_agent",
+            "referer",
+            "user_unique_id"
+          ]
+        },
+        {
+          "method": "POST",
+          "host": "vcs.snssdk.com",
+          "path": "/vc/setting",
+          "bodyKeys": []
+        },
+        {
+          "method": "POST",
+          "host": "verify.snssdk.com",
+          "path": "/captcha/reportFrontend",
+          "bodyKeys": [
+            "logs"
+          ]
+        },
+        {
+          "method": "POST",
+          "host": "mon.zijieapi.com",
+          "path": "/monitor_browser/collect/batch/",
+          "bodyKeys": [
+            "ev_type",
+            "list"
+          ]
+        },
+        {
+          "method": "POST",
+          "host": "mon.zijieapi.com",
+          "path": "/monitor_browser/collect/batch/",
+          "bodyKeys": [
+            "ev_type",
+            "list"
+          ]
+        },
+        {
+          "method": "POST",
+          "host": "mcs.snssdk.com",
+          "path": "/v1/list",
+          "bodyKeys": [
+            "0"
+          ]
+        }
+      ]
+    }
+  ]
+}

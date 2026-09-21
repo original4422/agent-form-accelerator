@@ -1,0 +1,312 @@
+{
+  "date": "2026-09-21T04:04:44.228Z",
+  "scope": "Read-only browser loads in fresh unauthenticated contexts, GET/HEAD plus explicitly observed same-origin public job/config lookup POSTs; all other writes, WebSockets and service workers blocked. No typing/click/upload/submit. Initial blocked-read attempts retained separately.",
+  "rows": [
+    {
+      "site": "moka-nsfocus",
+      "url": "https://app.mokahr.com/campus_apply/nsfocus/29118",
+      "finalUrl": "https://app.mokahr.com/campus_apply/nsfocus/29118#/",
+      "structure": {
+        "title": "绿盟科技2027校园招聘",
+        "links": [
+          {
+            "text": "安全类",
+            "href": "https://app.mokahr.com/campus_apply/nsfocus/29118#/jobs?zhineng%5B0%5D=115793"
+          },
+          {
+            "text": "销售类",
+            "href": "https://app.mokahr.com/campus_apply/nsfocus/29118#/jobs?zhineng%5B0%5D=54144"
+          },
+          {
+            "text": "售前类",
+            "href": "https://app.mokahr.com/campus_apply/nsfocus/29118#/jobs?zhineng%5B0%5D=111716"
+          },
+          {
+            "text": "研发类",
+            "href": "https://app.mokahr.com/campus_apply/nsfocus/29118#/jobs?zhineng%5B0%5D=51908"
+          },
+          {
+            "text": "研究类",
+            "href": "https://app.mokahr.com/campus_apply/nsfocus/29118#/jobs?zhineng%5B0%5D=67812"
+          },
+          {
+            "text": "技术支持类",
+            "href": "https://app.mokahr.com/campus_apply/nsfocus/29118#/jobs?zhineng%5B0%5D=115792"
+          },
+          {
+            "text": "产品类",
+            "href": "https://app.mokahr.com/campus_apply/nsfocus/29118#/jobs?zhineng%5B0%5D=56223"
+          },
+          {
+            "text": "职能类",
+            "href": "https://app.mokahr.com/campus_apply/nsfocus/29118#/jobs?zhineng%5B0%5D=56225"
+          },
+          {
+            "text": "京公网安备 11010802024479号",
+            "href": "http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11010802024479"
+          },
+          {
+            "text": "京ICP备15060035号-3",
+            "href": "https://beian.miit.gov.cn/"
+          }
+        ],
+        "buttons": [
+          "",
+          "登录"
+        ],
+        "signals": {
+          "loginVisible": true,
+          "applyVisible": false,
+          "years": []
+        },
+        "iframes": []
+      },
+      "fields": [
+        {
+          "label": "输入职位关键字",
+          "kind": "text",
+          "supported": true,
+          "group": ""
+        },
+        {
+          "label": "输入职位关键字",
+          "kind": "text",
+          "supported": true,
+          "group": ""
+        }
+      ],
+      "blocked": [
+        {
+          "method": "POST",
+          "host": "sentry-fe.mokahr.com",
+          "path": "/api/98/envelope/"
+        },
+        {
+          "method": "POST",
+          "host": "sentry-fe.mokahr.com",
+          "path": "/api/98/envelope/"
+        },
+        {
+          "method": "POST",
+          "host": "sentry-fe.mokahr.com",
+          "path": "/api/98/envelope/"
+        },
+        {
+          "method": "POST",
+          "host": "sentry-fe.mokahr.com",
+          "path": "/api/98/envelope/"
+        }
+      ],
+      "allowedPostReads": [
+        {
+          "method": "POST",
+          "host": "app.mokahr.com",
+          "path": "/api/outer/ats-jc-apply/website/feature-switches",
+          "bodyKeys": [
+            "orgId"
+          ]
+        },
+        {
+          "method": "POST",
+          "host": "app.mokahr.com",
+          "path": "/api/outer/ats-apply/privacy-policy/get",
+          "bodyKeys": [
+            "orgId",
+            "scope",
+            "locale",
+            "businessId"
+          ]
+        },
+        {
+          "method": "POST",
+          "host": "app.mokahr.com",
+          "path": "/api/outer/ats-apply/website/group-by-job",
+          "bodyKeys": [
+            "orgId",
+            "siteId",
+            "locale"
+          ]
+        },
+        {
+          "method": "POST",
+          "host": "app.mokahr.com",
+          "path": "/api/outer/ats-apply/website/jobs/departments/flat",
+          "bodyKeys": [
+            "orgId",
+            "siteId",
+            "locale"
+          ]
+        },
+        {
+          "method": "POST",
+          "host": "app.mokahr.com",
+          "path": "/api/outer/ats-apply/website/jobs/departments/structure",
+          "bodyKeys": [
+            "orgId",
+            "siteId",
+            "locale"
+          ]
+        },
+        {
+          "method": "POST",
+          "host": "app.mokahr.com",
+          "path": "/api/outer/ats-apply/website/listCountryCallingCodes",
+          "bodyKeys": [
+            "orgId"
+          ]
+        },
+        {
+          "method": "POST",
+          "host": "app.mokahr.com",
+          "path": "/api/outer/ats-apply/privacy-policy/get",
+          "bodyKeys": [
+            "orgId",
+            "scope",
+            "locale",
+            "businessId"
+          ]
+        },
+        {
+          "method": "POST",
+          "host": "app.mokahr.com",
+          "path": "/api/outer/ats-apply/website/jobs/module",
+          "bodyKeys": [
+            "keyword",
+            "limit",
+            "offset",
+            "departmentIds",
+            "siteId",
+            "orgId",
+            "needGroupType",
+            "moduleId",
+            "jobEnableFields",
+            "enableBrandIcon",
+            "websitePageId",
+            "locale"
+          ]
+        }
+      ]
+    },
+    {
+      "site": "feishu-minimax",
+      "url": "https://vrfi1sk8a0.jobs.feishu.cn/379481/?project=7495675705720965415",
+      "finalUrl": "https://vrfi1sk8a0.jobs.feishu.cn/379481/?project=7495675705720965415",
+      "structure": {
+        "title": "加入MiniMax",
+        "links": [
+          {
+            "text": "MiniMax校园招聘",
+            "href": "https://vrfi1sk8a0.jobs.feishu.cn/379481/"
+          },
+          {
+            "text": "MiniMax社招",
+            "href": "https://vrfi1sk8a0.jobs.feishu.cn/index/"
+          },
+          {
+            "text": "登录",
+            "href": "https://vrfi1sk8a0.jobs.feishu.cn/379481/login"
+          }
+        ],
+        "buttons": [
+          "",
+          "搜索"
+        ],
+        "signals": {
+          "loginVisible": true,
+          "applyVisible": false,
+          "years": [
+            "2028届",
+            "2027届"
+          ]
+        },
+        "iframes": [
+          {
+            "title": "",
+            "src": ""
+          },
+          {
+            "title": "",
+            "src": ""
+          }
+        ]
+      },
+      "fields": [
+        {
+          "label": "搜索职位",
+          "kind": "text",
+          "supported": true,
+          "group": ""
+        },
+        {
+          "label": "",
+          "kind": "unsupported-combobox",
+          "supported": false,
+          "group": ""
+        }
+      ],
+      "blocked": [
+        {
+          "method": "POST",
+          "host": "vcs.snssdk.com",
+          "path": "/vc/setting",
+          "bodyKeys": []
+        },
+        {
+          "method": "POST",
+          "host": "mcs.snssdk.com",
+          "path": "/v1/user/webid",
+          "bodyKeys": [
+            "app_id",
+            "url",
+            "user_agent",
+            "referer",
+            "user_unique_id"
+          ]
+        },
+        {
+          "method": "POST",
+          "host": "vcs.snssdk.com",
+          "path": "/vc/setting",
+          "bodyKeys": []
+        },
+        {
+          "method": "POST",
+          "host": "verify.snssdk.com",
+          "path": "/captcha/reportFrontend",
+          "bodyKeys": [
+            "logs"
+          ]
+        },
+        {
+          "method": "POST",
+          "host": "mcs.snssdk.com",
+          "path": "/v1/list",
+          "bodyKeys": [
+            "0"
+          ]
+        }
+      ],
+      "allowedPostReads": [
+        {
+          "method": "POST",
+          "host": "vrfi1sk8a0.jobs.feishu.cn",
+          "path": "/api/v1/search/job/posts",
+          "bodyKeys": [
+            "keyword",
+            "limit",
+            "offset",
+            "job_category_id_list",
+            "tag_id_list",
+            "location_code_list",
+            "subject_id_list",
+            "recruitment_id_list",
+            "portal_type",
+            "job_function_id_list",
+            "storefront_id_list",
+            "portal_entrance"
+          ]
+        }
+      ]
+    }
+  ]
+}

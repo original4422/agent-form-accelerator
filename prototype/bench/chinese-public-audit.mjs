@@ -1,0 +1,27 @@
+// Public read-only discovery. Fresh unauthenticated contexts, no form input.
+import {chromium} from 'playwright';import {writeFile} from 'node:fs/promises';
+import {executeFormRequest} from '../extension/form-runtime.js';
+const targets=process.env.AFA_AUDIT_TARGETS?JSON.parse(process.env.AFA_AUDIT_TARGETS):[['moka-nsfocus','https://app.mokahr.com/campus_apply/nsfocus/29118'],['feishu-minimax','https://vrfi1sk8a0.jobs.feishu.cn/379481/?project=7495675705720965415']];
+const browser=await chromium.launch({channel:'chromium',headless:true}),rows=[];
+try{
+ for(const [site,url,offlineEntryButton]of targets){
+  let frozen=false;
+  const context=await browser.newContext({serviceWorkers:'block'}),blocked=[],allowedPostReads=[];
+  const readPaths=new Set(site.startsWith('feishu')?['/api/v1/search/job/posts']:['/api/outer/ats-jc-apply/website/feature-switches','/api/outer/ats-apply/privacy-policy/get','/api/outer/ats-apply/website/group-by-job','/api/outer/ats-apply/website/jobs/departments/flat','/api/outer/ats-apply/website/jobs/departments/structure','/api/outer/ats-apply/website/listCountryCallingCodes','/api/outer/ats-apply/website/jobs/module','/api/outer/ats-apply/store/filters','/api/outer/ats-apply/website/jobs/v2','/api/outer/ats-apply/website/job']);
+  await context.routeWebSocket('**/*',ws=>ws.close());
+  await context.route('**/*',r=>{if(frozen)return r.abort('internetdisconnected');if(!['GET','HEAD'].includes(r.request().method())){const u=new URL(r.request().url());let keys;try{keys=Object.keys(JSON.parse(r.request().postData()??'{}'));}catch{}const item={method:r.request().method(),host:u.host,path:u.pathname,bodyKeys:keys};if(r.request().method()==='POST'&&u.origin===new URL(url).origin&&readPaths.has(u.pathname)){allowedPostReads.push(item);return r.continue();}blocked.push(item);return r.abort();}return r.continue();});
+  const page=await context.newPage();
+  try{
+   const ready=page.waitForResponse(r=>r.url().includes(site.startsWith('feishu')?(url.includes('/position/')?'/api/v1/job/posts/':'/api/v1/search/job/posts'):(url.includes('#/job/')?'/website/job':url.includes('#/jobs')?'/website/jobs/v2':'/website/jobs/module'))&&r.status()===200,{timeout:25000}).catch(()=>null);
+   await page.goto(url,{waitUntil:'domcontentloaded',timeout:30000});await page.waitForFunction(()=>document.body.innerText.trim().length>80,null,{timeout:15000});
+   await ready;await page.waitForFunction(()=>document.querySelectorAll('a[href*=job]').length>0,null,{timeout:5000}).catch(()=>{});
+   let entry;
+   if(offlineEntryButton){const before=page.url();await page.getByRole('button',{name:offlineEntryButton,exact:true}).waitFor();frozen=true;await context.setOffline(true);await page.getByRole('button',{name:offlineEntryButton,exact:true}).click({timeout:5000});await page.waitForURL(u=>u.href!==before,{timeout:5000}).catch(()=>{});entry={button:offlineEntryButton,before,after:page.url(),networkFrozen:true};}
+   if(process.env.AFA_AUDIT_FREEZE_BEFORE_INSPECT==='1'){frozen=true;await context.setOffline(true);}
+   const observation=process.env.AFA_AUDIT_INSPECT==='0'?{}:await page.evaluate(executeFormRequest,{op:'inspect'});
+   const structure=await page.evaluate(()=>({title:document.title,links:[...document.querySelectorAll('a[href]')].filter(e=>e.getClientRects().length).map(e=>({text:e.innerText.trim().split('\n')[0].slice(0,60),href:e.href})).filter(e=>e.text).slice(0,40),buttons:[...document.querySelectorAll('button,[role=button]')].filter(e=>e.getClientRects().length).map(e=>e.innerText.trim().slice(0,60)).slice(0,30),inputs:[...document.querySelectorAll('input:not([type=hidden]),textarea,select,[role=combobox]')].filter(e=>e.getClientRects().length).map(e=>({tag:e.tagName,type:e.type,role:e.getAttribute('role'),class:e.className,placeholder:e.getAttribute('placeholder'),ariaLabel:e.getAttribute('aria-label'),labels:[...e.labels??[]].map(l=>l.innerText.trim())})).slice(0,100),signals:{loginVisible:/登录/.test(document.body.innerText),applyVisible:/申请职位|投递简历/.test(document.body.innerText),years:[...new Set(document.body.innerText.match(/20[0-9]{2}届/g)??[])]},candidates:[...document.querySelectorAll('[class*=job],[class*=position],h1,h2,h3')].filter(e=>e.getClientRects().length&&e.innerText?.trim().length>0&&e.innerText.trim().length<90).map(e=>({tag:e.tagName,class:e.className,text:e.innerText.trim(),role:e.getAttribute('role')})).slice(0,35),iframes:[...document.querySelectorAll('iframe')].map(e=>({title:e.title,src:e.src.split('?')[0]}))}));
+   rows.push({site,url,finalUrl:page.url(),entry,networkFrozen:frozen,structure,fields:observation.fields?.map(({label,kind,supported,group})=>({label,kind,supported,group})),blocked,allowedPostReads});console.log(JSON.stringify(rows.at(-1)));
+  }catch(e){rows.push({site,url,finalUrl:page.url(),networkFrozen:frozen,error:e.message,blocked,allowedPostReads});console.log(JSON.stringify(rows.at(-1)));}
+  finally{await context.close();}
+ }
+}finally{await browser.close();await writeFile(process.env.AFA_AUDIT_REPORT??'prototype/reports/chinese-public-audit.json',JSON.stringify({date:new Date().toISOString(),scope:'Read-only browser loads in fresh unauthenticated contexts, GET/HEAD plus explicitly observed same-origin public job/config lookup POSTs; all other writes, WebSockets and service workers blocked. No typing/upload/submit. Optional observed entry button is clicked only after all network is frozen. Initial blocked-read attempts retained separately.',rows},null,2));}
