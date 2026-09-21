@@ -1,0 +1,40 @@
+{
+  "date": "2026-09-21T05:10:24.273Z",
+  "results": [
+    {
+      "name": "fieldset direct question labels distinguish repeated option text",
+      "passed": false,
+      "error": "TypeError: Cannot read properties of undefined (reading 'filter')\n    at file:///Users/original/Project/github/personal_project/agent-form-accelerator/prototype/bench/question-observation-check.mjs:7:169\n    at async check (file:///Users/original/Project/github/personal_project/agent-form-accelerator/prototype/bench/question-observation-check.mjs:4:34)\n    at async file:///Users/original/Project/github/personal_project/agent-form-accelerator/prototype/bench/question-observation-check.mjs:7:2"
+    },
+    {
+      "name": "pressed choices are observed with narrow question context and explicit unsupported status",
+      "passed": false,
+      "error": "TypeError: Cannot read properties of undefined (reading 'filter')\n    at file:///Users/original/Project/github/personal_project/agent-form-accelerator/prototype/bench/question-observation-check.mjs:8:185\n    at async check (file:///Users/original/Project/github/personal_project/agent-form-accelerator/prototype/bench/question-observation-check.mjs:4:34)\n    at async file:///Users/original/Project/github/personal_project/agent-form-accelerator/prototype/bench/question-observation-check.mjs:8:2"
+    },
+    {
+      "name": "unsupported toggle writes cannot click even a submit-default button",
+      "passed": false,
+      "error": "TypeError: Cannot read properties of undefined (reading 'find')\n    at file:///Users/original/Project/github/personal_project/agent-form-accelerator/prototype/bench/question-observation-check.mjs:9:157\n    at async check (file:///Users/original/Project/github/personal_project/agent-form-accelerator/prototype/bench/question-observation-check.mjs:4:34)\n    at async file:///Users/original/Project/github/personal_project/agent-form-accelerator/prototype/bench/question-observation-check.mjs:9:2"
+    },
+    {
+      "name": "native legend and explicit ARIA naming keep precedence over fallback labels",
+      "passed": false,
+      "error": "TypeError: Cannot read properties of undefined (reading 'map')\n    at file:///Users/original/Project/github/personal_project/agent-form-accelerator/prototype/bench/question-observation-check.mjs:10:448\n    at async check (file:///Users/original/Project/github/personal_project/agent-form-accelerator/prototype/bench/question-observation-check.mjs:4:34)\n    at async file:///Users/original/Project/github/personal_project/agent-form-accelerator/prototype/bench/question-observation-check.mjs:10:2"
+    },
+    {
+      "name": "ambiguous or missing question labels have distinct opaque groups, never option labels",
+      "passed": false,
+      "error": "TypeError: Cannot read properties of undefined (reading 'every')\n    at file:///Users/original/Project/github/personal_project/agent-form-accelerator/prototype/bench/question-observation-check.mjs:11:422\n    at async check (file:///Users/original/Project/github/personal_project/agent-form-accelerator/prototype/bench/question-observation-check.mjs:4:34)\n    at async file:///Users/original/Project/github/personal_project/agent-form-accelerator/prototype/bench/question-observation-check.mjs:11:2"
+    },
+    {
+      "name": "added unsupported toggle invalidates an older batch guard",
+      "passed": false,
+      "error": "AssertionError [ERR_ASSERTION]: The input did not match the regular expression /FIELD_CHANGED/. Input:\n\n'crypto.randomUUID is not a function'\n\n    at file:///Users/original/Project/github/personal_project/agent-form-accelerator/prototype/bench/question-observation-check.mjs:12:427\n    at async check (file:///Users/original/Project/github/personal_project/agent-form-accelerator/prototype/bench/question-observation-check.mjs:4:34)\n    at async file:///Users/original/Project/github/personal_project/agent-form-accelerator/prototype/bench/question-observation-check.mjs:12:2"
+    },
+    {
+      "name": "changed fallback question is rejected before native selection",
+      "passed": false,
+      "error": "TypeError: Cannot read properties of undefined (reading 'find')\n    at file:///Users/original/Project/github/personal_project/agent-form-accelerator/prototype/bench/question-observation-check.mjs:13:151\n    at async check (file:///Users/original/Project/github/personal_project/agent-form-accelerator/prototype/bench/question-observation-check.mjs:4:34)\n    at async file:///Users/original/Project/github/personal_project/agent-form-accelerator/prototype/bench/question-observation-check.mjs:13:2"
+    }
+  ]
+}

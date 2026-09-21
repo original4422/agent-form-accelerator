@@ -1,5 +1,16 @@
 # 持续探索状态（2026-09-21）
 
+## 当前接续点：第三种真实系统发现漏题，观察修复完成
+
+- 本轮 progress，没有新模型计时；完整目标仍 active，无阻塞审计。不要继续同一 PDF/alias 样本追倍数，也不要用本次观察修复宣布完整目标完成。
+- 新 third-ats-audit 只读审计 Ashby/SmartRecruiters。Ashby GET-only 初次误拦读取 POST；显式放行两个核对过的公开 GraphQL query 后加载申请页。另一次 form input 等待失败是 div 容器假设，已修复 harness；两种失败保留。SmartRecruiters 遇到反自动化页，没有绕过，未得表单证据。没有任何真实输入、上传、选项点击、登录或提交。
+- 真实 Ashby UK Staff 岗位（系统实现样本，非秋招）原观察37节点→41，支持34不变，原生/ARIA必填3不变。此前四个 aria-pressed 按钮（两道问题）完全遗漏、26个原生问卷选项所属四题 group 全空。runtime 新增唯一直接未关联 label 回退，显式 ARIA/legend 优先，匿名 fieldset 分组隔离；aria-pressed 按钮观察为 unsupported-toggle 并加入变更 guard，不可执行、不假定互斥、排除 add-row。
+- 真实复查四个问卷组与两道 Yes/No 名称恢复。剩余7未支持节点为4按钮+2文件+1地点组合框。Resume 在此页可选，两个文件入口不可都当必填。截图 private/ashby-application-audit.png 已目视检查。
+- **更关键剩余问题**：地点/YesNo 的纯视觉必填未被原生/ARIA计数识别；新增 limitations.requiredness 并核验真实MCP传出。页面还要求“三题只答一题”，当前节点布尔 required 无法表达该区块约束。不得把 visibleRequiredCovered 或某次绑定 complete 当整份申请完成。下一步优先保留问题说明/区块规则及验证真实控件执行，不以少回合替代任务正确性。
+- question-observation 最终8项通过，含 stdio MCP 三个明确虚构偏好正确、4未支持按钮报告、零按钮点击；about:blank 缺crypto的harness错误及随后6红1绿保留。文档guard8+guard16+companion11回归通过，共43。不是新Codex模型任务。报告 ASHBY-QUESTION-OBSERVATION.md，README已链接。
+- 所有进程结束，无待轮询句柄。此前可选公司名/URL问题未回复，不重复询问。真实完整三类任务中位2×门槛仍未达成；尚有可自主完成的问题上下文/完整任务建模工作，非阻塞。
+
+
 ## 当前接续点：companion 变体已接入，负结果定位到工具说明
 
 - 本轮 progress，有接入代码、负对照和后续假设检验；完整目标仍active，无阻塞审计。browser-bindings-mcp读取AFA_QUERY_VARIANTS=1，companionCommand仅在显式开启时转发。默认关闭，不改全局配置/Skill。既有匹配/预算/恢复算法未改。

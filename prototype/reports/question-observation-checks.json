@@ -1,0 +1,37 @@
+{
+  "date": "2026-09-21T05:17:06.661Z",
+  "results": [
+    {
+      "name": "fieldset direct question labels distinguish repeated option text",
+      "passed": true
+    },
+    {
+      "name": "pressed choices are observed with narrow question context and explicit unsupported status",
+      "passed": true
+    },
+    {
+      "name": "unsupported toggle writes cannot click even a submit-default button",
+      "passed": true
+    },
+    {
+      "name": "native legend and explicit ARIA naming keep precedence over fallback labels",
+      "passed": true
+    },
+    {
+      "name": "ambiguous or missing question labels have distinct opaque groups, never option labels",
+      "passed": true
+    },
+    {
+      "name": "added unsupported toggle invalidates an older batch guard",
+      "passed": true
+    },
+    {
+      "name": "real MCP selects same-label preferences in distinct groups and reports omitted toggles",
+      "passed": true
+    },
+    {
+      "name": "changed fallback question is rejected before native selection",
+      "passed": true
+    }
+  ]
+}

@@ -1,0 +1,960 @@
+{
+  "date": "2026-09-21T05:07:13.038Z",
+  "scope": "Read-only public pages in fresh contexts, GET/HEAD and optionally two explicitly observed public Ashby GraphQL read operations; other POST/WS/SW blocked. No typing, upload, authentication or submit.",
+  "rows": [
+    {
+      "site": "ashby-application",
+      "url": "https://jobs.ashbyhq.com/ashby/0020099f-9bb3-4da9-9808-4556564f5301/application",
+      "finalUrl": "https://jobs.ashbyhq.com/ashby/0020099f-9bb3-4da9-9808-4556564f5301/application",
+      "structure": {
+        "title": "Staff Software Engineer, Product Engineering - UK @ Ashby",
+        "headings": [
+          "Staff Software Engineer, Product Engineering - UK",
+          "Location",
+          "Employment Type",
+          "Location Type",
+          "Department",
+          "Compensation",
+          "Autofill from resume",
+          "Basic Info",
+          "Answer 1 of 3 Questions",
+          "Diversity Survey"
+        ],
+        "links": [
+          {
+            "text": "Engineering Levels and Compensation",
+            "href": "https://www.ashbyhq.com/blog/engineering/leveling-and-compensation"
+          },
+          {
+            "text": "Overview",
+            "href": "https://jobs.ashbyhq.com/ashby/0020099f-9bb3-4da9-9808-4556564f5301"
+          },
+          {
+            "text": "Application",
+            "href": "https://jobs.ashbyhq.com/ashby/0020099f-9bb3-4da9-9808-4556564f5301/application"
+          },
+          {
+            "text": "Recruiting Privacy Policy",
+            "href": "https://www.ashbyhq.com/resources/privacy"
+          },
+          {
+            "text": "Learn more.",
+            "href": "https://jobs.ashbyhq.com/ashby/automation-notice"
+          },
+          {
+            "text": "Powered by",
+            "href": "https://www.ashbyhq.com/"
+          },
+          {
+            "text": "Privacy Policy",
+            "href": "https://www.ashbyhq.com/privacy"
+          },
+          {
+            "text": "Security",
+            "href": "https://www.ashbyhq.com/security"
+          },
+          {
+            "text": "Vulnerability Disclosure",
+            "href": "https://www.ashbyhq.com/disclosure"
+          }
+        ],
+        "buttons": [
+          {
+            "text": "Upload file",
+            "type": "submit",
+            "role": null,
+            "pressed": null,
+            "labelledby": null
+          },
+          {
+            "text": "Upload File",
+            "type": "submit",
+            "role": null,
+            "pressed": null,
+            "labelledby": null
+          },
+          {
+            "text": "",
+            "type": "submit",
+            "role": null,
+            "pressed": null,
+            "labelledby": null
+          },
+          {
+            "text": "Yes",
+            "type": "submit",
+            "role": null,
+            "pressed": "false",
+            "labelledby": null
+          },
+          {
+            "text": "No",
+            "type": "submit",
+            "role": null,
+            "pressed": "false",
+            "labelledby": null
+          },
+          {
+            "text": "Yes",
+            "type": "submit",
+            "role": null,
+            "pressed": "false",
+            "labelledby": null
+          },
+          {
+            "text": "No",
+            "type": "submit",
+            "role": null,
+            "pressed": "false",
+            "labelledby": null
+          },
+          {
+            "text": "Submit Application",
+            "type": "submit",
+            "role": null,
+            "pressed": null,
+            "labelledby": null
+          }
+        ],
+        "tabs": [
+          {
+            "text": "Overview",
+            "selected": "false"
+          },
+          {
+            "text": "Application",
+            "selected": "true"
+          }
+        ],
+        "inputs": [
+          {
+            "tag": "INPUT",
+            "type": "file",
+            "role": null,
+            "class": "",
+            "placeholder": null,
+            "ariaLabel": null,
+            "labels": []
+          },
+          {
+            "tag": "INPUT",
+            "type": "text",
+            "role": null,
+            "class": "_input_80epu_28 _input_1e3gg_32 ashby-application-form-input-text",
+            "placeholder": "Type here...",
+            "ariaLabel": null,
+            "labels": [
+              "Name"
+            ]
+          },
+          {
+            "tag": "INPUT",
+            "type": "email",
+            "role": null,
+            "class": "_input_80epu_28 _input_1e3gg_32 ashby-application-form-input-text",
+            "placeholder": "hello@example.com...",
+            "ariaLabel": null,
+            "labels": [
+              "Email"
+            ]
+          },
+          {
+            "tag": "INPUT",
+            "type": "file",
+            "role": null,
+            "class": "",
+            "placeholder": null,
+            "ariaLabel": null,
+            "labels": [
+              "Resume"
+            ]
+          },
+          {
+            "tag": "INPUT",
+            "type": "text",
+            "role": null,
+            "class": "_input_80epu_28 _input_1e3gg_32 ashby-application-form-input-text",
+            "placeholder": "Type here...",
+            "ariaLabel": null,
+            "labels": [
+              "LinkedIn URL"
+            ]
+          },
+          {
+            "tag": "INPUT",
+            "type": "text",
+            "role": null,
+            "class": "_input_80epu_28 _input_1e3gg_32 ashby-application-form-input-text",
+            "placeholder": "Type here...",
+            "ariaLabel": null,
+            "labels": [
+              "GitHub URL"
+            ]
+          },
+          {
+            "tag": "INPUT",
+            "type": "text",
+            "role": "combobox",
+            "class": "_input_d7ago_28 ashby-application-form-input-autocomplete",
+            "placeholder": "Start typing...",
+            "ariaLabel": null,
+            "labels": []
+          },
+          {
+            "tag": "TEXTAREA",
+            "type": "textarea",
+            "role": null,
+            "class": "_input_zf0lr_28 _input_1e3gg_32  ashby-application-form-input-textarea",
+            "placeholder": "Type here...",
+            "ariaLabel": null,
+            "labels": [
+              "Describe a role you were in or a project you led that brought out your absolute best work? What setup or attributes of the role/project enabled that?"
+            ]
+          },
+          {
+            "tag": "TEXTAREA",
+            "type": "textarea",
+            "role": null,
+            "class": "_input_zf0lr_28 _input_1e3gg_32  ashby-application-form-input-textarea",
+            "placeholder": "Type here...",
+            "ariaLabel": null,
+            "labels": [
+              "Describe a choice you made when shipping a product or working on a technical challenge that didn’t come from a product manager or an engineering manager/lead.  How did you advocate for it, and what impact did it have on your end users?"
+            ]
+          },
+          {
+            "tag": "TEXTAREA",
+            "type": "textarea",
+            "role": null,
+            "class": "_input_zf0lr_28 _input_1e3gg_32  ashby-application-form-input-textarea",
+            "placeholder": "Type here...",
+            "ariaLabel": null,
+            "labels": [
+              "Describe a time you challenged and changed a product request for a better user experience or business outcome."
+            ]
+          },
+          {
+            "tag": "TEXTAREA",
+            "type": "textarea",
+            "role": null,
+            "class": "_input_zf0lr_28 _input_1e3gg_32  ashby-application-form-input-textarea",
+            "placeholder": "Type here...",
+            "ariaLabel": null,
+            "labels": [
+              "What’s something, in a professional context, that you’ve gone deep on purely because you couldn’t let it go?"
+            ]
+          },
+          {
+            "tag": "INPUT",
+            "type": "radio",
+            "role": null,
+            "class": "ashby-application-form-input-radio-group-option-radio",
+            "placeholder": null,
+            "ariaLabel": null,
+            "labels": [
+              "Under 30"
+            ]
+          },
+          {
+            "tag": "INPUT",
+            "type": "radio",
+            "role": null,
+            "class": "ashby-application-form-input-radio-group-option-radio",
+            "placeholder": null,
+            "ariaLabel": null,
+            "labels": [
+              "30-39"
+            ]
+          },
+          {
+            "tag": "INPUT",
+            "type": "radio",
+            "role": null,
+            "class": "ashby-application-form-input-radio-group-option-radio",
+            "placeholder": null,
+            "ariaLabel": null,
+            "labels": [
+              "40-49"
+            ]
+          },
+          {
+            "tag": "INPUT",
+            "type": "radio",
+            "role": null,
+            "class": "ashby-application-form-input-radio-group-option-radio",
+            "placeholder": null,
+            "ariaLabel": null,
+            "labels": [
+              "50-59"
+            ]
+          },
+          {
+            "tag": "INPUT",
+            "type": "radio",
+            "role": null,
+            "class": "ashby-application-form-input-radio-group-option-radio",
+            "placeholder": null,
+            "ariaLabel": null,
+            "labels": [
+              "60 or older"
+            ]
+          },
+          {
+            "tag": "INPUT",
+            "type": "radio",
+            "role": null,
+            "class": "ashby-application-form-input-radio-group-option-radio",
+            "placeholder": null,
+            "ariaLabel": null,
+            "labels": [
+              "I prefer not to answer"
+            ]
+          },
+          {
+            "tag": "INPUT",
+            "type": "radio",
+            "role": null,
+            "class": "ashby-application-form-input-radio-group-option-radio",
+            "placeholder": null,
+            "ariaLabel": null,
+            "labels": [
+              "Man"
+            ]
+          },
+          {
+            "tag": "INPUT",
+            "type": "radio",
+            "role": null,
+            "class": "ashby-application-form-input-radio-group-option-radio",
+            "placeholder": null,
+            "ariaLabel": null,
+            "labels": [
+              "Woman"
+            ]
+          },
+          {
+            "tag": "INPUT",
+            "type": "radio",
+            "role": null,
+            "class": "ashby-application-form-input-radio-group-option-radio",
+            "placeholder": null,
+            "ariaLabel": null,
+            "labels": [
+              "Non-Binary"
+            ]
+          },
+          {
+            "tag": "INPUT",
+            "type": "radio",
+            "role": null,
+            "class": "ashby-application-form-input-radio-group-option-radio",
+            "placeholder": null,
+            "ariaLabel": null,
+            "labels": [
+              "Another Gender Identity"
+            ]
+          },
+          {
+            "tag": "INPUT",
+            "type": "radio",
+            "role": null,
+            "class": "ashby-application-form-input-radio-group-option-radio",
+            "placeholder": null,
+            "ariaLabel": null,
+            "labels": [
+              "I prefer not to answer"
+            ]
+          },
+          {
+            "tag": "INPUT",
+            "type": "checkbox",
+            "role": null,
+            "class": "",
+            "placeholder": null,
+            "ariaLabel": null,
+            "labels": [
+              "Asian or Asian American"
+            ]
+          },
+          {
+            "tag": "INPUT",
+            "type": "checkbox",
+            "role": null,
+            "class": "",
+            "placeholder": null,
+            "ariaLabel": null,
+            "labels": [
+              "Black or African American"
+            ]
+          },
+          {
+            "tag": "INPUT",
+            "type": "checkbox",
+            "role": null,
+            "class": "",
+            "placeholder": null,
+            "ariaLabel": null,
+            "labels": [
+              "Hispanic or Latine"
+            ]
+          },
+          {
+            "tag": "INPUT",
+            "type": "checkbox",
+            "role": null,
+            "class": "",
+            "placeholder": null,
+            "ariaLabel": null,
+            "labels": [
+              "Indigenous or Native American"
+            ]
+          },
+          {
+            "tag": "INPUT",
+            "type": "checkbox",
+            "role": null,
+            "class": "",
+            "placeholder": null,
+            "ariaLabel": null,
+            "labels": [
+              "Native Hawaiian or Other Pacific Islander"
+            ]
+          },
+          {
+            "tag": "INPUT",
+            "type": "checkbox",
+            "role": null,
+            "class": "",
+            "placeholder": null,
+            "ariaLabel": null,
+            "labels": [
+              "White"
+            ]
+          },
+          {
+            "tag": "INPUT",
+            "type": "checkbox",
+            "role": null,
+            "class": "",
+            "placeholder": null,
+            "ariaLabel": null,
+            "labels": [
+              "Other"
+            ]
+          },
+          {
+            "tag": "INPUT",
+            "type": "checkbox",
+            "role": null,
+            "class": "",
+            "placeholder": null,
+            "ariaLabel": null,
+            "labels": [
+              "I prefer not to answer"
+            ]
+          },
+          {
+            "tag": "INPUT",
+            "type": "checkbox",
+            "role": null,
+            "class": "",
+            "placeholder": null,
+            "ariaLabel": null,
+            "labels": [
+              "Person with disability"
+            ]
+          },
+          {
+            "tag": "INPUT",
+            "type": "checkbox",
+            "role": null,
+            "class": "",
+            "placeholder": null,
+            "ariaLabel": null,
+            "labels": [
+              "Neurodivergent"
+            ]
+          },
+          {
+            "tag": "INPUT",
+            "type": "checkbox",
+            "role": null,
+            "class": "",
+            "placeholder": null,
+            "ariaLabel": null,
+            "labels": [
+              "Veteran"
+            ]
+          },
+          {
+            "tag": "INPUT",
+            "type": "checkbox",
+            "role": null,
+            "class": "",
+            "placeholder": null,
+            "ariaLabel": null,
+            "labels": [
+              "Parent"
+            ]
+          },
+          {
+            "tag": "INPUT",
+            "type": "checkbox",
+            "role": null,
+            "class": "",
+            "placeholder": null,
+            "ariaLabel": null,
+            "labels": [
+              "Refugee or immigrant"
+            ]
+          },
+          {
+            "tag": "INPUT",
+            "type": "checkbox",
+            "role": null,
+            "class": "",
+            "placeholder": null,
+            "ariaLabel": null,
+            "labels": [
+              "None of the above"
+            ]
+          },
+          {
+            "tag": "INPUT",
+            "type": "checkbox",
+            "role": null,
+            "class": "",
+            "placeholder": null,
+            "ariaLabel": null,
+            "labels": [
+              "I prefer not to answer"
+            ]
+          }
+        ],
+        "choiceRoles": [],
+        "iframes": [],
+        "choiceAncestors": [
+          {
+            "control": "<input accept=\"application/pdf,.pdf,application/msword,.doc,application/vnd.openxmlformats-officedocument.wordprocessingml.document,.docx,application/vnd.oasis.opendocument.text,.odt,application/rtf,.rtf,text/plain,.txt,text/markdown,.md\" type=\"file\" tabindex=\"-1\" style=\"border: 0px; clip: rect(0px, 0px, 0px, 0px); clip-path: inset(50%); height: 1px; margin: 0px -1px -1px 0px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap;\">",
+            "ancestors": [
+              {
+                "tag": "DIV",
+                "class": "_root_xd2v0_1 ashby-application-form-autofill-input-root",
+                "role": "presentation",
+                "text": "Autofill from resume\n\nUpload your resume here to autofill key application fields.\n\nUpload file",
+                "html": "<div role=\"presentation\" class=\"_root_xd2v0_1 ashby-application-form-autofill-input-root\" data-state=\"default\"><input accept=\"application/pdf,.pdf,application/msword,.doc,application/vnd.openxmlformats-officedocument.wordprocessingml.document,.docx,application/vnd.oasis.opendocument.text,.odt,application/rtf,.rtf,text/plain,.txt,text/markdown,.md\" type=\"file\" tabindex=\"-1\" style=\"border: 0px; clip: rect(0px, 0px, 0px, 0px); clip-path: inset(50%); height: 1px; margin: 0px -1px -1px 0px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap;\"><div class=\"_base_xd2v0_31 ashby-application-form-autofill-input-base-layer\"><div class=\"_content_xd2v0_36\"><div class=\"_header_xd2v0_43\"><div class=\"_iconContainer_xd2v0_50\"><svg viewBox=\"0 0 576 512\" fill=\"none\" height=\"1em\" class=\"_icon_xd2v0_50 ashby-application-form-autofill-input-icon\"><path d=\"M234.7 42.7L197 56.8c-3 1.1-5 4-5 7.2s2 6.1 5 7.2l37.7 14.1L248.8 123c1.1 3 4 5 7.2 5s6.1-2 7.2-5l14.1-37.7L315 71.2c3-1.1 5-4 5-7.2s-2-6.1-5-7.2L277.3 42.7 263.2 5c-1.1-3-4-5-7.2-5s-6.1 2-7.2 5L234.7 42.7zM461.4 48L496 82.6 386.2 192.3l-34.6-34.6L461.4 48zM80 429.4L317.7 191.7l34.6 34.6L114.6 464 80 429.4zM427.4 14.1L46.1 395.4c-18.7 18.7-18.7 49.1 0 67.9l34.6 34.6c18.7 18.7 49.1 18.7 67.9 0L529.9 116.5c18.7-18.7 18.7-49.1 0-67.9L495.3 14.1c-18.7-18.7-49.1-18.7-67.9 0zM7.5 117.2C3 118.9 0 123.2 0 128s3 9.1 7.5 10.8L64 160l21.2 56.5c1.7 4.5 6 7.5 10.8 7.5s9.1-3 10.8-7.5L128 160l56.5-21.2c4.5-1.7 7.5-6 7.5-10.8s-3-9.1-7.5-10.8L128 96 106.8 39.5C105.1 35 100.8 32 96 32s-9.1 3-10.8 7.5L64 96 7.5 117.2zm352 256c-4.5 1.7-7.5 6-7.5 10.8s3 9.1 7.5 10.8L416 416l21.2 56.5c1.7 4.5 6 7.5 10.8 7.5s9.1-3 10.8-7.5L480 416l56.5-21.2c4.5-1.7 7.5-6 7.5-10.8s-3-9.1-7.5-10.8L480 352l-21.2-56.5c-1.7-4.5-6-7.5-10.8-7.5s-9.1 3-10.8 7.5L416 352l-56.5 21.2z\"></path></svg></div><h3 class=\"_title_xd2v0_64 ashby-application-form-autofill-input-title\">Autofill from resume</h3></div><p class=\"_description_xd2v0_76 ashby-application-form-autofill-input-description\">Upload your resume here to autofill key application fields.</p><div class=\"_cta_xd2v0_88\"><button class=\"_button_zyh3g_28 _secondary_zyh3g_115    _ctaButton_xd2v0_94\">Upload file</button></div></div></div><div class=\"_drag_xd2v0_120 ashby-application-form-autofill-input-drag-layer\" data-state=\"hidden\"><svg viewBox=\"0 0 512 512\" fill=\"none\" height=\"1em\"><path d=\"M280 360c0 13.3-10.7 24-24 24s-24-10.7-24-24V81.9l-95 95c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9L239 "
+              },
+              {
+                "tag": "DIV",
+                "class": "_autofillPane_5yu8i_448 ashby-application-form-autofill-uploader  _container_f7cvd_28",
+                "role": null,
+                "text": "Autofill from resume\n\nUpload your resume here to autofill key application fields.\n\nUpload file",
+                "html": "<div class=\"_autofillPane_5yu8i_448 ashby-application-form-autofill-uploader  _container_f7cvd_28\" data-highlight=\"none\"><div role=\"presentation\" class=\"_root_xd2v0_1 ashby-application-form-autofill-input-root\" data-state=\"default\"><input accept=\"application/pdf,.pdf,application/msword,.doc,application/vnd.openxmlformats-officedocument.wordprocessingml.document,.docx,application/vnd.oasis.opendocument.text,.odt,application/rtf,.rtf,text/plain,.txt,text/markdown,.md\" type=\"file\" tabindex=\"-1\" style=\"border: 0px; clip: rect(0px, 0px, 0px, 0px); clip-path: inset(50%); height: 1px; margin: 0px -1px -1px 0px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap;\"><div class=\"_base_xd2v0_31 ashby-application-form-autofill-input-base-layer\"><div class=\"_content_xd2v0_36\"><div class=\"_header_xd2v0_43\"><div class=\"_iconContainer_xd2v0_50\"><svg viewBox=\"0 0 576 512\" fill=\"none\" height=\"1em\" class=\"_icon_xd2v0_50 ashby-application-form-autofill-input-icon\"><path d=\"M234.7 42.7L197 56.8c-3 1.1-5 4-5 7.2s2 6.1 5 7.2l37.7 14.1L248.8 123c1.1 3 4 5 7.2 5s6.1-2 7.2-5l14.1-37.7L315 71.2c3-1.1 5-4 5-7.2s-2-6.1-5-7.2L277.3 42.7 263.2 5c-1.1-3-4-5-7.2-5s-6.1 2-7.2 5L234.7 42.7zM461.4 48L496 82.6 386.2 192.3l-34.6-34.6L461.4 48zM80 429.4L317.7 191.7l34.6 34.6L114.6 464 80 429.4zM427.4 14.1L46.1 395.4c-18.7 18.7-18.7 49.1 0 67.9l34.6 34.6c18.7 18.7 49.1 18.7 67.9 0L529.9 116.5c18.7-18.7 18.7-49.1 0-67.9L495.3 14.1c-18.7-18.7-49.1-18.7-67.9 0zM7.5 117.2C3 118.9 0 123.2 0 128s3 9.1 7.5 10.8L64 160l21.2 56.5c1.7 4.5 6 7.5 10.8 7.5s9.1-3 10.8-7.5L128 160l56.5-21.2c4.5-1.7 7.5-6 7.5-10.8s-3-9.1-7.5-10.8L128 96 106.8 39.5C105.1 35 100.8 32 96 32s-9.1 3-10.8 7.5L64 96 7.5 117.2zm352 256c-4.5 1.7-7.5 6-7.5 10.8s3 9.1 7.5 10.8L416 416l21.2 56.5c1.7 4.5 6 7.5 10.8 7.5s9.1-3 10.8-7.5L480 416l56.5-21.2c4.5-1.7 7.5-6 7.5-10.8s-3-9.1-7.5-10.8L480 352l-21.2-56.5c-1.7-4.5-6-7.5-10.8-7.5s-9.1 3-10.8 7.5L416 352l-56.5 21.2z\"></path></svg></div><h3 class=\"_title_xd2v0_64 ashby-application-form-autofill-input-title\">Autofill from resume</h3></div><p class=\"_description_xd2v0_76 ashby-application-form-autofill-input-description\">Upload your resume here to autofill key application fields.</p><div class=\"_cta_xd2v0_88\"><button class=\"_button_zyh3g_28 _secondary_zyh3g_115    _ctaButton_xd2v0_94\">Upload file</button></div></div></div><div class=\"_drag_xd2v0_120 ashby-application-form-autofill-input-drag-layer\" data-state=\"hidden\"><svg viewBox=\"0 0 512 512\" fill=\"none\" heig"
+              },
+              {
+                "tag": "DIV",
+                "class": "",
+                "role": "tabpanel",
+                "text": "Autofill from resume\n\nUpload your resume here to autofill key application fields.\n\nUpload file\nThis job has application limits\n\nPlease note: to ensure that candidates select the most relevant jobs for their skills, we have set up limits to the number of times candidates can apply. The following limits apply to all roles at Ashby:\n\nCandidates may not apply more than 3 times in any 60 days for any j",
+                "html": "<div tabindex=\"0\" role=\"tabpanel\" aria-labelledby=\"job-application-form\" id=\"form\"><div class=\"_autofillPane_5yu8i_448 ashby-application-form-autofill-uploader  _container_f7cvd_28\" data-highlight=\"none\"><div role=\"presentation\" class=\"_root_xd2v0_1 ashby-application-form-autofill-input-root\" data-state=\"default\"><input accept=\"application/pdf,.pdf,application/msword,.doc,application/vnd.openxmlformats-officedocument.wordprocessingml.document,.docx,application/vnd.oasis.opendocument.text,.odt,application/rtf,.rtf,text/plain,.txt,text/markdown,.md\" type=\"file\" tabindex=\"-1\" style=\"border: 0px; clip: rect(0px, 0px, 0px, 0px); clip-path: inset(50%); height: 1px; margin: 0px -1px -1px 0px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap;\"><div class=\"_base_xd2v0_31 ashby-application-form-autofill-input-base-layer\"><div class=\"_content_xd2v0_36\"><div class=\"_header_xd2v0_43\"><div class=\"_iconContainer_xd2v0_50\"><svg viewBox=\"0 0 576 512\" fill=\"none\" height=\"1em\" class=\"_icon_xd2v0_50 ashby-application-form-autofill-input-icon\"><path d=\"M234.7 42.7L197 56.8c-3 1.1-5 4-5 7.2s2 6.1 5 7.2l37.7 14.1L248.8 123c1.1 3 4 5 7.2 5s6.1-2 7.2-5l14.1-37.7L315 71.2c3-1.1 5-4 5-7.2s-2-6.1-5-7.2L277.3 42.7 263.2 5c-1.1-3-4-5-7.2-5s-6.1 2-7.2 5L234.7 42.7zM461.4 48L496 82.6 386.2 192.3l-34.6-34.6L461.4 48zM80 429.4L317.7 191.7l34.6 34.6L114.6 464 80 429.4zM427.4 14.1L46.1 395.4c-18.7 18.7-18.7 49.1 0 67.9l34.6 34.6c18.7 18.7 49.1 18.7 67.9 0L529.9 116.5c18.7-18.7 18.7-49.1 0-67.9L495.3 14.1c-18.7-18.7-49.1-18.7-67.9 0zM7.5 117.2C3 118.9 0 123.2 0 128s3 9.1 7.5 10.8L64 160l21.2 56.5c1.7 4.5 6 7.5 10.8 7.5s9.1-3 10.8-7.5L128 160l56.5-21.2c4.5-1.7 7.5-6 7.5-10.8s-3-9.1-7.5-10.8L128 96 106.8 39.5C105.1 35 100.8 32 96 32s-9.1 3-10.8 7.5L64 96 7.5 117.2zm352 256c-4.5 1.7-7.5 6-7.5 10.8s3 9.1 7.5 10.8L416 416l21.2 56.5c1.7 4.5 6 7.5 10.8 7.5s9.1-3 10.8-7.5L480 416l56.5-21.2c4.5-1.7 7.5-6 7.5-10.8s-3-9.1-7.5-10.8L480 352l-21.2-56.5c-1.7-4.5-6-7.5-10.8-7.5s-9.1 3-10.8 7.5L416 352l-56.5 21.2z\"></path></svg></div><h3 class=\"_title_xd2v0_64 ashby-application-form-autofill-input-title\">Autofill from resume</h3></div><p class=\"_description_xd2v0_76 ashby-application-form-autofill-input-description\">Upload your resume here to autofill key application fields.</p><div class=\"_cta_xd2v0_88\"><button class=\"_button_zyh3g_28 _secondary_zyh3g_115    _ctaButton_xd2v0_94\">Upload file</button></div></div></div><div class=\"_drag_xd2v0_120 ashby-application-form-autofil"
+              }
+            ]
+          },
+          {
+            "control": "<button class=\"_container_pjyt6_1 _option_1svni_32  ashby-application-form-input-yesno-option\" aria-pressed=\"false\" data-option=\"yes\">Yes</button>",
+            "ancestors": [
+              {
+                "tag": "DIV",
+                "class": "_container_1svni_28 _yesno_1e3gg_148  ashby-application-form-input-yesno",
+                "role": null,
+                "text": "Yes\nNo",
+                "html": "<div class=\"_container_1svni_28 _yesno_1e3gg_148  ashby-application-form-input-yesno\"><button class=\"_container_pjyt6_1 _option_1svni_32  ashby-application-form-input-yesno-option\" aria-pressed=\"false\" data-option=\"yes\">Yes</button><button class=\"_container_pjyt6_1 _option_1svni_32  ashby-application-form-input-yesno-option\" aria-pressed=\"false\" data-option=\"no\">No</button><input type=\"checkbox\" class=\"_input_1svni_78\" tabindex=\"-1\" name=\"fc627d7e-e4db-45c4-b5b9-404bbc0505bf\"></div>"
+              },
+              {
+                "tag": "DIV",
+                "class": "_fieldEntry_1e3gg_28 ashby-application-form-field-entry",
+                "role": null,
+                "text": "Will you now or in the future require sponsorship for employment visa status to work in this location?\nYes\nNo",
+                "html": "<div class=\"_fieldEntry_1e3gg_28 ashby-application-form-field-entry\" data-field-path=\"fc627d7e-e4db-45c4-b5b9-404bbc0505bf\" data-field-entry-id=\"0f53ff68-c4a5-4c1f-a393-4522f30ab566_fc627d7e-e4db-45c4-b5b9-404bbc0505bf\"><label class=\"_heading_f7cvd_52 _required_f7cvd_91 _label_1e3gg_42 ashby-application-form-question-title\" for=\"fc627d7e-e4db-45c4-b5b9-404bbc0505bf\">Will you now or in the future require sponsorship for employment visa status to work in this location?</label><div class=\"_container_1svni_28 _yesno_1e3gg_148  ashby-application-form-input-yesno\"><button class=\"_container_pjyt6_1 _option_1svni_32  ashby-application-form-input-yesno-option\" aria-pressed=\"false\" data-option=\"yes\">Yes</button><button class=\"_container_pjyt6_1 _option_1svni_32  ashby-application-form-input-yesno-option\" aria-pressed=\"false\" data-option=\"no\">No</button><input type=\"checkbox\" class=\"_input_1svni_78\" tabindex=\"-1\" name=\"fc627d7e-e4db-45c4-b5b9-404bbc0505bf\"></div></div>"
+              },
+              {
+                "tag": "DIV",
+                "class": "_section_5yu8i_86 ashby-application-form-section-container",
+                "role": null,
+                "text": "Basic Info\nName\nEmail\nResume\nUpload File\n\nor drag and drop here\n\nLinkedIn URL\nGitHub URL\nWhich country do you intend to work from?\n\nPlease list your city and country.\n\nWill you now or in the future require sponsorship for employment visa status to work in this location?\nYes\nNo\nDo you have 4+ years of experience as a full-time engineer?\n\nWe're only looking for Senior+ engineers at the moment.\n\nYes\n",
+                "html": "<div class=\"_section_5yu8i_86 ashby-application-form-section-container\"><div class=\"_sectionHeader_5yu8i_93 ashby-application-form-section-header\"><h2 class=\"_title_5yu8i_99 ashby-application-form-section-header-title\">Basic Info</h2></div><div class=\"_fieldEntry_1e3gg_28 ashby-application-form-field-entry\" data-field-path=\"_systemfield_name\" data-field-entry-id=\"0f53ff68-c4a5-4c1f-a393-4522f30ab566__systemfield_name\"><label class=\"_heading_f7cvd_52 _required_f7cvd_91 _label_1e3gg_42 ashby-application-form-question-title\" for=\"_systemfield_name\">Name</label><div><input placeholder=\"Type here...\" name=\"_systemfield_name\" required=\"\" id=\"_systemfield_name\" type=\"text\" class=\"_input_80epu_28 _input_1e3gg_32 ashby-application-form-input-text\" value=\"\"></div></div><div class=\"_fieldEntry_1e3gg_28 ashby-application-form-field-entry\" data-field-path=\"_systemfield_email\" data-field-entry-id=\"0f53ff68-c4a5-4c1f-a393-4522f30ab566__systemfield_email\"><label class=\"_heading_f7cvd_52 _required_f7cvd_91 _label_1e3gg_42 ashby-application-form-question-title\" for=\"_systemfield_email\">Email</label><div><input placeholder=\"hello@example.com...\" name=\"_systemfield_email\" required=\"\" id=\"_systemfield_email\" type=\"email\" class=\"_input_80epu_28 _input_1e3gg_32 ashby-application-form-input-text\" value=\"\"></div></div><div class=\"_fieldEntry_1e3gg_28 ashby-application-form-field-entry\" data-field-path=\"_systemfield_resume\" data-field-entry-id=\"0f53ff68-c4a5-4c1f-a393-4522f30ab566__systemfield_resume\"><label class=\"_heading_f7cvd_52  _label_1e3gg_42 ashby-application-form-question-title\" for=\"_systemfield_resume\">Resume</label><div role=\"presentation\" class=\"_container_10xk4_70  ashby-application-form-input-file\"><input accept=\"application/pdf,.pdf,application/msword,.doc,application/vnd.openxmlformats-officedocument.wordprocessingml.document,.docx,application/vnd.oasis.opendocument.text,.odt,application/rtf,.rtf,text/plain,.txt,text/markdown,.md,image/*,video/*,audio/*\" type=\"file\" tabindex=\"-1\" id=\"_systemfield_resume\" style=\"border: 0px; clip: rect(0px, 0px, 0px, 0px); clip-path: inset(50%); height: 1px; margin: 0px -1px -1px 0px; overflow: hidden; padding: 0px; position: absolute; width: 1px; white-space: nowrap;\"><div class=\"_instructions_10xk4_33 ashby-application-form-input-file-dropzone\"><button class=\"_button_zyh3g_28 _secondary_zyh3g_115    _button_10xk4_106 ashby-application-form-input-file-dropzone-upload\"><svg viewBox=\"0 0 448 512\" fill=\"none\" height=\"1em\"><path d=\"M37"
+              }
+            ]
+          },
+          {
+            "control": "<input type=\"radio\" id=\"a6535bf8-8ddb-47e4-a347-f8c6d665d029_cf0f1bc7-7ce6-4eb3-aebc-b6562141cb68-labeled-radio-0\" name=\"a6535bf8-8ddb-47e4-a347-f8c6d665d029_cf0f1bc7-7ce6-4eb3-aebc-b6562141cb68\" class=\"ashby-application-form-input-radio-group-option-radio\">",
+            "ancestors": [
+              {
+                "tag": "SPAN",
+                "class": "_container_132c8_28",
+                "role": null,
+                "text": "",
+                "html": "<span class=\"_container_132c8_28\" data-disabled=\"false\"><span class=\"_circle_132c8_77\"></span><input type=\"radio\" id=\"a6535bf8-8ddb-47e4-a347-f8c6d665d029_cf0f1bc7-7ce6-4eb3-aebc-b6562141cb68-labeled-radio-0\" name=\"a6535bf8-8ddb-47e4-a347-f8c6d665d029_cf0f1bc7-7ce6-4eb3-aebc-b6562141cb68\" class=\"ashby-application-form-input-radio-group-option-radio\"></span>"
+              },
+              {
+                "tag": "DIV",
+                "class": "_option_1258i_34 false ashby-application-form-input-radio-group-option",
+                "role": null,
+                "text": "Under 30",
+                "html": "<div class=\"_option_1258i_34 false ashby-application-form-input-radio-group-option\"><span class=\"_container_132c8_28\" data-disabled=\"false\"><span class=\"_circle_132c8_77\"></span><input type=\"radio\" id=\"a6535bf8-8ddb-47e4-a347-f8c6d665d029_cf0f1bc7-7ce6-4eb3-aebc-b6562141cb68-labeled-radio-0\" name=\"a6535bf8-8ddb-47e4-a347-f8c6d665d029_cf0f1bc7-7ce6-4eb3-aebc-b6562141cb68\" class=\"ashby-application-form-input-radio-group-option-radio\"></span><label for=\"a6535bf8-8ddb-47e4-a347-f8c6d665d029_cf0f1bc7-7ce6-4eb3-aebc-b6562141cb68-labeled-radio-0\" class=\"_label_1258i_42  ashby-application-form-input-radio-group-option-label\">Under 30</label></div>"
+              },
+              {
+                "tag": "FIELDSET",
+                "class": "_container_1258i_28 _fieldEntry_1e3gg_28 ashby-application-form-input-radio-group",
+                "role": null,
+                "text": "What is your current age?\nUnder 30\n30-39\n40-49\n50-59\n60 or older\nI prefer not to answer",
+                "html": "<fieldset class=\"_container_1258i_28 _fieldEntry_1e3gg_28 ashby-application-form-input-radio-group\"><label class=\"_heading_f7cvd_52  _label_1e3gg_42 ashby-application-form-question-title\" for=\"cf0f1bc7-7ce6-4eb3-aebc-b6562141cb68\">What is your current age?</label><div class=\"_option_1258i_34 false ashby-application-form-input-radio-group-option\"><span class=\"_container_132c8_28\" data-disabled=\"false\"><span class=\"_circle_132c8_77\"></span><input type=\"radio\" id=\"a6535bf8-8ddb-47e4-a347-f8c6d665d029_cf0f1bc7-7ce6-4eb3-aebc-b6562141cb68-labeled-radio-0\" name=\"a6535bf8-8ddb-47e4-a347-f8c6d665d029_cf0f1bc7-7ce6-4eb3-aebc-b6562141cb68\" class=\"ashby-application-form-input-radio-group-option-radio\"></span><label for=\"a6535bf8-8ddb-47e4-a347-f8c6d665d029_cf0f1bc7-7ce6-4eb3-aebc-b6562141cb68-labeled-radio-0\" class=\"_label_1258i_42  ashby-application-form-input-radio-group-option-label\">Under 30</label></div><div class=\"_option_1258i_34 false ashby-application-form-input-radio-group-option\"><span class=\"_container_132c8_28\" data-disabled=\"false\"><span class=\"_circle_132c8_77\"></span><input type=\"radio\" id=\"a6535bf8-8ddb-47e4-a347-f8c6d665d029_cf0f1bc7-7ce6-4eb3-aebc-b6562141cb68-labeled-radio-1\" name=\"a6535bf8-8ddb-47e4-a347-f8c6d665d029_cf0f1bc7-7ce6-4eb3-aebc-b6562141cb68\" class=\"ashby-application-form-input-radio-group-option-radio\"></span><label for=\"a6535bf8-8ddb-47e4-a347-f8c6d665d029_cf0f1bc7-7ce6-4eb3-aebc-b6562141cb68-labeled-radio-1\" class=\"_label_1258i_42  ashby-application-form-input-radio-group-option-label\">30-39</label></div><div class=\"_option_1258i_34 false ashby-application-form-input-radio-group-option\"><span class=\"_container_132c8_28\" data-disabled=\"false\"><span class=\"_circle_132c8_77\"></span><input type=\"radio\" id=\"a6535bf8-8ddb-47e4-a347-f8c6d665d029_cf0f1bc7-7ce6-4eb3-aebc-b6562141cb68-labeled-radio-2\" name=\"a6535bf8-8ddb-47e4-a347-f8c6d665d029_cf0f1bc7-7ce6-4eb3-aebc-b6562141cb68\" class=\"ashby-application-form-input-radio-group-option-radio\"></span><label for=\"a6535bf8-8ddb-47e4-a347-f8c6d665d029_cf0f1bc7-7ce6-4eb3-aebc-b6562141cb68-labeled-radio-2\" class=\"_label_1258i_42  ashby-application-form-input-radio-group-option-label\">40-49</label></div><div class=\"_option_1258i_34 false ashby-application-form-input-radio-group-option\"><span class=\"_container_132c8_28\" data-disabled=\"false\"><span class=\"_circle_132c8_77\"></span><input type=\"radio\" id=\"a6535bf8-8ddb-47e4-a347-f8c6d665d029_cf0f1bc7-7ce6-4eb3-aebc-b6562141cb68-labeled-radio-3\" name=\"a6"
+              }
+            ]
+          },
+          {
+            "control": "<input type=\"checkbox\" id=\"a6535bf8-8ddb-47e4-a347-f8c6d665d029_1e21d43f-548e-481a-aa5f-f048c73f3de3-labeled-checkbox-0\" name=\"Asian or Asian American\">",
+            "ancestors": [
+              {
+                "tag": "SPAN",
+                "class": "ashby-application-form-input-checkbox-group-option-checkbox _container_1danv_28",
+                "role": null,
+                "text": "",
+                "html": "<span class=\"ashby-application-form-input-checkbox-group-option-checkbox _container_1danv_28\" data-disabled=\"false\"><svg height=\"1em\" viewBox=\"0 0 512 512\" fill=\"none\"><path d=\"M173.898 439.404L7.49824 273.004C-2.49876 263.007 -2.49876 246.798 7.49824 236.8L43.7012 200.596C53.6982 190.598 69.9082 190.598 79.9052 200.596L192 312.69L432.095 72.596C442.092 62.599 458.302 62.599 468.299 72.596L504.502 108.8C514.499 118.797 514.499 135.006 504.502 145.004L210.102 439.405C200.104 449.402 183.895 449.402 173.898 439.404V439.404Z\"></path></svg><input type=\"checkbox\" id=\"a6535bf8-8ddb-47e4-a347-f8c6d665d029_1e21d43f-548e-481a-aa5f-f048c73f3de3-labeled-checkbox-0\" name=\"Asian or Asian American\"></span>"
+              },
+              {
+                "tag": "DIV",
+                "class": "_option_1258i_34 ashby-application-form-input-checkbox-group-option",
+                "role": null,
+                "text": "Asian or Asian American",
+                "html": "<div class=\"_option_1258i_34 ashby-application-form-input-checkbox-group-option\"><span class=\"ashby-application-form-input-checkbox-group-option-checkbox _container_1danv_28\" data-disabled=\"false\"><svg height=\"1em\" viewBox=\"0 0 512 512\" fill=\"none\"><path d=\"M173.898 439.404L7.49824 273.004C-2.49876 263.007 -2.49876 246.798 7.49824 236.8L43.7012 200.596C53.6982 190.598 69.9082 190.598 79.9052 200.596L192 312.69L432.095 72.596C442.092 62.599 458.302 62.599 468.299 72.596L504.502 108.8C514.499 118.797 514.499 135.006 504.502 145.004L210.102 439.405C200.104 449.402 183.895 449.402 173.898 439.404V439.404Z\"></path></svg><input type=\"checkbox\" id=\"a6535bf8-8ddb-47e4-a347-f8c6d665d029_1e21d43f-548e-481a-aa5f-f048c73f3de3-labeled-checkbox-0\" name=\"Asian or Asian American\"></span><label for=\"a6535bf8-8ddb-47e4-a347-f8c6d665d029_1e21d43f-548e-481a-aa5f-f048c73f3de3-labeled-checkbox-0\" class=\"_label_1258i_42  ashby-application-form-input-checkbox-group-option-label\">Asian or Asian American</label></div>"
+              },
+              {
+                "tag": "FIELDSET",
+                "class": "_container_1258i_28 _fieldEntry_1e3gg_28 ashby-application-form-input-checkbox-group",
+                "role": null,
+                "text": "Which ethnicity(ies) do you identify with? Please select all that apply.\nAsian or Asian American\nBlack or African American\nHispanic or Latine\nIndigenous or Native American\nNative Hawaiian or Other Pacific Islander\nWhite\nOther\nI prefer not to answer",
+                "html": "<fieldset class=\"_container_1258i_28 _fieldEntry_1e3gg_28 ashby-application-form-input-checkbox-group\"><label class=\"_heading_f7cvd_52  _label_1e3gg_42 ashby-application-form-question-title\" for=\"1e21d43f-548e-481a-aa5f-f048c73f3de3\">Which ethnicity(ies) do you identify with? Please select all that apply.</label><div class=\"_option_1258i_34 ashby-application-form-input-checkbox-group-option\"><span class=\"ashby-application-form-input-checkbox-group-option-checkbox _container_1danv_28\" data-disabled=\"false\"><svg height=\"1em\" viewBox=\"0 0 512 512\" fill=\"none\"><path d=\"M173.898 439.404L7.49824 273.004C-2.49876 263.007 -2.49876 246.798 7.49824 236.8L43.7012 200.596C53.6982 190.598 69.9082 190.598 79.9052 200.596L192 312.69L432.095 72.596C442.092 62.599 458.302 62.599 468.299 72.596L504.502 108.8C514.499 118.797 514.499 135.006 504.502 145.004L210.102 439.405C200.104 449.402 183.895 449.402 173.898 439.404V439.404Z\"></path></svg><input type=\"checkbox\" id=\"a6535bf8-8ddb-47e4-a347-f8c6d665d029_1e21d43f-548e-481a-aa5f-f048c73f3de3-labeled-checkbox-0\" name=\"Asian or Asian American\"></span><label for=\"a6535bf8-8ddb-47e4-a347-f8c6d665d029_1e21d43f-548e-481a-aa5f-f048c73f3de3-labeled-checkbox-0\" class=\"_label_1258i_42  ashby-application-form-input-checkbox-group-option-label\">Asian or Asian American</label></div><div class=\"_option_1258i_34 ashby-application-form-input-checkbox-group-option\"><span class=\"ashby-application-form-input-checkbox-group-option-checkbox _container_1danv_28\" data-disabled=\"false\"><svg height=\"1em\" viewBox=\"0 0 512 512\" fill=\"none\"><path d=\"M173.898 439.404L7.49824 273.004C-2.49876 263.007 -2.49876 246.798 7.49824 236.8L43.7012 200.596C53.6982 190.598 69.9082 190.598 79.9052 200.596L192 312.69L432.095 72.596C442.092 62.599 458.302 62.599 468.299 72.596L504.502 108.8C514.499 118.797 514.499 135.006 504.502 145.004L210.102 439.405C200.104 449.402 183.895 449.402 173.898 439.404V439.404Z\"></path></svg><input type=\"checkbox\" id=\"a6535bf8-8ddb-47e4-a347-f8c6d665d029_1e21d43f-548e-481a-aa5f-f048c73f3de3-labeled-checkbox-1\" name=\"Black or African American\"></span><label for=\"a6535bf8-8ddb-47e4-a347-f8c6d665d029_1e21d43f-548e-481a-aa5f-f048c73f3de3-labeled-checkbox-1\" class=\"_label_1258i_42  ashby-application-form-input-checkbox-group-option-label\">Black or African American</label></div><div class=\"_option_1258i_34 ashby-application-form-input-checkbox-group-option\"><span class=\"ashby-application-form-input-checkbox-group-option-checkbox _container_1da"
+              }
+            ]
+          }
+        ]
+      },
+      "fields": [
+        {
+          "label": "",
+          "kind": "file",
+          "supported": false,
+          "group": "",
+          "required": false
+        },
+        {
+          "label": "Name",
+          "kind": "text",
+          "supported": true,
+          "group": "",
+          "required": true
+        },
+        {
+          "label": "Email",
+          "kind": "email",
+          "supported": true,
+          "group": "",
+          "required": true
+        },
+        {
+          "label": "Resume",
+          "kind": "file",
+          "supported": false,
+          "group": "",
+          "required": false
+        },
+        {
+          "label": "LinkedIn URL",
+          "kind": "text",
+          "supported": true,
+          "group": "",
+          "required": false
+        },
+        {
+          "label": "GitHub URL",
+          "kind": "text",
+          "supported": true,
+          "group": "",
+          "required": false
+        },
+        {
+          "label": "Which country do you intend to work from? Please list your city and country.",
+          "kind": "unsupported-combobox",
+          "supported": false,
+          "group": "",
+          "required": false
+        },
+        {
+          "label": "Describe a role you were in or a project you led that brought out your absolute best work? What setup or attributes of the role/project enabled that?",
+          "kind": "textarea",
+          "supported": true,
+          "group": "",
+          "required": true
+        },
+        {
+          "label": "Describe a choice you made when shipping a product or working on a technical challenge that didn’t come from a product manager or an engineering manager/lead. How did you advocate for it, and what impact did it have on your end users?",
+          "kind": "textarea",
+          "supported": true,
+          "group": "",
+          "required": false
+        },
+        {
+          "label": "Describe a time you challenged and changed a product request for a better user experience or business outcome.",
+          "kind": "textarea",
+          "supported": true,
+          "group": "",
+          "required": false
+        },
+        {
+          "label": "What’s something, in a professional context, that you’ve gone deep on purely because you couldn’t let it go?",
+          "kind": "textarea",
+          "supported": true,
+          "group": "",
+          "required": false
+        },
+        {
+          "label": "Under 30",
+          "kind": "radio",
+          "supported": true,
+          "group": "",
+          "required": false
+        },
+        {
+          "label": "30-39",
+          "kind": "radio",
+          "supported": true,
+          "group": "",
+          "required": false
+        },
+        {
+          "label": "40-49",
+          "kind": "radio",
+          "supported": true,
+          "group": "",
+          "required": false
+        },
+        {
+          "label": "50-59",
+          "kind": "radio",
+          "supported": true,
+          "group": "",
+          "required": false
+        },
+        {
+          "label": "60 or older",
+          "kind": "radio",
+          "supported": true,
+          "group": "",
+          "required": false
+        },
+        {
+          "label": "I prefer not to answer",
+          "kind": "radio",
+          "supported": true,
+          "group": "",
+          "required": false
+        },
+        {
+          "label": "Man",
+          "kind": "radio",
+          "supported": true,
+          "group": "",
+          "required": false
+        },
+        {
+          "label": "Woman",
+          "kind": "radio",
+          "supported": true,
+          "group": "",
+          "required": false
+        },
+        {
+          "label": "Non-Binary",
+          "kind": "radio",
+          "supported": true,
+          "group": "",
+          "required": false
+        },
+        {
+          "label": "Another Gender Identity",
+          "kind": "radio",
+          "supported": true,
+          "group": "",
+          "required": false
+        },
+        {
+          "label": "I prefer not to answer",
+          "kind": "radio",
+          "supported": true,
+          "group": "",
+          "required": false
+        },
+        {
+          "label": "Asian or Asian American",
+          "kind": "checkbox",
+          "supported": true,
+          "group": "",
+          "required": false
+        },
+        {
+          "label": "Black or African American",
+          "kind": "checkbox",
+          "supported": true,
+          "group": "",
+          "required": false
+        },
+        {
+          "label": "Hispanic or Latine",
+          "kind": "checkbox",
+          "supported": true,
+          "group": "",
+          "required": false
+        },
+        {
+          "label": "Indigenous or Native American",
+          "kind": "checkbox",
+          "supported": true,
+          "group": "",
+          "required": false
+        },
+        {
+          "label": "Native Hawaiian or Other Pacific Islander",
+          "kind": "checkbox",
+          "supported": true,
+          "group": "",
+          "required": false
+        },
+        {
+          "label": "White",
+          "kind": "checkbox",
+          "supported": true,
+          "group": "",
+          "required": false
+        },
+        {
+          "label": "Other",
+          "kind": "checkbox",
+          "supported": true,
+          "group": "",
+          "required": false
+        },
+        {
+          "label": "I prefer not to answer",
+          "kind": "checkbox",
+          "supported": true,
+          "group": "",
+          "required": false
+        },
+        {
+          "label": "Person with disability",
+          "kind": "checkbox",
+          "supported": true,
+          "group": "",
+          "required": false
+        },
+        {
+          "label": "Neurodivergent",
+          "kind": "checkbox",
+          "supported": true,
+          "group": "",
+          "required": false
+        },
+        {
+          "label": "Veteran",
+          "kind": "checkbox",
+          "supported": true,
+          "group": "",
+          "required": false
+        },
+        {
+          "label": "Parent",
+          "kind": "checkbox",
+          "supported": true,
+          "group": "",
+          "required": false
+        },
+        {
+          "label": "Refugee or immigrant",
+          "kind": "checkbox",
+          "supported": true,
+          "group": "",
+          "required": false
+        },
+        {
+          "label": "None of the above",
+          "kind": "checkbox",
+          "supported": true,
+          "group": "",
+          "required": false
+        },
+        {
+          "label": "I prefer not to answer",
+          "kind": "checkbox",
+          "supported": true,
+          "group": "",
+          "required": false
+        }
+      ],
+      "blocked": [
+        {
+          "method": "POST",
+          "host": "jobs.ashbyhq.com",
+          "path": "/api/non-user-graphql",
+          "operation": "ApiAutocompleteGeoLocation",
+          "keys": [
+            "operationName",
+            "variables",
+            "query"
+          ]
+        }
+      ],
+      "allowedPostReads": [
+        {
+          "method": "POST",
+          "host": "jobs.ashbyhq.com",
+          "path": "/api/non-user-graphql",
+          "operation": "ApiJobPosting",
+          "keys": [
+            "operationName",
+            "variables",
+            "query"
+          ],
+          "queryPrefix": "query ApiJobPosting($organizationHostedJobsPageName: String!, $jobPostingId: String!) {\n  jobPosting(\n    organizationHostedJobsPageName: $organizationHostedJobsPageName\n    jobPostingId: $jobPostingId\n  ) {\n    id\n    title\n    departmentName\n    departmentExternalName\n    locationName\n    locationAddress\n    workplaceType\n    employmentType\n    descriptionHtml\n    isListed\n    isConfidential\n    teamNames\n    recaptchaAction\n    applicationForm {\n      ...FormRenderParts\n      __typename\n    }\n    surveyForms {\n      ...FormRenderParts\n      ",
+          "queryHash": "6ed80a7dd24f36a66c503f0ce501626ed1235d67558cee85fc4c2cd6cc0bd22c"
+        },
+        {
+          "method": "POST",
+          "host": "jobs.ashbyhq.com",
+          "path": "/api/non-user-graphql",
+          "operation": "ApiOrganizationFromHostedJobsPageName",
+          "keys": [
+            "operationName",
+            "variables",
+            "query"
+          ],
+          "queryPrefix": "query ApiOrganizationFromHostedJobsPageName($organizationHostedJobsPageName: String!, $searchContext: OrganizationSearchContext) {\n  organization: organizationFromHostedJobsPageName(\n    organizationHostedJobsPageName: $organizationHostedJobsPageName\n    searchContext: $searchContext\n  ) {\n    ...OrganizationParts\n    __typename\n  }\n}\n\nfragment OrganizationParts on Organization {\n  organizationId\n  name\n  publicWebsite\n  customJobsPageUrl\n  hostedJobsPageSlug\n  allowJobPostIndexing\n  isDemoOrg\n  theme {\n    colors\n    showJobFilters\n    showLoc",
+          "queryHash": "90e5a406dbfe8b7f4529188fbbadd4a9f3e85a2c81b5445eab28115f886257a2"
+        },
+        {
+          "method": "POST",
+          "host": "jobs.ashbyhq.com",
+          "path": "/api/non-user-graphql",
+          "operation": "ApiOrganizationFromHostedJobsPageName",
+          "keys": [
+            "operationName",
+            "variables",
+            "query"
+          ],
+          "queryPrefix": "query ApiOrganizationFromHostedJobsPageName($organizationHostedJobsPageName: String!, $searchContext: OrganizationSearchContext) {\n  organization: organizationFromHostedJobsPageName(\n    organizationHostedJobsPageName: $organizationHostedJobsPageName\n    searchContext: $searchContext\n  ) {\n    ...OrganizationParts\n    __typename\n  }\n}\n\nfragment OrganizationParts on Organization {\n  organizationId\n  name\n  publicWebsite\n  customJobsPageUrl\n  hostedJobsPageSlug\n  allowJobPostIndexing\n  isDemoOrg\n  theme {\n    colors\n    showJobFilters\n    showLoc",
+          "queryHash": "90e5a406dbfe8b7f4529188fbbadd4a9f3e85a2c81b5445eab28115f886257a2"
+        }
+      ]
+    }
+  ]
+}

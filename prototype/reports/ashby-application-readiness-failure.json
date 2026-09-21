@@ -1,0 +1,77 @@
+{
+  "date": "2026-09-21T05:05:48.782Z",
+  "scope": "Read-only public pages in fresh contexts, GET/HEAD and optionally two explicitly observed public Ashby GraphQL read operations; other POST/WS/SW blocked. No typing, upload, authentication or submit.",
+  "rows": [
+    {
+      "site": "ashby-application",
+      "url": "https://jobs.ashbyhq.com/ashby/0020099f-9bb3-4da9-9808-4556564f5301/application",
+      "finalUrl": "https://jobs.ashbyhq.com/ashby/0020099f-9bb3-4da9-9808-4556564f5301/application",
+      "error": "page.waitForSelector: Timeout 15000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('form input:not([type=hidden]),form textarea') to be visible\u001b[22m\n",
+      "blocked": [
+        {
+          "method": "POST",
+          "host": "jobs.ashbyhq.com",
+          "path": "/api/non-user-graphql",
+          "operation": "ApiAutocompleteGeoLocation",
+          "keys": [
+            "operationName",
+            "variables",
+            "query"
+          ]
+        },
+        {
+          "method": "POST",
+          "host": "jobs.ashbyhq.com",
+          "path": "/api/non-user-graphql",
+          "operation": "ApiAutocompleteGeoLocation",
+          "keys": [
+            "operationName",
+            "variables",
+            "query"
+          ]
+        }
+      ],
+      "allowedPostReads": [
+        {
+          "method": "POST",
+          "host": "jobs.ashbyhq.com",
+          "path": "/api/non-user-graphql",
+          "operation": "ApiJobPosting",
+          "keys": [
+            "operationName",
+            "variables",
+            "query"
+          ],
+          "queryPrefix": "query ApiJobPosting($organizationHostedJobsPageName: String!, $jobPostingId: String!) {\n  jobPosting(\n    organizationHostedJobsPageName: $organizationHostedJobsPageName\n    jobPostingId: $jobPostingId\n  ) {\n    id\n    title\n    departmentName\n    departmentExternalName\n    locationName\n    locationAddress\n    workplaceType\n    employmentType\n    descriptionHtml\n    isListed\n    isConfidential\n    teamNames\n    recaptchaAction\n    applicationForm {\n      ...FormRenderParts\n      __typename\n    }\n    surveyForms {\n      ...FormRenderParts\n      ",
+          "queryHash": "6ed80a7dd24f36a66c503f0ce501626ed1235d67558cee85fc4c2cd6cc0bd22c"
+        },
+        {
+          "method": "POST",
+          "host": "jobs.ashbyhq.com",
+          "path": "/api/non-user-graphql",
+          "operation": "ApiOrganizationFromHostedJobsPageName",
+          "keys": [
+            "operationName",
+            "variables",
+            "query"
+          ],
+          "queryPrefix": "query ApiOrganizationFromHostedJobsPageName($organizationHostedJobsPageName: String!, $searchContext: OrganizationSearchContext) {\n  organization: organizationFromHostedJobsPageName(\n    organizationHostedJobsPageName: $organizationHostedJobsPageName\n    searchContext: $searchContext\n  ) {\n    ...OrganizationParts\n    __typename\n  }\n}\n\nfragment OrganizationParts on Organization {\n  organizationId\n  name\n  publicWebsite\n  customJobsPageUrl\n  hostedJobsPageSlug\n  allowJobPostIndexing\n  isDemoOrg\n  theme {\n    colors\n    showJobFilters\n    showLoc",
+          "queryHash": "90e5a406dbfe8b7f4529188fbbadd4a9f3e85a2c81b5445eab28115f886257a2"
+        },
+        {
+          "method": "POST",
+          "host": "jobs.ashbyhq.com",
+          "path": "/api/non-user-graphql",
+          "operation": "ApiOrganizationFromHostedJobsPageName",
+          "keys": [
+            "operationName",
+            "variables",
+            "query"
+          ],
+          "queryPrefix": "query ApiOrganizationFromHostedJobsPageName($organizationHostedJobsPageName: String!, $searchContext: OrganizationSearchContext) {\n  organization: organizationFromHostedJobsPageName(\n    organizationHostedJobsPageName: $organizationHostedJobsPageName\n    searchContext: $searchContext\n  ) {\n    ...OrganizationParts\n    __typename\n  }\n}\n\nfragment OrganizationParts on Organization {\n  organizationId\n  name\n  publicWebsite\n  customJobsPageUrl\n  hostedJobsPageSlug\n  allowJobPostIndexing\n  isDemoOrg\n  theme {\n    colors\n    showJobFilters\n    showLoc",
+          "queryHash": "90e5a406dbfe8b7f4529188fbbadd4a9f3e85a2c81b5445eab28115f886257a2"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,206 @@
+{
+  "date": "2026-09-21T05:04:14.919Z",
+  "scope": "Read-only public pages in fresh contexts, only GET/HEAD; POST/WS/SW blocked. No typing, upload, authentication or submit.",
+  "rows": [
+    {
+      "site": "ashby",
+      "url": "https://jobs.ashbyhq.com/ashby/0020099f-9bb3-4da9-9808-4556564f5301/",
+      "finalUrl": "https://jobs.ashbyhq.com/ashby/0020099f-9bb3-4da9-9808-4556564f5301/",
+      "structure": {
+        "title": "Staff Software Engineer, Product Engineering - UK @ Ashby",
+        "links": [
+          {
+            "text": "Engineering Levels and Compensation",
+            "href": "https://www.ashbyhq.com/blog/engineering/leveling-and-compensation"
+          },
+          {
+            "text": "Overview",
+            "href": "https://jobs.ashbyhq.com/ashby/0020099f-9bb3-4da9-9808-4556564f5301"
+          },
+          {
+            "text": "Application",
+            "href": "https://jobs.ashbyhq.com/ashby/0020099f-9bb3-4da9-9808-4556564f5301/application"
+          },
+          {
+            "text": "Abhik",
+            "href": "https://www.linkedin.com/in/abhikpramanik"
+          },
+          {
+            "text": "recently launched Talent Management products",
+            "href": "https://www.ashbyhq.com/add-ons/people-workflows"
+          },
+          {
+            "text": "here",
+            "href": "https://www.ashbyhq.com/team"
+          },
+          {
+            "text": "here",
+            "href": "https://www.ashbyhq.com/blog/company/thoughtful-communication"
+          },
+          {
+            "text": "here",
+            "href": "https://www.ashbyhq.com/blog/engineering/ai-ashby-engineering-and-the-future"
+          },
+          {
+            "text": "Mujda",
+            "href": "https://www.linkedin.com/in/mujdaalamzai/"
+          },
+          {
+            "text": "article",
+            "href": "https://nextplayso.substack.com/p/should-you-join-ashby"
+          },
+          {
+            "text": "Ben",
+            "href": "https://linkedin.com/in/benasher44/"
+          },
+          {
+            "text": "Tom",
+            "href": "https://www.linkedin.com/in/tom-quist-0925a199/"
+          },
+          {
+            "text": "Adam",
+            "href": "https://www.linkedin.com/in/adam-lusch/"
+          },
+          {
+            "text": "Apply for this Job",
+            "href": "https://jobs.ashbyhq.com/ashby/0020099f-9bb3-4da9-9808-4556564f5301/application"
+          },
+          {
+            "text": "Powered by",
+            "href": "https://www.ashbyhq.com/"
+          },
+          {
+            "text": "Privacy Policy",
+            "href": "https://www.ashbyhq.com/privacy"
+          },
+          {
+            "text": "Security",
+            "href": "https://www.ashbyhq.com/security"
+          },
+          {
+            "text": "Vulnerability Disclosure",
+            "href": "https://www.ashbyhq.com/disclosure"
+          }
+        ],
+        "buttons": [
+          {
+            "text": "Apply for this Job",
+            "type": "submit",
+            "role": null
+          }
+        ],
+        "tabs": [
+          {
+            "text": "Overview",
+            "selected": "true"
+          },
+          {
+            "text": "Application",
+            "selected": "false"
+          }
+        ],
+        "inputs": [],
+        "iframes": [
+          {
+            "title": "",
+            "src": "https://embedded-media.ashbyhq.com/embed/4ea5f68e-c33e-4ac9-831a-e732bee4a303/9a5f032d-c731-411e-98cf-261517156f01"
+          }
+        ]
+      },
+      "fields": [],
+      "blocked": [
+        {
+          "method": "POST",
+          "host": "jobs.ashbyhq.com",
+          "path": "/api/non-user-graphql",
+          "operation": "ApiJobPosting",
+          "keys": [
+            "operationName",
+            "variables",
+            "query"
+          ]
+        },
+        {
+          "method": "POST",
+          "host": "jobs.ashbyhq.com",
+          "path": "/api/non-user-graphql",
+          "operation": "ApiOrganizationFromHostedJobsPageName",
+          "keys": [
+            "operationName",
+            "variables",
+            "query"
+          ]
+        }
+      ]
+    },
+    {
+      "site": "smartrecruiters",
+      "url": "https://careers.smartrecruiters.com/SoftwareMind/?oga=true",
+      "finalUrl": "https://jobs.smartrecruiters.com/oneclick-ui/company/SoftwareMind/job/1903010074?lang=en&sid=&dcr_ci=SoftwareMind",
+      "error": "page.waitForFunction: Timeout 15000ms exceeded.",
+      "blocked": [
+        {
+          "method": "POST",
+          "host": "careers.smartrecruiters.com",
+          "path": "/cdn-cgi/rum",
+          "keys": [
+            "startTime",
+            "pageloadId",
+            "eventType",
+            "nt",
+            "location",
+            "versions",
+            "bi",
+            "memory",
+            "firstPaint",
+            "firstContentfulPaint",
+            "timingsV2",
+            "siteToken",
+            "st"
+          ]
+        },
+        {
+          "method": "POST",
+          "host": "careers.smartrecruiters.com",
+          "path": "/cdn-cgi/challenge-platform/h/g/jsd/oneshot/330e41bb475c/0.34069124798197625:1789963810:ZvcL60q8TvQ0KvOVMATG6UOQdl3oMWkPKikRjNMFvrg/a3e686c4ef4e41ce"
+        },
+        {
+          "method": "POST",
+          "host": "jobs.smartrecruiters.com",
+          "path": "/cdn-cgi/challenge-platform/h/g/jsd/oneshot/330e41bb475c/0.34069124798197625:1789963810:ZvcL60q8TvQ0KvOVMATG6UOQdl3oMWkPKikRjNMFvrg/a3e686daedbcddff"
+        },
+        {
+          "method": "POST",
+          "host": "jobs.smartrecruiters.com",
+          "path": "/cdn-cgi/rum",
+          "keys": [
+            "startTime",
+            "pageloadId",
+            "eventType",
+            "nt",
+            "location",
+            "referrer",
+            "versions",
+            "bi",
+            "memory",
+            "firstPaint",
+            "firstContentfulPaint",
+            "timingsV2",
+            "siteToken",
+            "st"
+          ]
+        },
+        {
+          "method": "POST",
+          "host": "geo.captcha-delivery.com",
+          "path": "/interstitial/"
+        },
+        {
+          "method": "POST",
+          "host": "geo.captcha-delivery.com",
+          "path": "/interstitial/"
+        }
+      ]
+    }
+  ]
+}

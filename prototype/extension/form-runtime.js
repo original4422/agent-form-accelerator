@@ -43,9 +43,24 @@ export async function executeFormRequest(request) {
   };
   const label = (el) => clean(ariaName(el) || Array.from(el.labels ?? []).map((l) => textOf(l)).join(' ') ||
     (el.tagName === 'BUTTON' ? textOf(el) : '') || contextualName(el) || el.getAttribute('placeholder') || el.name || el.id).slice(0, 250);
+  // Some fieldsets use a visible direct label instead of a legend. Only one
+  // unassociated direct label can name the question; option labels cannot.
+  const directQuestion = node => {
+    const labels=Array.from(node.children).filter(n=>n.tagName==='LABEL'&&!n.control&&visible(n)&&textOf(n));
+    return labels.length===1?textOf(labels[0]):'';
+  };
+  const toggleGroup = el => {
+    for(let node=el.parentElement,depth=0;node&&depth<4&&!['FORM','BODY','HTML'].includes(node.tagName);node=node.parentElement,depth++){
+      const controls=Array.from(node.querySelectorAll('input,textarea,select,button,[role="combobox"]')).filter(n=>visible(n)&&n.type!=='hidden');
+      if(controls.some(n=>n.tagName!=='BUTTON'||!n.hasAttribute('aria-pressed')))return '';
+      const question=directQuestion(node);if(question)return question;
+    }
+    return '';
+  };
   const group = (el) => {
     const explicit = el.closest('fieldset,[role="group"],[role="radiogroup"]');
-    if (explicit) return clean(ariaName(explicit) || textOf(explicit.querySelector('legend'))).slice(0, 250);
+    if (explicit) return clean(ariaName(explicit) || textOf(explicit.querySelector(':scope > legend')) || directQuestion(explicit) || `unlabeled-group:${getRef(explicit)}`).slice(0, 250);
+    if(el.tagName==='BUTTON'&&el.hasAttribute('aria-pressed'))return toggleGroup(el).slice(0,250);
     if (!['radio', 'checkbox'].includes(el.type) || !el.name) return '';
     const scope = el.form ?? document;
     const peers = Array.from(scope.querySelectorAll('input')).filter((p) => p.name === el.name && p.type === el.type && visible(p));
@@ -69,6 +84,7 @@ export async function executeFormRequest(request) {
         (!el.getAttribute('aria-haspopup') || el.getAttribute('aria-haspopup') === 'listbox')
         ? 'combobox' : 'unsupported-combobox';
     }
+    if (el.tagName === 'BUTTON'&&el.hasAttribute('aria-pressed')) return 'unsupported-toggle';
     if (el.tagName === 'BUTTON') return 'add-row';
     if (el.tagName === 'SELECT') return el.multiple ? 'unsupported-multiselect' : 'select';
     if (el.tagName === 'TEXTAREA') return 'textarea';
@@ -84,17 +100,17 @@ export async function executeFormRequest(request) {
   const valid = (el) => el.validity?.valid !== false && !pending(el) &&
     (!el.getAttribute('aria-invalid') || el.getAttribute('aria-invalid') === 'false');
   const value = (el) => ['password', 'file'].includes(kind(el)) ? undefined :
-    ['checkbox', 'radio'].includes(kind(el)) ? el.checked : kind(el) === 'combobox' ? textOf(el) : el.value;
+    ['checkbox', 'radio'].includes(kind(el)) ? el.checked : kind(el)==='unsupported-toggle' ? el.getAttribute('aria-pressed') : kind(el) === 'combobox' ? textOf(el) : el.value;
   const getRef = (el) => {
     if (!state.ids.has(el)) state.ids.set(el, `f${++state.next}`);
     return state.ids.get(el);
   };
-  const isAdd = (el) => el.tagName === 'BUTTON' && el.type === 'button' &&
+  const isAdd = (el) => el.tagName === 'BUTTON' && el.type === 'button' && !el.hasAttribute('aria-pressed') &&
     /^(添加|新增|增加|Add\b)/i.test(label(el));
   const observe = () => {
     const fields = [], controls = [], nodes = new Map();
     for (const el of document.querySelectorAll('input,textarea,select,[role="combobox"],button')) {
-      if (!visible(el) || el.type === 'hidden' || (el.tagName === 'BUTTON' && !isAdd(el) && el.getAttribute('role') !== 'combobox')) continue;
+      if (!visible(el) || el.type === 'hidden' || (el.tagName === 'BUTTON' && !isAdd(el) && el.getAttribute('role') !== 'combobox' && !el.hasAttribute('aria-pressed'))) continue;
       if (el.tagName === 'INPUT' && ['submit', 'button', 'reset', 'image'].includes(el.type)) continue;
       const ref = getRef(el), field = {ref, label: label(el), kind: kind(el),
         group: group(el), domId: el.id || undefined,
@@ -108,7 +124,7 @@ export async function executeFormRequest(request) {
     state.snapshot = crypto.randomUUID();
     return {snapshot: state.snapshot, documentId: state.documentId, url: location.href,
       title: document.title, fields, controls,
-      limitations: {iframes: document.querySelectorAll('iframe').length,
+      limitations: {requiredness:'Native required and aria-required only; visual-only markers may be missed.',iframes: document.querySelectorAll('iframe').length,
         shadowRoots: Array.from(document.querySelectorAll('*')).some((el) => !!el.shadowRoot)},
     };
   };
@@ -180,7 +196,7 @@ export async function executeFormRequest(request) {
     // Include new visible controls so a newly inserted question cannot become
     // silently part of a batch whose meaning was decided before it existed.
     for(const el of document.querySelectorAll('input,textarea,select,[role="combobox"],button')){
-      if(!visible(el)||el.type==='hidden'||(el.tagName==='BUTTON'&&!isAdd(el)&&el.getAttribute('role')!=='combobox'))continue;
+      if(!visible(el)||el.type==='hidden'||(el.tagName==='BUTTON'&&!isAdd(el)&&el.getAttribute('role')!=='combobox'&&!el.hasAttribute('aria-pressed')))continue;
       if(el.tagName==='INPUT'&&['submit','button','reset','image'].includes(el.type))continue;
       if(!state.nodes.has(state.ids.get(el)))throw new Error('FIELD_CHANGED: new control; inspect again');
     }

@@ -1,0 +1,82 @@
+{
+  "date": "2026-09-21T05:04:37.428Z",
+  "scope": "Read-only public pages in fresh contexts, only GET/HEAD; POST/WS/SW blocked. No typing, upload, authentication or submit.",
+  "rows": [
+    {
+      "site": "ashby-application",
+      "url": "https://jobs.ashbyhq.com/ashby/0020099f-9bb3-4da9-9808-4556564f5301/application",
+      "finalUrl": "https://jobs.ashbyhq.com/ashby/0020099f-9bb3-4da9-9808-4556564f5301/application",
+      "structure": {
+        "title": "Staff Software Engineer, Product Engineering - UK @ Ashby",
+        "links": [
+          {
+            "text": "Engineering Levels and Compensation",
+            "href": "https://www.ashbyhq.com/blog/engineering/leveling-and-compensation"
+          },
+          {
+            "text": "Overview",
+            "href": "https://jobs.ashbyhq.com/ashby/0020099f-9bb3-4da9-9808-4556564f5301"
+          },
+          {
+            "text": "Application",
+            "href": "https://jobs.ashbyhq.com/ashby/0020099f-9bb3-4da9-9808-4556564f5301/application"
+          },
+          {
+            "text": "Powered by",
+            "href": "https://www.ashbyhq.com/"
+          },
+          {
+            "text": "Privacy Policy",
+            "href": "https://www.ashbyhq.com/privacy"
+          },
+          {
+            "text": "Security",
+            "href": "https://www.ashbyhq.com/security"
+          },
+          {
+            "text": "Vulnerability Disclosure",
+            "href": "https://www.ashbyhq.com/disclosure"
+          }
+        ],
+        "buttons": [],
+        "tabs": [
+          {
+            "text": "Overview",
+            "selected": "false"
+          },
+          {
+            "text": "Application",
+            "selected": "true"
+          }
+        ],
+        "inputs": [],
+        "iframes": []
+      },
+      "fields": [],
+      "blocked": [
+        {
+          "method": "POST",
+          "host": "jobs.ashbyhq.com",
+          "path": "/api/non-user-graphql",
+          "operation": "ApiJobPosting",
+          "keys": [
+            "operationName",
+            "variables",
+            "query"
+          ]
+        },
+        {
+          "method": "POST",
+          "host": "jobs.ashbyhq.com",
+          "path": "/api/non-user-graphql",
+          "operation": "ApiOrganizationFromHostedJobsPageName",
+          "keys": [
+            "operationName",
+            "variables",
+            "query"
+          ]
+        }
+      ]
+    }
+  ]
+}

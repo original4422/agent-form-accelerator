@@ -1,0 +1,39 @@
+{
+  "date": "2026-09-21T05:10:41.068Z",
+  "results": [
+    {
+      "name": "fieldset direct question labels distinguish repeated option text",
+      "passed": false,
+      "error": "AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:\n+ actual - expected\n\n  [\n+   '',\n+   '',\n+   ''\n-   'Age range',\n-   'Gender',\n-   'Access needs'\n  ]\n\n    at file:///Users/original/Project/github/personal_project/agent-form-accelerator/prototype/bench/question-observation-check.mjs:8:150\n    at async check (file:///Users/original/Project/github/personal_project/agent-form-accelerator/prototype/bench/question-observation-check.mjs:5:34)\n    at async file:///Users/original/Project/github/personal_project/agent-form-accelerator/prototype/bench/question-observation-check.mjs:8:2"
+    },
+    {
+      "name": "pressed choices are observed with narrow question context and explicit unsupported status",
+      "passed": false,
+      "error": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n\n0 !== 4\n\n    at file:///Users/original/Project/github/personal_project/agent-form-accelerator/prototype/bench/question-observation-check.mjs:9:233\n    at async check (file:///Users/original/Project/github/personal_project/agent-form-accelerator/prototype/bench/question-observation-check.mjs:5:34)\n    at async file:///Users/original/Project/github/personal_project/agent-form-accelerator/prototype/bench/question-observation-check.mjs:9:2"
+    },
+    {
+      "name": "unsupported toggle writes cannot click even a submit-default button",
+      "passed": false,
+      "error": "AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:\n\n  assert.ok(f)\n\n    at file:///Users/original/Project/github/personal_project/agent-form-accelerator/prototype/bench/question-observation-check.mjs:10:203\n    at async check (file:///Users/original/Project/github/personal_project/agent-form-accelerator/prototype/bench/question-observation-check.mjs:5:34)\n    at async file:///Users/original/Project/github/personal_project/agent-form-accelerator/prototype/bench/question-observation-check.mjs:10:2"
+    },
+    {
+      "name": "native legend and explicit ARIA naming keep precedence over fallback labels",
+      "passed": true
+    },
+    {
+      "name": "ambiguous or missing question labels have distinct opaque groups, never option labels",
+      "passed": false,
+      "error": "AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:\n\n  assert.ok(o.fields.every(f=>f.group&&!f.group.includes('Prefer')))\n\n    at file:///Users/original/Project/github/personal_project/agent-form-accelerator/prototype/bench/question-observation-check.mjs:12:410\n    at async check (file:///Users/original/Project/github/personal_project/agent-form-accelerator/prototype/bench/question-observation-check.mjs:5:34)\n    at async file:///Users/original/Project/github/personal_project/agent-form-accelerator/prototype/bench/question-observation-check.mjs:12:2"
+    },
+    {
+      "name": "added unsupported toggle invalidates an older batch guard",
+      "passed": false,
+      "error": "AssertionError [ERR_ASSERTION]: The input did not match the regular expression /FIELD_CHANGED/. Input:\n\n''\n\n    at file:///Users/original/Project/github/personal_project/agent-form-accelerator/prototype/bench/question-observation-check.mjs:13:427\n    at async check (file:///Users/original/Project/github/personal_project/agent-form-accelerator/prototype/bench/question-observation-check.mjs:5:34)\n    at async file:///Users/original/Project/github/personal_project/agent-form-accelerator/prototype/bench/question-observation-check.mjs:13:2"
+    },
+    {
+      "name": "changed fallback question is rejected before native selection",
+      "passed": false,
+      "error": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n+ actual - expected\n\n+ undefined\n- 'FIELD_CHANGED'\n\n    at file:///Users/original/Project/github/personal_project/agent-form-accelerator/prototype/bench/question-observation-check.mjs:14:413\n    at async check (file:///Users/original/Project/github/personal_project/agent-form-accelerator/prototype/bench/question-observation-check.mjs:5:34)\n    at async file:///Users/original/Project/github/personal_project/agent-form-accelerator/prototype/bench/question-observation-check.mjs:14:2"
+    }
+  ]
+}
