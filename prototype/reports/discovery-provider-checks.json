@@ -1,0 +1,38 @@
+{
+  "date": "2026-09-21T00:51:03.003Z",
+  "results": [
+    {
+      "mode": "single",
+      "concurrent": false,
+      "passed": true,
+      "actualContext": true,
+      "errors": [],
+      "knownTargets": 10,
+      "requiredUnanswered": 1,
+      "searches": 6,
+      "submits": 0
+    },
+    {
+      "mode": "batch",
+      "concurrent": false,
+      "passed": true,
+      "actualContext": true,
+      "errors": [],
+      "knownTargets": 10,
+      "requiredUnanswered": 1,
+      "searches": 6,
+      "submits": 0
+    },
+    {
+      "mode": "single",
+      "concurrent": true,
+      "passed": true,
+      "actualContext": true,
+      "errors": [],
+      "knownTargets": 10,
+      "requiredUnanswered": 1,
+      "searches": 6,
+      "submits": 0
+    }
+  ]
+}

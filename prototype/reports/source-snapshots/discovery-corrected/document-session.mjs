@@ -6,7 +6,6 @@ export async function createDocumentSession({sourcePath, request}) {
   let observation;
   let nextOption=0;
   const offers=new Map(),verified=new Map();
-  const contract = f => f && JSON.stringify([f.group,f.label,f.kind]);
   const freshSource = async () => {
     if (parseDocument(await readFile(sourcePath, 'utf8')).sha256 !== source.sha256) throw new Error('SOURCE_CHANGED: reload document session');
   };
@@ -26,16 +25,14 @@ export async function createDocumentSession({sourcePath, request}) {
       if(!source.entries.some(e=>e.id===q.sourceId))throw new Error('UNKNOWN_SOURCE');
       if(typeof q.query!=='string'||!q.query.trim()||q.query.length>120)throw new Error('INVALID_SEARCH_QUERY');
     }
-    const contracts=queries.map(q=>contract(observation.fields.find(f=>f.ref===q.ref)));
     const result=await request({op:'discover',url,snapshot:observation.snapshot,queries:queries.map(({ref,query})=>({ref,query}))});
     observation=result.observation;
     for(const [key,offer]of offers)if(queries.some(q=>offer.ref===q.ref&&offer.sourceId===q.sourceId))offers.delete(key);
     const searches=result.searches.map((r,i)=>{
       const q=queries[i];
-      if(r.status!=='observed'||contract(observation.fields.find(f=>f.ref===q.ref))!==contracts[i])return {...q,status:'blocked',reason:r.reason??'FIELD_CHANGED',options:[]};
       const options=(r.options??[]).map(option=>{
         const optionRef=`o${++nextOption}`;
-        offers.set(optionRef,{...q,contract:contracts[i],label:option.label,disabled:option.disabled});
+        offers.set(optionRef,{...q,label:option.label,disabled:option.disabled});
         return {optionRef,label:option.label,disabled:option.disabled};
       });
       return {...q,status:r.status,reason:r.reason,options};
@@ -58,7 +55,7 @@ export async function createDocumentSession({sourcePath, request}) {
           const choice=overrides[ref];
           if(field.kind==='autocomplete'&&choice&&typeof choice==='object'){
             const offer=offers.get(choice.optionRef);
-            if(!offer||offer.ref!==ref||offer.sourceId!==sourceId||offer.disabled||offer.contract!==contract(field))throw new Error('INVALID_OPTION_REFERENCE');
+            if(!offer||offer.ref!==ref||offer.sourceId!==sourceId||offer.disabled)throw new Error('INVALID_OPTION_REFERENCE');
             value=offer.label;query=offer.query;
           }else if(['select','combobox','autocomplete'].includes(field.kind)&&typeof choice==='string'&&field.options?.some(o=>!o.disabled&&o.value===choice))value=choice;
           else if(['checkbox','radio'].includes(field.kind)&&typeof choice==='boolean'&&(field.kind!=='radio'||choice))value=choice;

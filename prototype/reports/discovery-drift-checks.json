@@ -1,0 +1,13 @@
+{
+  "date": "2026-09-21T00:50:11.032Z",
+  "results": [
+    {
+      "name": "relabel on discovery blur returns no selectable offer",
+      "passed": true
+    },
+    {
+      "name": "expansion cannot transfer old offer to a relabeled field",
+      "passed": true
+    }
+  ]
+}

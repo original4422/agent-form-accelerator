@@ -1,0 +1,104 @@
+{
+  "scope": "Initial single-query schema was plural queries with maxItems 1. All three single-mode attempts submitted 3 queries, were rejected, then recovered. Keep these failures; do not use recovery-inflated differences as clean batching latency.",
+  "errors": [
+    {
+      "attempt": "1789950892350-0-discovery-single",
+      "tool": "form_search",
+      "arguments": {
+        "url": "http://127.0.0.1:59683/fixtures/alias-form.html",
+        "queries": [
+          {
+            "ref": "f4",
+            "sourceId": "s4",
+            "query": "Hangzhou"
+          },
+          {
+            "ref": "f6",
+            "sourceId": "s7",
+            "query": "Southern Example"
+          },
+          {
+            "ref": "f6",
+            "sourceId": "s11",
+            "query": "Northern Example"
+          }
+        ]
+      },
+      "result": {
+        "content": [
+          {
+            "type": "text",
+            "text": "MCP error -32602: Input validation error: Invalid arguments for tool form_search: Too big: expected array to have <=1 items at queries"
+          }
+        ],
+        "structured_content": null
+      }
+    },
+    {
+      "attempt": "1789950892350-1-discovery-single",
+      "tool": "form_search",
+      "arguments": {
+        "url": "http://127.0.0.1:59683/fixtures/alias-form.html",
+        "queries": [
+          {
+            "ref": "f4",
+            "sourceId": "s4",
+            "query": "Hangzhou"
+          },
+          {
+            "ref": "f6",
+            "sourceId": "s6",
+            "query": "Southern Example"
+          },
+          {
+            "ref": "f6",
+            "sourceId": "s10",
+            "query": "Northern Example"
+          }
+        ]
+      },
+      "result": {
+        "content": [
+          {
+            "type": "text",
+            "text": "MCP error -32602: Input validation error: Invalid arguments for tool form_search: Too big: expected array to have <=1 items at queries"
+          }
+        ],
+        "structured_content": null
+      }
+    },
+    {
+      "attempt": "1789950892350-2-discovery-single",
+      "tool": "form_search",
+      "arguments": {
+        "url": "http://127.0.0.1:59683/fixtures/alias-form.html",
+        "queries": [
+          {
+            "ref": "f4",
+            "sourceId": "s4",
+            "query": "Hangzhou"
+          },
+          {
+            "ref": "f6",
+            "sourceId": "s7",
+            "query": "Southern Example"
+          },
+          {
+            "ref": "f6",
+            "sourceId": "s11",
+            "query": "Northern Example"
+          }
+        ]
+      },
+      "result": {
+        "content": [
+          {
+            "type": "text",
+            "text": "MCP error -32602: Input validation error: Invalid arguments for tool form_search: Too big: expected array to have <=1 items at queries"
+          }
+        ],
+        "structured_content": null
+      }
+    }
+  ]
+}

@@ -68,7 +68,7 @@ export async function executeGoal(request, primitive) {
         if (s.reason || !s.field) continue;
         if (s.field.value === s.value && s.field.valid === false && writes.has(key(s.target))) throw new Error('VALIDATION_FAILED');
         if ((writes.get(key(s.target)) ?? 0) >= 2) throw new Error('WRITE_RETRY_LIMIT');
-        actions.push({ref: s.field.ref, op: 'set', value: s.target.value}); actionTargets.push(s.target);
+        actions.push({ref: s.field.ref, op: 'set', value: s.target.value,...(s.target.query?{query:s.target.query}:{})}); actionTargets.push(s.target);
       }
       if (actions.length) {
         const r = await call({op: 'fill', snapshot: observation.snapshot, url: request.url, deadline, actions});

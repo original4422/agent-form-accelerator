@@ -2,9 +2,11 @@
 
 给 Codex 和 Claude Code 共用的网页填表执行工具。已有 Agent 负责理解资料、匹配字段，本地扩展负责批量填写和回读校验，不另行调用模型 API。
 
-**当前状态：工程原型。已能用 Codex 将未映射的中文 Markdown 资料绑定到英文表单。React/Radix 样本中，复用重复组模板把两次宿主请求合并为一次，完整中位耗时减少约 27%；69 项功能检查通过。官方工具生成脚本出现了定位错误，不能用恢复造成的差距宣称稳定倍数。尚未证明真实招聘页完整流程稳定提速 2 倍。**
+**当前状态：工程原型。已能用 Codex 将未映射的中文 Markdown 资料绑定到英文表单。React/Radix 样本中，复用重复组模板把两次宿主请求合并为一次，完整中位耗时减少约 27%。官方工具生成脚本出现了定位错误，不能用恢复造成的差距宣称稳定倍数。尚未证明真实招聘页完整流程稳定提速 2 倍。**
 
 ## 看结果
+
+- [批量发现与必填项覆盖](prototype/reports/DISCOVERY-AND-COVERAGE.md)：别名/翻译/同校不同校区，6 次 Codex 正确；内部对照中位 51.42 → 44.68 秒，约减少 13%，一组略慢。明确保留资料缺失的必填项。
 
 - [异步搜索选择验证](prototype/reports/SEARCH-CONTROLS.md)：React Select 单选搜索与实体状态，3 次 Codex 均一次调用完成，完整中位约 29 秒；无速度对照。
 - [同一任务接口替换动作后端](prototype/reports/BACKEND-SUBSTITUTION.md)：扩展与可复用 Playwright 均一次调用成功；速度接近，不支持自研动作层有倍数优势。
@@ -127,6 +129,8 @@ codex -c 'mcp_servers.afa.command="node"' \
 React/Radix 本地演示先运行 `npm run build:fixtures`，再运行 `AFA_FIXTURE=react-form npm run demo`，资料使用 `prototype/fixtures/documents/framework-candidate.md`。组件 bundle 由源码生成，不提交编译产物。
 
 搜索选择演示运行 `node prototype/scripts/demo-search.mjs`。它自动构建本地 React Select 样本，启动隔离浏览器并打印临时 Codex 接入命令。实验 Playwright 后端支持带已识别 classNamePrefix 结构的单选搜索：等待结果、选中唯一精确项、核对已选值；输入文字本身不算完成。此能力尚未移植到扩展，未知结构与多选仍不支持，真实招聘页仅做过只读观察。
+
+别名与重名选项演示：`AFA_FIXTURE=alias-form node prototype/scripts/demo-search.mjs`。Codex 可一次搜索多项，再依据资料选择实际观察到的校区。`complete` 仅表示请求目标完成；新增 coverage 列出未解决的可见必填问题。本地样本故意缺少到岗日期，正确结果应留空并报告。
 
 资料流向：页面可见字段和值 → 本地连接 → 当前 Agent。执行核心不调用外部模型，但宿主仍会按它的正常机制处理这些资料。扩展不持久保存填写资料；连接码只在扩展会话存储中保留。
 

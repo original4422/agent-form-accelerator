@@ -47,7 +47,7 @@
 - **时延属于补语义保护之前的 helper。** 原实测版本存于 `reports/source-snapshots/backend-measured/playwright-backend.mjs`；`source-hashes-backends-measured.json` 记录64个源文件及归档映射。修复版不冒充已经重新测过速度；最终代码另存指纹。
 - 本轮所有宿主执行已结束，没有需继续轮询的执行句柄。详见 BACKEND-SUBSTITUTION.md、ADR-0005。
 
-## 本轮：异步搜索选择迁移完成
+## 前一轮：异步搜索选择迁移完成
 
 - 新的公开 Greenhouse/Cloudflare 页面只读结构审计见 `search-public-audit.json`。观察到 input combobox、aria-autocomplete=list 及 select__value-container 等结构；没有真实输入、点击、上传或提交。不把该观察当成平台可填写认证。
 - 锁定 `react-select@5.10.2`，新增 `search-form.jsx` / `search-form.html`。真实 AsyncSelect，三个450ms模拟查询（城市、两所学校），应用存实体ID；原始中文Markdown沿用上一轮、部分页面字段顺序改变。此样本不是厂商克隆，不含真实网络业务。
@@ -59,19 +59,37 @@
 - `node prototype/scripts/demo-search.mjs` 自动构建并打开独立浏览器，打印临时Codex配置命令。初次 Ctrl+C 触发 Playwright 默认退出130并遗留自建目录，核实后已清理；演示改为自己处理信号，重测退出0且临时目录为空。无头启动、打印命令和 Ctrl+C 清理流程已检查；没有替用户启动交互Codex任务或更改全局配置。
 - 本轮所有宿主/演示执行均已终止，没有需轮询的执行句柄。报告 `SEARCH-CONTROLS.md`，决策 `ADR-0006`。此前后端和框架报告仍是各自历史版本的证据。
 
+## 本轮：批量发现与必填覆盖完成
+
+- 可选 form_search 区分 sourceId、query 与观察到的 optionRef；最多12项、本地串行8秒总预算，单次1.5秒。保留已有选择，apply重新执行原查询，唯一完整标签才选择。工具请求通过共享队列串行，避免并发调用竞争状态。
+- alias-form 使用真实 React Select，英文规范名、中文来源和同校不同校区。独立 oracle 校验10个已知目标的实体ID，并要求未提供的到岗日期为空。没有把 oracle 映射注入模型/执行器。
+- coverage 根据来源绑定和当前回读值核对可见且未禁用的必填问题（单选按问题），complete 仅指 requested-targets。宿主必须报告未解决项。
+- 功能检查：12项发现 + 3项真实MCP（单项、批量、并发单项）+ 15项旧搜索 + 8项文档；另2项测量后语义漂移检查初次失败，修复后通过，并重跑12+3检查。
+- 首批1789950892350：单项queries数组max1，三次都先误发三项数组，被拒绝后恢复，保留全部记录，不把此比值当干净收益。
+- 修正单项接口为明确 ref/sourceId/query，批量仍queries数组，批次1789951414848：单项51.42/45.22/53.57s；批量44.68/45.67/36.00s，中位51.42→44.68s（约减少13.1%），其中一组慢1%。6/6正确、60已知目标、零提交、零失败工具调用；每次4→2工具调用。六份最终文字人工复核，都正确报告缺失日期。不能将工具调用数当成独立模型推理次数。
+- 测量后发现blur/expand期间字段改名仍可使用旧offer，修复为发现结束复查语义，并把offer绑定到发现时group/label/kind。实测document-session/backend归档到source-snapshots/discovery-corrected；两个测量manifest有归档映射。最终保护版未重新计时。
+- `AFA_FIXTURE=alias-form node prototype/scripts/demo-search.mjs` 启动独立演示并打印批量发现临时配置。无头启动和Ctrl+C退出0/自建目录清空已测；没有替用户启动交互Codex或改全局配置。
+- 所有测量进程已结束，没有需继续轮询的句柄。详见 DISCOVERY-AND-COVERAGE.md、ADR-0007。
+
 ## 下一轮按证据推进
 
-1. **优先处理来源文字与选项不一致时的有界回退**：简称/翻译/重名在招聘流程中常见。当前一个字符串同时充当来源值、搜索词、精确目标标签；无结果后仅有三个绑定工具，不能改写查询。这是尚未实现的能力，不能把“返回给模型”说成已经可恢复。
-2. 考虑明确分离 source ID、用于发现的查询、已观察的选项身份。搜索本身可以是不提交选择的本地动作；实际选择仍需由已观察选项证明，并保留事实来源。不要通过允许任意文本覆写或自动取第一项制造通过。先构造独立实体ID oracle 的别名/重名/无结果任务，验证回合数、失败与人工判断边界，再决定接口。
-3. 同时审视目标完成与整张表完成的区别：当前 complete 指已请求目标，未知/缺资料的必填字段可能没被绑定。真实任务需要明确部分完成、剩余问题和来源不足；不能因为局部targets已填就宣称申请全部完成。无需反复询问用户提供真实URL，先推进这些独立工作。
-4. 已有原生、Radix、React Select 三种控件实现的功能证据，但没有三类完整任务稳定两倍的证据；真实招聘页仍只读。文件上传、跨页、真实用户会话和更广文档输入尚待验证，不能用新增的本地样本降低原目标。
-5. 保留共享任务接口与可替换动作后端。下一项控件优先复用Playwright，不并行复制扩展引擎。当前只测Codex、复用登录、无新API Key；目标保持 active。
+1. **增加完整任务代表性，而非继续在当前样本追逐倍数。** 批量能减少协议和重复上下文，但本轮收益有限且波动，不支持“只要合并调用就能两倍”的假设。现有原生/Radix/React Select三种组件功能证据，不等于三类真实完整任务稳定两倍。
+2. 真实招聘平台仍只读观察；文件附件、跨页、个人浏览器会话尚未验证。优先明确一个可复现的完整任务，使用虚构资料、隔离浏览器、无提交，选取有代表性的未知结构/缺失资料路径。不要在没有范围判断时直接向真实招聘平台写入，也不要反复要求用户给URL。
+3. 保留成熟动作后端、来源绑定、有限局部循环与有证据的语义回退。不要把学校重名/字段变化交给猜测，也不能将局部目标成功当作申请完成。
+4. 扩展仍不支持输入型autocomplete；Playwright实验入口只接受隔离localhost测试页。不能把本地演示宣传成已经可接管真实招聘页面。
+5. 后续速度比较需要相同正确性与缺失事实标准、合理批量强基线，明确资料/启动/工具/恢复计时范围。当前只测Codex、已有登录、无新API Key；目标保持active。
 
 ## 测量规则
 
 所有宿主尝试保留，错误恢复计入时延，独立应用状态 oracle 校验，禁止提交申请。耗时明确分出浏览器启动、CLI启动、模型/工具、资料准备。研究和其他浏览器测试不与宿主计时并行争用本地执行资源。不得修改已安装的 Skill 或全局 MCP 配置。
 
 ## 可复现入口
+
+- `node prototype/bench/discovery-check.mjs`：12项选项引用与覆盖检查。
+- `node prototype/bench/discovery-drift-check.mjs`：2项字段含义变化保护。
+- `node prototype/bench/discovery-provider-check.mjs`：3项真实MCP接入。
+- `node prototype/bench/codex-discovery.mjs`：修正单项接口与批量接口配对。
+- `AFA_FIXTURE=alias-form node prototype/scripts/demo-search.mjs`：别名/重名/缺失事实演示。
 
 - `node prototype/bench/search-check.mjs`：15项搜索状态与错误路径。
 - `AFA_SCENARIO=search node prototype/bench/backend-provider-check.mjs`：搜索样本实际MCP与应用状态。

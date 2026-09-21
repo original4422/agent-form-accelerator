@@ -1,0 +1,53 @@
+{
+  "date": "2026-09-21T00:50:44.477Z",
+  "results": [
+    {
+      "name": "batch discovery returns qualified choices without selecting or leaving queries",
+      "passed": true
+    },
+    {
+      "name": "unknown option references reject before any write",
+      "passed": true
+    },
+    {
+      "name": "option reference cannot be reused for another source fact",
+      "passed": true
+    },
+    {
+      "name": "refresh invalidates old choice references",
+      "passed": true
+    },
+    {
+      "name": "choice is re-queried and disappearance stops selection",
+      "passed": true
+    },
+    {
+      "name": "identical visible labels remain ambiguous after discovery",
+      "passed": true
+    },
+    {
+      "name": "all queries validate before any search event",
+      "passed": true
+    },
+    {
+      "name": "multiple terms for one source retain all returned option refs",
+      "passed": true
+    },
+    {
+      "name": "discovery preserves an existing selected entity",
+      "passed": true
+    },
+    {
+      "name": "requested-target success explicitly reports uncovered required fields",
+      "passed": true
+    },
+    {
+      "name": "known facts fill across repeated choices; missing required fact remains explicit",
+      "passed": true
+    },
+    {
+      "name": "later DOM edits invalidate previously verified coverage",
+      "passed": true
+    }
+  ]
+}

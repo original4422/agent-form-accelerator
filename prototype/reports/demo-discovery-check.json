@@ -1,0 +1,8 @@
+{
+  "date": "2026-09-21T00:43:33.412231+00:00",
+  "fixture": "alias-form",
+  "source": "alias-candidate.md",
+  "discoveryMode": "batch",
+  "method": "Headless PTY start, inspected generated temporary Codex command, Ctrl+C, confirmed exit 0 and both owned state directories empty. No interactive Codex task launched.",
+  "passed": true
+}

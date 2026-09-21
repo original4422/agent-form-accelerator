@@ -36,6 +36,7 @@ try{
   const mapping={full:'姓名',mail:'电子邮箱',tel:'手机',home:'居住地',college:'院校',course:'专业',degree:'最高学历',grad:'预计毕业日期','move-y':'是否愿意异地工作','share-n':'是否同意向其他雇主分享资料',intro:'自我介绍',project:'项目经历'};
   for(const [domId,label]of Object.entries(mapping)){const f=page.fields.find(f=>f.domId===domId),e=source.entries.find(e=>e.label===label);bindings[f.ref]=e.id;if(domId==='degree')choices[f.ref]='pg';if(f.kind==='radio')choices[f.ref]=true;}
   const r=await session.apply({url:page.url,bindings,choices});assert.equal(r.complete,true,JSON.stringify(r));
+  assert.equal(r.coverage.visibleRequiredCovered,true,JSON.stringify(r.coverage));
   const state=await h.page.evaluate(()=>({data:window.applicationState,submits:window.submissionCount}));
   assert.equal(state.data.full,'林示例');assert.equal(state.data.move,'yes');assert.equal(state.data.share,'no');assert.equal(state.data.degree,'pg');
   assert.equal(state.data.intro,source.entries.find(e=>e.label==='自我介绍').value);assert.equal(state.data.project,source.entries.find(e=>e.label==='项目经历').value);assert.equal(state.submits,0);

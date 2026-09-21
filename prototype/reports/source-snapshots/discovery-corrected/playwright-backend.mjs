@@ -199,9 +199,7 @@ export function createPlaywrightBackend(page) {
           el=await handleFor(query.ref);
           const options=await selectAutocomplete(el,field,query.query,{...r,deadline},{query:query.query,discoverOnly:true});
           observation=await observe({op:'inspect'});
-          const after=observation.fields.find(f=>f.ref===query.ref);
-          if(!after||after.label!==field.label||after.group!==field.group||after.kind!==field.kind)throw new Error('FIELD_CHANGED');
-          if(after.value!==field.value)throw new Error('DISCOVERY_CHANGED_SELECTION');
+          if(observation.fields.find(f=>f.ref===query.ref)?.value!==field.value)throw new Error('DISCOVERY_CHANGED_SELECTION');
           searches.push({ref:query.ref,status:'observed',options});
         }catch(e){searches.push({ref:query.ref,status:'blocked',reason:e.message,options:[]});observation=await observe({op:'inspect'});}
         finally{await el?.dispose();}

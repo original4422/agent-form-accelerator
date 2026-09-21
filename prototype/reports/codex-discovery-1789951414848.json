@@ -1,0 +1,827 @@
+{
+  "batchId": 1789951414848,
+  "protocol": "singular-v2",
+  "date": "2026-09-21T00:48:25.965Z",
+  "aborted": false,
+  "scope": "Internal interface ablation on identical React Select alias/campus task. form_search accepts singular ref/sourceId/query in single mode and an array up to 12 queries in batch mode; same reusable browser backend, source, bindings, verification and prompts. Does not compare against a mature external product. Host may issue concurrent single-query calls; server serializes mutable tab operations. Three alternating pairs by default. All startup/model/tool/recovery/exit latency included; browser load and read-only preflight excluded. Ten supplied targets must match actual entity IDs, one required date must remain blank and be reported. No submits.",
+  "preflight": [
+    {
+      "mode": "single",
+      "passed": true,
+      "tools": 4,
+      "actualContext": true,
+      "sourceEntries": 14,
+      "searchBatchSize": 1
+    },
+    {
+      "mode": "batch",
+      "passed": true,
+      "tools": 4,
+      "actualContext": true,
+      "sourceEntries": 14,
+      "searchBatchSize": 12
+    },
+    {
+      "mode": "batch",
+      "passed": true,
+      "tools": 4,
+      "actualContext": true,
+      "sourceEntries": 14,
+      "searchBatchSize": 12
+    },
+    {
+      "mode": "single",
+      "passed": true,
+      "tools": 4,
+      "actualContext": true,
+      "sourceEntries": 14,
+      "searchBatchSize": 1
+    },
+    {
+      "mode": "single",
+      "passed": true,
+      "tools": 4,
+      "actualContext": true,
+      "sourceEntries": 14,
+      "searchBatchSize": 1
+    },
+    {
+      "mode": "batch",
+      "passed": true,
+      "tools": 4,
+      "actualContext": true,
+      "sourceEntries": 14,
+      "searchBatchSize": 12
+    }
+  ],
+  "rows": [
+    {
+      "attempt": "1789951414848-0-discovery-single",
+      "repetition": 0,
+      "mode": "single",
+      "elapsedMs": 51423.744957999996,
+      "exitCode": 0,
+      "timedOut": false,
+      "aborted": false,
+      "passed": true,
+      "errors": [],
+      "knownTargets": 10,
+      "requiredUnanswered": 1,
+      "searches": 6,
+      "submits": 0,
+      "coverageCorrect": true,
+      "reportsMissingDate": true,
+      "finalText": "Filled and verified all source-supported fields, including both education experiences in order with Shenzhen and Beijing campuses correctly matched.\n\nRequired information still missing: **Earliest available start date**, left blank. The application was not submitted.",
+      "toolCalls": [
+        {
+          "tool": "form_search",
+          "status": "completed",
+          "startMs": 14865.576417000002,
+          "endMs": 22484.656457999998,
+          "durationMs": 7619.080040999996,
+          "returnedBytes": 5272
+        },
+        {
+          "tool": "form_search",
+          "status": "completed",
+          "startMs": 22484.662042,
+          "endMs": 25482.389042,
+          "durationMs": 2997.726999999999,
+          "returnedBytes": 5447
+        },
+        {
+          "tool": "form_search",
+          "status": "completed",
+          "startMs": 25482.459,
+          "endMs": 28690.327957999998,
+          "durationMs": 3207.868957999999,
+          "returnedBytes": 5657
+        },
+        {
+          "tool": "form_apply_bindings",
+          "status": "completed",
+          "startMs": 37084.689458,
+          "endMs": 46155.668207999996,
+          "durationMs": 9070.978749999995,
+          "returnedBytes": 7106,
+          "executionMs": 2046.7556659999973,
+          "complete": true,
+          "primitiveCalls": 5
+        }
+      ],
+      "usage": {
+        "input_tokens": 102887,
+        "cached_input_tokens": 79104,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 421,
+        "reasoning_output_tokens": 0
+      },
+      "timeline": [
+        {
+          "atMs": 1190.4257499999999,
+          "event": "thread.started"
+        },
+        {
+          "atMs": 1199.1127920000004,
+          "event": "turn.started"
+        },
+        {
+          "atMs": 6594.661333,
+          "event": "item.completed",
+          "itemId": "item_0",
+          "itemType": "agent_message"
+        },
+        {
+          "atMs": 14865.576417000002,
+          "event": "item.started",
+          "itemId": "item_1",
+          "itemType": "mcp_tool_call",
+          "tool": "form_search",
+          "status": "in_progress"
+        },
+        {
+          "atMs": 22484.656457999998,
+          "event": "item.completed",
+          "itemId": "item_1",
+          "itemType": "mcp_tool_call",
+          "tool": "form_search",
+          "status": "completed"
+        },
+        {
+          "atMs": 22484.662042,
+          "event": "item.started",
+          "itemId": "item_2",
+          "itemType": "mcp_tool_call",
+          "tool": "form_search",
+          "status": "in_progress"
+        },
+        {
+          "atMs": 25482.389042,
+          "event": "item.completed",
+          "itemId": "item_2",
+          "itemType": "mcp_tool_call",
+          "tool": "form_search",
+          "status": "completed"
+        },
+        {
+          "atMs": 25482.459,
+          "event": "item.started",
+          "itemId": "item_3",
+          "itemType": "mcp_tool_call",
+          "tool": "form_search",
+          "status": "in_progress"
+        },
+        {
+          "atMs": 28690.327957999998,
+          "event": "item.completed",
+          "itemId": "item_3",
+          "itemType": "mcp_tool_call",
+          "tool": "form_search",
+          "status": "completed"
+        },
+        {
+          "atMs": 37084.689458,
+          "event": "item.started",
+          "itemId": "item_4",
+          "itemType": "mcp_tool_call",
+          "tool": "form_apply_bindings",
+          "status": "in_progress"
+        },
+        {
+          "atMs": 46155.668207999996,
+          "event": "item.completed",
+          "itemId": "item_4",
+          "itemType": "mcp_tool_call",
+          "tool": "form_apply_bindings",
+          "status": "completed"
+        },
+        {
+          "atMs": 48981.422999999995,
+          "event": "item.completed",
+          "itemId": "item_5",
+          "itemType": "agent_message"
+        },
+        {
+          "atMs": 49066.859583,
+          "event": "turn.completed"
+        }
+      ]
+    },
+    {
+      "attempt": "1789951414848-0-discovery-batch",
+      "repetition": 0,
+      "mode": "batch",
+      "elapsedMs": 44683.114375000005,
+      "exitCode": 0,
+      "timedOut": false,
+      "aborted": false,
+      "passed": true,
+      "errors": [],
+      "knownTargets": 10,
+      "requiredUnanswered": 1,
+      "searches": 6,
+      "submits": 0,
+      "coverageCorrect": true,
+      "reportsMissingDate": true,
+      "finalText": "Filled and verified all source-supported fields, including both education experiences in order:\n\n1. Southern Example College — Shenzhen campus; 软件工程\n2. Northern Example University — Beijing campus; 计算机科学\n\nRequired information still missing: **Earliest available start date**, left blank because no fact was supplied.\n\nThe application was not submitted.",
+      "toolCalls": [
+        {
+          "tool": "form_search",
+          "status": "completed",
+          "startMs": 12215.306958000001,
+          "endMs": 18133.79966599999,
+          "durationMs": 5918.492707999991,
+          "returnedBytes": 5868
+        },
+        {
+          "tool": "form_apply_bindings",
+          "status": "completed",
+          "startMs": 25594.793707999997,
+          "endMs": 36922.911333,
+          "durationMs": 11328.117624999999,
+          "returnedBytes": 7105,
+          "executionMs": 2009.154125000001,
+          "complete": true,
+          "primitiveCalls": 5
+        }
+      ],
+      "usage": {
+        "input_tokens": 97131,
+        "cached_input_tokens": 76160,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 424,
+        "reasoning_output_tokens": 0
+      },
+      "timeline": [
+        {
+          "atMs": 995.8132909999986,
+          "event": "thread.started"
+        },
+        {
+          "atMs": 999.9396249999991,
+          "event": "turn.started"
+        },
+        {
+          "atMs": 6486.096832999996,
+          "event": "item.completed",
+          "itemId": "item_0",
+          "itemType": "agent_message"
+        },
+        {
+          "atMs": 12215.306958000001,
+          "event": "item.started",
+          "itemId": "item_1",
+          "itemType": "mcp_tool_call",
+          "tool": "form_search",
+          "status": "in_progress"
+        },
+        {
+          "atMs": 18133.79966599999,
+          "event": "item.completed",
+          "itemId": "item_1",
+          "itemType": "mcp_tool_call",
+          "tool": "form_search",
+          "status": "completed"
+        },
+        {
+          "atMs": 25594.793707999997,
+          "event": "item.started",
+          "itemId": "item_2",
+          "itemType": "mcp_tool_call",
+          "tool": "form_apply_bindings",
+          "status": "in_progress"
+        },
+        {
+          "atMs": 36922.911333,
+          "event": "item.completed",
+          "itemId": "item_2",
+          "itemType": "mcp_tool_call",
+          "tool": "form_apply_bindings",
+          "status": "completed"
+        },
+        {
+          "atMs": 42134.158291,
+          "event": "item.completed",
+          "itemId": "item_3",
+          "itemType": "agent_message"
+        },
+        {
+          "atMs": 42175.547833000004,
+          "event": "turn.completed"
+        }
+      ]
+    },
+    {
+      "attempt": "1789951414848-1-discovery-batch",
+      "repetition": 1,
+      "mode": "batch",
+      "elapsedMs": 45668.23720799999,
+      "exitCode": 0,
+      "timedOut": false,
+      "aborted": false,
+      "passed": true,
+      "errors": [],
+      "knownTargets": 10,
+      "requiredUnanswered": 1,
+      "searches": 6,
+      "submits": 0,
+      "coverageCorrect": true,
+      "reportsMissingDate": true,
+      "finalText": "Filled and verified all source-supported fields, including both education experiences in order with Shenzhen and Beijing campus matches.\n\nLeft the required **Earliest available start date** blank because no source fact supplies it. Did not submit.",
+      "toolCalls": [
+        {
+          "tool": "form_search",
+          "status": "completed",
+          "startMs": 15365.29737500001,
+          "endMs": 21974.007167000003,
+          "durationMs": 6608.709791999994,
+          "returnedBytes": 5868
+        },
+        {
+          "tool": "form_apply_bindings",
+          "status": "completed",
+          "startMs": 33412.232875,
+          "endMs": 40413.593582999994,
+          "durationMs": 7001.360707999993,
+          "returnedBytes": 7091,
+          "executionMs": 2027.8879579999993,
+          "complete": true,
+          "primitiveCalls": 5
+        }
+      ],
+      "usage": {
+        "input_tokens": 97104,
+        "cached_input_tokens": 76160,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 398,
+        "reasoning_output_tokens": 0
+      },
+      "timeline": [
+        {
+          "atMs": 97.28737499999988,
+          "event": "thread.started"
+        },
+        {
+          "atMs": 99.57679200000712,
+          "event": "turn.started"
+        },
+        {
+          "atMs": 8883.580167000007,
+          "event": "item.completed",
+          "itemId": "item_0",
+          "itemType": "agent_message"
+        },
+        {
+          "atMs": 15365.29737500001,
+          "event": "item.started",
+          "itemId": "item_1",
+          "itemType": "mcp_tool_call",
+          "tool": "form_search",
+          "status": "in_progress"
+        },
+        {
+          "atMs": 21974.007167000003,
+          "event": "item.completed",
+          "itemId": "item_1",
+          "itemType": "mcp_tool_call",
+          "tool": "form_search",
+          "status": "completed"
+        },
+        {
+          "atMs": 33412.232875,
+          "event": "item.started",
+          "itemId": "item_2",
+          "itemType": "mcp_tool_call",
+          "tool": "form_apply_bindings",
+          "status": "in_progress"
+        },
+        {
+          "atMs": 40413.593582999994,
+          "event": "item.completed",
+          "itemId": "item_2",
+          "itemType": "mcp_tool_call",
+          "tool": "form_apply_bindings",
+          "status": "completed"
+        },
+        {
+          "atMs": 43436.45912500001,
+          "event": "item.completed",
+          "itemId": "item_3",
+          "itemType": "agent_message"
+        },
+        {
+          "atMs": 43447.13470800001,
+          "event": "turn.completed"
+        }
+      ]
+    },
+    {
+      "attempt": "1789951414848-1-discovery-single",
+      "repetition": 1,
+      "mode": "single",
+      "elapsedMs": 45215.991792000015,
+      "exitCode": 0,
+      "timedOut": false,
+      "aborted": false,
+      "passed": true,
+      "errors": [],
+      "knownTargets": 10,
+      "requiredUnanswered": 1,
+      "searches": 6,
+      "submits": 0,
+      "coverageCorrect": true,
+      "reportsMissingDate": true,
+      "finalText": "Filled and verified all source-supported fields, including both education experiences in order with Shenzhen and Beijing campuses matched.\n\nRequired information still missing: **Earliest available start date**. Left blank because no source fact was supplied.\n\nNot submitted.",
+      "toolCalls": [
+        {
+          "tool": "form_search",
+          "status": "completed",
+          "startMs": 14140.254375000019,
+          "endMs": 17915.638792000012,
+          "durationMs": 3775.384416999994,
+          "returnedBytes": 5344
+        },
+        {
+          "tool": "form_search",
+          "status": "completed",
+          "startMs": 17915.72533300001,
+          "endMs": 20537.22325000001,
+          "durationMs": 2621.4979170000006,
+          "returnedBytes": 5417
+        },
+        {
+          "tool": "form_search",
+          "status": "completed",
+          "startMs": 20537.258625000017,
+          "endMs": 23292.513250000018,
+          "durationMs": 2755.2546250000014,
+          "returnedBytes": 5657
+        },
+        {
+          "tool": "form_apply_bindings",
+          "status": "completed",
+          "startMs": 31377.950291999994,
+          "endMs": 39269.421333000006,
+          "durationMs": 7891.471041000012,
+          "returnedBytes": 7089,
+          "executionMs": 2029.1563749999987,
+          "complete": true,
+          "primitiveCalls": 5
+        }
+      ],
+      "usage": {
+        "input_tokens": 102761,
+        "cached_input_tokens": 79104,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 427,
+        "reasoning_output_tokens": 0
+      },
+      "timeline": [
+        {
+          "atMs": 147.25408300000709,
+          "event": "thread.started"
+        },
+        {
+          "atMs": 150.13054199999897,
+          "event": "turn.started"
+        },
+        {
+          "atMs": 7572.135957999999,
+          "event": "item.completed",
+          "itemId": "item_0",
+          "itemType": "agent_message"
+        },
+        {
+          "atMs": 14140.254375000019,
+          "event": "item.started",
+          "itemId": "item_1",
+          "itemType": "mcp_tool_call",
+          "tool": "form_search",
+          "status": "in_progress"
+        },
+        {
+          "atMs": 17915.638792000012,
+          "event": "item.completed",
+          "itemId": "item_1",
+          "itemType": "mcp_tool_call",
+          "tool": "form_search",
+          "status": "completed"
+        },
+        {
+          "atMs": 17915.72533300001,
+          "event": "item.started",
+          "itemId": "item_2",
+          "itemType": "mcp_tool_call",
+          "tool": "form_search",
+          "status": "in_progress"
+        },
+        {
+          "atMs": 20537.22325000001,
+          "event": "item.completed",
+          "itemId": "item_2",
+          "itemType": "mcp_tool_call",
+          "tool": "form_search",
+          "status": "completed"
+        },
+        {
+          "atMs": 20537.258625000017,
+          "event": "item.started",
+          "itemId": "item_3",
+          "itemType": "mcp_tool_call",
+          "tool": "form_search",
+          "status": "in_progress"
+        },
+        {
+          "atMs": 23292.513250000018,
+          "event": "item.completed",
+          "itemId": "item_3",
+          "itemType": "mcp_tool_call",
+          "tool": "form_search",
+          "status": "completed"
+        },
+        {
+          "atMs": 31377.950291999994,
+          "event": "item.started",
+          "itemId": "item_4",
+          "itemType": "mcp_tool_call",
+          "tool": "form_apply_bindings",
+          "status": "in_progress"
+        },
+        {
+          "atMs": 39269.421333000006,
+          "event": "item.completed",
+          "itemId": "item_4",
+          "itemType": "mcp_tool_call",
+          "tool": "form_apply_bindings",
+          "status": "completed"
+        },
+        {
+          "atMs": 42200.89837500002,
+          "event": "item.completed",
+          "itemId": "item_5",
+          "itemType": "agent_message"
+        },
+        {
+          "atMs": 42636.941792,
+          "event": "turn.completed"
+        }
+      ]
+    },
+    {
+      "attempt": "1789951414848-2-discovery-single",
+      "repetition": 2,
+      "mode": "single",
+      "elapsedMs": 53565.354792,
+      "exitCode": 0,
+      "timedOut": false,
+      "aborted": false,
+      "passed": true,
+      "errors": [],
+      "knownTargets": 10,
+      "requiredUnanswered": 1,
+      "searches": 6,
+      "submits": 0,
+      "coverageCorrect": true,
+      "reportsMissingDate": true,
+      "finalText": "Filled and verified all source-supported fields, including both education experiences in order with Shenzhen and Beijing campuses matched correctly.\n\nRequired information still missing: **Earliest available start date**, left blank because no source fact was supplied.\n\nThe application was not submitted.",
+      "toolCalls": [
+        {
+          "tool": "form_search",
+          "status": "completed",
+          "startMs": 15611.258667000016,
+          "endMs": 22742.13283300001,
+          "durationMs": 7130.874165999994,
+          "returnedBytes": 5272
+        },
+        {
+          "tool": "form_search",
+          "status": "completed",
+          "startMs": 22742.301582999993,
+          "endMs": 26131.154833000008,
+          "durationMs": 3388.8532500000147,
+          "returnedBytes": 5657
+        },
+        {
+          "tool": "form_search",
+          "status": "completed",
+          "startMs": 26131.18316700001,
+          "endMs": 29930.647375,
+          "durationMs": 3799.4642079999903,
+          "returnedBytes": 5447
+        },
+        {
+          "tool": "form_apply_bindings",
+          "status": "completed",
+          "startMs": 36807.11050000001,
+          "endMs": 46817.875833,
+          "durationMs": 10010.765332999988,
+          "returnedBytes": 7106,
+          "executionMs": 2055.1663340000014,
+          "complete": true,
+          "primitiveCalls": 5
+        }
+      ],
+      "usage": {
+        "input_tokens": 102848,
+        "cached_input_tokens": 79104,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 426,
+        "reasoning_output_tokens": 0
+      },
+      "timeline": [
+        {
+          "atMs": 113.7290830000129,
+          "event": "thread.started"
+        },
+        {
+          "atMs": 115.77008300001035,
+          "event": "turn.started"
+        },
+        {
+          "atMs": 7308.895583000005,
+          "event": "item.completed",
+          "itemId": "item_0",
+          "itemType": "agent_message"
+        },
+        {
+          "atMs": 15611.258667000016,
+          "event": "item.started",
+          "itemId": "item_1",
+          "itemType": "mcp_tool_call",
+          "tool": "form_search",
+          "status": "in_progress"
+        },
+        {
+          "atMs": 22742.13283300001,
+          "event": "item.completed",
+          "itemId": "item_1",
+          "itemType": "mcp_tool_call",
+          "tool": "form_search",
+          "status": "completed"
+        },
+        {
+          "atMs": 22742.301582999993,
+          "event": "item.started",
+          "itemId": "item_2",
+          "itemType": "mcp_tool_call",
+          "tool": "form_search",
+          "status": "in_progress"
+        },
+        {
+          "atMs": 26131.154833000008,
+          "event": "item.completed",
+          "itemId": "item_2",
+          "itemType": "mcp_tool_call",
+          "tool": "form_search",
+          "status": "completed"
+        },
+        {
+          "atMs": 26131.18316700001,
+          "event": "item.started",
+          "itemId": "item_3",
+          "itemType": "mcp_tool_call",
+          "tool": "form_search",
+          "status": "in_progress"
+        },
+        {
+          "atMs": 29930.647375,
+          "event": "item.completed",
+          "itemId": "item_3",
+          "itemType": "mcp_tool_call",
+          "tool": "form_search",
+          "status": "completed"
+        },
+        {
+          "atMs": 36807.11050000001,
+          "event": "item.started",
+          "itemId": "item_4",
+          "itemType": "mcp_tool_call",
+          "tool": "form_apply_bindings",
+          "status": "in_progress"
+        },
+        {
+          "atMs": 46817.875833,
+          "event": "item.completed",
+          "itemId": "item_4",
+          "itemType": "mcp_tool_call",
+          "tool": "form_apply_bindings",
+          "status": "completed"
+        },
+        {
+          "atMs": 51269.445125,
+          "event": "item.completed",
+          "itemId": "item_5",
+          "itemType": "agent_message"
+        },
+        {
+          "atMs": 51289.51887500001,
+          "event": "turn.completed"
+        }
+      ]
+    },
+    {
+      "attempt": "1789951414848-2-discovery-batch",
+      "repetition": 2,
+      "mode": "batch",
+      "elapsedMs": 35999.51695799999,
+      "exitCode": 0,
+      "timedOut": false,
+      "aborted": false,
+      "passed": true,
+      "errors": [],
+      "knownTargets": 10,
+      "requiredUnanswered": 1,
+      "searches": 6,
+      "submits": 0,
+      "coverageCorrect": true,
+      "reportsMissingDate": true,
+      "finalText": "Filled and verified all source-supported fields, including both education experiences in order with Shenzhen and Beijing campus matches.\n\nLeft the required **Earliest available start date** blank because no source fact supplies it. Did not submit.",
+      "toolCalls": [
+        {
+          "tool": "form_search",
+          "status": "completed",
+          "startMs": 11566.286208000005,
+          "endMs": 16702.218458000018,
+          "durationMs": 5135.932250000013,
+          "returnedBytes": 5868
+        },
+        {
+          "tool": "form_apply_bindings",
+          "status": "completed",
+          "startMs": 23175.718207999977,
+          "endMs": 30380.214791999984,
+          "durationMs": 7204.496584000008,
+          "returnedBytes": 7089,
+          "executionMs": 2022.8820840000008,
+          "complete": true,
+          "primitiveCalls": 5
+        }
+      ],
+      "usage": {
+        "input_tokens": 97204,
+        "cached_input_tokens": 76288,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 403,
+        "reasoning_output_tokens": 0
+      },
+      "timeline": [
+        {
+          "atMs": 1014.6107919999922,
+          "event": "thread.started"
+        },
+        {
+          "atMs": 1017.4815829999861,
+          "event": "turn.started"
+        },
+        {
+          "atMs": 6086.683916999988,
+          "event": "item.completed",
+          "itemId": "item_0",
+          "itemType": "agent_message"
+        },
+        {
+          "atMs": 11566.286208000005,
+          "event": "item.started",
+          "itemId": "item_1",
+          "itemType": "mcp_tool_call",
+          "tool": "form_search",
+          "status": "in_progress"
+        },
+        {
+          "atMs": 16702.218458000018,
+          "event": "item.completed",
+          "itemId": "item_1",
+          "itemType": "mcp_tool_call",
+          "tool": "form_search",
+          "status": "completed"
+        },
+        {
+          "atMs": 23175.718207999977,
+          "event": "item.started",
+          "itemId": "item_2",
+          "itemType": "mcp_tool_call",
+          "tool": "form_apply_bindings",
+          "status": "in_progress"
+        },
+        {
+          "atMs": 30380.214791999984,
+          "event": "item.completed",
+          "itemId": "item_2",
+          "itemType": "mcp_tool_call",
+          "tool": "form_apply_bindings",
+          "status": "completed"
+        },
+        {
+          "atMs": 33481.353250000015,
+          "event": "item.completed",
+          "itemId": "item_3",
+          "itemType": "agent_message"
+        },
+        {
+          "atMs": 33482.488291999995,
+          "event": "turn.completed"
+        }
+      ]
+    }
+  ]
+}

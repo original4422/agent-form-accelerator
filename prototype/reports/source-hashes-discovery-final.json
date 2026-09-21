@@ -1,0 +1,15 @@
+{
+  "scope": "Final implementation after semantic drift guard; functional validation only, not a timing claim.",
+  "sha256": {
+    "prototype/src/mcp.mjs": "881d66ceece558cff0b0d7c6e0bbee69a25c553eb352da3143c055287bc3f57b",
+    "prototype/src/document-session.mjs": "1ca235f5961e41b931b6d9a1eec81136441305121fb39c02b9461f3d59cecdf7",
+    "prototype/src/bindings-server.mjs": "00c2992e6026b7c1c6ce7cd8267ead1fc2a70ae256162e7bdc7b021e17ceb2ec",
+    "prototype/src/coverage.mjs": "15de6ffde45dc623bebdf97f5c5b6cddc1b4cee4e8fb5dd43ef64659a0da382f",
+    "prototype/src/document-source.mjs": "e6426296ce2890903c9acdea172c93dd4d64c3e1a1b2b735ac83b73608d0a993",
+    "prototype/src/source-mcp.mjs": "00f13c76817411e2f977688136c034d1353f79cf1bea680589e64fddb9a5bcb5",
+    "prototype/src/bindings-mcp.mjs": "1cd1343c4f2b02fb77e09153bbbc3902613754ca42d45f4ded22450ab21413be",
+    "prototype/src/bridge.mjs": "34e2ec16bbcd1ea21553acdae33e18b3ddde811a0121c5989e1b469936af016e",
+    "prototype/bench/playwright-backend.mjs": "462ba0d142d7163bcbda963a6afce382ddf0a76d7288c7b833d7f80c16f8c5a5",
+    "prototype/bench/discovery-drift-check.mjs": "f07f76170662905d3852c0efd75fca66f353fd84bdd80b8fb84cec841b16c8f2"
+  }
+}
