@@ -1,0 +1,1308 @@
+{
+  "batchId": 1789962939672,
+  "date": "2026-09-21T03:58:29.180Z",
+  "scope": "Two independently varied synthetic React Select catalogs; same bilingual facts and visible labels, reversed language indexing. Two alternating pairs: single-query conditional versus optional predeclared query variants. Baseline may choose any query or call form_search; no forced failure and no reruns. End-to-end host time, all recoveries, five target values plus one missing date and zero submits. This isolates a retrieval uncertainty case; not real site/full-application speed proof.",
+  "prompt": "Fill the connected fictional application from the supplied Markdown facts. Preserve all geographic qualifiers; different cities may share the same romanized name. Use source references and observed fields. Query terms may use source-supported names or translations; decide the search strategy from the tools offered. Make as few calls as necessary without weakening conditions or skipping verification. Use returned evidence and required-field coverage. Leave missing facts blank and report them. Do not submit, navigate, upload, use shell/web, or inspect application-specific state.",
+  "promptHash": "373c26a7ae242df4f9f52d82991c0175b2b74883fa1a6f01156d04002a0129cb",
+  "rows": [
+    {
+      "suffix": "a",
+      "enabled": false,
+      "attempt": "1789962939672-a-single",
+      "preflight": {
+        "enabled": false,
+        "contextHash": "bc7a44da5eaf55842e63dd8bf88642df95368f328105ffb8c0f97e107f1a5b4c",
+        "toolsHash": "6e9b73f67de40e6da04ba8d32db10d4d4b968595758e6bce788c908ad68c4053",
+        "passed": true
+      },
+      "elapsedMs": 47037.99591700001,
+      "exitCode": 0,
+      "timedOut": false,
+      "aborted": false,
+      "toolCalls": [
+        {
+          "tool": "form_apply_bindings",
+          "status": "completed",
+          "startMs": 15043.839500000002,
+          "endMs": 27376.765875,
+          "durationMs": 12332.926375,
+          "returnedBytes": 3214,
+          "executionMs": 1235.8936250000006,
+          "complete": false,
+          "reason": "CONDITIONAL_SELECTION_UNRESOLVED"
+        },
+        {
+          "tool": "form_apply_bindings",
+          "status": "completed",
+          "startMs": 31798.6125,
+          "endMs": 41571.552666999996,
+          "durationMs": 9772.940166999997,
+          "returnedBytes": 4098,
+          "executionMs": 1425.9919579999987,
+          "complete": true,
+          "primitiveCalls": 3
+        }
+      ],
+      "usage": {
+        "input_tokens": 94235,
+        "cached_input_tokens": 75008,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 370,
+        "reasoning_output_tokens": 0
+      },
+      "calls": [
+        {
+          "tool": "form_apply_bindings",
+          "arguments": {
+            "url": "http://127.0.0.1:65004/fixtures/query-catalog-a.html",
+            "bindings": {
+              "f1": "s1",
+              "f2": "s2",
+              "f3": "s3",
+              "f4": "s4",
+              "f5": "s5"
+            },
+            "choices": {
+              "f3": {
+                "search": {
+                  "query": "Osaka",
+                  "labelParts": [
+                    "Osaka",
+                    "Japan"
+                  ]
+                }
+              },
+              "f4": {
+                "search": {
+                  "query": "Suzhou",
+                  "labelParts": [
+                    "Suzhou",
+                    "Jiangsu",
+                    "China"
+                  ]
+                }
+              }
+            }
+          },
+          "complete": false,
+          "reason": "CONDITIONAL_SELECTION_UNRESOLVED",
+          "conditionalSelections": [
+            {
+              "reason": "CONDITION_NOT_MET",
+              "ref": "f3",
+              "sourceId": "s3",
+              "condition": {
+                "query": "Osaka",
+                "labelParts": [
+                  "Osaka",
+                  "Japan"
+                ]
+              }
+            },
+            {
+              "option": {
+                "optionRef": "o1",
+                "label": "Suzhou, Jiangsu, China",
+                "disabled": false
+              },
+              "ref": "f4",
+              "sourceId": "s4",
+              "condition": {
+                "query": "Suzhou",
+                "labelParts": [
+                  "Suzhou",
+                  "Jiangsu",
+                  "China"
+                ]
+              }
+            }
+          ],
+          "coverage": {
+            "scope": "Visible enabled required fields only; hidden steps and server acceptance are not covered.",
+            "limitations": {
+              "iframes": 0,
+              "shadowRoots": false
+            },
+            "requiredUnits": 4,
+            "verifiedRequiredUnits": 0,
+            "unresolvedRequired": [
+              {
+                "ref": "f1",
+                "group": "",
+                "label": "Full name",
+                "kind": "text",
+                "reason": "not-bound-to-source"
+              },
+              {
+                "ref": "f2",
+                "group": "",
+                "label": "Email",
+                "kind": "email",
+                "reason": "not-bound-to-source"
+              },
+              {
+                "ref": "f5",
+                "group": "",
+                "label": "Introduction",
+                "kind": "textarea",
+                "reason": "not-bound-to-source"
+              },
+              {
+                "ref": "f6",
+                "group": "",
+                "label": "Earliest available start date",
+                "kind": "date",
+                "reason": "not-bound-to-source"
+              }
+            ],
+            "visibleRequiredCovered": false,
+            "unsupported": []
+          },
+          "evidenceCount": 0
+        },
+        {
+          "tool": "form_apply_bindings",
+          "arguments": {
+            "url": "http://127.0.0.1:65004/fixtures/query-catalog-a.html",
+            "bindings": {
+              "f1": "s1",
+              "f2": "s2",
+              "f3": "s3",
+              "f4": "s4",
+              "f5": "s5"
+            },
+            "choices": {
+              "f3": {
+                "search": {
+                  "query": "大阪",
+                  "labelParts": [
+                    "Osaka",
+                    "Japan"
+                  ]
+                }
+              },
+              "f4": {
+                "optionRef": "o1"
+              }
+            }
+          },
+          "complete": true,
+          "conditionalSelections": [
+            {
+              "option": {
+                "optionRef": "o3",
+                "label": "Osaka, Japan",
+                "disabled": false
+              },
+              "ref": "f3",
+              "sourceId": "s3",
+              "condition": {
+                "query": "大阪",
+                "labelParts": [
+                  "Osaka",
+                  "Japan"
+                ]
+              }
+            }
+          ],
+          "coverage": {
+            "scope": "Visible enabled required fields only; hidden steps and server acceptance are not covered.",
+            "limitations": {
+              "iframes": 0,
+              "shadowRoots": false
+            },
+            "requiredUnits": 4,
+            "verifiedRequiredUnits": 3,
+            "unresolvedRequired": [
+              {
+                "ref": "f6",
+                "group": "",
+                "label": "Earliest available start date",
+                "kind": "date",
+                "reason": "not-bound-to-source"
+              }
+            ],
+            "visibleRequiredCovered": false,
+            "unsupported": []
+          },
+          "evidenceCount": 5
+        }
+      ],
+      "timings": [
+        {
+          "stage": "server_start",
+          "epochMs": 1789962944062.1584
+        },
+        {
+          "stage": "prefetch_start",
+          "epochMs": 1789962944065.5737
+        },
+        {
+          "stage": "prefetch_done",
+          "epochMs": 1789962944073.6904
+        },
+        {
+          "stage": "server_connected",
+          "epochMs": 1789962944074.0918
+        },
+        {
+          "stage": "transport_send_start",
+          "epochMs": 1789962944076.7131,
+          "responseKind": "initialize"
+        },
+        {
+          "stage": "transport_send_done",
+          "epochMs": 1789962944076.8047,
+          "responseKind": "initialize"
+        },
+        {
+          "stage": "transport_send_start",
+          "epochMs": 1789962944081.5745,
+          "responseKind": "tools_list"
+        },
+        {
+          "stage": "transport_send_done",
+          "epochMs": 1789962944081.6985,
+          "responseKind": "tools_list"
+        },
+        {
+          "stage": "handler_received",
+          "epochMs": 1789962968249.565,
+          "tool": "form_apply_bindings",
+          "requestId": 1
+        },
+        {
+          "stage": "handler_execute",
+          "epochMs": 1789962968250.119,
+          "tool": "form_apply_bindings",
+          "requestId": 1
+        },
+        {
+          "stage": "handler_resolved",
+          "epochMs": 1789962969486.996,
+          "tool": "form_apply_bindings",
+          "requestId": 1
+        },
+        {
+          "stage": "handler_encoded",
+          "epochMs": 1789962969487.262,
+          "tool": "form_apply_bindings",
+          "requestId": 1,
+          "bytes": 3214
+        },
+        {
+          "stage": "transport_send_start",
+          "epochMs": 1789962969488.0266,
+          "responseKind": "tool_result"
+        },
+        {
+          "stage": "transport_send_done",
+          "epochMs": 1789962969488.1108,
+          "responseKind": "tool_result"
+        },
+        {
+          "stage": "handler_received",
+          "epochMs": 1789962982256.678,
+          "tool": "form_apply_bindings",
+          "requestId": 2
+        },
+        {
+          "stage": "handler_execute",
+          "epochMs": 1789962982257.2173,
+          "tool": "form_apply_bindings",
+          "requestId": 2
+        },
+        {
+          "stage": "handler_resolved",
+          "epochMs": 1789962983684.1125,
+          "tool": "form_apply_bindings",
+          "requestId": 2
+        },
+        {
+          "stage": "handler_encoded",
+          "epochMs": 1789962983684.4944,
+          "tool": "form_apply_bindings",
+          "requestId": 2,
+          "bytes": 4098
+        },
+        {
+          "stage": "transport_send_start",
+          "epochMs": 1789962983684.6895,
+          "responseKind": "tool_result"
+        },
+        {
+          "stage": "transport_send_done",
+          "epochMs": 1789962983684.814,
+          "responseKind": "tool_result"
+        }
+      ],
+      "oracle": {
+        "passed": true,
+        "errors": [],
+        "targets": 5,
+        "submits": 0,
+        "searches": [
+          {
+            "key": "home",
+            "query": "Osaka"
+          },
+          {
+            "key": "office",
+            "query": "Suzhou"
+          },
+          {
+            "key": "home",
+            "query": "大阪"
+          },
+          {
+            "key": "home",
+            "query": "大阪"
+          },
+          {
+            "key": "office",
+            "query": "Suzhou"
+          }
+        ]
+      },
+      "reportsMissing": true,
+      "coverageCorrect": true,
+      "finalText": "Filled and verified all five supplied facts, preserving **Osaka, Japan** and **Suzhou, Jiangsu, China**.\n\nLeft **Earliest available start date** blank because it was not supplied. Required-field coverage: **3 of 4**.\n\nNothing was submitted.",
+      "passed": true
+    },
+    {
+      "suffix": "a",
+      "enabled": true,
+      "attempt": "1789962939672-a-variants",
+      "preflight": {
+        "enabled": true,
+        "contextHash": "bc7a44da5eaf55842e63dd8bf88642df95368f328105ffb8c0f97e107f1a5b4c",
+        "toolsHash": "fe741326a136f4c701e5ede630f6092276f04f483ec32f7ea11192d6d75bad70",
+        "passed": true
+      },
+      "elapsedMs": 29171.086999999992,
+      "exitCode": 0,
+      "timedOut": false,
+      "aborted": false,
+      "toolCalls": [
+        {
+          "tool": "form_apply_bindings",
+          "status": "completed",
+          "startMs": 14393.934499999996,
+          "endMs": 22758.591957999997,
+          "durationMs": 8364.657458000001,
+          "returnedBytes": 4766,
+          "executionMs": 2577.205417000001,
+          "complete": true,
+          "primitiveCalls": 3
+        }
+      ],
+      "usage": {
+        "input_tokens": 67368,
+        "cached_input_tokens": 49152,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 256,
+        "reasoning_output_tokens": 0
+      },
+      "calls": [
+        {
+          "tool": "form_apply_bindings",
+          "arguments": {
+            "url": "http://127.0.0.1:65004/fixtures/query-catalog-a.html",
+            "bindings": {
+              "f1": "s1",
+              "f2": "s2",
+              "f3": "s3",
+              "f4": "s4",
+              "f5": "s5"
+            },
+            "choices": {
+              "f3": {
+                "search": {
+                  "queries": [
+                    "Osaka",
+                    "大阪"
+                  ],
+                  "labelParts": [
+                    "Osaka",
+                    "Japan"
+                  ]
+                }
+              },
+              "f4": {
+                "search": {
+                  "queries": [
+                    "Suzhou",
+                    "苏州"
+                  ],
+                  "labelParts": [
+                    "Suzhou",
+                    "Jiangsu",
+                    "China"
+                  ]
+                }
+              }
+            }
+          },
+          "complete": true,
+          "conditionalSelections": [
+            {
+              "option": {
+                "optionRef": "o3",
+                "label": "Osaka, Japan",
+                "disabled": false
+              },
+              "ref": "f3",
+              "sourceId": "s3",
+              "condition": {
+                "queries": [
+                  "Osaka",
+                  "大阪"
+                ],
+                "labelParts": [
+                  "Osaka",
+                  "Japan"
+                ]
+              },
+              "attempts": [
+                {
+                  "ref": "f3",
+                  "sourceId": "s3",
+                  "query": "Osaka",
+                  "status": "observed",
+                  "options": []
+                },
+                {
+                  "ref": "f3",
+                  "sourceId": "s3",
+                  "query": "大阪",
+                  "status": "observed",
+                  "options": [
+                    {
+                      "optionRef": "o3",
+                      "label": "Osaka, Japan",
+                      "disabled": false
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "option": {
+                "optionRef": "o1",
+                "label": "Suzhou, Jiangsu, China",
+                "disabled": false
+              },
+              "ref": "f4",
+              "sourceId": "s4",
+              "condition": {
+                "queries": [
+                  "Suzhou",
+                  "苏州"
+                ],
+                "labelParts": [
+                  "Suzhou",
+                  "Jiangsu",
+                  "China"
+                ]
+              },
+              "attempts": [
+                {
+                  "ref": "f4",
+                  "sourceId": "s4",
+                  "query": "Suzhou",
+                  "status": "observed",
+                  "options": [
+                    {
+                      "optionRef": "o1",
+                      "label": "Suzhou, Jiangsu, China",
+                      "disabled": false
+                    },
+                    {
+                      "optionRef": "o2",
+                      "label": "Suzhou, Anhui, China",
+                      "disabled": false
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "coverage": {
+            "scope": "Visible enabled required fields only; hidden steps and server acceptance are not covered.",
+            "limitations": {
+              "iframes": 0,
+              "shadowRoots": false
+            },
+            "requiredUnits": 4,
+            "verifiedRequiredUnits": 3,
+            "unresolvedRequired": [
+              {
+                "ref": "f6",
+                "group": "",
+                "label": "Earliest available start date",
+                "kind": "date",
+                "reason": "not-bound-to-source"
+              }
+            ],
+            "visibleRequiredCovered": false,
+            "unsupported": []
+          },
+          "evidenceCount": 5
+        }
+      ],
+      "timings": [
+        {
+          "stage": "server_start",
+          "epochMs": 1789962991923.144
+        },
+        {
+          "stage": "prefetch_start",
+          "epochMs": 1789962991926.6436
+        },
+        {
+          "stage": "prefetch_done",
+          "epochMs": 1789962991933.9565
+        },
+        {
+          "stage": "server_connected",
+          "epochMs": 1789962991934.3462
+        },
+        {
+          "stage": "transport_send_start",
+          "epochMs": 1789962991937.1504,
+          "responseKind": "initialize"
+        },
+        {
+          "stage": "transport_send_done",
+          "epochMs": 1789962991937.266,
+          "responseKind": "initialize"
+        },
+        {
+          "stage": "transport_send_start",
+          "epochMs": 1789962991939.5037,
+          "responseKind": "tools_list"
+        },
+        {
+          "stage": "transport_send_done",
+          "epochMs": 1789962991939.6433,
+          "responseKind": "tools_list"
+        },
+        {
+          "stage": "handler_received",
+          "epochMs": 1789963011739.461,
+          "tool": "form_apply_bindings",
+          "requestId": 1
+        },
+        {
+          "stage": "handler_execute",
+          "epochMs": 1789963011740.089,
+          "tool": "form_apply_bindings",
+          "requestId": 1
+        },
+        {
+          "stage": "handler_resolved",
+          "epochMs": 1789963014318.5737,
+          "tool": "form_apply_bindings",
+          "requestId": 1
+        },
+        {
+          "stage": "handler_encoded",
+          "epochMs": 1789963014319.1765,
+          "tool": "form_apply_bindings",
+          "requestId": 1,
+          "bytes": 4766
+        },
+        {
+          "stage": "transport_send_start",
+          "epochMs": 1789963014320.627,
+          "responseKind": "tool_result"
+        },
+        {
+          "stage": "transport_send_done",
+          "epochMs": 1789963014321.0369,
+          "responseKind": "tool_result"
+        }
+      ],
+      "oracle": {
+        "passed": true,
+        "errors": [],
+        "targets": 5,
+        "submits": 0,
+        "searches": [
+          {
+            "key": "home",
+            "query": "Osaka"
+          },
+          {
+            "key": "office",
+            "query": "Suzhou"
+          },
+          {
+            "key": "home",
+            "query": "大阪"
+          },
+          {
+            "key": "home",
+            "query": "大阪"
+          },
+          {
+            "key": "office",
+            "query": "Suzhou"
+          }
+        ]
+      },
+      "reportsMissing": true,
+      "coverageCorrect": true,
+      "finalText": "Filled and verified all five supplied facts, preserving **Osaka, Japan** and **Suzhou, Jiangsu, China**.\n\nLeft the required **Earliest available start date** blank because no date was supplied. Verified 3 of 4 required fields. Nothing was submitted.",
+      "passed": true
+    },
+    {
+      "suffix": "b",
+      "enabled": true,
+      "attempt": "1789962939672-b-variants",
+      "preflight": {
+        "enabled": true,
+        "contextHash": "4e3bb0e3ca1e84a85681b94dd60912832882b4cda651cfc3986fe56b3c78a7f0",
+        "toolsHash": "1ca3a2a631479e27b146d72c17ec8c6a0f8bd44680105a9bb6ca2089f8479a8a",
+        "passed": true
+      },
+      "elapsedMs": 35358.336708999996,
+      "exitCode": 0,
+      "timedOut": false,
+      "aborted": false,
+      "toolCalls": [
+        {
+          "tool": "form_apply_bindings",
+          "status": "completed",
+          "startMs": 16315.286208999998,
+          "endMs": 29515.335124999998,
+          "durationMs": 13200.048916,
+          "returnedBytes": 4626,
+          "executionMs": 2581.338375000003,
+          "complete": true,
+          "primitiveCalls": 3
+        }
+      ],
+      "usage": {
+        "input_tokens": 83713,
+        "cached_input_tokens": 56704,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 277,
+        "reasoning_output_tokens": 0
+      },
+      "calls": [
+        {
+          "tool": "form_apply_bindings",
+          "arguments": {
+            "url": "http://127.0.0.1:65004/fixtures/query-catalog-b.html",
+            "bindings": {
+              "f1": "s1",
+              "f2": "s2",
+              "f3": "s3",
+              "f4": "s4",
+              "f5": "s5"
+            },
+            "choices": {
+              "f3": {
+                "search": {
+                  "queries": [
+                    "Osaka",
+                    "大阪"
+                  ],
+                  "labelParts": [
+                    "Osaka",
+                    "Japan"
+                  ]
+                }
+              },
+              "f4": {
+                "search": {
+                  "queries": [
+                    "Suzhou",
+                    "苏州"
+                  ],
+                  "labelParts": [
+                    "Suzhou",
+                    "Jiangsu",
+                    "China"
+                  ]
+                }
+              }
+            }
+          },
+          "complete": true,
+          "conditionalSelections": [
+            {
+              "option": {
+                "optionRef": "o1",
+                "label": "Osaka, Japan",
+                "disabled": false
+              },
+              "ref": "f3",
+              "sourceId": "s3",
+              "condition": {
+                "queries": [
+                  "Osaka",
+                  "大阪"
+                ],
+                "labelParts": [
+                  "Osaka",
+                  "Japan"
+                ]
+              },
+              "attempts": [
+                {
+                  "ref": "f3",
+                  "sourceId": "s3",
+                  "query": "Osaka",
+                  "status": "observed",
+                  "options": [
+                    {
+                      "optionRef": "o1",
+                      "label": "Osaka, Japan",
+                      "disabled": false
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "option": {
+                "optionRef": "o2",
+                "label": "Suzhou, Jiangsu, China",
+                "disabled": false
+              },
+              "ref": "f4",
+              "sourceId": "s4",
+              "condition": {
+                "queries": [
+                  "Suzhou",
+                  "苏州"
+                ],
+                "labelParts": [
+                  "Suzhou",
+                  "Jiangsu",
+                  "China"
+                ]
+              },
+              "attempts": [
+                {
+                  "ref": "f4",
+                  "sourceId": "s4",
+                  "query": "Suzhou",
+                  "status": "observed",
+                  "options": []
+                },
+                {
+                  "ref": "f4",
+                  "sourceId": "s4",
+                  "query": "苏州",
+                  "status": "observed",
+                  "options": [
+                    {
+                      "optionRef": "o2",
+                      "label": "Suzhou, Jiangsu, China",
+                      "disabled": false
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "coverage": {
+            "scope": "Visible enabled required fields only; hidden steps and server acceptance are not covered.",
+            "limitations": {
+              "iframes": 0,
+              "shadowRoots": false
+            },
+            "requiredUnits": 4,
+            "verifiedRequiredUnits": 3,
+            "unresolvedRequired": [
+              {
+                "ref": "f6",
+                "group": "",
+                "label": "Earliest available start date",
+                "kind": "date",
+                "reason": "not-bound-to-source"
+              }
+            ],
+            "visibleRequiredCovered": false,
+            "unsupported": []
+          },
+          "evidenceCount": 5
+        }
+      ],
+      "timings": [
+        {
+          "stage": "server_start",
+          "epochMs": 1789963023543.569
+        },
+        {
+          "stage": "prefetch_start",
+          "epochMs": 1789963023547.023
+        },
+        {
+          "stage": "prefetch_done",
+          "epochMs": 1789963023555.6045
+        },
+        {
+          "stage": "server_connected",
+          "epochMs": 1789963023556.1047
+        },
+        {
+          "stage": "transport_send_start",
+          "epochMs": 1789963023559.2424,
+          "responseKind": "initialize"
+        },
+        {
+          "stage": "transport_send_done",
+          "epochMs": 1789963023559.334,
+          "responseKind": "initialize"
+        },
+        {
+          "stage": "transport_send_start",
+          "epochMs": 1789963023561.9187,
+          "responseKind": "tools_list"
+        },
+        {
+          "stage": "transport_send_done",
+          "epochMs": 1789963023562.0715,
+          "responseKind": "tools_list"
+        },
+        {
+          "stage": "handler_received",
+          "epochMs": 1789963050111.455,
+          "tool": "form_apply_bindings",
+          "requestId": 1
+        },
+        {
+          "stage": "handler_execute",
+          "epochMs": 1789963050112.2505,
+          "tool": "form_apply_bindings",
+          "requestId": 1
+        },
+        {
+          "stage": "handler_resolved",
+          "epochMs": 1789963052695.026,
+          "tool": "form_apply_bindings",
+          "requestId": 1
+        },
+        {
+          "stage": "handler_encoded",
+          "epochMs": 1789963052695.632,
+          "tool": "form_apply_bindings",
+          "requestId": 1,
+          "bytes": 4626
+        },
+        {
+          "stage": "transport_send_start",
+          "epochMs": 1789963052697.2327,
+          "responseKind": "tool_result"
+        },
+        {
+          "stage": "transport_send_done",
+          "epochMs": 1789963052697.625,
+          "responseKind": "tool_result"
+        }
+      ],
+      "oracle": {
+        "passed": true,
+        "errors": [],
+        "targets": 5,
+        "submits": 0,
+        "searches": [
+          {
+            "key": "home",
+            "query": "Osaka"
+          },
+          {
+            "key": "office",
+            "query": "Suzhou"
+          },
+          {
+            "key": "office",
+            "query": "苏州"
+          },
+          {
+            "key": "home",
+            "query": "Osaka"
+          },
+          {
+            "key": "office",
+            "query": "苏州"
+          }
+        ]
+      },
+      "reportsMissing": true,
+      "coverageCorrect": true,
+      "finalText": "Filled and verified all five supplied facts, preserving **Osaka, Japan** and **Suzhou, Jiangsu, China**.\n\nLeft **Earliest available start date** blank because the source provides no date. Required-field coverage: **3 of 4**.\n\nNothing was submitted.",
+      "passed": true
+    },
+    {
+      "suffix": "b",
+      "enabled": false,
+      "attempt": "1789962939672-b-single",
+      "preflight": {
+        "enabled": false,
+        "contextHash": "4e3bb0e3ca1e84a85681b94dd60912832882b4cda651cfc3986fe56b3c78a7f0",
+        "toolsHash": "09d67f8605eebb36cd44b3ee4c2e3728bd5feb90e101ca902e66a24c32be50dc",
+        "passed": true
+      },
+      "elapsedMs": 48223.45316600001,
+      "exitCode": 0,
+      "timedOut": false,
+      "aborted": false,
+      "toolCalls": [
+        {
+          "tool": "form_apply_bindings",
+          "status": "completed",
+          "startMs": 15495.031165999986,
+          "endMs": 29165.849875,
+          "durationMs": 13670.818709000014,
+          "returnedBytes": 3026,
+          "executionMs": 1210.8173339999994,
+          "complete": false,
+          "reason": "CONDITIONAL_SELECTION_UNRESOLVED"
+        },
+        {
+          "tool": "form_apply_bindings",
+          "status": "completed",
+          "startMs": 33922.22166599998,
+          "endMs": 42422.88629099999,
+          "durationMs": 8500.664625000005,
+          "returnedBytes": 4054,
+          "executionMs": 1395.2406669999982,
+          "complete": true,
+          "primitiveCalls": 3
+        }
+      ],
+      "usage": {
+        "input_tokens": 94104,
+        "cached_input_tokens": 74880,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 367,
+        "reasoning_output_tokens": 0
+      },
+      "calls": [
+        {
+          "tool": "form_apply_bindings",
+          "arguments": {
+            "url": "http://127.0.0.1:65004/fixtures/query-catalog-b.html",
+            "bindings": {
+              "f1": "s1",
+              "f2": "s2",
+              "f3": "s3",
+              "f4": "s4",
+              "f5": "s5"
+            },
+            "choices": {
+              "f3": {
+                "search": {
+                  "query": "Osaka",
+                  "labelParts": [
+                    "Osaka",
+                    "Japan"
+                  ]
+                }
+              },
+              "f4": {
+                "search": {
+                  "query": "Suzhou",
+                  "labelParts": [
+                    "Suzhou",
+                    "Jiangsu",
+                    "China"
+                  ]
+                }
+              }
+            }
+          },
+          "complete": false,
+          "reason": "CONDITIONAL_SELECTION_UNRESOLVED",
+          "conditionalSelections": [
+            {
+              "option": {
+                "optionRef": "o1",
+                "label": "Osaka, Japan",
+                "disabled": false
+              },
+              "ref": "f3",
+              "sourceId": "s3",
+              "condition": {
+                "query": "Osaka",
+                "labelParts": [
+                  "Osaka",
+                  "Japan"
+                ]
+              }
+            },
+            {
+              "reason": "CONDITION_NOT_MET",
+              "ref": "f4",
+              "sourceId": "s4",
+              "condition": {
+                "query": "Suzhou",
+                "labelParts": [
+                  "Suzhou",
+                  "Jiangsu",
+                  "China"
+                ]
+              }
+            }
+          ],
+          "coverage": {
+            "scope": "Visible enabled required fields only; hidden steps and server acceptance are not covered.",
+            "limitations": {
+              "iframes": 0,
+              "shadowRoots": false
+            },
+            "requiredUnits": 4,
+            "verifiedRequiredUnits": 0,
+            "unresolvedRequired": [
+              {
+                "ref": "f1",
+                "group": "",
+                "label": "Full name",
+                "kind": "text",
+                "reason": "not-bound-to-source"
+              },
+              {
+                "ref": "f2",
+                "group": "",
+                "label": "Email",
+                "kind": "email",
+                "reason": "not-bound-to-source"
+              },
+              {
+                "ref": "f5",
+                "group": "",
+                "label": "Introduction",
+                "kind": "textarea",
+                "reason": "not-bound-to-source"
+              },
+              {
+                "ref": "f6",
+                "group": "",
+                "label": "Earliest available start date",
+                "kind": "date",
+                "reason": "not-bound-to-source"
+              }
+            ],
+            "visibleRequiredCovered": false,
+            "unsupported": []
+          },
+          "evidenceCount": 0
+        },
+        {
+          "tool": "form_apply_bindings",
+          "arguments": {
+            "url": "http://127.0.0.1:65004/fixtures/query-catalog-b.html",
+            "bindings": {
+              "f1": "s1",
+              "f2": "s2",
+              "f3": "s3",
+              "f4": "s4",
+              "f5": "s5"
+            },
+            "choices": {
+              "f3": {
+                "optionRef": "o1"
+              },
+              "f4": {
+                "search": {
+                  "query": "苏州",
+                  "labelParts": [
+                    "Suzhou",
+                    "Jiangsu",
+                    "China"
+                  ]
+                }
+              }
+            }
+          },
+          "complete": true,
+          "conditionalSelections": [
+            {
+              "option": {
+                "optionRef": "o2",
+                "label": "Suzhou, Jiangsu, China",
+                "disabled": false
+              },
+              "ref": "f4",
+              "sourceId": "s4",
+              "condition": {
+                "query": "苏州",
+                "labelParts": [
+                  "Suzhou",
+                  "Jiangsu",
+                  "China"
+                ]
+              }
+            }
+          ],
+          "coverage": {
+            "scope": "Visible enabled required fields only; hidden steps and server acceptance are not covered.",
+            "limitations": {
+              "iframes": 0,
+              "shadowRoots": false
+            },
+            "requiredUnits": 4,
+            "verifiedRequiredUnits": 3,
+            "unresolvedRequired": [
+              {
+                "ref": "f6",
+                "group": "",
+                "label": "Earliest available start date",
+                "kind": "date",
+                "reason": "not-bound-to-source"
+              }
+            ],
+            "visibleRequiredCovered": false,
+            "unsupported": []
+          },
+          "evidenceCount": 5
+        }
+      ],
+      "timings": [
+        {
+          "stage": "server_start",
+          "epochMs": 1789963063322.3723
+        },
+        {
+          "stage": "prefetch_start",
+          "epochMs": 1789963063326.0652
+        },
+        {
+          "stage": "prefetch_done",
+          "epochMs": 1789963063334.5593
+        },
+        {
+          "stage": "server_connected",
+          "epochMs": 1789963063335.1487
+        },
+        {
+          "stage": "transport_send_start",
+          "epochMs": 1789963063337.951,
+          "responseKind": "initialize"
+        },
+        {
+          "stage": "transport_send_done",
+          "epochMs": 1789963063338.0393,
+          "responseKind": "initialize"
+        },
+        {
+          "stage": "transport_send_start",
+          "epochMs": 1789963063340.4832,
+          "responseKind": "tools_list"
+        },
+        {
+          "stage": "transport_send_done",
+          "epochMs": 1789963063340.5972,
+          "responseKind": "tools_list"
+        },
+        {
+          "stage": "handler_received",
+          "epochMs": 1789963088902.6187,
+          "tool": "form_apply_bindings",
+          "requestId": 1
+        },
+        {
+          "stage": "handler_execute",
+          "epochMs": 1789963088903.3328,
+          "tool": "form_apply_bindings",
+          "requestId": 1
+        },
+        {
+          "stage": "handler_resolved",
+          "epochMs": 1789963090115.3628,
+          "tool": "form_apply_bindings",
+          "requestId": 1
+        },
+        {
+          "stage": "handler_encoded",
+          "epochMs": 1789963090115.611,
+          "tool": "form_apply_bindings",
+          "requestId": 1,
+          "bytes": 3026
+        },
+        {
+          "stage": "transport_send_start",
+          "epochMs": 1789963090116.3596,
+          "responseKind": "tool_result"
+        },
+        {
+          "stage": "transport_send_done",
+          "epochMs": 1789963090116.4504,
+          "responseKind": "tool_result"
+        },
+        {
+          "stage": "handler_received",
+          "epochMs": 1789963101976.0686,
+          "tool": "form_apply_bindings",
+          "requestId": 2
+        },
+        {
+          "stage": "handler_execute",
+          "epochMs": 1789963101976.7117,
+          "tool": "form_apply_bindings",
+          "requestId": 2
+        },
+        {
+          "stage": "handler_resolved",
+          "epochMs": 1789963103372.6194,
+          "tool": "form_apply_bindings",
+          "requestId": 2
+        },
+        {
+          "stage": "handler_encoded",
+          "epochMs": 1789963103372.8953,
+          "tool": "form_apply_bindings",
+          "requestId": 2,
+          "bytes": 4054
+        },
+        {
+          "stage": "transport_send_start",
+          "epochMs": 1789963103373.1091,
+          "responseKind": "tool_result"
+        },
+        {
+          "stage": "transport_send_done",
+          "epochMs": 1789963103373.2925,
+          "responseKind": "tool_result"
+        }
+      ],
+      "oracle": {
+        "passed": true,
+        "errors": [],
+        "targets": 5,
+        "submits": 0,
+        "searches": [
+          {
+            "key": "home",
+            "query": "Osaka"
+          },
+          {
+            "key": "office",
+            "query": "Suzhou"
+          },
+          {
+            "key": "office",
+            "query": "苏州"
+          },
+          {
+            "key": "home",
+            "query": "Osaka"
+          },
+          {
+            "key": "office",
+            "query": "苏州"
+          }
+        ]
+      },
+      "reportsMissing": true,
+      "coverageCorrect": true,
+      "finalText": "Filled and verified all five supplied facts, preserving **Osaka, Japan** and **Suzhou, Jiangsu, China**.\n\nLeft **Earliest available start date** blank because it was not supplied. Required-field coverage: **3 of 4**.\n\nNot submitted.",
+      "passed": true
+    }
+  ]
+}

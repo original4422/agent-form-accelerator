@@ -1,0 +1,49 @@
+{
+  "date": "2026-09-21T03:53:04.080Z",
+  "results": [
+    {
+      "name": "bounded distinct query variants require opt-in and one fixed condition",
+      "passed": true
+    },
+    {
+      "name": "shared count and time budgets stop additional rounds",
+      "passed": true
+    },
+    {
+      "name": "ambiguity, disabled/conflicting candidates, truncation and blocked searches never advance",
+      "passed": true
+    },
+    {
+      "name": "empty Chinese query retries locally and fills two education entities in one apply",
+      "passed": true
+    },
+    {
+      "name": "nonempty wrong-campus candidates return unchanged qualifiers without ordinary writes",
+      "passed": true
+    },
+    {
+      "name": "all empty variants exhaust without inventing values and independent groups retain failures",
+      "passed": true
+    },
+    {
+      "name": "source change after first discovery stops before retry or fact writes",
+      "passed": true
+    },
+    {
+      "name": "meaning change between discovery rounds stops whole plan",
+      "passed": true
+    },
+    {
+      "name": "document change between discovery rounds stops whole plan",
+      "passed": true
+    },
+    {
+      "name": "all ordinary sources validate before even the first fallback query",
+      "passed": true
+    },
+    {
+      "name": "disabled mode rejects variants before browser changes",
+      "passed": true
+    }
+  ]
+}

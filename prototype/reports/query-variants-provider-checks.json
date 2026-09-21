@@ -1,0 +1,89 @@
+{
+  "date": "2026-09-21T03:54:35.821Z",
+  "results": [
+    {
+      "suffix": "a",
+      "enabled": false,
+      "contextHash": "d95894930c52d29a51cb40da231e0f044274c084e4b57a425c85d1b7441d6041",
+      "toolsHash": "98ef0466b9a820095eebe0d8848b5958f90aeb6976c38d3f34203d3843680aaa",
+      "passed": true
+    },
+    {
+      "suffix": "a",
+      "enabled": true,
+      "contextHash": "d95894930c52d29a51cb40da231e0f044274c084e4b57a425c85d1b7441d6041",
+      "toolsHash": "2082a0368674cde96076eca9a5dc38eaa941a3426a3cc6bb130018eabd75c437",
+      "passed": true,
+      "oracle": {
+        "passed": true,
+        "errors": [],
+        "targets": 5,
+        "submits": 0,
+        "searches": [
+          {
+            "key": "home",
+            "query": "大阪"
+          },
+          {
+            "key": "office",
+            "query": "苏州"
+          },
+          {
+            "key": "office",
+            "query": "Suzhou"
+          },
+          {
+            "key": "home",
+            "query": "大阪"
+          },
+          {
+            "key": "office",
+            "query": "Suzhou"
+          }
+        ]
+      }
+    },
+    {
+      "suffix": "b",
+      "enabled": false,
+      "contextHash": "cb74c56365b7feeafc2740350b6f65b2d2bc0dbefe9af2f35a708898d7a9c54f",
+      "toolsHash": "aeee91e3b27a3fe27af0232389e927464f6919761c59c13167988366cbfb5de8",
+      "passed": true
+    },
+    {
+      "suffix": "b",
+      "enabled": true,
+      "contextHash": "cb74c56365b7feeafc2740350b6f65b2d2bc0dbefe9af2f35a708898d7a9c54f",
+      "toolsHash": "bd4c0885ff5c74f3ee0a08daf91cf7bb4d83147f3eb73a0e274d92fda400ae56",
+      "passed": true,
+      "oracle": {
+        "passed": true,
+        "errors": [],
+        "targets": 5,
+        "submits": 0,
+        "searches": [
+          {
+            "key": "home",
+            "query": "大阪"
+          },
+          {
+            "key": "office",
+            "query": "苏州"
+          },
+          {
+            "key": "home",
+            "query": "Osaka"
+          },
+          {
+            "key": "home",
+            "query": "Osaka"
+          },
+          {
+            "key": "office",
+            "query": "苏州"
+          }
+        ]
+      }
+    }
+  ]
+}

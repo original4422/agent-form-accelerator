@@ -204,7 +204,7 @@ export function createPlaywrightBackend(page,{validationMode='guard'}={}) {
   const request = async r => {
     if(r.op==='discover'){
       if(!Array.isArray(r.queries)||!r.queries.length||r.queries.length>12)throw new Error('INVALID_SEARCH_QUERIES');
-      const initial=await observe({op:'validate',snapshot:r.snapshot,url:r.url}),searches=[],deadline=Date.now()+8000;
+      const initial=await observe({op:'validate',snapshot:r.snapshot,url:r.url}),searches=[],deadline=Math.min(Date.now()+8000,Number.isFinite(r.deadline)?r.deadline:Infinity);
       let observation=initial;
       for(const query of r.queries){
         let el;

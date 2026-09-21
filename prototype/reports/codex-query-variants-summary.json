@@ -1,0 +1,59 @@
+{
+  "batchId": 1789962939672,
+  "sourceFilesVerified": 139,
+  "rows": [
+    {
+      "page": "a",
+      "variants": false,
+      "seconds": 47.03799591700001,
+      "calls": 2,
+      "actualSearches": 5,
+      "handlerSeconds": 2.66486572265625,
+      "firstToolSeconds": 15.043839500000002,
+      "tailSeconds": 5.466443250000011,
+      "passed": true,
+      "contextHash": "bc7a44da5eaf55842e63dd8bf88642df95368f328105ffb8c0f97e107f1a5b4c"
+    },
+    {
+      "page": "a",
+      "variants": true,
+      "seconds": 29.171086999999993,
+      "calls": 1,
+      "actualSearches": 5,
+      "handlerSeconds": 2.57911279296875,
+      "firstToolSeconds": 14.393934499999995,
+      "tailSeconds": 6.412495041999995,
+      "passed": true,
+      "contextHash": "bc7a44da5eaf55842e63dd8bf88642df95368f328105ffb8c0f97e107f1a5b4c"
+    },
+    {
+      "page": "b",
+      "variants": true,
+      "seconds": 35.35833670899999,
+      "calls": 1,
+      "actualSearches": 5,
+      "handlerSeconds": 2.58357080078125,
+      "firstToolSeconds": 16.315286208999996,
+      "tailSeconds": 5.843001583999998,
+      "passed": true,
+      "contextHash": "4e3bb0e3ca1e84a85681b94dd60912832882b4cda651cfc3986fe56b3c78a7f0"
+    },
+    {
+      "page": "b",
+      "variants": false,
+      "seconds": 48.223453166000006,
+      "calls": 2,
+      "actualSearches": 5,
+      "handlerSeconds": 2.609294921875,
+      "firstToolSeconds": 15.495031165999986,
+      "tailSeconds": 5.800566875000019,
+      "passed": true,
+      "contextHash": "4e3bb0e3ca1e84a85681b94dd60912832882b4cda651cfc3986fe56b3c78a7f0"
+    }
+  ],
+  "singleMedianSeconds": 47.63072454150001,
+  "variantsMedianSeconds": 32.26471185449999,
+  "reductionPercent": 32.260715819285544,
+  "ratio": 1.4762482540149169,
+  "caveat": "Two deliberately varied synthetic catalog pairs, one sample per mode/page; descriptive only, not a stable real recruitment speed estimate."
+}

@@ -6,6 +6,8 @@
 
 ## 看结果
 
+- [空结果查询的本地恢复](prototype/reports/QUERY-VARIANTS.md)：两个检索语言互换的组件样本，Codex 从两次调用变为一次，47.04→29.17 秒、48.22→35.36 秒；四次全部正确，实际搜索次数相同。查询变体保持地区条件，不自动放宽或猜选；仍是小样本实验。
+
 - [独立浏览器试用入口](prototype/reports/BROWSER-COMPANION.md)：已有条件搜索、重复组和回读检查接入临时 Codex 会话；11 项检查通过，真实 Codex 本地任务两次调用完成 10 个目标。单次集成结果不作速度对照。
 
 - [精简回执没有显示净提速](prototype/reports/RECEIPT-PROJECTION.md)：返回体积减少39%，但同一任务三组对照中位44.57→45.44秒；保持完整回执为默认，转向实际试用集成。
@@ -198,3 +200,5 @@ prototype/skills/       两端共用的工作流说明
 让 Codex 根据资料填写全部已知字段和两段教育经历，保留缺失日期，并使用来源中的机构名与校区限定词。它可以在一次 apply 中提出 `choices[ref].search = {query, labelParts}`；只有唯一观察选项满足全部字面条件才执行。若候选歧义或条件不满足，返回真实候选让 Codex 决定，不自动弱化条件。该路径仍使用已有 Codex 登录，无新增模型 API Key；未接入日常浏览器扩展。
 
 对仅涉及当前已有字段的批次，可把实验开关改为 `AFA_SELECTION_MODE="independent"`。Codex 可以提供 `independentGroups`，将电话国家与电话等有关联的字段放在同组；一组查询无法完成时暂缓整组，继续核验其他独立组。`complete:false` 表示原请求仍未完成，`task.unresolvedTargets` 在上下文刷新后仍保留。该选项不能和新增重复组或 `checkboxGroups` 混用；省略它则保持原来的全部条件先成功才填写的行为。
+
+空结果恢复实验：在上述 `demo-search.mjs` 打印的命令末尾同时添加 `-c 'mcp_servers.afa.env.AFA_SELECTION_MODE="conditional"'` 和 `-c 'mcp_servers.afa.env.AFA_QUERY_VARIANTS="1"'`。新增 `search:{queries:["杭州","Hangzhou"],labelParts:["Hangzhou"]}` 表示一套固定匹配条件及最多三个查询词，只有完整观察到空结果才换词；歧义、非空冲突、截断或加载失败返回 Codex 判断。整批最多十二个预声明查询，共享八秒发现预算。当前仅此隔离实验入口开放，新的 `browser:demo` companion 默认尚未开启。
