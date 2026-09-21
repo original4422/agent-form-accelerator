@@ -1,5 +1,15 @@
 # 持续探索状态（2026-09-21）
 
+## 当前接续点：companion 变体已接入，负结果定位到工具说明
+
+- 本轮 progress，有接入代码、负对照和后续假设检验；完整目标仍active，无阻塞审计。browser-bindings-mcp读取AFA_QUERY_VARIANTS=1，companionCommand仅在显式开启时转发。默认关闭，不改全局配置/Skill。既有匹配/预算/恢复算法未改。
+- 五项新真实companion MCP检查（两个索引目录×开关+打印命令）、旧变体11和默认companion11通过，共27。开启正确填五目标，关闭schema拒绝且零查询/写入；source/page上下文同配对hash相同。
+- 第一批1789966453725四次Codex均正确40目标，源是上轮两个视觉相同的PDF（仅绘制指令次序不同），交替off/on再on/off。off44.205/43.598s，on45.678/51.402s；全部2调用。开启只为显式双语学校声明变体，城市仍杭州空后第二次Hangzhou；实际搜索7→9。描述性中位43.901→48.540s，负结果保留，不冒充提速。61源码/锁文件/fixture指纹前后一致，各对提示/源/规范化上下文hash一致。初版bindings-server在source-snapshots/companion-variants-before-guidance归档。
+- 后续只改两种模式共用的一段条件选择说明：常规译名/音译可以不逐字出现在原文；表示变化不能改变事实，要参考观察到的表单/候选语言并保留地区/校区；不确定实体等价性先发现。没有样本答案/翻译字典，没有放宽谓词。
+- 后续1789966731675仅一对反向PDF任务（先on后off），on32.444s/off33.611s，两边1调用、10目标正确/次、6次实际搜索日志完全一致、缺日期空并报告、零提交。on虽预声明备用中文词但未触发恢复；两边直接英文首次命中。说明可消除本样本一轮，不证明变体额外收益；两次单值差异及跨批速度差不作稳定百分比主张。61指纹前后未变，最终文字/参数/学校限定/介绍都核对。最后代码上五项companion接入检查也通过。
+- 默认仍关闭变体，保留通用译名说明与可选入口。报告COMPANION-QUERY-VARIANTS.md、原始编号报告、initial-summary及最新summary区分两阶段。新增codex-companion-variants和summarize脚本；AFA_PROBE_VARIANT可只跑指定PDF一对。不再围绕alias/PDF样本采样追倍数。
+- 所有测试/模型进程结束，无待轮询句柄。下一步应扩大真实任务代表性或解决真实工作流中独立缺口；当前仍缺实际用户选定的登录后招聘表单、附件/跨页等完整任务证据。先前可选公司名/URL问题尚未回复，不重复催问。原始完整目标和三类任务2×暂定门槛保持，不能以本次一个回合或PDF局部支持宣布完成。
+
 ## 当前接续点：受限 PDF 来源接入完成，实际 Codex 两次正确
 
 - 本轮 progress：支持原始纯文字PDF来源，不必预先整理Markdown；不是完整目标达成。仍active，无阻塞审计。新 source-reader/pdf-source.py/source-quote，源bytehash、空间片段page/bbox；AFA_PDF_SOURCE=1显式启用，AFA_PYTHON配置本地pdfplumber0.11.9。未安装新全局依赖/改Skill；当前用bundle Python。

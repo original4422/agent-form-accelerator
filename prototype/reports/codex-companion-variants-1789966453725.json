@@ -1,0 +1,1015 @@
+{
+  "batchId": 1789966453725,
+  "date": "2026-09-21T04:54:13.725Z",
+  "scope": "Four Codex companion integration runs, PDF A single/variants then identical-visible PDF B variants/single. Same prompt and normalization of source/page context within each pair; full latency includes all model recovery. This is a small internal comparison on the same synthetic task, not independent real application speed evidence.",
+  "runs": [
+    {
+      "variant": "two-columns",
+      "enabled": false,
+      "preflight": {
+        "enabled": false,
+        "pdf": true,
+        "contextHash": "31ad9c2d68fd4aecf732223a0207281fed51938cfce8d8f10320575002c171a2",
+        "toolsHash": "4cbd5331e464576866244d471ceba7785881b435982577ce6d23426561d132db",
+        "passed": true
+      },
+      "calls": [
+        {
+          "tool": "form_apply_bindings",
+          "arguments": {
+            "url": "http://127.0.0.1:50539/fixtures/alias-form.html",
+            "bindings": {
+              "f1": {
+                "sourceId": "s3",
+                "quote": "candidate@example.test"
+              },
+              "f2": "s1",
+              "f3": "s3",
+              "f4": "s5",
+              "f5": "s7",
+              "f6": "s6",
+              "f7": "s9",
+              "f9": [
+                "s16",
+                "s17"
+              ]
+            },
+            "choices": {
+              "f3": "cn",
+              "f4": {
+                "search": {
+                  "query": "杭州",
+                  "labelParts": [
+                    "杭州"
+                  ]
+                }
+              },
+              "f5": "pg",
+              "f6": {
+                "search": {
+                  "query": "Southern Example College",
+                  "labelParts": [
+                    "Southern Example College",
+                    "Shenzhen campus"
+                  ]
+                }
+              }
+            },
+            "repeatGroups": [
+              {
+                "controlRef": "f8",
+                "expectGroup": "Education 2",
+                "templateGroup": "Education 1",
+                "bindings": {
+                  "f6": "s12",
+                  "f7": "s15"
+                },
+                "choices": {
+                  "f6": {
+                    "search": {
+                      "query": "Northern Example University",
+                      "labelParts": [
+                        "Northern Example University",
+                        "Beijing campus"
+                      ]
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "tool": "form_apply_bindings",
+          "arguments": {
+            "url": "http://127.0.0.1:50539/fixtures/alias-form.html",
+            "bindings": {
+              "f1": {
+                "sourceId": "s3",
+                "quote": "candidate@example.test"
+              },
+              "f2": "s1",
+              "f3": "s3",
+              "f4": "s5",
+              "f5": "s7",
+              "f6": "s6",
+              "f7": "s9",
+              "f9": [
+                "s16",
+                "s17"
+              ]
+            },
+            "choices": {
+              "f3": "cn",
+              "f4": {
+                "search": {
+                  "query": "Hangzhou",
+                  "labelParts": [
+                    "Hangzhou"
+                  ]
+                }
+              },
+              "f5": "pg",
+              "f6": {
+                "optionRef": "o1"
+              }
+            },
+            "repeatGroups": [
+              {
+                "controlRef": "f8",
+                "expectGroup": "Education 2",
+                "templateGroup": "Education 1",
+                "bindings": {
+                  "f6": "s12",
+                  "f7": "s15"
+                },
+                "choices": {
+                  "f6": {
+                    "optionRef": "o3"
+                  }
+                }
+              }
+            ]
+          }
+        }
+      ],
+      "searchLog": [
+        {
+          "key": "city-",
+          "query": "杭州"
+        },
+        {
+          "key": "school-0",
+          "query": "Southern Example College"
+        },
+        {
+          "key": "school-0",
+          "query": "Northern Example University"
+        },
+        {
+          "key": "city-",
+          "query": "Hangzhou"
+        },
+        {
+          "key": "city-cn",
+          "query": "Hangzhou"
+        },
+        {
+          "key": "school-0",
+          "query": "Southern Example College"
+        },
+        {
+          "key": "school-1",
+          "query": "Northern Example University"
+        }
+      ],
+      "promptHash": "13b0cc648a0f309e11d9b860d90f3de271120de18643ba8cb7351ded0faff73c",
+      "sourceHash": "13fc370e152be8e5b0b5a90597a9ed91a18729aeac6c0149950d3f871896897a",
+      "entries": 17,
+      "extractionMs": 154.24399999999997,
+      "setupMs": 874.780125,
+      "elapsedMs": 44204.508084,
+      "totalMs": 45084.116,
+      "exitCode": 0,
+      "timedOut": false,
+      "aborted": false,
+      "toolCalls": [
+        {
+          "tool": "form_apply_bindings",
+          "status": "completed",
+          "startMs": 17141.615917,
+          "endMs": 22987.337917,
+          "durationMs": 5845.722000000002,
+          "returnedBytes": 4872,
+          "executionMs": 1983.5995839999996,
+          "complete": false,
+          "reason": "CONDITIONAL_SELECTION_UNRESOLVED"
+        },
+        {
+          "tool": "form_apply_bindings",
+          "status": "completed",
+          "startMs": 30300.234125,
+          "endMs": 37126.667292,
+          "durationMs": 6826.433166999999,
+          "returnedBytes": 7183,
+          "executionMs": 2608.2535419999986,
+          "complete": true,
+          "primitiveCalls": 5
+        }
+      ],
+      "usage": {
+        "input_tokens": 96669,
+        "cached_input_tokens": 75904,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 568,
+        "reasoning_output_tokens": 0
+      },
+      "oracle": {
+        "passed": true,
+        "errors": [],
+        "knownTargets": 10,
+        "requiredUnanswered": 1,
+        "searches": 7,
+        "submits": 0
+      },
+      "missingReported": true,
+      "finalText": "Filled and verified all 10 source-backed targets, including both education experiences in order with Shenzhen and Beijing campus qualifiers, and the complete two-sentence personal introduction.\n\nRequired information missing: earliest available start date; left blank because the PDF provides none. Required-field coverage: 7 of 8.\n\nNo source-backed facts remained uncopied. Nothing submitted or uploaded.",
+      "passed": true
+    },
+    {
+      "variant": "two-columns",
+      "enabled": true,
+      "preflight": {
+        "enabled": true,
+        "pdf": true,
+        "contextHash": "31ad9c2d68fd4aecf732223a0207281fed51938cfce8d8f10320575002c171a2",
+        "toolsHash": "6479f4b64505a96069c65b6f192ad132ea6b2689ef25b10f2070d215858420ee",
+        "passed": true
+      },
+      "calls": [
+        {
+          "tool": "form_apply_bindings",
+          "arguments": {
+            "url": "http://127.0.0.1:50539/fixtures/alias-form.html",
+            "bindings": {
+              "f1": {
+                "sourceId": "s3",
+                "quote": "candidate@example.test"
+              },
+              "f2": "s1",
+              "f3": "s3",
+              "f4": "s5",
+              "f5": "s7",
+              "f6": "s6",
+              "f7": "s9",
+              "f9": [
+                "s16",
+                "s17"
+              ]
+            },
+            "choices": {
+              "f3": "cn",
+              "f4": {
+                "search": {
+                  "query": "杭州",
+                  "labelParts": [
+                    "杭州"
+                  ]
+                }
+              },
+              "f5": "pg",
+              "f6": {
+                "search": {
+                  "queries": [
+                    "南方示例学院",
+                    "Southern Example College"
+                  ],
+                  "labelParts": [
+                    "Southern Example College",
+                    "Shenzhen campus"
+                  ]
+                }
+              }
+            },
+            "repeatGroups": [
+              {
+                "controlRef": "f8",
+                "templateGroup": "Education 1",
+                "expectGroup": "Education 2",
+                "bindings": {
+                  "f6": "s12",
+                  "f7": "s15"
+                },
+                "choices": {
+                  "f6": {
+                    "search": {
+                      "queries": [
+                        "北方示例大学",
+                        "Northern Example University"
+                      ],
+                      "labelParts": [
+                        "Northern Example University",
+                        "Beijing campus"
+                      ]
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "tool": "form_apply_bindings",
+          "arguments": {
+            "url": "http://127.0.0.1:50539/fixtures/alias-form.html",
+            "bindings": {
+              "f1": {
+                "sourceId": "s3",
+                "quote": "candidate@example.test"
+              },
+              "f2": "s1",
+              "f3": "s3",
+              "f4": "s5",
+              "f5": "s7",
+              "f6": "s6",
+              "f7": "s9",
+              "f9": [
+                "s16",
+                "s17"
+              ]
+            },
+            "choices": {
+              "f3": "cn",
+              "f4": {
+                "search": {
+                  "query": "Hangzhou",
+                  "labelParts": [
+                    "Hangzhou"
+                  ]
+                }
+              },
+              "f5": "pg",
+              "f6": {
+                "optionRef": "o1"
+              }
+            },
+            "repeatGroups": [
+              {
+                "controlRef": "f8",
+                "templateGroup": "Education 1",
+                "expectGroup": "Education 2",
+                "bindings": {
+                  "f6": "s12",
+                  "f7": "s15"
+                },
+                "choices": {
+                  "f6": {
+                    "optionRef": "o3"
+                  }
+                }
+              }
+            ]
+          }
+        }
+      ],
+      "searchLog": [
+        {
+          "key": "city-",
+          "query": "杭州"
+        },
+        {
+          "key": "school-0",
+          "query": "南方示例学院"
+        },
+        {
+          "key": "school-0",
+          "query": "北方示例大学"
+        },
+        {
+          "key": "school-0",
+          "query": "Southern Example College"
+        },
+        {
+          "key": "school-0",
+          "query": "Northern Example University"
+        },
+        {
+          "key": "city-",
+          "query": "Hangzhou"
+        },
+        {
+          "key": "city-cn",
+          "query": "Hangzhou"
+        },
+        {
+          "key": "school-0",
+          "query": "Southern Example College"
+        },
+        {
+          "key": "school-1",
+          "query": "Northern Example University"
+        }
+      ],
+      "promptHash": "13b0cc648a0f309e11d9b860d90f3de271120de18643ba8cb7351ded0faff73c",
+      "sourceHash": "13fc370e152be8e5b0b5a90597a9ed91a18729aeac6c0149950d3f871896897a",
+      "entries": 17,
+      "extractionMs": 145.41454199999862,
+      "setupMs": 988.0301249999975,
+      "elapsedMs": 45678.422833,
+      "totalMs": 46670.76475,
+      "exitCode": 0,
+      "timedOut": false,
+      "aborted": false,
+      "toolCalls": [
+        {
+          "tool": "form_apply_bindings",
+          "status": "completed",
+          "startMs": 16373.521583000002,
+          "endMs": 24686.773916,
+          "durationMs": 8313.252332999997,
+          "returnedBytes": 5876,
+          "executionMs": 3778.1060829999988,
+          "complete": false,
+          "reason": "CONDITIONAL_SELECTION_UNRESOLVED"
+        },
+        {
+          "tool": "form_apply_bindings",
+          "status": "completed",
+          "startMs": 31822.349291,
+          "endMs": 39511.902416000004,
+          "durationMs": 7689.553125000006,
+          "returnedBytes": 7183,
+          "executionMs": 2584.4899589999986,
+          "complete": true,
+          "primitiveCalls": 5
+        }
+      ],
+      "usage": {
+        "input_tokens": 97242,
+        "cached_input_tokens": 76160,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 570,
+        "reasoning_output_tokens": 0
+      },
+      "oracle": {
+        "passed": true,
+        "errors": [],
+        "knownTargets": 10,
+        "requiredUnanswered": 1,
+        "searches": 9,
+        "submits": 0
+      },
+      "missingReported": true,
+      "finalText": "Filled and verified all 10 source-backed targets, including both education experiences in order with Shenzhen and Beijing campus qualifiers, and the complete two-sentence personal introduction.\n\nRequired information missing from the PDF: **Earliest available start date**; left blank. No other copying issues remain. The application was not submitted.",
+      "passed": true
+    },
+    {
+      "variant": "reverse-draw-order",
+      "enabled": true,
+      "preflight": {
+        "enabled": true,
+        "pdf": true,
+        "contextHash": "e072766f840947debd781f1f0141f8d6d0b9f9781bafe13b1c6411d5a012caf8",
+        "toolsHash": "2cf4ac64725e8220ccb8c63a845fe92af4711a477b6be8806c2b2eb602b206c9",
+        "passed": true
+      },
+      "calls": [
+        {
+          "tool": "form_apply_bindings",
+          "arguments": {
+            "url": "http://127.0.0.1:50539/fixtures/alias-form.html",
+            "bindings": {
+              "f1": {
+                "sourceId": "s3",
+                "quote": "candidate@example.test"
+              },
+              "f2": "s1",
+              "f3": "s3",
+              "f4": "s5",
+              "f5": "s7",
+              "f6": "s6",
+              "f7": "s9",
+              "f9": [
+                "s16",
+                "s17"
+              ]
+            },
+            "choices": {
+              "f3": "cn",
+              "f4": {
+                "search": {
+                  "query": "杭州",
+                  "labelParts": [
+                    "杭州"
+                  ]
+                }
+              },
+              "f5": "pg",
+              "f6": {
+                "search": {
+                  "queries": [
+                    "南方示例学院",
+                    "Southern Example College"
+                  ],
+                  "labelParts": [
+                    "Southern Example College",
+                    "Shenzhen campus"
+                  ]
+                }
+              }
+            },
+            "repeatGroups": [
+              {
+                "controlRef": "f8",
+                "templateGroup": "Education 1",
+                "expectGroup": "Education 2",
+                "bindings": {
+                  "f6": "s12",
+                  "f7": "s15"
+                },
+                "choices": {
+                  "f6": {
+                    "search": {
+                      "queries": [
+                        "北方示例大学",
+                        "Northern Example University"
+                      ],
+                      "labelParts": [
+                        "Northern Example University",
+                        "Beijing campus"
+                      ]
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "tool": "form_apply_bindings",
+          "arguments": {
+            "url": "http://127.0.0.1:50539/fixtures/alias-form.html",
+            "bindings": {
+              "f1": {
+                "sourceId": "s3",
+                "quote": "candidate@example.test"
+              },
+              "f2": "s1",
+              "f3": "s3",
+              "f4": "s5",
+              "f5": "s7",
+              "f6": "s6",
+              "f7": "s9",
+              "f9": [
+                "s16",
+                "s17"
+              ]
+            },
+            "choices": {
+              "f3": "cn",
+              "f4": {
+                "search": {
+                  "query": "Hangzhou",
+                  "labelParts": [
+                    "Hangzhou"
+                  ]
+                }
+              },
+              "f5": "pg",
+              "f6": {
+                "optionRef": "o1"
+              }
+            },
+            "repeatGroups": [
+              {
+                "controlRef": "f8",
+                "templateGroup": "Education 1",
+                "expectGroup": "Education 2",
+                "bindings": {
+                  "f6": "s12",
+                  "f7": "s15"
+                },
+                "choices": {
+                  "f6": {
+                    "optionRef": "o3"
+                  }
+                }
+              }
+            ]
+          }
+        }
+      ],
+      "searchLog": [
+        {
+          "key": "city-",
+          "query": "杭州"
+        },
+        {
+          "key": "school-0",
+          "query": "南方示例学院"
+        },
+        {
+          "key": "school-0",
+          "query": "北方示例大学"
+        },
+        {
+          "key": "school-0",
+          "query": "Southern Example College"
+        },
+        {
+          "key": "school-0",
+          "query": "Northern Example University"
+        },
+        {
+          "key": "city-",
+          "query": "Hangzhou"
+        },
+        {
+          "key": "city-cn",
+          "query": "Hangzhou"
+        },
+        {
+          "key": "school-0",
+          "query": "Southern Example College"
+        },
+        {
+          "key": "school-1",
+          "query": "Northern Example University"
+        }
+      ],
+      "promptHash": "13b0cc648a0f309e11d9b860d90f3de271120de18643ba8cb7351ded0faff73c",
+      "sourceHash": "4b00b948b6dfb9511d97b9d921c1e18447ddfba7f079ba2779c7b1616c5084f8",
+      "entries": 17,
+      "extractionMs": 146.30516699999862,
+      "setupMs": 942.039082999996,
+      "elapsedMs": 51402.21129199999,
+      "totalMs": 52349.11374999999,
+      "exitCode": 0,
+      "timedOut": false,
+      "aborted": false,
+      "toolCalls": [
+        {
+          "tool": "form_apply_bindings",
+          "status": "completed",
+          "startMs": 15748.502334000004,
+          "endMs": 24231.245542000004,
+          "durationMs": 8482.743208,
+          "returnedBytes": 5876,
+          "executionMs": 3784.5240000000013,
+          "complete": false,
+          "reason": "CONDITIONAL_SELECTION_UNRESOLVED"
+        },
+        {
+          "tool": "form_apply_bindings",
+          "status": "completed",
+          "startMs": 31712.003916999995,
+          "endMs": 40971.304584,
+          "durationMs": 9259.300667000003,
+          "returnedBytes": 7183,
+          "executionMs": 2578.7723329999935,
+          "complete": true,
+          "primitiveCalls": 5
+        }
+      ],
+      "usage": {
+        "input_tokens": 97271,
+        "cached_input_tokens": 76160,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 598,
+        "reasoning_output_tokens": 9
+      },
+      "oracle": {
+        "passed": true,
+        "errors": [],
+        "knownTargets": 10,
+        "requiredUnanswered": 1,
+        "searches": 9,
+        "submits": 0
+      },
+      "missingReported": true,
+      "finalText": "Filled and verified all source-backed targets, including both education experiences in order with Shenzhen and Beijing campus qualifiers, and the complete two-sentence personal introduction.\n\nRequired information missing from the PDF: **Earliest available start date**, left blank. All other supplied facts were faithfully represented.\n\nNot submitted. Verified coverage: **7 of 8 visible required fields**; completion applies only to the requested source-backed targets.",
+      "passed": true
+    },
+    {
+      "variant": "reverse-draw-order",
+      "enabled": false,
+      "preflight": {
+        "enabled": false,
+        "pdf": true,
+        "contextHash": "e072766f840947debd781f1f0141f8d6d0b9f9781bafe13b1c6411d5a012caf8",
+        "toolsHash": "b9297b7155515ff7f86a2953c019b8631aa7f258207f49a162a0cf691f69c166",
+        "passed": true
+      },
+      "calls": [
+        {
+          "tool": "form_apply_bindings",
+          "arguments": {
+            "url": "http://127.0.0.1:50539/fixtures/alias-form.html",
+            "bindings": {
+              "f1": {
+                "sourceId": "s3",
+                "quote": "candidate@example.test"
+              },
+              "f2": "s1",
+              "f3": "s3",
+              "f4": "s5",
+              "f5": "s7",
+              "f6": "s6",
+              "f7": "s9",
+              "f9": [
+                "s16",
+                "s17"
+              ]
+            },
+            "choices": {
+              "f3": "cn",
+              "f4": {
+                "search": {
+                  "query": "杭州",
+                  "labelParts": [
+                    "杭州"
+                  ]
+                }
+              },
+              "f5": "pg",
+              "f6": {
+                "search": {
+                  "query": "Southern Example College",
+                  "labelParts": [
+                    "Southern Example College",
+                    "Shenzhen campus"
+                  ]
+                }
+              }
+            },
+            "repeatGroups": [
+              {
+                "controlRef": "f8",
+                "expectGroup": "Education 2",
+                "templateGroup": "Education 1",
+                "bindings": {
+                  "f6": "s12",
+                  "f7": "s15"
+                },
+                "choices": {
+                  "f6": {
+                    "search": {
+                      "query": "Northern Example University",
+                      "labelParts": [
+                        "Northern Example University",
+                        "Beijing campus"
+                      ]
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "tool": "form_apply_bindings",
+          "arguments": {
+            "url": "http://127.0.0.1:50539/fixtures/alias-form.html",
+            "bindings": {
+              "f1": {
+                "sourceId": "s3",
+                "quote": "candidate@example.test"
+              },
+              "f2": "s1",
+              "f3": "s3",
+              "f4": "s5",
+              "f5": "s7",
+              "f6": "s6",
+              "f7": "s9",
+              "f9": [
+                "s16",
+                "s17"
+              ]
+            },
+            "choices": {
+              "f3": "cn",
+              "f4": {
+                "search": {
+                  "query": "Hangzhou",
+                  "labelParts": [
+                    "Hangzhou"
+                  ]
+                }
+              },
+              "f5": "pg",
+              "f6": {
+                "optionRef": "o1"
+              }
+            },
+            "repeatGroups": [
+              {
+                "controlRef": "f8",
+                "expectGroup": "Education 2",
+                "templateGroup": "Education 1",
+                "bindings": {
+                  "f6": "s12",
+                  "f7": "s15"
+                },
+                "choices": {
+                  "f6": {
+                    "optionRef": "o3"
+                  }
+                }
+              }
+            ]
+          }
+        }
+      ],
+      "searchLog": [
+        {
+          "key": "city-",
+          "query": "杭州"
+        },
+        {
+          "key": "school-0",
+          "query": "Southern Example College"
+        },
+        {
+          "key": "school-0",
+          "query": "Northern Example University"
+        },
+        {
+          "key": "city-",
+          "query": "Hangzhou"
+        },
+        {
+          "key": "city-cn",
+          "query": "Hangzhou"
+        },
+        {
+          "key": "school-0",
+          "query": "Southern Example College"
+        },
+        {
+          "key": "school-1",
+          "query": "Northern Example University"
+        }
+      ],
+      "promptHash": "13b0cc648a0f309e11d9b860d90f3de271120de18643ba8cb7351ded0faff73c",
+      "sourceHash": "4b00b948b6dfb9511d97b9d921c1e18447ddfba7f079ba2779c7b1616c5084f8",
+      "entries": 17,
+      "extractionMs": 134.22554099999252,
+      "setupMs": 937.8953329999931,
+      "elapsedMs": 43597.674792000005,
+      "totalMs": 44538.844249999995,
+      "exitCode": 0,
+      "timedOut": false,
+      "aborted": false,
+      "toolCalls": [
+        {
+          "tool": "form_apply_bindings",
+          "status": "completed",
+          "startMs": 16927.72908399999,
+          "endMs": 23377.456999999995,
+          "durationMs": 6449.7279160000035,
+          "returnedBytes": 4872,
+          "executionMs": 1981.2668750000012,
+          "complete": false,
+          "reason": "CONDITIONAL_SELECTION_UNRESOLVED"
+        },
+        {
+          "tool": "form_apply_bindings",
+          "status": "completed",
+          "startMs": 30515.825333999994,
+          "endMs": 37344.155792000005,
+          "durationMs": 6828.330458000011,
+          "returnedBytes": 7183,
+          "executionMs": 2604.4132080000054,
+          "complete": true,
+          "primitiveCalls": 5
+        }
+      ],
+      "usage": {
+        "input_tokens": 96705,
+        "cached_input_tokens": 75904,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 574,
+        "reasoning_output_tokens": 0
+      },
+      "oracle": {
+        "passed": true,
+        "errors": [],
+        "knownTargets": 10,
+        "requiredUnanswered": 1,
+        "searches": 7,
+        "submits": 0
+      },
+      "missingReported": true,
+      "finalText": "Filled and verified all 10 source-backed targets, including both education experiences in order with Shenzhen and Beijing campus qualifiers, and the complete two-sentence personal introduction.\n\nRequired information missing: earliest available start date, absent from the PDF and left blank. Coverage: 7 of 8 visible required fields verified. No supplied facts remained uncopyable.\n\nNothing was submitted or uploaded.",
+      "passed": true
+    }
+  ],
+  "before": {
+    "package-lock.json": "b2e3f6468883d35752a9f488e0d290e5647b6aa44fe6d78cb9e6ae0522a51bd2",
+    "package.json": "e5dc4a592d4409d48fbb21fab8b41cee1a87535af3b8263c36a841eee72f2f23",
+    "prototype/bench/playwright-backend.mjs": "1021671f1437ae47411f8370f4bcb422ffea44a1e7f5d945a625ddd0bfc7af0c",
+    "prototype/extension/background.js": "0c9c955b15cc1bcab0074efe9f0cb74e4378124e9949a3dd904f8224e21a6aeb",
+    "prototype/extension/form-runtime.js": "7987648d57177ee10919055407146f05e97c1bac65cd28a1d38c8442ea94cc55",
+    "prototype/extension/goal-executor.js": "f2ee586c602f08a1f3d5e7719619181857b2d6f21c9a806a9b3587c6b97a7d0f",
+    "prototype/extension/plan-executor.js": "0f50d2ffb7ec7ce0787ef8f158015b0d8ebf33019bb53c76f13da0d0bcee03c4",
+    "prototype/extension/popup.html": "5ab61b2620f5112e01d2ae57690058b964646fd06e0503dbe7d94c3167ced1c3",
+    "prototype/extension/popup.js": "07daaf136fa8b36227024e00d1eb26d5b631e3ee6aa374bd008fe9ac23ca4725",
+    "prototype/fixtures/alias-form.html": "97c27d2490fcca0e32d78cb2f23b14228cbe10450cbf6856882b46b60a701ff9",
+    "prototype/fixtures/country-phone-bundle.js": "f8da199f29903d0e276758e478678b3e45a369322985b540f7f1f911b2f4a961",
+    "prototype/fixtures/country-phone.html": "b464a5d32bc53b063e63c90e213ae76c3ecd153b299a4bd49129ab753ee0d203",
+    "prototype/fixtures/delayed-search-bundle.js": "a7ca2e14c61adf691c72b1890ba7931e2d8bfc9261de8ece388102d1be529d06",
+    "prototype/fixtures/delayed-search.html": "fc1da10b81596028cb7b39f3f8d0bb02c0c75732b834a6e77fc8c314766682c6",
+    "prototype/fixtures/dependent.html": "de7905aab23c96c91c08f26113b6d89cd7270d1e49a580c05fbe0491bd9eadb7",
+    "prototype/fixtures/documents/alias-candidate.md": "659e19492a48fc8d213856ddf5ca9cc002b226fef43d600332d2e4766e4ec781",
+    "prototype/fixtures/documents/candidate-reordered.md": "9493cfcdf17e70b4c34e53cf109a590da5e4de02cc05157678d5bbcc8f47c718",
+    "prototype/fixtures/documents/candidate.md": "9fe1d7596a016d19d97cb6749bcb84ae99234e89e91affcf51d70e5ab3d28e4d",
+    "prototype/fixtures/documents/framework-candidate.md": "1f6ae0c2726466c60a597ab64e1c679d824c12a25a23f324aae3b1fcb2a0550f",
+    "prototype/fixtures/documents/greenhouse-candidate.md": "b9ae305de3d582e7ff332f21be1469d9b139ae153715a37ca169ae5a3cc313f2",
+    "prototype/fixtures/documents/public-candidate.md": "f3011027a2565732f33a832c520bfac2c7630e74e111642c6877695e1588ec8d",
+    "prototype/fixtures/documents/query-candidate.md": "e7ebda518a37ad7ff0fcf486bd77a0d8d9183ac0562506ce1302234aa678aaab",
+    "prototype/fixtures/fixture.js": "3d9abdcd396c891d24178418b85c2df722ddff12d7200bbb16b50ef59a223553",
+    "prototype/fixtures/index.html": "14224f2504d40cee1b5c6996faabdc40481d2a2902751dc7b6a6f21701759d3f",
+    "prototype/fixtures/pdf/reverse-draw-order.pdf": "4b00b948b6dfb9511d97b9d921c1e18447ddfba7f079ba2779c7b1616c5084f8",
+    "prototype/fixtures/pdf/scan.pdf": "e76468cc5e7edfbf28a441821e5b9e6bc799c45a859b2557bef2cf3b11f7b72e",
+    "prototype/fixtures/pdf/two-columns.pdf": "13fc370e152be8e5b0b5a90597a9ed91a18729aeac6c0149950d3f871896897a",
+    "prototype/fixtures/permuted.html": "9399b2642312f03e48f52b802a41073b88f6cdba45c4f80c6c3be1fd640a1a70",
+    "prototype/fixtures/plain.html": "3580c93e856bd10d19a1e8dfe6ed07b551fb3c10e59d15e3f7868e03a463fe7d",
+    "prototype/fixtures/query-catalog-a.html": "4bc2cdfbdf34a12ef25f0c7cab61f8ddd2a1a094f7020efd1edac8bc990778c8",
+    "prototype/fixtures/query-catalog-b.html": "4bc2cdfbdf34a12ef25f0c7cab61f8ddd2a1a094f7020efd1edac8bc990778c8",
+    "prototype/fixtures/query-catalog-bundle.js": "3f249962f18f2270dc2a3653cb6351a90741c7c552af74033676111e8df10635",
+    "prototype/fixtures/react-form-bundle.js": "531a1ce2c13f946ab7fb5f836d1fea04e34887b56377453e35f1748137552eda",
+    "prototype/fixtures/react-form.html": "930688117d59d0dd14152d2e1a1d69e826211d44b6d0eb250a3d2465955d7300",
+    "prototype/fixtures/repeat.html": "01a8ddf7b757f45ef8c2d3c957a85fd0a164b08d4b5dbeebb37d9fe7aae3069f",
+    "prototype/fixtures/search-form-bundle.js": "d61210da424bd72fdbdae74176be40a214461463a331b8317e269c73759a159f",
+    "prototype/fixtures/search-form.html": "1769b5e7d6ac580e1238080e0c15d2187f71c5d3d0825308f2bf2bc40fa92176",
+    "prototype/fixtures/unfamiliar.html": "d71ab27f61564afea5e08ddc158287f6501a0c0120123dd7a0d0b5d8dca08253",
+    "prototype/requirements-pdf.txt": "0eeb92fcc8492b6b812909cb68dd6b9ff427668cf4fe4c69138fa45902bc3a5b",
+    "prototype/src/bindings-mcp.mjs": "1cd1343c4f2b02fb77e09153bbbc3902613754ca42d45f4ded22450ab21413be",
+    "prototype/src/bindings-server.mjs": "b405724becfbcb71cf16458cd3775904a7ae5e43c15fa8491af827b7ae9df7af",
+    "prototype/src/bridge.mjs": "34e2ec16bbcd1ea21553acdae33e18b3ddde811a0121c5989e1b469936af016e",
+    "prototype/src/browser-bindings-mcp.mjs": "cd326d5d2a8ca6c734407c26883f99decc32ba362c1bef4c9c70e80630b6559d",
+    "prototype/src/browser-companion.mjs": "e738b851568471117bb460b4ae77fe0b4c679c58f2fb591d65b0ef50c7ac72d5",
+    "prototype/src/browser-controller.mjs": "d41e7eb16c497ce569b8bb05889f0928a13109dbfd7be5b13269c9e48dcb5278",
+    "prototype/src/conditional-choice.mjs": "3a401d78465e247e488f0739ac03f67acf773a8ef9d8fd3e677e1ea9b6d327e9",
+    "prototype/src/context-projection.mjs": "b6f141835c3ded4468d7cc1cc10024688d17cbbd3dd606ca34196782d410d0ca",
+    "prototype/src/coverage.mjs": "15de6ffde45dc623bebdf97f5c5b6cddc1b4cee4e8fb5dd43ef64659a0da382f",
+    "prototype/src/decision-context.mjs": "52eb7ba8bed761216f2fe66e67d5cc5532d562c69e45c9e920340221d2ad7271",
+    "prototype/src/document-session.mjs": "4d02498c0bfe6cc12f1ca4527359d7af3333f9deaea8dd8b157bd6ca3d3ccbcc",
+    "prototype/src/document-source.mjs": "e6426296ce2890903c9acdea172c93dd4d64c3e1a1b2b735ac83b73608d0a993",
+    "prototype/src/freeze-proxy.mjs": "2ec4b6fc528dd4ecfe7483a7e8202ee5ce6c6f163580e8af7367f356b4a0a2ed",
+    "prototype/src/independent-plan.mjs": "7e436443765dc6c02ee46a89db8e21bab8d7d14bd171a36626042ee9600abe8f",
+    "prototype/src/mcp.mjs": "881d66ceece558cff0b0d7c6e0bbee69a25c553eb352da3143c055287bc3f57b",
+    "prototype/src/network-freeze.mjs": "7969ac0a0e1dc35c3bb6d075e93c9749aa7db7dcdbbac442cb9de9e25f892e93",
+    "prototype/src/pdf-source.py": "3bf55ad81bff7e8c584f165feb388ad2b486148218f4e00c8ce47c2ab3818231",
+    "prototype/src/query-variants.mjs": "f6bf27d2149429e4ea73b9092be67f4ba4647172d8b722ceb975a1d046ce61ce",
+    "prototype/src/receipt-projection.mjs": "2c0a51c363db40a04361aa97cd0fb995c4cdcd44fcdf2010d2cd4d7d2b108023",
+    "prototype/src/source-mcp.mjs": "00f13c76817411e2f977688136c034d1353f79cf1bea680589e64fddb9a5bcb5",
+    "prototype/src/source-quote.mjs": "ab2e3f21de130c559eed98be7fb2c591f2e72095bfde43a7343bf6e8dcc3547e",
+    "prototype/src/source-reader.mjs": "1df7dc8672d54928c6f356cf2fc44b4eb6f578bb0c510ad6c38ae86b52bacc7a"
+  },
+  "after": {
+    "package-lock.json": "b2e3f6468883d35752a9f488e0d290e5647b6aa44fe6d78cb9e6ae0522a51bd2",
+    "package.json": "e5dc4a592d4409d48fbb21fab8b41cee1a87535af3b8263c36a841eee72f2f23",
+    "prototype/bench/playwright-backend.mjs": "1021671f1437ae47411f8370f4bcb422ffea44a1e7f5d945a625ddd0bfc7af0c",
+    "prototype/extension/background.js": "0c9c955b15cc1bcab0074efe9f0cb74e4378124e9949a3dd904f8224e21a6aeb",
+    "prototype/extension/form-runtime.js": "7987648d57177ee10919055407146f05e97c1bac65cd28a1d38c8442ea94cc55",
+    "prototype/extension/goal-executor.js": "f2ee586c602f08a1f3d5e7719619181857b2d6f21c9a806a9b3587c6b97a7d0f",
+    "prototype/extension/plan-executor.js": "0f50d2ffb7ec7ce0787ef8f158015b0d8ebf33019bb53c76f13da0d0bcee03c4",
+    "prototype/extension/popup.html": "5ab61b2620f5112e01d2ae57690058b964646fd06e0503dbe7d94c3167ced1c3",
+    "prototype/extension/popup.js": "07daaf136fa8b36227024e00d1eb26d5b631e3ee6aa374bd008fe9ac23ca4725",
+    "prototype/fixtures/alias-form.html": "97c27d2490fcca0e32d78cb2f23b14228cbe10450cbf6856882b46b60a701ff9",
+    "prototype/fixtures/country-phone-bundle.js": "f8da199f29903d0e276758e478678b3e45a369322985b540f7f1f911b2f4a961",
+    "prototype/fixtures/country-phone.html": "b464a5d32bc53b063e63c90e213ae76c3ecd153b299a4bd49129ab753ee0d203",
+    "prototype/fixtures/delayed-search-bundle.js": "a7ca2e14c61adf691c72b1890ba7931e2d8bfc9261de8ece388102d1be529d06",
+    "prototype/fixtures/delayed-search.html": "fc1da10b81596028cb7b39f3f8d0bb02c0c75732b834a6e77fc8c314766682c6",
+    "prototype/fixtures/dependent.html": "de7905aab23c96c91c08f26113b6d89cd7270d1e49a580c05fbe0491bd9eadb7",
+    "prototype/fixtures/documents/alias-candidate.md": "659e19492a48fc8d213856ddf5ca9cc002b226fef43d600332d2e4766e4ec781",
+    "prototype/fixtures/documents/candidate-reordered.md": "9493cfcdf17e70b4c34e53cf109a590da5e4de02cc05157678d5bbcc8f47c718",
+    "prototype/fixtures/documents/candidate.md": "9fe1d7596a016d19d97cb6749bcb84ae99234e89e91affcf51d70e5ab3d28e4d",
+    "prototype/fixtures/documents/framework-candidate.md": "1f6ae0c2726466c60a597ab64e1c679d824c12a25a23f324aae3b1fcb2a0550f",
+    "prototype/fixtures/documents/greenhouse-candidate.md": "b9ae305de3d582e7ff332f21be1469d9b139ae153715a37ca169ae5a3cc313f2",
+    "prototype/fixtures/documents/public-candidate.md": "f3011027a2565732f33a832c520bfac2c7630e74e111642c6877695e1588ec8d",
+    "prototype/fixtures/documents/query-candidate.md": "e7ebda518a37ad7ff0fcf486bd77a0d8d9183ac0562506ce1302234aa678aaab",
+    "prototype/fixtures/fixture.js": "3d9abdcd396c891d24178418b85c2df722ddff12d7200bbb16b50ef59a223553",
+    "prototype/fixtures/index.html": "14224f2504d40cee1b5c6996faabdc40481d2a2902751dc7b6a6f21701759d3f",
+    "prototype/fixtures/pdf/reverse-draw-order.pdf": "4b00b948b6dfb9511d97b9d921c1e18447ddfba7f079ba2779c7b1616c5084f8",
+    "prototype/fixtures/pdf/scan.pdf": "e76468cc5e7edfbf28a441821e5b9e6bc799c45a859b2557bef2cf3b11f7b72e",
+    "prototype/fixtures/pdf/two-columns.pdf": "13fc370e152be8e5b0b5a90597a9ed91a18729aeac6c0149950d3f871896897a",
+    "prototype/fixtures/permuted.html": "9399b2642312f03e48f52b802a41073b88f6cdba45c4f80c6c3be1fd640a1a70",
+    "prototype/fixtures/plain.html": "3580c93e856bd10d19a1e8dfe6ed07b551fb3c10e59d15e3f7868e03a463fe7d",
+    "prototype/fixtures/query-catalog-a.html": "4bc2cdfbdf34a12ef25f0c7cab61f8ddd2a1a094f7020efd1edac8bc990778c8",
+    "prototype/fixtures/query-catalog-b.html": "4bc2cdfbdf34a12ef25f0c7cab61f8ddd2a1a094f7020efd1edac8bc990778c8",
+    "prototype/fixtures/query-catalog-bundle.js": "3f249962f18f2270dc2a3653cb6351a90741c7c552af74033676111e8df10635",
+    "prototype/fixtures/react-form-bundle.js": "531a1ce2c13f946ab7fb5f836d1fea04e34887b56377453e35f1748137552eda",
+    "prototype/fixtures/react-form.html": "930688117d59d0dd14152d2e1a1d69e826211d44b6d0eb250a3d2465955d7300",
+    "prototype/fixtures/repeat.html": "01a8ddf7b757f45ef8c2d3c957a85fd0a164b08d4b5dbeebb37d9fe7aae3069f",
+    "prototype/fixtures/search-form-bundle.js": "d61210da424bd72fdbdae74176be40a214461463a331b8317e269c73759a159f",
+    "prototype/fixtures/search-form.html": "1769b5e7d6ac580e1238080e0c15d2187f71c5d3d0825308f2bf2bc40fa92176",
+    "prototype/fixtures/unfamiliar.html": "d71ab27f61564afea5e08ddc158287f6501a0c0120123dd7a0d0b5d8dca08253",
+    "prototype/requirements-pdf.txt": "0eeb92fcc8492b6b812909cb68dd6b9ff427668cf4fe4c69138fa45902bc3a5b",
+    "prototype/src/bindings-mcp.mjs": "1cd1343c4f2b02fb77e09153bbbc3902613754ca42d45f4ded22450ab21413be",
+    "prototype/src/bindings-server.mjs": "b405724becfbcb71cf16458cd3775904a7ae5e43c15fa8491af827b7ae9df7af",
+    "prototype/src/bridge.mjs": "34e2ec16bbcd1ea21553acdae33e18b3ddde811a0121c5989e1b469936af016e",
+    "prototype/src/browser-bindings-mcp.mjs": "cd326d5d2a8ca6c734407c26883f99decc32ba362c1bef4c9c70e80630b6559d",
+    "prototype/src/browser-companion.mjs": "e738b851568471117bb460b4ae77fe0b4c679c58f2fb591d65b0ef50c7ac72d5",
+    "prototype/src/browser-controller.mjs": "d41e7eb16c497ce569b8bb05889f0928a13109dbfd7be5b13269c9e48dcb5278",
+    "prototype/src/conditional-choice.mjs": "3a401d78465e247e488f0739ac03f67acf773a8ef9d8fd3e677e1ea9b6d327e9",
+    "prototype/src/context-projection.mjs": "b6f141835c3ded4468d7cc1cc10024688d17cbbd3dd606ca34196782d410d0ca",
+    "prototype/src/coverage.mjs": "15de6ffde45dc623bebdf97f5c5b6cddc1b4cee4e8fb5dd43ef64659a0da382f",
+    "prototype/src/decision-context.mjs": "52eb7ba8bed761216f2fe66e67d5cc5532d562c69e45c9e920340221d2ad7271",
+    "prototype/src/document-session.mjs": "4d02498c0bfe6cc12f1ca4527359d7af3333f9deaea8dd8b157bd6ca3d3ccbcc",
+    "prototype/src/document-source.mjs": "e6426296ce2890903c9acdea172c93dd4d64c3e1a1b2b735ac83b73608d0a993",
+    "prototype/src/freeze-proxy.mjs": "2ec4b6fc528dd4ecfe7483a7e8202ee5ce6c6f163580e8af7367f356b4a0a2ed",
+    "prototype/src/independent-plan.mjs": "7e436443765dc6c02ee46a89db8e21bab8d7d14bd171a36626042ee9600abe8f",
+    "prototype/src/mcp.mjs": "881d66ceece558cff0b0d7c6e0bbee69a25c553eb352da3143c055287bc3f57b",
+    "prototype/src/network-freeze.mjs": "7969ac0a0e1dc35c3bb6d075e93c9749aa7db7dcdbbac442cb9de9e25f892e93",
+    "prototype/src/pdf-source.py": "3bf55ad81bff7e8c584f165feb388ad2b486148218f4e00c8ce47c2ab3818231",
+    "prototype/src/query-variants.mjs": "f6bf27d2149429e4ea73b9092be67f4ba4647172d8b722ceb975a1d046ce61ce",
+    "prototype/src/receipt-projection.mjs": "2c0a51c363db40a04361aa97cd0fb995c4cdcd44fcdf2010d2cd4d7d2b108023",
+    "prototype/src/source-mcp.mjs": "00f13c76817411e2f977688136c034d1353f79cf1bea680589e64fddb9a5bcb5",
+    "prototype/src/source-quote.mjs": "ab2e3f21de130c559eed98be7fb2c591f2e72095bfde43a7343bf6e8dcc3547e",
+    "prototype/src/source-reader.mjs": "1df7dc8672d54928c6f356cf2fc44b4eb6f578bb0c510ad6c38ae86b52bacc7a"
+  },
+  "runtimeUnchanged": true,
+  "passed": true
+}

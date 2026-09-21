@@ -6,4 +6,4 @@ const request=async payload=>{
   const response=await fetch(config.endpoint,{method:'POST',headers:{authorization:`Bearer ${config.token}`,'content-type':'application/json'},body:JSON.stringify(payload),signal:AbortSignal.timeout(25000)});
   const result=await response.json();if(!response.ok||result.error)throw new Error(result.error??`HTTP ${response.status}`);return result;
 };
-await serveBindings({request,sourcePath:config.sourcePath,contextMode:'prefetch',discoveryMode:'batch',selectionMode:'independent',optionMode:'compact'});
+await serveBindings({request,sourcePath:config.sourcePath,contextMode:'prefetch',discoveryMode:'batch',selectionMode:'independent',optionMode:'compact',queryVariants:process.env.AFA_QUERY_VARIANTS==='1'});

@@ -1,0 +1,27 @@
+{
+  "batchId": 1789966731675,
+  "scope": "Descriptive 1-pair integration comparison on the same synthetic task. Not independent real-site/full-application/stable-speed evidence.",
+  "runtimeFileHashes": 61,
+  "runtimeUnchanged": true,
+  "pairs": [
+    {
+      "variant": "reverse-draw-order",
+      "sourceHash": "4b00b948b6dfb9511d97b9d921c1e18447ddfba7f079ba2779c7b1616c5084f8",
+      "contextHash": "6e16ee46fdb673084e12f224e331f2ffa7ff773c8c4de5e576e4f40577e5aa3c",
+      "singleSeconds": 33.611420917000004,
+      "variantsSeconds": 32.443740875,
+      "singleCalls": 1,
+      "variantsCalls": 1,
+      "singleSearches": 6,
+      "variantsSearches": 6,
+      "identicalSearchLog": true,
+      "bothCorrect": true
+    }
+  ],
+  "singleMedianSeconds": 33.611420917000004,
+  "variantsMedianSeconds": 32.443740875,
+  "descriptiveReductionPercent": 3.4740573595013036,
+  "correctTargets": 20,
+  "zeroSubmits": true,
+  "missingDatesRetainedAndReported": true
+}

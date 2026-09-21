@@ -6,6 +6,8 @@
 
 ## 看结果
 
+- [试用入口的查询变体与负结果](prototype/reports/COMPANION-QUERY-VARIANTS.md)：单纯开启变体没有减少 PDF 样本的两次调用。补充两种模式共用的译名说明后，两边均一次调用正确；变体未显示额外收益，保持默认关闭。六次模型任务共60目标正确，完整真实流程门槛仍未达成。
+
 - [PDF 原文直接绑定实验](prototype/reports/PDF-SOURCE.md)：两次真实 Codex 从双栏文字 PDF 完成 10 个目标，两次调用含搜索回退；没有额外整理资料回合。63 项相关检查通过，含扫描件拒绝、原文引用和来源变更保护。尚非速度对照。
 
 - [登录后再冻结的诊断入口](prototype/reports/OFFLINE-AFTER-READY.md)：手动登录并加载表单后才开放 Codex；页面 HTTP(S)/WebSocket 断开，临时资料退出删除。24 项本地检查通过，无新的速度测量。
@@ -70,6 +72,15 @@ npm run browser -- --url "https://招聘页地址" --source "/绝对路径/资�
 资料格式支持标题、单行“名称：值”和自然段，最多 10 万字符、100 个条目，默认不支持 PDF/DOCX；下方有受限 PDF 实验入口。页面字段及指定资料会提供给当前 Codex。原型只控制最初打开的标签页；手动导航后让 Codex 调用 `form_context` 刷新，修改资料后重新启动 Codex 连接。在线页面可能在输入时自动保存；本项目的虚构公开页实验均在断网后进行，演示只用 localhost。
 
 这个入口复用 Playwright 后端，已接入条件搜索、重复组和独立分组，默认完整回执。独立分组不能与重复组混用；未知组件仍可能需要手工处理。没有提交、文件上传或跨页导航工具，最终申请由你检查处理。命令仅为当前 Codex 进程添加配置，无需新的模型 API Key。
+
+目录检索规则不确定时，可显式开启本地查询变体：
+
+```bash
+AFA_QUERY_VARIANTS=1 npm run browser:demo
+# 或与自己的 --url / --source（含可选 PDF 实验）一起使用
+```
+
+Codex 可以一次提供最多三个查询词与一套固定限定条件；只有完整观察到空结果才尝试下一个词。歧义、非空冲突、截断或未就绪会返回 Codex，不能靠删除校区/地区限定继续猜选。整批最多十二词、八秒发现预算。连接命令携带本次开关，无需改全局配置。详见[试用入口验证](prototype/reports/COMPANION-QUERY-VARIANTS.md)。
 
 如需在登录后用虚构资料诊断已加载的表单，加 `--offline-after-ready`：先手动进入最终表单，回终端按 Enter，冻结页面 HTTP(S)/WebSocket 后才打印 Codex 命令，并强制临时 profile。远程搜索和跨页可能不可用；这不是系统级网络沙箱，详见[验证范围](prototype/reports/OFFLINE-AFTER-READY.md)。
 
@@ -223,4 +234,4 @@ prototype/skills/       两端共用的工作流说明
 
 对仅涉及当前已有字段的批次，可把实验开关改为 `AFA_SELECTION_MODE="independent"`。Codex 可以提供 `independentGroups`，将电话国家与电话等有关联的字段放在同组；一组查询无法完成时暂缓整组，继续核验其他独立组。`complete:false` 表示原请求仍未完成，`task.unresolvedTargets` 在上下文刷新后仍保留。该选项不能和新增重复组或 `checkboxGroups` 混用；省略它则保持原来的全部条件先成功才填写的行为。
 
-空结果恢复实验：在上述 `demo-search.mjs` 打印的命令末尾同时添加 `-c 'mcp_servers.afa.env.AFA_SELECTION_MODE="conditional"'` 和 `-c 'mcp_servers.afa.env.AFA_QUERY_VARIANTS="1"'`。新增 `search:{queries:["杭州","Hangzhou"],labelParts:["Hangzhou"]}` 表示一套固定匹配条件及最多三个查询词，只有完整观察到空结果才换词；歧义、非空冲突、截断或加载失败返回 Codex 判断。整批最多十二个预声明查询，共享八秒发现预算。当前仅此隔离实验入口开放，新的 `browser:demo` companion 默认尚未开启。
+空结果恢复实验：在上述 `demo-search.mjs` 打印的命令末尾同时添加 `-c 'mcp_servers.afa.env.AFA_SELECTION_MODE="conditional"'` 和 `-c 'mcp_servers.afa.env.AFA_QUERY_VARIANTS="1"'`。新增 `search:{queries:["杭州","Hangzhou"],labelParts:["Hangzhou"]}` 表示一套固定匹配条件及最多三个查询词，只有完整观察到空结果才换词；歧义、非空冲突、截断或加载失败返回 Codex 判断。整批最多十二个预声明查询，共享八秒发现预算。独立浏览器 companion 现在也支持同一显式开关，默认仍关闭。

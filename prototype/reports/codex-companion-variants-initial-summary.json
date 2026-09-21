@@ -1,0 +1,40 @@
+{
+  "batchId": 1789966453725,
+  "scope": "Descriptive two-pair integration comparison, same synthetic task with two PDF content drawing orders. Not independent real-site/full-application/stable-speed evidence.",
+  "runtimeFileHashes": 61,
+  "runtimeUnchanged": true,
+  "pairs": [
+    {
+      "variant": "two-columns",
+      "sourceHash": "13fc370e152be8e5b0b5a90597a9ed91a18729aeac6c0149950d3f871896897a",
+      "contextHash": "31ad9c2d68fd4aecf732223a0207281fed51938cfce8d8f10320575002c171a2",
+      "singleSeconds": 44.204508084000004,
+      "variantsSeconds": 45.678422833,
+      "singleCalls": 2,
+      "variantsCalls": 2,
+      "singleSearches": 7,
+      "variantsSearches": 9,
+      "identicalSearchLog": false,
+      "bothCorrect": true
+    },
+    {
+      "variant": "reverse-draw-order",
+      "sourceHash": "4b00b948b6dfb9511d97b9d921c1e18447ddfba7f079ba2779c7b1616c5084f8",
+      "contextHash": "e072766f840947debd781f1f0141f8d6d0b9f9781bafe13b1c6411d5a012caf8",
+      "singleSeconds": 43.59767479200001,
+      "variantsSeconds": 51.40221129199999,
+      "singleCalls": 2,
+      "variantsCalls": 2,
+      "singleSearches": 7,
+      "variantsSearches": 9,
+      "identicalSearchLog": false,
+      "bothCorrect": true
+    }
+  ],
+  "singleMedianSeconds": 43.90109143800001,
+  "variantsMedianSeconds": 48.540317062499994,
+  "descriptiveReductionPercent": -10.567449401689256,
+  "correctTargets": 40,
+  "zeroSubmits": true,
+  "missingDatesRetainedAndReported": true
+}
