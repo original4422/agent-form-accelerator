@@ -191,3 +191,16 @@
 - 批量驱动退出1是City-only正则把新模式三份“Location”误判成没报告城市。六个Codex进程都退出0、页面与ledger均正确；最终文字已逐份复核四未完成+隐私/附件缺口。原JSON错误标志保留，另有codex-independent-summary.json记复核。测后只扩大关键词正则，旧driver归档到source-snapshots/independent-measured；119项指纹按postMeasurementArchives全部核实。实际运行时代码与实测一致。
 - 报告reports/INDEPENDENT-PLANS.md，ADR0012，README已解释可选开关。所有执行进程已结束，无待轮询句柄。未改全局配置、已安装Skill或真实申请。
 - 下一步不要反复用同一页追逐倍数：可对成功回执做单独投影消融，保留完整本地验证与所有未解决/失败事项，检验尾段是否减少；同时需要推进真实可试用集成。当前只支持有限Markdown、实验PW后端，PDF/DOCX、日常登录浏览器、在线查询/文件/多页完整流程仍未完成。
+
+## 最新：回执投影完成，未显示净提速，停止这条微优化
+
+- 本轮是 progress：实现、严格重建验证、两种实际MCP与六次Codex消融，得到应调整方向的负结果。完整目标仍active，没有阻塞审计。
+- 可选AFA_RECEIPT_MODE=changes在已核验整批/子集时返回changes-v1：精确元数据/字段增删改与字段顺序、基准hash，可重建原观察。task已验证条目改为计数，所有未完成、逐项expected/actual证据、来源绑定、coverage、候选、条件与错误保留。会话内部完整观察/验证不变。无基准/换文档/重复ref/未验证执行/分组上下文时回退完整。默认仍full。
+- 新receipt-projection.mjs是纯返回层，bindings-server跟踪最近实际发布页面；两个隔离PW/offline provider转发开关。工具说明两模式相同，先前default/full调用仍正常；日常扩展provider未开启新开关。
+- 7项重建/保留/回退检查通过。真实Greenhouse full与changes两种MCP检查通过，changes重建字段/控件与新完整观察一致，10目标独立DOM正确，4待办刷新不丢，零提交。旧observed/conditional两种MCP也通过。初次真实MCP测试错误比较JSON缺失属性与内存undefined，失败保留后改按wire数据比较，无运行时补丁。
+- 批次1789960601746，full43.241/51.165/44.565秒，changes40.965/48.304/45.443秒；中位44.57→45.44，约慢2%，不能宣称加速，也不能据小样本声称必然更慢。6/6正确、60目标、零提交、全部一次apply。相同14来源、7条件、10填写+4未完成；六份context/tools/prompt hash各相同。回复文字逐份检查四项未完成+隐私/附件都报告。
+- 字节中位14192→8610（减39.3%），尾段10.66→9.34秒，首次工具前21.53→22.18秒，局部执行6.96/7.01秒。局部指标不替代完整耗时。
+- 三次计时后第四次公开页加载ERR_CONNECTION_CLOSED，尚未启动Codex，驱动停止。只读浏览器探测也失败，随后普通HEAD200，恢复时浏览器成功。只增加明确的pre-host该错误续跑能力，跳过前三次已完成任务，保留失败行1789960755528，再完成后三次；没有换代理/请求头/权限。原控制器归档source-snapshots/receipts-measured，122项源/依赖按映射核实；真正运行时/提示/单次宿主driver全程冻结。中断延长第二对间隔，解释结果需保守。
+- 报告RECEIPT-PROJECTION.md，codex-receipts-summary.json。所有测试/探测进程终止，无待轮询句柄。默认full不改，不再围绕同一页压缩回执追倍数。
+- **下一步转实际试用集成**：先进能力目前只在bench隔离PW provider，旧日常扩展还不支持输入型autocomplete。可复用现有PW后端做用户明确选择URL/资料的独立浏览器入口，使用独立profile和仅本地鉴权MCP，不改全局配置或已安装Skill；先用本地虚构页做实际MCP/生命周期检查。用户允许独立app。不要把接入新入口等同于真实申请完成；所有公开页虚构输入仍维持网络隔离，不能进行真实上传/提交。
+- 已只读查看现有bridge.mjs/bindings-mcp.mjs和manifest：旧桥只支持inspect/fill/plan/goal，daily provider只转发repeat/context；它不是直接复用新discover路径的入口。已确认本机Playwright类型提供launchPersistentContext及handleSIGINT，.profiles/和.runtime/均gitignored。尚未实现新入口，不把这个计划当作完成。

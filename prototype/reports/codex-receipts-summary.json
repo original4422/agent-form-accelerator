@@ -1,0 +1,74 @@
+{
+  "batchId": 1789960601746,
+  "scope": "Same independent-group Codex task on frozen Greenhouse page, full versus changes-v1 apply receipt. Same prompt, initial context, tool descriptions/schema, backend and verification. All ten available targets must pass the public DOM oracle; four unavailable source facts, consent and attachment remain reported. No real application completion or server acceptance. Browser load/preflight excluded; full host time included.",
+  "timedRuns": 6,
+  "correctTargets": 60,
+  "submits": 0,
+  "preHostLoadFailures": [
+    1789960755528
+  ],
+  "distinctContextHashes": 1,
+  "distinctToolsHashes": 1,
+  "distinctPromptHashes": 1,
+  "fingerprintsVerified": 122,
+  "modes": {
+    "full": {
+      "seconds": [
+        43.241320625,
+        51.16468700000001,
+        44.565061791
+      ],
+      "medianSeconds": 44.565061791,
+      "medianReplyBytes": 14192,
+      "medianFirstToolSeconds": 21.533698040999997,
+      "medianExecutionSeconds": 6.957130834,
+      "medianTailSeconds": 10.660397290999997,
+      "toolCalls": [
+        1,
+        1,
+        1
+      ]
+    },
+    "changes": {
+      "seconds": [
+        40.964680292000004,
+        48.303845291,
+        45.44251849999999
+      ],
+      "medianSeconds": 45.44251849999999,
+      "medianReplyBytes": 8610,
+      "medianFirstToolSeconds": 22.183881249999992,
+      "medianExecutionSeconds": 7.0120185410000015,
+      "medianTailSeconds": 9.338283792000002,
+      "toolCalls": [
+        1,
+        1,
+        1
+      ]
+    }
+  },
+  "pairs": [
+    {
+      "repetition": 0,
+      "fullSeconds": 43.241320625,
+      "changesSeconds": 40.964680292000004,
+      "reductionPercent": 5.2649648532791415
+    },
+    {
+      "repetition": 1,
+      "fullSeconds": 51.16468700000001,
+      "changesSeconds": 48.303845291,
+      "reductionPercent": 5.591437916936737
+    },
+    {
+      "repetition": 2,
+      "fullSeconds": 44.565061791,
+      "changesSeconds": 45.44251849999999,
+      "reductionPercent": -1.9689341240343383
+    }
+  ],
+  "finalTextReview": "All six final texts inspected: report the four unresolved source facts, consent and resume gaps, without claiming application completion. All runs used exactly one apply call.",
+  "medianTimeChangePercent": 1.9689341240343605,
+  "medianBytesReductionPercent": 39.33201803833145,
+  "conclusion": "No demonstrated end-to-end speed gain. Keep full receipts as default; do not optimize further against this one page."
+}

@@ -1,0 +1,33 @@
+{
+  "date": "2026-09-21T03:14:15.388Z",
+  "results": [
+    {
+      "name": "field additions, removals, metadata, property deletion, controls and order reconstruct exactly",
+      "passed": true
+    },
+    {
+      "name": "stale or tampered base is rejected even with the same snapshot token",
+      "passed": true
+    },
+    {
+      "name": "document, URL, missing context and duplicate-ref changes retain full result",
+      "passed": true
+    },
+    {
+      "name": "unverified writes and unknown execution errors retain full observation and evidence",
+      "passed": true
+    },
+    {
+      "name": "partial success preserves all unresolved source targets, candidates and evidence",
+      "passed": true
+    },
+    {
+      "name": "wire normalization tolerates undefined properties and object key ordering",
+      "passed": true
+    },
+    {
+      "name": "stored real-page receipts retain every non-observation decision and unresolved fact",
+      "passed": true
+    }
+  ]
+}

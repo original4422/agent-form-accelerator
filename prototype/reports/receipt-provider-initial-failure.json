@@ -1,0 +1,670 @@
+{
+  "date": "2026-09-21T03:14:29.700Z",
+  "results": [
+    {
+      "result": {
+        "complete": false,
+        "evidence": [
+          {
+            "group": "",
+            "label": "First Name",
+            "expected": "Ada",
+            "actual": "Ada",
+            "status": "verified"
+          },
+          {
+            "group": "",
+            "label": "Last Name",
+            "expected": "Example",
+            "actual": "Example",
+            "status": "verified"
+          },
+          {
+            "group": "",
+            "label": "Preferred First Name",
+            "expected": "Ada",
+            "actual": "Ada",
+            "status": "verified"
+          },
+          {
+            "group": "",
+            "label": "Email",
+            "expected": "candidate@example.test",
+            "actual": "candidate@example.test",
+            "status": "verified"
+          },
+          {
+            "group": "Phone",
+            "label": "Country",
+            "expected": "United States +1",
+            "actual": "United States +1",
+            "status": "verified"
+          },
+          {
+            "group": "Phone",
+            "label": "Phone",
+            "expected": "2025550147",
+            "actual": "(202) 555-0147",
+            "equivalence": "telephone-punctuation",
+            "status": "verified"
+          },
+          {
+            "group": "",
+            "label": "Are you fluent in English?",
+            "expected": "Yes",
+            "actual": "Yes",
+            "status": "verified"
+          },
+          {
+            "group": "",
+            "label": "Do you now or will you in the future require immigration sponsorship to work at Cloudflare?",
+            "expected": "No",
+            "actual": "No",
+            "status": "verified"
+          },
+          {
+            "group": "",
+            "label": "Would you like to include your LinkedIn profile, personal website or blog?",
+            "expected": "https://example.test/ada",
+            "actual": "https://example.test/ada",
+            "status": "verified"
+          },
+          {
+            "group": "",
+            "label": "How did you hear about this job?",
+            "expected": "Company careers website",
+            "actual": "Company careers website",
+            "status": "verified"
+          }
+        ],
+        "trace": [
+          {
+            "round": 0,
+            "operation": "fill",
+            "statuses": [
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified",
+              "verified"
+            ]
+          }
+        ],
+        "primitiveCalls": 3,
+        "elapsedMs": 6952.840167,
+        "verification": "DOM values/native validity, rechecked after 120 ms; not application/server acceptance",
+        "completionScope": "requested-targets",
+        "coverage": {
+          "scope": "Visible enabled required fields only; hidden steps and server acceptance are not covered.",
+          "limitations": {
+            "iframes": 3,
+            "shadowRoots": false
+          },
+          "requiredUnits": 9,
+          "verifiedRequiredUnits": 8,
+          "unresolvedRequired": [
+            {
+              "ref": "f18",
+              "group": "Please review and acknowledge Cloudflare's Candidate Privacy Policy (cloudflare.com/candidate-privacy-notice/). *",
+              "label": "Acknowledge/Confirm",
+              "kind": "checkbox",
+              "reason": "not-bound-to-source"
+            }
+          ],
+          "visibleRequiredCovered": false,
+          "unsupported": [
+            {
+              "ref": "f8",
+              "group": "Resume/CV *",
+              "label": "Attach",
+              "kind": "file",
+              "required": false
+            }
+          ]
+        },
+        "sourceHash": "b9ae305de3d582e7ff332f21be1469d9b139ae153715a37ca169ae5a3cc313f2",
+        "bindings": [
+          {
+            "ref": "f1",
+            "sourceId": "s1",
+            "sourceLabel": "名",
+            "targetGroup": ""
+          },
+          {
+            "ref": "f2",
+            "sourceId": "s2",
+            "sourceLabel": "姓",
+            "targetGroup": ""
+          },
+          {
+            "ref": "f3",
+            "sourceId": "s3",
+            "sourceLabel": "常用名",
+            "targetGroup": ""
+          },
+          {
+            "ref": "f4",
+            "sourceId": "s4",
+            "sourceLabel": "邮箱",
+            "targetGroup": ""
+          },
+          {
+            "ref": "f5",
+            "sourceId": "s5",
+            "sourceLabel": "电话号码国家",
+            "targetGroup": "Phone"
+          },
+          {
+            "ref": "f6",
+            "sourceId": "s6",
+            "sourceLabel": "本地电话号码",
+            "targetGroup": "Phone"
+          },
+          {
+            "ref": "f14",
+            "sourceId": "s11",
+            "sourceLabel": "英语是否流利",
+            "targetGroup": ""
+          },
+          {
+            "ref": "f17",
+            "sourceId": "s12",
+            "sourceLabel": "现在或未来是否需要雇主签证支持",
+            "targetGroup": ""
+          },
+          {
+            "ref": "f15",
+            "sourceId": "s13",
+            "sourceLabel": "个人网站",
+            "targetGroup": ""
+          },
+          {
+            "ref": "f16",
+            "sourceId": "s14",
+            "sourceLabel": "获知渠道",
+            "targetGroup": ""
+          }
+        ],
+        "partial": true,
+        "appliedSubsetComplete": true,
+        "reason": "INDEPENDENT_TARGETS_UNRESOLVED",
+        "searches": [
+          {
+            "ref": "f5",
+            "sourceId": "s5",
+            "query": "United States",
+            "status": "observed",
+            "options": [
+              {
+                "optionRef": "o1",
+                "label": "United States +1",
+                "disabled": false
+              }
+            ]
+          },
+          {
+            "ref": "f7",
+            "sourceId": "s7",
+            "query": "Beijing",
+            "status": "blocked",
+            "reason": "CONTROL_NOT_READY",
+            "options": []
+          },
+          {
+            "ref": "f9",
+            "sourceId": "s8",
+            "query": "Tsinghua University",
+            "status": "blocked",
+            "reason": "CONTROL_NOT_READY",
+            "options": []
+          },
+          {
+            "ref": "f10",
+            "sourceId": "s9",
+            "query": "Master",
+            "status": "blocked",
+            "reason": "CONTROL_NOT_READY",
+            "options": []
+          },
+          {
+            "ref": "f11",
+            "sourceId": "s10",
+            "query": "Computer Science",
+            "status": "blocked",
+            "reason": "CONTROL_NOT_READY",
+            "options": []
+          },
+          {
+            "ref": "f14",
+            "sourceId": "s11",
+            "query": "Yes",
+            "status": "observed",
+            "options": [
+              {
+                "optionRef": "o2",
+                "label": "Yes",
+                "disabled": false
+              }
+            ]
+          },
+          {
+            "ref": "f17",
+            "sourceId": "s12",
+            "query": "No",
+            "status": "observed",
+            "options": [
+              {
+                "optionRef": "o3",
+                "label": "No",
+                "disabled": false
+              }
+            ]
+          }
+        ],
+        "conditionalSelections": [
+          {
+            "option": {
+              "optionRef": "o1",
+              "label": "United States +1",
+              "disabled": false
+            },
+            "ref": "f5",
+            "sourceId": "s5",
+            "condition": {
+              "query": "United States",
+              "labelParts": [
+                "United States"
+              ]
+            }
+          },
+          {
+            "reason": "CONTROL_NOT_READY",
+            "ref": "f7",
+            "sourceId": "s7",
+            "condition": {
+              "query": "Beijing",
+              "labelParts": [
+                "Beijing",
+                "China"
+              ]
+            }
+          },
+          {
+            "reason": "CONTROL_NOT_READY",
+            "ref": "f9",
+            "sourceId": "s8",
+            "condition": {
+              "query": "Tsinghua University",
+              "labelParts": [
+                "Tsinghua University"
+              ]
+            }
+          },
+          {
+            "reason": "CONTROL_NOT_READY",
+            "ref": "f10",
+            "sourceId": "s9",
+            "condition": {
+              "query": "Master",
+              "labelParts": [
+                "Master",
+                "Science"
+              ]
+            }
+          },
+          {
+            "reason": "CONTROL_NOT_READY",
+            "ref": "f11",
+            "sourceId": "s10",
+            "condition": {
+              "query": "Computer Science",
+              "labelParts": [
+                "Computer Science"
+              ]
+            }
+          },
+          {
+            "option": {
+              "optionRef": "o2",
+              "label": "Yes",
+              "disabled": false
+            },
+            "ref": "f14",
+            "sourceId": "s11",
+            "condition": {
+              "query": "Yes",
+              "labelParts": [
+                "Yes"
+              ]
+            }
+          },
+          {
+            "option": {
+              "optionRef": "o3",
+              "label": "No",
+              "disabled": false
+            },
+            "ref": "f17",
+            "sourceId": "s12",
+            "condition": {
+              "query": "No",
+              "labelParts": [
+                "No"
+              ]
+            }
+          }
+        ],
+        "discoveryCalls": 1,
+        "selectionMs": 6454.580583,
+        "goalElapsedMs": 494.6302079999987,
+        "task": {
+          "scope": "Source targets explicitly planned in this document session; not the entire application.",
+          "complete": false,
+          "unresolvedTargets": [
+            {
+              "ref": "f7",
+              "sourceId": "s7",
+              "sourceLabel": "居住城市",
+              "group": "",
+              "label": "Location (City)",
+              "kind": "autocomplete",
+              "reason": "CONTROL_NOT_READY",
+              "blockedBy": [
+                "f7"
+              ],
+              "status": "unresolved",
+              "currentPresence": "absent"
+            },
+            {
+              "ref": "f9",
+              "sourceId": "s8",
+              "sourceLabel": "学校英文名",
+              "group": "",
+              "label": "School",
+              "kind": "autocomplete",
+              "reason": "CONTROL_NOT_READY",
+              "blockedBy": [
+                "f9",
+                "f10",
+                "f11"
+              ],
+              "status": "unresolved",
+              "currentPresence": "present"
+            },
+            {
+              "ref": "f10",
+              "sourceId": "s9",
+              "sourceLabel": "学历",
+              "group": "",
+              "label": "Degree",
+              "kind": "autocomplete",
+              "reason": "CONTROL_NOT_READY",
+              "blockedBy": [
+                "f9",
+                "f10",
+                "f11"
+              ],
+              "status": "unresolved",
+              "currentPresence": "present"
+            },
+            {
+              "ref": "f11",
+              "sourceId": "s10",
+              "sourceLabel": "专业",
+              "group": "",
+              "label": "Discipline",
+              "kind": "autocomplete",
+              "reason": "CONTROL_NOT_READY",
+              "blockedBy": [
+                "f9",
+                "f10",
+                "f11"
+              ],
+              "status": "unresolved",
+              "currentPresence": "present"
+            }
+          ],
+          "plannedCount": 14,
+          "verifiedCount": 10
+        },
+        "receiptFormat": "changes-v1",
+        "observationDelta": {
+          "baseHash": "90e2ba2c76a5de524b22b47614a86f02424e0e4f611e81f6c3f140708f6419da",
+          "metadata": {
+            "set": {
+              "snapshot": "b3eed7b4-c9a7-4365-830c-26c7af709f89",
+              "documentId": "c807f03f-b26d-4b40-b73b-ea2e23191862",
+              "title": "Job Application for Software Engineer, Workers Deploy & Config at Cloudflare",
+              "controls": [
+                {
+                  "ref": "f12",
+                  "label": "Add another",
+                  "kind": "add-row",
+                  "group": "",
+                  "required": false,
+                  "disabled": false,
+                  "readOnly": false,
+                  "supported": true,
+                  "valid": true,
+                  "pending": false,
+                  "value": ""
+                }
+              ],
+              "limitations": {
+                "iframes": 3,
+                "shadowRoots": false
+              },
+              "elapsedMs": 1.0999999046325684
+            },
+            "remove": []
+          },
+          "changedFields": [
+            {
+              "ref": "f1",
+              "set": {
+                "domId": "first_name",
+                "value": "Ada"
+              },
+              "remove": []
+            },
+            {
+              "ref": "f2",
+              "set": {
+                "domId": "last_name",
+                "value": "Example"
+              },
+              "remove": []
+            },
+            {
+              "ref": "f3",
+              "set": {
+                "domId": "preferred_name",
+                "value": "Ada"
+              },
+              "remove": []
+            },
+            {
+              "ref": "f4",
+              "set": {
+                "domId": "email",
+                "value": "candidate@example.test"
+              },
+              "remove": []
+            },
+            {
+              "ref": "f5",
+              "set": {
+                "domId": "country",
+                "value": "United States +1",
+                "options": [
+                  {
+                    "label": "United States +1",
+                    "value": "United States +1",
+                    "disabled": false,
+                    "selectionKey": "iti__us"
+                  }
+                ],
+                "displayValue": "+1",
+                "selectionKey": "iti__us"
+              },
+              "remove": []
+            },
+            {
+              "ref": "f6",
+              "set": {
+                "domId": "phone",
+                "value": "(202) 555-0147"
+              },
+              "remove": []
+            },
+            {
+              "ref": "f8",
+              "set": {
+                "domId": "resume"
+              },
+              "remove": []
+            },
+            {
+              "ref": "f9",
+              "set": {
+                "domId": "school--0"
+              },
+              "remove": []
+            },
+            {
+              "ref": "f10",
+              "set": {
+                "domId": "degree--0",
+                "pending": true
+              },
+              "remove": []
+            },
+            {
+              "ref": "f11",
+              "set": {
+                "domId": "discipline--0",
+                "pending": true
+              },
+              "remove": []
+            },
+            {
+              "ref": "f13",
+              "set": {
+                "domId": "question_61261349"
+              },
+              "remove": []
+            },
+            {
+              "ref": "f14",
+              "set": {
+                "domId": "question_61261350",
+                "value": "Yes",
+                "options": [
+                  {
+                    "label": "Yes",
+                    "value": "Yes",
+                    "disabled": false
+                  }
+                ]
+              },
+              "remove": []
+            },
+            {
+              "ref": "f15",
+              "set": {
+                "domId": "question_61261351",
+                "value": "https://example.test/ada"
+              },
+              "remove": []
+            },
+            {
+              "ref": "f16",
+              "set": {
+                "domId": "question_61261352",
+                "value": "Company careers website"
+              },
+              "remove": []
+            },
+            {
+              "ref": "f17",
+              "set": {
+                "domId": "question_61261353",
+                "value": "No",
+                "options": [
+                  {
+                    "label": "No",
+                    "value": "No",
+                    "disabled": false
+                  }
+                ]
+              },
+              "remove": []
+            },
+            {
+              "ref": "f18",
+              "set": {
+                "domId": "question_61261354[]_596560250"
+              },
+              "remove": []
+            },
+            {
+              "ref": "f19",
+              "set": {
+                "domId": "gender"
+              },
+              "remove": []
+            },
+            {
+              "ref": "f20",
+              "set": {
+                "domId": "hispanic_ethnicity"
+              },
+              "remove": []
+            },
+            {
+              "ref": "f21",
+              "set": {
+                "domId": "veteran_status"
+              },
+              "remove": []
+            }
+          ],
+          "addedFields": [],
+          "removedRefs": [
+            "f7"
+          ],
+          "fieldOrder": [
+            "f1",
+            "f2",
+            "f3",
+            "f4",
+            "f5",
+            "f6",
+            "f8",
+            "f9",
+            "f10",
+            "f11",
+            "f13",
+            "f14",
+            "f15",
+            "f16",
+            "f17",
+            "f18",
+            "f19",
+            "f20",
+            "f21"
+          ]
+        }
+      }
+    },
+    {
+      "passed": false,
+      "error": "AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:\n+ actual - expected\n... Skipped lines\n\n  [\n    {\n      disabled: false,\n      domId: 'first_name',\n      group: '',\n      kind: 'text',\n      label: 'First Name',\n-     options: undefined,\n      pending: false,\n      readOnly: false,\n      ref: 'f1',\n      required: true,\n      supported: true,\n...\n      label: 'Last Name',\n-     options: undefined,\n      pending: false,\n      readOnly: false,\n      ref: 'f2',\n      required: true,\n      supported: true,\n...\n      label: 'Preferred First Name',\n-     options: undefined,\n      pending: false,\n      readOnly: false,\n      ref: 'f3',\n      required: false,\n      supported: true,\n...\n      label: 'Email',\n-     options: undefined,\n      pending: false,\n      readOnly: false,\n      ref: 'f4',\n      required: true,\n      supported: true,\n...\n      label: 'Phone',\n-     options: undefined,\n      pending: false,\n      readOnly: false,\n      ref: 'f6',\n      required: true,\n      supported: true,\n...\n      label: 'Attach',\n-     options: undefined,\n      pending: false,\n      readOnly: false,\n      ref: 'f8',\n      required: false,\n      supported: false,\n      valid: true,\n-     value: undefined\n    },\n    {\n      adapter: 'react-select-single-v5',\n      disabled: false,\n      domId: 'school--0',\n...\n      label: 'School',\n-     options: undefined,\n      pending: false,\n      query: '',\n      readOnly: false,\n      ref: 'f9',\n      required: false,\n...\n      label: 'Degree',\n-     options: undefined,\n      pending: true,\n      query: '',\n      readOnly: false,\n      ref: 'f10',\n      required: false,\n...\n      label: 'Discipline',\n-     options: undefined,\n      pending: true,\n      query: '',\n      readOnly: false,\n      ref: 'f11',\n      required: false,\n...\n      label: 'Legal Name (if different than above)',\n-     options: undefined,\n      pending: false,\n      readOnly: false,\n      ref: 'f13',\n      required: false,\n      supported: true,\n...\n      label: 'Would you like to include your LinkedIn profile, personal website or blog?',\n-     options: undefined,\n      pending: false,\n      readOnly: false,\n      ref: 'f15',\n      required: false,\n      supported: true,\n...\n      label: 'How did you hear about this job?',\n-     options: undefined,\n      pending: false,\n      readOnly: false,\n      ref: 'f16',\n      required: true,\n      supported: true,\n...\n      label: 'Acknowledge/Confirm',\n-     options: undefined,\n      pending: false,\n      readOnly: false,\n      ref: 'f18',\n      required: true,\n      supported: true,\n...\n      label: 'Gender',\n-     options: undefined,\n      pending: false,\n      query: '',\n      readOnly: false,\n      ref: 'f19',\n      required: false,\n...\n      label: 'Are you Hispanic/Latino?',\n-     options: undefined,\n      pending: false,\n      query: '',\n      readOnly: false,\n      ref: 'f20',\n      required: false,\n...\n      label: 'Veteran Status',\n-     options: undefined,\n      pending: false,\n      query: '',\n      readOnly: false,\n      ref: 'f21',\n      required: false,\n\n    at file:///Users/original/Project/github/personal_project/agent-form-accelerator/prototype/bench/independent-provider-check.mjs:29:12"
+    }
+  ]
+}

@@ -6,6 +6,8 @@
 
 ## 看结果
 
+- [精简回执没有显示净提速](prototype/reports/RECEIPT-PROJECTION.md)：返回体积减少39%，但同一任务三组对照中位44.57→45.44秒；保持完整回执为默认，转向实际试用集成。
+
 - [独立分组与未完成事项记录](prototype/reports/INDEPENDENT-PLANS.md)：提前声明字段依赖边界，局部搜索失败后同一次请求继续完成独立字段；隐藏的未完成控件仍保留在任务记录中。
 
 - [真实 Greenhouse 页面迁移](prototype/reports/GREENHOUSE-MIGRATION.md)：Codex 在断网虚构资料测试中通过两次调用核验 10 个字段，如实保留 4 项远程查询、隐私确认与附件未完成；验证了失败恢复，尚非完整申请或速度对照。

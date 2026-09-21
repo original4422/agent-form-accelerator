@@ -1,5 +1,5 @@
 {
-  "date": "2026-09-21T02:53:31.763Z",
+  "date": "2026-09-21T03:15:23.566Z",
   "results": [
     {
       "result": {
@@ -78,8 +78,8 @@
           }
         ],
         "observation": {
-          "snapshot": "7f6cb532-18b3-496a-af59-f4ecf3ba9a19",
-          "documentId": "46d53fad-7e65-4a1e-b242-a67cc880fed3",
+          "snapshot": "9f72e62b-33b6-47eb-a7c2-f1bcb9ba6cae",
+          "documentId": "d43bdcdf-bd28-4a9e-8b79-fa28ebace82c",
           "url": "https://job-boards.greenhouse.io/cloudflare/jobs/7377424",
           "title": "Job Application for Software Engineer, Workers Deploy & Config at Cloudflare",
           "fields": [
@@ -410,7 +410,7 @@
             "iframes": 3,
             "shadowRoots": false
           },
-          "elapsedMs": 1
+          "elapsedMs": 1.0999999046325684
         },
         "trace": [
           {
@@ -431,7 +431,7 @@
           }
         ],
         "primitiveCalls": 3,
-        "elapsedMs": 6984.223792,
+        "elapsedMs": 6963.737416,
         "verification": "DOM values/native validity, rechecked after 120 ms; not application/server acceptance",
         "task": {
           "scope": "Source targets explicitly planned in this document session; not the entire application.",
@@ -927,8 +927,8 @@
           }
         ],
         "discoveryCalls": 1,
-        "selectionMs": 6457.388417,
-        "goalElapsedMs": 523.1557919999996
+        "selectionMs": 6470.953458,
+        "goalElapsedMs": 489.0311249999995
       }
     },
     {

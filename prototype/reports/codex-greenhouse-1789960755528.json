@@ -1,0 +1,10 @@
+{
+  "batchId": 1789960755528,
+  "selectionMode": "independent",
+  "receiptMode": "full",
+  "protocol": "independent-paired-v1",
+  "date": "2026-09-21T03:19:15.528Z",
+  "scope": "Single Codex migration smoke test on an actual public Greenhouse page, loaded GET/HEAD-only and network-frozen before fictional input. Public DOM oracle for ten supported targets; education and city queries cannot complete offline. No server acceptance, full application completion, or speed comparison.",
+  "error": "page.goto: net::ERR_CONNECTION_CLOSED at https://job-boards.greenhouse.io/cloudflare/jobs/7377424\nCall log:\n\u001b[2m  - navigating to \"https://job-boards.greenhouse.io/cloudflare/jobs/7377424\", waiting until \"load\"\u001b[22m\n\n    at createOfflinePublicHarness (/Users/original/Project/github/personal_project/agent-form-accelerator/prototype/bench/offline-public-harness.mjs:22:16)\n    at async runGreenhouse (/Users/original/Project/github/personal_project/agent-form-accelerator/prototype/bench/codex-greenhouse.mjs:24:5)\n    at async file:///Users/original/Project/github/personal_project/agent-form-accelerator/prototype/bench/codex-receipts.mjs:10:13",
+  "passed": false
+}

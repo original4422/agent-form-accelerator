@@ -1,9 +1,9 @@
 {
-  "batchId": 1789961068124,
+  "batchId": 1789960700504,
   "selectionMode": "independent",
   "receiptMode": "changes",
   "protocol": "independent-paired-v1",
-  "date": "2026-09-21T03:24:28.124Z",
+  "date": "2026-09-21T03:18:20.504Z",
   "scope": "Single Codex migration smoke test on an actual public Greenhouse page, loaded GET/HEAD-only and network-frozen before fictional input. Public DOM oracle for ten supported targets; education and city queries cannot complete offline. No server acceptance, full application completion, or speed comparison.",
   "preflight": {
     "passed": true,
@@ -16,8 +16,8 @@
     "contextBytes": 7873
   },
   "promptHash": "c48585fe1bc5d33f34a46353cb10f313dec926b1ee00b4b4243976387daea7ee",
-  "startedEpochMs": 1789961074744.8777,
-  "elapsedMs": 45442.51849999999,
+  "startedEpochMs": 1789960707103.5632,
+  "elapsedMs": 48303.845291000005,
   "exitCode": 0,
   "timedOut": false,
   "aborted": false,
@@ -25,40 +25,40 @@
     {
       "tool": "form_apply_bindings",
       "status": "completed",
-      "startMs": 22183.88124999999,
-      "endMs": 36965.30545900001,
-      "durationMs": 14781.424209000019,
+      "startMs": 23301.371291000003,
+      "endMs": 38796.65929100002,
+      "durationMs": 15495.288000000015,
       "returnedBytes": 8610,
-      "executionMs": 6965.050416000002,
+      "executionMs": 7025.568665999996,
       "complete": false,
       "reason": "INDEPENDENT_TARGETS_UNRESOLVED",
       "primitiveCalls": 3
     }
   ],
   "usage": {
-    "input_tokens": 58338,
-    "cached_input_tokens": 43904,
+    "input_tokens": 69185,
+    "cached_input_tokens": 49408,
     "cache_write_input_tokens": 0,
-    "output_tokens": 592,
-    "reasoning_output_tokens": 48
+    "output_tokens": 550,
+    "reasoning_output_tokens": 0
   },
   "timeline": [
     {
-      "atMs": 2061.097667000009,
+      "atMs": 1564.861791000003,
       "event": "thread.started"
     },
     {
-      "atMs": 2063.584167000008,
+      "atMs": 1567.0722080000123,
       "event": "turn.started"
     },
     {
-      "atMs": 7510.749959000008,
+      "atMs": 7894.630416,
       "event": "item.completed",
       "itemId": "item_0",
       "itemType": "agent_message"
     },
     {
-      "atMs": 22183.88124999999,
+      "atMs": 23301.371291000003,
       "event": "item.started",
       "itemId": "item_1",
       "itemType": "mcp_tool_call",
@@ -66,7 +66,7 @@
       "status": "in_progress"
     },
     {
-      "atMs": 36965.30545900001,
+      "atMs": 38796.65929100002,
       "event": "item.completed",
       "itemId": "item_1",
       "itemType": "mcp_tool_call",
@@ -74,17 +74,17 @@
       "status": "completed"
     },
     {
-      "atMs": 42789.60483400001,
+      "atMs": 45393.326375000004,
       "event": "item.completed",
       "itemId": "item_2",
       "itemType": "agent_message"
     },
     {
-      "atMs": 42790.791667,
+      "atMs": 45400.82904100002,
       "event": "turn.completed"
     }
   ],
-  "finalText": "Filled and verified 10 fields: first name Ada, last name Example, preferred name Ada, email, US phone country and number, English fluency Yes, website, referral channel, and sponsorship No.\n\nFour source-supported fields remain unresolved offline (`CONTROL_NOT_READY`):\n\n- City: Beijing, China (s7); control disappeared.\n- School: Tsinghua University (s8).\n- Degree: Master of Science (s9).\n- Discipline: Computer Science (s10).\n\nRequired privacy acknowledgment remains unchecked because consent was not supplied. Resume/CV attachment is unsupported and was not uploaded. Missing legal-name and demographic facts were left blank.\n\nNothing was submitted or navigated. The supported subset is complete; the application is not.",
+  "finalText": "Filled and verified 10 fields:\n\n- First/last/preferred name: Ada / Example / Ada\n- Email: candidate@example.test\n- Phone: United States (+1), (202) 555-0147\n- English fluency: Yes\n- Sponsorship required: No\n- Website: https://example.test/ada\n- Referral source: Company careers website\n\nFour source-supported fields remain unresolved because their controls were unavailable offline (`CONTROL_NOT_READY`):\n\n- City: Beijing, China\n- School: Tsinghua University\n- Degree: Master of Science\n- Discipline: Computer Science\n\nRequired privacy acknowledgement remains unchecked because consent was not supplied. Resume/CV attachment is unsupported and was not uploaded. Demographic fields remain blank.\n\nNo submission or navigation occurred. The application remains incomplete.",
   "oracle": {
     "passed": true,
     "errors": [],
@@ -238,7 +238,7 @@
         }
       ],
       "primitiveCalls": 3,
-      "elapsedMs": 6965.050416000002,
+      "elapsedMs": 7025.568665999996,
       "verification": "DOM values/native validity, rechecked after 120 ms; not application/server acceptance",
       "completionScope": "requested-targets",
       "coverage": {
@@ -501,8 +501,8 @@
         }
       ],
       "discoveryCalls": 1,
-      "selectionMs": 6484.765750000002,
-      "goalElapsedMs": 476.91854199999943,
+      "selectionMs": 6514.156999999996,
+      "goalElapsedMs": 507.0975840000028,
       "task": {
         "scope": "Source targets explicitly planned in this document session; not the entire application.",
         "complete": false,
@@ -578,8 +578,8 @@
         "baseHash": "90e2ba2c76a5de524b22b47614a86f02424e0e4f611e81f6c3f140708f6419da",
         "metadata": {
           "set": {
-            "snapshot": "f0efb186-8643-4529-82b9-ad03aa9cdc58",
-            "documentId": "d5cf233a-0064-49e8-8921-edb6a5ef1710",
+            "snapshot": "1ce9ab0a-3f3a-4caa-a4b2-c0bbe50f463c",
+            "documentId": "2603f4f0-19b8-431e-b95e-9a39c30da5c8",
             "title": "Job Application for Software Engineer, Workers Deploy & Config at Cloudflare",
             "controls": [
               {
@@ -600,7 +600,7 @@
               "iframes": 3,
               "shadowRoots": false
             },
-            "elapsedMs": 1.299999713897705
+            "elapsedMs": 1.4000000953674316
           },
           "remove": []
         },
@@ -806,109 +806,109 @@
   "serverTimings": [
     {
       "stage": "server_start",
-      "epochMs": 1789961074705.4028
+      "epochMs": 1789960707064.5615
     },
     {
       "stage": "prefetch_start",
-      "epochMs": 1789961074709.2034
+      "epochMs": 1789960707068.3281
     },
     {
       "stage": "prefetch_done",
-      "epochMs": 1789961074735.0159
+      "epochMs": 1789960707094.6548
     },
     {
       "stage": "server_connected",
-      "epochMs": 1789961074735.4883
+      "epochMs": 1789960707095.1458
     },
     {
       "stage": "transport_send_start",
-      "epochMs": 1789961074737.761,
+      "epochMs": 1789960707097.5388,
       "responseKind": "initialize"
     },
     {
       "stage": "transport_send_done",
-      "epochMs": 1789961074737.8662,
+      "epochMs": 1789960707097.636,
       "responseKind": "initialize"
     },
     {
       "stage": "transport_send_start",
-      "epochMs": 1789961074739.8525,
+      "epochMs": 1789960707099.6924,
       "responseKind": "tools_list"
     },
     {
       "stage": "transport_send_done",
-      "epochMs": 1789961074739.9963,
+      "epochMs": 1789960707099.8254,
       "responseKind": "tools_list"
     },
     {
       "stage": "server_start",
-      "epochMs": 1789961076881.6829
+      "epochMs": 1789960708740.68
     },
     {
       "stage": "prefetch_start",
-      "epochMs": 1789961076885.4785
+      "epochMs": 1789960708744.686
     },
     {
       "stage": "prefetch_done",
-      "epochMs": 1789961076916.5508
+      "epochMs": 1789960708776.2405
     },
     {
       "stage": "server_connected",
-      "epochMs": 1789961076917.1135
+      "epochMs": 1789960708776.8254
     },
     {
       "stage": "transport_send_start",
-      "epochMs": 1789961076920.685,
+      "epochMs": 1789960708780.2883,
       "responseKind": "initialize"
     },
     {
       "stage": "transport_send_done",
-      "epochMs": 1789961076920.8567,
+      "epochMs": 1789960708780.454,
       "responseKind": "initialize"
     },
     {
       "stage": "transport_send_start",
-      "epochMs": 1789961076923.5442,
+      "epochMs": 1789960708782.9224,
       "responseKind": "tools_list"
     },
     {
       "stage": "transport_send_done",
-      "epochMs": 1789961076923.7546,
+      "epochMs": 1789960708783.3274,
       "responseKind": "tools_list"
     },
     {
       "stage": "handler_received",
-      "epochMs": 1789961104739.9036,
+      "epochMs": 1789960738868.9426,
       "tool": "form_apply_bindings",
       "requestId": 1
     },
     {
       "stage": "handler_execute",
-      "epochMs": 1789961104740.6172,
+      "epochMs": 1789960738870.0317,
       "tool": "form_apply_bindings",
       "requestId": 1
     },
     {
       "stage": "handler_resolved",
-      "epochMs": 1789961111707.4407,
+      "epochMs": 1789960745897.4412,
       "tool": "form_apply_bindings",
       "requestId": 1
     },
     {
       "stage": "handler_encoded",
-      "epochMs": 1789961111707.7097,
+      "epochMs": 1789960745897.7559,
       "tool": "form_apply_bindings",
       "requestId": 1,
       "bytes": 8610
     },
     {
       "stage": "transport_send_start",
-      "epochMs": 1789961111708.4429,
+      "epochMs": 1789960745898.6436,
       "responseKind": "tool_result"
     },
     {
       "stage": "transport_send_done",
-      "epochMs": 1789961111708.5808,
+      "epochMs": 1789960745898.7825,
       "responseKind": "tool_result"
     }
   ],

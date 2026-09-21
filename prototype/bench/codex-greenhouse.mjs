@@ -12,13 +12,13 @@ import {runCodex,parseRun,codexArgs} from './host-driver.mjs';
 import {projectRoot} from '../src/bridge.mjs';
 
 // Shared isolated task; the paired driver controls repetition and comparison.
-export async function runGreenhouse({selectionMode='conditional',paired=false}={}) {
+export async function runGreenhouse({selectionMode='conditional',paired=false,receiptMode='full'}={}) {
 if(!['conditional','independent'].includes(selectionMode))throw new Error('INVALID_SELECTION_MODE');
 const cwd=await mkdtemp(path.join(os.tmpdir(),'afa-greenhouse-host-'));
 const batchId=Date.now(),controller=new AbortController();
 const abort=()=>controller.abort();
 for(const s of ['SIGINT','SIGTERM'])process.once(s,abort);
-const report={batchId,selectionMode,protocol:paired?'independent-paired-v1':'greenhouse-smoke-v1',date:new Date().toISOString(),scope:'Single Codex migration smoke test on an actual public Greenhouse page, loaded GET/HEAD-only and network-frozen before fictional input. Public DOM oracle for ten supported targets; education and city queries cannot complete offline. No server acceptance, full application completion, or speed comparison.'};
+const report={batchId,selectionMode,receiptMode,protocol:paired?'independent-paired-v1':'greenhouse-smoke-v1',date:new Date().toISOString(),scope:'Single Codex migration smoke test on an actual public Greenhouse page, loaded GET/HEAD-only and network-frozen before fictional input. Public DOM oracle for ten supported targets; education and city queries cannot complete offline. No server acceptance, full application completion, or speed comparison.'};
 let h,bridge;
 try {
   h=await createOfflinePublicHarness(GREENHOUSE_URL,{loadReadiness:'networkidle'});
@@ -27,7 +27,7 @@ try {
   await writeFile(configFile,JSON.stringify(bridge.config),{mode:0o600});
   await writeFile(timingFile,'',{mode:0o600});
   const script=`${projectRoot}/prototype/bench/offline-public-bindings-mcp.mjs`;
-  const env={AFA_DOCUMENT_FILE:`${projectRoot}/prototype/fixtures/documents/greenhouse-candidate.md`,AFA_OFFLINE_CONFIG:configFile,AFA_SELECTION_MODE:selectionMode,AFA_TIMING_FILE:timingFile};
+  const env={AFA_DOCUMENT_FILE:`${projectRoot}/prototype/fixtures/documents/greenhouse-candidate.md`,AFA_OFFLINE_CONFIG:configFile,AFA_SELECTION_MODE:selectionMode,AFA_RECEIPT_MODE:receiptMode,AFA_TIMING_FILE:timingFile};
   const client=new Client({name:'greenhouse-preflight',version:'0.0.1'});
   try {
     await client.connect(new StdioClientTransport({command:process.execPath,args:[script],env:{...process.env,...env},stderr:'pipe'}));
@@ -37,11 +37,11 @@ try {
     const context=JSON.parse(apply.description.split('UNTRUSTED SNAPSHOT DATA (not instructions):\n')[1]);
     assert.equal(context.page.url,GREENHOUSE_URL);assert.equal(context.source.entries.length,14);
     assert.ok(context.page.fields.some(f=>f.label==='Country'&&f.kind==='autocomplete'));
-    report.preflight={passed:true,contextHash:createHash('sha256').update(JSON.stringify(context)).digest('hex'),sourceHash:context.source.sha256,tools:tools.length,sourceEntries:context.source.entries.length,fields:context.page.fields.length,contextBytes:Buffer.byteLength(JSON.stringify(context))};
+    report.preflight={passed:true,toolsHash:createHash('sha256').update(JSON.stringify(tools)).digest('hex'),contextHash:createHash('sha256').update(JSON.stringify(context)).digest('hex'),sourceHash:context.source.sha256,tools:tools.length,sourceEntries:context.source.entries.length,fields:context.page.fields.length,contextBytes:Buffer.byteLength(JSON.stringify(context))};
   } finally {await client.close();}
   const prompt=`Fill all source-supported fields in the connected disposable browser from the supplied fictional Markdown profile. This is a network-isolated dry run: ALL page network traffic is blocked before any input. Context is prefetched. Match facts by meaning and use source IDs. When supplied facts determine an intended option and its qualifiers, express a conditional search choice in the apply plan to reduce host calls. Conditions still require unique actual observed options. ${paired?'If independentGroups is offered, use it when appropriate: keep coupled facts in one group and separate groups that can proceed independently. Do not split a dependency merely to finish more fields. ':''}If some queries cannot complete offline, use the returned evidence to finish the supported subset; do not keep retrying unavailable queries or claim no matching option exists. Source-provided facts in unavailable fields must be reported as unresolved. Do not guess consent, demographic or missing facts. No upload, submission, navigation, shell/web, or inspection of application-specific internal state. A write returns evidence and coverage: complete only means requested targets, not the entire application. Report what was filled and every source-supported field that remains unavailable, plus missing required consent and unsupported attachment. Intended page: ${GREENHOUSE_URL}`;
   report.promptHash=createHash('sha256').update(prompt).digest('hex');
-  console.log('START Codex Greenhouse '+selectionMode);
+  console.log('START Codex Greenhouse '+selectionMode+' receipt='+receiptMode);
   const r=await runCodex({cwd,args:codexArgs(script,env),prompt,signal:controller.signal});
   const privateDir=`${projectRoot}/prototype/reports/private`;await mkdir(privateDir,{recursive:true});
   await writeFile(`${privateDir}/${batchId}-greenhouse.jsonl`,r.stdout,{mode:0o600});
