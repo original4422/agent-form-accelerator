@@ -1,0 +1,1427 @@
+{
+  "batchId": 1789958532594,
+  "date": "2026-09-21T02:42:12.594Z",
+  "scope": "Single Codex migration smoke test on an actual public Greenhouse page, loaded GET/HEAD-only and network-frozen before fictional input. Public DOM oracle for ten supported targets; education and city queries cannot complete offline. No server acceptance, full application completion, or speed comparison.",
+  "preflight": {
+    "passed": true,
+    "tools": 4,
+    "sourceEntries": 14,
+    "fields": 20,
+    "contextBytes": 7873
+  },
+  "elapsedMs": 55767.417499999996,
+  "exitCode": 0,
+  "timedOut": false,
+  "aborted": false,
+  "toolCalls": [
+    {
+      "tool": "form_apply_bindings",
+      "status": "completed",
+      "startMs": 18232.397542,
+      "endMs": 29713.728457999998,
+      "durationMs": 11481.330915999999,
+      "returnedBytes": 8777,
+      "executionMs": 6454.334708000002,
+      "complete": false,
+      "reason": "CONDITIONAL_SELECTION_UNRESOLVED"
+    },
+    {
+      "tool": "form_apply_bindings",
+      "status": "completed",
+      "startMs": 39106.487708,
+      "endMs": 44388.565375,
+      "durationMs": 5282.077666999998,
+      "returnedBytes": 8489,
+      "executionMs": 514.7310419999994,
+      "complete": true,
+      "primitiveCalls": 3
+    }
+  ],
+  "usage": {
+    "input_tokens": 81877,
+    "cached_input_tokens": 37888,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 600,
+    "reasoning_output_tokens": 0
+  },
+  "timeline": [
+    {
+      "atMs": 1659.7518330000003,
+      "event": "thread.started"
+    },
+    {
+      "atMs": 1672.4405420000003,
+      "event": "turn.started"
+    },
+    {
+      "atMs": 7852.331582999999,
+      "event": "item.completed",
+      "itemId": "item_0",
+      "itemType": "agent_message"
+    },
+    {
+      "atMs": 18232.397542,
+      "event": "item.started",
+      "itemId": "item_1",
+      "itemType": "mcp_tool_call",
+      "tool": "form_apply_bindings",
+      "status": "in_progress"
+    },
+    {
+      "atMs": 29713.728457999998,
+      "event": "item.completed",
+      "itemId": "item_1",
+      "itemType": "mcp_tool_call",
+      "tool": "form_apply_bindings",
+      "status": "completed"
+    },
+    {
+      "atMs": 39106.487708,
+      "event": "item.started",
+      "itemId": "item_2",
+      "itemType": "mcp_tool_call",
+      "tool": "form_apply_bindings",
+      "status": "in_progress"
+    },
+    {
+      "atMs": 44388.565375,
+      "event": "item.completed",
+      "itemId": "item_2",
+      "itemType": "mcp_tool_call",
+      "tool": "form_apply_bindings",
+      "status": "completed"
+    },
+    {
+      "atMs": 53121.031083,
+      "event": "item.completed",
+      "itemId": "item_3",
+      "itemType": "agent_message"
+    },
+    {
+      "atMs": 53123.861417,
+      "event": "turn.completed"
+    }
+  ],
+  "finalText": "Filled and verified 10 fields: first/last/preferred name, email, phone country and number, English fluency (Yes), sponsorship (No), personal website, and referral source.\n\nUnresolved offline (`CONTROL_NOT_READY`):\n\n- City: Beijing, China — s7\n- School: Tsinghua University — s8\n- Degree: Master of Science — s9\n- Discipline: Computer Science — s10\n\nRequired privacy acknowledgment remains unchecked because consent was not supplied. Resume/CV attachment is unsupported and was not uploaded. Demographic and other missing facts were left blank.\n\nThe application remains incomplete. Nothing was submitted or navigated.",
+  "oracle": {
+    "passed": true,
+    "errors": [],
+    "expectedTargets": 10,
+    "scope": "Ten supported public-DOM targets only; four remote-dependent source fields unresolved, no server/entity-ID acceptance proof.",
+    "actual": {
+      "texts": {
+        "first_name": "Ada",
+        "last_name": "Example",
+        "preferred_name": "Ada",
+        "email": "candidate@example.test",
+        "phone": "(202) 555-0147",
+        "question_61261351": "https://example.test/ada",
+        "question_61261352": "Company careers website"
+      },
+      "countryText": "+1",
+      "countryFlags": [
+        "iti__us"
+      ],
+      "english": "Yes",
+      "sponsorship": "No",
+      "unavailable": {
+        "candidate-location": {
+          "query": "",
+          "selected": ""
+        },
+        "school--0": {
+          "query": "",
+          "selected": ""
+        },
+        "degree--0": {
+          "query": "",
+          "selected": ""
+        },
+        "discipline--0": {
+          "query": "",
+          "selected": ""
+        }
+      },
+      "consent": false,
+      "attachments": 0,
+      "demographics": [
+        "",
+        "",
+        ""
+      ],
+      "submitAttempts": 0
+    },
+    "submitAttempts": 0
+  },
+  "guard": {
+    "frozen": true,
+    "allowedReadRequests": 31,
+    "blockedLoadWrites": 1,
+    "blockedAfterFreeze": 14,
+    "webSocketsBlocked": 0,
+    "pending": 0
+  },
+  "evidence": [
+    {
+      "complete": false,
+      "reason": "CONDITIONAL_SELECTION_UNRESOLVED",
+      "completionScope": "requested-targets",
+      "sourceHash": "b9ae305de3d582e7ff332f21be1469d9b139ae153715a37ca169ae5a3cc313f2",
+      "bindings": [],
+      "evidence": [],
+      "conditionalSelections": [
+        {
+          "option": {
+            "optionRef": "o1",
+            "label": "United States +1",
+            "disabled": false
+          },
+          "ref": "f5",
+          "sourceId": "s5",
+          "condition": {
+            "query": "United States",
+            "labelParts": [
+              "United States"
+            ]
+          }
+        },
+        {
+          "reason": "CONTROL_NOT_READY",
+          "ref": "f7",
+          "sourceId": "s7",
+          "condition": {
+            "query": "Beijing",
+            "labelParts": [
+              "Beijing",
+              "China"
+            ]
+          }
+        },
+        {
+          "reason": "CONTROL_NOT_READY",
+          "ref": "f9",
+          "sourceId": "s8",
+          "condition": {
+            "query": "Tsinghua University",
+            "labelParts": [
+              "Tsinghua University"
+            ]
+          }
+        },
+        {
+          "reason": "CONTROL_NOT_READY",
+          "ref": "f10",
+          "sourceId": "s9",
+          "condition": {
+            "query": "Master",
+            "labelParts": [
+              "Master",
+              "Science"
+            ]
+          }
+        },
+        {
+          "reason": "CONTROL_NOT_READY",
+          "ref": "f11",
+          "sourceId": "s10",
+          "condition": {
+            "query": "Computer Science",
+            "labelParts": [
+              "Computer Science"
+            ]
+          }
+        },
+        {
+          "option": {
+            "optionRef": "o2",
+            "label": "Yes",
+            "disabled": false
+          },
+          "ref": "f14",
+          "sourceId": "s11",
+          "condition": {
+            "query": "Yes",
+            "labelParts": [
+              "Yes"
+            ]
+          }
+        },
+        {
+          "option": {
+            "optionRef": "o3",
+            "label": "No",
+            "disabled": false
+          },
+          "ref": "f17",
+          "sourceId": "s12",
+          "condition": {
+            "query": "No",
+            "labelParts": [
+              "No"
+            ]
+          }
+        }
+      ],
+      "searches": [
+        {
+          "ref": "f5",
+          "sourceId": "s5",
+          "query": "United States",
+          "status": "observed",
+          "options": [
+            {
+              "optionRef": "o1",
+              "label": "United States +1",
+              "disabled": false
+            }
+          ]
+        },
+        {
+          "ref": "f7",
+          "sourceId": "s7",
+          "query": "Beijing",
+          "status": "blocked",
+          "reason": "CONTROL_NOT_READY",
+          "options": []
+        },
+        {
+          "ref": "f9",
+          "sourceId": "s8",
+          "query": "Tsinghua University",
+          "status": "blocked",
+          "reason": "CONTROL_NOT_READY",
+          "options": []
+        },
+        {
+          "ref": "f10",
+          "sourceId": "s9",
+          "query": "Master",
+          "status": "blocked",
+          "reason": "CONTROL_NOT_READY",
+          "options": []
+        },
+        {
+          "ref": "f11",
+          "sourceId": "s10",
+          "query": "Computer Science",
+          "status": "blocked",
+          "reason": "CONTROL_NOT_READY",
+          "options": []
+        },
+        {
+          "ref": "f14",
+          "sourceId": "s11",
+          "query": "Yes",
+          "status": "observed",
+          "options": [
+            {
+              "optionRef": "o2",
+              "label": "Yes",
+              "disabled": false
+            }
+          ]
+        },
+        {
+          "ref": "f17",
+          "sourceId": "s12",
+          "query": "No",
+          "status": "observed",
+          "options": [
+            {
+              "optionRef": "o3",
+              "label": "No",
+              "disabled": false
+            }
+          ]
+        }
+      ],
+      "observation": {
+        "snapshot": "0bcc06bc-a82c-4e6d-8f83-d0d9584f6f20",
+        "documentId": "9a2e8958-1c5e-4fd9-9c04-347e9b0668ae",
+        "url": "https://job-boards.greenhouse.io/cloudflare/jobs/7377424",
+        "title": "Job Application for Software Engineer, Workers Deploy & Config at Cloudflare",
+        "fields": [
+          {
+            "ref": "f1",
+            "label": "First Name",
+            "kind": "text",
+            "group": "",
+            "domId": "first_name",
+            "required": true,
+            "disabled": false,
+            "readOnly": false,
+            "supported": true,
+            "valid": true,
+            "pending": false,
+            "value": ""
+          },
+          {
+            "ref": "f2",
+            "label": "Last Name",
+            "kind": "text",
+            "group": "",
+            "domId": "last_name",
+            "required": true,
+            "disabled": false,
+            "readOnly": false,
+            "supported": true,
+            "valid": true,
+            "pending": false,
+            "value": ""
+          },
+          {
+            "ref": "f3",
+            "label": "Preferred First Name",
+            "kind": "text",
+            "group": "",
+            "domId": "preferred_name",
+            "required": false,
+            "disabled": false,
+            "readOnly": false,
+            "supported": true,
+            "valid": true,
+            "pending": false,
+            "value": ""
+          },
+          {
+            "ref": "f4",
+            "label": "Email",
+            "kind": "text",
+            "group": "",
+            "domId": "email",
+            "required": true,
+            "disabled": false,
+            "readOnly": false,
+            "supported": true,
+            "valid": true,
+            "pending": false,
+            "value": ""
+          },
+          {
+            "ref": "f5",
+            "label": "Country",
+            "kind": "autocomplete",
+            "group": "Phone",
+            "domId": "country",
+            "required": true,
+            "disabled": false,
+            "readOnly": false,
+            "supported": true,
+            "valid": true,
+            "pending": false,
+            "value": "",
+            "options": [
+              {
+                "label": "United States +1",
+                "value": "United States +1",
+                "disabled": false,
+                "selectionKey": "iti__us"
+              }
+            ],
+            "adapter": "react-select-single-v5",
+            "query": ""
+          },
+          {
+            "ref": "f6",
+            "label": "Phone",
+            "kind": "tel",
+            "group": "Phone",
+            "domId": "phone",
+            "required": true,
+            "disabled": false,
+            "readOnly": false,
+            "supported": true,
+            "valid": true,
+            "pending": false,
+            "value": ""
+          },
+          {
+            "ref": "f8",
+            "label": "Attach",
+            "kind": "file",
+            "group": "Resume/CV *",
+            "domId": "resume",
+            "required": false,
+            "disabled": false,
+            "readOnly": false,
+            "supported": false,
+            "valid": true,
+            "pending": false
+          },
+          {
+            "ref": "f9",
+            "label": "School",
+            "kind": "autocomplete",
+            "group": "",
+            "domId": "school--0",
+            "required": false,
+            "disabled": false,
+            "readOnly": false,
+            "supported": true,
+            "valid": true,
+            "pending": true,
+            "value": "",
+            "adapter": "react-select-single-v5",
+            "query": ""
+          },
+          {
+            "ref": "f10",
+            "label": "Degree",
+            "kind": "autocomplete",
+            "group": "",
+            "domId": "degree--0",
+            "required": false,
+            "disabled": false,
+            "readOnly": false,
+            "supported": true,
+            "valid": true,
+            "pending": true,
+            "value": "",
+            "adapter": "react-select-single-v5",
+            "query": ""
+          },
+          {
+            "ref": "f11",
+            "label": "Discipline",
+            "kind": "autocomplete",
+            "group": "",
+            "domId": "discipline--0",
+            "required": false,
+            "disabled": false,
+            "readOnly": false,
+            "supported": true,
+            "valid": true,
+            "pending": true,
+            "value": "",
+            "adapter": "react-select-single-v5",
+            "query": ""
+          },
+          {
+            "ref": "f13",
+            "label": "Legal Name (if different than above)",
+            "kind": "text",
+            "group": "",
+            "domId": "question_61261349",
+            "required": false,
+            "disabled": false,
+            "readOnly": false,
+            "supported": true,
+            "valid": true,
+            "pending": false,
+            "value": ""
+          },
+          {
+            "ref": "f14",
+            "label": "Are you fluent in English?",
+            "kind": "autocomplete",
+            "group": "",
+            "domId": "question_61261350",
+            "required": true,
+            "disabled": false,
+            "readOnly": false,
+            "supported": true,
+            "valid": true,
+            "pending": false,
+            "value": "",
+            "options": [
+              {
+                "label": "Yes",
+                "value": "Yes",
+                "disabled": false
+              }
+            ],
+            "adapter": "react-select-single-v5",
+            "query": ""
+          },
+          {
+            "ref": "f15",
+            "label": "Would you like to include your LinkedIn profile, personal website or blog?",
+            "kind": "text",
+            "group": "",
+            "domId": "question_61261351",
+            "required": false,
+            "disabled": false,
+            "readOnly": false,
+            "supported": true,
+            "valid": true,
+            "pending": false,
+            "value": ""
+          },
+          {
+            "ref": "f16",
+            "label": "How did you hear about this job?",
+            "kind": "text",
+            "group": "",
+            "domId": "question_61261352",
+            "required": true,
+            "disabled": false,
+            "readOnly": false,
+            "supported": true,
+            "valid": true,
+            "pending": false,
+            "value": ""
+          },
+          {
+            "ref": "f17",
+            "label": "Do you now or will you in the future require immigration sponsorship to work at Cloudflare?",
+            "kind": "autocomplete",
+            "group": "",
+            "domId": "question_61261353",
+            "required": true,
+            "disabled": false,
+            "readOnly": false,
+            "supported": true,
+            "valid": true,
+            "pending": false,
+            "value": "",
+            "options": [
+              {
+                "label": "No",
+                "value": "No",
+                "disabled": false
+              }
+            ],
+            "adapter": "react-select-single-v5",
+            "query": ""
+          },
+          {
+            "ref": "f18",
+            "label": "Acknowledge/Confirm",
+            "kind": "checkbox",
+            "group": "Please review and acknowledge Cloudflare's Candidate Privacy Policy (cloudflare.com/candidate-privacy-notice/). *",
+            "domId": "question_61261354[]_596560250",
+            "required": true,
+            "disabled": false,
+            "readOnly": false,
+            "supported": true,
+            "valid": false,
+            "pending": false,
+            "value": false
+          },
+          {
+            "ref": "f19",
+            "label": "Gender",
+            "kind": "autocomplete",
+            "group": "",
+            "domId": "gender",
+            "required": false,
+            "disabled": false,
+            "readOnly": false,
+            "supported": true,
+            "valid": true,
+            "pending": false,
+            "value": "",
+            "adapter": "react-select-single-v5",
+            "query": ""
+          },
+          {
+            "ref": "f20",
+            "label": "Are you Hispanic/Latino?",
+            "kind": "autocomplete",
+            "group": "",
+            "domId": "hispanic_ethnicity",
+            "required": false,
+            "disabled": false,
+            "readOnly": false,
+            "supported": true,
+            "valid": true,
+            "pending": false,
+            "value": "",
+            "adapter": "react-select-single-v5",
+            "query": ""
+          },
+          {
+            "ref": "f21",
+            "label": "Veteran Status",
+            "kind": "autocomplete",
+            "group": "",
+            "domId": "veteran_status",
+            "required": false,
+            "disabled": false,
+            "readOnly": false,
+            "supported": true,
+            "valid": true,
+            "pending": false,
+            "value": "",
+            "adapter": "react-select-single-v5",
+            "query": ""
+          }
+        ],
+        "controls": [
+          {
+            "ref": "f12",
+            "label": "Add another",
+            "kind": "add-row",
+            "group": "",
+            "required": false,
+            "disabled": false,
+            "readOnly": false,
+            "supported": true,
+            "valid": true,
+            "pending": false,
+            "value": ""
+          }
+        ],
+        "limitations": {
+          "iframes": 3,
+          "shadowRoots": false
+        },
+        "elapsedMs": 0.9000000953674316
+      },
+      "coverage": {
+        "scope": "Visible enabled required fields only; hidden steps and server acceptance are not covered.",
+        "limitations": {
+          "iframes": 3,
+          "shadowRoots": false
+        },
+        "requiredUnits": 9,
+        "verifiedRequiredUnits": 0,
+        "unresolvedRequired": [
+          {
+            "ref": "f1",
+            "group": "",
+            "label": "First Name",
+            "kind": "text",
+            "reason": "not-bound-to-source"
+          },
+          {
+            "ref": "f2",
+            "group": "",
+            "label": "Last Name",
+            "kind": "text",
+            "reason": "not-bound-to-source"
+          },
+          {
+            "ref": "f4",
+            "group": "",
+            "label": "Email",
+            "kind": "text",
+            "reason": "not-bound-to-source"
+          },
+          {
+            "ref": "f5",
+            "group": "Phone",
+            "label": "Country",
+            "kind": "autocomplete",
+            "reason": "not-bound-to-source"
+          },
+          {
+            "ref": "f6",
+            "group": "Phone",
+            "label": "Phone",
+            "kind": "tel",
+            "reason": "not-bound-to-source"
+          },
+          {
+            "ref": "f14",
+            "group": "",
+            "label": "Are you fluent in English?",
+            "kind": "autocomplete",
+            "reason": "not-bound-to-source"
+          },
+          {
+            "ref": "f16",
+            "group": "",
+            "label": "How did you hear about this job?",
+            "kind": "text",
+            "reason": "not-bound-to-source"
+          },
+          {
+            "ref": "f17",
+            "group": "",
+            "label": "Do you now or will you in the future require immigration sponsorship to work at Cloudflare?",
+            "kind": "autocomplete",
+            "reason": "not-bound-to-source"
+          },
+          {
+            "ref": "f18",
+            "group": "Please review and acknowledge Cloudflare's Candidate Privacy Policy (cloudflare.com/candidate-privacy-notice/). *",
+            "label": "Acknowledge/Confirm",
+            "kind": "checkbox",
+            "reason": "not-bound-to-source"
+          }
+        ],
+        "visibleRequiredCovered": false,
+        "unsupported": [
+          {
+            "ref": "f8",
+            "group": "Resume/CV *",
+            "label": "Attach",
+            "kind": "file",
+            "required": false
+          }
+        ]
+      },
+      "discoveryCalls": 1,
+      "elapsedMs": 6454.334708000002
+    },
+    {
+      "complete": true,
+      "evidence": [
+        {
+          "group": "",
+          "label": "First Name",
+          "expected": "Ada",
+          "actual": "Ada",
+          "status": "verified"
+        },
+        {
+          "group": "",
+          "label": "Last Name",
+          "expected": "Example",
+          "actual": "Example",
+          "status": "verified"
+        },
+        {
+          "group": "",
+          "label": "Preferred First Name",
+          "expected": "Ada",
+          "actual": "Ada",
+          "status": "verified"
+        },
+        {
+          "group": "",
+          "label": "Email",
+          "expected": "candidate@example.test",
+          "actual": "candidate@example.test",
+          "status": "verified"
+        },
+        {
+          "group": "Phone",
+          "label": "Country",
+          "expected": "United States +1",
+          "actual": "United States +1",
+          "status": "verified"
+        },
+        {
+          "group": "Phone",
+          "label": "Phone",
+          "expected": "2025550147",
+          "actual": "(202) 555-0147",
+          "equivalence": "telephone-punctuation",
+          "status": "verified"
+        },
+        {
+          "group": "",
+          "label": "Are you fluent in English?",
+          "expected": "Yes",
+          "actual": "Yes",
+          "status": "verified"
+        },
+        {
+          "group": "",
+          "label": "Would you like to include your LinkedIn profile, personal website or blog?",
+          "expected": "https://example.test/ada",
+          "actual": "https://example.test/ada",
+          "status": "verified"
+        },
+        {
+          "group": "",
+          "label": "How did you hear about this job?",
+          "expected": "Company careers website",
+          "actual": "Company careers website",
+          "status": "verified"
+        },
+        {
+          "group": "",
+          "label": "Do you now or will you in the future require immigration sponsorship to work at Cloudflare?",
+          "expected": "No",
+          "actual": "No",
+          "status": "verified"
+        }
+      ],
+      "observation": {
+        "snapshot": "4e45e588-3943-4037-92e5-6b156bdef94e",
+        "documentId": "9a2e8958-1c5e-4fd9-9c04-347e9b0668ae",
+        "url": "https://job-boards.greenhouse.io/cloudflare/jobs/7377424",
+        "title": "Job Application for Software Engineer, Workers Deploy & Config at Cloudflare",
+        "fields": [
+          {
+            "ref": "f1",
+            "label": "First Name",
+            "kind": "text",
+            "group": "",
+            "domId": "first_name",
+            "required": true,
+            "disabled": false,
+            "readOnly": false,
+            "supported": true,
+            "valid": true,
+            "pending": false,
+            "value": "Ada"
+          },
+          {
+            "ref": "f2",
+            "label": "Last Name",
+            "kind": "text",
+            "group": "",
+            "domId": "last_name",
+            "required": true,
+            "disabled": false,
+            "readOnly": false,
+            "supported": true,
+            "valid": true,
+            "pending": false,
+            "value": "Example"
+          },
+          {
+            "ref": "f3",
+            "label": "Preferred First Name",
+            "kind": "text",
+            "group": "",
+            "domId": "preferred_name",
+            "required": false,
+            "disabled": false,
+            "readOnly": false,
+            "supported": true,
+            "valid": true,
+            "pending": false,
+            "value": "Ada"
+          },
+          {
+            "ref": "f4",
+            "label": "Email",
+            "kind": "text",
+            "group": "",
+            "domId": "email",
+            "required": true,
+            "disabled": false,
+            "readOnly": false,
+            "supported": true,
+            "valid": true,
+            "pending": false,
+            "value": "candidate@example.test"
+          },
+          {
+            "ref": "f5",
+            "label": "Country",
+            "kind": "autocomplete",
+            "group": "Phone",
+            "domId": "country",
+            "required": true,
+            "disabled": false,
+            "readOnly": false,
+            "supported": true,
+            "valid": true,
+            "pending": false,
+            "value": "United States +1",
+            "options": [
+              {
+                "label": "United States +1",
+                "value": "United States +1",
+                "disabled": false,
+                "selectionKey": "iti__us"
+              }
+            ],
+            "adapter": "react-select-single-v5",
+            "displayValue": "+1",
+            "selectionKey": "iti__us",
+            "query": ""
+          },
+          {
+            "ref": "f6",
+            "label": "Phone",
+            "kind": "tel",
+            "group": "Phone",
+            "domId": "phone",
+            "required": true,
+            "disabled": false,
+            "readOnly": false,
+            "supported": true,
+            "valid": true,
+            "pending": false,
+            "value": "(202) 555-0147"
+          },
+          {
+            "ref": "f8",
+            "label": "Attach",
+            "kind": "file",
+            "group": "Resume/CV *",
+            "domId": "resume",
+            "required": false,
+            "disabled": false,
+            "readOnly": false,
+            "supported": false,
+            "valid": true,
+            "pending": false
+          },
+          {
+            "ref": "f9",
+            "label": "School",
+            "kind": "autocomplete",
+            "group": "",
+            "domId": "school--0",
+            "required": false,
+            "disabled": false,
+            "readOnly": false,
+            "supported": true,
+            "valid": true,
+            "pending": false,
+            "value": "",
+            "adapter": "react-select-single-v5",
+            "query": ""
+          },
+          {
+            "ref": "f10",
+            "label": "Degree",
+            "kind": "autocomplete",
+            "group": "",
+            "domId": "degree--0",
+            "required": false,
+            "disabled": false,
+            "readOnly": false,
+            "supported": true,
+            "valid": true,
+            "pending": false,
+            "value": "",
+            "adapter": "react-select-single-v5",
+            "query": ""
+          },
+          {
+            "ref": "f11",
+            "label": "Discipline",
+            "kind": "autocomplete",
+            "group": "",
+            "domId": "discipline--0",
+            "required": false,
+            "disabled": false,
+            "readOnly": false,
+            "supported": true,
+            "valid": true,
+            "pending": false,
+            "value": "",
+            "adapter": "react-select-single-v5",
+            "query": ""
+          },
+          {
+            "ref": "f13",
+            "label": "Legal Name (if different than above)",
+            "kind": "text",
+            "group": "",
+            "domId": "question_61261349",
+            "required": false,
+            "disabled": false,
+            "readOnly": false,
+            "supported": true,
+            "valid": true,
+            "pending": false,
+            "value": ""
+          },
+          {
+            "ref": "f14",
+            "label": "Are you fluent in English?",
+            "kind": "autocomplete",
+            "group": "",
+            "domId": "question_61261350",
+            "required": true,
+            "disabled": false,
+            "readOnly": false,
+            "supported": true,
+            "valid": true,
+            "pending": false,
+            "value": "Yes",
+            "options": [
+              {
+                "label": "Yes",
+                "value": "Yes",
+                "disabled": false
+              }
+            ],
+            "adapter": "react-select-single-v5",
+            "query": ""
+          },
+          {
+            "ref": "f15",
+            "label": "Would you like to include your LinkedIn profile, personal website or blog?",
+            "kind": "text",
+            "group": "",
+            "domId": "question_61261351",
+            "required": false,
+            "disabled": false,
+            "readOnly": false,
+            "supported": true,
+            "valid": true,
+            "pending": false,
+            "value": "https://example.test/ada"
+          },
+          {
+            "ref": "f16",
+            "label": "How did you hear about this job?",
+            "kind": "text",
+            "group": "",
+            "domId": "question_61261352",
+            "required": true,
+            "disabled": false,
+            "readOnly": false,
+            "supported": true,
+            "valid": true,
+            "pending": false,
+            "value": "Company careers website"
+          },
+          {
+            "ref": "f17",
+            "label": "Do you now or will you in the future require immigration sponsorship to work at Cloudflare?",
+            "kind": "autocomplete",
+            "group": "",
+            "domId": "question_61261353",
+            "required": true,
+            "disabled": false,
+            "readOnly": false,
+            "supported": true,
+            "valid": true,
+            "pending": false,
+            "value": "No",
+            "options": [
+              {
+                "label": "No",
+                "value": "No",
+                "disabled": false
+              }
+            ],
+            "adapter": "react-select-single-v5",
+            "query": ""
+          },
+          {
+            "ref": "f18",
+            "label": "Acknowledge/Confirm",
+            "kind": "checkbox",
+            "group": "Please review and acknowledge Cloudflare's Candidate Privacy Policy (cloudflare.com/candidate-privacy-notice/). *",
+            "domId": "question_61261354[]_596560250",
+            "required": true,
+            "disabled": false,
+            "readOnly": false,
+            "supported": true,
+            "valid": false,
+            "pending": false,
+            "value": false
+          },
+          {
+            "ref": "f19",
+            "label": "Gender",
+            "kind": "autocomplete",
+            "group": "",
+            "domId": "gender",
+            "required": false,
+            "disabled": false,
+            "readOnly": false,
+            "supported": true,
+            "valid": true,
+            "pending": false,
+            "value": "",
+            "adapter": "react-select-single-v5",
+            "query": ""
+          },
+          {
+            "ref": "f20",
+            "label": "Are you Hispanic/Latino?",
+            "kind": "autocomplete",
+            "group": "",
+            "domId": "hispanic_ethnicity",
+            "required": false,
+            "disabled": false,
+            "readOnly": false,
+            "supported": true,
+            "valid": true,
+            "pending": false,
+            "value": "",
+            "adapter": "react-select-single-v5",
+            "query": ""
+          },
+          {
+            "ref": "f21",
+            "label": "Veteran Status",
+            "kind": "autocomplete",
+            "group": "",
+            "domId": "veteran_status",
+            "required": false,
+            "disabled": false,
+            "readOnly": false,
+            "supported": true,
+            "valid": true,
+            "pending": false,
+            "value": "",
+            "adapter": "react-select-single-v5",
+            "query": ""
+          }
+        ],
+        "controls": [
+          {
+            "ref": "f12",
+            "label": "Add another",
+            "kind": "add-row",
+            "group": "",
+            "required": false,
+            "disabled": false,
+            "readOnly": false,
+            "supported": true,
+            "valid": true,
+            "pending": false,
+            "value": ""
+          }
+        ],
+        "limitations": {
+          "iframes": 3,
+          "shadowRoots": false
+        },
+        "elapsedMs": 1.200000286102295
+      },
+      "trace": [
+        {
+          "round": 0,
+          "operation": "fill",
+          "statuses": [
+            "verified",
+            "verified",
+            "verified",
+            "verified",
+            "verified",
+            "verified",
+            "verified",
+            "verified",
+            "verified",
+            "verified"
+          ]
+        }
+      ],
+      "primitiveCalls": 3,
+      "elapsedMs": 514.7310419999994,
+      "verification": "DOM values/native validity, rechecked after 120 ms; not application/server acceptance",
+      "completionScope": "requested-targets",
+      "coverage": {
+        "scope": "Visible enabled required fields only; hidden steps and server acceptance are not covered.",
+        "limitations": {
+          "iframes": 3,
+          "shadowRoots": false
+        },
+        "requiredUnits": 9,
+        "verifiedRequiredUnits": 8,
+        "unresolvedRequired": [
+          {
+            "ref": "f18",
+            "group": "Please review and acknowledge Cloudflare's Candidate Privacy Policy (cloudflare.com/candidate-privacy-notice/). *",
+            "label": "Acknowledge/Confirm",
+            "kind": "checkbox",
+            "reason": "not-bound-to-source"
+          }
+        ],
+        "visibleRequiredCovered": false,
+        "unsupported": [
+          {
+            "ref": "f8",
+            "group": "Resume/CV *",
+            "label": "Attach",
+            "kind": "file",
+            "required": false
+          }
+        ]
+      },
+      "sourceHash": "b9ae305de3d582e7ff332f21be1469d9b139ae153715a37ca169ae5a3cc313f2",
+      "bindings": [
+        {
+          "ref": "f1",
+          "sourceId": "s1",
+          "sourceLabel": "名",
+          "targetGroup": ""
+        },
+        {
+          "ref": "f2",
+          "sourceId": "s2",
+          "sourceLabel": "姓",
+          "targetGroup": ""
+        },
+        {
+          "ref": "f3",
+          "sourceId": "s3",
+          "sourceLabel": "常用名",
+          "targetGroup": ""
+        },
+        {
+          "ref": "f4",
+          "sourceId": "s4",
+          "sourceLabel": "邮箱",
+          "targetGroup": ""
+        },
+        {
+          "ref": "f5",
+          "sourceId": "s5",
+          "sourceLabel": "电话号码国家",
+          "targetGroup": "Phone"
+        },
+        {
+          "ref": "f6",
+          "sourceId": "s6",
+          "sourceLabel": "本地电话号码",
+          "targetGroup": "Phone"
+        },
+        {
+          "ref": "f14",
+          "sourceId": "s11",
+          "sourceLabel": "英语是否流利",
+          "targetGroup": ""
+        },
+        {
+          "ref": "f15",
+          "sourceId": "s13",
+          "sourceLabel": "个人网站",
+          "targetGroup": ""
+        },
+        {
+          "ref": "f16",
+          "sourceId": "s14",
+          "sourceLabel": "获知渠道",
+          "targetGroup": ""
+        },
+        {
+          "ref": "f17",
+          "sourceId": "s12",
+          "sourceLabel": "现在或未来是否需要雇主签证支持",
+          "targetGroup": ""
+        }
+      ]
+    }
+  ],
+  "serverTimings": [
+    {
+      "stage": "server_start",
+      "epochMs": 1789958539574.2266
+    },
+    {
+      "stage": "prefetch_start",
+      "epochMs": 1789958539579.931
+    },
+    {
+      "stage": "prefetch_done",
+      "epochMs": 1789958539620.3062
+    },
+    {
+      "stage": "server_connected",
+      "epochMs": 1789958539620.8076
+    },
+    {
+      "stage": "transport_send_start",
+      "epochMs": 1789958539623.356,
+      "responseKind": "initialize"
+    },
+    {
+      "stage": "transport_send_done",
+      "epochMs": 1789958539623.4905,
+      "responseKind": "initialize"
+    },
+    {
+      "stage": "transport_send_start",
+      "epochMs": 1789958539627.4756,
+      "responseKind": "tools_list"
+    },
+    {
+      "stage": "transport_send_done",
+      "epochMs": 1789958539627.6257,
+      "responseKind": "tools_list"
+    },
+    {
+      "stage": "server_start",
+      "epochMs": 1789958541351.9504
+    },
+    {
+      "stage": "prefetch_start",
+      "epochMs": 1789958541355.638
+    },
+    {
+      "stage": "prefetch_done",
+      "epochMs": 1789958541385.152
+    },
+    {
+      "stage": "server_connected",
+      "epochMs": 1789958541393.0186
+    },
+    {
+      "stage": "transport_send_start",
+      "epochMs": 1789958541396.0256,
+      "responseKind": "initialize"
+    },
+    {
+      "stage": "transport_send_done",
+      "epochMs": 1789958541396.142,
+      "responseKind": "initialize"
+    },
+    {
+      "stage": "transport_send_start",
+      "epochMs": 1789958541400.7937,
+      "responseKind": "tools_list"
+    },
+    {
+      "stage": "transport_send_done",
+      "epochMs": 1789958541400.9744,
+      "responseKind": "tools_list"
+    },
+    {
+      "stage": "handler_received",
+      "epochMs": 1789958562888.1746,
+      "tool": "form_apply_bindings",
+      "requestId": 1
+    },
+    {
+      "stage": "handler_execute",
+      "epochMs": 1789958562889.1655,
+      "tool": "form_apply_bindings",
+      "requestId": 1
+    },
+    {
+      "stage": "handler_resolved",
+      "epochMs": 1789958569344.779,
+      "tool": "form_apply_bindings",
+      "requestId": 1
+    },
+    {
+      "stage": "handler_encoded",
+      "epochMs": 1789958569344.9595,
+      "tool": "form_apply_bindings",
+      "requestId": 1,
+      "bytes": 8777
+    },
+    {
+      "stage": "transport_send_start",
+      "epochMs": 1789958569345.467,
+      "responseKind": "tool_result"
+    },
+    {
+      "stage": "transport_send_done",
+      "epochMs": 1789958569345.5498,
+      "responseKind": "tool_result"
+    },
+    {
+      "stage": "handler_received",
+      "epochMs": 1789958583500.4028,
+      "tool": "form_apply_bindings",
+      "requestId": 2
+    },
+    {
+      "stage": "handler_execute",
+      "epochMs": 1789958583501.379,
+      "tool": "form_apply_bindings",
+      "requestId": 2
+    },
+    {
+      "stage": "handler_resolved",
+      "epochMs": 1789958584021.4597,
+      "tool": "form_apply_bindings",
+      "requestId": 2
+    },
+    {
+      "stage": "handler_encoded",
+      "epochMs": 1789958584021.7502,
+      "tool": "form_apply_bindings",
+      "requestId": 2,
+      "bytes": 8489
+    },
+    {
+      "stage": "transport_send_start",
+      "epochMs": 1789958584022.0334,
+      "responseKind": "tool_result"
+    },
+    {
+      "stage": "transport_send_done",
+      "epochMs": 1789958584022.1677,
+      "responseKind": "tool_result"
+    }
+  ]
+}

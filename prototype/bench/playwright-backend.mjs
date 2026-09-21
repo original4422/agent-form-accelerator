@@ -2,7 +2,7 @@
 // but every write is a Playwright action, never executeFormRequest(op='fill').
 // No fixture names, field mappings, source IDs, or expected answers live here.
 import {executeFormRequest} from '../extension/form-runtime.js';
-import {executeGoal} from '../extension/goal-executor.js';
+import {executeGoal,valuesEquivalent} from '../extension/goal-executor.js';
 import {reactSelectState} from './react-select-state.mjs';
 
 export function createPlaywrightBackend(page,{validationMode='guard'}={}) {
@@ -13,6 +13,7 @@ export function createPlaywrightBackend(page,{validationMode='guard'}={}) {
     for(const field of result.fields??[])if(field.kind==='unsupported-combobox') {
       const state=await page.evaluate(reactSelectState,field.ref);
       if(state)Object.assign(field,{kind:'autocomplete',supported:true,adapter:state.adapter,value:state.selectedLabel,
+        ...(state.displayLabel!==state.selectedLabel?{displayValue:state.displayLabel,selectionKey:state.selectionKey}:{}),
         query:state.query,pending:field.pending||state.loading,valid:field.valid&&!state.query&&!state.expanded,
         options:await page.evaluate(ref=>globalThis.__afaPrototype.comboboxOptions.get(globalThis.__afaPrototype.nodes.get(ref)?.el),field.ref)});
     }
@@ -86,24 +87,40 @@ export function createPlaywrightBackend(page,{validationMode='guard'}={}) {
     const initial=await page.evaluate(reactSelectState,field.ref);
     if(!initial)throw new Error('UNSUPPORTED_AUTOCOMPLETE');
     const deadline=Math.min(Date.now()+1500,request.deadline??Infinity);
-    let popup;
+    let popup,emptySince;
     try {
+      // fill() does not wait for a stable click position. Focus with an actual
+      // actionability-checked click before opening a portal on a scrolling page.
+      await el.evaluate(el=>el.scrollIntoView({behavior:'instant',block:'center',inline:'nearest'}));
+      await el.click({timeout:1000});
       await el.fill(query,{timeout:1000});
       if(await el.getAttribute('aria-expanded')!=='true')await el.press('ArrowDown',{timeout:1000});
       await until(async()=>{
         const state=await page.evaluate(reactSelectState,field.ref);
         if(!state||state.identity!==initial.identity||page.url()!==request.url)throw new Error('FIELD_CHANGED');
-        if(state.loading)return false;
+        if(state.loading){emptySince=undefined;return false;}
         const handle=await el.evaluateHandle(el=>{
           const ids=(el.getAttribute('aria-controls')??'').split(/\s+/).filter(Boolean);
           const candidates=ids.map(id=>document.getElementById(id)).filter(n=>n?.getAttribute('role')==='listbox'&&n.getClientRects().length&&!n.closest('[aria-hidden="true"],[hidden],[inert]'));
           if(candidates.length>1)throw new Error('AMBIGUOUS_COMBOBOX_POPUP');return candidates[0]??null;
         });
-        popup=handle.asElement();if(!popup)await handle.dispose();return !!popup;
+        popup=handle.asElement();if(!popup){await handle.dispose();emptySince=undefined;return false;}
+        if(await popup.$$eval('[role="option"]',nodes=>nodes.some(n=>n.getClientRects().length&&!n.closest('[hidden],[inert],[aria-hidden="true"]'))))return true;
+        // Some controlled React Select forms briefly show "no options" before
+        // their debounced loading notice appears. Do not report that first frame
+        // as a completed empty search. This is a bounded stability heuristic,
+        // not proof about arbitrary applications with longer hidden delays.
+        if(state.emptyResult)emptySince??=Date.now();else emptySince=undefined;
+        if(emptySince!==undefined&&Date.now()-emptySince>=350)return true;
+        await popup.dispose();popup=undefined;return false;
       },deadline);
       if(await popup.getAttribute('aria-multiselectable')==='true')throw new Error('UNSUPPORTED_MULTISELECT');
-      const choices=await popup.evaluate(p=>[...p.querySelectorAll('[role="option"]')].map((n,index)=>({index,label:n.textContent.replace(/\s+/g,' ').trim(),disabled:n.getAttribute('aria-disabled')==='true',visible:!!n.getClientRects().length&&!n.closest('[hidden],[inert],[aria-hidden="true"]')})).filter(o=>o.visible));
-      await el.evaluate((el,choices)=>globalThis.__afaPrototype.comboboxOptions.set(el,choices.map(({label,disabled})=>({label,value:label,disabled}))),choices);
+      const choices=await popup.evaluate(p=>[...p.querySelectorAll('[role="option"]')].map((n,index)=>{
+        const flags=[...n.querySelectorAll('.iti__flag')].filter(f=>f.getClientRects().length&&!f.closest('[hidden],[inert],[aria-hidden="true"]'));
+        const codes=flags.length===1?[...flags[0].classList].filter(c=>/^iti__[a-z]{2}$/.test(c)):[];
+        return {index,label:n.textContent.replace(/\s+/g,' ').trim(),selectionKey:codes.length===1?codes[0]:undefined,disabled:n.getAttribute('aria-disabled')==='true',visible:!!n.getClientRects().length&&!n.closest('[hidden],[inert],[aria-hidden="true"]')};
+      }).filter(o=>o.visible));
+      await el.evaluate((el,choices)=>globalThis.__afaPrototype.comboboxOptions.set(el,choices.map(({label,disabled,selectionKey})=>({label,value:label,disabled,...(selectionKey?{selectionKey}:{})}))),choices);
       if(discoverOnly)return choices.map(({label,disabled})=>({label,disabled}));
       const found=choices.filter(o=>!o.disabled&&o.label===expected);
       if(found.length!==1)throw new Error('OPTION_MISSING_OR_AMBIGUOUS');
@@ -176,7 +193,7 @@ export function createPlaywrightBackend(page,{validationMode='guard'}={}) {
     for (const {ref,expected} of written) {
       const result=results.find(r=>r.ref===ref),field=observation.fields.find(f=>f.ref===ref);
       if (!field) Object.assign(result,{status:'needs-review',reason:'FIELD_REPLACED'});
-      else if (field.value!==expected) Object.assign(result,{status:'needs-review',reason:'VALUE_NOT_RETAINED'});
+      else if (!valuesEquivalent(field.kind,field.value,expected)) Object.assign(result,{status:'needs-review',reason:'VALUE_NOT_RETAINED'});
       else if (field.pending) result.status='pending-validation';
       else if (field.valid===false) Object.assign(result,{status:'needs-review',reason:'HTML_VALIDATION_FAILED'});
       else result.status='verified';

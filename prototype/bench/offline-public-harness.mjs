@@ -1,9 +1,10 @@
 // Diagnostic only: load a public page read-only, then disconnect all page traffic
 // BEFORE any fictional typing. Never reuse a personal profile or submit a form.
 import {chromium} from 'playwright';
-export async function createOfflinePublicHarness(url,{headless=true}={}) {
+export async function createOfflinePublicHarness(url,{headless=true,loadReadiness='load'}={}) {
   const parsed=new URL(url);
   if(parsed.protocol!=='https:'||!['jobs.lever.co','job-boards.greenhouse.io'].includes(parsed.hostname))throw new Error('PUBLIC_JOB_PAGE_REQUIRED');
+  if(!['load','networkidle'].includes(loadReadiness))throw new Error('INVALID_LOAD_READINESS');
   const browser=await chromium.launch({channel:'chromium',headless});
   const context=await browser.newContext({serviceWorkers:'block',viewport:{width:1280,height:1000}});
   let frozen=false;const pending=new Set(),stats={allowedReadRequests:0,blockedLoadWrites:0,blockedAfterFreeze:0,webSocketsBlocked:0};
@@ -20,6 +21,9 @@ export async function createOfflinePublicHarness(url,{headless=true}={}) {
   try{
     await page.goto(url,{waitUntil:'load',timeout:45000});
     await page.waitForSelector('input:not([type=hidden]),textarea,select',{timeout:15000});
+    // Some SSR forms render inputs before deferred application scripts hydrate.
+    // This is still the GET/HEAD-only phase, before any test interaction.
+    if(loadReadiness==='networkidle')await page.waitForLoadState('networkidle',{timeout:15000});
     frozen=true;await context.setOffline(true);
     const deadline=Date.now()+5000;
     while(pending.size&&Date.now()<deadline)await new Promise(r=>setTimeout(r,25));

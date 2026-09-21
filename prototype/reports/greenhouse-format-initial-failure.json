@@ -1,0 +1,469 @@
+{
+  "date": "2026-09-21T02:27:17.112Z",
+  "url": "https://job-boards.greenhouse.io/cloudflare/jobs/7377424",
+  "scope": "Actual Greenhouse DOM after full network freeze, fictional source. Unavailable remote-dependent fields remain unresolved. No upload/submit.",
+  "first": {
+    "complete": false,
+    "reason": "CONDITIONAL_SELECTION_UNRESOLVED",
+    "decisions": [
+      {
+        "option": {
+          "optionRef": "o1",
+          "label": "United States +1",
+          "disabled": false
+        },
+        "ref": "f5",
+        "sourceId": "s5",
+        "condition": {
+          "query": "United States",
+          "labelParts": [
+            "United States"
+          ]
+        }
+      },
+      {
+        "reason": "CONTROL_NOT_READY",
+        "ref": "f9",
+        "sourceId": "s8",
+        "condition": {
+          "query": "Tsinghua",
+          "labelParts": [
+            "Tsinghua University"
+          ]
+        }
+      },
+      {
+        "reason": "CONTROL_NOT_READY",
+        "ref": "f10",
+        "sourceId": "s9",
+        "condition": {
+          "query": "Master",
+          "labelParts": [
+            "Master",
+            "Science"
+          ]
+        }
+      },
+      {
+        "reason": "CONTROL_NOT_READY",
+        "ref": "f11",
+        "sourceId": "s10",
+        "condition": {
+          "query": "Computer",
+          "labelParts": [
+            "Computer Science"
+          ]
+        }
+      },
+      {
+        "option": {
+          "optionRef": "o2",
+          "label": "Yes",
+          "disabled": false
+        },
+        "ref": "f14",
+        "sourceId": "s11",
+        "condition": {
+          "query": "Yes",
+          "labelParts": [
+            "Yes"
+          ]
+        }
+      },
+      {
+        "option": {
+          "optionRef": "o3",
+          "label": "No",
+          "disabled": false
+        },
+        "ref": "f17",
+        "sourceId": "s12",
+        "condition": {
+          "query": "No",
+          "labelParts": [
+            "No"
+          ]
+        }
+      }
+    ],
+    "coverage": {
+      "scope": "Visible enabled required fields only; hidden steps and server acceptance are not covered.",
+      "limitations": {
+        "iframes": 3,
+        "shadowRoots": false
+      },
+      "requiredUnits": 10,
+      "verifiedRequiredUnits": 0,
+      "unresolvedRequired": [
+        {
+          "ref": "f1",
+          "group": "",
+          "label": "First Name",
+          "kind": "text",
+          "reason": "not-bound-to-source"
+        },
+        {
+          "ref": "f2",
+          "group": "",
+          "label": "Last Name",
+          "kind": "text",
+          "reason": "not-bound-to-source"
+        },
+        {
+          "ref": "f4",
+          "group": "",
+          "label": "Email",
+          "kind": "text",
+          "reason": "not-bound-to-source"
+        },
+        {
+          "ref": "f5",
+          "group": "Phone",
+          "label": "Country",
+          "kind": "autocomplete",
+          "reason": "not-bound-to-source"
+        },
+        {
+          "ref": "f6",
+          "group": "Phone",
+          "label": "Phone",
+          "kind": "tel",
+          "reason": "not-bound-to-source"
+        },
+        {
+          "ref": "f7",
+          "group": "",
+          "label": "Location (City)",
+          "kind": "autocomplete",
+          "reason": "not-bound-to-source"
+        },
+        {
+          "ref": "f14",
+          "group": "",
+          "label": "Are you fluent in English?",
+          "kind": "autocomplete",
+          "reason": "not-bound-to-source"
+        },
+        {
+          "ref": "f16",
+          "group": "",
+          "label": "How did you hear about this job?",
+          "kind": "text",
+          "reason": "not-bound-to-source"
+        },
+        {
+          "ref": "f17",
+          "group": "",
+          "label": "Do you now or will you in the future require immigration sponsorship to work at Cloudflare?",
+          "kind": "autocomplete",
+          "reason": "not-bound-to-source"
+        },
+        {
+          "ref": "f18",
+          "group": "Please review and acknowledge Cloudflare's Candidate Privacy Policy (cloudflare.com/candidate-privacy-notice/). *",
+          "label": "Acknowledge/Confirm",
+          "kind": "checkbox",
+          "reason": "not-bound-to-source"
+        }
+      ],
+      "visibleRequiredCovered": false,
+      "unsupported": [
+        {
+          "ref": "f8",
+          "group": "Resume/CV *",
+          "label": "Attach",
+          "kind": "file",
+          "required": false
+        }
+      ]
+    }
+  },
+  "second": {
+    "complete": false,
+    "reason": "VALUE_NOT_RETAINED",
+    "evidence": [
+      {
+        "group": "",
+        "label": "First Name",
+        "expected": "Ada",
+        "actual": "Ada",
+        "status": "verified"
+      },
+      {
+        "group": "",
+        "label": "Last Name",
+        "expected": "Example",
+        "actual": "Example",
+        "status": "verified"
+      },
+      {
+        "group": "",
+        "label": "Preferred First Name",
+        "expected": "Ada",
+        "actual": "Ada",
+        "status": "verified"
+      },
+      {
+        "group": "",
+        "label": "Email",
+        "expected": "candidate@example.test",
+        "actual": "candidate@example.test",
+        "status": "verified"
+      },
+      {
+        "group": "Phone",
+        "label": "Phone",
+        "expected": "2025550147",
+        "actual": "(202) 555-0147",
+        "status": "unresolved",
+        "reason": "VALUE_OR_VALIDITY_MISMATCH"
+      },
+      {
+        "group": "Phone",
+        "label": "Country",
+        "expected": "United States +1",
+        "actual": "+1",
+        "status": "unresolved",
+        "reason": "VALUE_OR_VALIDITY_MISMATCH"
+      },
+      {
+        "group": "",
+        "label": "Are you fluent in English?",
+        "expected": "Yes",
+        "actual": "",
+        "status": "unresolved",
+        "reason": "VALUE_OR_VALIDITY_MISMATCH"
+      },
+      {
+        "group": "",
+        "label": "Do you now or will you in the future require immigration sponsorship to work at Cloudflare?",
+        "expected": "No",
+        "actual": "",
+        "status": "unresolved",
+        "reason": "VALUE_OR_VALIDITY_MISMATCH"
+      },
+      {
+        "group": "",
+        "label": "Would you like to include your LinkedIn profile, personal website or blog?",
+        "expected": "https://example.test/ada",
+        "actual": "",
+        "status": "unresolved",
+        "reason": "VALUE_OR_VALIDITY_MISMATCH"
+      },
+      {
+        "group": "",
+        "label": "How did you hear about this job?",
+        "expected": "Company careers website",
+        "actual": "",
+        "status": "unresolved",
+        "reason": "VALUE_OR_VALIDITY_MISMATCH"
+      }
+    ],
+    "coverage": {
+      "scope": "Visible enabled required fields only; hidden steps and server acceptance are not covered.",
+      "limitations": {
+        "iframes": 3,
+        "shadowRoots": false
+      },
+      "requiredUnits": 10,
+      "verifiedRequiredUnits": 3,
+      "unresolvedRequired": [
+        {
+          "ref": "f5",
+          "group": "Phone",
+          "label": "Country",
+          "kind": "autocomplete",
+          "reason": "not-bound-to-source"
+        },
+        {
+          "ref": "f6",
+          "group": "Phone",
+          "label": "Phone",
+          "kind": "tel",
+          "reason": "not-bound-to-source"
+        },
+        {
+          "ref": "f7",
+          "group": "",
+          "label": "Location (City)",
+          "kind": "autocomplete",
+          "reason": "not-bound-to-source"
+        },
+        {
+          "ref": "f14",
+          "group": "",
+          "label": "Are you fluent in English?",
+          "kind": "autocomplete",
+          "reason": "not-bound-to-source"
+        },
+        {
+          "ref": "f16",
+          "group": "",
+          "label": "How did you hear about this job?",
+          "kind": "text",
+          "reason": "not-bound-to-source"
+        },
+        {
+          "ref": "f17",
+          "group": "",
+          "label": "Do you now or will you in the future require immigration sponsorship to work at Cloudflare?",
+          "kind": "autocomplete",
+          "reason": "not-bound-to-source"
+        },
+        {
+          "ref": "f18",
+          "group": "Please review and acknowledge Cloudflare's Candidate Privacy Policy (cloudflare.com/candidate-privacy-notice/). *",
+          "label": "Acknowledge/Confirm",
+          "kind": "checkbox",
+          "reason": "not-bound-to-source"
+        }
+      ],
+      "visibleRequiredCovered": false,
+      "unsupported": [
+        {
+          "ref": "f8",
+          "group": "Resume/CV *",
+          "label": "Attach",
+          "kind": "file",
+          "required": false
+        }
+      ]
+    }
+  },
+  "guard": {
+    "frozen": true,
+    "allowedReadRequests": 31,
+    "blockedLoadWrites": 1,
+    "blockedAfterFreeze": 11,
+    "webSocketsBlocked": 0,
+    "pending": 0
+  },
+  "dom": [
+    {
+      "id": "first_name",
+      "name": "",
+      "type": "text",
+      "value": "Ada"
+    },
+    {
+      "id": "last_name",
+      "name": "",
+      "type": "text",
+      "value": "Example"
+    },
+    {
+      "id": "preferred_name",
+      "name": "",
+      "type": "text",
+      "value": "Ada"
+    },
+    {
+      "id": "email",
+      "name": "",
+      "type": "text",
+      "value": "candidate@example.test"
+    },
+    {
+      "id": "",
+      "label": "+1"
+    },
+    {
+      "id": "country",
+      "name": "",
+      "type": "text",
+      "value": ""
+    },
+    {
+      "id": "phone",
+      "name": "",
+      "type": "tel",
+      "value": "(202) 555-0147"
+    },
+    {
+      "id": "candidate-location",
+      "name": "",
+      "type": "text",
+      "value": ""
+    },
+    {
+      "id": "resume",
+      "name": "",
+      "type": "file",
+      "value": ""
+    },
+    {
+      "id": "school--0",
+      "name": "",
+      "type": "text",
+      "value": ""
+    },
+    {
+      "id": "degree--0",
+      "name": "",
+      "type": "text",
+      "value": ""
+    },
+    {
+      "id": "discipline--0",
+      "name": "",
+      "type": "text",
+      "value": ""
+    },
+    {
+      "id": "question_61261349",
+      "name": "",
+      "type": "text",
+      "value": ""
+    },
+    {
+      "id": "question_61261350",
+      "name": "",
+      "type": "text",
+      "value": ""
+    },
+    {
+      "id": "question_61261351",
+      "name": "",
+      "type": "text",
+      "value": ""
+    },
+    {
+      "id": "question_61261352",
+      "name": "",
+      "type": "text",
+      "value": ""
+    },
+    {
+      "id": "question_61261353",
+      "name": "",
+      "type": "text",
+      "value": ""
+    },
+    {
+      "id": "question_61261354[]_596560250",
+      "name": "question_61261354[]",
+      "type": "checkbox",
+      "value": "596560250",
+      "checked": false
+    },
+    {
+      "id": "gender",
+      "name": "",
+      "type": "text",
+      "value": ""
+    },
+    {
+      "id": "hispanic_ethnicity",
+      "name": "",
+      "type": "text",
+      "value": ""
+    },
+    {
+      "id": "veteran_status",
+      "name": "",
+      "type": "text",
+      "value": ""
+    }
+  ],
+  "submitAttempts": 0
+}

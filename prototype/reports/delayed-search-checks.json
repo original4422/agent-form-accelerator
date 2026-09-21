@@ -1,0 +1,21 @@
+{
+  "date": "2026-09-21T02:41:09.697Z",
+  "results": [
+    {
+      "name": "initial empty notice is not mistaken for completed asynchronous search",
+      "passed": true
+    },
+    {
+      "name": "conditional apply waits through delayed loading and verifies actual entity",
+      "passed": true
+    },
+    {
+      "name": "settled no-results remains empty and cannot select",
+      "passed": true
+    },
+    {
+      "name": "loading notice without spinner remains blocked until deadline",
+      "passed": true
+    }
+  ]
+}

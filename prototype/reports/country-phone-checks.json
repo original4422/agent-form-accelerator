@@ -1,0 +1,21 @@
+{
+  "date": "2026-09-21T02:41:12.949Z",
+  "results": [
+    {
+      "name": "telephone punctuation equivalence preserves digits, leading plus and type",
+      "passed": true
+    },
+    {
+      "name": "formatted telephone and same-code countries retain independent identities",
+      "passed": true
+    },
+    {
+      "name": "changed country with identical +1 display fails final verification",
+      "passed": true
+    },
+    {
+      "name": "duplicate visible country keys cannot prove selected identity",
+      "passed": true
+    }
+  ]
+}

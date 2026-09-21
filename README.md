@@ -6,6 +6,8 @@
 
 ## 看结果
 
+- [真实 Greenhouse 页面迁移](prototype/reports/GREENHOUSE-MIGRATION.md)：Codex 在断网虚构资料测试中通过两次调用核验 10 个字段，如实保留 4 项远程查询、隐私确认与附件未完成；验证了失败恢复，尚非完整申请或速度对照。
+
 - [把条件搜索放进填写计划](prototype/reports/CONDITIONAL-SELECTION.md)：来源已确定名称和校区时，本地搜索并核对唯一匹配项；歧义回到Codex，保持完整回读和缺失事实报告。三组对照完整中位47.32→30.53秒，约减35.5%。
 
 - [按问题表达复选集合](prototype/reports/DECISION-CONTEXT.md)：同样59目标、相同Codex权限，三组对照中位49.24→42.61秒，约减少13.5%；完整任务两倍目标仍未达成。
@@ -137,7 +139,7 @@ codex -c 'mcp_servers.afa.command="node"' \
 
 React/Radix 本地演示先运行 `npm run build:fixtures`，再运行 `AFA_FIXTURE=react-form npm run demo`，资料使用 `prototype/fixtures/documents/framework-candidate.md`。组件 bundle 由源码生成，不提交编译产物。
 
-搜索选择演示运行 `node prototype/scripts/demo-search.mjs`。它自动构建本地 React Select 样本，启动隔离浏览器并打印临时 Codex 接入命令。实验 Playwright 后端支持带已识别 classNamePrefix 结构的单选搜索：等待结果、选中唯一精确项、核对已选值；输入文字本身不算完成。此能力尚未移植到扩展，未知结构与多选仍不支持，真实招聘页仅做过只读观察。
+搜索选择演示运行 `node prototype/scripts/demo-search.mjs`。它自动构建本地 React Select 样本，启动隔离浏览器并打印临时 Codex 接入命令。实验 Playwright 后端支持带已识别 classNamePrefix 结构的单选搜索：等待结果、选中唯一精确项、核对已选值；输入文字本身不算完成。此能力尚未移植到扩展，未知结构与多选仍不支持。真实 Greenhouse 页面已有网络隔离下的部分填写验证；在线检索、服务器接受和完整申请尚未验证。
 
 别名与重名选项演示：`AFA_FIXTURE=alias-form node prototype/scripts/demo-search.mjs`。Codex 可一次搜索多项，再依据资料选择实际观察到的校区。`complete` 仅表示请求目标完成；新增 coverage 列出未解决的可见必填问题。本地样本故意缺少到岗日期，正确结果应留空并报告。
 

@@ -1,0 +1,62 @@
+{
+  "date": "2026-09-21T02:25:10.471Z",
+  "guard": {
+    "frozen": true,
+    "allowedReadRequests": 31,
+    "blockedLoadWrites": 1,
+    "blockedAfterFreeze": 4,
+    "webSocketsBlocked": 0,
+    "pending": 0
+  },
+  "searches": [
+    {
+      "ref": "f5",
+      "status": "observed",
+      "options": [
+        {
+          "label": "United States +1",
+          "disabled": false
+        }
+      ],
+      "label": "Country"
+    },
+    {
+      "ref": "f10",
+      "status": "blocked",
+      "reason": "CONTROL_NOT_READY",
+      "options": [],
+      "label": "Degree"
+    },
+    {
+      "ref": "f14",
+      "status": "observed",
+      "options": [
+        {
+          "label": "Yes",
+          "disabled": false
+        }
+      ],
+      "label": "Are you fluent in English?"
+    }
+  ],
+  "after": [
+    {
+      "label": "Country",
+      "query": "",
+      "pending": false,
+      "required": true
+    },
+    {
+      "label": "Degree",
+      "query": "",
+      "pending": true,
+      "required": false
+    },
+    {
+      "label": "Are you fluent in English?",
+      "query": "",
+      "pending": false,
+      "required": true
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "date": "2026-09-21T02:23:27.359Z",
+  "results": [
+    {
+      "name": "initial empty notice is not mistaken for completed asynchronous search",
+      "passed": false,
+      "error": "Expected values to be strictly deep-equal:\n+ actual - expected\n\n+ []\n- [\n-   'Master of Science'\n- ]\n"
+    },
+    {
+      "name": "conditional apply waits through delayed loading and verifies actual entity",
+      "passed": false,
+      "error": "{\"complete\":false,\"reason\":\"CONDITIONAL_SELECTION_UNRESOLVED\",\"completionScope\":\"requested-targets\",\"sourceHash\":\"906ce0ec3d6e692ccee5366383427acfdb85c9b182d0dd52dafa3d4dbccafe82\",\"bindings\":[],\"evidence\":[],\"conditionalSelections\":[{\"reason\":\"CONDITION_NOT_MET\",\"ref\":\"f1\",\"sourceId\":\"s1\",\"condition\":{\"query\":\"Master\",\"labelParts\":[\"Master of Science\"]}}],\"searches\":[{\"ref\":\"f1\",\"sourceId\":\"s1\",\"query\":\"Master\",\"status\":\"observed\",\"options\":[]}],\"observation\":{\"snapshot\":\"03635bca-934e-4562-99d9-b303a4d92ca1\",\"documentId\":\"81c91915-b5cc-45ac-a1c3-22c266cf3114\",\"url\":\"http://127.0.0.1:56059/fixtures/delayed-search.html\",\"title\":\"Delayed query readiness fixture\",\"fields\":[{\"ref\":\"f1\",\"label\":\"Qualification\",\"kind\":\"autocomplete\",\"group\":\"\",\"domId\":\"degree\",\"required\":false,\"disabled\":false,\"readOnly\":false,\"supported\":true,\"valid\":true,\"pending\":false,\"value\":\"\",\"options\":[],\"adapter\":\"react-select-single-v5\",\"query\":\"\"}],\"controls\":[],\"limitations\":{\"iframes\":0,\"shadowRoots\":false},\"elapsedMs\":0.19999980926513672},\"coverage\":{\"scope\":\"Visible enabled required fields only; hidden steps and server acceptance are not covered.\",\"limitations\":{\"iframes\":0,\"shadowRoots\":false},\"requiredUnits\":0,\"verifiedRequiredUnits\":0,\"unresolvedRequired\":[],\"visibleRequiredCovered\":true,\"unsupported\":[]},\"discoveryCalls\":1,\"elapsedMs\":24.554499999999962}\n\nfalse !== true\n"
+    },
+    {
+      "name": "settled no-results remains empty and cannot select",
+      "passed": true
+    },
+    {
+      "name": "loading notice without spinner remains blocked until deadline",
+      "passed": false,
+      "error": "Expected values to be strictly equal:\n+ actual - expected\n\n+ 'observed'\n- 'blocked'\n"
+    }
+  ]
+}

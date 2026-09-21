@@ -1,0 +1,33 @@
+{
+  "date": "2026-09-21T02:18:30.946Z",
+  "scope": "GET/HEAD-only bootstrap opens empty menus without typing/selection; all queries happen after network freeze.",
+  "url": "https://job-boards.greenhouse.io/cloudflare/jobs/7377424",
+  "guard": {
+    "frozen": true,
+    "allowedReadRequests": 35,
+    "blockedLoadWrites": 1,
+    "blockedAfterFreeze": 0,
+    "webSocketsBlocked": 0,
+    "pending": 0
+  },
+  "searches": [
+    {
+      "ref": "f9",
+      "status": "observed",
+      "options": [],
+      "label": "School"
+    },
+    {
+      "ref": "f10",
+      "status": "observed",
+      "options": [],
+      "label": "Degree"
+    },
+    {
+      "ref": "f11",
+      "status": "observed",
+      "options": [],
+      "label": "Discipline"
+    }
+  ]
+}

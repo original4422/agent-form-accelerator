@@ -1,5 +1,12 @@
 // One host decision, bounded deterministic reconciliation. Unknown semantics return
 // to the host. No fuzzy field matching, hidden writes, generated JS or model API.
+export function valuesEquivalent(kind,actual,expected) {
+  if(actual===expected)return true;
+  if(kind!=='tel'||typeof actual!=='string'||typeof expected!=='string')return false;
+  const key=value=>{const v=value.trim();return /^\+?[0-9\s().-]+$/.test(v)&&/[0-9]/.test(v)?(v.startsWith('+')?'+':'')+v.replace(/\D/g,''):undefined;};
+  const a=key(actual),b=key(expected);
+  return a!==undefined&&b!==undefined&&a===b;
+}
 export async function executeGoal(request, primitive) {
   const started = performance.now(), deadline = Date.now() + 8000;
   const fields = request.fields, expansions = request.expansions ?? [];
@@ -54,19 +61,19 @@ export async function executeGoal(request, primitive) {
       guard();
       const states = fields.map(resolve);
       // A value that was already correct is verified without firing duplicate events.
-      const pending = states.filter((s) => !s.field || s.field.value !== s.value || s.field.valid === false || s.reason);
+      const pending = states.filter((s) => !s.field || !valuesEquivalent(s.field.kind,s.field.value,s.value) || s.field.valid === false || s.reason);
       if (!pending.length) {
         // Local postcondition recheck replaces a redundant host inspection, never
         // the separate benchmark's independent application-state oracle.
         await new Promise((r) => setTimeout(r, 120)); await refresh();
         const final = fields.map(resolve);
-        if (final.every((s) => !s.reason && s.field && s.field.value === s.value && s.field.valid !== false)) { finalized = true; break; }
+        if (final.every((s) => !s.reason && s.field && valuesEquivalent(s.field.kind,s.field.value,s.value) && s.field.valid !== false)) { finalized = true; break; }
         throw new Error('FINAL_VERIFICATION_FAILED');
       }
       const actions = [], actionTargets = [];
       for (const s of pending) {
         if (s.reason || !s.field) continue;
-        if (s.field.value === s.value && s.field.valid === false && writes.has(key(s.target))) throw new Error('VALIDATION_FAILED');
+        if (valuesEquivalent(s.field.kind,s.field.value,s.value) && s.field.valid === false && writes.has(key(s.target))) throw new Error('VALIDATION_FAILED');
         if ((writes.get(key(s.target)) ?? 0) >= 2) throw new Error('WRITE_RETRY_LIMIT');
         actions.push({ref: s.field.ref, op: 'set', value: s.target.value,...(s.target.query?{query:s.target.query}:{})}); actionTargets.push(s.target);
       }
@@ -110,8 +117,9 @@ export async function executeGoal(request, primitive) {
   try {
     evidence = fields.map((target) => {
       const s = resolve(target);
-      const verified = !s.reason && !!s.field && s.field.value === s.value && s.field.valid !== false;
+      const verified = !s.reason && !!s.field && valuesEquivalent(s.field.kind,s.field.value,s.value) && s.field.valid !== false;
       return {group: target.group, label: target.label, expected: target.value, actual: s.field?.value,
+        equivalence:verified&&s.field?.value!==s.value?'telephone-punctuation':undefined,
         status: verified ? 'verified' : 'unresolved', reason: verified ? undefined : s.reason || 'VALUE_OR_VALIDITY_MISMATCH'};
     });
   } catch (e) { reason ??= e.message; evidence = fields.map((f) => ({group: f.group, label: f.label, status: 'unresolved', reason})); }

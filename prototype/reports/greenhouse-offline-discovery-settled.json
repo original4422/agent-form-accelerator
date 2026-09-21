@@ -1,0 +1,197 @@
+{
+  "date": "2026-09-21T02:16:20.961Z",
+  "scope": "GET/HEAD-only load+networkidle before freeze; fictional queries after complete network isolation.",
+  "url": "https://job-boards.greenhouse.io/cloudflare/jobs/7377424",
+  "guard": {
+    "frozen": true,
+    "allowedReadRequests": 31,
+    "blockedLoadWrites": 1,
+    "blockedAfterFreeze": 11,
+    "webSocketsBlocked": 0,
+    "pending": 0
+  },
+  "searches": [
+    {
+      "ref": "f5",
+      "status": "observed",
+      "options": [
+        {
+          "label": "United States +1",
+          "disabled": false
+        }
+      ],
+      "label": "Country"
+    },
+    {
+      "ref": "f9",
+      "status": "observed",
+      "options": [],
+      "label": "School"
+    },
+    {
+      "ref": "f10",
+      "status": "observed",
+      "options": [],
+      "label": "Degree"
+    },
+    {
+      "ref": "f11",
+      "status": "observed",
+      "options": [],
+      "label": "Discipline"
+    },
+    {
+      "ref": "f14",
+      "status": "observed",
+      "options": [
+        {
+          "label": "Yes",
+          "disabled": false
+        }
+      ],
+      "label": "Are you fluent in English?"
+    },
+    {
+      "ref": "f17",
+      "status": "observed",
+      "options": [
+        {
+          "label": "No",
+          "disabled": false
+        }
+      ],
+      "label": "Do you now or will you in the future require immigration sponsorship to work at Cloudflare?"
+    },
+    {
+      "ref": "f7",
+      "status": "blocked",
+      "reason": "CONTROL_NOT_READY",
+      "options": [],
+      "label": "Location (City)"
+    }
+  ],
+  "after": [
+    {
+      "ref": "f1",
+      "label": "First Name",
+      "kind": "text",
+      "value": ""
+    },
+    {
+      "ref": "f2",
+      "label": "Last Name",
+      "kind": "text",
+      "value": ""
+    },
+    {
+      "ref": "f3",
+      "label": "Preferred First Name",
+      "kind": "text",
+      "value": ""
+    },
+    {
+      "ref": "f4",
+      "label": "Email",
+      "kind": "text",
+      "value": ""
+    },
+    {
+      "ref": "f5",
+      "label": "Country",
+      "kind": "autocomplete",
+      "value": "",
+      "query": ""
+    },
+    {
+      "ref": "f6",
+      "label": "Phone",
+      "kind": "tel",
+      "value": ""
+    },
+    {
+      "ref": "f8",
+      "label": "Attach",
+      "kind": "file"
+    },
+    {
+      "ref": "f9",
+      "label": "School",
+      "kind": "autocomplete",
+      "value": "",
+      "query": ""
+    },
+    {
+      "ref": "f10",
+      "label": "Degree",
+      "kind": "autocomplete",
+      "value": "",
+      "query": ""
+    },
+    {
+      "ref": "f11",
+      "label": "Discipline",
+      "kind": "autocomplete",
+      "value": "",
+      "query": ""
+    },
+    {
+      "ref": "f13",
+      "label": "Legal Name (if different than above)",
+      "kind": "text",
+      "value": ""
+    },
+    {
+      "ref": "f14",
+      "label": "Are you fluent in English?",
+      "kind": "autocomplete",
+      "value": "",
+      "query": ""
+    },
+    {
+      "ref": "f15",
+      "label": "Would you like to include your LinkedIn profile, personal website or blog?",
+      "kind": "text",
+      "value": ""
+    },
+    {
+      "ref": "f16",
+      "label": "How did you hear about this job?",
+      "kind": "text",
+      "value": ""
+    },
+    {
+      "ref": "f17",
+      "label": "Do you now or will you in the future require immigration sponsorship to work at Cloudflare?",
+      "kind": "autocomplete",
+      "value": "",
+      "query": ""
+    },
+    {
+      "ref": "f18",
+      "label": "Acknowledge/Confirm",
+      "kind": "checkbox",
+      "value": false
+    },
+    {
+      "ref": "f19",
+      "label": "Gender",
+      "kind": "autocomplete",
+      "value": "",
+      "query": ""
+    },
+    {
+      "ref": "f20",
+      "label": "Are you Hispanic/Latino?",
+      "kind": "autocomplete",
+      "value": "",
+      "query": ""
+    },
+    {
+      "ref": "f21",
+      "label": "Veteran Status",
+      "kind": "autocomplete",
+      "value": "",
+      "query": ""
+    }
+  ]
+}

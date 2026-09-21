@@ -1,0 +1,53 @@
+{
+  "date": "2026-09-21T02:20:04.305Z",
+  "rows": [
+    {
+      "afterWait": 0,
+      "guard": {
+        "frozen": true,
+        "allowedReadRequests": 31,
+        "blockedLoadWrites": 1,
+        "blockedAfterFreeze": 2,
+        "webSocketsBlocked": 0,
+        "pending": 1
+      },
+      "state": {
+        "input": "<input class=\"select__input\" style=\"label:input;color:inherit;background:0;opacity:1;width:100%;grid-area:1 / 2;font:inherit;min-width:2px;border:0;margin:0;outline:0;padding:0\" autocapitalize=\"none\" autocomplete=\"off\" autocorrect=\"off\" id=\"degree--0\" spellcheck=\"false\" tabindex=\"0\" type=\"text\" aria-autocomplete=\"list\" aria-expanded=\"true\" aria-haspopup=\"true\" aria-errormessage=\"degree--0-error\" aria-invalid=\"false\" aria-labelledby=\"degree--0-label\" aria-required=\"false\" role=\"combobox\" aria-activedescendant=\"\" aria-describedby=\"react-select-degree--0-placeholder degree--0-error\" enterkeyhint=\"done\" value=\"Master\" aria-controls=\"react-select-degree--0-listbox\">",
+        "popup": "<div class=\"select__menu-list remix-css-qr46ko\" role=\"listbox\" aria-multiselectable=\"false\" id=\"react-select-degree--0-listbox\"><div class=\"select__menu-notice select__menu-notice--no-options remix-css-9x5mqu\">No options</div></div>",
+        "options": 0
+      }
+    },
+    {
+      "afterWait": 300,
+      "guard": {
+        "frozen": true,
+        "allowedReadRequests": 31,
+        "blockedLoadWrites": 1,
+        "blockedAfterFreeze": 2,
+        "webSocketsBlocked": 0,
+        "pending": 0
+      },
+      "state": {
+        "input": "<input class=\"select__input\" style=\"label:input;color:inherit;background:0;opacity:1;width:100%;grid-area:1 / 2;font:inherit;min-width:2px;border:0;margin:0;outline:0;padding:0\" autocapitalize=\"none\" autocomplete=\"off\" autocorrect=\"off\" id=\"degree--0\" spellcheck=\"false\" tabindex=\"0\" type=\"text\" aria-autocomplete=\"list\" aria-expanded=\"true\" aria-haspopup=\"true\" aria-errormessage=\"degree--0-error\" aria-invalid=\"false\" aria-labelledby=\"degree--0-label\" aria-required=\"false\" role=\"combobox\" aria-activedescendant=\"\" aria-describedby=\"react-select-degree--0-placeholder degree--0-error\" enterkeyhint=\"done\" value=\"Master\" aria-controls=\"react-select-degree--0-listbox\">",
+        "popup": "<div class=\"select__menu-list remix-css-qr46ko\" role=\"listbox\" aria-multiselectable=\"false\" id=\"react-select-degree--0-listbox\"><div class=\"select__menu-notice select__menu-notice--loading remix-css-9x5mqu\">Loading...</div></div>",
+        "options": 0
+      }
+    },
+    {
+      "afterWait": 1200,
+      "guard": {
+        "frozen": true,
+        "allowedReadRequests": 31,
+        "blockedLoadWrites": 1,
+        "blockedAfterFreeze": 2,
+        "webSocketsBlocked": 0,
+        "pending": 0
+      },
+      "state": {
+        "input": "<input class=\"select__input\" style=\"label:input;color:inherit;background:0;opacity:1;width:100%;grid-area:1 / 2;font:inherit;min-width:2px;border:0;margin:0;outline:0;padding:0\" autocapitalize=\"none\" autocomplete=\"off\" autocorrect=\"off\" id=\"degree--0\" spellcheck=\"false\" tabindex=\"0\" type=\"text\" aria-autocomplete=\"list\" aria-expanded=\"true\" aria-haspopup=\"true\" aria-errormessage=\"degree--0-error\" aria-invalid=\"false\" aria-labelledby=\"degree--0-label\" aria-required=\"false\" role=\"combobox\" aria-activedescendant=\"\" aria-describedby=\"react-select-degree--0-placeholder degree--0-error\" enterkeyhint=\"done\" value=\"Master\" aria-controls=\"react-select-degree--0-listbox\">",
+        "popup": "<div class=\"select__menu-list remix-css-qr46ko\" role=\"listbox\" aria-multiselectable=\"false\" id=\"react-select-degree--0-listbox\"><div class=\"select__menu-notice select__menu-notice--loading remix-css-9x5mqu\">Loading...</div></div>",
+        "options": 0
+      }
+    }
+  ]
+}

@@ -1,5 +1,5 @@
 {
-  "date": "2026-09-21T00:34:07.507Z",
+  "date": "2026-09-21T02:41:25.447Z",
   "component": "react-select@5.10.2",
   "results": [
     {
@@ -13,7 +13,7 @@
     {
       "name": "450ms search waits for result and commits actual entity ID",
       "passed": true,
-      "elapsedMs": 741.8129590000001
+      "elapsedMs": 747.0745
     },
     {
       "name": "already selected value needs no new search or input",
@@ -63,7 +63,7 @@
       "name": "raw source bindings plus repeated search template complete 10 targets",
       "passed": true,
       "targets": 10,
-      "elapsedMs": 1986.3105410000007,
+      "elapsedMs": 2053.9293340000004,
       "searches": 3
     }
   ]

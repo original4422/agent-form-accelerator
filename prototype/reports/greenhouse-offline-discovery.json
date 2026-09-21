@@ -1,0 +1,195 @@
+{
+  "date": "2026-09-21T02:15:11.606Z",
+  "scope": "Queries are fictional in an already-frozen offline disposable public page; no selections/fact writes/upload/submit.",
+  "url": "https://job-boards.greenhouse.io/cloudflare/jobs/7377424",
+  "guard": {
+    "frozen": true,
+    "allowedReadRequests": 12,
+    "blockedLoadWrites": 0,
+    "blockedAfterFreeze": 5,
+    "webSocketsBlocked": 0,
+    "pending": 0
+  },
+  "searches": [
+    {
+      "ref": "f5",
+      "status": "blocked",
+      "reason": "CONTROL_NOT_READY",
+      "options": [],
+      "label": "Country"
+    },
+    {
+      "ref": "f9",
+      "status": "blocked",
+      "reason": "CONTROL_NOT_READY",
+      "options": [],
+      "label": "School"
+    },
+    {
+      "ref": "f10",
+      "status": "blocked",
+      "reason": "CONTROL_NOT_READY",
+      "options": [],
+      "label": "Degree"
+    },
+    {
+      "ref": "f11",
+      "status": "blocked",
+      "reason": "CONTROL_NOT_READY",
+      "options": [],
+      "label": "Discipline"
+    },
+    {
+      "ref": "f14",
+      "status": "blocked",
+      "reason": "CONTROL_NOT_READY",
+      "options": [],
+      "label": "Are you fluent in English?"
+    },
+    {
+      "ref": "f17",
+      "status": "blocked",
+      "reason": "CONTROL_NOT_READY",
+      "options": [],
+      "label": "Do you now or will you in the future require immigration sponsorship to work at Cloudflare?"
+    },
+    {
+      "ref": "f7",
+      "status": "blocked",
+      "reason": "SEARCH_DEADLINE",
+      "options": [],
+      "label": "Location (City)"
+    }
+  ],
+  "after": [
+    {
+      "ref": "f1",
+      "label": "First Name",
+      "kind": "text",
+      "value": ""
+    },
+    {
+      "ref": "f2",
+      "label": "Last Name",
+      "kind": "text",
+      "value": ""
+    },
+    {
+      "ref": "f3",
+      "label": "Preferred First Name",
+      "kind": "text",
+      "value": ""
+    },
+    {
+      "ref": "f4",
+      "label": "Email",
+      "kind": "text",
+      "value": ""
+    },
+    {
+      "ref": "f5",
+      "label": "Country",
+      "kind": "autocomplete",
+      "value": "",
+      "query": "United States"
+    },
+    {
+      "ref": "f6",
+      "label": "Phone",
+      "kind": "tel",
+      "value": ""
+    },
+    {
+      "ref": "f7",
+      "label": "Location (City)",
+      "kind": "autocomplete",
+      "value": "",
+      "query": ""
+    },
+    {
+      "ref": "f8",
+      "label": "Attach",
+      "kind": "file"
+    },
+    {
+      "ref": "f9",
+      "label": "School",
+      "kind": "autocomplete",
+      "value": "",
+      "query": "Tsinghua"
+    },
+    {
+      "ref": "f10",
+      "label": "Degree",
+      "kind": "autocomplete",
+      "value": "",
+      "query": "Master"
+    },
+    {
+      "ref": "f11",
+      "label": "Discipline",
+      "kind": "autocomplete",
+      "value": "",
+      "query": "Computer"
+    },
+    {
+      "ref": "f13",
+      "label": "Legal Name (if different than above)",
+      "kind": "text",
+      "value": ""
+    },
+    {
+      "ref": "f14",
+      "label": "Are you fluent in English?",
+      "kind": "autocomplete",
+      "value": "",
+      "query": "Yes"
+    },
+    {
+      "ref": "f15",
+      "label": "Would you like to include your LinkedIn profile, personal website or blog?",
+      "kind": "text",
+      "value": ""
+    },
+    {
+      "ref": "f16",
+      "label": "How did you hear about this job?",
+      "kind": "text",
+      "value": ""
+    },
+    {
+      "ref": "f17",
+      "label": "Do you now or will you in the future require immigration sponsorship to work at Cloudflare?",
+      "kind": "autocomplete",
+      "value": "",
+      "query": "No"
+    },
+    {
+      "ref": "f18",
+      "label": "Acknowledge/Confirm",
+      "kind": "checkbox",
+      "value": false
+    },
+    {
+      "ref": "f19",
+      "label": "Gender",
+      "kind": "autocomplete",
+      "value": "",
+      "query": ""
+    },
+    {
+      "ref": "f20",
+      "label": "Are you Hispanic/Latino?",
+      "kind": "autocomplete",
+      "value": "",
+      "query": ""
+    },
+    {
+      "ref": "f21",
+      "label": "Veteran Status",
+      "kind": "autocomplete",
+      "value": "",
+      "query": ""
+    }
+  ]
+}
