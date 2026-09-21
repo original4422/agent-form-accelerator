@@ -6,6 +6,7 @@
 
 ## 看结果
 
+- [异步搜索选择验证](prototype/reports/SEARCH-CONTROLS.md)：React Select 单选搜索与实体状态，3 次 Codex 均一次调用完成，完整中位约 29 秒；无速度对照。
 - [同一任务接口替换动作后端](prototype/reports/BACKEND-SUBSTITUTION.md)：扩展与可复用 Playwright 均一次调用成功；速度接近，不支持自研动作层有倍数优势。
 - [React/Radix 动态表单验证](prototype/reports/FRAMEWORK-VALIDATION.md)：受控状态、自定义下拉、重复组和 700 ms 延迟校验。
 - [官方 Playwright MCP 强基线](prototype/reports/OFFICIAL-BASELINE.md)：相同资料引用与预取机会，保留脚本失败、恢复和补强结果。
@@ -45,6 +46,9 @@ node prototype/bench/framework-check.mjs
 AFA_BACKEND=playwright node prototype/bench/framework-check.mjs
 node prototype/bench/backend-provider-check.mjs
 node prototype/bench/backend-drift-check.mjs
+node prototype/bench/search-check.mjs
+AFA_SCENARIO=search node prototype/bench/backend-provider-check.mjs
+AFA_SCENARIO=search AFA_LOCAL_LOOP_HINT=1 node prototype/bench/codex-framework.mjs
 node prototype/bench/codex-framework.mjs
 AFA_LOCAL_LOOP_HINT=1 AFA_FRAMEWORK_MODES=binding-repeat,playwright-ref node prototype/bench/codex-framework.mjs
 AFA_LOCAL_LOOP_HINT=1 AFA_FRAMEWORK_MODES=binding-repeat,binding-playwright node prototype/bench/codex-framework.mjs
@@ -116,11 +120,13 @@ codex -c 'mcp_servers.afa.command="node"' \
 - 资料绑定可使用 `repeatGroups` 复用已观察的重复组模板，展开后核对精确标签和类型；未知结构用 `form_expand` 返回上下文再判断。
 - 原生/组件字段会等待明确的 aria-busy，检查 aria-invalid；无状态信号的任意异步校验仍不能保证完成。
 - 产品接口没有任意脚本、选择器、提交或导航操作。
-- 已验证 React/Radix 的 select-only 按钮式 combobox：通过 aria-controls 找到关联的 listbox，选择精确且唯一的可用选项，再回读显示值。输入型 autocomplete、其他 ARIA 组件、iframe、shadow DOM、文件上传和跨页流程尚未实现。
+- 已验证 React/Radix 的 select-only 按钮式 combobox：通过 aria-controls 找到关联的 listbox，选择精确且唯一的可用选项，再回读显示值。扩展路径不支持输入型 autocomplete；实验 Playwright 后端已覆盖下述 React Select 单选模式。其他 ARIA 组件、iframe、shadow DOM、文件上传和跨页流程尚未实现。
 - 同一时刻只连接一个标签页；不要让两个宿主同时填写同一张表。
 - 同步回读不能保证应用/服务器接受，也不能捕获任意延迟的异步修改。宿主需最终独立检查。
 
 React/Radix 本地演示先运行 `npm run build:fixtures`，再运行 `AFA_FIXTURE=react-form npm run demo`，资料使用 `prototype/fixtures/documents/framework-candidate.md`。组件 bundle 由源码生成，不提交编译产物。
+
+搜索选择演示运行 `node prototype/scripts/demo-search.mjs`。它自动构建本地 React Select 样本，启动隔离浏览器并打印临时 Codex 接入命令。实验 Playwright 后端支持带已识别 classNamePrefix 结构的单选搜索：等待结果、选中唯一精确项、核对已选值；输入文字本身不算完成。此能力尚未移植到扩展，未知结构与多选仍不支持，真实招聘页仅做过只读观察。
 
 资料流向：页面可见字段和值 → 本地连接 → 当前 Agent。执行核心不调用外部模型，但宿主仍会按它的正常机制处理这些资料。扩展不持久保存填写资料；连接码只在扩展会话存储中保留。
 

@@ -1,0 +1,120 @@
+{
+  "date": "2026-09-21T00:03:30.962Z",
+  "scope": "Read-only isolated browser, no typing/click/upload/submit or personal browser session. Limited control structure only.",
+  "requestedUrl": "https://job-boards.greenhouse.io/cloudflare/jobs/7377424",
+  "finalUrl": "https://job-boards.greenhouse.io/cloudflare/jobs/7377424",
+  "fields": [
+    {
+      "tag": "INPUT",
+      "id": "country",
+      "role": "combobox",
+      "label": null,
+      "labelledby": "country-label",
+      "labels": [
+        "Country*"
+      ],
+      "autocomplete": "list",
+      "controls": null,
+      "parent": "<div class=\"select__input-container remix-css-19bb58m\" data-value=\"\"><input class=\"select__input\" style=\"label:input;color:inherit;background:0;opacity:1;width:100%;grid-area:1 / 2;font:inherit;min-width:2px;border:0;margin:0;outline:0;padding:0\" autocapitalize=\"none\" autocomplete=\"off\" autocorrect=\"off\" id=\"country\" spellcheck=\"false\" tabindex=\"0\" type=\"text\" aria-autocomplete=\"list\" aria-expanded=\"false\" aria-haspopup=\"true\" aria-errormessage=\"country-error\" aria-invalid=\"false\" aria-labelledby=\"country-label\" aria-required=\"true\" role=\"combobox\" aria-activedescendant=\"\" aria-describedby=\"react-select-country-placeholder\" enterkeyhint=\"done\" value=\"\"></div>",
+      "grandparent": "<div class=\"select__value-container remix-css-hlgwow\"><style data-emotion=\"remix-css 1jqq78o-placeholder\">.remix-css-1jqq78o-placeholder{grid-area:1/1/2/3;color:hsl(0, 0%, 50%);margin-left:2px;margin-right:2px;box-sizing:border-box;}</style><div class=\"select__placeholder remix-css-1jqq78o-placeholder\" id=\"react-select-country-placeholder\"></div><style data-emotion=\"remix-css 19bb58m\">.remix-css-19bb58m{visibility:visible;-webkit-flex:1 1 auto;-ms-flex:1 1 auto;flex:1 1 auto;display:inline-grid;grid-area:1/1/2/3;grid-template-columns:0 min-content;margin:2px;padding-bottom:2px;padding-top:2px;color:hsl(0, 0%, 20%);box-sizing:border-box;}.remix-css-19bb58m:after{content:attr(data-value) \" \";visibility:hidden;white-space:pre;grid-area:1/2;font:inherit;min-width:2px;border:0;margin:0;outline:0;padding:0;}</style><div class=\"select__input-container remix-css-19bb58m\" data-value=\"\"><input class=\"select__input\" style=\"label:input;color:inherit;background:0;opacity:1;width:100%;grid-area:1 / 2;font:inherit;min-width:2px;border:0;margin:0;outline:0;padding:0\" autocapitalize=\"none\" autocomplete=\"off\" autocorrect=\"off\" id=\"country\" spellcheck=\"false\" tabindex=\"0\" type=\"text\" aria-autocomplete=\"list\" aria-expanded=\"false\" aria-haspopup=\"true\" aria-errormessage=\"country-error\" aria-invalid=\"false\" aria-labelledby=\"country-label\" aria-required=\"true\" role=\"combobox\" aria-activedescendant=\"\" aria-describedby=\"react-select-country-placeholder\" enterkeyhint=\"done\" value=\"\"></div></div>"
+    },
+    {
+      "tag": "INPUT",
+      "id": "candidate-location",
+      "role": "combobox",
+      "label": null,
+      "labelledby": "candidate-location-label",
+      "labels": [
+        "Location (City)*"
+      ],
+      "autocomplete": "list",
+      "controls": null,
+      "parent": "<div class=\"select__input-container remix-css-19bb58m\" data-value=\"\"><input class=\"select__input\" style=\"label:input;color:inherit;background:0;opacity:1;width:100%;grid-area:1 / 2;font:inherit;min-width:2px;border:0;margin:0;outline:0;padding:0\" autocapitalize=\"none\" autocomplete=\"off\" autocorrect=\"off\" id=\"candidate-location\" spellcheck=\"false\" tabindex=\"0\" type=\"text\" aria-autocomplete=\"list\" aria-expanded=\"false\" aria-haspopup=\"true\" aria-errormessage=\"candidate-location-error\" aria-invalid=\"false\" aria-labelledby=\"candidate-location-label\" aria-required=\"true\" role=\"combobox\" aria-activedescendant=\"\" aria-describedby=\"react-select-candidate-location-placeholder\" enterkeyhint=\"done\" value=\"\"></div>",
+      "grandparent": "<div class=\"select__value-container remix-css-hlgwow\"><div class=\"select__placeholder remix-css-1jqq78o-placeholder\" id=\"react-select-candidate-location-placeholder\"></div><div class=\"select__input-container remix-css-19bb58m\" data-value=\"\"><input class=\"select__input\" style=\"label:input;color:inherit;background:0;opacity:1;width:100%;grid-area:1 / 2;font:inherit;min-width:2px;border:0;margin:0;outline:0;padding:0\" autocapitalize=\"none\" autocomplete=\"off\" autocorrect=\"off\" id=\"candidate-location\" spellcheck=\"false\" tabindex=\"0\" type=\"text\" aria-autocomplete=\"list\" aria-expanded=\"false\" aria-haspopup=\"true\" aria-errormessage=\"candidate-location-error\" aria-invalid=\"false\" aria-labelledby=\"candidate-location-label\" aria-required=\"true\" role=\"combobox\" aria-activedescendant=\"\" aria-describedby=\"react-select-candidate-location-placeholder\" enterkeyhint=\"done\" value=\"\"></div></div>"
+    },
+    {
+      "tag": "INPUT",
+      "id": "school--0",
+      "role": "combobox",
+      "label": null,
+      "labelledby": "school--0-label",
+      "labels": [
+        "School"
+      ],
+      "autocomplete": "list",
+      "controls": null,
+      "parent": "<div class=\"select__input-container remix-css-19bb58m\" data-value=\"\"><input class=\"select__input\" style=\"label:input;color:inherit;background:0;opacity:1;width:100%;grid-area:1 / 2;font:inherit;min-width:2px;border:0;margin:0;outline:0;padding:0\" autocapitalize=\"none\" autocomplete=\"off\" autocorrect=\"off\" id=\"school--0\" spellcheck=\"false\" tabindex=\"0\" type=\"text\" aria-autocomplete=\"list\" aria-expanded=\"false\" aria-haspopup=\"true\" aria-errormessage=\"school--0-error\" aria-invalid=\"false\" aria-labelledby=\"school--0-label\" aria-required=\"false\" role=\"combobox\" aria-activedescendant=\"\" aria-describedby=\"react-select-school--0-placeholder\" enterkeyhint=\"done\" value=\"\"></div>",
+      "grandparent": "<div class=\"select__value-container remix-css-hlgwow\"><div class=\"select__placeholder remix-css-1jqq78o-placeholder\" id=\"react-select-school--0-placeholder\">Select...</div><div class=\"select__input-container remix-css-19bb58m\" data-value=\"\"><input class=\"select__input\" style=\"label:input;color:inherit;background:0;opacity:1;width:100%;grid-area:1 / 2;font:inherit;min-width:2px;border:0;margin:0;outline:0;padding:0\" autocapitalize=\"none\" autocomplete=\"off\" autocorrect=\"off\" id=\"school--0\" spellcheck=\"false\" tabindex=\"0\" type=\"text\" aria-autocomplete=\"list\" aria-expanded=\"false\" aria-haspopup=\"true\" aria-errormessage=\"school--0-error\" aria-invalid=\"false\" aria-labelledby=\"school--0-label\" aria-required=\"false\" role=\"combobox\" aria-activedescendant=\"\" aria-describedby=\"react-select-school--0-placeholder\" enterkeyhint=\"done\" value=\"\"></div></div>"
+    },
+    {
+      "tag": "INPUT",
+      "id": "degree--0",
+      "role": "combobox",
+      "label": null,
+      "labelledby": "degree--0-label",
+      "labels": [
+        "Degree"
+      ],
+      "autocomplete": "list",
+      "controls": null,
+      "parent": "<div class=\"select__input-container remix-css-19bb58m\" data-value=\"\"><input class=\"select__input\" style=\"label:input;color:inherit;background:0;opacity:1;width:100%;grid-area:1 / 2;font:inherit;min-width:2px;border:0;margin:0;outline:0;padding:0\" autocapitalize=\"none\" autocomplete=\"off\" autocorrect=\"off\" id=\"degree--0\" spellcheck=\"false\" tabindex=\"0\" type=\"text\" aria-autocomplete=\"list\" aria-expanded=\"false\" aria-haspopup=\"true\" aria-errormessage=\"degree--0-error\" aria-invalid=\"false\" aria-labelledby=\"degree--0-label\" aria-required=\"false\" role=\"combobox\" aria-activedescendant=\"\" aria-describedby=\"react-select-degree--0-placeholder\" enterkeyhint=\"done\" value=\"\"></div>",
+      "grandparent": "<div class=\"select__value-container remix-css-hlgwow\"><div class=\"select__placeholder remix-css-1jqq78o-placeholder\" id=\"react-select-degree--0-placeholder\">Select...</div><div class=\"select__input-container remix-css-19bb58m\" data-value=\"\"><input class=\"select__input\" style=\"label:input;color:inherit;background:0;opacity:1;width:100%;grid-area:1 / 2;font:inherit;min-width:2px;border:0;margin:0;outline:0;padding:0\" autocapitalize=\"none\" autocomplete=\"off\" autocorrect=\"off\" id=\"degree--0\" spellcheck=\"false\" tabindex=\"0\" type=\"text\" aria-autocomplete=\"list\" aria-expanded=\"false\" aria-haspopup=\"true\" aria-errormessage=\"degree--0-error\" aria-invalid=\"false\" aria-labelledby=\"degree--0-label\" aria-required=\"false\" role=\"combobox\" aria-activedescendant=\"\" aria-describedby=\"react-select-degree--0-placeholder\" enterkeyhint=\"done\" value=\"\"></div></div>"
+    },
+    {
+      "tag": "INPUT",
+      "id": "discipline--0",
+      "role": "combobox",
+      "label": null,
+      "labelledby": "discipline--0-label",
+      "labels": [
+        "Discipline"
+      ],
+      "autocomplete": "list",
+      "controls": null,
+      "parent": "<div class=\"select__input-container remix-css-19bb58m\" data-value=\"\"><input class=\"select__input\" style=\"label:input;color:inherit;background:0;opacity:1;width:100%;grid-area:1 / 2;font:inherit;min-width:2px;border:0;margin:0;outline:0;padding:0\" autocapitalize=\"none\" autocomplete=\"off\" autocorrect=\"off\" id=\"discipline--0\" spellcheck=\"false\" tabindex=\"0\" type=\"text\" aria-autocomplete=\"list\" aria-expanded=\"false\" aria-haspopup=\"true\" aria-errormessage=\"discipline--0-error\" aria-invalid=\"false\" aria-labelledby=\"discipline--0-label\" aria-required=\"false\" role=\"combobox\" aria-activedescendant=\"\" aria-describedby=\"react-select-discipline--0-placeholder\" enterkeyhint=\"done\" value=\"\"></div>",
+      "grandparent": "<div class=\"select__value-container remix-css-hlgwow\"><div class=\"select__placeholder remix-css-1jqq78o-placeholder\" id=\"react-select-discipline--0-placeholder\">Select...</div><div class=\"select__input-container remix-css-19bb58m\" data-value=\"\"><input class=\"select__input\" style=\"label:input;color:inherit;background:0;opacity:1;width:100%;grid-area:1 / 2;font:inherit;min-width:2px;border:0;margin:0;outline:0;padding:0\" autocapitalize=\"none\" autocomplete=\"off\" autocorrect=\"off\" id=\"discipline--0\" spellcheck=\"false\" tabindex=\"0\" type=\"text\" aria-autocomplete=\"list\" aria-expanded=\"false\" aria-haspopup=\"true\" aria-errormessage=\"discipline--0-error\" aria-invalid=\"false\" aria-labelledby=\"discipline--0-label\" aria-required=\"false\" role=\"combobox\" aria-activedescendant=\"\" aria-describedby=\"react-select-discipline--0-placeholder\" enterkeyhint=\"done\" value=\"\"></div></div>"
+    },
+    {
+      "tag": "INPUT",
+      "id": "question_61261350",
+      "role": "combobox",
+      "label": null,
+      "labelledby": "question_61261350-label",
+      "labels": [
+        "Are you fluent in English?*"
+      ],
+      "autocomplete": "list",
+      "controls": null,
+      "parent": "<div class=\"select__input-container remix-css-19bb58m\" data-value=\"\"><input class=\"select__input\" style=\"label:input;color:inherit;background:0;opacity:1;width:100%;grid-area:1 / 2;font:inherit;min-width:2px;border:0;margin:0;outline:0;padding:0\" autocapitalize=\"none\" autocomplete=\"off\" autocorrect=\"off\" id=\"question_61261350\" spellcheck=\"false\" tabindex=\"0\" type=\"text\" aria-autocomplete=\"list\" aria-expanded=\"false\" aria-haspopup=\"true\" aria-errormessage=\"question_61261350-error\" aria-invalid=\"false\" aria-labelledby=\"question_61261350-label\" aria-required=\"true\" role=\"combobox\" aria-activedescendant=\"\" aria-describedby=\"react-select-question_61261350-placeholder\" enterkeyhint=\"done\" value=\"\"></div>",
+      "grandparent": "<div class=\"select__value-container remix-css-hlgwow\"><div class=\"select__placeholder remix-css-1jqq78o-placeholder\" id=\"react-select-question_61261350-placeholder\">Select...</div><div class=\"select__input-container remix-css-19bb58m\" data-value=\"\"><input class=\"select__input\" style=\"label:input;color:inherit;background:0;opacity:1;width:100%;grid-area:1 / 2;font:inherit;min-width:2px;border:0;margin:0;outline:0;padding:0\" autocapitalize=\"none\" autocomplete=\"off\" autocorrect=\"off\" id=\"question_61261350\" spellcheck=\"false\" tabindex=\"0\" type=\"text\" aria-autocomplete=\"list\" aria-expanded=\"false\" aria-haspopup=\"true\" aria-errormessage=\"question_61261350-error\" aria-invalid=\"false\" aria-labelledby=\"question_61261350-label\" aria-required=\"true\" role=\"combobox\" aria-activedescendant=\"\" aria-describedby=\"react-select-question_61261350-placeholder\" enterkeyhint=\"done\" value=\"\"></div></div>"
+    },
+    {
+      "tag": "INPUT",
+      "id": "question_61261353",
+      "role": "combobox",
+      "label": null,
+      "labelledby": "question_61261353-label",
+      "labels": [
+        "Do you now or will you in the future require immigration sponsorship to work at Cloudflare?*"
+      ],
+      "autocomplete": "list",
+      "controls": null,
+      "parent": "<div class=\"select__input-container remix-css-19bb58m\" data-value=\"\"><input class=\"select__input\" style=\"label:input;color:inherit;background:0;opacity:1;width:100%;grid-area:1 / 2;font:inherit;min-width:2px;border:0;margin:0;outline:0;padding:0\" autocapitalize=\"none\" autocomplete=\"off\" autocorrect=\"off\" id=\"question_61261353\" spellcheck=\"false\" tabindex=\"0\" type=\"text\" aria-autocomplete=\"list\" aria-expanded=\"false\" aria-haspopup=\"true\" aria-errormessage=\"question_61261353-error\" aria-invalid=\"false\" aria-labelledby=\"question_61261353-label\" aria-required=\"true\" role=\"combobox\" aria-activedescendant=\"\" aria-describedby=\"react-select-question_61261353-placeholder\" enterkeyhint=\"done\" value=\"\"></div>",
+      "grandparent": "<div class=\"select__value-container remix-css-hlgwow\"><div class=\"select__placeholder remix-css-1jqq78o-placeholder\" id=\"react-select-question_61261353-placeholder\">Select...</div><div class=\"select__input-container remix-css-19bb58m\" data-value=\"\"><input class=\"select__input\" style=\"label:input;color:inherit;background:0;opacity:1;width:100%;grid-area:1 / 2;font:inherit;min-width:2px;border:0;margin:0;outline:0;padding:0\" autocapitalize=\"none\" autocomplete=\"off\" autocorrect=\"off\" id=\"question_61261353\" spellcheck=\"false\" tabindex=\"0\" type=\"text\" aria-autocomplete=\"list\" aria-expanded=\"false\" aria-haspopup=\"true\" aria-errormessage=\"question_61261353-error\" aria-invalid=\"false\" aria-labelledby=\"question_61261353-label\" aria-required=\"true\" role=\"combobox\" aria-activedescendant=\"\" aria-describedby=\"react-select-question_61261353-placeholder\" enterkeyhint=\"done\" value=\"\"></div></div>"
+    },
+    {
+      "tag": "INPUT",
+      "id": "gender",
+      "role": "combobox",
+      "label": null,
+      "labelledby": "gender-label",
+      "labels": [
+        "Gender"
+      ],
+      "autocomplete": "list",
+      "controls": null,
+      "parent": "<div class=\"select__input-container remix-css-19bb58m\" data-value=\"\"><input class=\"select__input\" style=\"label:input;color:inherit;background:0;opacity:1;width:100%;grid-area:1 / 2;font:inherit;min-width:2px;border:0;margin:0;outline:0;padding:0\" autocapitalize=\"none\" autocomplete=\"off\" autocorrect=\"off\" id=\"gender\" spellcheck=\"false\" tabindex=\"0\" type=\"text\" aria-autocomplete=\"list\" aria-expanded=\"false\" aria-haspopup=\"true\" aria-errormessage=\"gender-error\" aria-invalid=\"false\" aria-labelledby=\"gender-label\" aria-required=\"false\" role=\"combobox\" aria-activedescendant=\"\" aria-describedby=\"react-select-gender-placeholder\" enterkeyhint=\"done\" value=\"\"></div>",
+      "grandparent": "<div class=\"select__value-container remix-css-hlgwow\"><div class=\"select__placeholder remix-css-1jqq78o-placeholder\" id=\"react-select-gender-placeholder\">Select...</div><div class=\"select__input-container remix-css-19bb58m\" data-value=\"\"><input class=\"select__input\" style=\"label:input;color:inherit;background:0;opacity:1;width:100%;grid-area:1 / 2;font:inherit;min-width:2px;border:0;margin:0;outline:0;padding:0\" autocapitalize=\"none\" autocomplete=\"off\" autocorrect=\"off\" id=\"gender\" spellcheck=\"false\" tabindex=\"0\" type=\"text\" aria-autocomplete=\"list\" aria-expanded=\"false\" aria-haspopup=\"true\" aria-errormessage=\"gender-error\" aria-invalid=\"false\" aria-labelledby=\"gender-label\" aria-required=\"false\" role=\"combobox\" aria-activedescendant=\"\" aria-describedby=\"react-select-gender-placeholder\" enterkeyhint=\"done\" value=\"\"></div></div>"
+    }
+  ]
+}

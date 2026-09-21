@@ -3,11 +3,18 @@
 // No fixture names, field mappings, source IDs, or expected answers live here.
 import {executeFormRequest} from '../extension/form-runtime.js';
 import {executeGoal} from '../extension/goal-executor.js';
+import {reactSelectState} from './react-select-state.mjs';
 
 export function createPlaywrightBackend(page) {
   const observe = async request => {
     const result = await page.evaluate(executeFormRequest, request);
     if (result.error) throw new Error(result.error);
+    for(const field of result.fields??[])if(field.kind==='unsupported-combobox') {
+      const state=await page.evaluate(reactSelectState,field.ref);
+      if(state)Object.assign(field,{kind:'autocomplete',supported:true,adapter:state.adapter,value:state.selectedLabel,
+        query:state.query,pending:field.pending||state.loading,valid:field.valid&&!state.query&&!state.expanded,
+        options:await page.evaluate(ref=>globalThis.__afaPrototype.comboboxOptions.get(globalThis.__afaPrototype.nodes.get(ref)?.el),field.ref)});
+    }
     return result;
   };
   const pause = ms => new Promise(resolve => setTimeout(resolve, ms));
@@ -73,6 +80,46 @@ export function createPlaywrightBackend(page) {
       await popup?.dispose();
     }
   };
+  const selectAutocomplete = async (el, field, expected, request) => {
+    if(typeof expected!=='string'||!expected||expected.length>250)throw new Error('Expected exact option label');
+    const initial=await page.evaluate(reactSelectState,field.ref);
+    if(!initial)throw new Error('UNSUPPORTED_AUTOCOMPLETE');
+    const deadline=Math.min(Date.now()+1500,request.deadline??Infinity);
+    let popup;
+    try {
+      await el.fill(expected,{timeout:1000});
+      if(await el.getAttribute('aria-expanded')!=='true')await el.press('ArrowDown',{timeout:1000});
+      await until(async()=>{
+        const state=await page.evaluate(reactSelectState,field.ref);
+        if(!state||state.identity!==initial.identity||page.url()!==request.url)throw new Error('FIELD_CHANGED');
+        if(state.loading)return false;
+        const handle=await el.evaluateHandle(el=>{
+          const ids=(el.getAttribute('aria-controls')??'').split(/\s+/).filter(Boolean);
+          const candidates=ids.map(id=>document.getElementById(id)).filter(n=>n?.getAttribute('role')==='listbox'&&n.getClientRects().length&&!n.closest('[aria-hidden="true"],[hidden],[inert]'));
+          if(candidates.length>1)throw new Error('AMBIGUOUS_COMBOBOX_POPUP');return candidates[0]??null;
+        });
+        popup=handle.asElement();if(!popup)await handle.dispose();return !!popup;
+      },deadline);
+      if(await popup.getAttribute('aria-multiselectable')==='true')throw new Error('UNSUPPORTED_MULTISELECT');
+      const choices=await popup.evaluate(p=>[...p.querySelectorAll('[role="option"]')].map((n,index)=>({index,label:n.textContent.replace(/\s+/g,' ').trim(),disabled:n.getAttribute('aria-disabled')==='true',visible:!!n.getClientRects().length&&!n.closest('[hidden],[inert],[aria-hidden="true"]')})).filter(o=>o.visible));
+      await el.evaluate((el,choices)=>globalThis.__afaPrototype.comboboxOptions.set(el,choices.map(({label,disabled})=>({label,value:label,disabled}))),choices);
+      const found=choices.filter(o=>!o.disabled&&o.label===expected);
+      if(found.length!==1)throw new Error('OPTION_MISSING_OR_AMBIGUOUS');
+      const state=await page.evaluate(reactSelectState,field.ref);
+      if(!state||state.identity!==initial.identity||state.loading||page.url()!==request.url||!(await el.isEnabled()))throw new Error('FIELD_CHANGED');
+      const options=await popup.$$('[role="option"]');
+      try{await options[found[0].index].click({timeout:1000});}finally{await Promise.all(options.map(o=>o.dispose()));}
+      await until(async()=>{
+        const current=await page.evaluate(reactSelectState,field.ref);
+        if(!current||current.identity!==initial.identity)throw new Error('FIELD_CHANGED');
+        return !current.loading&&!current.expanded&&!current.query&&current.selectedLabel===expected;
+      },deadline);
+    }finally{
+      if(await el.getAttribute('aria-expanded').catch(()=>null)==='true')await el.press('Escape',{timeout:300}).catch(()=>{});
+      await el.evaluate(el=>el.blur()).catch(()=>{});
+      await popup?.dispose();
+    }
+  };
   const fill = async request => {
     const started = performance.now();
     const initial = await observe({op:'validate',snapshot:request.snapshot,url:request.url});
@@ -96,7 +143,8 @@ export function createPlaywrightBackend(page) {
         }
         if (action.op !== 'set' || field.kind === 'add-row') throw new Error('Expected set action');
         let expected = action.value;
-        if (field.kind === 'combobox') await selectCombo(el, expected, request);
+        if (field.kind === 'autocomplete') await selectAutocomplete(el,field,expected,request);
+        else if (field.kind === 'combobox') await selectCombo(el, expected, request);
         else if (['radio','checkbox'].includes(field.kind)) {
           if (typeof expected !== 'boolean' || (field.kind === 'radio' && !expected)) throw new Error('Expected boolean; radio may only be selected');
           await el.setChecked(expected, {timeout:1000});

@@ -1,5 +1,5 @@
 {
-  "date": "2026-09-20T23:59:32.824Z",
+  "date": "2026-09-21T00:12:07.459Z",
   "backend": "playwright",
   "framework": "React 19.3.0 + Radix Select 2.3.7",
   "results": [
@@ -18,19 +18,19 @@
     {
       "name": "same goal waits for a dependent remounted city combobox",
       "passed": true,
-      "elapsedMs": 488.88445799999977,
+      "elapsedMs": 486.4140419999999,
       "primitiveCalls": 8
     },
     {
       "name": "700ms successful validation is awaited without repeated typing",
       "passed": true,
-      "elapsedMs": 854.9822920000001
+      "elapsedMs": 852.8886249999998
     },
     {
       "name": "700ms rejected email cannot be reported as complete",
       "passed": true,
       "reason": "VALIDATION_FAILED",
-      "elapsedMs": 734.8367920000001
+      "elapsedMs": 721.5580839999998
     },
     {
       "name": "busy field has a bounded timeout rather than false success",

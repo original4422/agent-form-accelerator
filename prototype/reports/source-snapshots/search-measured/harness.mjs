@@ -4,7 +4,7 @@ import {randomUUID} from 'node:crypto';
 import path from 'node:path';
 import {createBridge, projectRoot} from '../src/bridge.mjs';
 
-export async function createHarness({headless = true, sessionFile, port = 0, extensionDirectory, cdp = false, handleSignals = true} = {}) {
+export async function createHarness({headless = true, sessionFile, port = 0, extensionDirectory, cdp = false} = {}) {
   const runId = randomUUID();
   const profile = path.join(projectRoot, '.profiles', runId);
   const session = sessionFile || path.join(projectRoot, '.runtime', `${runId}.json`);
@@ -15,7 +15,6 @@ export async function createHarness({headless = true, sessionFile, port = 0, ext
   try {
     context = await chromium.launchPersistentContext(profile, {
       channel: 'chromium', headless, viewport: {width: 1280, height: 1000},
-      handleSIGINT: handleSignals, handleSIGTERM: handleSignals,
       args: [`--disable-extensions-except=${extensionPath}`, `--load-extension=${extensionPath}`, ...(cdp ? ['--remote-debugging-port=0','--remote-debugging-address=127.0.0.1'] : [])],
     });
     const worker = context.serviceWorkers()[0] || await context.waitForEvent('serviceworker');

@@ -24,7 +24,7 @@ export async function createDocumentSession({sourcePath, request}) {
         let value=entry.value;
         if(Object.hasOwn(overrides,ref)){
           const choice=overrides[ref];
-          if(['select','combobox'].includes(field.kind)&&typeof choice==='string'&&field.options?.some(o=>!o.disabled&&o.value===choice))value=choice;
+          if(['select','combobox','autocomplete'].includes(field.kind)&&typeof choice==='string'&&field.options?.some(o=>!o.disabled&&o.value===choice))value=choice;
           else if(['checkbox','radio'].includes(field.kind)&&typeof choice==='boolean'&&(field.kind!=='radio'||choice))value=choice;
           else throw new Error('CHOICE_NOT_OBSERVED_OR_INVALID');
         }else if(['checkbox','radio'].includes(field.kind))throw new Error('BOOLEAN_CHOICE_REQUIRED');

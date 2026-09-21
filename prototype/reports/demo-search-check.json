@@ -1,0 +1,16 @@
+{
+  "date": "2026-09-21T00:20:18.691680+00:00",
+  "method": "Two headless demo startups through PTY, read generated temporary Codex command, send Ctrl+C, inspect exit status and owned profile/session directories. No interactive Codex task started.",
+  "initial": {
+    "exitCode": 130,
+    "leftOwnedProfileAndSession": true,
+    "ownedFilesVerifiedByBridgeUrlThenRemoved": true
+  },
+  "fix": "Demo passes handleSignals:false and owns SIGINT/SIGTERM cleanup; harness default remains true.",
+  "final": {
+    "exitCode": 0,
+    "profilesDirectoryEmpty": true,
+    "runtimeDirectoryEmpty": true,
+    "passed": true
+  }
+}

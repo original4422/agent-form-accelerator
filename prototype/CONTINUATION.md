@@ -36,7 +36,7 @@
 - 原型本地执行约 0.878 s；约 25 s 的完整耗时主要仍在宿主外层。官方每次输出脚本，原型传来源映射，不能将代码生成/恢复成本归为浏览器引擎慢。
 - 所有本轮宿主进程已结束；没有需要继续轮询的 exec 会话。源码在整个正式配对期间冻结，`source-hashes-framework-measured.json` 中全部 60 个源码/依赖指纹及 bundle 均已核实一致。
 
-## 本轮：动作后端替换完成
+## 前一轮：动作后端替换完成
 
 - `bindings-server.mjs` 提取共享 MCP 入口，扩展 `bindings-mcp.mjs` 的模型侧行为保留。controls 元数据显式定序，实际 stdio `tools/list` 已断言两套后端全部 schema、说明与初始来源/页面完全相同。
 - `playwright-backend.mjs` 是通用缓存动作后端，没有字段名/来源 ID/答案。复用原观察器（仅 inspect/validate）和 executeGoal，写入使用 Playwright 1.63.0。`playwright-bindings-mcp.mjs` 只连接隔离 localhost 测试浏览器的 CDP。
@@ -47,19 +47,36 @@
 - **时延属于补语义保护之前的 helper。** 原实测版本存于 `reports/source-snapshots/backend-measured/playwright-backend.mjs`；`source-hashes-backends-measured.json` 记录64个源文件及归档映射。修复版不冒充已经重新测过速度；最终代码另存指纹。
 - 本轮所有宿主执行已结束，没有需继续轮询的执行句柄。详见 BACKEND-SUBSTITUTION.md、ADR-0005。
 
+## 本轮：异步搜索选择迁移完成
+
+- 新的公开 Greenhouse/Cloudflare 页面只读结构审计见 `search-public-audit.json`。观察到 input combobox、aria-autocomplete=list 及 select__value-container 等结构；没有真实输入、点击、上传或提交。不把该观察当成平台可填写认证。
+- 锁定 `react-select@5.10.2`，新增 `search-form.jsx` / `search-form.html`。真实 AsyncSelect，三个450ms模拟查询（城市、两所学校），应用存实体ID；原始中文Markdown沿用上一轮、部分页面字段顺序改变。此样本不是厂商克隆，不含真实网络业务。
+- `react-select-state.mjs` 仅通过公开 DOM 识别带 classNamePrefix 的单选结构，查询与已选值分开；多选、未知/无前缀结构不放行。Playwright 后端增加搜索、加载等待、关联弹层选择、唯一精确项和选后状态验证。旧扩展仍 unsupported。
+- 来源绑定 choices 允许 autocomplete，但仍必须来自之前实际观察的选项；没有任意文本覆写。
+- 15 项搜索检查通过，另一个实际 MCP 接入通过；旧 Radix 16 项与两个后端MCP回归通过。
+- 三次 Codex `1789949543902` 全部一次调用/首次成功：29.05 / 28.81 / 29.79 s，中位29.05 s；30/30目标正确，零提交。局部执行2.07–2.11 s。只有新后端迁移组，没有对照，不计算提速倍数。
+- 计时期间源码冻结，`source-hashes-search-measured.json` 记录69个已有源码/依赖文件。演示脚本在计时后新增；harness 增加可选信号处理标志，默认保持原行为，实测 harness 归档供指纹核对。
+- `node prototype/scripts/demo-search.mjs` 自动构建并打开独立浏览器，打印临时Codex配置命令。初次 Ctrl+C 触发 Playwright 默认退出130并遗留自建目录，核实后已清理；演示改为自己处理信号，重测退出0且临时目录为空。无头启动、打印命令和 Ctrl+C 清理流程已检查；没有替用户启动交互Codex任务或更改全局配置。
+- 本轮所有宿主/演示执行均已终止，没有需轮询的执行句柄。报告 `SEARCH-CONTROLS.md`，决策 `ADR-0006`。此前后端和框架报告仍是各自历史版本的证据。
+
 ## 下一轮按证据推进
 
-1. **增加独立组件实现和真实招聘中的输入型搜索建议**。先读官方组件文档/真实公开页面的只读结构，构造独立组件样本，验证“输入字符串”与“选中合法实体”的区别。沿用未映射原始资料→首次语义匹配→局部执行→独立应用状态验证。不要用更多相同 Radix 测量替代范围扩展。
-2. Playwright 后端已经表明成熟动作能够复用；下一项控件实验可以优先用它。不要为了两个后端功能完全同宽，同时再造一套通用浏览器引擎。旧扩展未支持的新控件应明确保持 unsupported；部署选择仍需实际 activeTab/用户会话体验证据。
-3. 保留共享任务接口、来源引用、上下文预取和有界计划；比较时明确是否共享这些层。若比较共享接口的后端，不能把结果叫独立竞品。如果比较临时生成脚本，必须保留恢复并说明代码生成这个变量。
-4. 仍需至少三种不同实现上的完整效果，以及更贴近真实秋招流程的任务。当前有限 Markdown 不等于通用简历解析，真实招聘页未填写/上传/提交。默认只测 Codex、复用登录、不新增 API Key。
-5. 原完整目标保持 active，没有将“一个后端可以替换”当成完成，也没有用带失败的5倍数字降低成功门槛。
+1. **优先处理来源文字与选项不一致时的有界回退**：简称/翻译/重名在招聘流程中常见。当前一个字符串同时充当来源值、搜索词、精确目标标签；无结果后仅有三个绑定工具，不能改写查询。这是尚未实现的能力，不能把“返回给模型”说成已经可恢复。
+2. 考虑明确分离 source ID、用于发现的查询、已观察的选项身份。搜索本身可以是不提交选择的本地动作；实际选择仍需由已观察选项证明，并保留事实来源。不要通过允许任意文本覆写或自动取第一项制造通过。先构造独立实体ID oracle 的别名/重名/无结果任务，验证回合数、失败与人工判断边界，再决定接口。
+3. 同时审视目标完成与整张表完成的区别：当前 complete 指已请求目标，未知/缺资料的必填字段可能没被绑定。真实任务需要明确部分完成、剩余问题和来源不足；不能因为局部targets已填就宣称申请全部完成。无需反复询问用户提供真实URL，先推进这些独立工作。
+4. 已有原生、Radix、React Select 三种控件实现的功能证据，但没有三类完整任务稳定两倍的证据；真实招聘页仍只读。文件上传、跨页、真实用户会话和更广文档输入尚待验证，不能用新增的本地样本降低原目标。
+5. 保留共享任务接口与可替换动作后端。下一项控件优先复用Playwright，不并行复制扩展引擎。当前只测Codex、复用登录、无新API Key；目标保持 active。
 
 ## 测量规则
 
 所有宿主尝试保留，错误恢复计入时延，独立应用状态 oracle 校验，禁止提交申请。耗时明确分出浏览器启动、CLI启动、模型/工具、资料准备。研究和其他浏览器测试不与宿主计时并行争用本地执行资源。不得修改已安装的 Skill 或全局 MCP 配置。
 
 ## 可复现入口
+
+- `node prototype/bench/search-check.mjs`：15项搜索状态与错误路径。
+- `AFA_SCENARIO=search node prototype/bench/backend-provider-check.mjs`：搜索样本实际MCP与应用状态。
+- `AFA_SCENARIO=search AFA_LOCAL_LOOP_HINT=1 node prototype/bench/codex-framework.mjs`：3次Codex迁移任务，非速度比较。
+- `node prototype/scripts/demo-search.mjs`：独立浏览器交互演示，打印临时配置。
 
 - `AFA_BACKEND=playwright node prototype/bench/framework-check.mjs`：Playwright 16 项框架检查。
 - 同样可给 `goal-check.mjs` / `document-check.mjs` 设置该变量，分别执行12/8项。

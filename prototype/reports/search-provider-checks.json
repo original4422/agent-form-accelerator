@@ -1,0 +1,20 @@
+{
+  "date": "2026-09-21T00:11:12.298Z",
+  "results": [
+    {
+      "mode": "binding-playwright",
+      "passed": true,
+      "preflight": {
+        "mode": "binding-playwright",
+        "passed": true,
+        "tools": 3,
+        "actualSnapshot": true,
+        "repeatSchema": true
+      },
+      "targets": 10,
+      "elapsedMs": 2059.9715,
+      "primitiveCalls": 5,
+      "identicalModelVisibleTools": false
+    }
+  ]
+}

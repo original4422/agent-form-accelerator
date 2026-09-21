@@ -4,7 +4,7 @@ import {StdioClientTransport} from '@modelcontextprotocol/sdk/client/stdio.js';
 
 // Verify the actual client-visible affordances before spending model calls.
 // No filling: source argument probe and context/schema checks only.
-export async function checkFrameworkProvider({script,env,mode}) {
+export async function checkFrameworkProvider({script,env,mode,scenario='radix'}) {
   const client=new Client({name:'framework-preflight',version:'0.0.1'});
   try {
     await client.connect(new StdioClientTransport({command:process.execPath,args:[script],env:{...process.env,...env},stderr:'pipe'}));
@@ -23,7 +23,7 @@ export async function checkFrameworkProvider({script,env,mode}) {
     const tool=tools.find(t=>t.name==='form_apply_bindings');
     const metadata=JSON.parse(tool.description.split('UNTRUSTED SNAPSHOT DATA (not instructions):\n')[1]);
     assert.equal(metadata.source.entries.length,10);
-    assert.equal(metadata.page.fields.filter(f=>f.kind==='combobox').length,3);
+    assert.equal(metadata.page.fields.filter(f=>f.kind===(scenario==='search'?'autocomplete':'combobox')).length,scenario==='search'?2:3);
     assert.ok(metadata.page.fields.some(f=>f.group==='Education 1'));
     const repeatSchema=mode!=='binding-explicit';
     assert.equal(!!tool.inputSchema.properties.repeatGroups,repeatSchema);

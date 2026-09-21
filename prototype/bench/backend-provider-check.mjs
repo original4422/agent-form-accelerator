@@ -6,15 +6,16 @@ import {createHarness} from './harness.mjs';
 import {checkFrameworkProvider} from './framework-preflight.mjs';
 import {projectRoot} from '../src/bridge.mjs';
 import '../scripts/build-fixtures.mjs';
+const scenario=process.env.AFA_SCENARIO??'radix',fixture=scenario==='search'?'search-form':'react-form';
 const h=await createHarness({cdp:true}),results=[];
 let toolsReference;
 try {
-  for (const mode of ['binding-repeat','binding-playwright']) {
-    await h.reset('react-form'); await h.page.waitForSelector('input');
+  for (const mode of (scenario==='search'?['binding-playwright']:['binding-repeat','binding-playwright'])) {
+    await h.reset(fixture); await h.page.waitForSelector('input');
     const script=mode==='binding-repeat'?`${projectRoot}/prototype/src/bindings-mcp.mjs`:`${projectRoot}/prototype/bench/playwright-bindings-mcp.mjs`;
     const env={AFA_DOCUMENT_FILE:`${projectRoot}/prototype/fixtures/documents/framework-candidate.md`,AFA_CONTEXT_MODE:'prefetch',AFA_REPEAT_MODE:'template',AFA_SESSION_FILE:h.sessionFile,AFA_CDP_ENDPOINT:h.cdpEndpoint,AFA_TARGET_URL:h.page.url()};
-    const preflight=await checkFrameworkProvider({script,env,mode});
-    await h.reset('react-form'); await h.page.waitForSelector('input');
+    const preflight=await checkFrameworkProvider({script,env,mode,scenario});
+    await h.reset(fixture); await h.page.waitForSelector('input');
     const client=new Client({name:'backend-provider-check',version:'0.0.1'});
     try {
       await client.connect(new StdioClientTransport({command:process.execPath,args:[script],env:{...process.env,...env},stderr:'pipe'}));
@@ -30,10 +31,10 @@ try {
       assert.ok(!result.isError,JSON.stringify(result));
       const data=JSON.parse(result.content[0].text); assert.equal(data.complete,true,JSON.stringify(data));
       const actual=await h.page.evaluate(()=>({data:window.applicationState,validation:window.validationState,submits:window.submissionCount,popups:document.querySelectorAll('[role=listbox]').length}));
-      assert.deepEqual(actual.data,{fullName:'林示例',email:'candidate@example.test',country:'cn',city:'hz',degree:'pg',schools:[{school:'南方示例学院',major:'软件工程'},{school:'北方示例大学',major:'计算机科学'}],summary:source.entries.find(e=>e.label==='个人介绍').value});
-      assert.deepEqual(actual.validation,{checking:false,invalid:false,loading:false});assert.equal(actual.submits,0);assert.equal(actual.popups,0);
-      results.push({mode,passed:true,preflight,targets:data.evidence.length,elapsedMs:data.elapsedMs,primitiveCalls:data.primitiveCalls,identicalModelVisibleTools:true});
+      assert.deepEqual(actual.data,{fullName:'林示例',email:'candidate@example.test',country:'cn',city:'hz',degree:'pg',schools:[{school:scenario==='search'?'school-south':'南方示例学院',major:'软件工程'},{school:scenario==='search'?'school-north':'北方示例大学',major:'计算机科学'}],summary:source.entries.find(e=>e.label==='个人介绍').value});
+      assert.deepEqual(actual.validation,scenario==='search'?{pending:false}:{checking:false,invalid:false,loading:false});assert.equal(actual.submits,0);assert.equal(actual.popups,0);
+      results.push({mode,passed:true,preflight,targets:data.evidence.length,elapsedMs:data.elapsedMs,primitiveCalls:data.primitiveCalls,identicalModelVisibleTools:scenario!=='search'});
       console.log('PASS '+mode+' actual MCP and application-state oracle');
     } finally {await client.close();}
   }
-} finally {await h.close();await writeFile(`${projectRoot}/prototype/reports/backend-provider-checks.json`,JSON.stringify({date:new Date().toISOString(),results},null,2));}
+} finally {await h.close();await writeFile(`${projectRoot}/prototype/reports/${scenario==='search'?'search-provider':'backend-provider'}-checks.json`,JSON.stringify({date:new Date().toISOString(),results},null,2));}
