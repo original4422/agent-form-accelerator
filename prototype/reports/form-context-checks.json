@@ -1,0 +1,53 @@
+{
+  "date": "2026-09-21T05:29:29.649Z",
+  "results": [
+    {
+      "name": "section text has the three relevant refs, with per-field descriptions and no outside/hidden text",
+      "passed": true
+    },
+    {
+      "name": "context survives compact and grouped transport",
+      "passed": true
+    },
+    {
+      "name": "changed section rule blocks an old write before any input",
+      "passed": true
+    },
+    {
+      "name": "rule mutation after the first write stops subsequent actions",
+      "passed": true
+    },
+    {
+      "name": "normal input does not invalidate static context",
+      "passed": true
+    },
+    {
+      "name": "long context is explicitly truncated, with bounded payload",
+      "passed": true
+    },
+    {
+      "name": "explicit hidden descriptions are preserved and scoped to their owner",
+      "passed": true
+    },
+    {
+      "name": "changes beyond the displayed excerpt still invalidate the internal guard",
+      "passed": true
+    },
+    {
+      "name": "known widget placeholder can disappear while its external description remains guarded",
+      "passed": true
+    },
+    {
+      "name": "Playwright goal stops rather than locally retrying a changed rule",
+      "passed": true
+    },
+    {
+      "name": "delayed rule changes during final verification cannot count as completion",
+      "passed": true
+    },
+    {
+      "name": "conditional discovery cannot refresh away a changed section rule",
+      "passed": true
+    }
+  ]
+}

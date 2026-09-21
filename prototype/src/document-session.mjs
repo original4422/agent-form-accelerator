@@ -31,9 +31,11 @@ export async function createDocumentSession({sourcePath, request,conditionalSele
       if(typeof q.query!=='string'||!q.query.trim()||q.query.length>120)throw new Error('INVALID_SEARCH_QUERY');
     }
     const contracts=queries.map(q=>contract(observation.fields.find(f=>f.ref===q.ref)));
+    const contextBefore=JSON.stringify(observation.formContext);
     const result=await request({op:'discover',url,snapshot:observation.snapshot,queries:queries.map(({ref,query})=>({ref,query})),...(deadline===undefined?{}:{deadline})});
     if(observation.documentId!==result.observation.documentId||observation.url!==result.observation.url){verified.clear();ledger.clear();offers.clear();}
     observation=result.observation;
+    if(JSON.stringify(observation.formContext)!==contextBefore){offers.clear();throw new Error('FORM_CONTEXT_CHANGED: refresh context before deciding');}
     for(const [key,offer]of offers)if(queries.some(q=>offer.ref===q.ref&&offer.sourceId===q.sourceId))offers.delete(key);
     const searches=result.searches.map((r,i)=>{
       const q=queries[i];

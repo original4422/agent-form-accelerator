@@ -1,0 +1,460 @@
+{
+  "batchId": 1789968585068,
+  "date": "2026-09-21T05:29:45.068Z",
+  "scope": "Four Codex runs, same page/source/prompt per pair, one section rule changed across variants. Only model-visible formContext differs. Correctness experiment; incorrect baseline timings are not valid speed comparisons.",
+  "runs": [
+    {
+      "variant": "one",
+      "mode": "off",
+      "elapsedMs": 29151.070958,
+      "exitCode": 0,
+      "timedOut": false,
+      "aborted": false,
+      "toolCalls": [
+        {
+          "tool": "form_context",
+          "status": "completed",
+          "startMs": 12460.018791999999,
+          "endMs": 12473.096625,
+          "durationMs": 13.077833000001192,
+          "returnedBytes": 3069
+        },
+        {
+          "tool": "form_apply_bindings",
+          "status": "completed",
+          "startMs": 18517.989917,
+          "endMs": 22569.188667,
+          "durationMs": 4051.1987499999996,
+          "returnedBytes": 4492,
+          "executionMs": 230.9845000000023,
+          "complete": true,
+          "primitiveCalls": 3
+        }
+      ],
+      "usage": {
+        "input_tokens": 93428,
+        "cached_input_tokens": 74368,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 236,
+        "reasoning_output_tokens": 14
+      },
+      "promptHash": "ecd89b8f3c3b4e7c0a90e389f2c9361861f9a172b4edd3fc369b85fbcaf08b26",
+      "sourceHash": "180f1cf8d7eaaa0895a9ab5f258ca56d01533f0b183982fdd4f68fdbbb19c791",
+      "contextHash": "7d7dd86a56b0fbfd1f1b9eb44dc4f9a974f3e842045d82e8a4bc07b3ce31f3f3",
+      "contextWithoutNewDataHash": "7d7dd86a56b0fbfd1f1b9eb44dc4f9a974f3e842045d82e8a4bc07b3ce31f3f3",
+      "toolGuidanceHash": "d13e7c5b4137872ec4c4b6fda6c7ac7e9fcf4abf9d203e10aebc024fbc15d1d3",
+      "contextBytes": 3069,
+      "contextBlocks": 0,
+      "actual": {
+        "values": {
+          "name": "林舟",
+          "email": "linzhou@example.test",
+          "start": "",
+          "project": "I led a fictional library catalogue cleanup. I compared duplicate records, documented the matching rules, and helped the team resolve inconsistent titles.",
+          "decision": "I proposed a preview screen for a fictional event registration form. The team tested it with volunteers, who caught incorrect dates before saving their entries.",
+          "learning": "I investigated a fictional reporting delay. I traced repeated work in the pipeline, explained it to the team, and documented a simpler sequence."
+        },
+        "submits": 0,
+        "edits": [
+          {
+            "id": "name",
+            "value": "林舟"
+          },
+          {
+            "id": "email",
+            "value": "linzhou@example.test"
+          },
+          {
+            "id": "project",
+            "value": "I led a fictional library catalogue cleanup. I compared duplicate records, documented the matching rules, and helped the team resolve inconsistent titles."
+          },
+          {
+            "id": "decision",
+            "value": "I proposed a preview screen for a fictional event registration form. The team tested it with volunteers, who caught incorrect dates before saving their entries."
+          },
+          {
+            "id": "learning",
+            "value": "I investigated a fictional reporting delay. I traced repeated work in the pipeline, explained it to the team, and documented a simpler sequence."
+          }
+        ]
+      },
+      "answered": [
+        "project",
+        "decision",
+        "learning"
+      ],
+      "correctExamples": true,
+      "countCorrect": false,
+      "missingReported": true,
+      "finalText": "Filled and verified the name, email, and all three complete examples verbatim.\n\nThe application remains incomplete: required **Available start date** was not supplied and remains blank. Verification covers visible fields only. Nothing was submitted or uploaded.",
+      "calls": [
+        {
+          "tool": "form_context",
+          "arguments": {}
+        },
+        {
+          "tool": "form_apply_bindings",
+          "arguments": {
+            "bindings": {
+              "f1": "s1",
+              "f2": "s2",
+              "f4": "s3",
+              "f5": "s4",
+              "f6": "s5"
+            },
+            "url": "http://127.0.0.1:59954/fixtures/section-one.html"
+          }
+        }
+      ],
+      "passed": false
+    },
+    {
+      "variant": "one",
+      "mode": "on",
+      "elapsedMs": 25967.818708,
+      "exitCode": 0,
+      "timedOut": false,
+      "aborted": false,
+      "toolCalls": [
+        {
+          "tool": "form_apply_bindings",
+          "status": "completed",
+          "startMs": 12308.296167,
+          "endMs": 20473.147458,
+          "durationMs": 8164.851290999999,
+          "returnedBytes": 4154,
+          "executionMs": 222.88616699999693,
+          "complete": true,
+          "primitiveCalls": 3
+        }
+      ],
+      "usage": {
+        "input_tokens": 66892,
+        "cached_input_tokens": 33024,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 192,
+        "reasoning_output_tokens": 0
+      },
+      "promptHash": "ecd89b8f3c3b4e7c0a90e389f2c9361861f9a172b4edd3fc369b85fbcaf08b26",
+      "sourceHash": "180f1cf8d7eaaa0895a9ab5f258ca56d01533f0b183982fdd4f68fdbbb19c791",
+      "contextHash": "eddd05323ecb1dee9d482f1094644de5685a20c092002bdc9b9225d33796db23",
+      "contextWithoutNewDataHash": "7d7dd86a56b0fbfd1f1b9eb44dc4f9a974f3e842045d82e8a4bc07b3ce31f3f3",
+      "toolGuidanceHash": "d13e7c5b4137872ec4c4b6fda6c7ac7e9fcf4abf9d203e10aebc024fbc15d1d3",
+      "contextBytes": 4027,
+      "contextBlocks": 6,
+      "actual": {
+        "values": {
+          "name": "林舟",
+          "email": "linzhou@example.test",
+          "start": "",
+          "project": "I led a fictional library catalogue cleanup. I compared duplicate records, documented the matching rules, and helped the team resolve inconsistent titles.",
+          "decision": "",
+          "learning": ""
+        },
+        "submits": 0,
+        "edits": [
+          {
+            "id": "name",
+            "value": "林舟"
+          },
+          {
+            "id": "email",
+            "value": "linzhou@example.test"
+          },
+          {
+            "id": "project",
+            "value": "I led a fictional library catalogue cleanup. I compared duplicate records, documented the matching rules, and helped the team resolve inconsistent titles."
+          }
+        ]
+      },
+      "answered": [
+        "project"
+      ],
+      "correctExamples": true,
+      "countCorrect": true,
+      "missingReported": true,
+      "finalText": "Filled and verified the name, email, and complete project example. Left the other two examples empty as the form requires exactly one.\n\nThe application remains incomplete: the required **Available start date** was not supplied and remains blank. Nothing was submitted.",
+      "calls": [
+        {
+          "tool": "form_apply_bindings",
+          "arguments": {
+            "bindings": {
+              "f1": "s1",
+              "f2": "s2",
+              "f4": "s3"
+            },
+            "url": "http://127.0.0.1:59954/fixtures/section-one.html"
+          }
+        }
+      ],
+      "passed": true
+    },
+    {
+      "variant": "two",
+      "mode": "on",
+      "elapsedMs": 27336.993167000008,
+      "exitCode": 0,
+      "timedOut": false,
+      "aborted": false,
+      "toolCalls": [
+        {
+          "tool": "form_apply_bindings",
+          "status": "completed",
+          "startMs": 12712.744542,
+          "endMs": 21682.396250000005,
+          "durationMs": 8969.651708000005,
+          "returnedBytes": 4779,
+          "executionMs": 223.11654099999578,
+          "complete": true,
+          "primitiveCalls": 3
+        }
+      ],
+      "usage": {
+        "input_tokens": 67040,
+        "cached_input_tokens": 48896,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 193,
+        "reasoning_output_tokens": 0
+      },
+      "promptHash": "ecd89b8f3c3b4e7c0a90e389f2c9361861f9a172b4edd3fc369b85fbcaf08b26",
+      "sourceHash": "180f1cf8d7eaaa0895a9ab5f258ca56d01533f0b183982fdd4f68fdbbb19c791",
+      "contextHash": "a01441c73d8c608098853fd79530e8fa0be0b3708d5d2bac0923b96f48aa3de5",
+      "contextWithoutNewDataHash": "db3a90913efde7def77c829da1ec785c34eb43bcd0114bd69f01871e7870af88",
+      "toolGuidanceHash": "d13e7c5b4137872ec4c4b6fda6c7ac7e9fcf4abf9d203e10aebc024fbc15d1d3",
+      "contextBytes": 4023,
+      "contextBlocks": 6,
+      "actual": {
+        "values": {
+          "name": "林舟",
+          "email": "linzhou@example.test",
+          "start": "",
+          "learning": "I investigated a fictional reporting delay. I traced repeated work in the pipeline, explained it to the team, and documented a simpler sequence.",
+          "project": "I led a fictional library catalogue cleanup. I compared duplicate records, documented the matching rules, and helped the team resolve inconsistent titles.",
+          "decision": ""
+        },
+        "submits": 0,
+        "edits": [
+          {
+            "id": "name",
+            "value": "林舟"
+          },
+          {
+            "id": "email",
+            "value": "linzhou@example.test"
+          },
+          {
+            "id": "learning",
+            "value": "I investigated a fictional reporting delay. I traced repeated work in the pipeline, explained it to the team, and documented a simpler sequence."
+          },
+          {
+            "id": "project",
+            "value": "I led a fictional library catalogue cleanup. I compared duplicate records, documented the matching rules, and helped the team resolve inconsistent titles."
+          }
+        ]
+      },
+      "answered": [
+        "project",
+        "learning"
+      ],
+      "correctExamples": true,
+      "countCorrect": true,
+      "missingReported": true,
+      "finalText": "Filled and verified name, email, and the complete investigation and project examples. Left the decision question empty to satisfy the “exactly two” requirement.\n\nThe application remains incomplete: the required available start date was not supplied and remains blank. Nothing was submitted.",
+      "calls": [
+        {
+          "tool": "form_apply_bindings",
+          "arguments": {
+            "bindings": {
+              "f1": "s1",
+              "f2": "s2",
+              "f4": "s5",
+              "f5": "s3"
+            },
+            "url": "http://127.0.0.1:59954/fixtures/section-two.html"
+          }
+        }
+      ],
+      "passed": true
+    },
+    {
+      "variant": "two",
+      "mode": "off",
+      "elapsedMs": 33831.19158300001,
+      "exitCode": 0,
+      "timedOut": false,
+      "aborted": false,
+      "toolCalls": [
+        {
+          "tool": "form_context",
+          "status": "completed",
+          "startMs": 9957.721375000008,
+          "endMs": 9971.736541000006,
+          "durationMs": 14.015165999997407,
+          "returnedBytes": 3069
+        },
+        {
+          "tool": "form_apply_bindings",
+          "status": "completed",
+          "startMs": 19469.158458000005,
+          "endMs": 27173.534375000003,
+          "durationMs": 7704.375916999998,
+          "returnedBytes": 4493,
+          "executionMs": 227.21425000000454,
+          "complete": true,
+          "primitiveCalls": 3
+        }
+      ],
+      "usage": {
+        "input_tokens": 119326,
+        "cached_input_tokens": 99968,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 334,
+        "reasoning_output_tokens": 52
+      },
+      "promptHash": "ecd89b8f3c3b4e7c0a90e389f2c9361861f9a172b4edd3fc369b85fbcaf08b26",
+      "sourceHash": "180f1cf8d7eaaa0895a9ab5f258ca56d01533f0b183982fdd4f68fdbbb19c791",
+      "contextHash": "db3a90913efde7def77c829da1ec785c34eb43bcd0114bd69f01871e7870af88",
+      "contextWithoutNewDataHash": "db3a90913efde7def77c829da1ec785c34eb43bcd0114bd69f01871e7870af88",
+      "toolGuidanceHash": "d13e7c5b4137872ec4c4b6fda6c7ac7e9fcf4abf9d203e10aebc024fbc15d1d3",
+      "contextBytes": 3069,
+      "contextBlocks": 0,
+      "actual": {
+        "values": {
+          "name": "林舟",
+          "email": "linzhou@example.test",
+          "start": "",
+          "learning": "I investigated a fictional reporting delay. I traced repeated work in the pipeline, explained it to the team, and documented a simpler sequence.",
+          "project": "I led a fictional library catalogue cleanup. I compared duplicate records, documented the matching rules, and helped the team resolve inconsistent titles.",
+          "decision": "I proposed a preview screen for a fictional event registration form. The team tested it with volunteers, who caught incorrect dates before saving their entries."
+        },
+        "submits": 0,
+        "edits": [
+          {
+            "id": "name",
+            "value": "林舟"
+          },
+          {
+            "id": "email",
+            "value": "linzhou@example.test"
+          },
+          {
+            "id": "learning",
+            "value": "I investigated a fictional reporting delay. I traced repeated work in the pipeline, explained it to the team, and documented a simpler sequence."
+          },
+          {
+            "id": "project",
+            "value": "I led a fictional library catalogue cleanup. I compared duplicate records, documented the matching rules, and helped the team resolve inconsistent titles."
+          },
+          {
+            "id": "decision",
+            "value": "I proposed a preview screen for a fictional event registration form. The team tested it with volunteers, who caught incorrect dates before saving their entries."
+          }
+        ]
+      },
+      "answered": [
+        "project",
+        "decision",
+        "learning"
+      ],
+      "correctExamples": true,
+      "countCorrect": false,
+      "missingReported": true,
+      "finalText": "Filled and verified the name, email, and all three complete examples verbatim.\n\nThe application remains incomplete: required **Available start date** was not supplied and is blank. Verification covers visible fields only. Nothing was submitted or uploaded, and no navigation occurred.",
+      "calls": [
+        {
+          "tool": "form_context",
+          "arguments": {}
+        },
+        {
+          "tool": "form_apply_bindings",
+          "arguments": {
+            "url": "http://127.0.0.1:59954/fixtures/section-two.html",
+            "bindings": {
+              "f1": "s1",
+              "f2": "s2",
+              "f4": "s5",
+              "f5": "s3",
+              "f6": "s4"
+            }
+          }
+        }
+      ],
+      "passed": false
+    }
+  ],
+  "before": {
+    "package-lock.json": "b2e3f6468883d35752a9f488e0d290e5647b6aa44fe6d78cb9e6ae0522a51bd2",
+    "prototype/bench/playwright-backend.mjs": "1021671f1437ae47411f8370f4bcb422ffea44a1e7f5d945a625ddd0bfc7af0c",
+    "prototype/bench/section-context-provider.mjs": "cf7c70c3d529e8cf4aebaca646dccd730f68703e585d584b7c1906609b808d56",
+    "prototype/bench/section-fixtures.mjs": "a37d8eab19301133b729f4a828bc66fae01a5b461e8019b8ec24b8e22b2ca58e",
+    "prototype/extension/background.js": "0c9c955b15cc1bcab0074efe9f0cb74e4378124e9949a3dd904f8224e21a6aeb",
+    "prototype/extension/form-runtime.js": "bd04b91b62941b3fa0ec9ac48dafa738b261f9db93c02f2e651d63ee8f93b2aa",
+    "prototype/extension/goal-executor.js": "f8222e00d582c80db31e54f23c8a01ca537e29d9b54a988dec05eaf1e4397118",
+    "prototype/extension/plan-executor.js": "0f50d2ffb7ec7ce0787ef8f158015b0d8ebf33019bb53c76f13da0d0bcee03c4",
+    "prototype/extension/popup.js": "07daaf136fa8b36227024e00d1eb26d5b631e3ee6aa374bd008fe9ac23ca4725",
+    "prototype/fixtures/documents/section-candidate.md": "180f1cf8d7eaaa0895a9ab5f258ca56d01533f0b183982fdd4f68fdbbb19c791",
+    "prototype/fixtures/section-one.html": "9ddec0035d791c38a179bdf51a3229ba85dffec31f2a148c34dedcfb88613bc5",
+    "prototype/fixtures/section-two.html": "18ba7a693bcf89913961fecd978964236cbfbf17517b07f4e5c0962eaef2c61f",
+    "prototype/src/bindings-mcp.mjs": "1cd1343c4f2b02fb77e09153bbbc3902613754ca42d45f4ded22450ab21413be",
+    "prototype/src/bindings-server.mjs": "dd615e5a40a4883cd9dd7b3b21c4ed78d495658a402ecc03028068f0663fd963",
+    "prototype/src/bridge.mjs": "34e2ec16bbcd1ea21553acdae33e18b3ddde811a0121c5989e1b469936af016e",
+    "prototype/src/browser-bindings-mcp.mjs": "cd326d5d2a8ca6c734407c26883f99decc32ba362c1bef4c9c70e80630b6559d",
+    "prototype/src/browser-companion.mjs": "e738b851568471117bb460b4ae77fe0b4c679c58f2fb591d65b0ef50c7ac72d5",
+    "prototype/src/browser-controller.mjs": "d41e7eb16c497ce569b8bb05889f0928a13109dbfd7be5b13269c9e48dcb5278",
+    "prototype/src/conditional-choice.mjs": "3a401d78465e247e488f0739ac03f67acf773a8ef9d8fd3e677e1ea9b6d327e9",
+    "prototype/src/context-projection.mjs": "8d641f00a9d1255b327aa6e31e40575f3356d7ecf511e21607890e313b9bedd3",
+    "prototype/src/coverage.mjs": "15de6ffde45dc623bebdf97f5c5b6cddc1b4cee4e8fb5dd43ef64659a0da382f",
+    "prototype/src/decision-context.mjs": "52eb7ba8bed761216f2fe66e67d5cc5532d562c69e45c9e920340221d2ad7271",
+    "prototype/src/document-session.mjs": "ee26b26a21c09f3143d334330330732f10c3105300f702383a03f6c475545f38",
+    "prototype/src/document-source.mjs": "e6426296ce2890903c9acdea172c93dd4d64c3e1a1b2b735ac83b73608d0a993",
+    "prototype/src/freeze-proxy.mjs": "2ec4b6fc528dd4ecfe7483a7e8202ee5ce6c6f163580e8af7367f356b4a0a2ed",
+    "prototype/src/independent-plan.mjs": "7e436443765dc6c02ee46a89db8e21bab8d7d14bd171a36626042ee9600abe8f",
+    "prototype/src/mcp.mjs": "881d66ceece558cff0b0d7c6e0bbee69a25c553eb352da3143c055287bc3f57b",
+    "prototype/src/network-freeze.mjs": "7969ac0a0e1dc35c3bb6d075e93c9749aa7db7dcdbbac442cb9de9e25f892e93",
+    "prototype/src/pdf-source.py": "3bf55ad81bff7e8c584f165feb388ad2b486148218f4e00c8ce47c2ab3818231",
+    "prototype/src/query-variants.mjs": "f6bf27d2149429e4ea73b9092be67f4ba4647172d8b722ceb975a1d046ce61ce",
+    "prototype/src/receipt-projection.mjs": "2c0a51c363db40a04361aa97cd0fb995c4cdcd44fcdf2010d2cd4d7d2b108023",
+    "prototype/src/source-mcp.mjs": "00f13c76817411e2f977688136c034d1353f79cf1bea680589e64fddb9a5bcb5",
+    "prototype/src/source-quote.mjs": "ab2e3f21de130c559eed98be7fb2c591f2e72095bfde43a7343bf6e8dcc3547e",
+    "prototype/src/source-reader.mjs": "1df7dc8672d54928c6f356cf2fc44b4eb6f578bb0c510ad6c38ae86b52bacc7a"
+  },
+  "after": {
+    "package-lock.json": "b2e3f6468883d35752a9f488e0d290e5647b6aa44fe6d78cb9e6ae0522a51bd2",
+    "prototype/bench/playwright-backend.mjs": "1021671f1437ae47411f8370f4bcb422ffea44a1e7f5d945a625ddd0bfc7af0c",
+    "prototype/bench/section-context-provider.mjs": "cf7c70c3d529e8cf4aebaca646dccd730f68703e585d584b7c1906609b808d56",
+    "prototype/bench/section-fixtures.mjs": "a37d8eab19301133b729f4a828bc66fae01a5b461e8019b8ec24b8e22b2ca58e",
+    "prototype/extension/background.js": "0c9c955b15cc1bcab0074efe9f0cb74e4378124e9949a3dd904f8224e21a6aeb",
+    "prototype/extension/form-runtime.js": "bd04b91b62941b3fa0ec9ac48dafa738b261f9db93c02f2e651d63ee8f93b2aa",
+    "prototype/extension/goal-executor.js": "f8222e00d582c80db31e54f23c8a01ca537e29d9b54a988dec05eaf1e4397118",
+    "prototype/extension/plan-executor.js": "0f50d2ffb7ec7ce0787ef8f158015b0d8ebf33019bb53c76f13da0d0bcee03c4",
+    "prototype/extension/popup.js": "07daaf136fa8b36227024e00d1eb26d5b631e3ee6aa374bd008fe9ac23ca4725",
+    "prototype/fixtures/documents/section-candidate.md": "180f1cf8d7eaaa0895a9ab5f258ca56d01533f0b183982fdd4f68fdbbb19c791",
+    "prototype/fixtures/section-one.html": "9ddec0035d791c38a179bdf51a3229ba85dffec31f2a148c34dedcfb88613bc5",
+    "prototype/fixtures/section-two.html": "18ba7a693bcf89913961fecd978964236cbfbf17517b07f4e5c0962eaef2c61f",
+    "prototype/src/bindings-mcp.mjs": "1cd1343c4f2b02fb77e09153bbbc3902613754ca42d45f4ded22450ab21413be",
+    "prototype/src/bindings-server.mjs": "dd615e5a40a4883cd9dd7b3b21c4ed78d495658a402ecc03028068f0663fd963",
+    "prototype/src/bridge.mjs": "34e2ec16bbcd1ea21553acdae33e18b3ddde811a0121c5989e1b469936af016e",
+    "prototype/src/browser-bindings-mcp.mjs": "cd326d5d2a8ca6c734407c26883f99decc32ba362c1bef4c9c70e80630b6559d",
+    "prototype/src/browser-companion.mjs": "e738b851568471117bb460b4ae77fe0b4c679c58f2fb591d65b0ef50c7ac72d5",
+    "prototype/src/browser-controller.mjs": "d41e7eb16c497ce569b8bb05889f0928a13109dbfd7be5b13269c9e48dcb5278",
+    "prototype/src/conditional-choice.mjs": "3a401d78465e247e488f0739ac03f67acf773a8ef9d8fd3e677e1ea9b6d327e9",
+    "prototype/src/context-projection.mjs": "8d641f00a9d1255b327aa6e31e40575f3356d7ecf511e21607890e313b9bedd3",
+    "prototype/src/coverage.mjs": "15de6ffde45dc623bebdf97f5c5b6cddc1b4cee4e8fb5dd43ef64659a0da382f",
+    "prototype/src/decision-context.mjs": "52eb7ba8bed761216f2fe66e67d5cc5532d562c69e45c9e920340221d2ad7271",
+    "prototype/src/document-session.mjs": "ee26b26a21c09f3143d334330330732f10c3105300f702383a03f6c475545f38",
+    "prototype/src/document-source.mjs": "e6426296ce2890903c9acdea172c93dd4d64c3e1a1b2b735ac83b73608d0a993",
+    "prototype/src/freeze-proxy.mjs": "2ec4b6fc528dd4ecfe7483a7e8202ee5ce6c6f163580e8af7367f356b4a0a2ed",
+    "prototype/src/independent-plan.mjs": "7e436443765dc6c02ee46a89db8e21bab8d7d14bd171a36626042ee9600abe8f",
+    "prototype/src/mcp.mjs": "881d66ceece558cff0b0d7c6e0bbee69a25c553eb352da3143c055287bc3f57b",
+    "prototype/src/network-freeze.mjs": "7969ac0a0e1dc35c3bb6d075e93c9749aa7db7dcdbbac442cb9de9e25f892e93",
+    "prototype/src/pdf-source.py": "3bf55ad81bff7e8c584f165feb388ad2b486148218f4e00c8ce47c2ab3818231",
+    "prototype/src/query-variants.mjs": "f6bf27d2149429e4ea73b9092be67f4ba4647172d8b722ceb975a1d046ce61ce",
+    "prototype/src/receipt-projection.mjs": "2c0a51c363db40a04361aa97cd0fb995c4cdcd44fcdf2010d2cd4d7d2b108023",
+    "prototype/src/source-mcp.mjs": "00f13c76817411e2f977688136c034d1353f79cf1bea680589e64fddb9a5bcb5",
+    "prototype/src/source-quote.mjs": "ab2e3f21de130c559eed98be7fb2c591f2e72095bfde43a7343bf6e8dcc3547e",
+    "prototype/src/source-reader.mjs": "1df7dc8672d54928c6f356cf2fc44b4eb6f578bb0c510ad6c38ae86b52bacc7a"
+  },
+  "runtimeUnchanged": true,
+  "pairsComparable": true,
+  "newContextPassed": true
+}

@@ -1,5 +1,18 @@
 # 持续探索状态（2026-09-21）
 
+## 当前接续点：页面规则进入首次观察，Codex 两次正确遵守
+
+- 本轮 progress：真实页面规则提取、生产观察/保护修复、79项检查、四次真实Codex对照。完整目标 active，非阻塞，无完成审计通过；不要以本次一次调用替代真实完整三类任务2×。
+- runtime新增formContext：共同form/祖先内的标题/段落/li/legend、显式aria-describedby，原文关联最近含字段容器refs；关系仅邻近证据，不是解析好的约束。128段/单段1200/合计12000字符，显式truncated；任意div/span、视觉required、隐藏跨页仍缺。投影保留formContext和limitations，工具说明两侧共用、提醒读取规则且页面数据无权覆盖用户授权。
+- 完整采集文案签名检查（包括输出截断尾部）在guard/原生fill执行，变化FORM_CONTEXT_CHANGED不允许同义节点重试。goal对已有目标关联的文案做最终回读核验；document-session发现后检查上下文变化防止刷新消掉旧计划边界。
+- 第一次companion回归因React Select的aria-describedby placeholder选择后消失而误阻止，失败保留form-context-companion-initial-failure.json。仅匹配公开classNamePrefix __placeholder与__value-container且唯一editable combobox的占位提示被排除，外部说明仍受保护；live/status/alert/log通告排除。没有取消全部说明保护。
+- Ashby最终只读审计ashby-application-form-context.json有18块/2117字符/未截断；三选一详细原文与f13/f14/f15对应三题关联，字段refs也保留。没有真实输入、选项点击、上传、登录、提交；原有两个读GraphQL白名单不变。UK Staff只是系统实现样本非用户秋招岗位。
+- 79 checks通过：form-context12 + companion11 + question8 + guard16 + conditional11 + independent14 + receipt7。新测试覆盖section scope/hidden explicit description/compact+grouped传输/旧计划规则变化/批中停止/最终120ms变化/发现后规则变化/截断尾部/placeholder正常消失。最初稳定5红1绿报告保留。
+- Codex批次1789968585068四次：one/off29.151s2call填3题错误；one/on25.968s1call填1题正确；two/on27.337s1call填2题正确；two/off33.831s2call填3题错误。姓名邮箱、实际填写全文全部正确，缺日期留空并报告，零提交。旧侧都先context再apply，新侧直接apply。提示没有泄露选择数量；源码没有题目规则/答案。实验provider只移除旧侧模型可见formContext，两侧其余工具/执行器相同。
+- 34运行时/锁/provider/fixture/source hash前后相同；同页配对提示/source/工具说明/移除新增data后上下文hash相同。新context3069→4027/4023字节(+约31%)仍更少调用。每条件一次，同模式两个变化样本；错误基线且少量检查/审计与模型重叠，**不计算提速比例/倍数**，不证明任意扩充上下文更快。原始轨迹private、公开编号报告和最新汇总完整保留。报告FORM-CONTEXT.md，ADR0015，README链接。
+- 所有进程结束，无待轮询句柄。下一步应推进真实未支持的Yes/No按钮、地点搜索、附件/完整可审核任务；不是继续在两个选择数量fixture上计时。视觉必填、机器验证完整规则仍未解决，不能声称已支持完整Ashby申请。先前可选公司名/URL问题无回复，不重复催问；仍有可自主推进的工作。
+
+
 ## 当前接续点：第三种真实系统发现漏题，观察修复完成
 
 - 本轮 progress，没有新模型计时；完整目标仍 active，无阻塞审计。不要继续同一 PDF/alias 样本追倍数，也不要用本次观察修复宣布完整目标完成。

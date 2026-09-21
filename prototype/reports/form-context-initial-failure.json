@@ -1,0 +1,34 @@
+{
+  "date": "2026-09-21T05:21:47.748Z",
+  "results": [
+    {
+      "name": "section text has the three relevant refs, with per-field descriptions and no outside/hidden text",
+      "passed": false,
+      "error": "TypeError: Cannot read properties of undefined (reading 'blocks')\n    at file:///Users/original/Project/github/personal_project/agent-form-accelerator/prototype/bench/form-context-check.mjs:13:230\n    at async check (file:///Users/original/Project/github/personal_project/agent-form-accelerator/prototype/bench/form-context-check.mjs:11:62)\n    at async file:///Users/original/Project/github/personal_project/agent-form-accelerator/prototype/bench/form-context-check.mjs:13:2"
+    },
+    {
+      "name": "context survives compact and grouped transport",
+      "passed": false,
+      "error": "AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:\n\n  assert.ok(o.formContext)\n\n    at file:///Users/original/Project/github/personal_project/agent-form-accelerator/prototype/bench/form-context-check.mjs:14:157\n    at async check (file:///Users/original/Project/github/personal_project/agent-form-accelerator/prototype/bench/form-context-check.mjs:11:62)\n    at async file:///Users/original/Project/github/personal_project/agent-form-accelerator/prototype/bench/form-context-check.mjs:14:2"
+    },
+    {
+      "name": "changed section rule blocks an old write before any input",
+      "passed": false,
+      "error": "AssertionError [ERR_ASSERTION]: The input did not match the regular expression /FIELD_CHANGED/. Input:\n\n'{\"results\":[{\"ref\":\"f9\",\"status\":\"verified\"}],\"settled\":true,\"observation\":{\"snapshot\":\"376036a2-2c6f-4dbf-9c0d-6c1c8e030dd0\",\"documentId\":\"a019f2b9-6cf0-49cd-a941-9e68b4ad21e3\",\"url\":\"http://localhost/context-check\",\"title\":\"\",\"fields\":[{\"ref\":\"f9\",\"label\":\"A project\",\"kind\":\"textarea\",\"group\":\"\",\"domId\":\"a\",\"required\":false,\"disabled\":false,\"readOnly\":false,\"supported\":true,\"valid\":true,\"pending\":false,\"value\":\"Old planned answer\"},{\"ref\":\"f10\",\"label\":\"A decision\",\"kind\":\"textarea\",\"group\":\"\",\"domId\":\"b\",\"required\":false,\"disabled\":false,\"readOnly\":false,\"supported\":true,\"valid\":true,\"pending\":false,\"value\":\"\"},{\"ref\":\"f11\",\"label\":\"A lesson\",\"kind\":\"textarea\",\"group\":\"\",\"domId\":\"c\",\"required\":false,\"disabled\":false,\"readOnly\":false,\"supported\":true,\"valid\":true,\"pending\":false,\"value\":\"\"},{\"ref\":\"f12\",\"label\":\"Name\",\"kind\":\"text\",\"group\":\"\",\"domId\":\"name\",\"required\":false,\"disabled\":false,\"readOnly\":false,\"supported\":true,\"valid\":true,\"pending\":false,\"value\":\"\"}],\"controls\":[],\"limitations\":{\"requiredness\":\"Native required and aria-required only; visual-only markers may be missed.\",\"iframes\":0,\"shadowRoots\":false}},\"elapsedMs\":38.80000019073486,\"complete\":true,\"verification\":\"DOM read-back and native validity only; not application/server acceptance\"}'\n\n    at file:///Users/original/Project/github/personal_project/agent-form-accelerator/prototype/bench/form-context-check.mjs:15:376\n    at async check (file:///Users/original/Project/github/personal_project/agent-form-accelerator/prototype/bench/form-context-check.mjs:11:62)\n    at async file:///Users/original/Project/github/personal_project/agent-form-accelerator/prototype/bench/form-context-check.mjs:15:2"
+    },
+    {
+      "name": "rule mutation after the first write stops subsequent actions",
+      "passed": false,
+      "error": "AssertionError [ERR_ASSERTION]: The input did not match the regular expression /FIELD_CHANGED/. Input:\n\n'{\"results\":[{\"ref\":\"f13\",\"status\":\"verified\"},{\"ref\":\"f14\",\"status\":\"verified\"}],\"settled\":true,\"observation\":{\"snapshot\":\"4d451993-7f13-453e-863d-25bce2b2244c\",\"documentId\":\"a019f2b9-6cf0-49cd-a941-9e68b4ad21e3\",\"url\":\"http://localhost/context-check\",\"title\":\"\",\"fields\":[{\"ref\":\"f13\",\"label\":\"A project\",\"kind\":\"textarea\",\"group\":\"\",\"domId\":\"a\",\"required\":false,\"disabled\":false,\"readOnly\":false,\"supported\":true,\"valid\":true,\"pending\":false,\"value\":\"Provided passage\"},{\"ref\":\"f14\",\"label\":\"A decision\",\"kind\":\"textarea\",\"group\":\"\",\"domId\":\"b\",\"required\":false,\"disabled\":false,\"readOnly\":false,\"supported\":true,\"valid\":true,\"pending\":false,\"value\":\"Provided passage\"},{\"ref\":\"f15\",\"label\":\"A lesson\",\"kind\":\"textarea\",\"group\":\"\",\"domId\":\"c\",\"required\":false,\"disabled\":false,\"readOnly\":false,\"supported\":true,\"valid\":true,\"pending\":false,\"value\":\"\"},{\"ref\":\"f16\",\"label\":\"Name\",\"kind\":\"text\",\"group\":\"\",\"domId\":\"name\",\"required\":false,\"disabled\":false,\"readOnly\":false,\"supported\":true,\"valid\":true,\"pending\":false,\"value\":\"\"}],\"controls\":[],\"limitations\":{\"requiredness\":\"Native required and aria-required only; visual-only markers may be missed.\",\"iframes\":0,\"shadowRoots\":false}},\"elapsedMs\":38.69999980926514,\"complete\":true,\"verification\":\"DOM read-back and native validity only; not application/server acceptance\"}'\n\n    at file:///Users/original/Project/github/personal_project/agent-form-accelerator/prototype/bench/form-context-check.mjs:16:457\n    at async check (file:///Users/original/Project/github/personal_project/agent-form-accelerator/prototype/bench/form-context-check.mjs:11:62)\n    at async file:///Users/original/Project/github/personal_project/agent-form-accelerator/prototype/bench/form-context-check.mjs:16:2"
+    },
+    {
+      "name": "normal input does not invalidate static context",
+      "passed": true
+    },
+    {
+      "name": "long context is explicitly truncated, with bounded payload",
+      "passed": false,
+      "error": "TypeError: Cannot read properties of undefined (reading 'truncated')\n    at file:///Users/original/Project/github/personal_project/agent-form-accelerator/prototype/bench/form-context-check.mjs:18:218\n    at async check (file:///Users/original/Project/github/personal_project/agent-form-accelerator/prototype/bench/form-context-check.mjs:11:62)\n    at async file:///Users/original/Project/github/personal_project/agent-form-accelerator/prototype/bench/form-context-check.mjs:18:2"
+    }
+  ]
+}

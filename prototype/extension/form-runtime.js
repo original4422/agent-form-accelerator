@@ -107,6 +107,55 @@ export async function executeFormRequest(request) {
   };
   const isAdd = (el) => el.tagName === 'BUTTON' && el.type === 'button' && !el.hasAttribute('aria-pressed') &&
     /^(添加|新增|增加|Add\b)/i.test(label(el));
+  // Preserve public explanatory text separately from field names. Containers
+  // express observed proximity, not inferred rules or answers.
+  const formContext = (nodes) => {
+    const entries=Array.from(nodes,([ref,{el}])=>({ref,el})).filter(({el})=>visible(el));
+    if(!entries.length)return {data:{blocks:[],truncated:false},signature:'[]'};
+    const form=entries[0].el.closest('form');
+    let root=form&&entries.every(({el})=>form.contains(el))?form:entries[0].el.parentElement;
+    while(root&&!entries.every(({el})=>root.contains(el)))root=root.parentElement;
+    root??=document.body;
+    const described=new Map();
+    for(const {ref,el} of entries)for(const id of (el.getAttribute('aria-describedby')??'').split(/\s+/).filter(Boolean)){
+      const node=document.getElementById(id);if(!node)continue;
+      if(node.closest('[aria-live],[role="status"],[role="alert"],[role="log"]'))continue;
+      // React Select's public classNamePrefix placeholder is attached through
+      // aria-describedby and disappears after selection. It is widget state,
+      // not a stable question requirement. Do not exclude external help text.
+      const placeholder=[...node.classList].find(c=>c.endsWith('__placeholder'));
+      if(placeholder&&el.matches('input[role="combobox"][aria-autocomplete="list"]')){
+        const prefix=placeholder.slice(0,-'__placeholder'.length),container=node.parentElement;
+        if(container?.classList.contains(prefix+'__value-container')&&container.contains(el)&&container.querySelectorAll('[role="combobox"]').length===1)continue;
+      }
+      if(!described.has(node))described.set(node,[]);described.get(node).push(ref);
+    }
+    const semantic='h1,h2,h3,h4,h5,h6,[role="heading"],p,li,legend';
+    const candidates=[...root.querySelectorAll(semantic)].filter(node=>{
+      const outer=node.parentElement?.closest(semantic);
+      return visible(node)&&!node.closest('button,select,textarea,[role="option"],[role="listbox"],[role="status"],[role="alert"],[aria-live]')&&!(outer&&root.contains(outer));
+    });
+    for(const node of described.keys())if(!candidates.includes(node))candidates.push(node);
+    const complete=[];
+    for(const node of candidates){
+      const text=textOf(node,described.has(node)&&!visible(node));if(!text)continue;
+      let refs=described.get(node);
+      if(!refs){
+        for(let container=node.parentElement;container&&root.contains(container);container=container.parentElement){
+          refs=entries.filter(({el})=>container.contains(el)).map(({ref})=>ref);if(refs.length)break;
+        }
+      }
+      if(refs?.length)complete.push({text,fieldRefs:refs,relation:described.has(node)?'aria-describedby':'container'});
+    }
+    let remaining=12000,truncated=false;const blocks=[];
+    for(const block of complete){
+      if(blocks.length>=128||!remaining){truncated=true;break;}
+      const length=Math.min(block.text.length,1200,remaining);if(length<block.text.length)truncated=true;
+      blocks.push({...block,text:block.text.slice(0,length)});remaining-=length;
+    }
+    return {data:{blocks,truncated,scope:'Headings, paragraphs, list items, legends and explicit descriptions near observed fields. Container refs show proximity, not a parsed constraint. Other page text and visual-only rules may be absent.'},signature:JSON.stringify(complete)};
+  };
+  const contextChanged = () => state.contextSignature!==undefined&&formContext(state.nodes).signature!==state.contextSignature;
   const observe = () => {
     const fields = [], controls = [], nodes = new Map();
     for (const el of document.querySelectorAll('input,textarea,select,[role="combobox"],button')) {
@@ -121,9 +170,10 @@ export async function executeFormRequest(request) {
       (kind(el) === 'add-row' ? controls : fields).push(field);
     }
     state.nodes = nodes;
+    const context=formContext(nodes);state.contextSignature=context.signature;
     state.snapshot = crypto.randomUUID();
     return {snapshot: state.snapshot, documentId: state.documentId, url: location.href,
-      title: document.title, fields, controls,
+      title: document.title, fields, controls,formContext:context.data,
       limitations: {requiredness:'Native required and aria-required only; visual-only markers may be missed.',iframes: document.querySelectorAll('iframe').length,
         shadowRoots: Array.from(document.querySelectorAll('*')).some((el) => !!el.shadowRoot)},
     };
@@ -185,6 +235,7 @@ export async function executeFormRequest(request) {
   };
   if (request.op === 'validate' || request.op === 'guard') {
     if (request.snapshot !== state.snapshot || request.url !== location.href) throw new Error('STALE_SNAPSHOT: inspect again');
+    if(contextChanged())throw new Error('FORM_CONTEXT_CHANGED: inspect again');
     for (const {el, signature: prior} of state.nodes.values()) {
       if (!visible(el) || signature(el) !== prior) throw new Error('FIELD_CHANGED: inspect again');
     }
@@ -219,14 +270,15 @@ export async function executeFormRequest(request) {
       const record = state.nodes.get(action.ref);
       const el = record?.el;
       let error;
-      if (!el || !el.isConnected || !visible(el)) error = 'STALE_OR_MISSING_FIELD';
+      if(contextChanged())error='FORM_CONTEXT_CHANGED';
+      else if (!el || !el.isConnected || !visible(el)) error = 'STALE_OR_MISSING_FIELD';
       else if (request.url !== location.href || signature(el) !== record.signature) error = 'FIELD_CHANGED';
       else if (disabled(el) || el.readOnly || el.getAttribute('aria-readonly') === 'true') error = 'NOT_EDITABLE';
       else if (!supported.has(kind(el))) error = 'UNSUPPORTED_CONTROL';
       if (error) {
         results.push({ref: action.ref, status: 'blocked', reason: error});
         // A stale page invalidates the remaining plan: never silently retarget it.
-        if (['STALE_OR_MISSING_FIELD', 'FIELD_CHANGED'].includes(error)) break;
+        if (['STALE_OR_MISSING_FIELD', 'FIELD_CHANGED', 'FORM_CONTEXT_CHANGED'].includes(error)) break;
         continue;
       }
       try {
