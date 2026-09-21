@@ -1,0 +1,117 @@
+{
+  "date": "2026-09-21T01:50:19.243Z",
+  "rows": [
+    {
+      "name": "factoring preserves all metadata and field order including exceptions",
+      "passed": true
+    },
+    {
+      "name": "closed set expands selected and unselected to identical per-field targets",
+      "passed": true
+    },
+    {
+      "name": "explicit empty set clears every observed checkbox",
+      "passed": true
+    },
+    {
+      "name": "unknown group rejected before backend write",
+      "passed": true
+    },
+    {
+      "name": "ungrouped checkbox set rejected before backend write",
+      "passed": true
+    },
+    {
+      "name": "unknown source rejected before backend write",
+      "passed": true
+    },
+    {
+      "name": "cross-group or invented ref rejected before backend write",
+      "passed": true
+    },
+    {
+      "name": "duplicate selected ref rejected before backend write",
+      "passed": true
+    },
+    {
+      "name": "overlapping explicit/group bindings and duplicate groups rejected before write",
+      "passed": true
+    },
+    {
+      "name": "disabled group member rejected before write",
+      "passed": true
+    },
+    {
+      "name": "readOnly group member rejected before write",
+      "passed": true
+    },
+    {
+      "name": "supported group member rejected before write",
+      "passed": true
+    },
+    {
+      "name": "kind group member rejected before write",
+      "passed": true
+    },
+    {
+      "name": "changed source rejected before grouped write",
+      "passed": true
+    },
+    {
+      "name": "final checkbox membership added prevents false completion",
+      "passed": true
+    },
+    {
+      "name": "final checkbox membership removed prevents false completion",
+      "passed": true
+    },
+    {
+      "name": "final checkbox membership renamed prevents false completion",
+      "passed": true
+    },
+    {
+      "name": "final checkbox membership kind prevents false completion",
+      "passed": true
+    },
+    {
+      "name": "final checkbox membership disabled prevents false completion",
+      "passed": true
+    },
+    {
+      "name": "final checkbox membership readonly prevents false completion",
+      "passed": true
+    },
+    {
+      "name": "final checkbox membership replaced preserves identity",
+      "passed": true
+    },
+    {
+      "name": "public results",
+      "passed": true,
+      "encodedBytes": 22786,
+      "decodedBytes": 35471,
+      "bindings": 21,
+      "checkboxGroups": 2,
+      "expandedTargets": 59,
+      "oracle": {
+        "passed": true,
+        "errors": [],
+        "knownTargets": 25,
+        "submitAttempts": 0,
+        "scope": "DOM display and native FormData only; network-dependent location, resume upload, business acceptance not verified."
+      },
+      "guard": {
+        "frozen": true,
+        "allowedReadRequests": 31,
+        "blockedLoadWrites": 2,
+        "blockedAfterFreeze": 12,
+        "webSocketsBlocked": 0,
+        "pending": 0
+      }
+    },
+    {
+      "name": "actual MCP grouped metadata and same59 targets pass independent public DOM/FormData oracle",
+      "passed": true
+    }
+  ]
+}

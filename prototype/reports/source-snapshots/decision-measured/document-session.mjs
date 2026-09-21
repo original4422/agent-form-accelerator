@@ -48,15 +48,13 @@ export async function createDocumentSession({sourcePath, request}) {
     if(!Array.isArray(repeatGroups)||repeatGroups.length>8)throw new Error('Expected at most 8 repeated groups');
     if(!Array.isArray(checkboxGroups)||checkboxGroups.length>12)throw new Error('Expected at most 12 checkbox groups');
     // Expand one explicit closed-set decision into the same per-field targets.
-    bindings={...bindings};choices={...choices};const seenGroups=new Set(),groupContracts=new Map();
-    const groupContract=fields=>JSON.stringify(fields.map(f=>JSON.stringify([f.label,f.kind,f.supported,!!f.disabled,!!f.readOnly])).sort());
+    bindings={...bindings};choices={...choices};const seenGroups=new Set();
     for(const {group,sourceId,selectedRefs} of checkboxGroups){
       if(typeof group!=='string'||!group||seenGroups.has(group))throw new Error('INVALID_CHECKBOX_GROUP');
       seenGroups.add(group);
       if(!source.entries.some(e=>e.id===sourceId))throw new Error('UNKNOWN_SOURCE');
       const fields=observation.fields.filter(f=>f.group===group);
       if(!fields.length||fields.some(f=>f.kind!=='checkbox'||!f.supported||f.disabled||f.readOnly))throw new Error('UNSUPPORTED_CHECKBOX_GROUP');
-      groupContracts.set(group,groupContract(fields));
       if(!Array.isArray(selectedRefs)||new Set(selectedRefs).size!==selectedRefs.length||selectedRefs.some(ref=>!fields.some(f=>f.ref===ref)))throw new Error('INVALID_SELECTED_REFS');
       for(const field of fields){
         if(Object.hasOwn(bindings,field.ref)||Object.hasOwn(choices,field.ref))throw new Error('OVERLAPPING_CHECKBOX_BINDING');
@@ -105,10 +103,6 @@ export async function createDocumentSession({sourcePath, request}) {
     const result=await request({op:'goal',url,snapshot:observation.snapshot,expansions,
       fields:targets.map(({group,label,kind,value,query})=>({group,label,kind,value,...(query?{query}:{})}))});
     observation=result.observation??observation;
-    // A closed-set decision must not become "complete" if the final observation
-    // gained/lost/relabelled an option after the last per-action freshness guard.
-    const changedGroups=[...groupContracts].filter(([group,contract])=>groupContract(observation.fields.filter(f=>f.group===group))!==contract).map(([group])=>group);
-    if(changedGroups.length){result.complete=false;result.reason='CHECKBOX_GROUP_CHANGED';result.changedGroups=changedGroups;}
     for(const evidence of result.evidence??[])if(evidence.status==='verified'){
       const target=targets.find(f=>fieldKey(f)===fieldKey(evidence));
       if(target)verified.set(fieldKey(target),{kind:target.kind,actual:evidence.actual,sourceId:target.sourceId});

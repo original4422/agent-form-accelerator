@@ -6,6 +6,9 @@
 
 ## 看结果
 
+- [按问题表达复选集合](prototype/reports/DECISION-CONTEXT.md)：同样59目标、相同Codex权限，三组对照中位49.24→42.61秒，约减少13.5%；完整任务两倍目标仍未达成。
+- [Codex与工具之间的耗时分解](prototype/reports/HOST-PHASES.md)：浏览器执行约2.3秒，主要等待发生在宿主侧；不再用本地执行提速代替用户体验。
+
 - [批中校验与全表回传分离](prototype/reports/VALIDATION-GUARD.md)：相同59绑定，本地中位6.51→2.11秒，保留全页语义校验；完整Codex速度单独报告。
 
 - [真实公开页离线填写与上下文实验](prototype/reports/PUBLIC-PAGE-CONTEXT.md)：从真实招聘控件发现问题名称缺失、3,302项下拉列表；网络隔离下核验虚构资料，服务器/附件/地点服务仍未验证。

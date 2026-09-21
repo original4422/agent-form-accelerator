@@ -1,0 +1,1304 @@
+{
+  "batchId": 1789955033322,
+  "date": "2026-09-21T01:48:54.851Z",
+  "aborted": false,
+  "scope": "Alternating flat versus grouped decision interface, same guard backend, same59 expanded targets, same approval/configuration. Grouped combines lossless shared metadata and explicit closed-set checkbox decisions; not an isolated factor attribution. Timing metadata excludes source/arguments/tokens. Page load and metadata preflight excluded; all actual CLI startup/execution/return included",
+  "rows": [
+    {
+      "startedEpochMs": 1789955037175.5027,
+      "serverTimings": [
+        {
+          "stage": "server_start",
+          "epochMs": 1789955038743.7788,
+          "atMs": 1568.276123046875
+        },
+        {
+          "stage": "prefetch_start",
+          "epochMs": 1789955038748.388,
+          "atMs": 1572.88525390625
+        },
+        {
+          "stage": "prefetch_done",
+          "epochMs": 1789955038874.799,
+          "atMs": 1699.29638671875
+        },
+        {
+          "stage": "server_connected",
+          "epochMs": 1789955038875.5354,
+          "atMs": 1700.03271484375
+        },
+        {
+          "stage": "transport_send_start",
+          "epochMs": 1789955038881.1357,
+          "responseKind": "initialize",
+          "atMs": 1705.633056640625
+        },
+        {
+          "stage": "transport_send_done",
+          "epochMs": 1789955038881.3223,
+          "responseKind": "initialize",
+          "atMs": 1705.819580078125
+        },
+        {
+          "stage": "transport_send_start",
+          "epochMs": 1789955038905.2874,
+          "responseKind": "tools_list",
+          "atMs": 1729.78466796875
+        },
+        {
+          "stage": "transport_send_done",
+          "epochMs": 1789955038905.6667,
+          "responseKind": "tools_list",
+          "atMs": 1730.1640625
+        },
+        {
+          "stage": "handler_received",
+          "epochMs": 1789955083638.9587,
+          "tool": "form_apply_bindings",
+          "requestId": 1,
+          "atMs": 46463.4560546875
+        },
+        {
+          "stage": "handler_execute",
+          "epochMs": 1789955083639.5864,
+          "tool": "form_apply_bindings",
+          "requestId": 1,
+          "atMs": 46464.083740234375
+        },
+        {
+          "stage": "handler_resolved",
+          "epochMs": 1789955085872.43,
+          "tool": "form_apply_bindings",
+          "requestId": 1,
+          "atMs": 48696.92724609375
+        },
+        {
+          "stage": "handler_encoded",
+          "epochMs": 1789955085873.4148,
+          "tool": "form_apply_bindings",
+          "requestId": 1,
+          "bytes": 48537,
+          "atMs": 48697.912109375
+        },
+        {
+          "stage": "transport_send_start",
+          "epochMs": 1789955085874.3494,
+          "responseKind": "tool_result",
+          "atMs": 48698.8466796875
+        },
+        {
+          "stage": "transport_send_done",
+          "epochMs": 1789955085874.5684,
+          "responseKind": "tool_result",
+          "atMs": 48699.065673828125
+        }
+      ],
+      "controllerTimings": [
+        {
+          "op": "inspect",
+          "receivedEpochMs": 1789955038768.1194,
+          "executedEpochMs": 1789955038865.1836,
+          "sentEpochMs": 1789955038866.483,
+          "receivedMs": 1592.61669921875,
+          "executedMs": 1689.680908203125,
+          "sentMs": 1690.980224609375
+        },
+        {
+          "op": "goal",
+          "receivedEpochMs": 1789955083644.7788,
+          "executedEpochMs": 1789955085867.1653,
+          "sentEpochMs": 1789955085867.8079,
+          "receivedMs": 46469.276123046875,
+          "executedMs": 48691.66259765625,
+          "sentMs": 48692.30517578125
+        }
+      ],
+      "equalWork": true,
+      "bindingCounts": [
+        59
+      ],
+      "expandedCounts": [
+        59
+      ],
+      "groupCounts": [
+        0
+      ],
+      "argumentBytes": [
+        1368
+      ],
+      "attempt": "1789955033322-0-decision-flat",
+      "repetition": 0,
+      "mode": "flat",
+      "preflight": {
+        "contextHash": "be6934f98b91e1a1f29e1f4a6d5889c125b3d20ec3cf729e6ce50a18a32886e7",
+        "passed": true,
+        "tools": 4,
+        "sourceEntries": 23,
+        "fields": 101,
+        "contextBytes": 41320,
+        "expandedBytes": 41320,
+        "schoolOptionsShown": 2
+      },
+      "elapsedMs": 55824.643417,
+      "exitCode": 0,
+      "timedOut": false,
+      "aborted": false,
+      "passed": true,
+      "errors": [],
+      "knownTargets": 25,
+      "submitAttempts": 0,
+      "scope": "DOM display and native FormData only; network-dependent location, resume upload, business acceptance not verified.",
+      "guard": {
+        "frozen": true,
+        "allowedReadRequests": 30,
+        "blockedLoadWrites": 2,
+        "blockedAfterFreeze": 12,
+        "webSocketsBlocked": 0,
+        "pending": 0
+      },
+      "finalText": "Filled and verified all 59 source-supported targets, preserving paragraphs verbatim. Reconciled every language and preferred-office checkbox; unlisted options are unchecked.\n\nUnresolved: required current location is absent from the profile. Resume/CV attachment is unsupported and was not uploaded. Location lookup and resume upload cannot be certified offline.\n\nNothing was submitted or navigated.",
+      "toolCalls": [
+        {
+          "tool": "form_apply_bindings",
+          "status": "completed",
+          "startMs": 40862.312,
+          "endMs": 48702.791042,
+          "durationMs": 7840.479041999999,
+          "returnedBytes": 48537,
+          "executionMs": 2221.4873750000042,
+          "complete": true,
+          "primitiveCalls": 3
+        }
+      ],
+      "usage": {
+        "input_tokens": 164906,
+        "cached_input_tokens": 123520,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 596,
+        "reasoning_output_tokens": 0
+      },
+      "timeline": [
+        {
+          "atMs": 1482.6040419999995,
+          "event": "thread.started"
+        },
+        {
+          "atMs": 1493.447834,
+          "event": "turn.started"
+        },
+        {
+          "atMs": 9925.549167,
+          "event": "item.completed",
+          "itemId": "item_0",
+          "itemType": "agent_message"
+        },
+        {
+          "atMs": 40862.312,
+          "event": "item.started",
+          "itemId": "item_1",
+          "itemType": "mcp_tool_call",
+          "tool": "form_apply_bindings",
+          "status": "in_progress"
+        },
+        {
+          "atMs": 48702.791042,
+          "event": "item.completed",
+          "itemId": "item_1",
+          "itemType": "mcp_tool_call",
+          "tool": "form_apply_bindings",
+          "status": "completed"
+        },
+        {
+          "atMs": 53670.101375,
+          "event": "item.completed",
+          "itemId": "item_2",
+          "itemType": "agent_message"
+        },
+        {
+          "atMs": 53707.726625,
+          "event": "turn.completed"
+        }
+      ]
+    },
+    {
+      "startedEpochMs": 1789955098731.1729,
+      "serverTimings": [
+        {
+          "stage": "server_start",
+          "epochMs": 1789955100378.2505,
+          "atMs": 1647.07763671875
+        },
+        {
+          "stage": "prefetch_start",
+          "epochMs": 1789955100387.6604,
+          "atMs": 1656.487548828125
+        },
+        {
+          "stage": "prefetch_done",
+          "epochMs": 1789955100571.0479,
+          "atMs": 1839.875
+        },
+        {
+          "stage": "server_connected",
+          "epochMs": 1789955100571.832,
+          "atMs": 1840.6591796875
+        },
+        {
+          "stage": "transport_send_start",
+          "epochMs": 1789955100575.1147,
+          "responseKind": "initialize",
+          "atMs": 1843.94189453125
+        },
+        {
+          "stage": "transport_send_done",
+          "epochMs": 1789955100575.2568,
+          "responseKind": "initialize",
+          "atMs": 1844.083984375
+        },
+        {
+          "stage": "transport_send_start",
+          "epochMs": 1789955100577.6265,
+          "responseKind": "tools_list",
+          "atMs": 1846.45361328125
+        },
+        {
+          "stage": "transport_send_done",
+          "epochMs": 1789955100577.9448,
+          "responseKind": "tools_list",
+          "atMs": 1846.77197265625
+        },
+        {
+          "stage": "handler_received",
+          "epochMs": 1789955134480.46,
+          "tool": "form_apply_bindings",
+          "requestId": 1,
+          "atMs": 35749.287109375
+        },
+        {
+          "stage": "handler_execute",
+          "epochMs": 1789955134480.9656,
+          "tool": "form_apply_bindings",
+          "requestId": 1,
+          "atMs": 35749.792724609375
+        },
+        {
+          "stage": "handler_resolved",
+          "epochMs": 1789955136690.4236,
+          "tool": "form_apply_bindings",
+          "requestId": 1,
+          "atMs": 37959.250732421875
+        },
+        {
+          "stage": "handler_encoded",
+          "epochMs": 1789955136690.7234,
+          "tool": "form_apply_bindings",
+          "requestId": 1,
+          "bytes": 48537,
+          "atMs": 37959.550537109375
+        },
+        {
+          "stage": "transport_send_start",
+          "epochMs": 1789955136691.1743,
+          "responseKind": "tool_result",
+          "atMs": 37960.00146484375
+        },
+        {
+          "stage": "transport_send_done",
+          "epochMs": 1789955136691.3252,
+          "responseKind": "tool_result",
+          "atMs": 37960.15234375
+        }
+      ],
+      "controllerTimings": [
+        {
+          "op": "inspect",
+          "receivedEpochMs": 1789955100440.339,
+          "executedEpochMs": 1789955100557.465,
+          "sentEpochMs": 1789955100558.662,
+          "receivedMs": 1709.166259765625,
+          "executedMs": 1826.292236328125,
+          "sentMs": 1827.4892578125
+        },
+        {
+          "op": "goal",
+          "receivedEpochMs": 1789955134486.3057,
+          "executedEpochMs": 1789955136686.1892,
+          "sentEpochMs": 1789955136686.9385,
+          "receivedMs": 35755.1328125,
+          "executedMs": 37955.016357421875,
+          "sentMs": 37955.765625
+        }
+      ],
+      "equalWork": true,
+      "bindingCounts": [
+        21
+      ],
+      "expandedCounts": [
+        59
+      ],
+      "groupCounts": [
+        2
+      ],
+      "argumentBytes": [
+        804
+      ],
+      "attempt": "1789955033322-0-decision-grouped",
+      "repetition": 0,
+      "mode": "grouped",
+      "preflight": {
+        "contextHash": "be6934f98b91e1a1f29e1f4a6d5889c125b3d20ec3cf729e6ce50a18a32886e7",
+        "passed": true,
+        "tools": 4,
+        "sourceEntries": 23,
+        "fields": 101,
+        "contextBytes": 28187,
+        "expandedBytes": 41320,
+        "schoolOptionsShown": 2
+      },
+      "elapsedMs": 44159.423624999996,
+      "exitCode": 0,
+      "timedOut": false,
+      "aborted": false,
+      "passed": true,
+      "errors": [],
+      "knownTargets": 25,
+      "submitAttempts": 0,
+      "scope": "DOM display and native FormData only; network-dependent location, resume upload, business acceptance not verified.",
+      "guard": {
+        "frozen": true,
+        "allowedReadRequests": 32,
+        "blockedLoadWrites": 12,
+        "blockedAfterFreeze": 0,
+        "webSocketsBlocked": 0,
+        "pending": 0
+      },
+      "finalText": "Filled and verified all 59 source-supported targets, preserving paragraphs exactly. Reconciled every language and office checkbox: English, Mandarin, New York, and Seattle selected; all others cleared.\n\nRequired gap: current location was not supplied. Location lookup cannot be certified offline.\n\nResume/CV attachment is unsupported and was not uploaded or certified. Nothing was submitted.",
+      "toolCalls": [
+        {
+          "tool": "form_apply_bindings",
+          "status": "completed",
+          "startMs": 27304.310458000007,
+          "endMs": 37963.636207999996,
+          "durationMs": 10659.325749999989,
+          "returnedBytes": 48537,
+          "executionMs": 2199.8332079999964,
+          "complete": true,
+          "primitiveCalls": 3
+        }
+      ],
+      "usage": {
+        "input_tokens": 119665,
+        "cached_input_tokens": 83712,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 531,
+        "reasoning_output_tokens": 0
+      },
+      "timeline": [
+        {
+          "atMs": 1555.5863329999993,
+          "event": "thread.started"
+        },
+        {
+          "atMs": 1559.5255830000096,
+          "event": "turn.started"
+        },
+        {
+          "atMs": 7777.055999999997,
+          "event": "item.completed",
+          "itemId": "item_0",
+          "itemType": "agent_message"
+        },
+        {
+          "atMs": 27304.310458000007,
+          "event": "item.started",
+          "itemId": "item_1",
+          "itemType": "mcp_tool_call",
+          "tool": "form_apply_bindings",
+          "status": "in_progress"
+        },
+        {
+          "atMs": 37963.636207999996,
+          "event": "item.completed",
+          "itemId": "item_1",
+          "itemType": "mcp_tool_call",
+          "tool": "form_apply_bindings",
+          "status": "completed"
+        },
+        {
+          "atMs": 41517.97291700001,
+          "event": "item.completed",
+          "itemId": "item_2",
+          "itemType": "agent_message"
+        },
+        {
+          "atMs": 41666.170667,
+          "event": "turn.completed"
+        }
+      ]
+    },
+    {
+      "startedEpochMs": 1789955147524.5964,
+      "serverTimings": [
+        {
+          "stage": "server_start",
+          "epochMs": 1789955147719.148,
+          "atMs": 194.551513671875
+        },
+        {
+          "stage": "prefetch_start",
+          "epochMs": 1789955147723.3533,
+          "atMs": 198.7568359375
+        },
+        {
+          "stage": "prefetch_done",
+          "epochMs": 1789955147830.6604,
+          "atMs": 306.06396484375
+        },
+        {
+          "stage": "server_connected",
+          "epochMs": 1789955147831.304,
+          "atMs": 306.70751953125
+        },
+        {
+          "stage": "transport_send_start",
+          "epochMs": 1789955147834.3376,
+          "responseKind": "initialize",
+          "atMs": 309.7412109375
+        },
+        {
+          "stage": "transport_send_done",
+          "epochMs": 1789955147834.45,
+          "responseKind": "initialize",
+          "atMs": 309.853515625
+        },
+        {
+          "stage": "transport_send_start",
+          "epochMs": 1789955147838.8777,
+          "responseKind": "tools_list",
+          "atMs": 314.28125
+        },
+        {
+          "stage": "transport_send_done",
+          "epochMs": 1789955147839.1914,
+          "responseKind": "tools_list",
+          "atMs": 314.594970703125
+        },
+        {
+          "stage": "handler_received",
+          "epochMs": 1789955177815.33,
+          "tool": "form_apply_bindings",
+          "requestId": 1,
+          "atMs": 30290.733642578125
+        },
+        {
+          "stage": "handler_execute",
+          "epochMs": 1789955177816.9978,
+          "tool": "form_apply_bindings",
+          "requestId": 1,
+          "atMs": 30292.4013671875
+        },
+        {
+          "stage": "handler_resolved",
+          "epochMs": 1789955180052.8123,
+          "tool": "form_apply_bindings",
+          "requestId": 1,
+          "atMs": 32528.2158203125
+        },
+        {
+          "stage": "handler_encoded",
+          "epochMs": 1789955180053.1572,
+          "tool": "form_apply_bindings",
+          "requestId": 1,
+          "bytes": 48536,
+          "atMs": 32528.560791015625
+        },
+        {
+          "stage": "transport_send_start",
+          "epochMs": 1789955180053.6785,
+          "responseKind": "tool_result",
+          "atMs": 32529.08203125
+        },
+        {
+          "stage": "transport_send_done",
+          "epochMs": 1789955180053.8486,
+          "responseKind": "tool_result",
+          "atMs": 32529.252197265625
+        }
+      ],
+      "controllerTimings": [
+        {
+          "op": "inspect",
+          "receivedEpochMs": 1789955147739.9705,
+          "executedEpochMs": 1789955147823.4263,
+          "sentEpochMs": 1789955147824.2798,
+          "receivedMs": 215.3740234375,
+          "executedMs": 298.829833984375,
+          "sentMs": 299.683349609375
+        },
+        {
+          "op": "goal",
+          "receivedEpochMs": 1789955177825.9858,
+          "executedEpochMs": 1789955180043.765,
+          "sentEpochMs": 1789955180044.504,
+          "receivedMs": 30301.389404296875,
+          "executedMs": 32519.16845703125,
+          "sentMs": 32519.907470703125
+        }
+      ],
+      "equalWork": true,
+      "bindingCounts": [
+        21
+      ],
+      "expandedCounts": [
+        59
+      ],
+      "groupCounts": [
+        2
+      ],
+      "argumentBytes": [
+        804
+      ],
+      "attempt": "1789955033322-1-decision-grouped",
+      "repetition": 1,
+      "mode": "grouped",
+      "preflight": {
+        "contextHash": "be6934f98b91e1a1f29e1f4a6d5889c125b3d20ec3cf729e6ce50a18a32886e7",
+        "passed": true,
+        "tools": 4,
+        "sourceEntries": 23,
+        "fields": 101,
+        "contextBytes": 28187,
+        "expandedBytes": 41320,
+        "schoolOptionsShown": 2
+      },
+      "elapsedMs": 42609.634708,
+      "exitCode": 0,
+      "timedOut": false,
+      "aborted": false,
+      "passed": true,
+      "errors": [],
+      "knownTargets": 25,
+      "submitAttempts": 0,
+      "scope": "DOM display and native FormData only; network-dependent location, resume upload, business acceptance not verified.",
+      "guard": {
+        "frozen": true,
+        "allowedReadRequests": 32,
+        "blockedLoadWrites": 12,
+        "blockedAfterFreeze": 0,
+        "webSocketsBlocked": 0,
+        "pending": 0
+      },
+      "finalText": "Filled and verified all 59 source-supported targets, preserving paragraphs verbatim. Reconciled every language and office checkbox: English/Mandarin and New York/Seattle selected; all others cleared.\n\nRequired current location remains unresolved because the profile supplies none. Resume/CV attachment is unsupported and wasn’t uploaded. Location lookup and resume upload cannot be certified offline.\n\nNothing was submitted or navigated.",
+      "toolCalls": [
+        {
+          "tool": "form_apply_bindings",
+          "status": "completed",
+          "startMs": 25239.948416,
+          "endMs": 32533.204666000005,
+          "durationMs": 7293.256250000006,
+          "returnedBytes": 48536,
+          "executionMs": 2217.676166999998,
+          "complete": true,
+          "primitiveCalls": 3
+        }
+      ],
+      "usage": {
+        "input_tokens": 120660,
+        "cached_input_tokens": 84224,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 537,
+        "reasoning_output_tokens": 0
+      },
+      "timeline": [
+        {
+          "atMs": 119.86275000000023,
+          "event": "thread.started"
+        },
+        {
+          "atMs": 121.86962499999208,
+          "event": "turn.started"
+        },
+        {
+          "atMs": 7355.417749999993,
+          "event": "item.completed",
+          "itemId": "item_0",
+          "itemType": "agent_message"
+        },
+        {
+          "atMs": 25239.948416,
+          "event": "item.started",
+          "itemId": "item_1",
+          "itemType": "mcp_tool_call",
+          "tool": "form_apply_bindings",
+          "status": "in_progress"
+        },
+        {
+          "atMs": 32533.204666000005,
+          "event": "item.completed",
+          "itemId": "item_1",
+          "itemType": "mcp_tool_call",
+          "tool": "form_apply_bindings",
+          "status": "completed"
+        },
+        {
+          "atMs": 40113.92883300001,
+          "event": "item.completed",
+          "itemId": "item_2",
+          "itemType": "agent_message"
+        },
+        {
+          "atMs": 40179.743166,
+          "event": "turn.completed"
+        }
+      ]
+    },
+    {
+      "startedEpochMs": 1789955194917.313,
+      "serverTimings": [
+        {
+          "stage": "server_start",
+          "epochMs": 1789955196140.9985,
+          "atMs": 1223.685546875
+        },
+        {
+          "stage": "prefetch_start",
+          "epochMs": 1789955196146.1663,
+          "atMs": 1228.853271484375
+        },
+        {
+          "stage": "prefetch_done",
+          "epochMs": 1789955196249.799,
+          "atMs": 1332.486083984375
+        },
+        {
+          "stage": "server_connected",
+          "epochMs": 1789955196250.3345,
+          "atMs": 1333.021484375
+        },
+        {
+          "stage": "transport_send_start",
+          "epochMs": 1789955196253.2834,
+          "responseKind": "initialize",
+          "atMs": 1335.970458984375
+        },
+        {
+          "stage": "transport_send_done",
+          "epochMs": 1789955196253.396,
+          "responseKind": "initialize",
+          "atMs": 1336.0830078125
+        },
+        {
+          "stage": "transport_send_start",
+          "epochMs": 1789955196264.7222,
+          "responseKind": "tools_list",
+          "atMs": 1347.4091796875
+        },
+        {
+          "stage": "transport_send_done",
+          "epochMs": 1789955196265.0476,
+          "responseKind": "tools_list",
+          "atMs": 1347.734619140625
+        },
+        {
+          "stage": "handler_received",
+          "epochMs": 1789955234920.0374,
+          "tool": "form_apply_bindings",
+          "requestId": 1,
+          "atMs": 40002.724365234375
+        },
+        {
+          "stage": "handler_execute",
+          "epochMs": 1789955234921.3347,
+          "tool": "form_apply_bindings",
+          "requestId": 1,
+          "atMs": 40004.021728515625
+        },
+        {
+          "stage": "handler_resolved",
+          "epochMs": 1789955237171.613,
+          "tool": "form_apply_bindings",
+          "requestId": 1,
+          "atMs": 42254.300048828125
+        },
+        {
+          "stage": "handler_encoded",
+          "epochMs": 1789955237171.944,
+          "tool": "form_apply_bindings",
+          "requestId": 1,
+          "bytes": 48537,
+          "atMs": 42254.631103515625
+        },
+        {
+          "stage": "transport_send_start",
+          "epochMs": 1789955237172.4968,
+          "responseKind": "tool_result",
+          "atMs": 42255.183837890625
+        },
+        {
+          "stage": "transport_send_done",
+          "epochMs": 1789955237172.64,
+          "responseKind": "tool_result",
+          "atMs": 42255.326904296875
+        }
+      ],
+      "controllerTimings": [
+        {
+          "op": "inspect",
+          "receivedEpochMs": 1789955196161.3032,
+          "executedEpochMs": 1789955196243.1196,
+          "sentEpochMs": 1789955196244.1086,
+          "receivedMs": 1243.990234375,
+          "executedMs": 1325.806640625,
+          "sentMs": 1326.795654296875
+        },
+        {
+          "op": "goal",
+          "receivedEpochMs": 1789955234934.1616,
+          "executedEpochMs": 1789955237167.3792,
+          "sentEpochMs": 1789955237168.201,
+          "receivedMs": 40016.8486328125,
+          "executedMs": 42250.066162109375,
+          "sentMs": 42250.887939453125
+        }
+      ],
+      "equalWork": true,
+      "bindingCounts": [
+        59
+      ],
+      "expandedCounts": [
+        59
+      ],
+      "groupCounts": [
+        0
+      ],
+      "argumentBytes": [
+        1368
+      ],
+      "attempt": "1789955033322-1-decision-flat",
+      "repetition": 1,
+      "mode": "flat",
+      "preflight": {
+        "contextHash": "be6934f98b91e1a1f29e1f4a6d5889c125b3d20ec3cf729e6ce50a18a32886e7",
+        "passed": true,
+        "tools": 4,
+        "sourceEntries": 23,
+        "fields": 101,
+        "contextBytes": 41320,
+        "expandedBytes": 41320,
+        "schoolOptionsShown": 2
+      },
+      "elapsedMs": 49241.976666,
+      "exitCode": 0,
+      "timedOut": false,
+      "aborted": false,
+      "passed": true,
+      "errors": [],
+      "knownTargets": 25,
+      "submitAttempts": 0,
+      "scope": "DOM display and native FormData only; network-dependent location, resume upload, business acceptance not verified.",
+      "guard": {
+        "frozen": true,
+        "allowedReadRequests": 30,
+        "blockedLoadWrites": 2,
+        "blockedAfterFreeze": 12,
+        "webSocketsBlocked": 0,
+        "pending": 0
+      },
+      "finalText": "Filled and verified all 59 source-supported targets, preserving paragraphs exactly. Reconciled every checkbox in both groups: English and Mandarin; New York and Seattle selected, all unlisted options cleared.\n\nUnresolved: required current location is absent from the profile. Resume/CV attachment is unsupported and untouched. Location lookup and resume upload cannot be certified offline.\n\nNothing submitted or navigated.",
+      "toolCalls": [
+        {
+          "tool": "form_apply_bindings",
+          "status": "completed",
+          "startMs": 29573.997249999986,
+          "endMs": 42257.48841599998,
+          "durationMs": 12683.491165999993,
+          "returnedBytes": 48537,
+          "executionMs": 2232.9959589999926,
+          "complete": true,
+          "primitiveCalls": 3
+        }
+      ],
+      "usage": {
+        "input_tokens": 159393,
+        "cached_input_tokens": 113408,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 602,
+        "reasoning_output_tokens": 0
+      },
+      "timeline": [
+        {
+          "atMs": 1148.3739999999816,
+          "event": "thread.started"
+        },
+        {
+          "atMs": 1150.6827909999993,
+          "event": "turn.started"
+        },
+        {
+          "atMs": 6647.416874999995,
+          "event": "item.completed",
+          "itemId": "item_0",
+          "itemType": "agent_message"
+        },
+        {
+          "atMs": 29573.997249999986,
+          "event": "item.started",
+          "itemId": "item_1",
+          "itemType": "mcp_tool_call",
+          "tool": "form_apply_bindings",
+          "status": "in_progress"
+        },
+        {
+          "atMs": 42257.48841599998,
+          "event": "item.completed",
+          "itemId": "item_1",
+          "itemType": "mcp_tool_call",
+          "tool": "form_apply_bindings",
+          "status": "completed"
+        },
+        {
+          "atMs": 47035.09441599998,
+          "event": "item.completed",
+          "itemId": "item_2",
+          "itemType": "agent_message"
+        },
+        {
+          "atMs": 47036.23508299998,
+          "event": "turn.completed"
+        }
+      ]
+    },
+    {
+      "startedEpochMs": 1789955247821.098,
+      "serverTimings": [
+        {
+          "stage": "server_start",
+          "epochMs": 1789955247998.044,
+          "atMs": 176.946044921875
+        },
+        {
+          "stage": "prefetch_start",
+          "epochMs": 1789955248001.6145,
+          "atMs": 180.5166015625
+        },
+        {
+          "stage": "prefetch_done",
+          "epochMs": 1789955248117.1829,
+          "atMs": 296.0849609375
+        },
+        {
+          "stage": "server_connected",
+          "epochMs": 1789955248117.8088,
+          "atMs": 296.7109375
+        },
+        {
+          "stage": "transport_send_start",
+          "epochMs": 1789955248121.0737,
+          "responseKind": "initialize",
+          "atMs": 299.975830078125
+        },
+        {
+          "stage": "transport_send_done",
+          "epochMs": 1789955248121.209,
+          "responseKind": "initialize",
+          "atMs": 300.111083984375
+        },
+        {
+          "stage": "transport_send_start",
+          "epochMs": 1789955248137.5903,
+          "responseKind": "tools_list",
+          "atMs": 316.492431640625
+        },
+        {
+          "stage": "transport_send_done",
+          "epochMs": 1789955248137.9612,
+          "responseKind": "tools_list",
+          "atMs": 316.86328125
+        },
+        {
+          "stage": "handler_received",
+          "epochMs": 1789955283903.4944,
+          "tool": "form_apply_bindings",
+          "requestId": 1,
+          "atMs": 36082.396484375
+        },
+        {
+          "stage": "handler_execute",
+          "epochMs": 1789955283905.082,
+          "tool": "form_apply_bindings",
+          "requestId": 1,
+          "atMs": 36083.984130859375
+        },
+        {
+          "stage": "handler_resolved",
+          "epochMs": 1789955286196.6511,
+          "tool": "form_apply_bindings",
+          "requestId": 1,
+          "atMs": 38375.55322265625
+        },
+        {
+          "stage": "handler_encoded",
+          "epochMs": 1789955286197.0107,
+          "tool": "form_apply_bindings",
+          "requestId": 1,
+          "bytes": 48537,
+          "atMs": 38375.912841796875
+        },
+        {
+          "stage": "transport_send_start",
+          "epochMs": 1789955286197.6052,
+          "responseKind": "tool_result",
+          "atMs": 38376.50732421875
+        },
+        {
+          "stage": "transport_send_done",
+          "epochMs": 1789955286197.7693,
+          "responseKind": "tool_result",
+          "atMs": 38376.67138671875
+        }
+      ],
+      "controllerTimings": [
+        {
+          "op": "inspect",
+          "receivedEpochMs": 1789955248018.0642,
+          "executedEpochMs": 1789955248110.7935,
+          "sentEpochMs": 1789955248111.712,
+          "receivedMs": 196.96630859375,
+          "executedMs": 289.695556640625,
+          "sentMs": 290.614013671875
+        },
+        {
+          "op": "goal",
+          "receivedEpochMs": 1789955283914.537,
+          "executedEpochMs": 1789955286191.6177,
+          "sentEpochMs": 1789955286192.3135,
+          "receivedMs": 36093.439208984375,
+          "executedMs": 38370.519775390625,
+          "sentMs": 38371.215576171875
+        }
+      ],
+      "equalWork": true,
+      "bindingCounts": [
+        59
+      ],
+      "expandedCounts": [
+        59
+      ],
+      "groupCounts": [
+        0
+      ],
+      "argumentBytes": [
+        1368
+      ],
+      "attempt": "1789955033322-2-decision-flat",
+      "repetition": 2,
+      "mode": "flat",
+      "preflight": {
+        "contextHash": "be6934f98b91e1a1f29e1f4a6d5889c125b3d20ec3cf729e6ce50a18a32886e7",
+        "passed": true,
+        "tools": 4,
+        "sourceEntries": 23,
+        "fields": 101,
+        "contextBytes": 41320,
+        "expandedBytes": 41320,
+        "schoolOptionsShown": 2
+      },
+      "elapsedMs": 45436.654624999996,
+      "exitCode": 0,
+      "timedOut": false,
+      "aborted": false,
+      "passed": true,
+      "errors": [],
+      "knownTargets": 25,
+      "submitAttempts": 0,
+      "scope": "DOM display and native FormData only; network-dependent location, resume upload, business acceptance not verified.",
+      "guard": {
+        "frozen": true,
+        "allowedReadRequests": 30,
+        "blockedLoadWrites": 2,
+        "blockedAfterFreeze": 12,
+        "webSocketsBlocked": 0,
+        "pending": 0
+      },
+      "finalText": "Filled and verified all 59 source-supported targets, preserving paragraphs verbatim. Reconciled every language and office checkbox: English/Mandarin and New York/Seattle selected; all others cleared.\n\nUnresolved: required current location is missing from the profile. Resume/CV attachment is unsupported and was not uploaded. Location lookup and resume upload cannot be certified offline.\n\nNothing was submitted or navigated.",
+      "toolCalls": [
+        {
+          "tool": "form_apply_bindings",
+          "status": "completed",
+          "startMs": 30591.93849999999,
+          "endMs": 38379.23770900001,
+          "durationMs": 7787.299209000019,
+          "returnedBytes": 48537,
+          "executionMs": 2276.9367920000223,
+          "complete": true,
+          "primitiveCalls": 3
+        }
+      ],
+      "usage": {
+        "input_tokens": 159176,
+        "cached_input_tokens": 120576,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 682,
+        "reasoning_output_tokens": 0
+      },
+      "timeline": [
+        {
+          "atMs": 105.6663750000007,
+          "event": "thread.started"
+        },
+        {
+          "atMs": 108.06124999999884,
+          "event": "turn.started"
+        },
+        {
+          "atMs": 6285.243291999999,
+          "event": "item.completed",
+          "itemId": "item_0",
+          "itemType": "agent_message"
+        },
+        {
+          "atMs": 30591.93849999999,
+          "event": "item.started",
+          "itemId": "item_1",
+          "itemType": "mcp_tool_call",
+          "tool": "form_apply_bindings",
+          "status": "in_progress"
+        },
+        {
+          "atMs": 38379.23770900001,
+          "event": "item.completed",
+          "itemId": "item_1",
+          "itemType": "mcp_tool_call",
+          "tool": "form_apply_bindings",
+          "status": "completed"
+        },
+        {
+          "atMs": 43233.23329199999,
+          "event": "item.completed",
+          "itemId": "item_2",
+          "itemType": "agent_message"
+        },
+        {
+          "atMs": 43234.54558400001,
+          "event": "turn.completed"
+        }
+      ]
+    },
+    {
+      "startedEpochMs": 1789955298384.718,
+      "serverTimings": [
+        {
+          "stage": "server_start",
+          "epochMs": 1789955300397.96,
+          "atMs": 2013.241943359375
+        },
+        {
+          "stage": "prefetch_start",
+          "epochMs": 1789955300401.5466,
+          "atMs": 2016.82861328125
+        },
+        {
+          "stage": "prefetch_done",
+          "epochMs": 1789955300508.2358,
+          "atMs": 2123.517822265625
+        },
+        {
+          "stage": "server_connected",
+          "epochMs": 1789955300508.7854,
+          "atMs": 2124.0673828125
+        },
+        {
+          "stage": "transport_send_start",
+          "epochMs": 1789955300511.8076,
+          "responseKind": "initialize",
+          "atMs": 2127.089599609375
+        },
+        {
+          "stage": "transport_send_done",
+          "epochMs": 1789955300511.929,
+          "responseKind": "initialize",
+          "atMs": 2127.2109375
+        },
+        {
+          "stage": "transport_send_start",
+          "epochMs": 1789955300525.1235,
+          "responseKind": "tools_list",
+          "atMs": 2140.405517578125
+        },
+        {
+          "stage": "transport_send_done",
+          "epochMs": 1789955300525.4067,
+          "responseKind": "tools_list",
+          "atMs": 2140.688720703125
+        },
+        {
+          "stage": "handler_received",
+          "epochMs": 1789955325061.2183,
+          "tool": "form_apply_bindings",
+          "requestId": 1,
+          "atMs": 26676.500244140625
+        },
+        {
+          "stage": "handler_execute",
+          "epochMs": 1789955325062.561,
+          "tool": "form_apply_bindings",
+          "requestId": 1,
+          "atMs": 26677.843017578125
+        },
+        {
+          "stage": "handler_resolved",
+          "epochMs": 1789955327294.0461,
+          "tool": "form_apply_bindings",
+          "requestId": 1,
+          "atMs": 28909.328125
+        },
+        {
+          "stage": "handler_encoded",
+          "epochMs": 1789955327294.343,
+          "tool": "form_apply_bindings",
+          "requestId": 1,
+          "bytes": 48537,
+          "atMs": 28909.625
+        },
+        {
+          "stage": "transport_send_start",
+          "epochMs": 1789955327294.8303,
+          "responseKind": "tool_result",
+          "atMs": 28910.1123046875
+        },
+        {
+          "stage": "transport_send_done",
+          "epochMs": 1789955327294.9788,
+          "responseKind": "tool_result",
+          "atMs": 28910.2607421875
+        }
+      ],
+      "controllerTimings": [
+        {
+          "op": "inspect",
+          "receivedEpochMs": 1789955300419.4587,
+          "executedEpochMs": 1789955300501.6973,
+          "sentEpochMs": 1789955300502.6428,
+          "receivedMs": 2034.74072265625,
+          "executedMs": 2116.979248046875,
+          "sentMs": 2117.9248046875
+        },
+        {
+          "op": "goal",
+          "receivedEpochMs": 1789955325072.9219,
+          "executedEpochMs": 1789955327290.6733,
+          "sentEpochMs": 1789955327291.3354,
+          "receivedMs": 26688.203857421875,
+          "executedMs": 28905.955322265625,
+          "sentMs": 28906.617431640625
+        }
+      ],
+      "equalWork": true,
+      "bindingCounts": [
+        21
+      ],
+      "expandedCounts": [
+        59
+      ],
+      "groupCounts": [
+        2
+      ],
+      "argumentBytes": [
+        804
+      ],
+      "attempt": "1789955033322-2-decision-grouped",
+      "repetition": 2,
+      "mode": "grouped",
+      "preflight": {
+        "contextHash": "be6934f98b91e1a1f29e1f4a6d5889c125b3d20ec3cf729e6ce50a18a32886e7",
+        "passed": true,
+        "tools": 4,
+        "sourceEntries": 23,
+        "fields": 101,
+        "contextBytes": 28187,
+        "expandedBytes": 41320,
+        "schoolOptionsShown": 2
+      },
+      "elapsedMs": 36363.574291999976,
+      "exitCode": 0,
+      "timedOut": false,
+      "aborted": false,
+      "passed": true,
+      "errors": [],
+      "knownTargets": 25,
+      "submitAttempts": 0,
+      "scope": "DOM display and native FormData only; network-dependent location, resume upload, business acceptance not verified.",
+      "guard": {
+        "frozen": true,
+        "allowedReadRequests": 33,
+        "blockedLoadWrites": 2,
+        "blockedAfterFreeze": 13,
+        "webSocketsBlocked": 0,
+        "pending": 0
+      },
+      "finalText": "Filled and verified all source-supported fields, preserving paragraphs verbatim. Reconciled every checkbox in both groups: English/Mandarin and New York/Seattle selected; all others cleared.\n\nRequired information still missing: current location. Resume/CV attachment is unsupported and was not uploaded. Location lookup and resume upload cannot be certified offline.\n\nUnsupported optional answers were left untouched. Nothing was submitted.",
+      "toolCalls": [
+        {
+          "tool": "form_apply_bindings",
+          "status": "completed",
+          "startMs": 22120.28237500001,
+          "endMs": 28912.707208000007,
+          "durationMs": 6792.424832999997,
+          "returnedBytes": 48537,
+          "executionMs": 2217.6749169999966,
+          "complete": true,
+          "primitiveCalls": 3
+        }
+      ],
+      "usage": {
+        "input_tokens": 119662,
+        "cached_input_tokens": 83712,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 507,
+        "reasoning_output_tokens": 0
+      },
+      "timeline": [
+        {
+          "atMs": 1944.5398750000168,
+          "event": "thread.started"
+        },
+        {
+          "atMs": 1946.6955420000013,
+          "event": "turn.started"
+        },
+        {
+          "atMs": 7601.668791999982,
+          "event": "item.completed",
+          "itemId": "item_0",
+          "itemType": "agent_message"
+        },
+        {
+          "atMs": 22120.28237500001,
+          "event": "item.started",
+          "itemId": "item_1",
+          "itemType": "mcp_tool_call",
+          "tool": "form_apply_bindings",
+          "status": "in_progress"
+        },
+        {
+          "atMs": 28912.707208000007,
+          "event": "item.completed",
+          "itemId": "item_1",
+          "itemType": "mcp_tool_call",
+          "tool": "form_apply_bindings",
+          "status": "completed"
+        },
+        {
+          "atMs": 33620.22879199998,
+          "event": "item.completed",
+          "itemId": "item_2",
+          "itemType": "agent_message"
+        },
+        {
+          "atMs": 33621.16791700001,
+          "event": "turn.completed"
+        }
+      ]
+    }
+  ]
+}

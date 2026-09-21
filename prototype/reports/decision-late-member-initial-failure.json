@@ -1,0 +1,6 @@
+{
+  "scope": "Pure session mock, no browser: backend reports a new checked option after final observation; closed-set membership must not claim completion.",
+  "expectedComplete": false,
+  "actualComplete": true,
+  "passed": false
+}
