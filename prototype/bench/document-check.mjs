@@ -10,7 +10,7 @@ import {projectRoot} from '../src/bridge.mjs';
 const h=await createHarness(),results=[],dir=await mkdtemp(path.join(os.tmpdir(),'afa-doc-check-'));
 const file=path.join(dir,'candidate.md'),original=await readFile(`${projectRoot}/prototype/fixtures/documents/candidate.md`,'utf8');
 const backend=process.env.AFA_BACKEND==='playwright'?'playwright':'extension';
-const request=backend==='playwright'?createPlaywrightBackend(h.page).request:r=>h.bridge.request(r);
+const request=backend==='playwright'?createPlaywrightBackend(h.page,{validationMode:process.env.AFA_VALIDATION_MODE??'full'}).request:r=>h.bridge.request(r);
 const check=async(name,fn)=>{try{await fn();results.push({name,passed:true});console.log(`PASS ${name}`);}catch(e){results.push({name,passed:false,error:e.message});console.error(`FAIL ${name}: ${e.message}`);}};
 const setup=async()=>{await h.reset('unfamiliar');await writeFile(file,original);const session=await createDocumentSession({sourcePath:file,request});const context=await session.context();return {session,...context};};
 try{
@@ -57,5 +57,5 @@ try{
   await assert.rejects(session.apply({url:page.url,bindings:{[f.ref]:source.entries.find(e=>e.label==='最高学历').id},choices:{[f.ref]:'invented'}}),/CHOICE_NOT_OBSERVED/);
   const name=page.fields.find(f=>f.domId==='full');await assert.rejects(session.apply({url:page.url,bindings:{[name.ref]:source.entries[1].id},choices:{[name.ref]:'made up'}}),/CHOICE_NOT_OBSERVED/);
  });
-}finally{await h.close();await rm(dir,{recursive:true,force:true});await writeFile(`${projectRoot}/prototype/reports/${backend==='playwright'?'playwright-':''}document-checks.json`,JSON.stringify({date:new Date().toISOString(),results},null,2));}
+}finally{await h.close();await rm(dir,{recursive:true,force:true});await writeFile(`${projectRoot}/prototype/reports/${process.env.AFA_VALIDATION_MODE==='guard'?'guard-':''}${backend==='playwright'?'playwright-':''}document-checks.json`,JSON.stringify({date:new Date().toISOString(),results},null,2));}
 if(results.some(r=>!r.passed))process.exitCode=1;

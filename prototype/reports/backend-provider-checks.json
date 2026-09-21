@@ -1,5 +1,5 @@
 {
-  "date": "2026-09-21T00:11:52.430Z",
+  "date": "2026-09-21T01:28:21.066Z",
   "results": [
     {
       "mode": "binding-repeat",
@@ -12,7 +12,7 @@
         "repeatSchema": true
       },
       "targets": 10,
-      "elapsedMs": 848.9000000953674,
+      "elapsedMs": 859.0999999046326,
       "primitiveCalls": 11,
       "identicalModelVisibleTools": true
     },
@@ -27,7 +27,7 @@
         "repeatSchema": true
       },
       "targets": 10,
-      "elapsedMs": 907.731333,
+      "elapsedMs": 897.488833,
       "primitiveCalls": 13,
       "identicalModelVisibleTools": true
     }

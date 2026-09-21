@@ -1,0 +1,174 @@
+{
+  "batchId": 1789953644511,
+  "scope": "Fixed59 bindings; browser/read-only load excluded, source mapping fixed outside clock. Local executor comparison, not host speed.",
+  "rows": [
+    {
+      "pair": 0,
+      "mode": "full",
+      "date": "2026-09-21T01:20:55.498Z",
+      "bindings": 59,
+      "complete": true,
+      "elapsedMs": 6453.697875000001,
+      "oracle": {
+        "passed": true,
+        "errors": [],
+        "knownTargets": 25,
+        "submitAttempts": 0,
+        "scope": "DOM display and native FormData only; network-dependent location, resume upload, business acceptance not verified."
+      },
+      "guard": {
+        "frozen": true,
+        "allowedReadRequests": 30,
+        "blockedLoadWrites": 2,
+        "blockedAfterFreeze": 12,
+        "webSocketsBlocked": 0,
+        "pending": 0
+      },
+      "fullScans": 63,
+      "guardChecks": 0,
+      "scanBrowserMs": 3167.6000003814697,
+      "scanRoundTripMs": 5867.498245999999,
+      "scanBytes": 22333843
+    },
+    {
+      "pair": 0,
+      "mode": "guard",
+      "date": "2026-09-21T01:21:02.432Z",
+      "bindings": 59,
+      "complete": true,
+      "elapsedMs": 2138.442666,
+      "oracle": {
+        "passed": true,
+        "errors": [],
+        "knownTargets": 25,
+        "submitAttempts": 0,
+        "scope": "DOM display and native FormData only; network-dependent location, resume upload, business acceptance not verified."
+      },
+      "guard": {
+        "frozen": true,
+        "allowedReadRequests": 32,
+        "blockedLoadWrites": 12,
+        "blockedAfterFreeze": 0,
+        "webSocketsBlocked": 0,
+        "pending": 0
+      },
+      "fullScans": 4,
+      "guardChecks": 59,
+      "scanBrowserMs": 1219.3000001907349,
+      "scanRoundTripMs": 1476.215999999993,
+      "scanBytes": 1429297
+    },
+    {
+      "pair": 1,
+      "mode": "guard",
+      "date": "2026-09-21T01:21:08.195Z",
+      "bindings": 59,
+      "complete": true,
+      "elapsedMs": 2093.962667,
+      "oracle": {
+        "passed": true,
+        "errors": [],
+        "knownTargets": 25,
+        "submitAttempts": 0,
+        "scope": "DOM display and native FormData only; network-dependent location, resume upload, business acceptance not verified."
+      },
+      "guard": {
+        "frozen": true,
+        "allowedReadRequests": 30,
+        "blockedLoadWrites": 2,
+        "blockedAfterFreeze": 12,
+        "webSocketsBlocked": 0,
+        "pending": 0
+      },
+      "fullScans": 4,
+      "guardChecks": 59,
+      "scanBrowserMs": 1206.1000003814697,
+      "scanRoundTripMs": 1451.6519160000053,
+      "scanBytes": 1429317
+    },
+    {
+      "pair": 1,
+      "mode": "full",
+      "date": "2026-09-21T01:21:19.181Z",
+      "bindings": 59,
+      "complete": true,
+      "elapsedMs": 6515.167,
+      "oracle": {
+        "passed": true,
+        "errors": [],
+        "knownTargets": 25,
+        "submitAttempts": 0,
+        "scope": "DOM display and native FormData only; network-dependent location, resume upload, business acceptance not verified."
+      },
+      "guard": {
+        "frozen": true,
+        "allowedReadRequests": 30,
+        "blockedLoadWrites": 2,
+        "blockedAfterFreeze": 12,
+        "webSocketsBlocked": 0,
+        "pending": 0
+      },
+      "fullScans": 63,
+      "guardChecks": 0,
+      "scanBrowserMs": 3201.000002384186,
+      "scanRoundTripMs": 5900.198957999996,
+      "scanBytes": 22333789
+    },
+    {
+      "pair": 2,
+      "mode": "full",
+      "date": "2026-09-21T01:21:29.321Z",
+      "bindings": 59,
+      "complete": true,
+      "elapsedMs": 6512.071542,
+      "oracle": {
+        "passed": true,
+        "errors": [],
+        "knownTargets": 25,
+        "submitAttempts": 0,
+        "scope": "DOM display and native FormData only; network-dependent location, resume upload, business acceptance not verified."
+      },
+      "guard": {
+        "frozen": true,
+        "allowedReadRequests": 30,
+        "blockedLoadWrites": 2,
+        "blockedAfterFreeze": 12,
+        "webSocketsBlocked": 0,
+        "pending": 0
+      },
+      "fullScans": 63,
+      "guardChecks": 0,
+      "scanBrowserMs": 3175.900002002716,
+      "scanRoundTripMs": 5889.969208000006,
+      "scanBytes": 22333843
+    },
+    {
+      "pair": 2,
+      "mode": "guard",
+      "date": "2026-09-21T01:21:34.907Z",
+      "bindings": 59,
+      "complete": true,
+      "elapsedMs": 2114.9513330000004,
+      "oracle": {
+        "passed": true,
+        "errors": [],
+        "knownTargets": 25,
+        "submitAttempts": 0,
+        "scope": "DOM display and native FormData only; network-dependent location, resume upload, business acceptance not verified."
+      },
+      "guard": {
+        "frozen": true,
+        "allowedReadRequests": 30,
+        "blockedLoadWrites": 2,
+        "blockedAfterFreeze": 12,
+        "webSocketsBlocked": 0,
+        "pending": 0
+      },
+      "fullScans": 4,
+      "guardChecks": 59,
+      "scanBrowserMs": 1199.9999990463257,
+      "scanRoundTripMs": 1451.4363759999978,
+      "scanBytes": 1429410
+    }
+  ]
+}

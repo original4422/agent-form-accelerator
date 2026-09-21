@@ -167,11 +167,24 @@ export async function executeFormRequest(request) {
       }
     }
   };
-  if (request.op === 'validate') {
+  if (request.op === 'validate' || request.op === 'guard') {
     if (request.snapshot !== state.snapshot || request.url !== location.href) throw new Error('STALE_SNAPSHOT: inspect again');
     for (const {el, signature: prior} of state.nodes.values()) {
       if (!visible(el) || signature(el) !== prior) throw new Error('FIELD_CHANGED: inspect again');
     }
+  }
+  // Internal read-only batch guard: keep the full semantic checks above, but
+  // do not regenerate/refill a large observation for a yes/no decision.
+  if(request.op==='guard'){
+    if(state.busy)throw new Error('BUSY: another fill is running');
+    // Include new visible controls so a newly inserted question cannot become
+    // silently part of a batch whose meaning was decided before it existed.
+    for(const el of document.querySelectorAll('input,textarea,select,[role="combobox"],button')){
+      if(!visible(el)||el.type==='hidden'||(el.tagName==='BUTTON'&&!isAdd(el)&&el.getAttribute('role')!=='combobox'))continue;
+      if(el.tagName==='INPUT'&&['submit','button','reset','image'].includes(el.type))continue;
+      if(!state.nodes.has(state.ids.get(el)))throw new Error('FIELD_CHANGED: new control; inspect again');
+    }
+    return {snapshot:state.snapshot,documentId:state.documentId,url:location.href,elapsedMs:performance.now()-started};
   }
   if (request.op === 'inspect' || request.op === 'validate') {
     if (state.busy) throw new Error('BUSY: another fill is running');

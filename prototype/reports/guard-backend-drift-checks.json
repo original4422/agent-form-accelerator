@@ -1,0 +1,37 @@
+{
+  "date": "2026-09-21T01:20:01.842Z",
+  "results": [
+    {
+      "backend": "extension",
+      "mutation": "label",
+      "passed": true,
+      "complete": false,
+      "reason": "FIELDS_NOT_READY",
+      "actual": ""
+    },
+    {
+      "backend": "extension",
+      "mutation": "group",
+      "passed": true,
+      "complete": false,
+      "reason": "FIELDS_NOT_READY",
+      "actual": ""
+    },
+    {
+      "backend": "playwright",
+      "mutation": "label",
+      "passed": true,
+      "complete": false,
+      "reason": "FIELDS_NOT_READY",
+      "actual": ""
+    },
+    {
+      "backend": "playwright",
+      "mutation": "group",
+      "passed": true,
+      "complete": false,
+      "reason": "FIELDS_NOT_READY",
+      "actual": ""
+    }
+  ]
+}

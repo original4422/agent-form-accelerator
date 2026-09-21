@@ -5,7 +5,7 @@ import {createPlaywrightBackend} from './playwright-backend.mjs';
 import {createDocumentSession} from '../src/document-session.mjs';
 import {projectRoot} from '../src/bridge.mjs';
 import '../scripts/build-fixtures.mjs';
-const h=await createHarness(),request=createPlaywrightBackend(h.page).request,results=[];
+const h=await createHarness(),request=createPlaywrightBackend(h.page,{validationMode:process.env.AFA_VALIDATION_MODE??'full'}).request,results=[];
 const reset=async(suffix='')=>{await h.reset('search-form');if(suffix)await h.page.goto(h.page.url()+suffix);await h.page.waitForSelector('[role=combobox]');return request({op:'inspect'});};
 const school=async o=>request({op:'goal',url:o.url,snapshot:o.snapshot,fields:[{group:'Education 1',label:'Institution',kind:'autocomplete',value:'南方示例学院'}]});
 const check=async(name,fn)=>{try{const details=await fn();results.push({name,passed:true,...details});console.log('PASS '+name);}catch(e){results.push({name,passed:false,error:e.stack});console.error('FAIL '+name+': '+e.message);}};
@@ -33,5 +33,5 @@ try {
    const state=await h.page.evaluate(()=>({data:window.applicationState,validation:window.validationState,submits:window.submissionCount,searches:window.searchRequests}));
    assert.deepEqual(state.data,{fullName:'林示例',email:'candidate@example.test',country:'cn',city:'hz',degree:'pg',schools:[{school:'school-south',major:'软件工程'},{school:'school-north',major:'计算机科学'}],summary:source.entries.find(e=>e.label==='个人介绍').value});assert.equal(state.validation.pending,false);assert.equal(state.submits,0);assert.equal(state.searches.length,3);return{targets:10,elapsedMs:r.elapsedMs,searches:state.searches.length};
  });
-}finally{await h.close();await writeFile(`${projectRoot}/prototype/reports/search-checks.json`,JSON.stringify({date:new Date().toISOString(),component:'react-select@5.10.2',results},null,2));}
+}finally{await h.close();await writeFile(`${projectRoot}/prototype/reports/${process.env.AFA_VALIDATION_MODE==='guard'?'guard-':''}search-checks.json`,JSON.stringify({date:new Date().toISOString(),component:'react-select@5.10.2',results},null,2));}
 if(results.some(r=>!r.passed))process.exitCode=1;

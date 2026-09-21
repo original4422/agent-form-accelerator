@@ -71,7 +71,7 @@
 - `AFA_FIXTURE=alias-form node prototype/scripts/demo-search.mjs` 启动独立演示并打印批量发现临时配置。无头启动和Ctrl+C退出0/自建目录清空已测；没有替用户启动交互Codex或改全局配置。
 - 所有测量进程已结束，没有需继续轮询的句柄。详见 DISCOVERY-AND-COVERAGE.md、ADR-0007。
 
-## 本轮：真实公开页离线验证与上下文投影
+## 前一轮：真实公开页离线验证与上下文投影
 
 - `offline-public-harness.mjs` 新建无登录浏览器，只允许两个公开招聘域名；加载阶段仅GET/HEAD，阻止写方法、Service Worker与WebSocket。输入前路由拒绝全部请求并设置离线，等待已发出的读取结束。提交事件计数/阻止，完整会话结束关闭浏览器。
 - 真实Lever/Palantir页面101字段、学校select3,302项；多个问题只返回placeholder/内部name。单控件容器上下文命名修复后，两后端回归通过（显式名称优先、隐藏文字排除、多字段不猜、旧名称失效）。
@@ -83,19 +83,35 @@
 - 测量88项指纹已验证；测后修复投影当前选项截断，原投影/测试归档到source-snapshots/public-measured。最终保护版未重计时。
 - 所有宿主测量结束，没有需轮询的会话。报告PUBLIC-PAGE-CONTEXT.md、ADR-0008，汇总codex-offline-public-summary.json。
 
+## 本轮：保留全页语义校验，减少全表回传
+
+- 首次profiling固定59绑定，本地6.48s、63次全表observe/validate、22.33MB返回；相关往返5.86s、浏览器函数内3.15s。测量代码validation-cost.mjs，以page.evaluate Proxy记录边界；不是精确CDP所有调用数。
+- 新内部guard仍验证URL/token及每个原观察节点的可见性/标签/类型/name/role/group/原生选项签名，另拒绝新可见控件；只返回小型确认，不重新生成大字段列表/轮换token。批前validate、批后inspect、executeGoal最终回读均保留。不是只验证目标节点，也没有基于MutationObserver缓存。
+- createPlaywrightBackend(page,{validationMode}) 保留full/guard。默认已切guard；离线控制器默认guard。正式计时两边明确传入mode，默认切换未改变被测分支逻辑。实测两个默认full文件归档到source-snapshots/guard-measured，有manifest映射。
+- 16项新保护检查，两模式均阻止批中label/context/replace/hide/disable/options/unrelated语义变化后下一写；guard另拒绝新控件/验证旧token失效。Guard框架16+搜索15+文档8+弹层漂移4通过。默认切换后目标12与两套真实MCP检查通过，共73项。
+- 固定59绑定本地三组1789953644511：full6.454/6.515/6.512s；guard2.138/2.094/2.115s，中位约3.08倍、耗时减67.5%。完整观察63→4次，另59次guard；返回中位22,333,843→1,429,317bytes。6/6独立显示/FormData正确，零提交。
+- Codex配对1789953721237：full44.53/50.13/48.95s；guard47.82/42.47/48.76s，中位48.95→47.82s，仅减2.3%，一组更慢。6/6一次调用、59绑定、零工具错误、初始上下文hash相同，150已知目标/全部布尔选择独立检查正确。六份最终说明人工复核，均报告缺失地点/简历。
+- 关键残差：工具开始前26.52–32.09s；工具区间扣本地执行后4.08–10.87s；工具返回至进程退出6.60–9.63s。当前JSONL边界不能精确区分模型/审批/传输/启动/最终回复，勿把残差全叫推理。CLI目前runCodex带--approve-for-me，可能影响工具外层时间，但尚未有因果实验；不要通过绕过既有审批拒绝制造速度。
+- 所有进程已结束，无需轮询。源码冻结时92个指纹验证一致；本轮报告VALIDATION-GUARD.md、ADR-0009。目标继续active。
+
 ## 下一轮按证据推进
 
-1. 真实大表已知事实单调用填写已证明，但完整任务明显加速仍未证明。不要继续只因字节变少就宣称模型更快，或反复调提示追逐两倍。
-2. 可以单独验证**每个字段反复扫描整张大表**的开销，比较一次全页验证 + 每目标局部身份/相关语义保护 + 最终整体验证；不能直接删除变更保护。将已观察到的59绑定（34false）纳入明确相同的执行工作量，记录浏览器协议/观察耗时，避免把模型不同策略算作引擎性能。Jev紧凑快照/目标保护可作参考，不引入新模型API Key。
-3. 工程离完整申请仍缺实际来源文档/PDF、附件上传、服务端地点选择、多页与日常浏览器接入。离线真页面比自建样本更接近目标，但不是完整申请或服务器接受。继续朝可用流程推进，避免堆积测量框架而迟迟不能日常试用。
-4. Playwright常规入口仍仅localhost fixture；公开页离线入口是控制器持有的隔离干跑（临时本机随机凭证），不接管用户浏览器。不要悄悄解除网络限制或真正投递。
-5. 三类真实完整任务稳定两倍仍缺证据，不能将原生/Radix/React Select功能检查当作验收。保留强批量基线、所有尝试与错误恢复；目标active，不反复索要URL。
+1. **执行器局部瓶颈已定位并改进；用户端明显提速仍未证明。** 不继续为好看的本地3倍堆DOM优化。首工具前与工具外围时间才是下一步需要拆开的关键路径。
+2. 可在runCodex保留进程开始的epoch时间，在控制器/工具服务端记录请求接收、实际执行开始/结束、响应完成的时间（仅元数据，不记录凭据/资料），对齐CLI工具开始/结束。先区分等待发生在工具服务端之前还是之后，再决定优化什么。已有source/session/capability配置只改临时实例，不改全局设置。
+3. 如调查Codex设置/审批模式，先查本地CLI与官方文档，不假定默认模型或把审批残差等同推理；不能为了提速绕过已有拒绝或降低真实使用的验证/权限要求。可以研究减少模型输出重复映射、把完整多选问题作为一项语义决策，但先有对应瓶颈证据，避免再加未验证接口。
+4. 用户日常可用仍缺实际来源文档/PDF、附件、服务端地点选择、多页与个人浏览器接入。继续推进完整用户流程，避免项目只剩测量框架。离线真页面不是服务器接受或完整申请。
+5. 三类真实完整任务稳定两倍仍缺证据；保持合理批量强基线、全部尝试与正确性门槛。不要反复索要URL，不解除离线限制或真正投递。
 
 ## 测量规则
 
 所有宿主尝试保留，错误恢复计入时延，独立应用状态 oracle 校验，禁止提交申请。耗时明确分出浏览器启动、CLI启动、模型/工具、资料准备。研究和其他浏览器测试不与宿主计时并行争用本地执行资源。不得修改已安装的 Skill 或全局 MCP 配置。
 
 ## 可复现入口
+
+- `node prototype/bench/guard-check.mjs`：16项批中变更保护。
+- `node prototype/bench/validation-cost-pairs.mjs`：固定59绑定的3组本地full/guard对照。
+- `node prototype/bench/codex-validation-guard.mjs`：3组完整Codex对照，同compact上下文、要求相同59绑定。
+- `AFA_BACKEND=playwright AFA_VALIDATION_MODE=guard node prototype/bench/framework-check.mjs`：guard版框架回归；search/document/backend-drift检查也支持该环境变量，输出guard-前缀报告。
 
 - `node prototype/bench/offline-public-check.mjs`：真实公开页加载后离线，手工绑定25项/独立核验，含网络阻断探针。
 - `node prototype/bench/codex-offline-public.mjs`：默认1对full/compact；AFA_REPEATS指定组数、AFA_PUBLIC_MODES指定顺序。网站可能变化/下线，失败不得当同任务成功。

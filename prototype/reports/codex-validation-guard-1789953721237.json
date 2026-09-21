@@ -1,0 +1,596 @@
+{
+  "batchId": 1789953721237,
+  "date": "2026-09-21T01:27:11.216Z",
+  "aborted": false,
+  "scope": "Real public Lever page loaded in disposable browser with read-only traffic, then offline before fictional input. Internal full-observation-per-action vs full-signature-guard comparison. Same source, compact model context, task, prompt and final verification; exactly59 bindings including34 false closed-list checkbox choices required for comparable work. Guard retains full signature validation and adds new-control detection; only full snapshot rebuild/return is elided between actions. Browser/public load and metadata-only preflight excluded; CLI/model/MCP/tools/recovery/exit included. Not server acceptance or complete real application: location and resume remain unresolved. No personal profile, application upload or submission.",
+  "rows": [
+    {
+      "equalWork": true,
+      "bindingCounts": [
+        59
+      ],
+      "attempt": "1789953721237-0-guard-full",
+      "repetition": 0,
+      "mode": "full",
+      "preflight": {
+        "contextHash": "52efcefcfc321977ac04cf92c8bd90b7785ae41c69e7ce507285fc953e894586",
+        "passed": true,
+        "tools": 4,
+        "sourceEntries": 23,
+        "fields": 101,
+        "contextBytes": 41320,
+        "schoolOptionsShown": 2
+      },
+      "elapsedMs": 44529.146083,
+      "exitCode": 0,
+      "timedOut": false,
+      "aborted": false,
+      "passed": true,
+      "errors": [],
+      "knownTargets": 25,
+      "submitAttempts": 0,
+      "scope": "DOM display and native FormData only; network-dependent location, resume upload, business acceptance not verified.",
+      "guard": {
+        "frozen": true,
+        "allowedReadRequests": 30,
+        "blockedLoadWrites": 2,
+        "blockedAfterFreeze": 12,
+        "webSocketsBlocked": 0,
+        "pending": 0
+      },
+      "finalText": "Filled and verified all 59 supported targets, preserving source paragraphs exactly. Explicitly bound all 33 language and 5 office checkboxes; unlisted options are false.\n\nUnresolved: required current location is missing from the profile. Resume/CV attachment is unsupported and was not uploaded. Location lookup and resume upload cannot be certified offline.\n\nNothing was submitted or navigated.",
+      "toolCalls": [
+        {
+          "tool": "form_apply_bindings",
+          "status": "completed",
+          "startMs": 27189.668707999997,
+          "endMs": 37933.348708000005,
+          "durationMs": 10743.680000000008,
+          "returnedBytes": 48536,
+          "executionMs": 6659.352917000004,
+          "complete": true,
+          "primitiveCalls": 3
+        }
+      ],
+      "usage": {
+        "input_tokens": 164765,
+        "cached_input_tokens": 123520,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 622,
+        "reasoning_output_tokens": 12
+      },
+      "timeline": [
+        {
+          "atMs": 1422.5145000000002,
+          "event": "thread.started"
+        },
+        {
+          "atMs": 1435.0568329999996,
+          "event": "turn.started"
+        },
+        {
+          "atMs": 6808.571542000001,
+          "event": "item.completed",
+          "itemId": "item_0",
+          "itemType": "agent_message"
+        },
+        {
+          "atMs": 27189.668707999997,
+          "event": "item.started",
+          "itemId": "item_1",
+          "itemType": "mcp_tool_call",
+          "tool": "form_apply_bindings",
+          "status": "in_progress"
+        },
+        {
+          "atMs": 37933.348708000005,
+          "event": "item.completed",
+          "itemId": "item_1",
+          "itemType": "mcp_tool_call",
+          "tool": "form_apply_bindings",
+          "status": "completed"
+        },
+        {
+          "atMs": 41988.680208000005,
+          "event": "item.completed",
+          "itemId": "item_2",
+          "itemType": "agent_message"
+        },
+        {
+          "atMs": 41996.863458,
+          "event": "turn.completed"
+        }
+      ]
+    },
+    {
+      "equalWork": true,
+      "bindingCounts": [
+        59
+      ],
+      "attempt": "1789953721237-0-guard-guard",
+      "repetition": 0,
+      "mode": "guard",
+      "preflight": {
+        "contextHash": "52efcefcfc321977ac04cf92c8bd90b7785ae41c69e7ce507285fc953e894586",
+        "passed": true,
+        "tools": 4,
+        "sourceEntries": 23,
+        "fields": 101,
+        "contextBytes": 41320,
+        "schoolOptionsShown": 2
+      },
+      "elapsedMs": 47818.982458,
+      "exitCode": 0,
+      "timedOut": false,
+      "aborted": false,
+      "passed": true,
+      "errors": [],
+      "knownTargets": 25,
+      "submitAttempts": 0,
+      "scope": "DOM display and native FormData only; network-dependent location, resume upload, business acceptance not verified.",
+      "guard": {
+        "frozen": true,
+        "allowedReadRequests": 30,
+        "blockedLoadWrites": 2,
+        "blockedAfterFreeze": 12,
+        "webSocketsBlocked": 0,
+        "pending": 0
+      },
+      "finalText": "Filled and verified all 59 source-supported targets, preserving paragraphs verbatim. Explicitly set all 33 language and 5 office checkboxes; unlisted options are false.\n\nRequired information still missing: **Current location**. Location lookup cannot be certified offline.\n\n**Resume/CV** attachment is unsupported and was not uploaded; upload cannot be certified offline. No submission or navigation occurred.",
+      "toolCalls": [
+        {
+          "tool": "form_apply_bindings",
+          "status": "completed",
+          "startMs": 27439.790500000003,
+          "endMs": 40556.630124999996,
+          "durationMs": 13116.839624999993,
+          "returnedBytes": 48536,
+          "executionMs": 2242.992333000002,
+          "complete": true,
+          "primitiveCalls": 3
+        }
+      ],
+      "usage": {
+        "input_tokens": 107213,
+        "cached_input_tokens": 77696,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 656,
+        "reasoning_output_tokens": 31
+      },
+      "timeline": [
+        {
+          "atMs": 141.3807919999963,
+          "event": "thread.started"
+        },
+        {
+          "atMs": 143.1753749999989,
+          "event": "turn.started"
+        },
+        {
+          "atMs": 7301.950917000002,
+          "event": "item.completed",
+          "itemId": "item_0",
+          "itemType": "agent_message"
+        },
+        {
+          "atMs": 27439.790500000003,
+          "event": "item.started",
+          "itemId": "item_1",
+          "itemType": "mcp_tool_call",
+          "tool": "form_apply_bindings",
+          "status": "in_progress"
+        },
+        {
+          "atMs": 40556.630124999996,
+          "event": "item.completed",
+          "itemId": "item_1",
+          "itemType": "mcp_tool_call",
+          "tool": "form_apply_bindings",
+          "status": "completed"
+        },
+        {
+          "atMs": 44692.744833000004,
+          "event": "item.completed",
+          "itemId": "item_2",
+          "itemType": "agent_message"
+        },
+        {
+          "atMs": 44725.395667000004,
+          "event": "turn.completed"
+        }
+      ]
+    },
+    {
+      "equalWork": true,
+      "bindingCounts": [
+        59
+      ],
+      "attempt": "1789953721237-1-guard-guard",
+      "repetition": 1,
+      "mode": "guard",
+      "preflight": {
+        "contextHash": "52efcefcfc321977ac04cf92c8bd90b7785ae41c69e7ce507285fc953e894586",
+        "passed": true,
+        "tools": 4,
+        "sourceEntries": 23,
+        "fields": 101,
+        "contextBytes": 41320,
+        "schoolOptionsShown": 2
+      },
+      "elapsedMs": 42469.139041999995,
+      "exitCode": 0,
+      "timedOut": false,
+      "aborted": false,
+      "passed": true,
+      "errors": [],
+      "knownTargets": 25,
+      "submitAttempts": 0,
+      "scope": "DOM display and native FormData only; network-dependent location, resume upload, business acceptance not verified.",
+      "guard": {
+        "frozen": true,
+        "allowedReadRequests": 32,
+        "blockedLoadWrites": 12,
+        "blockedAfterFreeze": 0,
+        "webSocketsBlocked": 0,
+        "pending": 0
+      },
+      "finalText": "Filled and verified all 59 source-supported targets, preserving paragraphs verbatim. Explicitly reconciled all 33 language and 5 office checkboxes.\n\nRemaining:\n- Required current location: absent from profile; lookup cannot be certified offline.\n- Resume/CV attachment: unsupported; upload not performed or certified.\n\nUnsupported optional answers remained untouched. Nothing was submitted.",
+      "toolCalls": [
+        {
+          "tool": "form_apply_bindings",
+          "status": "completed",
+          "startMs": 26515.293042000005,
+          "endMs": 35538.886417,
+          "durationMs": 9023.593374999997,
+          "returnedBytes": 48536,
+          "executionMs": 2262.721292000002,
+          "complete": true,
+          "primitiveCalls": 3
+        }
+      ],
+      "usage": {
+        "input_tokens": 112185,
+        "cached_input_tokens": 80128,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 577,
+        "reasoning_output_tokens": 0
+      },
+      "timeline": [
+        {
+          "atMs": 1012.271041999993,
+          "event": "thread.started"
+        },
+        {
+          "atMs": 1015.7624999999971,
+          "event": "turn.started"
+        },
+        {
+          "atMs": 7964.986917000002,
+          "event": "item.completed",
+          "itemId": "item_0",
+          "itemType": "agent_message"
+        },
+        {
+          "atMs": 26515.293042000005,
+          "event": "item.started",
+          "itemId": "item_1",
+          "itemType": "mcp_tool_call",
+          "tool": "form_apply_bindings",
+          "status": "in_progress"
+        },
+        {
+          "atMs": 35538.886417,
+          "event": "item.completed",
+          "itemId": "item_1",
+          "itemType": "mcp_tool_call",
+          "tool": "form_apply_bindings",
+          "status": "completed"
+        },
+        {
+          "atMs": 40144.40604199999,
+          "event": "item.completed",
+          "itemId": "item_2",
+          "itemType": "agent_message"
+        },
+        {
+          "atMs": 40159.29712500001,
+          "event": "turn.completed"
+        }
+      ]
+    },
+    {
+      "equalWork": true,
+      "bindingCounts": [
+        59
+      ],
+      "attempt": "1789953721237-1-guard-full",
+      "repetition": 1,
+      "mode": "full",
+      "preflight": {
+        "contextHash": "52efcefcfc321977ac04cf92c8bd90b7785ae41c69e7ce507285fc953e894586",
+        "passed": true,
+        "tools": 4,
+        "sourceEntries": 23,
+        "fields": 101,
+        "contextBytes": 41320,
+        "schoolOptionsShown": 2
+      },
+      "elapsedMs": 50134.409541,
+      "exitCode": 0,
+      "timedOut": false,
+      "aborted": false,
+      "passed": true,
+      "errors": [],
+      "knownTargets": 25,
+      "submitAttempts": 0,
+      "scope": "DOM display and native FormData only; network-dependent location, resume upload, business acceptance not verified.",
+      "guard": {
+        "frozen": true,
+        "allowedReadRequests": 30,
+        "blockedLoadWrites": 2,
+        "blockedAfterFreeze": 12,
+        "webSocketsBlocked": 0,
+        "pending": 0
+      },
+      "finalText": "Filled and verified all 59 supported targets, preserving source paragraphs verbatim.\n\n- Explicitly reconciled all 33 language and 5 office checkboxes.\n- Required information unresolved: current location is absent from the profile.\n- Resume/CV attachment is unsupported and was not uploaded. Location lookup and resume upload cannot be certified offline.\n\nUnsupported optional answers were left untouched. Nothing was submitted.",
+      "toolCalls": [
+        {
+          "tool": "form_apply_bindings",
+          "status": "completed",
+          "startMs": 30090.816374999995,
+          "endMs": 42560.11791599999,
+          "durationMs": 12469.301540999993,
+          "returnedBytes": 48536,
+          "executionMs": 6722.900625000009,
+          "complete": true,
+          "primitiveCalls": 3
+        }
+      ],
+      "usage": {
+        "input_tokens": 164822,
+        "cached_input_tokens": 123520,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 639,
+        "reasoning_output_tokens": 26
+      },
+      "timeline": [
+        {
+          "atMs": 112.70408299998962,
+          "event": "thread.started"
+        },
+        {
+          "atMs": 114.43620799999917,
+          "event": "turn.started"
+        },
+        {
+          "atMs": 6884.547082999983,
+          "event": "item.completed",
+          "itemId": "item_0",
+          "itemType": "agent_message"
+        },
+        {
+          "atMs": 30090.816374999995,
+          "event": "item.started",
+          "itemId": "item_1",
+          "itemType": "mcp_tool_call",
+          "tool": "form_apply_bindings",
+          "status": "in_progress"
+        },
+        {
+          "atMs": 42560.11791599999,
+          "event": "item.completed",
+          "itemId": "item_1",
+          "itemType": "mcp_tool_call",
+          "tool": "form_apply_bindings",
+          "status": "completed"
+        },
+        {
+          "atMs": 47918.47433299999,
+          "event": "item.completed",
+          "itemId": "item_2",
+          "itemType": "agent_message"
+        },
+        {
+          "atMs": 47934.53641599999,
+          "event": "turn.completed"
+        }
+      ]
+    },
+    {
+      "equalWork": true,
+      "bindingCounts": [
+        59
+      ],
+      "attempt": "1789953721237-2-guard-full",
+      "repetition": 2,
+      "mode": "full",
+      "preflight": {
+        "contextHash": "52efcefcfc321977ac04cf92c8bd90b7785ae41c69e7ce507285fc953e894586",
+        "passed": true,
+        "tools": 4,
+        "sourceEntries": 23,
+        "fields": 101,
+        "contextBytes": 41320,
+        "schoolOptionsShown": 2
+      },
+      "elapsedMs": 48945.54783300002,
+      "exitCode": 0,
+      "timedOut": false,
+      "aborted": false,
+      "passed": true,
+      "errors": [],
+      "knownTargets": 25,
+      "submitAttempts": 0,
+      "scope": "DOM display and native FormData only; network-dependent location, resume upload, business acceptance not verified.",
+      "guard": {
+        "frozen": true,
+        "allowedReadRequests": 30,
+        "blockedLoadWrites": 2,
+        "blockedAfterFreeze": 12,
+        "webSocketsBlocked": 0,
+        "pending": 0
+      },
+      "finalText": "Filled and verified all 59 source-supported targets, preserving paragraphs exactly. Explicitly reconciled all 33 language and 5 office checkboxes; unlisted options are false.\n\nUnresolved: required current location is absent from the profile. Location lookup and the unsupported Resume/CV upload cannot be certified offline.\n\nOther unsupported fields were left untouched. Nothing was submitted.",
+      "toolCalls": [
+        {
+          "tool": "form_apply_bindings",
+          "status": "completed",
+          "startMs": 27036.936792000022,
+          "endMs": 39313.142417000025,
+          "durationMs": 12276.205625000002,
+          "returnedBytes": 48536,
+          "executionMs": 6558.198415999999,
+          "complete": true,
+          "primitiveCalls": 3
+        }
+      ],
+      "usage": {
+        "input_tokens": 164920,
+        "cached_input_tokens": 123520,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 631,
+        "reasoning_output_tokens": 0
+      },
+      "timeline": [
+        {
+          "atMs": 1038.2892500000016,
+          "event": "thread.started"
+        },
+        {
+          "atMs": 1041.1295830000017,
+          "event": "turn.started"
+        },
+        {
+          "atMs": 6400.634208000003,
+          "event": "item.completed",
+          "itemId": "item_0",
+          "itemType": "agent_message"
+        },
+        {
+          "atMs": 27036.936792000022,
+          "event": "item.started",
+          "itemId": "item_1",
+          "itemType": "mcp_tool_call",
+          "tool": "form_apply_bindings",
+          "status": "in_progress"
+        },
+        {
+          "atMs": 39313.142417000025,
+          "event": "item.completed",
+          "itemId": "item_1",
+          "itemType": "mcp_tool_call",
+          "tool": "form_apply_bindings",
+          "status": "completed"
+        },
+        {
+          "atMs": 46568.92129200001,
+          "event": "item.completed",
+          "itemId": "item_2",
+          "itemType": "agent_message"
+        },
+        {
+          "atMs": 46579.27520800001,
+          "event": "turn.completed"
+        }
+      ]
+    },
+    {
+      "equalWork": true,
+      "bindingCounts": [
+        59
+      ],
+      "attempt": "1789953721237-2-guard-guard",
+      "repetition": 2,
+      "mode": "guard",
+      "preflight": {
+        "contextHash": "52efcefcfc321977ac04cf92c8bd90b7785ae41c69e7ce507285fc953e894586",
+        "passed": true,
+        "tools": 4,
+        "sourceEntries": 23,
+        "fields": 101,
+        "contextBytes": 41320,
+        "schoolOptionsShown": 2
+      },
+      "elapsedMs": 48761.79016699997,
+      "exitCode": 0,
+      "timedOut": false,
+      "aborted": false,
+      "passed": true,
+      "errors": [],
+      "knownTargets": 25,
+      "submitAttempts": 0,
+      "scope": "DOM display and native FormData only; network-dependent location, resume upload, business acceptance not verified.",
+      "guard": {
+        "frozen": true,
+        "allowedReadRequests": 30,
+        "blockedLoadWrites": 2,
+        "blockedAfterFreeze": 12,
+        "webSocketsBlocked": 0,
+        "pending": 0
+      },
+      "finalText": "Filled and verified all 59 source-supported targets, preserving paragraphs verbatim. Explicitly reconciled all 33 language and 5 office checkboxes; unsupported optional groups remained untouched.\n\nUnresolved required information: current location is missing from the profile. Location lookup cannot be certified offline.\n\nResume/CV attachment is unsupported, was not uploaded, and cannot be certified offline. Nothing was submitted or navigated.",
+      "toolCalls": [
+        {
+          "tool": "form_apply_bindings",
+          "status": "completed",
+          "startMs": 32087.847167,
+          "endMs": 39588.03379199997,
+          "durationMs": 7500.186624999973,
+          "returnedBytes": 48536,
+          "executionMs": 2217.680416999967,
+          "complete": true,
+          "primitiveCalls": 3
+        }
+      ],
+      "usage": {
+        "input_tokens": 164999,
+        "cached_input_tokens": 123648,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 677,
+        "reasoning_output_tokens": 13
+      },
+      "timeline": [
+        {
+          "atMs": 1012.5573749999749,
+          "event": "thread.started"
+        },
+        {
+          "atMs": 1016.5565419999766,
+          "event": "turn.started"
+        },
+        {
+          "atMs": 8517.010375000013,
+          "event": "item.completed",
+          "itemId": "item_0",
+          "itemType": "agent_message"
+        },
+        {
+          "atMs": 32087.847167,
+          "event": "item.started",
+          "itemId": "item_1",
+          "itemType": "mcp_tool_call",
+          "tool": "form_apply_bindings",
+          "status": "in_progress"
+        },
+        {
+          "atMs": 39588.03379199997,
+          "event": "item.completed",
+          "itemId": "item_1",
+          "itemType": "mcp_tool_call",
+          "tool": "form_apply_bindings",
+          "status": "completed"
+        },
+        {
+          "atMs": 46020.08724999998,
+          "event": "item.completed",
+          "itemId": "item_2",
+          "itemType": "agent_message"
+        },
+        {
+          "atMs": 46035.931500000006,
+          "event": "turn.completed"
+        }
+      ]
+    }
+  ]
+}

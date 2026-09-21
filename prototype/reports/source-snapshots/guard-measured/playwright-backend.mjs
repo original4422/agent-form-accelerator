@@ -5,7 +5,7 @@ import {executeFormRequest} from '../extension/form-runtime.js';
 import {executeGoal} from '../extension/goal-executor.js';
 import {reactSelectState} from './react-select-state.mjs';
 
-export function createPlaywrightBackend(page,{validationMode='guard'}={}) {
+export function createPlaywrightBackend(page,{validationMode='full'}={}) {
   if(!['full','guard'].includes(validationMode))throw new Error('INVALID_VALIDATION_MODE');
   const observe = async request => {
     const result = await page.evaluate(executeFormRequest, request);

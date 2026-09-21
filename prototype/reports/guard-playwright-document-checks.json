@@ -1,0 +1,37 @@
+{
+  "date": "2026-09-21T01:19:56.351Z",
+  "results": [
+    {
+      "name": "source parser preserves paragraphs, order, context and URL colons",
+      "passed": true
+    },
+    {
+      "name": "hidden helper text and decorative aria-hidden stars excluded",
+      "passed": true
+    },
+    {
+      "name": "explicit hidden aria-labelledby reference remains a label",
+      "passed": true
+    },
+    {
+      "name": "two Yes/No questions have separate observed meanings",
+      "passed": true
+    },
+    {
+      "name": "unmapped Markdown references fill multilingual form without copying paragraphs",
+      "passed": true
+    },
+    {
+      "name": "page relabel after context is rejected before mutation",
+      "passed": true
+    },
+    {
+      "name": "source change after context is rejected before mutation",
+      "passed": true
+    },
+    {
+      "name": "unobserved choices and arbitrary text overrides rejected",
+      "passed": true
+    }
+  ]
+}

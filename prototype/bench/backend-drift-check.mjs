@@ -8,7 +8,7 @@ const h=await createHarness(),results=[];
 try {
   for(const backend of ['extension','playwright'])for(const mutation of ['label','group']) {
     await h.reset('react-form');await h.page.waitForSelector('input');
-    const request=backend==='extension'?r=>h.bridge.request(r):createPlaywrightBackend(h.page).request;
+    const request=backend==='extension'?r=>h.bridge.request(r):createPlaywrightBackend(h.page,{validationMode:process.env.AFA_VALIDATION_MODE??'full'}).request;
     const o=await request({op:'inspect'});
     await h.page.evaluate(mutation=>{
       const trigger=document.querySelector('[aria-label="Qualification level"]');
@@ -25,5 +25,5 @@ try {
     results.push({backend,mutation,passed:!error,error,complete:r.complete,reason:r.reason,actual});
     console.log(`${error?'FAIL':'PASS'} ${backend} ${mutation} drift`);
   }
-}finally{await h.close();await writeFile(`${projectRoot}/prototype/reports/backend-drift-checks.json`,JSON.stringify({date:new Date().toISOString(),results},null,2));}
+}finally{await h.close();await writeFile(`${projectRoot}/prototype/reports/${process.env.AFA_VALIDATION_MODE==='guard'?'guard-':''}backend-drift-checks.json`,JSON.stringify({date:new Date().toISOString(),results},null,2));}
 if(results.some(r=>!r.passed))process.exitCode=1;

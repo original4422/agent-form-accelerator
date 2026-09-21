@@ -7,7 +7,7 @@ import {projectRoot} from '../src/bridge.mjs';
 import '../scripts/build-fixtures.mjs';
 const h=await createHarness(),results=[];
 const backend=process.env.AFA_BACKEND==='playwright'?'playwright':'extension';
-const request=backend==='playwright'?createPlaywrightBackend(h.page).request:r=>h.bridge.request(r);
+const request=backend==='playwright'?createPlaywrightBackend(h.page,{validationMode:process.env.AFA_VALIDATION_MODE??'full'}).request:r=>h.bridge.request(r);
 const reset=async()=>{await h.reset('react-form');await h.page.waitForSelector('input');return request({op:'inspect'});};
 const check=async(name,fn)=>{try{const details=await fn();results.push({name,passed:true,...details});console.log('PASS '+name);}catch(e){results.push({name,passed:false,error:e.stack});console.error('FAIL '+name+': '+e.message);}};
 const goal=(o,fields)=>request({op:'goal',url:o.url,snapshot:o.snapshot,fields});
@@ -47,5 +47,5 @@ try{
   await assert.rejects(session.expand({url:page.url,controlRef:'submit'}),/UNOBSERVED_ADD_CONTROL/);assert.equal(await h.page.locator('fieldset').count(),1);assert.equal(await h.page.evaluate(()=>window.submissionCount),0);
  });
 
-}finally{await h.close();await writeFile(`${projectRoot}/prototype/reports/${backend==='playwright'?'playwright-backend':'framework'}-checks.json`,JSON.stringify({date:new Date().toISOString(),backend,framework:'React 19.3.0 + Radix Select 2.3.7',results},null,2));}
+}finally{await h.close();await writeFile(`${projectRoot}/prototype/reports/${process.env.AFA_VALIDATION_MODE==='guard'?'guard-':''}${backend==='playwright'?'playwright-backend':'framework'}-checks.json`,JSON.stringify({date:new Date().toISOString(),backend,framework:'React 19.3.0 + Radix Select 2.3.7',results},null,2));}
 if(results.some(r=>!r.passed))process.exitCode=1;

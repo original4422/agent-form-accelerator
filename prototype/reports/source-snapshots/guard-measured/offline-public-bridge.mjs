@@ -3,7 +3,7 @@ import {randomUUID} from 'node:crypto';
 import {createPlaywrightBackend} from './playwright-backend.mjs';
 // This controller remains outside Codex. The model-facing provider can only use
 // the form protocol against this already-frozen disposable page.
-export async function serveOfflinePage(h,{validationMode='guard'}={}) {
+export async function serveOfflinePage(h,{validationMode='full'}={}) {
  const token=randomUUID(),backend=createPlaywrightBackend(h.page,{validationMode}),url=h.page.url();
  const server=http.createServer(async(req,res)=>{
   const send=(status,data)=>{res.writeHead(status,{'content-type':'application/json'});res.end(JSON.stringify(data));};

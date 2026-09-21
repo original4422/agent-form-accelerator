@@ -1,0 +1,479 @@
+{
+  "mode": "guard",
+  "date": "2026-09-21T01:21:34.907Z",
+  "bindings": 59,
+  "complete": true,
+  "elapsedMs": 2114.9513330000004,
+  "oracle": {
+    "passed": true,
+    "errors": [],
+    "knownTargets": 25,
+    "submitAttempts": 0,
+    "scope": "DOM display and native FormData only; network-dependent location, resume upload, business acceptance not verified."
+  },
+  "guard": {
+    "frozen": true,
+    "allowedReadRequests": 30,
+    "blockedLoadWrites": 2,
+    "blockedAfterFreeze": 12,
+    "webSocketsBlocked": 0,
+    "pending": 0
+  },
+  "fullScans": 4,
+  "guardChecks": 59,
+  "scanBrowserMs": 1199.9999990463257,
+  "scanRoundTripMs": 1451.4363759999978,
+  "scanBytes": 1429410,
+  "evaluations": [
+    {
+      "operation": "validate",
+      "function": "executeFormRequest",
+      "totalMs": 99.61937500000022,
+      "browserMs": 52.200000286102295,
+      "bytes": 353642,
+      "fields": 101
+    },
+    {
+      "operation": "validate",
+      "function": "executeFormRequest",
+      "totalMs": 97.54500000000007,
+      "browserMs": 52.700000286102295,
+      "bytes": 353642,
+      "fields": 101
+    },
+    {
+      "operation": "guard",
+      "function": "executeFormRequest",
+      "totalMs": 18.70550000000003,
+      "browserMs": 17.40000009536743,
+      "bytes": 215
+    },
+    {
+      "operation": "guard",
+      "function": "executeFormRequest",
+      "totalMs": 18.361041999999998,
+      "browserMs": 17.299999713897705,
+      "bytes": 216
+    },
+    {
+      "operation": "guard",
+      "function": "executeFormRequest",
+      "totalMs": 18.105458999999883,
+      "browserMs": 17.200000286102295,
+      "bytes": 216
+    },
+    {
+      "operation": "guard",
+      "function": "executeFormRequest",
+      "totalMs": 18.471500000000106,
+      "browserMs": 17.299999713897705,
+      "bytes": 216
+    },
+    {
+      "operation": "guard",
+      "function": "executeFormRequest",
+      "totalMs": 17.538042000000132,
+      "browserMs": 16.59999990463257,
+      "bytes": 215
+    },
+    {
+      "operation": "guard",
+      "function": "executeFormRequest",
+      "totalMs": 17.61120800000026,
+      "browserMs": 16.800000190734863,
+      "bytes": 216
+    },
+    {
+      "operation": "guard",
+      "function": "executeFormRequest",
+      "totalMs": 17.711499999999887,
+      "browserMs": 16.700000286102295,
+      "bytes": 216
+    },
+    {
+      "operation": "guard",
+      "function": "executeFormRequest",
+      "totalMs": 17.5737909999998,
+      "browserMs": 16.59999990463257,
+      "bytes": 215
+    },
+    {
+      "operation": "guard",
+      "function": "executeFormRequest",
+      "totalMs": 24.463999999999942,
+      "browserMs": 23.40000009536743,
+      "bytes": 215
+    },
+    {
+      "operation": "guard",
+      "function": "executeFormRequest",
+      "totalMs": 23.056082999999944,
+      "browserMs": 22.199999809265137,
+      "bytes": 216
+    },
+    {
+      "operation": "guard",
+      "function": "executeFormRequest",
+      "totalMs": 17.894458000000213,
+      "browserMs": 16.90000009536743,
+      "bytes": 215
+    },
+    {
+      "operation": "guard",
+      "function": "executeFormRequest",
+      "totalMs": 31.63274999999976,
+      "browserMs": 18.199999809265137,
+      "bytes": 216
+    },
+    {
+      "operation": "guard",
+      "function": "executeFormRequest",
+      "totalMs": 18.534291999999823,
+      "browserMs": 17.299999713897705,
+      "bytes": 216
+    },
+    {
+      "operation": "guard",
+      "function": "executeFormRequest",
+      "totalMs": 18.087540999999874,
+      "browserMs": 16.799999713897705,
+      "bytes": 216
+    },
+    {
+      "operation": "guard",
+      "function": "executeFormRequest",
+      "totalMs": 24.406040999999732,
+      "browserMs": 23.300000190734863,
+      "bytes": 216
+    },
+    {
+      "operation": "guard",
+      "function": "executeFormRequest",
+      "totalMs": 23.128541999999925,
+      "browserMs": 22.09999990463257,
+      "bytes": 215
+    },
+    {
+      "operation": "guard",
+      "function": "executeFormRequest",
+      "totalMs": 18.338666999999987,
+      "browserMs": 17.200000286102295,
+      "bytes": 216
+    },
+    {
+      "operation": "guard",
+      "function": "executeFormRequest",
+      "totalMs": 18.00191700000005,
+      "browserMs": 17,
+      "bytes": 200
+    },
+    {
+      "operation": "guard",
+      "function": "executeFormRequest",
+      "totalMs": 17.958209000000352,
+      "browserMs": 17.09999990463257,
+      "bytes": 215
+    },
+    {
+      "operation": "guard",
+      "function": "executeFormRequest",
+      "totalMs": 17.96574999999939,
+      "browserMs": 17,
+      "bytes": 200
+    },
+    {
+      "operation": "guard",
+      "function": "executeFormRequest",
+      "totalMs": 18.32312499999989,
+      "browserMs": 17.399999618530273,
+      "bytes": 216
+    },
+    {
+      "operation": "guard",
+      "function": "executeFormRequest",
+      "totalMs": 18.529125000000022,
+      "browserMs": 17.5,
+      "bytes": 202
+    },
+    {
+      "operation": "guard",
+      "function": "executeFormRequest",
+      "totalMs": 19.191125000000284,
+      "browserMs": 18.200000286102295,
+      "bytes": 216
+    },
+    {
+      "operation": "guard",
+      "function": "executeFormRequest",
+      "totalMs": 19.16791699999976,
+      "browserMs": 18.09999990463257,
+      "bytes": 215
+    },
+    {
+      "operation": "guard",
+      "function": "executeFormRequest",
+      "totalMs": 18.955957999999555,
+      "browserMs": 18,
+      "bytes": 200
+    },
+    {
+      "operation": "guard",
+      "function": "executeFormRequest",
+      "totalMs": 19.082540999999765,
+      "browserMs": 18.09999990463257,
+      "bytes": 215
+    },
+    {
+      "operation": "guard",
+      "function": "executeFormRequest",
+      "totalMs": 18.110791000000063,
+      "browserMs": 17.09999990463257,
+      "bytes": 215
+    },
+    {
+      "operation": "guard",
+      "function": "executeFormRequest",
+      "totalMs": 17.544999999999163,
+      "browserMs": 16.799999713897705,
+      "bytes": 216
+    },
+    {
+      "operation": "guard",
+      "function": "executeFormRequest",
+      "totalMs": 17.748499999999694,
+      "browserMs": 16.899999618530273,
+      "bytes": 216
+    },
+    {
+      "operation": "guard",
+      "function": "executeFormRequest",
+      "totalMs": 17.783250000000407,
+      "browserMs": 16.800000190734863,
+      "bytes": 216
+    },
+    {
+      "operation": "guard",
+      "function": "executeFormRequest",
+      "totalMs": 21.68158399999993,
+      "browserMs": 17.90000009536743,
+      "bytes": 215
+    },
+    {
+      "operation": "guard",
+      "function": "executeFormRequest",
+      "totalMs": 17.524916000000303,
+      "browserMs": 16.699999809265137,
+      "bytes": 216
+    },
+    {
+      "operation": "guard",
+      "function": "executeFormRequest",
+      "totalMs": 18.009625000000597,
+      "browserMs": 17.200000286102295,
+      "bytes": 216
+    },
+    {
+      "operation": "guard",
+      "function": "executeFormRequest",
+      "totalMs": 17.500874999999724,
+      "browserMs": 16.5,
+      "bytes": 202
+    },
+    {
+      "operation": "guard",
+      "function": "executeFormRequest",
+      "totalMs": 17.708208999999442,
+      "browserMs": 16.899999618530273,
+      "bytes": 216
+    },
+    {
+      "operation": "guard",
+      "function": "executeFormRequest",
+      "totalMs": 18.037457999999788,
+      "browserMs": 17.09999990463257,
+      "bytes": 215
+    },
+    {
+      "operation": "guard",
+      "function": "executeFormRequest",
+      "totalMs": 17.48108400000001,
+      "browserMs": 16.699999809265137,
+      "bytes": 216
+    },
+    {
+      "operation": "guard",
+      "function": "executeFormRequest",
+      "totalMs": 17.684666999999536,
+      "browserMs": 17,
+      "bytes": 200
+    },
+    {
+      "operation": "guard",
+      "function": "executeFormRequest",
+      "totalMs": 17.343542000000525,
+      "browserMs": 16.5,
+      "bytes": 202
+    },
+    {
+      "operation": "guard",
+      "function": "executeFormRequest",
+      "totalMs": 17.23029200000019,
+      "browserMs": 16.299999713897705,
+      "bytes": 216
+    },
+    {
+      "operation": "guard",
+      "function": "executeFormRequest",
+      "totalMs": 17.03887500000019,
+      "browserMs": 16.200000286102295,
+      "bytes": 216
+    },
+    {
+      "operation": "guard",
+      "function": "executeFormRequest",
+      "totalMs": 17.433750000000146,
+      "browserMs": 16.5,
+      "bytes": 202
+    },
+    {
+      "operation": "guard",
+      "function": "executeFormRequest",
+      "totalMs": 17.710833000000093,
+      "browserMs": 16.90000009536743,
+      "bytes": 215
+    },
+    {
+      "operation": "guard",
+      "function": "executeFormRequest",
+      "totalMs": 17.06816699999945,
+      "browserMs": 16.199999809265137,
+      "bytes": 216
+    },
+    {
+      "operation": "guard",
+      "function": "executeFormRequest",
+      "totalMs": 17.044042000000445,
+      "browserMs": 16.199999809265137,
+      "bytes": 216
+    },
+    {
+      "operation": "guard",
+      "function": "executeFormRequest",
+      "totalMs": 18.367207999999664,
+      "browserMs": 16.40000009536743,
+      "bytes": 215
+    },
+    {
+      "operation": "guard",
+      "function": "executeFormRequest",
+      "totalMs": 18.551249999999527,
+      "browserMs": 17.59999990463257,
+      "bytes": 215
+    },
+    {
+      "operation": "guard",
+      "function": "executeFormRequest",
+      "totalMs": 17.998124999999163,
+      "browserMs": 17.300000190734863,
+      "bytes": 216
+    },
+    {
+      "operation": "guard",
+      "function": "executeFormRequest",
+      "totalMs": 17.35883300000023,
+      "browserMs": 16.59999990463257,
+      "bytes": 215
+    },
+    {
+      "operation": "guard",
+      "function": "executeFormRequest",
+      "totalMs": 17.937709000000723,
+      "browserMs": 17.09999990463257,
+      "bytes": 215
+    },
+    {
+      "operation": "guard",
+      "function": "executeFormRequest",
+      "totalMs": 17.27270800000042,
+      "browserMs": 16.40000009536743,
+      "bytes": 215
+    },
+    {
+      "operation": "guard",
+      "function": "executeFormRequest",
+      "totalMs": 17.997707999999875,
+      "browserMs": 17.09999990463257,
+      "bytes": 215
+    },
+    {
+      "operation": "guard",
+      "function": "executeFormRequest",
+      "totalMs": 17.71495800000048,
+      "browserMs": 16.90000009536743,
+      "bytes": 215
+    },
+    {
+      "operation": "guard",
+      "function": "executeFormRequest",
+      "totalMs": 18.460583000000042,
+      "browserMs": 17.200000286102295,
+      "bytes": 216
+    },
+    {
+      "operation": "guard",
+      "function": "executeFormRequest",
+      "totalMs": 17.695666999999958,
+      "browserMs": 16.90000009536743,
+      "bytes": 215
+    },
+    {
+      "operation": "guard",
+      "function": "executeFormRequest",
+      "totalMs": 18.029999999999745,
+      "browserMs": 16.90000009536743,
+      "bytes": 215
+    },
+    {
+      "operation": "guard",
+      "function": "executeFormRequest",
+      "totalMs": 18.2230840000002,
+      "browserMs": 17.40000009536743,
+      "bytes": 215
+    },
+    {
+      "operation": "guard",
+      "function": "executeFormRequest",
+      "totalMs": 17.95666699999947,
+      "browserMs": 16.699999809265137,
+      "bytes": 216
+    },
+    {
+      "operation": "guard",
+      "function": "executeFormRequest",
+      "totalMs": 17.657333000000108,
+      "browserMs": 16.800000190734863,
+      "bytes": 216
+    },
+    {
+      "function": "",
+      "totalMs": 37.44970900000044,
+      "bytes": 0
+    },
+    {
+      "operation": "inspect",
+      "function": "executeFormRequest",
+      "totalMs": 77.51850000000013,
+      "browserMs": 34.5,
+      "bytes": 354756,
+      "fields": 101
+    },
+    {
+      "operation": "inspect",
+      "function": "executeFormRequest",
+      "totalMs": 77.05012499999975,
+      "browserMs": 33.19999980926514,
+      "bytes": 354769,
+      "fields": 101
+    }
+  ]
+}

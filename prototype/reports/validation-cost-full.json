@@ -1,0 +1,538 @@
+{
+  "mode": "full",
+  "date": "2026-09-21T01:21:29.321Z",
+  "bindings": 59,
+  "complete": true,
+  "elapsedMs": 6512.071542,
+  "oracle": {
+    "passed": true,
+    "errors": [],
+    "knownTargets": 25,
+    "submitAttempts": 0,
+    "scope": "DOM display and native FormData only; network-dependent location, resume upload, business acceptance not verified."
+  },
+  "guard": {
+    "frozen": true,
+    "allowedReadRequests": 30,
+    "blockedLoadWrites": 2,
+    "blockedAfterFreeze": 12,
+    "webSocketsBlocked": 0,
+    "pending": 0
+  },
+  "fullScans": 63,
+  "guardChecks": 0,
+  "scanBrowserMs": 3175.900002002716,
+  "scanRoundTripMs": 5889.969208000006,
+  "scanBytes": 22333843,
+  "evaluations": [
+    {
+      "operation": "validate",
+      "function": "executeFormRequest",
+      "totalMs": 99.41854199999989,
+      "browserMs": 52.09999990463257,
+      "bytes": 353641,
+      "fields": 101
+    },
+    {
+      "operation": "validate",
+      "function": "executeFormRequest",
+      "totalMs": 94.07883300000003,
+      "browserMs": 50.799999713897705,
+      "bytes": 353642,
+      "fields": 101
+    },
+    {
+      "operation": "validate",
+      "function": "executeFormRequest",
+      "totalMs": 91.91716700000006,
+      "browserMs": 50.19999980926514,
+      "bytes": 353641,
+      "fields": 101
+    },
+    {
+      "operation": "validate",
+      "function": "executeFormRequest",
+      "totalMs": 93.056959,
+      "browserMs": 50.90000009536743,
+      "bytes": 353651,
+      "fields": 101
+    },
+    {
+      "operation": "validate",
+      "function": "executeFormRequest",
+      "totalMs": 93.80979200000002,
+      "browserMs": 50.40000009536743,
+      "bytes": 353672,
+      "fields": 101
+    },
+    {
+      "operation": "validate",
+      "function": "executeFormRequest",
+      "totalMs": 94.5147920000004,
+      "browserMs": 51.30000019073486,
+      "bytes": 353687,
+      "fields": 101
+    },
+    {
+      "operation": "validate",
+      "function": "executeFormRequest",
+      "totalMs": 93.4491250000001,
+      "browserMs": 51,
+      "bytes": 353692,
+      "fields": 101
+    },
+    {
+      "operation": "validate",
+      "function": "executeFormRequest",
+      "totalMs": 91.1007499999996,
+      "browserMs": 49.200000286102295,
+      "bytes": 353711,
+      "fields": 101
+    },
+    {
+      "operation": "validate",
+      "function": "executeFormRequest",
+      "totalMs": 90.52083299999958,
+      "browserMs": 49.30000019073486,
+      "bytes": 353716,
+      "fields": 101
+    },
+    {
+      "operation": "validate",
+      "function": "executeFormRequest",
+      "totalMs": 95.67504199999985,
+      "browserMs": 50.30000019073486,
+      "bytes": 353730,
+      "fields": 101
+    },
+    {
+      "operation": "validate",
+      "function": "executeFormRequest",
+      "totalMs": 97.64616699999988,
+      "browserMs": 55.30000019073486,
+      "bytes": 353858,
+      "fields": 101
+    },
+    {
+      "operation": "validate",
+      "function": "executeFormRequest",
+      "totalMs": 98.63266699999986,
+      "browserMs": 56.40000009536743,
+      "bytes": 353881,
+      "fields": 101
+    },
+    {
+      "operation": "validate",
+      "function": "executeFormRequest",
+      "totalMs": 92.00262500000008,
+      "browserMs": 50.19999980926514,
+      "bytes": 353884,
+      "fields": 101
+    },
+    {
+      "operation": "validate",
+      "function": "executeFormRequest",
+      "totalMs": 105.64820800000052,
+      "browserMs": 50.5,
+      "bytes": 353889,
+      "fields": 101
+    },
+    {
+      "operation": "validate",
+      "function": "executeFormRequest",
+      "totalMs": 91.43516700000055,
+      "browserMs": 49.30000019073486,
+      "bytes": 353905,
+      "fields": 101
+    },
+    {
+      "operation": "validate",
+      "function": "executeFormRequest",
+      "totalMs": 92.27587500000027,
+      "browserMs": 50.39999961853027,
+      "bytes": 353920,
+      "fields": 101
+    },
+    {
+      "operation": "validate",
+      "function": "executeFormRequest",
+      "totalMs": 98.48795799999971,
+      "browserMs": 53.90000009536743,
+      "bytes": 354300,
+      "fields": 101
+    },
+    {
+      "operation": "validate",
+      "function": "executeFormRequest",
+      "totalMs": 97.52250000000004,
+      "browserMs": 55.09999990463257,
+      "bytes": 354791,
+      "fields": 101
+    },
+    {
+      "operation": "validate",
+      "function": "executeFormRequest",
+      "totalMs": 98.03154100000029,
+      "browserMs": 52.59999990463257,
+      "bytes": 354790,
+      "fields": 101
+    },
+    {
+      "operation": "validate",
+      "function": "executeFormRequest",
+      "totalMs": 93.16429199999948,
+      "browserMs": 50.10000038146973,
+      "bytes": 354789,
+      "fields": 101
+    },
+    {
+      "operation": "validate",
+      "function": "executeFormRequest",
+      "totalMs": 101.45345799999996,
+      "browserMs": 57.30000019073486,
+      "bytes": 354786,
+      "fields": 101
+    },
+    {
+      "operation": "validate",
+      "function": "executeFormRequest",
+      "totalMs": 91.86441699999978,
+      "browserMs": 49.200000286102295,
+      "bytes": 354786,
+      "fields": 101
+    },
+    {
+      "operation": "validate",
+      "function": "executeFormRequest",
+      "totalMs": 94.2973750000001,
+      "browserMs": 52.59999990463257,
+      "bytes": 354784,
+      "fields": 101
+    },
+    {
+      "operation": "validate",
+      "function": "executeFormRequest",
+      "totalMs": 92.46208300000035,
+      "browserMs": 50.59999990463257,
+      "bytes": 354781,
+      "fields": 101
+    },
+    {
+      "operation": "validate",
+      "function": "executeFormRequest",
+      "totalMs": 92.11462500000016,
+      "browserMs": 49.10000038146973,
+      "bytes": 354778,
+      "fields": 101
+    },
+    {
+      "operation": "validate",
+      "function": "executeFormRequest",
+      "totalMs": 109.66304200000013,
+      "browserMs": 50.69999980926514,
+      "bytes": 354775,
+      "fields": 101
+    },
+    {
+      "operation": "validate",
+      "function": "executeFormRequest",
+      "totalMs": 93.16004200000043,
+      "browserMs": 51.19999980926514,
+      "bytes": 354772,
+      "fields": 101
+    },
+    {
+      "operation": "validate",
+      "function": "executeFormRequest",
+      "totalMs": 92.11820799999987,
+      "browserMs": 50.5,
+      "bytes": 354756,
+      "fields": 101
+    },
+    {
+      "operation": "validate",
+      "function": "executeFormRequest",
+      "totalMs": 93.92712499999925,
+      "browserMs": 51.40000009536743,
+      "bytes": 354769,
+      "fields": 101
+    },
+    {
+      "operation": "validate",
+      "function": "executeFormRequest",
+      "totalMs": 91.2094160000006,
+      "browserMs": 50.19999980926514,
+      "bytes": 354769,
+      "fields": 101
+    },
+    {
+      "operation": "validate",
+      "function": "executeFormRequest",
+      "totalMs": 91.3739999999998,
+      "browserMs": 49.30000019073486,
+      "bytes": 354769,
+      "fields": 101
+    },
+    {
+      "operation": "validate",
+      "function": "executeFormRequest",
+      "totalMs": 90.28379200000018,
+      "browserMs": 49,
+      "bytes": 354754,
+      "fields": 101
+    },
+    {
+      "operation": "validate",
+      "function": "executeFormRequest",
+      "totalMs": 91.71445800000038,
+      "browserMs": 50.60000038146973,
+      "bytes": 354769,
+      "fields": 101
+    },
+    {
+      "operation": "validate",
+      "function": "executeFormRequest",
+      "totalMs": 91.55170799999996,
+      "browserMs": 48.69999980926514,
+      "bytes": 354769,
+      "fields": 101
+    },
+    {
+      "operation": "validate",
+      "function": "executeFormRequest",
+      "totalMs": 91.156833,
+      "browserMs": 49.80000019073486,
+      "bytes": 354769,
+      "fields": 101
+    },
+    {
+      "operation": "validate",
+      "function": "executeFormRequest",
+      "totalMs": 94.71820800000023,
+      "browserMs": 50.89999961853027,
+      "bytes": 354769,
+      "fields": 101
+    },
+    {
+      "operation": "validate",
+      "function": "executeFormRequest",
+      "totalMs": 91.17008299999998,
+      "browserMs": 49.90000009536743,
+      "bytes": 354769,
+      "fields": 101
+    },
+    {
+      "operation": "validate",
+      "function": "executeFormRequest",
+      "totalMs": 92.80958400000054,
+      "browserMs": 51.19999980926514,
+      "bytes": 354769,
+      "fields": 101
+    },
+    {
+      "operation": "validate",
+      "function": "executeFormRequest",
+      "totalMs": 92.0308329999998,
+      "browserMs": 48.90000009536743,
+      "bytes": 354769,
+      "fields": 101
+    },
+    {
+      "operation": "validate",
+      "function": "executeFormRequest",
+      "totalMs": 91.36300000000028,
+      "browserMs": 50,
+      "bytes": 354754,
+      "fields": 101
+    },
+    {
+      "operation": "validate",
+      "function": "executeFormRequest",
+      "totalMs": 94.51433300000008,
+      "browserMs": 51.5,
+      "bytes": 354756,
+      "fields": 101
+    },
+    {
+      "operation": "validate",
+      "function": "executeFormRequest",
+      "totalMs": 90.50512500000059,
+      "browserMs": 49.200000286102295,
+      "bytes": 354770,
+      "fields": 101
+    },
+    {
+      "operation": "validate",
+      "function": "executeFormRequest",
+      "totalMs": 93.18179200000031,
+      "browserMs": 52.30000019073486,
+      "bytes": 354769,
+      "fields": 101
+    },
+    {
+      "operation": "validate",
+      "function": "executeFormRequest",
+      "totalMs": 91.65729100000044,
+      "browserMs": 48.90000009536743,
+      "bytes": 354769,
+      "fields": 101
+    },
+    {
+      "operation": "validate",
+      "function": "executeFormRequest",
+      "totalMs": 92.61891699999978,
+      "browserMs": 51.19999980926514,
+      "bytes": 354769,
+      "fields": 101
+    },
+    {
+      "operation": "validate",
+      "function": "executeFormRequest",
+      "totalMs": 93.17120799999975,
+      "browserMs": 50.5,
+      "bytes": 354756,
+      "fields": 101
+    },
+    {
+      "operation": "validate",
+      "function": "executeFormRequest",
+      "totalMs": 105.03974999999991,
+      "browserMs": 50.299999713897705,
+      "bytes": 354770,
+      "fields": 101
+    },
+    {
+      "operation": "validate",
+      "function": "executeFormRequest",
+      "totalMs": 94.0123339999991,
+      "browserMs": 52.30000019073486,
+      "bytes": 354769,
+      "fields": 101
+    },
+    {
+      "operation": "validate",
+      "function": "executeFormRequest",
+      "totalMs": 91.81395800000064,
+      "browserMs": 48.69999980926514,
+      "bytes": 354769,
+      "fields": 101
+    },
+    {
+      "operation": "validate",
+      "function": "executeFormRequest",
+      "totalMs": 91.26104199999827,
+      "browserMs": 50.200000286102295,
+      "bytes": 354770,
+      "fields": 101
+    },
+    {
+      "operation": "validate",
+      "function": "executeFormRequest",
+      "totalMs": 93.50445899999977,
+      "browserMs": 50.80000019073486,
+      "bytes": 354769,
+      "fields": 101
+    },
+    {
+      "operation": "validate",
+      "function": "executeFormRequest",
+      "totalMs": 90.63537499999984,
+      "browserMs": 49.30000019073486,
+      "bytes": 354769,
+      "fields": 101
+    },
+    {
+      "operation": "validate",
+      "function": "executeFormRequest",
+      "totalMs": 91.68683299999975,
+      "browserMs": 50.69999980926514,
+      "bytes": 354769,
+      "fields": 101
+    },
+    {
+      "operation": "validate",
+      "function": "executeFormRequest",
+      "totalMs": 93.86733300000014,
+      "browserMs": 50.30000019073486,
+      "bytes": 354769,
+      "fields": 101
+    },
+    {
+      "operation": "validate",
+      "function": "executeFormRequest",
+      "totalMs": 91.13791700000002,
+      "browserMs": 50,
+      "bytes": 354754,
+      "fields": 101
+    },
+    {
+      "operation": "validate",
+      "function": "executeFormRequest",
+      "totalMs": 93.77841700000135,
+      "browserMs": 51,
+      "bytes": 354754,
+      "fields": 101
+    },
+    {
+      "operation": "validate",
+      "function": "executeFormRequest",
+      "totalMs": 90.12712500000089,
+      "browserMs": 48.90000009536743,
+      "bytes": 354769,
+      "fields": 101
+    },
+    {
+      "operation": "validate",
+      "function": "executeFormRequest",
+      "totalMs": 91.92216700000063,
+      "browserMs": 50.700000286102295,
+      "bytes": 354770,
+      "fields": 101
+    },
+    {
+      "operation": "validate",
+      "function": "executeFormRequest",
+      "totalMs": 92.31129200000032,
+      "browserMs": 48.60000038146973,
+      "bytes": 354769,
+      "fields": 101
+    },
+    {
+      "operation": "validate",
+      "function": "executeFormRequest",
+      "totalMs": 91.33412500000122,
+      "browserMs": 49.799999713897705,
+      "bytes": 354770,
+      "fields": 101
+    },
+    {
+      "operation": "validate",
+      "function": "executeFormRequest",
+      "totalMs": 91.90758300000016,
+      "browserMs": 49.299999713897705,
+      "bytes": 354770,
+      "fields": 101
+    },
+    {
+      "function": "",
+      "totalMs": 37.422207999999955,
+      "bytes": 0
+    },
+    {
+      "operation": "inspect",
+      "function": "executeFormRequest",
+      "totalMs": 75.99879099999998,
+      "browserMs": 34.59999990463257,
+      "bytes": 354769,
+      "fields": 101
+    },
+    {
+      "operation": "inspect",
+      "function": "executeFormRequest",
+      "totalMs": 91.1509160000005,
+      "browserMs": 46.40000009536743,
+      "bytes": 354769,
+      "fields": 101
+    }
+  ]
+}

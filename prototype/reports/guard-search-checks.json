@@ -1,0 +1,70 @@
+{
+  "date": "2026-09-21T01:19:55.183Z",
+  "component": "react-select@5.10.2",
+  "results": [
+    {
+      "name": "recognizes two visible prefixed single-select search fields",
+      "passed": true
+    },
+    {
+      "name": "typed search text is not a selected entity or valid completion",
+      "passed": true
+    },
+    {
+      "name": "450ms search waits for result and commits actual entity ID",
+      "passed": true,
+      "elapsedMs": 735.2189999999999
+    },
+    {
+      "name": "already selected value needs no new search or input",
+      "passed": true
+    },
+    {
+      "name": "unknown search returns without selecting",
+      "passed": true
+    },
+    {
+      "name": "disabled search option is not selected",
+      "passed": true
+    },
+    {
+      "name": "two exact labels stop instead of choosing first",
+      "passed": true
+    },
+    {
+      "name": "slow search exhausts bounded readiness budget",
+      "passed": true
+    },
+    {
+      "name": "field relabel during search stops before any selection",
+      "passed": true
+    },
+    {
+      "name": "100ms application rejection cannot become final success",
+      "passed": true
+    },
+    {
+      "name": "unrelated matching listbox is never used",
+      "passed": true
+    },
+    {
+      "name": "different documented class prefix is recognized",
+      "passed": true
+    },
+    {
+      "name": "multi-select stays unsupported even while empty",
+      "passed": true
+    },
+    {
+      "name": "extension keeps search controls unsupported",
+      "passed": true
+    },
+    {
+      "name": "raw source bindings plus repeated search template complete 10 targets",
+      "passed": true,
+      "targets": 10,
+      "elapsedMs": 1962.4095829999987,
+      "searches": 3
+    }
+  ]
+}

@@ -6,6 +6,8 @@
 
 ## 看结果
 
+- [批中校验与全表回传分离](prototype/reports/VALIDATION-GUARD.md)：相同59绑定，本地中位6.51→2.11秒，保留全页语义校验；完整Codex速度单独报告。
+
 - [真实公开页离线填写与上下文实验](prototype/reports/PUBLIC-PAGE-CONTEXT.md)：从真实招聘控件发现问题名称缺失、3,302项下拉列表；网络隔离下核验虚构资料，服务器/附件/地点服务仍未验证。
 
 - [批量发现与必填项覆盖](prototype/reports/DISCOVERY-AND-COVERAGE.md)：别名/翻译/同校不同校区，6 次 Codex 正确；内部对照中位 51.42 → 44.68 秒，约减少 13%，一组略慢。明确保留资料缺失的必填项。
