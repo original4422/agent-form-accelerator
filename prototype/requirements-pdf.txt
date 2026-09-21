@@ -1,0 +1,2 @@
+# Optional PDF experiment; no OCR or model API.
+pdfplumber==0.11.9

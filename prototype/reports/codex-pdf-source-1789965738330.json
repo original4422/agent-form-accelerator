@@ -1,0 +1,111 @@
+{
+  "batchId": 1789965738330,
+  "date": "2026-09-21T04:42:18.330Z",
+  "scope": "Two actual Codex integration runs from unstructured text PDFs with identical visible layouts and different content drawing order. Extraction and startup timed separately. No comparative speed claim, no real applications.",
+  "runs": [
+    {
+      "variant": "two-columns",
+      "sourceHash": "13fc370e152be8e5b0b5a90597a9ed91a18729aeac6c0149950d3f871896897a",
+      "entries": 17,
+      "extractionMs": 153.88125000000002,
+      "setupMs": 1126.7522090000002,
+      "elapsedMs": 106614.529792,
+      "totalMs": 107744.992375,
+      "exitCode": 0,
+      "timedOut": false,
+      "aborted": false,
+      "toolCalls": [
+        {
+          "tool": "form_apply_bindings",
+          "status": "failed",
+          "startMs": 15624.867292,
+          "endMs": 24250.425917,
+          "durationMs": 8625.558625,
+          "returnedBytes": 24
+        },
+        {
+          "tool": "form_search",
+          "status": "completed",
+          "startMs": 29311.788583,
+          "endMs": 37993.692083,
+          "durationMs": 8681.9035,
+          "returnedBytes": 6660
+        },
+        {
+          "tool": "form_apply_bindings",
+          "status": "failed",
+          "startMs": 46862.875042,
+          "endMs": 54623.625583,
+          "durationMs": 7760.750541000001,
+          "returnedBytes": 24
+        },
+        {
+          "tool": "form_search",
+          "status": "completed",
+          "startMs": 58209.176417,
+          "endMs": 62361.330417000005,
+          "durationMs": 4152.154000000002,
+          "returnedBytes": 6353
+        },
+        {
+          "tool": "form_apply_bindings",
+          "status": "failed",
+          "startMs": 69252.871542,
+          "endMs": 73634.91491699999,
+          "durationMs": 4382.043374999994,
+          "returnedBytes": 24
+        },
+        {
+          "tool": "form_apply_bindings",
+          "status": "completed",
+          "startMs": 81140.452333,
+          "endMs": 86120.87324999999,
+          "durationMs": 4980.420916999996,
+          "returnedBytes": 4858,
+          "executionMs": 232.84858399999212,
+          "complete": true,
+          "primitiveCalls": 3
+        },
+        {
+          "tool": "form_apply_bindings",
+          "status": "completed",
+          "startMs": 93348.218958,
+          "endMs": 101304.872292,
+          "durationMs": 7956.653334000002,
+          "returnedBytes": 6171,
+          "executionMs": 1964.1330829999933,
+          "complete": true,
+          "primitiveCalls": 5
+        }
+      ],
+      "usage": {
+        "input_tokens": 246326,
+        "cached_input_tokens": 220160,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 1361,
+        "reasoning_output_tokens": 133
+      },
+      "oracle": {
+        "passed": true,
+        "errors": [],
+        "knownTargets": 10,
+        "requiredUnanswered": 1,
+        "searches": 7,
+        "submits": 0
+      },
+      "missingReported": true,
+      "finalText": "Filled and verified the source-backed fields, including both education experiences in order with Shenzhen and Beijing campus qualifiers, and the complete personal introduction.\n\nRequired information missing: earliest available start date; left blank. Coverage: 7 of 8 visible required fields verified. No other copying limitations remained.\n\nNothing was submitted or uploaded.",
+      "passed": true
+    }
+  ],
+  "before": {
+    "source-reader.mjs": "1df7dc8672d54928c6f356cf2fc44b4eb6f578bb0c510ad6c38ae86b52bacc7a",
+    "pdf-source.py": "3bf55ad81bff7e8c584f165feb388ad2b486148218f4e00c8ce47c2ab3818231",
+    "source-quote.mjs": "727e4913c583d2e18b189cf2e95322c79ac78ed2b43a762fd10a922b7a3b917e",
+    "document-session.mjs": "da4d0cc7fa83883c199ad78d09a818d2203478a327f6c736d668ad63035edfc0",
+    "bindings-server.mjs": "b405724becfbcb71cf16458cd3775904a7ae5e43c15fa8491af827b7ae9df7af",
+    "browser-companion.mjs": "26e3d01c8c879a18426c24338126d2ce5e875c941dacbaa6ecc01ffacc5bb6f9"
+  },
+  "error": "page.evaluate: Target page, context or browser has been closed\n    at aliasOracle (/Users/original/Project/github/personal_project/agent-form-accelerator/prototype/bench/alias-cases.mjs:23:15)\n    at /Users/original/Project/github/personal_project/agent-form-accelerator/prototype/bench/codex-pdf-source.mjs:18:22",
+  "passed": false
+}

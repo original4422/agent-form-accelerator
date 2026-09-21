@@ -1,0 +1,41 @@
+{
+  "date": "2026-09-21T04:45:40.133Z",
+  "results": [
+    {
+      "name": "PDF is opt-in and disabled extraction never launches a browser",
+      "passed": true
+    },
+    {
+      "name": "spatial runs separate columns and ignore PDF drawing order",
+      "passed": true
+    },
+    {
+      "name": "image-only sources are rejected instead of inventing empty facts",
+      "passed": true
+    },
+    {
+      "name": "exact quotes and whole-line joins retain source evidence",
+      "passed": true
+    },
+    {
+      "name": "invented, normalized, ambiguous and malformed quotes or joins fail",
+      "passed": true
+    },
+    {
+      "name": "source-byte change rejects stale PDF bindings before any write",
+      "passed": true
+    },
+    {
+      "name": "ledger does not verify a different excerpt from the same source entry",
+      "passed": true
+    },
+    {
+      "name": "exact quotes coexist with observed native choices in one conditional plan",
+      "passed": true
+    },
+    {
+      "name": "invalid quote is rejected before conditional discovery",
+      "passed": true
+    }
+  ]
+}

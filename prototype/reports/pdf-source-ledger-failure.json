@@ -1,0 +1,38 @@
+{
+  "date": "2026-09-21T04:43:58.752Z",
+  "results": [
+    {
+      "name": "PDF is opt-in and disabled extraction never launches a browser",
+      "passed": true
+    },
+    {
+      "name": "spatial runs separate columns and ignore PDF drawing order",
+      "passed": true
+    },
+    {
+      "name": "image-only sources are rejected instead of inventing empty facts",
+      "passed": true
+    },
+    {
+      "name": "exact quotes and whole-line joins retain source evidence",
+      "passed": true
+    },
+    {
+      "name": "invented, normalized, ambiguous and malformed quotes or joins fail",
+      "passed": true
+    },
+    {
+      "name": "source-byte change rejects stale PDF bindings before any write",
+      "passed": true
+    },
+    {
+      "name": "ledger does not verify a different excerpt from the same source entry",
+      "passed": false,
+      "error": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n\ntrue !== false\n\n    at file:///Users/original/Project/github/personal_project/agent-form-accelerator/prototype/bench/pdf-source-check.mjs:16:477\n    at check (file:///Users/original/Project/github/personal_project/agent-form-accelerator/prototype/bench/pdf-source-check.mjs:4:40)\n    at file:///Users/original/Project/github/personal_project/agent-form-accelerator/prototype/bench/pdf-source-check.mjs:16:8"
+    },
+    {
+      "name": "invalid quote is rejected before conditional discovery",
+      "passed": true
+    }
+  ]
+}

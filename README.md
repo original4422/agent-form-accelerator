@@ -6,6 +6,8 @@
 
 ## 看结果
 
+- [PDF 原文直接绑定实验](prototype/reports/PDF-SOURCE.md)：两次真实 Codex 从双栏文字 PDF 完成 10 个目标，两次调用含搜索回退；没有额外整理资料回合。63 项相关检查通过，含扫描件拒绝、原文引用和来源变更保护。尚非速度对照。
+
 - [登录后再冻结的诊断入口](prototype/reports/OFFLINE-AFTER-READY.md)：手动登录并加载表单后才开放 Codex；页面 HTTP(S)/WebSocket 断开，临时资料退出删除。24 项本地检查通过，无新的速度测量。
 
 - [中文秋招入口审计](prototype/reports/CHINESE-RECRUITMENT-AUDIT.md)：绿盟科技和 MiniMax 的具体申请页都先要求登录；职位列表读取也可能使用 POST，拦截后会出现误导性空页或“停止招聘”。尚未进入登录后的简历表单，不作填写兼容或速度结论。
@@ -65,13 +67,27 @@ npm run browser -- --url "https://招聘页地址" --source "/绝对路径/资�
 
 先在打开的独立浏览器中手动登录、进入待填页面，再执行打印的 Codex 命令。默认在 `.profiles/companion` 保留这套独立浏览器资料；加 `--temporary` 可在退出时删除。不会导入日常 Chrome 的登录资料。同一套资料目录同时只运行一个浏览器入口，一个页面只交给一个 Codex 会话填写。
 
-资料格式支持标题、单行“名称：值”和自然段，最多 10 万字符、100 个条目，不支持 PDF/DOCX。页面字段及指定资料会提供给当前 Codex。原型只控制最初打开的标签页；手动导航后让 Codex 调用 `form_context` 刷新，修改资料后重新启动 Codex 连接。在线页面可能在输入时自动保存；本项目的虚构公开页实验均在断网后进行，演示只用 localhost。
+资料格式支持标题、单行“名称：值”和自然段，最多 10 万字符、100 个条目，默认不支持 PDF/DOCX；下方有受限 PDF 实验入口。页面字段及指定资料会提供给当前 Codex。原型只控制最初打开的标签页；手动导航后让 Codex 调用 `form_context` 刷新，修改资料后重新启动 Codex 连接。在线页面可能在输入时自动保存；本项目的虚构公开页实验均在断网后进行，演示只用 localhost。
 
 这个入口复用 Playwright 后端，已接入条件搜索、重复组和独立分组，默认完整回执。独立分组不能与重复组混用；未知组件仍可能需要手工处理。没有提交、文件上传或跨页导航工具，最终申请由你检查处理。命令仅为当前 Codex 进程添加配置，无需新的模型 API Key。
 
 如需在登录后用虚构资料诊断已加载的表单，加 `--offline-after-ready`：先手动进入最终表单，回终端按 Enter，冻结页面 HTTP(S)/WebSocket 后才打印 Codex 命令，并强制临时 profile。远程搜索和跨页可能不可用；这不是系统级网络沙箱，详见[验证范围](prototype/reports/OFFLINE-AFTER-READY.md)。
 
 接入检查：`node prototype/bench/companion-check.mjs`。真实 Codex 集成检查：`node prototype/bench/codex-companion.mjs`，会使用当前 Codex 账户用量。
+
+## PDF 简历输入实验
+
+不必先把纯文字 PDF 重写成 Markdown。额外安装本地 Python 依赖并显式启用：
+
+```bash
+python3 -m venv .venv-pdf
+.venv-pdf/bin/pip install -r prototype/requirements-pdf.txt
+AFA_PDF_SOURCE=1 AFA_PYTHON="$PWD/.venv-pdf/bin/python" npm run browser -- --url "https://招聘页地址" --source "/绝对路径/简历.pdf"
+```
+
+浏览器入口打印的 Codex 命令会携带本次实验配置，不修改全局配置。使用虚构资料诊断真实站点时，仍需加 `--offline-after-ready`，先手动登录并加载最终表单再断开页面网络。
+
+目前只支持有限的纯文字 PDF：保留页码和文字位置，Codex 可在同一次填写请求中引用精确原文或连接同一段落的完整行。最多 5 MB、10 页、300 个片段；含图片（包括照片）、扫描件、旋转文字和无文字页拒绝处理，不支持 DOCX/OCR。位置分段是启发式，不能保证任意双栏/表格都解析正确。详见[验证记录与失败边界](prototype/reports/PDF-SOURCE.md)。
 
 ## 原扩展本地演示
 

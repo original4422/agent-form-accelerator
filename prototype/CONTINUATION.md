@@ -1,5 +1,15 @@
 # 持续探索状态（2026-09-21）
 
+## 当前接续点：受限 PDF 来源接入完成，实际 Codex 两次正确
+
+- 本轮 progress：支持原始纯文字PDF来源，不必预先整理Markdown；不是完整目标达成。仍active，无阻塞审计。新 source-reader/pdf-source.py/source-quote，源bytehash、空间片段page/bbox；AFA_PDF_SOURCE=1显式启用，AFA_PYTHON配置本地pdfplumber0.11.9。未安装新全局依赖/改Skill；当前用bundle Python。
+- 仅PDF会话MCP schema允许 {sourceId,quote} 唯一精确子串，或2–12个不同ID数组用换行连接同页完整片段。原生选择仍普通来源ID；引用/连接只适用文本类字段，未加自由文字替换。偏移/所有来源ID进入receipt/ledger身份，避免同一entry的另一引文被错认成同一目标。Markdown schema仍旧简单形态。
+- 两栏普通extract_text反例会把联系方式和右侧学校拼在同一行。空间runs避免本样本此问题，反向PDF绘制指令仍同样17片段，但24pt/3pt阈值只是启发式，不是通用布局保证。图片/扫描/旋转/无文字页拒绝，无DOCX/OCR。5MB/10页/300片段/10万字、15s进程timeout。PDFium已目视检查三份fixture；bundledPoppler缺Adobe-GB1 mapping导致空白，未改全局工具，记录在PDF-SOURCE.md。
+- 首批1789965738330第一任务106.615s/7调用最终10目标正确，三次INVALID_SEARCH_CONDITION暴露旧分支：字符串也有.search方法。新增hasQuotes触发preflight后误把原生选项字符串认成条件，补typeof object。第二任务主动中止，报告保留错误，不是完成样本。定向preflight/ledger测试先红后绿。旧中文提示回归也恢复。
+- 最终1789965949436两个Codex任务：双栏47.802s/总48.457s；绘制顺序反转55.335s/总55.985s。分别提取91/83ms，准备652/645ms；两次均2次apply、10目标正确、两校区正确、两句介绍完整、缺日期空并报告、7次实际搜索、零提交。都是先杭州空再Hangzhou。没有额外PDF整理模型回合。两个输入视觉语义相同，不是不同任务种类，且回归并行运行，**不作速度对照**。七个相关运行时指纹测前后未变，最终文本/工具参数人工核对。
+- 最终检查63通过：PDF9+条件11+独立14+MarkdownPW8+companion11+离线10。所有进程结束，无待轮询句柄。文档README/PDF-SOURCE.md/ADR0014记录使用、限制及失败；fixtures与生成源保留，原始模型轨迹private不提交。
+- 下一步有一个直接相关的接入缺口：AFA_QUERY_VARIANTS既有隔离provider支持，companion未转发。本次PDF又复现机械中英查询回退，值得把既有受约束恢复接入用户入口，验证能否消掉第二次调用，不要发明更弱的匹配或省校区。不能把同一alias fixture反复计时当真实全流程2×。真实招聘页样本仍待用户可选公司名/链接，勿重复询问；真实登录只能用户操作。
+
 ## 当前接续点：登录后再冻结入口完成，本地验证通过
 
 - 本轮 progress，无新 Codex 速度测量，完整目标仍 active。新增 `--offline-after-ready`，手动登录/加载表单/Enter 后，切断 HTTP(S)/WS，才创建控制器和0600连接文件；强制临时 profile，退出删除。默认在线入口不变。

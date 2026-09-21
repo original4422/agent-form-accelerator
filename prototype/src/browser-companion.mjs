@@ -1,9 +1,9 @@
 import {chromium} from 'playwright';
-import {mkdir,mkdtemp,readFile,realpath,stat,writeFile,rm,chmod} from 'node:fs/promises';
+import {mkdir,mkdtemp,realpath,writeFile,rm,chmod} from 'node:fs/promises';
 import {randomUUID} from 'node:crypto';
 import path from 'node:path';
 import {projectRoot} from './bridge.mjs';
-import {parseDocument} from './document-source.mjs';
+import {readDocumentSource} from './source-reader.mjs';
 import {createBrowserController} from './browser-controller.mjs';
 import {createFreezeProxy} from './freeze-proxy.mjs';
 import {createNetworkFreeze} from './network-freeze.mjs';
@@ -15,10 +15,8 @@ export async function createBrowserCompanion({url,sourcePath,temporary=false,off
   const target=new URL(url);
   if(!['http:','https:'].includes(target.protocol)||target.username||target.password)throw new Error('请提供不含用户名密码的 HTTP/HTTPS 页面地址');
   sourcePath=await realpath(sourcePath);
-  const info=await stat(sourcePath);
-  if(!info.isFile()||info.size>400000||! /\.(md|markdown)$/i.test(sourcePath))throw new Error('资料需为 Markdown 文件（最多 10 万字符、100 个条目）');
-  const markdown=await readFile(sourcePath,'utf8');
-  try{parseDocument(markdown);}catch{throw new Error('资料需包含 1–100 个条目，且不超过 10 万字符');}
+  if(!/\.(md|markdown|pdf)$/i.test(sourcePath))throw new Error('资料需为 Markdown；PDF 需显式启用实验模式');
+  try{await readDocumentSource(sourcePath);}catch(e){if(!/\.pdf$/i.test(sourcePath)&&/^Expected /.test(e.message))throw new Error('资料需包含 1–100 个条目，且不超过 10 万字符');throw e;}
   const profiles=path.join(baseDir,'.profiles'),runtime=path.join(baseDir,'.runtime');
   for(const dir of [profiles,runtime]){await mkdir(dir,{recursive:true,mode:0o700});await chmod(dir,0o700);}
   const profilePath=temporary?await mkdtemp(path.join(profiles,'companion-')):path.join(profiles,'companion');
@@ -74,6 +72,6 @@ export async function createBrowserCompanion({url,sourcePath,temporary=false,off
 
 export function companionCommand(configPath) {
   const quote=s=>"'"+s.replaceAll("'","'\\''")+"'";
-  const settings={command:process.execPath,args:[path.join(projectRoot,'prototype/src/browser-bindings-mcp.mjs')],'env.AFA_BROWSER_SESSION':configPath};
+  const settings={command:process.execPath,args:[path.join(projectRoot,'prototype/src/browser-bindings-mcp.mjs')],'env.AFA_BROWSER_SESSION':configPath,...(process.env.AFA_PDF_SOURCE==='1'?{'env.AFA_PDF_SOURCE':'1',...(process.env.AFA_PYTHON?{'env.AFA_PYTHON':process.env.AFA_PYTHON}:{})}: {})};
   return 'codex '+Object.entries(settings).map(([key,value])=>'-c '+quote(`mcp_servers.afa.${key}=${JSON.stringify(value)}`)).join(' ');
 }

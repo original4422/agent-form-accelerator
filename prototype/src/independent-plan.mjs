@@ -1,3 +1,4 @@
+import {sourceBindingKey} from './source-quote.mjs';
 import {fieldKey} from './coverage.mjs';
 
 // The caller declares dependency boundaries; no independence is inferred from DOM
@@ -46,17 +47,17 @@ export function partitionIndependentPlan(groups,decisions,before,after) {
 // This is not a whole-application completeness oracle.
 export function createTargetLedger(verified) {
   const tracked=new Map();
-  const key=t=>JSON.stringify([t.sourceId,t.group,t.label,t.kind]);
+  const key=t=>JSON.stringify([sourceBindingKey(t),t.group,t.label,t.kind]);
   return {
     clear:()=>tracked.clear(),
-    register(targets){for(const t of targets){tracked.set(key(t),{ref:t.ref,sourceId:t.sourceId,sourceLabel:t.sourceLabel,group:t.group,label:t.label,kind:t.kind,reason:'NOT_VERIFIED'});verified.delete(fieldKey(t));}},
+    register(targets){for(const t of targets){tracked.set(key(t),{ref:t.ref,sourceId:t.sourceId,...(t.sourceQuote?{sourceQuote:t.sourceQuote}:{}),...(t.sourceIds?{sourceIds:t.sourceIds}:{}),sourceLabel:t.sourceLabel,group:t.group,label:t.label,kind:t.kind,reason:'NOT_VERIFIED'});verified.delete(fieldKey(t));}},
     defer(targets,reasons){for(const t of targets)if(reasons.has(t.ref))Object.assign(tracked.get(key(t)),reasons.get(t.ref));},
     summary(page){
       if(!tracked.size)return {};
       const targets=[...tracked.values()].map(t=>{
         const matches=page.fields.filter(f=>fieldKey(f)===fieldKey(t)&&f.kind===t.kind),f=matches.length===1?matches[0]:undefined;
         const v=verified.get(fieldKey(t));
-        const done=f&&v?.sourceId===t.sourceId&&v.kind===f.kind&&v.actual===f.value&&!f.disabled&&!f.pending&&f.valid!==false;
+        const done=f&&v&&sourceBindingKey(v)===sourceBindingKey(t)&&v.kind===f.kind&&v.actual===f.value&&!f.disabled&&!f.pending&&f.valid!==false;
         return {...t,status:done?'verified':'unresolved',reason:done?undefined:t.reason,currentPresence:matches.length===1?'present':matches.length?'ambiguous':'absent'};
       });
       const unresolvedTargets=targets.filter(t=>t.status!=='verified');

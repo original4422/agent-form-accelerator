@@ -1,18 +1,18 @@
-import {readFile} from 'node:fs/promises';
-import {parseDocument} from './document-source.mjs';
+import {readDocumentSource,assertSourceFresh} from './source-reader.mjs';
+import {resolveSourceBinding} from './source-quote.mjs';
 import {fieldKey,summarizeCoverage} from './coverage.mjs';
 import {validateSearchCondition,chooseObservedOption} from './conditional-choice.mjs';
 import {validateIndependentGroups,partitionIndependentPlan,createTargetLedger} from './independent-plan.mjs';
 import {discoverQueryPlans} from './query-variants.mjs';
 export async function createDocumentSession({sourcePath, request,conditionalSelection=false,independentSelection=false,queryVariants=false}) {
-  const source = parseDocument(await readFile(sourcePath, 'utf8'));
+  const source = await readDocumentSource(sourcePath);
   let observation;
   let nextOption=0;
   const offers=new Map(),verified=new Map();
   const ledger=createTargetLedger(verified);
   const contract = f => f && JSON.stringify([f.group,f.label,f.kind]);
   const freshSource = async () => {
-    if (parseDocument(await readFile(sourcePath, 'utf8')).sha256 !== source.sha256) throw new Error('SOURCE_CHANGED: reload document session');
+    await assertSourceFresh(sourcePath,source);
   };
   const context = async () => {
     await freshSource(); const next=await request({op:'inspect'});
@@ -70,15 +70,17 @@ export async function createDocumentSession({sourcePath, request,conditionalSele
     }
     const makeTargets=(mapping,overrides,templateGroup,expectGroup)=>{
       if(Object.keys(overrides).some(ref=>!Object.hasOwn(mapping,ref)))throw new Error('CHOICE_WITHOUT_BINDING');
-      return Object.entries(mapping).map(([ref,sourceId])=>{
-        const field=observation.fields.find(f=>f.ref===ref),entry=source.entries.find(e=>e.id===sourceId);
+      return Object.entries(mapping).map(([ref,binding])=>{
+        const {entry,value:sourceValue,quote,sourceIds}=resolveSourceBinding(source.entries,binding),sourceId=entry.id;
+        const field=observation.fields.find(f=>f.ref===ref);
         if(!field||!entry)throw new Error('UNKNOWN_FIELD_OR_SOURCE');
         if(!field.supported)throw new Error('UNSUPPORTED_CONTROL');
         if(templateGroup!==undefined&&field.group!==templateGroup)throw new Error('WRONG_TEMPLATE_GROUP');
-        let value=entry.value,query;
+        if((quote||sourceIds)&&!['text','textarea','email','tel','url','number','date'].includes(field.kind))throw new Error('SOURCE_QUOTE_TEXT_ONLY');
+        let value=sourceValue,query;
         if(Object.hasOwn(overrides,ref)){
           const choice=overrides[ref];
-          if(allowConditions&&choice?.search&&['autocomplete','select'].includes(field.kind)){
+          if(allowConditions&&choice&&typeof choice==='object'&&choice.search&&['autocomplete','select'].includes(field.kind)){
             validateSearchCondition(choice.search,{queryVariants});
           }else if(['autocomplete','select'].includes(field.kind)&&choice&&typeof choice==='object'){
             const offer=offers.get(choice.optionRef);
@@ -92,7 +94,7 @@ export async function createDocumentSession({sourcePath, request,conditionalSele
           else if(['checkbox','radio'].includes(field.kind)&&typeof choice==='boolean'&&(field.kind!=='radio'||choice))value=choice;
           else throw new Error('CHOICE_NOT_OBSERVED_OR_INVALID');
         }else if(['checkbox','radio'].includes(field.kind))throw new Error('BOOLEAN_CHOICE_REQUIRED');
-        return {ref,sourceId,sourceLabel:entry.label,group:expectGroup??field.group,label:field.label,kind:field.kind,value,query};
+        return {ref,sourceId,...(quote?{sourceQuote:quote}:{}),...(sourceIds?{sourceIds}:{}),sourceLabel:entry.label,group:expectGroup??field.group,label:field.label,kind:field.kind,value,query};
       });
     };
     const targets=makeTargets(bindings,choices),expansions=[];
@@ -125,9 +127,9 @@ export async function createDocumentSession({sourcePath, request,conditionalSele
     if(changedGroups.length){result.complete=false;result.reason='CHECKBOX_GROUP_CHANGED';result.changedGroups=changedGroups;}
     for(const evidence of result.evidence??[])if(evidence.status==='verified'){
       const target=targets.find(f=>fieldKey(f)===fieldKey(evidence));
-      if(target)verified.set(fieldKey(target),{kind:target.kind,actual:evidence.actual,sourceId:target.sourceId});
+      if(target)verified.set(fieldKey(target),{kind:target.kind,actual:evidence.actual,sourceId:target.sourceId,...(target.sourceQuote?{sourceQuote:target.sourceQuote}:{}),...(target.sourceIds?{sourceIds:target.sourceIds}:{})});
     }
-    return {...result,...ledger.summary(observation),completionScope:'requested-targets',coverage:summarizeCoverage(observation,verified),sourceHash:source.sha256,bindings:targets.map(({ref,sourceId,sourceLabel,group})=>({ref,sourceId,sourceLabel,targetGroup:group}))};
+    return {...result,...ledger.summary(observation),completionScope:'requested-targets',coverage:summarizeCoverage(observation,verified),sourceHash:source.sha256,bindings:targets.map(({ref,sourceId,sourceQuote,sourceIds,sourceLabel,group})=>({ref,sourceId,...(sourceQuote?{sourceQuote}:{}),...(sourceIds?{sourceIds}:{}),sourceLabel,targetGroup:group}))};
   };
   const expand = async ({url,controlRef}) => {
     await freshSource(); if(!observation)throw new Error('CONTEXT_REQUIRED');
@@ -144,7 +146,9 @@ export async function createDocumentSession({sourcePath, request,conditionalSele
     if(args.url!==observation.url)throw new Error('WRONG_PAGE');
     const started=performance.now(),resolved=structuredClone(args),plans=[];
     if(args.independentGroups!==undefined&&!independentSelection)throw new Error('INDEPENDENT_SELECTION_NOT_ENABLED');
-    const prepared=args.independentGroups!==undefined||queryVariants?prepare(resolved,true):undefined;
+    if(!Array.isArray(resolved.repeatGroups??[])||(resolved.repeatGroups?.length??0)>8)throw new Error('Expected at most 8 repeated groups');
+    const hasQuotes=[resolved,...resolved.repeatGroups??[]].some(m=>Object.values(m.bindings??{}).some(v=>typeof v!=='string'));
+    const prepared=args.independentGroups!==undefined||queryVariants||hasQuotes?prepare(resolved,true):undefined;
     const groups=args.independentGroups!==undefined?validateIndependentGroups(resolved,prepared.targets):undefined,before=observation;
     if(groups)ledger.register(prepared.targets);
     if(!Array.isArray(resolved.repeatGroups??[])||(resolved.repeatGroups?.length??0)>8)throw new Error('Expected at most 8 repeated groups');

@@ -1,0 +1,135 @@
+{
+  "batchId": 1789965949436,
+  "date": "2026-09-21T04:45:49.436Z",
+  "scope": "Two actual Codex integration runs from unstructured text PDFs with identical visible layouts and different content drawing order. Extraction and startup timed separately. No comparative speed claim, no real applications.",
+  "runs": [
+    {
+      "variant": "two-columns",
+      "sourceHash": "13fc370e152be8e5b0b5a90597a9ed91a18729aeac6c0149950d3f871896897a",
+      "entries": 17,
+      "extractionMs": 91.359917,
+      "setupMs": 651.550459,
+      "elapsedMs": 47801.754333,
+      "totalMs": 48457.241666999995,
+      "exitCode": 0,
+      "timedOut": false,
+      "aborted": false,
+      "toolCalls": [
+        {
+          "tool": "form_apply_bindings",
+          "status": "completed",
+          "startMs": 18147.006375,
+          "endMs": 24987.841583,
+          "durationMs": 6840.835208,
+          "returnedBytes": 4871,
+          "executionMs": 1943.491917000003,
+          "complete": false,
+          "reason": "CONDITIONAL_SELECTION_UNRESOLVED"
+        },
+        {
+          "tool": "form_apply_bindings",
+          "status": "completed",
+          "startMs": 34769.677165999994,
+          "endMs": 41604.509666,
+          "durationMs": 6834.832500000004,
+          "returnedBytes": 7183,
+          "executionMs": 2591.3436250000013,
+          "complete": true,
+          "primitiveCalls": 5
+        }
+      ],
+      "usage": {
+        "input_tokens": 96611,
+        "cached_input_tokens": 75904,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 568,
+        "reasoning_output_tokens": 0
+      },
+      "oracle": {
+        "passed": true,
+        "errors": [],
+        "knownTargets": 10,
+        "requiredUnanswered": 1,
+        "searches": 7,
+        "submits": 0
+      },
+      "missingReported": true,
+      "finalText": "Filled and verified 10 source-backed fields, including both education experiences in order with Shenzhen and Beijing campus qualifiers, and the complete two-sentence personal introduction.\n\nRequired information missing from the PDF: **Earliest available start date**, left blank. Required-field coverage is 7/8; the application remains incomplete.\n\nNo other copying limitations found. Nothing submitted or uploaded.",
+      "passed": true
+    },
+    {
+      "variant": "reverse-draw-order",
+      "sourceHash": "4b00b948b6dfb9511d97b9d921c1e18447ddfba7f079ba2779c7b1616c5084f8",
+      "entries": 17,
+      "extractionMs": 83.15924999999697,
+      "setupMs": 644.5897909999985,
+      "elapsedMs": 55334.764625,
+      "totalMs": 55984.508416,
+      "exitCode": 0,
+      "timedOut": false,
+      "aborted": false,
+      "toolCalls": [
+        {
+          "tool": "form_apply_bindings",
+          "status": "completed",
+          "startMs": 16059.707625000003,
+          "endMs": 26629.395834000003,
+          "durationMs": 10569.688209,
+          "returnedBytes": 4872,
+          "executionMs": 2009.5863750000026,
+          "complete": false,
+          "reason": "CONDITIONAL_SELECTION_UNRESOLVED"
+        },
+        {
+          "tool": "form_apply_bindings",
+          "status": "completed",
+          "startMs": 35257.011792,
+          "endMs": 46488.62249999999,
+          "durationMs": 11231.610707999993,
+          "returnedBytes": 7181,
+          "executionMs": 2599.847665999994,
+          "complete": true,
+          "primitiveCalls": 5
+        }
+      ],
+      "usage": {
+        "input_tokens": 96629,
+        "cached_input_tokens": 75904,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 566,
+        "reasoning_output_tokens": 0
+      },
+      "oracle": {
+        "passed": true,
+        "errors": [],
+        "knownTargets": 10,
+        "requiredUnanswered": 1,
+        "searches": 7,
+        "submits": 0
+      },
+      "missingReported": true,
+      "finalText": "Filled and verified 10 source-backed fields, including both education experiences in order with Shenzhen and Beijing campus qualifiers, and the complete two-sentence personal introduction.\n\nRequired information missing from the PDF: **Earliest available start date**, left blank. All other targeted facts were faithfully represented; 7 of 8 visible required fields are covered.\n\nNothing was submitted or uploaded.",
+      "passed": true
+    }
+  ],
+  "before": {
+    "source-reader.mjs": "1df7dc8672d54928c6f356cf2fc44b4eb6f578bb0c510ad6c38ae86b52bacc7a",
+    "pdf-source.py": "3bf55ad81bff7e8c584f165feb388ad2b486148218f4e00c8ce47c2ab3818231",
+    "source-quote.mjs": "ab2e3f21de130c559eed98be7fb2c591f2e72095bfde43a7343bf6e8dcc3547e",
+    "document-session.mjs": "4d02498c0bfe6cc12f1ca4527359d7af3333f9deaea8dd8b157bd6ca3d3ccbcc",
+    "bindings-server.mjs": "b405724becfbcb71cf16458cd3775904a7ae5e43c15fa8491af827b7ae9df7af",
+    "browser-companion.mjs": "26e3d01c8c879a18426c24338126d2ce5e875c941dacbaa6ecc01ffacc5bb6f9",
+    "independent-plan.mjs": "7e436443765dc6c02ee46a89db8e21bab8d7d14bd171a36626042ee9600abe8f"
+  },
+  "after": {
+    "source-reader.mjs": "1df7dc8672d54928c6f356cf2fc44b4eb6f578bb0c510ad6c38ae86b52bacc7a",
+    "pdf-source.py": "3bf55ad81bff7e8c584f165feb388ad2b486148218f4e00c8ce47c2ab3818231",
+    "source-quote.mjs": "ab2e3f21de130c559eed98be7fb2c591f2e72095bfde43a7343bf6e8dcc3547e",
+    "document-session.mjs": "4d02498c0bfe6cc12f1ca4527359d7af3333f9deaea8dd8b157bd6ca3d3ccbcc",
+    "bindings-server.mjs": "b405724becfbcb71cf16458cd3775904a7ae5e43c15fa8491af827b7ae9df7af",
+    "browser-companion.mjs": "26e3d01c8c879a18426c24338126d2ce5e875c941dacbaa6ecc01ffacc5bb6f9",
+    "independent-plan.mjs": "7e436443765dc6c02ee46a89db8e21bab8d7d14bd171a36626042ee9600abe8f"
+  },
+  "runtimeUnchanged": true,
+  "passed": true
+}
