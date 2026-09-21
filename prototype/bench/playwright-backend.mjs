@@ -194,8 +194,14 @@ export function createPlaywrightBackend(page) {
           if(Date.now()>=deadline)throw new Error('SEARCH_DEADLINE');
           observation=await observe({op:'validate',snapshot:observation.snapshot,url:r.url});
           const prior=initial.fields.find(f=>f.ref===query.ref),field=observation.fields.find(f=>f.ref===query.ref);
-          if(!field||field.kind!=='autocomplete'||field.disabled||!prior||field.label!==prior.label||field.group!==prior.group)throw new Error('FIELD_CHANGED');
+          if(!field||!['autocomplete','select'].includes(field.kind)||field.disabled||!prior||field.label!==prior.label||field.group!==prior.group)throw new Error('FIELD_CHANGED');
           if(typeof query.query!=='string'||!query.query.trim()||query.query.length>120)throw new Error('INVALID_SEARCH_QUERY');
+          if(field.kind==='select'){
+            const term=query.query.normalize('NFKC').trim().toLowerCase();
+            const matches=field.options.filter(o=>o.label.normalize('NFKC').toLowerCase().includes(term));
+            searches.push({ref:query.ref,status:'observed',options:matches.slice(0,40),totalMatches:matches.length,truncated:matches.length>40});
+            continue;
+          }
           el=await handleFor(query.ref);
           const options=await selectAutocomplete(el,field,query.query,{...r,deadline},{query:query.query,discoverOnly:true});
           observation=await observe({op:'inspect'});

@@ -1,0 +1,238 @@
+{
+  "date": "2026-09-21T01:02:30.112Z",
+  "url": "https://jobs.lever.co/palantir/c34b424e-caf2-455a-b104-ae1096ccca29/apply",
+  "guard": {
+    "frozen": true,
+    "allowedReadRequests": 32,
+    "blockedLoadWrites": 12,
+    "blockedAfterFreeze": 1,
+    "webSocketsBlocked": 0,
+    "pending": 0
+  },
+  "fieldCount": 101,
+  "contextBytes": {
+    "full": 353277,
+    "compact": 27530
+  },
+  "largeLists": [
+    {
+      "label": "Which university are you currently attending or did you last attend? Please select \"Other (School Not Listed)\" if your school is not listed. ✱",
+      "optionCount": 3302,
+      "retained": 2
+    }
+  ],
+  "complete": true,
+  "executionMs": 3321.336333000001,
+  "evidence": [
+    {
+      "group": "",
+      "label": "Full name ✱",
+      "expected": "Ada Example",
+      "actual": "Ada Example",
+      "status": "verified"
+    },
+    {
+      "group": "",
+      "label": "Email ✱",
+      "expected": "candidate@example.test",
+      "actual": "candidate@example.test",
+      "status": "verified"
+    },
+    {
+      "group": "",
+      "label": "Phone",
+      "expected": "+1 202 555 0100",
+      "actual": "+1 202 555 0100",
+      "status": "verified"
+    },
+    {
+      "group": "",
+      "label": "Current company",
+      "expected": "Example Research Lab",
+      "actual": "Example Research Lab",
+      "status": "verified"
+    },
+    {
+      "group": "",
+      "label": "Preferred Name | What would you like us to call you?",
+      "expected": "Ada",
+      "actual": "Ada",
+      "status": "verified"
+    },
+    {
+      "group": "",
+      "label": "Name Pronunciation | How do you pronounce your name?",
+      "expected": "AY-duh",
+      "actual": "AY-duh",
+      "status": "verified"
+    },
+    {
+      "group": "",
+      "label": "What is your anticipated start date? (Month/Year)",
+      "expected": "September 2027",
+      "actual": "September 2027",
+      "status": "verified"
+    },
+    {
+      "group": "",
+      "label": "Insert other preferred location(s) and/or further context on preference. Note: we are not offering fully remote work at this time for this opportunity. ✱",
+      "expected": "I prefer New York or Seattle and can work from either office. This is a fictional test profile with no other location preference.",
+      "actual": "I prefer New York or Seattle and can work from either office. This is a fictional test profile with no other location preference.",
+      "status": "verified"
+    },
+    {
+      "group": "",
+      "label": "High School Name ✱",
+      "expected": "Example Secondary School",
+      "actual": "Example Secondary School",
+      "status": "verified"
+    },
+    {
+      "group": "",
+      "label": "Year of High School Graduation ✱",
+      "expected": "2023",
+      "actual": "2023",
+      "status": "verified"
+    },
+    {
+      "group": "",
+      "label": "Which university are you currently attending or did you last attend? Please select \"Other (School Not Listed)\" if your school is not listed. ✱",
+      "expected": "Tsinghua University",
+      "actual": "Tsinghua University",
+      "status": "verified"
+    },
+    {
+      "group": "",
+      "label": "Please include your intended graduation year for the degree or relevant learning program that you are currently pursuing or have completed. ✱",
+      "expected": "2027",
+      "actual": "2027",
+      "status": "verified"
+    },
+    {
+      "group": "",
+      "label": "Please tell us how you heard about this opportunity. ✱",
+      "expected": "Friend or Family",
+      "actual": "Friend or Family",
+      "status": "verified"
+    },
+    {
+      "group": "",
+      "label": "If Palantir didn't exist, what kind of company or work would you be most excited and interested in working at/on? (Approx. 200 words) ✱",
+      "expected": "I would like to build reliable developer tools that help small teams understand software failures. I enjoy working on data pipelines, clear interfaces, and systems that make errors visible. I would prefer a team where engineers talk to users, test assumptions, and maintain the tools after launch. This paragraph describes a fictional applicant used only for local form validation.",
+      "actual": "I would like to build reliable developer tools that help small teams understand software failures. I enjoy working on data pipelines, clear interfaces, and systems that make errors visible. I would prefer a team where engineers talk to users, test assumptions, and maintain the tools after launch. This paragraph describes a fictional applicant used only for local form validation.",
+      "status": "verified"
+    },
+    {
+      "group": "",
+      "label": "What is the hardest technical challenge you've faced as part of work experience or a personal project? (Approx. 200 words) ✱",
+      "expected": "In a fictional student project, I built a small event-processing service. Duplicate events caused incorrect totals when a worker retried after a timeout. I added idempotency keys, made the update transactional, and tested retries with a fault-injection script. The difficult part was separating an acknowledged request from a committed update and choosing an invariant that both the application and tests could check. I documented the recovery behavior and the limits of the test environment.",
+      "actual": "In a fictional student project, I built a small event-processing service. Duplicate events caused incorrect totals when a worker retried after a timeout. I added idempotency keys, made the update transactional, and tested retries with a fault-injection script. The difficult part was separating an acknowledged request from a committed update and choosing an invariant that both the application and tests could check. I documented the recovery behavior and the limits of the test environment.",
+      "status": "verified"
+    },
+    {
+      "group": "Language Skill(s) (Check all that apply) ✱",
+      "label": "English (ENG)",
+      "expected": true,
+      "actual": true,
+      "status": "verified"
+    },
+    {
+      "group": "Language Skill(s) (Check all that apply) ✱",
+      "label": "Mandarin (MAN)",
+      "expected": true,
+      "actual": true,
+      "status": "verified"
+    },
+    {
+      "group": "Do you have any, or anticipate any upcoming offer deadlines? ✱",
+      "label": "No",
+      "expected": true,
+      "actual": true,
+      "status": "verified"
+    },
+    {
+      "group": "What are your preferred office location(s) to work from in addition to the location you are applying to? Select 1-3 from below. ✱",
+      "label": "New York, NY",
+      "expected": true,
+      "actual": true,
+      "status": "verified"
+    },
+    {
+      "group": "What are your preferred office location(s) to work from in addition to the location you are applying to? Select 1-3 from below. ✱",
+      "label": "Seattle, WA",
+      "expected": true,
+      "actual": true,
+      "status": "verified"
+    },
+    {
+      "group": "Are you legally authorized to work in the country for which you are applying? ✱",
+      "label": "Yes",
+      "expected": true,
+      "actual": true,
+      "status": "verified"
+    },
+    {
+      "group": "Will you now or in the future require sponsorship for employment visa status (e.g., H-1B, etc.)? ✱",
+      "label": "No",
+      "expected": true,
+      "actual": true,
+      "status": "verified"
+    },
+    {
+      "group": "As part of our interview process, we may use AI notetakers to transcribe conversations for accuracy and efficiency. Please see our candidate privacy policy for more information on how we process your data. Your decision to opt in or out of this tooli",
+      "label": "No, I do not consent",
+      "expected": true,
+      "actual": true,
+      "status": "verified"
+    },
+    {
+      "group": "Please share my resume and contact information with external Palantir partners for job seeking purposes. ✱",
+      "label": "No",
+      "expected": true,
+      "actual": true,
+      "status": "verified"
+    },
+    {
+      "group": "Are you a resident of California? ✱",
+      "label": "No",
+      "expected": true,
+      "actual": true,
+      "status": "verified"
+    }
+  ],
+  "coverage": {
+    "scope": "Visible enabled required fields only; hidden steps and server acceptance are not covered.",
+    "limitations": {
+      "iframes": 3,
+      "shadowRoots": false
+    },
+    "requiredUnits": 17,
+    "verifiedRequiredUnits": 16,
+    "unresolvedRequired": [
+      {
+        "ref": "f5",
+        "group": "",
+        "label": "Current location ✱",
+        "kind": "text",
+        "reason": "not-bound-to-source"
+      }
+    ],
+    "visibleRequiredCovered": false,
+    "unsupported": [
+      {
+        "ref": "f1",
+        "group": "",
+        "label": "Resume/CV ✱ ATTACH RESUME/CV",
+        "kind": "file",
+        "required": false
+      }
+    ]
+  },
+  "oracle": {
+    "passed": true,
+    "errors": [],
+    "knownTargets": 25,
+    "submitAttempts": 0,
+    "scope": "DOM display and native FormData only; network-dependent location, resume upload, business acceptance not verified."
+  }
+}

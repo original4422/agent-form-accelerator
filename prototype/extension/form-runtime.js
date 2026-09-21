@@ -28,8 +28,21 @@ export async function executeFormRequest(request) {
   };
   const ariaName = (el) => clean((el.getAttribute('aria-labelledby') ?? '').split(/\s+/).filter(Boolean)
     .map((id) => { const ref = document.getElementById(id); return textOf(ref, !!ref && !visible(ref)); }).join(' ') || el.getAttribute('aria-label'));
+  // Some forms render question text beside an unlabeled control. Use the
+  // nearest single-control container only; never borrow a multi-field heading.
+  // This is a visible contextual name, not a full accessible-name computation.
+  const contextualName = (el) => {
+    if(!['INPUT','TEXTAREA','SELECT'].includes(el.tagName)||['checkbox','radio','file','password'].includes(el.type))return '';
+    for(let node=el.parentElement,depth=0;node&&depth<4&&!['FORM','BODY','HTML'].includes(node.tagName);node=node.parentElement,depth++){
+      const peers=Array.from(node.querySelectorAll('input,textarea,select,[role="combobox"]')).filter(p=>visible(p)&&p.type!=='hidden');
+      if(peers.length!==1||peers[0]!==el)return '';
+      const name=textOf(node,false,new Set([el]));
+      if(name)return name;
+    }
+    return '';
+  };
   const label = (el) => clean(ariaName(el) || Array.from(el.labels ?? []).map((l) => textOf(l)).join(' ') ||
-    (el.tagName === 'BUTTON' ? textOf(el) : '') || el.getAttribute('placeholder') || el.name || el.id).slice(0, 250);
+    (el.tagName === 'BUTTON' ? textOf(el) : '') || contextualName(el) || el.getAttribute('placeholder') || el.name || el.id).slice(0, 250);
   const group = (el) => {
     const explicit = el.closest('fieldset,[role="group"],[role="radiogroup"]');
     if (explicit) return clean(ariaName(explicit) || textOf(explicit.querySelector('legend'))).slice(0, 250);

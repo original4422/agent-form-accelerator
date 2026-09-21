@@ -1,0 +1,15 @@
+{
+  "date": "2026-09-21T00:56:59.102Z",
+  "results": [
+    {
+      "backend": "extension",
+      "passed": false,
+      "error": "Expected values to be strictly deep-equal:\n+ actual - expected\n\n  [\n+   'Type your response',\n+   'Type your response',\n+   'opaque3',\n-   'Preferred name',\n-   'Pronunciation',\n-   'Graduation year',\n    'ambiguous1',\n    'ambiguous2',\n    'Explicit label'\n  ]\n"
+    },
+    {
+      "backend": "playwright",
+      "passed": false,
+      "error": "Expected values to be strictly deep-equal:\n+ actual - expected\n\n  [\n+   'Type your response',\n+   'Type your response',\n+   'opaque3',\n-   'Preferred name',\n-   'Pronunciation',\n-   'Graduation year',\n    'ambiguous1',\n    'ambiguous2',\n    'Explicit label'\n  ]\n"
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "date": "2026-09-21T01:11:36.229Z",
+  "results": [
+    {
+      "name": "large lists retain current and exact source matches, flag omissions",
+      "passed": true
+    },
+    {
+      "name": "selected option survives the candidate cap for large source documents",
+      "passed": true
+    },
+    {
+      "name": "omitted native choices are discoverable and broad results are explicit",
+      "passed": true
+    },
+    {
+      "name": "native discovery selects a unique label and actual native value",
+      "passed": true
+    },
+    {
+      "name": "duplicate visible native labels are never resolved by hidden values",
+      "passed": true
+    }
+  ]
+}

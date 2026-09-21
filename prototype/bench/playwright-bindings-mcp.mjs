@@ -8,4 +8,4 @@ const browser=await chromium.connectOverCDP(endpoint);
 const pages=browser.contexts().flatMap(c=>c.pages()).filter(p=>p.url()===url);
 if(pages.length!==1)throw new Error('Expected one fixture tab');
 const backend=createPlaywrightBackend(pages[0]);
-await serveBindings({request:backend.request,sourcePath:process.env.AFA_DOCUMENT_FILE,repeatMode:process.env.AFA_REPEAT_MODE,contextMode:process.env.AFA_CONTEXT_MODE,discoveryMode:process.env.AFA_DISCOVERY_MODE});
+await serveBindings({request:backend.request,sourcePath:process.env.AFA_DOCUMENT_FILE,repeatMode:process.env.AFA_REPEAT_MODE,contextMode:process.env.AFA_CONTEXT_MODE,discoveryMode:process.env.AFA_DISCOVERY_MODE,optionMode:process.env.AFA_OPTIONS_MODE});
