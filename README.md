@@ -6,6 +6,8 @@
 
 ## 看结果
 
+- [独立分组与未完成事项记录](prototype/reports/INDEPENDENT-PLANS.md)：提前声明字段依赖边界，局部搜索失败后同一次请求继续完成独立字段；隐藏的未完成控件仍保留在任务记录中。
+
 - [真实 Greenhouse 页面迁移](prototype/reports/GREENHOUSE-MIGRATION.md)：Codex 在断网虚构资料测试中通过两次调用核验 10 个字段，如实保留 4 项远程查询、隐私确认与附件未完成；验证了失败恢复，尚非完整申请或速度对照。
 
 - [把条件搜索放进填写计划](prototype/reports/CONDITIONAL-SELECTION.md)：来源已确定名称和校区时，本地搜索并核对唯一匹配项；歧义回到Codex，保持完整回读和缺失事实报告。三组对照完整中位47.32→30.53秒，约减35.5%。
@@ -164,3 +166,5 @@ prototype/skills/       两端共用的工作流说明
 运行 `AFA_FIXTURE=alias-form node prototype/scripts/demo-search.mjs`，在它打印的临时 Codex 命令末尾追加 `-c 'mcp_servers.afa.env.AFA_SELECTION_MODE="conditional"'`。这只为本次隔离演示开放条件选择，默认接口未变。
 
 让 Codex 根据资料填写全部已知字段和两段教育经历，保留缺失日期，并使用来源中的机构名与校区限定词。它可以在一次 apply 中提出 `choices[ref].search = {query, labelParts}`；只有唯一观察选项满足全部字面条件才执行。若候选歧义或条件不满足，返回真实候选让 Codex 决定，不自动弱化条件。该路径仍使用已有 Codex 登录，无新增模型 API Key；未接入日常浏览器扩展。
+
+对仅涉及当前已有字段的批次，可把实验开关改为 `AFA_SELECTION_MODE="independent"`。Codex 可以提供 `independentGroups`，将电话国家与电话等有关联的字段放在同组；一组查询无法完成时暂缓整组，继续核验其他独立组。`complete:false` 表示原请求仍未完成，`task.unresolvedTargets` 在上下文刷新后仍保留。该选项不能和新增重复组或 `checkboxGroups` 混用；省略它则保持原来的全部条件先成功才填写的行为。

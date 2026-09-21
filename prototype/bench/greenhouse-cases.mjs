@@ -1,5 +1,16 @@
 // Independent test oracle for this public page. Never exposed to the host model.
 export const GREENHOUSE_URL='https://job-boards.greenhouse.io/cloudflare/jobs/7377424';
+export function greenhousePlan(context,{independent=false}={}) {
+  const ref=label=>{const fields=context.page.fields.filter(f=>f.label===label);if(fields.length!==1)throw new Error('Expected one field: '+label);return fields[0].ref;};
+  const source=label=>context.source.entries.find(e=>e.label===label).id;
+  const map={'First Name':'名','Last Name':'姓','Preferred First Name':'常用名','Email':'邮箱','Country':'电话号码国家','Phone':'本地电话号码','Location (City)':'居住城市','School':'学校英文名','Degree':'学历','Discipline':'专业','Are you fluent in English?':'英语是否流利','Do you now or will you in the future require immigration sponsorship to work at Cloudflare?':'现在或未来是否需要雇主签证支持','Would you like to include your LinkedIn profile, personal website or blog?':'个人网站','How did you hear about this job?':'获知渠道'};
+  const searches=[['Country','United States',['United States']],['Location (City)','Beijing',['Beijing','China']],['School','Tsinghua University',['Tsinghua University']],['Degree','Master',['Master','Science']],['Discipline','Computer Science',['Computer Science']],['Are you fluent in English?','Yes',['Yes']],['Do you now or will you in the future require immigration sponsorship to work at Cloudflare?','No',['No']]];
+  const bindings=Object.fromEntries(Object.entries(map).map(([f,s])=>[ref(f),source(s)]));
+  const choices=Object.fromEntries(searches.map(([label,query,labelParts])=>[ref(label),{search:{query,labelParts}}]));
+  const coupled=[['Country','Phone'],['School','Degree','Discipline']].map(g=>g.map(ref));
+  const independentGroups=[...coupled,...Object.keys(bindings).filter(r=>!coupled.flat().includes(r)).map(r=>[r])];
+  return {url:context.page.url,bindings,choices,...(independent?{independentGroups}:{})};
+}
 export async function greenhouseOracle(page) {
   const actual=await page.evaluate(()=>{
     const input=id=>document.getElementById(id);

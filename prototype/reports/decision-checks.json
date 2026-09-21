@@ -1,5 +1,5 @@
 {
-  "date": "2026-09-21T01:50:19.243Z",
+  "date": "2026-09-21T02:53:40.973Z",
   "rows": [
     {
       "name": "factoring preserves all metadata and field order including exceptions",
@@ -102,7 +102,7 @@
       },
       "guard": {
         "frozen": true,
-        "allowedReadRequests": 31,
+        "allowedReadRequests": 30,
         "blockedLoadWrites": 2,
         "blockedAfterFreeze": 12,
         "webSocketsBlocked": 0,

@@ -1,0 +1,62 @@
+{
+  "date": "2026-09-21T02:51:46.864Z",
+  "results": [
+    {
+      "name": "ambiguous school defers its whole dependency group and fills independent facts once",
+      "passed": true
+    },
+    {
+      "name": "unresolved target persists after its field disappears and context refreshes",
+      "passed": true
+    },
+    {
+      "name": "later observed-option recovery clears only genuinely verified pending targets",
+      "passed": true
+    },
+    {
+      "name": "all deferred means no ordinary writes and no false partial success",
+      "passed": true
+    },
+    {
+      "name": "missing, duplicate and foreign partition refs fail before queries",
+      "passed": true
+    },
+    {
+      "name": "unsupported ordinary source validates before any query or write",
+      "passed": true
+    },
+    {
+      "name": "source drift stops independent continuation",
+      "passed": true
+    },
+    {
+      "name": "meaning drift in Applicant name stops every independent group",
+      "passed": true
+    },
+    {
+      "name": "meaning drift in Institution stops every independent group",
+      "passed": false,
+      "error": "AssertionError [ERR_ASSERTION]: The input did not match the regular expression /PLAN_FIELD_CHANGED/. Input:\n\n'Error: PLAN_SEARCH_INTEGRITY_FAILED'\n\n    at async file:///Users/original/Project/github/personal_project/agent-form-accelerator/prototype/bench/independent-check.mjs:70:5\n    at async check (file:///Users/original/Project/github/personal_project/agent-form-accelerator/prototype/bench/independent-check.mjs:24:34)\n    at async file:///Users/original/Project/github/personal_project/agent-form-accelerator/prototype/bench/independent-check.mjs:68:55"
+    },
+    {
+      "name": "document replacement stops continuation",
+      "passed": true
+    },
+    {
+      "name": "unexpected search failures cannot be treated as unavailable options",
+      "passed": true
+    },
+    {
+      "name": "default conditional mode does not silently enable independent writes",
+      "passed": true
+    },
+    {
+      "name": "choice-question members cannot be assigned to different dependency groups",
+      "passed": true
+    },
+    {
+      "name": "expansion plans reject the independent option before querying",
+      "passed": true
+    }
+  ]
+}

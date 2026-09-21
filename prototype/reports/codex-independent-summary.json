@@ -1,0 +1,72 @@
+{
+  "batchId": 1789959368271,
+  "scope": "Alternating Codex conditional all-or-return versus explicit independent groups. Same actual Greenhouse page, 14 fictional source facts, network-frozen before input, prompt, backend and ten-target independent DOM oracle. Four remote lookups remain unresolved by design; compare complete host time for this identical partial dry-run task, not full application completion. Browser load and metadata preflight excluded; CLI, model, tools, recovery and final reply included.",
+  "hostRunsPassed": 6,
+  "verifiedTargets": 60,
+  "submissions": 0,
+  "sourceFingerprintsVerified": 119,
+  "distinctContextHashes": 1,
+  "distinctPromptHashes": 1,
+  "rawBatchExitCode": 1,
+  "rawKeywordFailures": [
+    1789959447178,
+    1789959496671,
+    1789959755636
+  ],
+  "finalTextReview": "All six final responses inspected: four unresolved facts are reported as City or Location, School, Degree, Discipline with corresponding supplied values; privacy and resume gaps remain explicit. None claims the application complete. Raw automatic flags retained; City-only regex was too narrow.",
+  "modes": {
+    "conditional": {
+      "elapsedSeconds": [
+        71.418356166,
+        50.154781709000005,
+        128.15703008300002
+      ],
+      "medianSeconds": 71.418356166,
+      "toolCalls": [
+        2,
+        2,
+        2
+      ],
+      "medianFirstToolSeconds": 29.925540749999996,
+      "medianExecutionSeconds": 7.086915208999999,
+      "medianTailSeconds": 8.841683832999989
+    },
+    "independent": {
+      "elapsedSeconds": [
+        42.954878125,
+        50.09197733300002,
+        43.781874167000005
+      ],
+      "medianSeconds": 43.781874167000005,
+      "toolCalls": [
+        1,
+        1,
+        1
+      ],
+      "medianFirstToolSeconds": 19.188212750000005,
+      "medianExecutionSeconds": 7.036120707999999,
+      "medianTailSeconds": 12.444095582999987
+    }
+  },
+  "pairs": [
+    {
+      "repetition": 0,
+      "conditionalSeconds": 71.418356166,
+      "independentSeconds": 42.954878125,
+      "reductionPercent": 39.85456900581891
+    },
+    {
+      "repetition": 1,
+      "conditionalSeconds": 50.154781709000005,
+      "independentSeconds": 50.09197733300002,
+      "reductionPercent": 0.125221113241758
+    },
+    {
+      "repetition": 2,
+      "conditionalSeconds": 128.15703008300002,
+      "independentSeconds": 43.781874167000005,
+      "reductionPercent": 65.83732149641345
+    }
+  ],
+  "medianReductionPercent": 38.696608942893654
+}
