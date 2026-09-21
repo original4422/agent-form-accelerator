@@ -10,7 +10,7 @@ export async function createDocumentSession({sourcePath, request,conditionalSele
   let nextOption=0;
   const offers=new Map(),verified=new Map();
   const ledger=createTargetLedger(verified);
-  const contract = f => f && JSON.stringify([f.group,f.label,f.kind]);
+  const contract = f => f && JSON.stringify([f.group,f.label,f.kind,f.choiceIdentity]);
   const freshSource = async () => {
     await assertSourceFresh(sourcePath,source);
   };
@@ -32,10 +32,12 @@ export async function createDocumentSession({sourcePath, request,conditionalSele
     }
     const contracts=queries.map(q=>contract(observation.fields.find(f=>f.ref===q.ref)));
     const contextBefore=JSON.stringify(observation.formContext);
+    const pressedBefore=observation.fields.filter(f=>f.kind==='pressed-choice').map(f=>({ref:f.ref,identity:f.choiceIdentity}));
     const result=await request({op:'discover',url,snapshot:observation.snapshot,queries:queries.map(({ref,query})=>({ref,query})),...(deadline===undefined?{}:{deadline})});
     if(observation.documentId!==result.observation.documentId||observation.url!==result.observation.url){verified.clear();ledger.clear();offers.clear();}
     observation=result.observation;
     if(JSON.stringify(observation.formContext)!==contextBefore){offers.clear();throw new Error('FORM_CONTEXT_CHANGED: refresh context before deciding');}
+    if(pressedBefore.some(f=>observation.fields.find(n=>n.ref===f.ref)?.choiceIdentity!==f.identity)){offers.clear();throw new Error('PRESSED_CHOICE_CHANGED');}
     for(const [key,offer]of offers)if(queries.some(q=>offer.ref===q.ref&&offer.sourceId===q.sourceId))offers.delete(key);
     const searches=result.searches.map((r,i)=>{
       const q=queries[i];
@@ -93,9 +95,9 @@ export async function createDocumentSession({sourcePath, request,conditionalSele
               value=offer.value;
             }else{value=offer.label;query=offer.query;}
           }else if(['select','combobox','autocomplete'].includes(field.kind)&&typeof choice==='string'&&field.options?.some(o=>!o.disabled&&o.value===choice))value=choice;
-          else if(['checkbox','radio'].includes(field.kind)&&typeof choice==='boolean'&&(field.kind!=='radio'||choice))value=choice;
+          else if(['checkbox','radio','pressed-choice'].includes(field.kind)&&typeof choice==='boolean'&&(field.kind==='checkbox'||choice))value=choice;
           else throw new Error('CHOICE_NOT_OBSERVED_OR_INVALID');
-        }else if(['checkbox','radio'].includes(field.kind))throw new Error('BOOLEAN_CHOICE_REQUIRED');
+        }else if(['checkbox','radio','pressed-choice'].includes(field.kind))throw new Error('BOOLEAN_CHOICE_REQUIRED');
         return {ref,sourceId,...(quote?{sourceQuote:quote}:{}),...(sourceIds?{sourceIds}:{}),sourceLabel:entry.label,group:expectGroup??field.group,label:field.label,kind:field.kind,value,query};
       });
     };
@@ -110,6 +112,8 @@ export async function createDocumentSession({sourcePath, request,conditionalSele
       if(!copied.length)throw new Error('EMPTY_REPEAT_BINDINGS');
       targets.push(...copied);expansions.push({label:control.label,expectGroup});
     }
+    const pressedGroups=targets.filter(f=>f.kind==='pressed-choice').map(f=>f.group);
+    if(new Set(pressedGroups).size!==pressedGroups.length)throw new Error('MULTIPLE_PRESSED_CHOICES');
     if(!targets.length||targets.length>100)throw new Error('Expected 1–100 bindings');
     return {targets,expansions,groupContracts,groupContract};
   };

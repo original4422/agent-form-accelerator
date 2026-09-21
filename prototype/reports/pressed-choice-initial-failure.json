@@ -1,0 +1,63 @@
+{
+  "date": "2026-09-21T05:38:48.566Z",
+  "results": [
+    {
+      "name": "known public Yes/No structure becomes four boolean choice options in two groups",
+      "passed": false,
+      "error": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n\n0 !== 4\n\n    at file:///Users/original/Project/github/personal_project/agent-form-accelerator/prototype/bench/pressed-choice-check.mjs:10:186\n    at async check (file:///Users/original/Project/github/personal_project/agent-form-accelerator/prototype/bench/pressed-choice-check.mjs:8:100)\n    at async file:///Users/original/Project/github/personal_project/agent-form-accelerator/prototype/bench/pressed-choice-check.mjs:10:2"
+    },
+    {
+      "name": "selecting No means pressing that option; replacing Yes is exclusive and idempotent",
+      "passed": false,
+      "error": "AssertionError [ERR_ASSERTION]: SEMANTIC_REVIEW_REQUIRED\n\nfalse !== true\n\n    at file:///Users/original/Project/github/personal_project/agent-form-accelerator/prototype/bench/pressed-choice-check.mjs:11:229\n    at async check (file:///Users/original/Project/github/personal_project/agent-form-accelerator/prototype/bench/pressed-choice-check.mjs:8:100)\n    at async file:///Users/original/Project/github/personal_project/agent-form-accelerator/prototype/bench/pressed-choice-check.mjs:11:2"
+    },
+    {
+      "name": "ordinary toggles and submit-associated defaults stay unsupported",
+      "passed": true
+    },
+    {
+      "name": "explicit type=button allows the same choice structure inside a form",
+      "passed": false,
+      "error": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n\n0 !== 2\n\n    at file:///Users/original/Project/github/personal_project/agent-form-accelerator/prototype/bench/pressed-choice-check.mjs:13:244\n    at async check (file:///Users/original/Project/github/personal_project/agent-form-accelerator/prototype/bench/pressed-choice-check.mjs:8:100)\n    at async file:///Users/original/Project/github/personal_project/agent-form-accelerator/prototype/bench/pressed-choice-check.mjs:13:2"
+    },
+    {
+      "name": "unknown or inconsistent widget structures are never promoted",
+      "passed": true
+    },
+    {
+      "name": "adapter identity drift after observation stops before any click",
+      "passed": false,
+      "error": "AssertionError [ERR_ASSERTION]: Missing expected rejection.\n    at async file:///Users/original/Project/github/personal_project/agent-form-accelerator/prototype/bench/pressed-choice-check.mjs:15:264\n    at async check (file:///Users/original/Project/github/personal_project/agent-form-accelerator/prototype/bench/pressed-choice-check.mjs:8:100)\n    at async file:///Users/original/Project/github/personal_project/agent-form-accelerator/prototype/bench/pressed-choice-check.mjs:15:2"
+    },
+    {
+      "name": "a changed native form association cannot turn a choice into submit",
+      "passed": false,
+      "error": "AssertionError [ERR_ASSERTION]: Missing expected rejection.\n    at async file:///Users/original/Project/github/personal_project/agent-form-accelerator/prototype/bench/pressed-choice-check.mjs:16:372\n    at async check (file:///Users/original/Project/github/personal_project/agent-form-accelerator/prototype/bench/pressed-choice-check.mjs:8:100)\n    at async file:///Users/original/Project/github/personal_project/agent-form-accelerator/prototype/bench/pressed-choice-check.mjs:16:2"
+    },
+    {
+      "name": "click without an observed selected state returns incomplete",
+      "passed": false,
+      "error": "AssertionError [ERR_ASSERTION]: The input did not match the regular expression /PRESSED_CHOICE/. Input:\n\n'SEMANTIC_REVIEW_REQUIRED'\n\n    at file:///Users/original/Project/github/personal_project/agent-form-accelerator/prototype/bench/pressed-choice-check.mjs:17:285\n    at async check (file:///Users/original/Project/github/personal_project/agent-form-accelerator/prototype/bench/pressed-choice-check.mjs:8:100)\n    at async file:///Users/original/Project/github/personal_project/agent-form-accelerator/prototype/bench/pressed-choice-check.mjs:17:2"
+    },
+    {
+      "name": "both pressed is invalid and cannot be declared verified",
+      "passed": false,
+      "error": "AssertionError [ERR_ASSERTION]: The input did not match the regular expression /PRESSED_CHOICE/. Input:\n\n'SEMANTIC_REVIEW_REQUIRED'\n\n    at file:///Users/original/Project/github/personal_project/agent-form-accelerator/prototype/bench/pressed-choice-check.mjs:18:356\n    at async check (file:///Users/original/Project/github/personal_project/agent-form-accelerator/prototype/bench/pressed-choice-check.mjs:8:100)\n    at async file:///Users/original/Project/github/personal_project/agent-form-accelerator/prototype/bench/pressed-choice-check.mjs:18:2"
+    },
+    {
+      "name": "a click that leaves both options pressed returns incomplete",
+      "passed": false,
+      "error": "AssertionError [ERR_ASSERTION]: The input did not match the regular expression /PRESSED_CHOICE/. Input:\n\n'SEMANTIC_REVIEW_REQUIRED'\n\n    at file:///Users/original/Project/github/personal_project/agent-form-accelerator/prototype/bench/pressed-choice-check.mjs:19:409\n    at async check (file:///Users/original/Project/github/personal_project/agent-form-accelerator/prototype/bench/pressed-choice-check.mjs:8:100)\n    at async file:///Users/original/Project/github/personal_project/agent-form-accelerator/prototype/bench/pressed-choice-check.mjs:19:2"
+    },
+    {
+      "name": "a selected state that reverts is not retried or counted complete",
+      "passed": false,
+      "error": "AssertionError [ERR_ASSERTION]: The input did not match the regular expression /PRESSED_CHOICE/. Input:\n\n'SEMANTIC_REVIEW_REQUIRED'\n\n    at file:///Users/original/Project/github/personal_project/agent-form-accelerator/prototype/bench/pressed-choice-check.mjs:20:292\n    at async check (file:///Users/original/Project/github/personal_project/agent-form-accelerator/prototype/bench/pressed-choice-check.mjs:8:100)\n    at async file:///Users/original/Project/github/personal_project/agent-form-accelerator/prototype/bench/pressed-choice-check.mjs:20:2"
+    },
+    {
+      "name": "source bindings select two questions in one apply and reject incompatible choices before writes",
+      "passed": false,
+      "error": "AssertionError [ERR_ASSERTION]: The input did not match the regular expression /CHOICE_NOT_OBSERVED_OR_INVALID/. Input:\n\n'Error: UNSUPPORTED_CONTROL'\n\n    at async file:///Users/original/Project/github/personal_project/agent-form-accelerator/prototype/bench/pressed-choice-check.mjs:22:443\n    at async check (file:///Users/original/Project/github/personal_project/agent-form-accelerator/prototype/bench/pressed-choice-check.mjs:8:100)\n    at async file:///Users/original/Project/github/personal_project/agent-form-accelerator/prototype/bench/pressed-choice-check.mjs:21:2"
+    }
+  ]
+}

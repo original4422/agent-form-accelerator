@@ -3,7 +3,7 @@ export const fieldKey=f=>JSON.stringify([f.group,f.label]);
 export function summarizeCoverage(page,verified) {
   const active=page.fields.filter(f=>!f.disabled),units=new Map();
   for(const f of active.filter(f=>f.required)) {
-    const key=f.kind==='radio'?JSON.stringify(['radio',f.group]):fieldKey(f);
+    const key=['radio','pressed-choice'].includes(f.kind)?JSON.stringify([f.kind,f.group]):fieldKey(f);
     if(!units.has(key))units.set(key,[]);units.get(key).push(f);
   }
   const reviewed=f=>{
@@ -13,9 +13,9 @@ export function summarizeCoverage(page,verified) {
   };
   const unresolved=[];
   for(const fields of units.values()) {
-    const radio=fields[0].kind==='radio';
+    const radio=['radio','pressed-choice'].includes(fields[0].kind);
     // Radio requiredness applies to its question, not every unselected option.
-    const candidates=radio?active.filter(f=>f.kind==='radio'&&f.group===fields[0].group):fields;
+    const candidates=radio?active.filter(f=>f.kind===fields[0].kind&&f.group===fields[0].group):fields;
     if(candidates.some(f=>reviewed(f)&&(!radio||f.value===true)))continue;
     const f=fields[0];unresolved.push({ref:f.ref,group:f.group,label:radio?f.group:f.label,kind:f.kind,
       reason:!f.supported?'unsupported':f.pending?'pending':verified.has(fieldKey(f))?'changed-or-invalid':'not-bound-to-source'});

@@ -28,6 +28,7 @@ export async function executeGoal(request, primitive) {
   const refresh = async () => { observation = await call({op: 'inspect'}); guard(); };
   const contextFor = (o,f) => JSON.stringify((o.formContext?.blocks??[]).filter(b=>b.fieldRefs.includes(f.ref)).map(b=>[b.text,b.relation]));
   const contexts=new Map(observation.fields.map(f=>[key(f),contextFor(observation,f)]));
+  const pressedContracts=new Map(observation.fields.filter(f=>f.kind==='pressed-choice').map(f=>[key(f),f.choiceIdentity]));
   const originals = new Map(), writes = new Map(), expanded = new Set(), attempted = new Set();
   const trace = [];
   const unique = (items, predicate, reason) => {
@@ -46,6 +47,7 @@ export async function executeGoal(request, primitive) {
     const f = unique(observation.fields, (o) => key(o) === key(target), `AMBIGUOUS_FIELD: ${target.group}/${target.label}`);
     if (!f) return {target, reason: 'FIELD_NOT_VISIBLE'};
     if(contexts.has(key(target))&&contexts.get(key(target))!==contextFor(observation,f))throw new Error('FORM_CONTEXT_CHANGED');
+    if(pressedContracts.has(key(target))&&pressedContracts.get(key(target))!==f.choiceIdentity)throw new Error('PRESSED_CHOICE_CHANGED');
     if (target.kind && target.kind !== f.kind) throw new Error('FIELD_KIND_CHANGED');
     if (originals.has(key(target)) && originals.get(key(target)) !== f.kind) throw new Error('FIELD_KIND_CHANGED');
     if (!originals.has(key(target)) && !expanded.has(target.group)) return {target, reason: 'UNPLANNED_FIELD'};

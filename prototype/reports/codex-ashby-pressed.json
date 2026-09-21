@@ -1,0 +1,567 @@
+{
+  "batchId": 1789969542053,
+  "date": "2026-09-21T05:45:42.053Z",
+  "scope": "Two real Codex tasks on the actual public Ashby form, fresh contexts and frozen TCP/HTTP/WS before fictional input. Opposite qualification facts. Unsupported location/files remain explicit; no full-application or speed-comparison claim.",
+  "runs": [
+    {
+      "variant": "a",
+      "setupMs": 6893.0635839999995,
+      "elapsedMs": 37083.719,
+      "totalMs": 43981.349459,
+      "exitCode": 0,
+      "timedOut": false,
+      "aborted": false,
+      "toolCalls": [
+        {
+          "tool": "form_apply_bindings",
+          "status": "completed",
+          "startMs": 21077.837457999998,
+          "endMs": 26581.964166,
+          "durationMs": 5504.126708000003,
+          "returnedBytes": 18925,
+          "executionMs": 668.6240829999952,
+          "complete": true,
+          "primitiveCalls": 3
+        }
+      ],
+      "usage": {
+        "input_tokens": 109126,
+        "cached_input_tokens": 80512,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 359,
+        "reasoning_output_tokens": 0
+      },
+      "sourceHash": "99f4a7addaf8f42b6d18efb1b44c6726d2cf72b99c41e74acdd25a3fb6ae83e6",
+      "promptHash": "c21b02b26e331c57346fd8baeb551de6720697dc65814cbcd6d5bc7755d994f3",
+      "pageHash": "41142963fbe4c75289a9fd73da6ed541125004e673d6eb3874d685a8eef9b292",
+      "contextBytes": 17364,
+      "contextChoices": [
+        {
+          "ref": "f8",
+          "label": "Yes",
+          "group": "Will you now or in the future require sponsorship for employment visa status to work in this location?",
+          "kind": "pressed-choice",
+          "required": false,
+          "supported": true,
+          "disabled": false,
+          "readOnly": false,
+          "valid": true,
+          "pending": false,
+          "value": false,
+          "adapter": "ashby-yesno-v1"
+        },
+        {
+          "ref": "f9",
+          "label": "No",
+          "group": "Will you now or in the future require sponsorship for employment visa status to work in this location?",
+          "kind": "pressed-choice",
+          "required": false,
+          "supported": true,
+          "disabled": false,
+          "readOnly": false,
+          "valid": true,
+          "pending": false,
+          "value": false,
+          "adapter": "ashby-yesno-v1"
+        },
+        {
+          "ref": "f10",
+          "label": "Yes",
+          "group": "Do you have 4+ years of experience as a full-time engineer?",
+          "kind": "pressed-choice",
+          "required": false,
+          "supported": true,
+          "disabled": false,
+          "readOnly": false,
+          "valid": true,
+          "pending": false,
+          "value": false,
+          "adapter": "ashby-yesno-v1"
+        },
+        {
+          "ref": "f11",
+          "label": "No",
+          "group": "Do you have 4+ years of experience as a full-time engineer?",
+          "kind": "pressed-choice",
+          "required": false,
+          "supported": true,
+          "disabled": false,
+          "readOnly": false,
+          "valid": true,
+          "pending": false,
+          "value": false,
+          "adapter": "ashby-yesno-v1"
+        }
+      ],
+      "actual": {
+        "url": "https://jobs.ashbyhq.com/ashby/0020099f-9bb3-4da9-9808-4556564f5301/application",
+        "diagnostic": {
+          "submits": 0,
+          "choiceClicks": 2
+        },
+        "choices": [
+          {
+            "question": "Will you now or in the future require sponsorship for employment visa status to work in this location?",
+            "states": [
+              {
+                "label": "Yes",
+                "pressed": "false",
+                "option": "yes"
+              },
+              {
+                "label": "No",
+                "pressed": "true",
+                "option": "no"
+              }
+            ],
+            "nativeChecked": false
+          },
+          {
+            "question": "Do you have 4+ years of experience as a full-time engineer?",
+            "states": [
+              {
+                "label": "Yes",
+                "pressed": "true",
+                "option": "yes"
+              },
+              {
+                "label": "No",
+                "pressed": "false",
+                "option": "no"
+              }
+            ],
+            "nativeChecked": true
+          }
+        ],
+        "text": [
+          {
+            "label": "Name",
+            "value": "Alex Fictional"
+          },
+          {
+            "label": "Email",
+            "value": "alex.fictional@example.test"
+          },
+          {
+            "label": "LinkedIn URL",
+            "value": ""
+          },
+          {
+            "label": "GitHub URL",
+            "value": ""
+          },
+          {
+            "label": "Describe a role you were in or a project you led that brought out your absolute best work? What setup or attributes of the role/project enabled that?",
+            "value": "In a fictional internal library project, I coordinated a small team cleaning duplicate records. Clear ownership, short feedback cycles, and access to librarians helped us resolve inconsistent titles and document decisions."
+          },
+          {
+            "label": "Describe a choice you made when shipping a product or working on a technical challenge that didn’t come from a product manager or an engineering manager/lead.  How did you advocate for it, and what impact did it have on your end users?",
+            "value": "In a fictional registration project, I proposed a preview screen without being asked by a manager. I built a small demonstration and invited volunteers to compare the two flows. The team adopted the preview after volunteers caught incorrect event dates before saving."
+          },
+          {
+            "label": "Describe a time you challenged and changed a product request for a better user experience or business outcome.",
+            "value": ""
+          },
+          {
+            "label": "What’s something, in a professional context, that you’ve gone deep on purely because you couldn’t let it go?",
+            "value": ""
+          }
+        ],
+        "fileCounts": [
+          0,
+          0
+        ]
+      },
+      "guardBefore": {
+        "state": "frozen",
+        "closed": false,
+        "observedUnfinishedRequests": 0,
+        "openSockets": 0,
+        "blockedRequests": 0,
+        "blockedSockets": 0,
+        "openedSockets": 0,
+        "frozen": true,
+        "activeTransportSockets": 0,
+        "openedTunnels": 41,
+        "rejectedConnections": 0,
+        "allowedReadQueries": [
+          "ApiJobPosting",
+          "ApiOrganizationFromHostedJobsPageName",
+          "ApiOrganizationFromHostedJobsPageName"
+        ],
+        "blockedLoadWrites": 4,
+        "blockedLoadSockets": 0
+      },
+      "guardAfter": {
+        "state": "frozen",
+        "closed": false,
+        "observedUnfinishedRequests": 0,
+        "openSockets": 0,
+        "blockedRequests": 0,
+        "blockedSockets": 0,
+        "openedSockets": 0,
+        "frozen": true,
+        "activeTransportSockets": 0,
+        "openedTunnels": 41,
+        "rejectedConnections": 11,
+        "allowedReadQueries": [
+          "ApiJobPosting",
+          "ApiOrganizationFromHostedJobsPageName",
+          "ApiOrganizationFromHostedJobsPageName"
+        ],
+        "blockedLoadWrites": 35,
+        "blockedLoadSockets": 0
+      },
+      "oracle": {
+        "contact": true,
+        "mainPassage": true,
+        "oneOfThree": true,
+        "choices": true,
+        "nativeChecks": true,
+        "zeroSubmit": true,
+        "zeroFiles": true,
+        "samePage": true,
+        "networkFrozen": true,
+        "locationReported": true
+      },
+      "finalText": "Filled and verified six fields: name, email, sponsorship **No**, 4+ years’ experience **Yes**, and both complete source passages. Answered exactly one of the three optional-choice questions, within paragraph limits.\n\nRemaining:\n- Work location: unsupported control; “London, United Kingdom” remains unfilled.\n- Resume/autofill: unsupported file controls; no upload performed.\n- LinkedIn, GitHub, and optional diversity survey: no supplied facts; left blank.\n- Application-history limits: cannot verify from supplied facts.\n\nAll three tool-detected required fields are verified. Whole-application completion is not established; visual-only requirements, iframe contents, and server acceptance are not covered. Nothing submitted.",
+      "calls": [
+        {
+          "tool": "form_apply_bindings",
+          "arguments": {
+            "bindings": {
+              "f2": "s1",
+              "f3": "s2",
+              "f9": "s4",
+              "f10": "s5",
+              "f12": "s6",
+              "f13": "s7"
+            },
+            "choices": {
+              "f9": true,
+              "f10": true
+            },
+            "url": "https://jobs.ashbyhq.com/ashby/0020099f-9bb3-4da9-9808-4556564f5301/application"
+          }
+        }
+      ],
+      "passed": true
+    },
+    {
+      "variant": "b",
+      "setupMs": 6538.987583999995,
+      "elapsedMs": 32298.858667,
+      "totalMs": 38851.27325,
+      "exitCode": 0,
+      "timedOut": false,
+      "aborted": false,
+      "toolCalls": [
+        {
+          "tool": "form_apply_bindings",
+          "status": "completed",
+          "startMs": 16496.446833,
+          "endMs": 22224.458416999994,
+          "durationMs": 5728.011583999993,
+          "returnedBytes": 18937,
+          "executionMs": 594.0706250000076,
+          "complete": true,
+          "primitiveCalls": 3
+        }
+      ],
+      "usage": {
+        "input_tokens": 109093,
+        "cached_input_tokens": 80512,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 361,
+        "reasoning_output_tokens": 0
+      },
+      "sourceHash": "8a7381596a611f3a7b24b659a36f581b2066e515d0d52c3fc323ec96285fb3bb",
+      "promptHash": "c21b02b26e331c57346fd8baeb551de6720697dc65814cbcd6d5bc7755d994f3",
+      "pageHash": "41142963fbe4c75289a9fd73da6ed541125004e673d6eb3874d685a8eef9b292",
+      "contextBytes": 17340,
+      "contextChoices": [
+        {
+          "ref": "f8",
+          "label": "Yes",
+          "group": "Will you now or in the future require sponsorship for employment visa status to work in this location?",
+          "kind": "pressed-choice",
+          "required": false,
+          "supported": true,
+          "disabled": false,
+          "readOnly": false,
+          "valid": true,
+          "pending": false,
+          "value": false,
+          "adapter": "ashby-yesno-v1"
+        },
+        {
+          "ref": "f9",
+          "label": "No",
+          "group": "Will you now or in the future require sponsorship for employment visa status to work in this location?",
+          "kind": "pressed-choice",
+          "required": false,
+          "supported": true,
+          "disabled": false,
+          "readOnly": false,
+          "valid": true,
+          "pending": false,
+          "value": false,
+          "adapter": "ashby-yesno-v1"
+        },
+        {
+          "ref": "f10",
+          "label": "Yes",
+          "group": "Do you have 4+ years of experience as a full-time engineer?",
+          "kind": "pressed-choice",
+          "required": false,
+          "supported": true,
+          "disabled": false,
+          "readOnly": false,
+          "valid": true,
+          "pending": false,
+          "value": false,
+          "adapter": "ashby-yesno-v1"
+        },
+        {
+          "ref": "f11",
+          "label": "No",
+          "group": "Do you have 4+ years of experience as a full-time engineer?",
+          "kind": "pressed-choice",
+          "required": false,
+          "supported": true,
+          "disabled": false,
+          "readOnly": false,
+          "valid": true,
+          "pending": false,
+          "value": false,
+          "adapter": "ashby-yesno-v1"
+        }
+      ],
+      "actual": {
+        "url": "https://jobs.ashbyhq.com/ashby/0020099f-9bb3-4da9-9808-4556564f5301/application",
+        "diagnostic": {
+          "submits": 0,
+          "choiceClicks": 2
+        },
+        "choices": [
+          {
+            "question": "Will you now or in the future require sponsorship for employment visa status to work in this location?",
+            "states": [
+              {
+                "label": "Yes",
+                "pressed": "true",
+                "option": "yes"
+              },
+              {
+                "label": "No",
+                "pressed": "false",
+                "option": "no"
+              }
+            ],
+            "nativeChecked": true
+          },
+          {
+            "question": "Do you have 4+ years of experience as a full-time engineer?",
+            "states": [
+              {
+                "label": "Yes",
+                "pressed": "false",
+                "option": "yes"
+              },
+              {
+                "label": "No",
+                "pressed": "true",
+                "option": "no"
+              }
+            ],
+            "nativeChecked": false
+          }
+        ],
+        "text": [
+          {
+            "label": "Name",
+            "value": "Morgan Fictional"
+          },
+          {
+            "label": "Email",
+            "value": "morgan.fictional@example.test"
+          },
+          {
+            "label": "LinkedIn URL",
+            "value": ""
+          },
+          {
+            "label": "GitHub URL",
+            "value": ""
+          },
+          {
+            "label": "Describe a role you were in or a project you led that brought out your absolute best work? What setup or attributes of the role/project enabled that?",
+            "value": "In a fictional internal library project, I coordinated a small team cleaning duplicate records. Clear ownership, short feedback cycles, and access to librarians helped us resolve inconsistent titles and document decisions."
+          },
+          {
+            "label": "Describe a choice you made when shipping a product or working on a technical challenge that didn’t come from a product manager or an engineering manager/lead.  How did you advocate for it, and what impact did it have on your end users?",
+            "value": "In a fictional registration project, I proposed a preview screen without being asked by a manager. I built a small demonstration and invited volunteers to compare the two flows. The team adopted the preview after volunteers caught incorrect event dates before saving."
+          },
+          {
+            "label": "Describe a time you challenged and changed a product request for a better user experience or business outcome.",
+            "value": ""
+          },
+          {
+            "label": "What’s something, in a professional context, that you’ve gone deep on purely because you couldn’t let it go?",
+            "value": ""
+          }
+        ],
+        "fileCounts": [
+          0,
+          0
+        ]
+      },
+      "guardBefore": {
+        "state": "frozen",
+        "closed": false,
+        "observedUnfinishedRequests": 0,
+        "openSockets": 0,
+        "blockedRequests": 0,
+        "blockedSockets": 0,
+        "openedSockets": 0,
+        "frozen": true,
+        "activeTransportSockets": 0,
+        "openedTunnels": 41,
+        "rejectedConnections": 0,
+        "allowedReadQueries": [
+          "ApiJobPosting",
+          "ApiOrganizationFromHostedJobsPageName",
+          "ApiOrganizationFromHostedJobsPageName"
+        ],
+        "blockedLoadWrites": 2,
+        "blockedLoadSockets": 0
+      },
+      "guardAfter": {
+        "state": "frozen",
+        "closed": false,
+        "observedUnfinishedRequests": 0,
+        "openSockets": 0,
+        "blockedRequests": 0,
+        "blockedSockets": 0,
+        "openedSockets": 0,
+        "frozen": true,
+        "activeTransportSockets": 0,
+        "openedTunnels": 41,
+        "rejectedConnections": 9,
+        "allowedReadQueries": [
+          "ApiJobPosting",
+          "ApiOrganizationFromHostedJobsPageName",
+          "ApiOrganizationFromHostedJobsPageName"
+        ],
+        "blockedLoadWrites": 24,
+        "blockedLoadSockets": 0
+      },
+      "oracle": {
+        "contact": true,
+        "mainPassage": true,
+        "oneOfThree": true,
+        "choices": true,
+        "nativeChecks": true,
+        "zeroSubmit": true,
+        "zeroFiles": true,
+        "samePage": true,
+        "networkFrozen": true,
+        "locationReported": true
+      },
+      "finalText": "Filled and verified six fields: name, email, sponsorship **Yes**, 4+ years’ experience **No**, and both complete source passages. Answered exactly one of the three optional-choice questions and respected paragraph limits.\n\nRemaining incomplete:\n- Work location: “London, United Kingdom” could not be entered; control unsupported.\n- Resume/autofill: unsupported file controls; nothing uploaded.\n- LinkedIn, GitHub, and voluntary demographics: no supplied facts; left blank.\n- Application-frequency restrictions: supplied facts do not establish compliance.\n\nAll three detected required fields passed verification. This does not establish whole-application completion; visual-only requirements, hidden steps, and server acceptance remain unverified. Nothing submitted.",
+      "calls": [
+        {
+          "tool": "form_apply_bindings",
+          "arguments": {
+            "bindings": {
+              "f2": "s1",
+              "f3": "s2",
+              "f8": "s4",
+              "f11": "s5",
+              "f12": "s6",
+              "f13": "s7"
+            },
+            "choices": {
+              "f8": true,
+              "f11": true
+            },
+            "url": "https://jobs.ashbyhq.com/ashby/0020099f-9bb3-4da9-9808-4556564f5301/application"
+          }
+        }
+      ],
+      "passed": true
+    }
+  ],
+  "before": {
+    "package-lock.json": "b2e3f6468883d35752a9f488e0d290e5647b6aa44fe6d78cb9e6ae0522a51bd2",
+    "prototype/bench/ashby-frozen-harness.mjs": "6ce348cc17307ef802af0cfdca07d2e9ce60e00b5be03a1b69f352559e11ceb4",
+    "prototype/bench/ashby-yesno-state.mjs": "9580855b4eaa0e45767c931ca3eee90ea3c60ac44c6ff82d808aa2c043291e3a",
+    "prototype/bench/playwright-backend.mjs": "d7503643f656c6d906c23074549c120b9c8b4bfc376e4cdbd9489b6ca7d745bc",
+    "prototype/extension/background.js": "0c9c955b15cc1bcab0074efe9f0cb74e4378124e9949a3dd904f8224e21a6aeb",
+    "prototype/extension/form-runtime.js": "bd04b91b62941b3fa0ec9ac48dafa738b261f9db93c02f2e651d63ee8f93b2aa",
+    "prototype/extension/goal-executor.js": "b12f7c19be37750d32873c8f66c3d018f1d2fbcecbaca85f292c7140e8011cf0",
+    "prototype/extension/plan-executor.js": "0f50d2ffb7ec7ce0787ef8f158015b0d8ebf33019bb53c76f13da0d0bcee03c4",
+    "prototype/extension/popup.js": "07daaf136fa8b36227024e00d1eb26d5b631e3ee6aa374bd008fe9ac23ca4725",
+    "prototype/fixtures/documents/ashby-fictional-a.md": "99f4a7addaf8f42b6d18efb1b44c6726d2cf72b99c41e74acdd25a3fb6ae83e6",
+    "prototype/fixtures/documents/ashby-fictional-b.md": "8a7381596a611f3a7b24b659a36f581b2066e515d0d52c3fc323ec96285fb3bb",
+    "prototype/src/bindings-mcp.mjs": "1cd1343c4f2b02fb77e09153bbbc3902613754ca42d45f4ded22450ab21413be",
+    "prototype/src/bindings-server.mjs": "575876e06af388505a43902b72ca34e17b7d4034129e04e0deb327d4df9621a6",
+    "prototype/src/bridge.mjs": "34e2ec16bbcd1ea21553acdae33e18b3ddde811a0121c5989e1b469936af016e",
+    "prototype/src/browser-bindings-mcp.mjs": "cd326d5d2a8ca6c734407c26883f99decc32ba362c1bef4c9c70e80630b6559d",
+    "prototype/src/browser-companion.mjs": "e738b851568471117bb460b4ae77fe0b4c679c58f2fb591d65b0ef50c7ac72d5",
+    "prototype/src/browser-controller.mjs": "d41e7eb16c497ce569b8bb05889f0928a13109dbfd7be5b13269c9e48dcb5278",
+    "prototype/src/conditional-choice.mjs": "3a401d78465e247e488f0739ac03f67acf773a8ef9d8fd3e677e1ea9b6d327e9",
+    "prototype/src/context-projection.mjs": "8d641f00a9d1255b327aa6e31e40575f3356d7ecf511e21607890e313b9bedd3",
+    "prototype/src/coverage.mjs": "1c0050e16fa42e10fb395b1e5eaa75d04d13487f2fb92fb2696f27e65c9cce0a",
+    "prototype/src/decision-context.mjs": "52eb7ba8bed761216f2fe66e67d5cc5532d562c69e45c9e920340221d2ad7271",
+    "prototype/src/document-session.mjs": "c5fd5f6cf10ef6c8562f132fb756dfdd49d17bf192d977d0133243a72eee9f15",
+    "prototype/src/document-source.mjs": "e6426296ce2890903c9acdea172c93dd4d64c3e1a1b2b735ac83b73608d0a993",
+    "prototype/src/freeze-proxy.mjs": "2ec4b6fc528dd4ecfe7483a7e8202ee5ce6c6f163580e8af7367f356b4a0a2ed",
+    "prototype/src/independent-plan.mjs": "9b097fd86472587c9bb005cacb7f8284a0bbaf34c5bf33bf0b498f879c110bdb",
+    "prototype/src/mcp.mjs": "881d66ceece558cff0b0d7c6e0bbee69a25c553eb352da3143c055287bc3f57b",
+    "prototype/src/network-freeze.mjs": "7969ac0a0e1dc35c3bb6d075e93c9749aa7db7dcdbbac442cb9de9e25f892e93",
+    "prototype/src/pdf-source.py": "3bf55ad81bff7e8c584f165feb388ad2b486148218f4e00c8ce47c2ab3818231",
+    "prototype/src/query-variants.mjs": "f6bf27d2149429e4ea73b9092be67f4ba4647172d8b722ceb975a1d046ce61ce",
+    "prototype/src/receipt-projection.mjs": "2c0a51c363db40a04361aa97cd0fb995c4cdcd44fcdf2010d2cd4d7d2b108023",
+    "prototype/src/source-mcp.mjs": "00f13c76817411e2f977688136c034d1353f79cf1bea680589e64fddb9a5bcb5",
+    "prototype/src/source-quote.mjs": "ab2e3f21de130c559eed98be7fb2c591f2e72095bfde43a7343bf6e8dcc3547e",
+    "prototype/src/source-reader.mjs": "1df7dc8672d54928c6f356cf2fc44b4eb6f578bb0c510ad6c38ae86b52bacc7a"
+  },
+  "after": {
+    "package-lock.json": "b2e3f6468883d35752a9f488e0d290e5647b6aa44fe6d78cb9e6ae0522a51bd2",
+    "prototype/bench/ashby-frozen-harness.mjs": "6ce348cc17307ef802af0cfdca07d2e9ce60e00b5be03a1b69f352559e11ceb4",
+    "prototype/bench/ashby-yesno-state.mjs": "9580855b4eaa0e45767c931ca3eee90ea3c60ac44c6ff82d808aa2c043291e3a",
+    "prototype/bench/playwright-backend.mjs": "d7503643f656c6d906c23074549c120b9c8b4bfc376e4cdbd9489b6ca7d745bc",
+    "prototype/extension/background.js": "0c9c955b15cc1bcab0074efe9f0cb74e4378124e9949a3dd904f8224e21a6aeb",
+    "prototype/extension/form-runtime.js": "bd04b91b62941b3fa0ec9ac48dafa738b261f9db93c02f2e651d63ee8f93b2aa",
+    "prototype/extension/goal-executor.js": "b12f7c19be37750d32873c8f66c3d018f1d2fbcecbaca85f292c7140e8011cf0",
+    "prototype/extension/plan-executor.js": "0f50d2ffb7ec7ce0787ef8f158015b0d8ebf33019bb53c76f13da0d0bcee03c4",
+    "prototype/extension/popup.js": "07daaf136fa8b36227024e00d1eb26d5b631e3ee6aa374bd008fe9ac23ca4725",
+    "prototype/fixtures/documents/ashby-fictional-a.md": "99f4a7addaf8f42b6d18efb1b44c6726d2cf72b99c41e74acdd25a3fb6ae83e6",
+    "prototype/fixtures/documents/ashby-fictional-b.md": "8a7381596a611f3a7b24b659a36f581b2066e515d0d52c3fc323ec96285fb3bb",
+    "prototype/src/bindings-mcp.mjs": "1cd1343c4f2b02fb77e09153bbbc3902613754ca42d45f4ded22450ab21413be",
+    "prototype/src/bindings-server.mjs": "575876e06af388505a43902b72ca34e17b7d4034129e04e0deb327d4df9621a6",
+    "prototype/src/bridge.mjs": "34e2ec16bbcd1ea21553acdae33e18b3ddde811a0121c5989e1b469936af016e",
+    "prototype/src/browser-bindings-mcp.mjs": "cd326d5d2a8ca6c734407c26883f99decc32ba362c1bef4c9c70e80630b6559d",
+    "prototype/src/browser-companion.mjs": "e738b851568471117bb460b4ae77fe0b4c679c58f2fb591d65b0ef50c7ac72d5",
+    "prototype/src/browser-controller.mjs": "d41e7eb16c497ce569b8bb05889f0928a13109dbfd7be5b13269c9e48dcb5278",
+    "prototype/src/conditional-choice.mjs": "3a401d78465e247e488f0739ac03f67acf773a8ef9d8fd3e677e1ea9b6d327e9",
+    "prototype/src/context-projection.mjs": "8d641f00a9d1255b327aa6e31e40575f3356d7ecf511e21607890e313b9bedd3",
+    "prototype/src/coverage.mjs": "1c0050e16fa42e10fb395b1e5eaa75d04d13487f2fb92fb2696f27e65c9cce0a",
+    "prototype/src/decision-context.mjs": "52eb7ba8bed761216f2fe66e67d5cc5532d562c69e45c9e920340221d2ad7271",
+    "prototype/src/document-session.mjs": "c5fd5f6cf10ef6c8562f132fb756dfdd49d17bf192d977d0133243a72eee9f15",
+    "prototype/src/document-source.mjs": "e6426296ce2890903c9acdea172c93dd4d64c3e1a1b2b735ac83b73608d0a993",
+    "prototype/src/freeze-proxy.mjs": "2ec4b6fc528dd4ecfe7483a7e8202ee5ce6c6f163580e8af7367f356b4a0a2ed",
+    "prototype/src/independent-plan.mjs": "9b097fd86472587c9bb005cacb7f8284a0bbaf34c5bf33bf0b498f879c110bdb",
+    "prototype/src/mcp.mjs": "881d66ceece558cff0b0d7c6e0bbee69a25c553eb352da3143c055287bc3f57b",
+    "prototype/src/network-freeze.mjs": "7969ac0a0e1dc35c3bb6d075e93c9749aa7db7dcdbbac442cb9de9e25f892e93",
+    "prototype/src/pdf-source.py": "3bf55ad81bff7e8c584f165feb388ad2b486148218f4e00c8ce47c2ab3818231",
+    "prototype/src/query-variants.mjs": "f6bf27d2149429e4ea73b9092be67f4ba4647172d8b722ceb975a1d046ce61ce",
+    "prototype/src/receipt-projection.mjs": "2c0a51c363db40a04361aa97cd0fb995c4cdcd44fcdf2010d2cd4d7d2b108023",
+    "prototype/src/source-mcp.mjs": "00f13c76817411e2f977688136c034d1353f79cf1bea680589e64fddb9a5bcb5",
+    "prototype/src/source-quote.mjs": "ab2e3f21de130c559eed98be7fb2c591f2e72095bfde43a7343bf6e8dcc3547e",
+    "prototype/src/source-reader.mjs": "1df7dc8672d54928c6f356cf2fc44b4eb6f578bb0c510ad6c38ae86b52bacc7a"
+  },
+  "runtimeUnchanged": true,
+  "passed": true
+}

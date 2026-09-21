@@ -1,0 +1,534 @@
+{
+  "date": "2026-09-21T05:42:48.360Z",
+  "scope": "Actual public Ashby DOM after TCP/HTTP/WebSocket freeze. Fictional source, six supported targets only, no upload or submit. No speed comparison.",
+  "beforeGuard": {
+    "state": "frozen",
+    "closed": false,
+    "observedUnfinishedRequests": 0,
+    "openSockets": 0,
+    "blockedRequests": 0,
+    "blockedSockets": 0,
+    "openedSockets": 0,
+    "frozen": true,
+    "activeTransportSockets": 0,
+    "openedTunnels": 31,
+    "rejectedConnections": 0,
+    "allowedReadQueries": [
+      "ApiJobPosting",
+      "ApiOrganizationFromHostedJobsPageName",
+      "ApiOrganizationFromHostedJobsPageName"
+    ],
+    "blockedLoadWrites": 3,
+    "blockedLoadSockets": 0
+  },
+  "observed": [
+    {
+      "ref": "f1",
+      "label": "",
+      "group": "",
+      "kind": "file",
+      "supported": false
+    },
+    {
+      "ref": "f2",
+      "label": "Name",
+      "group": "",
+      "kind": "text",
+      "supported": true,
+      "value": ""
+    },
+    {
+      "ref": "f3",
+      "label": "Email",
+      "group": "",
+      "kind": "email",
+      "supported": true,
+      "value": ""
+    },
+    {
+      "ref": "f4",
+      "label": "Resume",
+      "group": "",
+      "kind": "file",
+      "supported": false
+    },
+    {
+      "ref": "f5",
+      "label": "LinkedIn URL",
+      "group": "",
+      "kind": "text",
+      "supported": true,
+      "value": ""
+    },
+    {
+      "ref": "f6",
+      "label": "GitHub URL",
+      "group": "",
+      "kind": "text",
+      "supported": true,
+      "value": ""
+    },
+    {
+      "ref": "f7",
+      "label": "Which country do you intend to work from? Please list your city and country.",
+      "group": "",
+      "kind": "unsupported-combobox",
+      "supported": false,
+      "value": ""
+    },
+    {
+      "ref": "f8",
+      "label": "Yes",
+      "group": "Will you now or in the future require sponsorship for employment visa status to work in this location?",
+      "kind": "pressed-choice",
+      "supported": true,
+      "value": false
+    },
+    {
+      "ref": "f9",
+      "label": "No",
+      "group": "Will you now or in the future require sponsorship for employment visa status to work in this location?",
+      "kind": "pressed-choice",
+      "supported": true,
+      "value": false
+    },
+    {
+      "ref": "f10",
+      "label": "Yes",
+      "group": "Do you have 4+ years of experience as a full-time engineer?",
+      "kind": "pressed-choice",
+      "supported": true,
+      "value": false
+    },
+    {
+      "ref": "f11",
+      "label": "No",
+      "group": "Do you have 4+ years of experience as a full-time engineer?",
+      "kind": "pressed-choice",
+      "supported": true,
+      "value": false
+    },
+    {
+      "ref": "f12",
+      "label": "Describe a role you were in or a project you led that brought out your absolute best work? What setup or attributes of the role/project enabled that?",
+      "group": "",
+      "kind": "textarea",
+      "supported": true,
+      "value": ""
+    },
+    {
+      "ref": "f13",
+      "label": "Describe a choice you made when shipping a product or working on a technical challenge that didn’t come from a product manager or an engineering manager/lead. How did you advocate for it, and what impact did it have on your end users?",
+      "group": "",
+      "kind": "textarea",
+      "supported": true,
+      "value": ""
+    },
+    {
+      "ref": "f14",
+      "label": "Describe a time you challenged and changed a product request for a better user experience or business outcome.",
+      "group": "",
+      "kind": "textarea",
+      "supported": true,
+      "value": ""
+    },
+    {
+      "ref": "f15",
+      "label": "What’s something, in a professional context, that you’ve gone deep on purely because you couldn’t let it go?",
+      "group": "",
+      "kind": "textarea",
+      "supported": true,
+      "value": ""
+    },
+    {
+      "ref": "f16",
+      "label": "Under 30",
+      "group": "What is your current age?",
+      "kind": "radio",
+      "supported": true,
+      "value": false
+    },
+    {
+      "ref": "f17",
+      "label": "30-39",
+      "group": "What is your current age?",
+      "kind": "radio",
+      "supported": true,
+      "value": false
+    },
+    {
+      "ref": "f18",
+      "label": "40-49",
+      "group": "What is your current age?",
+      "kind": "radio",
+      "supported": true,
+      "value": false
+    },
+    {
+      "ref": "f19",
+      "label": "50-59",
+      "group": "What is your current age?",
+      "kind": "radio",
+      "supported": true,
+      "value": false
+    },
+    {
+      "ref": "f20",
+      "label": "60 or older",
+      "group": "What is your current age?",
+      "kind": "radio",
+      "supported": true,
+      "value": false
+    },
+    {
+      "ref": "f21",
+      "label": "I prefer not to answer",
+      "group": "What is your current age?",
+      "kind": "radio",
+      "supported": true,
+      "value": false
+    },
+    {
+      "ref": "f22",
+      "label": "Man",
+      "group": "What is your gender identity?",
+      "kind": "radio",
+      "supported": true,
+      "value": false
+    },
+    {
+      "ref": "f23",
+      "label": "Woman",
+      "group": "What is your gender identity?",
+      "kind": "radio",
+      "supported": true,
+      "value": false
+    },
+    {
+      "ref": "f24",
+      "label": "Non-Binary",
+      "group": "What is your gender identity?",
+      "kind": "radio",
+      "supported": true,
+      "value": false
+    },
+    {
+      "ref": "f25",
+      "label": "Another Gender Identity",
+      "group": "What is your gender identity?",
+      "kind": "radio",
+      "supported": true,
+      "value": false
+    },
+    {
+      "ref": "f26",
+      "label": "I prefer not to answer",
+      "group": "What is your gender identity?",
+      "kind": "radio",
+      "supported": true,
+      "value": false
+    },
+    {
+      "ref": "f27",
+      "label": "Asian or Asian American",
+      "group": "Which ethnicity(ies) do you identify with? Please select all that apply.",
+      "kind": "checkbox",
+      "supported": true,
+      "value": false
+    },
+    {
+      "ref": "f28",
+      "label": "Black or African American",
+      "group": "Which ethnicity(ies) do you identify with? Please select all that apply.",
+      "kind": "checkbox",
+      "supported": true,
+      "value": false
+    },
+    {
+      "ref": "f29",
+      "label": "Hispanic or Latine",
+      "group": "Which ethnicity(ies) do you identify with? Please select all that apply.",
+      "kind": "checkbox",
+      "supported": true,
+      "value": false
+    },
+    {
+      "ref": "f30",
+      "label": "Indigenous or Native American",
+      "group": "Which ethnicity(ies) do you identify with? Please select all that apply.",
+      "kind": "checkbox",
+      "supported": true,
+      "value": false
+    },
+    {
+      "ref": "f31",
+      "label": "Native Hawaiian or Other Pacific Islander",
+      "group": "Which ethnicity(ies) do you identify with? Please select all that apply.",
+      "kind": "checkbox",
+      "supported": true,
+      "value": false
+    },
+    {
+      "ref": "f32",
+      "label": "White",
+      "group": "Which ethnicity(ies) do you identify with? Please select all that apply.",
+      "kind": "checkbox",
+      "supported": true,
+      "value": false
+    },
+    {
+      "ref": "f33",
+      "label": "Other",
+      "group": "Which ethnicity(ies) do you identify with? Please select all that apply.",
+      "kind": "checkbox",
+      "supported": true,
+      "value": false
+    },
+    {
+      "ref": "f34",
+      "label": "I prefer not to answer",
+      "group": "Which ethnicity(ies) do you identify with? Please select all that apply.",
+      "kind": "checkbox",
+      "supported": true,
+      "value": false
+    },
+    {
+      "ref": "f35",
+      "label": "Person with disability",
+      "group": "Which of the following communities do you belong to? Please select all that apply.",
+      "kind": "checkbox",
+      "supported": true,
+      "value": false
+    },
+    {
+      "ref": "f36",
+      "label": "Neurodivergent",
+      "group": "Which of the following communities do you belong to? Please select all that apply.",
+      "kind": "checkbox",
+      "supported": true,
+      "value": false
+    },
+    {
+      "ref": "f37",
+      "label": "Veteran",
+      "group": "Which of the following communities do you belong to? Please select all that apply.",
+      "kind": "checkbox",
+      "supported": true,
+      "value": false
+    },
+    {
+      "ref": "f38",
+      "label": "Parent",
+      "group": "Which of the following communities do you belong to? Please select all that apply.",
+      "kind": "checkbox",
+      "supported": true,
+      "value": false
+    },
+    {
+      "ref": "f39",
+      "label": "Refugee or immigrant",
+      "group": "Which of the following communities do you belong to? Please select all that apply.",
+      "kind": "checkbox",
+      "supported": true,
+      "value": false
+    },
+    {
+      "ref": "f40",
+      "label": "None of the above",
+      "group": "Which of the following communities do you belong to? Please select all that apply.",
+      "kind": "checkbox",
+      "supported": true,
+      "value": false
+    },
+    {
+      "ref": "f41",
+      "label": "I prefer not to answer",
+      "group": "Which of the following communities do you belong to? Please select all that apply.",
+      "kind": "checkbox",
+      "supported": true,
+      "value": false
+    }
+  ],
+  "result": {
+    "complete": true,
+    "evidence": [
+      {
+        "group": "",
+        "label": "Name",
+        "expected": "Alex Fictional",
+        "actual": "Alex Fictional",
+        "status": "verified"
+      },
+      {
+        "group": "",
+        "label": "Email",
+        "expected": "alex.fictional@example.test",
+        "actual": "alex.fictional@example.test",
+        "status": "verified"
+      },
+      {
+        "group": "Will you now or in the future require sponsorship for employment visa status to work in this location?",
+        "label": "No",
+        "expected": true,
+        "actual": true,
+        "status": "verified"
+      },
+      {
+        "group": "Do you have 4+ years of experience as a full-time engineer?",
+        "label": "Yes",
+        "expected": true,
+        "actual": true,
+        "status": "verified"
+      },
+      {
+        "group": "",
+        "label": "Describe a role you were in or a project you led that brought out your absolute best work? What setup or attributes of the role/project enabled that?",
+        "expected": "In a fictional internal library project, I coordinated a small team cleaning duplicate records. Clear ownership, short feedback cycles, and access to librarians helped us resolve inconsistent titles and document decisions.",
+        "actual": "In a fictional internal library project, I coordinated a small team cleaning duplicate records. Clear ownership, short feedback cycles, and access to librarians helped us resolve inconsistent titles and document decisions.",
+        "status": "verified"
+      },
+      {
+        "group": "",
+        "label": "Describe a choice you made when shipping a product or working on a technical challenge that didn’t come from a product manager or an engineering manager/lead. How did you advocate for it, and what impact did it have on your end users?",
+        "expected": "In a fictional registration project, I proposed a preview screen without being asked by a manager. I built a small demonstration and invited volunteers to compare the two flows. The team adopted the preview after volunteers caught incorrect event dates before saving.",
+        "actual": "In a fictional registration project, I proposed a preview screen without being asked by a manager. I built a small demonstration and invited volunteers to compare the two flows. The team adopted the preview after volunteers caught incorrect event dates before saving.",
+        "status": "verified"
+      }
+    ],
+    "coverage": {
+      "scope": "Visible enabled required fields only; hidden steps and server acceptance are not covered.",
+      "limitations": {
+        "requiredness": "Native required and aria-required only; visual-only markers may be missed.",
+        "iframes": 3,
+        "shadowRoots": false
+      },
+      "requiredUnits": 3,
+      "verifiedRequiredUnits": 3,
+      "unresolvedRequired": [],
+      "visibleRequiredCovered": true,
+      "unsupported": [
+        {
+          "ref": "f1",
+          "group": "",
+          "label": "",
+          "kind": "file",
+          "required": false
+        },
+        {
+          "ref": "f4",
+          "group": "",
+          "label": "Resume",
+          "kind": "file",
+          "required": false
+        },
+        {
+          "ref": "f7",
+          "group": "",
+          "label": "Which country do you intend to work from? Please list your city and country.",
+          "kind": "unsupported-combobox",
+          "required": false
+        }
+      ]
+    }
+  },
+  "oracle": {
+    "url": "https://jobs.ashbyhq.com/ashby/0020099f-9bb3-4da9-9808-4556564f5301/application",
+    "diagnostic": {
+      "submits": 0,
+      "choiceClicks": 2
+    },
+    "choices": [
+      {
+        "question": "Will you now or in the future require sponsorship for employment visa status to work in this location?",
+        "states": [
+          {
+            "label": "Yes",
+            "pressed": "false",
+            "option": "yes"
+          },
+          {
+            "label": "No",
+            "pressed": "true",
+            "option": "no"
+          }
+        ],
+        "nativeChecked": false
+      },
+      {
+        "question": "Do you have 4+ years of experience as a full-time engineer?",
+        "states": [
+          {
+            "label": "Yes",
+            "pressed": "true",
+            "option": "yes"
+          },
+          {
+            "label": "No",
+            "pressed": "false",
+            "option": "no"
+          }
+        ],
+        "nativeChecked": true
+      }
+    ],
+    "text": [
+      {
+        "label": "Name",
+        "value": "Alex Fictional"
+      },
+      {
+        "label": "Email",
+        "value": "alex.fictional@example.test"
+      },
+      {
+        "label": "LinkedIn URL",
+        "value": ""
+      },
+      {
+        "label": "GitHub URL",
+        "value": ""
+      },
+      {
+        "label": "Describe a role you were in or a project you led that brought out your absolute best work? What setup or attributes of the role/project enabled that?",
+        "value": "In a fictional internal library project, I coordinated a small team cleaning duplicate records. Clear ownership, short feedback cycles, and access to librarians helped us resolve inconsistent titles and document decisions."
+      },
+      {
+        "label": "Describe a choice you made when shipping a product or working on a technical challenge that didn’t come from a product manager or an engineering manager/lead.  How did you advocate for it, and what impact did it have on your end users?",
+        "value": "In a fictional registration project, I proposed a preview screen without being asked by a manager. I built a small demonstration and invited volunteers to compare the two flows. The team adopted the preview after volunteers caught incorrect event dates before saving."
+      },
+      {
+        "label": "Describe a time you challenged and changed a product request for a better user experience or business outcome.",
+        "value": ""
+      },
+      {
+        "label": "What’s something, in a professional context, that you’ve gone deep on purely because you couldn’t let it go?",
+        "value": ""
+      }
+    ],
+    "fileCounts": [
+      0,
+      0
+    ]
+  },
+  "afterGuard": {
+    "state": "frozen",
+    "closed": false,
+    "observedUnfinishedRequests": 0,
+    "openSockets": 0,
+    "blockedRequests": 0,
+    "blockedSockets": 0,
+    "openedSockets": 0,
+    "frozen": true,
+    "activeTransportSockets": 0,
+    "openedTunnels": 31,
+    "rejectedConnections": 0,
+    "allowedReadQueries": [
+      "ApiJobPosting",
+      "ApiOrganizationFromHostedJobsPageName",
+      "ApiOrganizationFromHostedJobsPageName"
+    ],
+    "blockedLoadWrites": 20,
+    "blockedLoadSockets": 0
+  },
+  "passed": true
+}

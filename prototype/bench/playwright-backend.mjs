@@ -4,10 +4,16 @@
 import {executeFormRequest} from '../extension/form-runtime.js';
 import {executeGoal,valuesEquivalent} from '../extension/goal-executor.js';
 import {reactSelectState} from './react-select-state.mjs';
+import {ashbyYesNoState} from './ashby-yesno-state.mjs';
 
 export function createPlaywrightBackend(page,{validationMode='guard'}={}) {
   if(!['full','guard'].includes(validationMode))throw new Error('INVALID_VALIDATION_MODE');
+  let pressedContracts=new Map();
   const observe = async request => {
+    if(['validate','guard'].includes(request.op))for(const [ref,identity] of pressedContracts){
+      const current=await page.evaluate(ashbyYesNoState,ref);
+      if(!current||current.identity!==identity)throw new Error('PRESSED_CHOICE_CHANGED');
+    }
     const result = await page.evaluate(executeFormRequest, request);
     if (result.error) throw new Error(result.error);
     for(const field of result.fields??[])if(field.kind==='unsupported-combobox') {
@@ -16,6 +22,14 @@ export function createPlaywrightBackend(page,{validationMode='guard'}={}) {
         ...(state.displayLabel!==state.selectedLabel?{displayValue:state.displayLabel,selectionKey:state.selectionKey}:{}),
         query:state.query,pending:field.pending||state.loading,valid:field.valid&&!state.query&&!state.expanded,
         options:await page.evaluate(ref=>globalThis.__afaPrototype.comboboxOptions.get(globalThis.__afaPrototype.nodes.get(ref)?.el),field.ref)});
+    }
+    if(result.fields){
+      const next=new Map();
+      for(const field of result.fields)if(field.kind==='unsupported-toggle'){
+        const state=await page.evaluate(ashbyYesNoState,field.ref);
+        if(state){Object.assign(field,{kind:'pressed-choice',supported:true,adapter:state.adapter,value:state.selected,valid:field.valid&&state.valid,choiceIdentity:state.identity});next.set(field.ref,state.identity);}
+      }
+      pressedContracts=next;
     }
     return result;
   };
@@ -31,6 +45,25 @@ export function createPlaywrightBackend(page,{validationMode='guard'}={}) {
     const element = handle.asElement();
     if (!element) { await handle.dispose(); throw new Error('STALE_OR_MISSING_FIELD'); }
     return element;
+  };
+  const selectPressedChoice = async (el,field,expected,request) => {
+    if(expected!==true)throw new Error('PRESSED_CHOICE_SELECT_TRUE_ONLY');
+    const deadline=Math.min(Date.now()+1000,request.deadline??Infinity);
+    const read=async()=>{
+      const current=await page.evaluate(ashbyYesNoState,field.ref);
+      if(page.url()!==request.url||!current||current.identity!==field.choiceIdentity)throw new Error('PRESSED_CHOICE_CHANGED');
+      if(current.disabled)throw new Error('PRESSED_CHOICE_DISABLED');
+      if(!current.valid)throw new Error('PRESSED_CHOICE_INCONSISTENT');
+      return current;
+    };
+    let current=await read();
+    if(!current.selected){await el.click({timeout:Math.max(1,deadline-Date.now()),noWaitAfter:true});
+      do{current=await read();if(current.selected&&current.selectedCount===1)break;await pause(20);}while(Date.now()<deadline);
+    }
+    if(!current.selected||current.selectedCount!==1)throw new Error('PRESSED_CHOICE_NOT_SELECTED');
+    if(Date.now()+120>deadline)throw new Error('PRESSED_CHOICE_DEADLINE');
+    await pause(120);current=await read();
+    if(!current.selected||current.selectedCount!==1)throw new Error('PRESSED_CHOICE_NOT_RETAINED');
   };
   const selectCombo = async (el, expected, request) => {
     if (typeof expected !== 'string' || !expected || expected.length > 250) throw new Error('Expected exact option label');
@@ -163,6 +196,7 @@ export function createPlaywrightBackend(page,{validationMode='guard'}={}) {
         if (action.op !== 'set' || field.kind === 'add-row') throw new Error('Expected set action');
         let expected = action.value;
         if (field.kind === 'autocomplete') await selectAutocomplete(el,field,expected,request,{query:action.query??expected});
+        else if(field.kind==='pressed-choice')await selectPressedChoice(el,field,expected,request);
         else if (field.kind === 'combobox') await selectCombo(el, expected, request);
         else if (['radio','checkbox'].includes(field.kind)) {
           if (typeof expected !== 'boolean' || (field.kind === 'radio' && !expected)) throw new Error('Expected boolean; radio may only be selected');

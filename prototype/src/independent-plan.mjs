@@ -14,7 +14,7 @@ export function validateIndependentGroups(args,targets) {
   const owners=new Map();
   for(const [index,group]of groups.entries())for(const ref of group){
     const t=targets.find(t=>t.ref===ref);
-    if(!['radio','checkbox'].includes(t.kind)||!t.group)continue;
+    if(!['radio','checkbox','pressed-choice'].includes(t.kind)||!t.group)continue;
     if(owners.has(t.group)&&owners.get(t.group)!==index)throw new Error('CHOICE_QUESTION_SPLIT_ACROSS_GROUPS');
     owners.set(t.group,index);
   }

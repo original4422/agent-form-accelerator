@@ -1,5 +1,17 @@
 # 持续探索状态（2026-09-21）
 
+## 当前接续点：真实 Ashby Yes/No 可执行，两个 Codex 任务各一次调用
+
+- 本轮 progress：新受限适配器、81项检查、冻结后的真实六目标确定性验证、两次真实Codex。完整目标 active，非阻塞；无完整三类任务2×证据，不能以六目标/一次调用宣布完成。
+- 新 bench/ashby-yesno-state.mjs 识别公共Ashby class结构（yesno容器、2选项按钮、yes/no data-option、唯一label、同field-path隐藏checkbox），不读React内部状态。button默认submit只有无form关联才可用，显式type=button可在form里；reset/formaction/formmethod/popover/command拒绝。普通aria-pressed继续unsupported。runtime原生扩展未开放按钮，只有Playwrightcompanion适配后pressed-choice bool。
+- 绑定可见No选项也用choices:true，表示选中此按钮；每问题只能绑定一个选项。最多一次点击，1s内等唯一pressed状态、120ms再查。无反馈/双选/状态回退/身份变化停止不自动重试。backend缓存适配器契约，goal最终回读及document-session发现刷新也检查。coverage显式native/ARIArequired两选项按一个问题，但真实CSS星号仍未解决。
+- 新pressed-choice15检查通过，初版12项中10红2绿保留；其余companion11/context12/question8/independent14/conditional11/offline-ready10，共81。真实ashby-pressed-check冻结后一次source.apply正确6目标、2按钮点击、checkbox与aria一致、零文件/提交。目标为姓名/邮箱/两道YesNo/两个全文段落。现41节点支持38，剩2文件+1地点未支持。
+- ashby-frozen-harness全新无登录context、已核对两个publicGraphQL读query，其他POST/WS阻止；serviceworker禁用，复用SOCKS5 freeze切断所有HTTP(S)/WS传输，state frozen且activeTransportSockets0后才建控制器。仅冻结后填虚构资料。关闭browser/proxy不保留个人profile，不是WebRTC/WebTransport/系统网络沙箱。没有降低冻结门槛获取远程地点。
+- Codex批次1789969542053：A(不需签证/6年)37.084s、含准备43.981s，No/Yes正确；B(需签证/2年)32.299s、总38.851s，Yes/No正确。各一次apply、6/6目标、2按钮click；两段完整源文逐字核对，三选一其余两题空、零上传/提交。London UK地点未填且两次最终报告，其他未提供可选字段空。模型称optional-choice措辞不可当区块可跳过的证据，实际正确答一题。
+- 两次初始pagehash相同，33运行时/锁/adapter/harness/source指纹测前后相同，所有功能回归结束才测model，没有筛掉重跑。无基线速度对照、同一真实页面变换来源，不是两类真实任务。生产browser-bindings-mcp，无新增APIKey/全局配置。raw轨迹private，编号/最新报告codex-ashby-pressed*.json，报告ASHBY-PRESSED-CHOICES.md、ADR0016、README更新。
+- 所有测试和模型进程结束，无待轮询句柄。下一步地点控件的公共语义/远程依赖是当前明显缺口；调查可只读，任何虚构个人资料仍先冻结网络，远程目录无法用断网失败证明不兼容。附件/视觉必填/完整任务仍需推进。此前可选公司名/URL问题未回复，不重复催问；仍有可自主完成工作，非阻塞。
+
+
 ## 当前接续点：页面规则进入首次观察，Codex 两次正确遵守
 
 - 本轮 progress：真实页面规则提取、生产观察/保护修复、79项检查、四次真实Codex对照。完整目标 active，非阻塞，无完成审计通过；不要以本次一次调用替代真实完整三类任务2×。

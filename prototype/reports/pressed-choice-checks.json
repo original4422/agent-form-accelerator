@@ -1,0 +1,65 @@
+{
+  "date": "2026-09-21T05:44:27.164Z",
+  "results": [
+    {
+      "name": "known public Yes/No structure becomes four boolean choice options in two groups",
+      "passed": true
+    },
+    {
+      "name": "selecting No means pressing that option; replacing Yes is exclusive and idempotent",
+      "passed": true
+    },
+    {
+      "name": "ordinary toggles and submit-associated defaults stay unsupported",
+      "passed": true
+    },
+    {
+      "name": "explicit type=button allows the same choice structure inside a form",
+      "passed": true
+    },
+    {
+      "name": "unknown or inconsistent widget structures are never promoted",
+      "passed": true
+    },
+    {
+      "name": "adapter identity drift after observation stops before any click",
+      "passed": true
+    },
+    {
+      "name": "a changed native form association cannot turn a choice into submit",
+      "passed": true
+    },
+    {
+      "name": "click without an observed selected state returns incomplete",
+      "passed": true
+    },
+    {
+      "name": "both pressed is invalid and cannot be declared verified",
+      "passed": true
+    },
+    {
+      "name": "a click that leaves both options pressed returns incomplete",
+      "passed": true
+    },
+    {
+      "name": "a selected state that reverts is not retried or counted complete",
+      "passed": true
+    },
+    {
+      "name": "a peer identity change during final verification cannot count as success",
+      "passed": true
+    },
+    {
+      "name": "explicitly required choice options count as one question after verified selection",
+      "passed": true
+    },
+    {
+      "name": "source bindings select two questions in one apply and reject incompatible choices before writes",
+      "passed": true
+    },
+    {
+      "name": "internal option discovery cannot refresh away a changed pressed-choice contract",
+      "passed": true
+    }
+  ]
+}
