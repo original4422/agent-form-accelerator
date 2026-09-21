@@ -1,0 +1,699 @@
+{
+  "date": "2026-09-21T06:22:12.112Z",
+  "scope": "Fresh public page frozen before generic fictional location query. No selection/upload/submit; no network parameter values, headers or bodies retained.",
+  "stages": [
+    {
+      "stage": "initial",
+      "input": {
+        "attributes": {
+          "class": "_input_d7ago_28 ashby-application-form-input-autocomplete",
+          "placeholder": "Start typing...",
+          "aria-autocomplete": "list",
+          "aria-expanded": "false",
+          "aria-haspopup": "listbox",
+          "role": "combobox"
+        },
+        "value": "",
+        "nativeValid": true
+      },
+      "ancestors": [
+        {
+          "tag": "DIV",
+          "attributes": {
+            "class": "_inputContainer_d7ago_28"
+          },
+          "text": "",
+          "children": [
+            {
+              "tag": "INPUT",
+              "attributes": {
+                "class": "_input_d7ago_28 ashby-application-form-input-autocomplete",
+                "placeholder": "Start typing...",
+                "aria-autocomplete": "list",
+                "aria-expanded": "false",
+                "aria-haspopup": "listbox",
+                "role": "combobox"
+              }
+            },
+            {
+              "tag": "BUTTON",
+              "attributes": {
+                "class": "_container_pjyt6_1 _toggleButton_d7ago_32"
+              },
+              "text": ""
+            }
+          ]
+        },
+        {
+          "tag": "DIV",
+          "attributes": {
+            "class": "_fieldEntry_1e3gg_28 ashby-application-form-field-entry"
+          },
+          "text": "Which country do you intend to work from?\n\nPlease list your city and country.",
+          "children": [
+            {
+              "tag": "LABEL",
+              "attributes": {
+                "class": "_heading_f7cvd_52 _required_f7cvd_91 _label_1e3gg_42 ashby-application-form-question-title"
+              },
+              "text": "Which country do you intend to work from?"
+            },
+            {
+              "tag": "DIV",
+              "attributes": {
+                "class": "_description_1e3gg_48 ashby-application-form-question-description"
+              },
+              "text": "Please list your city and country."
+            },
+            {
+              "tag": "DIV",
+              "attributes": {
+                "class": "_inputContainer_d7ago_28"
+              },
+              "text": ""
+            }
+          ]
+        },
+        {
+          "tag": "DIV",
+          "attributes": {
+            "class": "_section_5yu8i_86 ashby-application-form-section-container"
+          },
+          "text": "Basic Info\nName\nEmail\nResume\nUpload File\n\nor drag and drop here\n\nLinkedIn URL\nGitHub URL\nWhich country do you intend to work from?\n\nPlease list your city and country.\n\nWill you now or in the future require sponsorship for employment visa status to work in this location?\nYes\nNo\nDo you have 4+ years of experience as a full-time engineer?\n\nWe're only looking for Senior+ engineers at the moment.\n\nYes\nNo",
+          "children": [
+            {
+              "tag": "DIV",
+              "attributes": {
+                "class": "_sectionHeader_5yu8i_93 ashby-application-form-section-header"
+              },
+              "text": "Basic Info"
+            },
+            {
+              "tag": "DIV",
+              "attributes": {
+                "class": "_fieldEntry_1e3gg_28 ashby-application-form-field-entry"
+              },
+              "text": "Name"
+            },
+            {
+              "tag": "DIV",
+              "attributes": {
+                "class": "_fieldEntry_1e3gg_28 ashby-application-form-field-entry"
+              },
+              "text": "Email"
+            },
+            {
+              "tag": "DIV",
+              "attributes": {
+                "class": "_fieldEntry_1e3gg_28 ashby-application-form-field-entry"
+              },
+              "text": "Resume\nUpload File\n\nor drag and drop here"
+            },
+            {
+              "tag": "DIV",
+              "attributes": {
+                "class": "_fieldEntry_1e3gg_28 ashby-application-form-field-entry"
+              },
+              "text": "LinkedIn URL"
+            },
+            {
+              "tag": "DIV",
+              "attributes": {
+                "class": "_fieldEntry_1e3gg_28 ashby-application-form-field-entry"
+              },
+              "text": "GitHub URL"
+            },
+            {
+              "tag": "DIV",
+              "attributes": {
+                "class": "_fieldEntry_1e3gg_28 ashby-application-form-field-entry"
+              },
+              "text": "Which country do you intend to work from?\n\nPlease list your city and country."
+            },
+            {
+              "tag": "DIV",
+              "attributes": {
+                "class": "_fieldEntry_1e3gg_28 ashby-application-form-field-entry"
+              },
+              "text": "Will you now or in the future require sponsorship for employment visa status to work in this location?\nYes\nNo"
+            },
+            {
+              "tag": "DIV",
+              "attributes": {
+                "class": "_fieldEntry_1e3gg_28 ashby-application-form-field-entry"
+              },
+              "text": "Do you have 4+ years of experience as a full-time engineer?\n\nWe're only looking for Senior+ engineers at the moment.\n\nYes\nNo"
+            }
+          ]
+        }
+      ],
+      "popups": []
+    },
+    {
+      "stage": "focused",
+      "input": {
+        "attributes": {
+          "class": "_input_d7ago_28 ashby-application-form-input-autocomplete",
+          "placeholder": "Start typing...",
+          "aria-autocomplete": "list",
+          "aria-expanded": "false",
+          "aria-haspopup": "listbox",
+          "role": "combobox"
+        },
+        "value": "",
+        "nativeValid": true
+      },
+      "ancestors": [
+        {
+          "tag": "DIV",
+          "attributes": {
+            "class": "_inputContainer_d7ago_28"
+          },
+          "text": "",
+          "children": [
+            {
+              "tag": "INPUT",
+              "attributes": {
+                "class": "_input_d7ago_28 ashby-application-form-input-autocomplete",
+                "placeholder": "Start typing...",
+                "aria-autocomplete": "list",
+                "aria-expanded": "false",
+                "aria-haspopup": "listbox",
+                "role": "combobox"
+              }
+            },
+            {
+              "tag": "BUTTON",
+              "attributes": {
+                "class": "_container_pjyt6_1 _toggleButton_d7ago_32"
+              },
+              "text": ""
+            }
+          ]
+        },
+        {
+          "tag": "DIV",
+          "attributes": {
+            "class": "_fieldEntry_1e3gg_28 ashby-application-form-field-entry"
+          },
+          "text": "Which country do you intend to work from?\n\nPlease list your city and country.",
+          "children": [
+            {
+              "tag": "LABEL",
+              "attributes": {
+                "class": "_heading_f7cvd_52 _required_f7cvd_91 _label_1e3gg_42 ashby-application-form-question-title"
+              },
+              "text": "Which country do you intend to work from?"
+            },
+            {
+              "tag": "DIV",
+              "attributes": {
+                "class": "_description_1e3gg_48 ashby-application-form-question-description"
+              },
+              "text": "Please list your city and country."
+            },
+            {
+              "tag": "DIV",
+              "attributes": {
+                "class": "_inputContainer_d7ago_28"
+              },
+              "text": ""
+            }
+          ]
+        },
+        {
+          "tag": "DIV",
+          "attributes": {
+            "class": "_section_5yu8i_86 ashby-application-form-section-container"
+          },
+          "text": "Basic Info\nName\nEmail\nResume\nUpload File\n\nor drag and drop here\n\nLinkedIn URL\nGitHub URL\nWhich country do you intend to work from?\n\nPlease list your city and country.\n\nWill you now or in the future require sponsorship for employment visa status to work in this location?\nYes\nNo\nDo you have 4+ years of experience as a full-time engineer?\n\nWe're only looking for Senior+ engineers at the moment.\n\nYes\nNo",
+          "children": [
+            {
+              "tag": "DIV",
+              "attributes": {
+                "class": "_sectionHeader_5yu8i_93 ashby-application-form-section-header"
+              },
+              "text": "Basic Info"
+            },
+            {
+              "tag": "DIV",
+              "attributes": {
+                "class": "_fieldEntry_1e3gg_28 ashby-application-form-field-entry"
+              },
+              "text": "Name"
+            },
+            {
+              "tag": "DIV",
+              "attributes": {
+                "class": "_fieldEntry_1e3gg_28 ashby-application-form-field-entry"
+              },
+              "text": "Email"
+            },
+            {
+              "tag": "DIV",
+              "attributes": {
+                "class": "_fieldEntry_1e3gg_28 ashby-application-form-field-entry"
+              },
+              "text": "Resume\nUpload File\n\nor drag and drop here"
+            },
+            {
+              "tag": "DIV",
+              "attributes": {
+                "class": "_fieldEntry_1e3gg_28 ashby-application-form-field-entry"
+              },
+              "text": "LinkedIn URL"
+            },
+            {
+              "tag": "DIV",
+              "attributes": {
+                "class": "_fieldEntry_1e3gg_28 ashby-application-form-field-entry"
+              },
+              "text": "GitHub URL"
+            },
+            {
+              "tag": "DIV",
+              "attributes": {
+                "class": "_fieldEntry_1e3gg_28 ashby-application-form-field-entry"
+              },
+              "text": "Which country do you intend to work from?\n\nPlease list your city and country."
+            },
+            {
+              "tag": "DIV",
+              "attributes": {
+                "class": "_fieldEntry_1e3gg_28 ashby-application-form-field-entry"
+              },
+              "text": "Will you now or in the future require sponsorship for employment visa status to work in this location?\nYes\nNo"
+            },
+            {
+              "tag": "DIV",
+              "attributes": {
+                "class": "_fieldEntry_1e3gg_28 ashby-application-form-field-entry"
+              },
+              "text": "Do you have 4+ years of experience as a full-time engineer?\n\nWe're only looking for Senior+ engineers at the moment.\n\nYes\nNo"
+            }
+          ]
+        }
+      ],
+      "popups": []
+    },
+    {
+      "stage": "typed-after-freeze",
+      "input": {
+        "attributes": {
+          "class": "_input_d7ago_28 ashby-application-form-input-autocomplete",
+          "placeholder": "Start typing...",
+          "aria-autocomplete": "list",
+          "aria-expanded": "true",
+          "aria-haspopup": "listbox",
+          "role": "combobox",
+          "aria-controls": ":r0:"
+        },
+        "value": "London, United Kingdom",
+        "nativeValid": true
+      },
+      "ancestors": [
+        {
+          "tag": "DIV",
+          "attributes": {
+            "class": "_inputContainer_d7ago_28"
+          },
+          "text": "",
+          "children": [
+            {
+              "tag": "INPUT",
+              "attributes": {
+                "class": "_input_d7ago_28 ashby-application-form-input-autocomplete",
+                "placeholder": "Start typing...",
+                "aria-autocomplete": "list",
+                "aria-expanded": "true",
+                "aria-haspopup": "listbox",
+                "role": "combobox",
+                "aria-controls": ":r0:"
+              }
+            },
+            {
+              "tag": "BUTTON",
+              "attributes": {
+                "class": "_container_pjyt6_1 _toggleButton_d7ago_32",
+                "aria-hidden": "true"
+              },
+              "text": ""
+            }
+          ]
+        },
+        {
+          "tag": "DIV",
+          "attributes": {
+            "class": "_fieldEntry_1e3gg_28 ashby-application-form-field-entry"
+          },
+          "text": "Which country do you intend to work from?\n\nPlease list your city and country.",
+          "children": [
+            {
+              "tag": "LABEL",
+              "attributes": {
+                "class": "_heading_f7cvd_52 _required_f7cvd_91 _label_1e3gg_42 ashby-application-form-question-title",
+                "aria-hidden": "true"
+              },
+              "text": "Which country do you intend to work from?"
+            },
+            {
+              "tag": "DIV",
+              "attributes": {
+                "class": "_description_1e3gg_48 ashby-application-form-question-description",
+                "aria-hidden": "true"
+              },
+              "text": "Please list your city and country."
+            },
+            {
+              "tag": "DIV",
+              "attributes": {
+                "class": "_inputContainer_d7ago_28"
+              },
+              "text": ""
+            }
+          ]
+        },
+        {
+          "tag": "DIV",
+          "attributes": {
+            "class": "_section_5yu8i_86 ashby-application-form-section-container"
+          },
+          "text": "Basic Info\nName\nEmail\nResume\nUpload File\n\nor drag and drop here\n\nLinkedIn URL\nGitHub URL\nWhich country do you intend to work from?\n\nPlease list your city and country.\n\nWill you now or in the future require sponsorship for employment visa status to work in this location?\nYes\nNo\nDo you have 4+ years of experience as a full-time engineer?\n\nWe're only looking for Senior+ engineers at the moment.\n\nYes\nNo",
+          "children": [
+            {
+              "tag": "DIV",
+              "attributes": {
+                "class": "_sectionHeader_5yu8i_93 ashby-application-form-section-header",
+                "aria-hidden": "true"
+              },
+              "text": "Basic Info"
+            },
+            {
+              "tag": "DIV",
+              "attributes": {
+                "class": "_fieldEntry_1e3gg_28 ashby-application-form-field-entry",
+                "aria-hidden": "true"
+              },
+              "text": "Name"
+            },
+            {
+              "tag": "DIV",
+              "attributes": {
+                "class": "_fieldEntry_1e3gg_28 ashby-application-form-field-entry",
+                "aria-hidden": "true"
+              },
+              "text": "Email"
+            },
+            {
+              "tag": "DIV",
+              "attributes": {
+                "class": "_fieldEntry_1e3gg_28 ashby-application-form-field-entry",
+                "aria-hidden": "true"
+              },
+              "text": "Resume\nUpload File\n\nor drag and drop here"
+            },
+            {
+              "tag": "DIV",
+              "attributes": {
+                "class": "_fieldEntry_1e3gg_28 ashby-application-form-field-entry",
+                "aria-hidden": "true"
+              },
+              "text": "LinkedIn URL"
+            },
+            {
+              "tag": "DIV",
+              "attributes": {
+                "class": "_fieldEntry_1e3gg_28 ashby-application-form-field-entry",
+                "aria-hidden": "true"
+              },
+              "text": "GitHub URL"
+            },
+            {
+              "tag": "DIV",
+              "attributes": {
+                "class": "_fieldEntry_1e3gg_28 ashby-application-form-field-entry"
+              },
+              "text": "Which country do you intend to work from?\n\nPlease list your city and country."
+            },
+            {
+              "tag": "DIV",
+              "attributes": {
+                "class": "_fieldEntry_1e3gg_28 ashby-application-form-field-entry",
+                "aria-hidden": "true"
+              },
+              "text": "Will you now or in the future require sponsorship for employment visa status to work in this location?\nYes\nNo"
+            },
+            {
+              "tag": "DIV",
+              "attributes": {
+                "class": "_fieldEntry_1e3gg_28 ashby-application-form-field-entry",
+                "aria-hidden": "true"
+              },
+              "text": "Do you have 4+ years of experience as a full-time engineer?\n\nWe're only looking for Senior+ engineers at the moment.\n\nYes\nNo"
+            }
+          ]
+        }
+      ],
+      "popups": [
+        {
+          "tag": "DIV",
+          "attributes": {
+            "id": ":r0:",
+            "role": "listbox",
+            "aria-orientation": "vertical",
+            "class": "_floatingContainer_d7ago_103"
+          },
+          "text": "No results"
+        }
+      ]
+    },
+    {
+      "stage": "blurred",
+      "input": {
+        "attributes": {
+          "class": "_input_d7ago_28 ashby-application-form-input-autocomplete",
+          "placeholder": "Start typing...",
+          "aria-autocomplete": "list",
+          "aria-expanded": "false",
+          "aria-haspopup": "listbox",
+          "role": "combobox"
+        },
+        "value": "",
+        "nativeValid": true
+      },
+      "ancestors": [
+        {
+          "tag": "DIV",
+          "attributes": {
+            "class": "_inputContainer_d7ago_28"
+          },
+          "text": "",
+          "children": [
+            {
+              "tag": "INPUT",
+              "attributes": {
+                "class": "_input_d7ago_28 ashby-application-form-input-autocomplete",
+                "placeholder": "Start typing...",
+                "aria-autocomplete": "list",
+                "aria-expanded": "false",
+                "aria-haspopup": "listbox",
+                "role": "combobox"
+              }
+            },
+            {
+              "tag": "BUTTON",
+              "attributes": {
+                "class": "_container_pjyt6_1 _toggleButton_d7ago_32"
+              },
+              "text": ""
+            }
+          ]
+        },
+        {
+          "tag": "DIV",
+          "attributes": {
+            "class": "_fieldEntry_1e3gg_28 ashby-application-form-field-entry"
+          },
+          "text": "Which country do you intend to work from?\n\nPlease list your city and country.",
+          "children": [
+            {
+              "tag": "LABEL",
+              "attributes": {
+                "class": "_heading_f7cvd_52 _required_f7cvd_91 _label_1e3gg_42 ashby-application-form-question-title"
+              },
+              "text": "Which country do you intend to work from?"
+            },
+            {
+              "tag": "DIV",
+              "attributes": {
+                "class": "_description_1e3gg_48 ashby-application-form-question-description"
+              },
+              "text": "Please list your city and country."
+            },
+            {
+              "tag": "DIV",
+              "attributes": {
+                "class": "_inputContainer_d7ago_28"
+              },
+              "text": ""
+            }
+          ]
+        },
+        {
+          "tag": "DIV",
+          "attributes": {
+            "class": "_section_5yu8i_86 ashby-application-form-section-container"
+          },
+          "text": "Basic Info\nName\nEmail\nResume\nUpload File\n\nor drag and drop here\n\nLinkedIn URL\nGitHub URL\nWhich country do you intend to work from?\n\nPlease list your city and country.\n\nWill you now or in the future require sponsorship for employment visa status to work in this location?\nYes\nNo\nDo you have 4+ years of experience as a full-time engineer?\n\nWe're only looking for Senior+ engineers at the moment.\n\nYes\nNo",
+          "children": [
+            {
+              "tag": "DIV",
+              "attributes": {
+                "class": "_sectionHeader_5yu8i_93 ashby-application-form-section-header"
+              },
+              "text": "Basic Info"
+            },
+            {
+              "tag": "DIV",
+              "attributes": {
+                "class": "_fieldEntry_1e3gg_28 ashby-application-form-field-entry"
+              },
+              "text": "Name"
+            },
+            {
+              "tag": "DIV",
+              "attributes": {
+                "class": "_fieldEntry_1e3gg_28 ashby-application-form-field-entry"
+              },
+              "text": "Email"
+            },
+            {
+              "tag": "DIV",
+              "attributes": {
+                "class": "_fieldEntry_1e3gg_28 ashby-application-form-field-entry"
+              },
+              "text": "Resume\nUpload File\n\nor drag and drop here"
+            },
+            {
+              "tag": "DIV",
+              "attributes": {
+                "class": "_fieldEntry_1e3gg_28 ashby-application-form-field-entry"
+              },
+              "text": "LinkedIn URL"
+            },
+            {
+              "tag": "DIV",
+              "attributes": {
+                "class": "_fieldEntry_1e3gg_28 ashby-application-form-field-entry"
+              },
+              "text": "GitHub URL"
+            },
+            {
+              "tag": "DIV",
+              "attributes": {
+                "class": "_fieldEntry_1e3gg_28 ashby-application-form-field-entry"
+              },
+              "text": "Which country do you intend to work from?\n\nPlease list your city and country."
+            },
+            {
+              "tag": "DIV",
+              "attributes": {
+                "class": "_fieldEntry_1e3gg_28 ashby-application-form-field-entry"
+              },
+              "text": "Will you now or in the future require sponsorship for employment visa status to work in this location?\nYes\nNo"
+            },
+            {
+              "tag": "DIV",
+              "attributes": {
+                "class": "_fieldEntry_1e3gg_28 ashby-application-form-field-entry"
+              },
+              "text": "Do you have 4+ years of experience as a full-time engineer?\n\nWe're only looking for Senior+ engineers at the moment.\n\nYes\nNo"
+            }
+          ]
+        }
+      ],
+      "popups": []
+    }
+  ],
+  "requests": [
+    {
+      "method": "POST",
+      "origin": "https://jobs.ashbyhq.com",
+      "path": "/api/non-user-graphql",
+      "queryKeys": [
+        "op"
+      ],
+      "bodyKeys": [
+        "operationName",
+        "variables",
+        "query"
+      ],
+      "operationName": "ApiAutocompleteGeoLocation",
+      "queryDocument": "query ApiAutocompleteGeoLocation($text: String!, $locationTypes: [GeoLocationType!]) {\n  result: autocompleteGeoLocation(text: $text, locationTypes: $locationTypes) {\n    ...AutocompleteLocationResultParts\n    __typename\n  }\n}\n\nfragment AutocompleteGeoLocationParts on GeoLocation {\n  name\n  type\n  providerLocationId\n  __typename\n}\n\nfragment AutocompleteLocationParts on AutocompleteLocation {\n  name\n  geoLocationPath {\n    ...AutocompleteGeoLocationParts\n    __typename\n  }\n  __typename\n}\n\nfragment AutocompleteLocationResultParts on AutocompleteLocationResult {\n  suggestions {\n    ...AutocompleteLocationParts\n    __typename\n  }\n  __typename\n}",
+      "variableTypes": {
+        "text": "string",
+        "locationTypes": "array"
+      }
+    }
+  ],
+  "beforeGuard": {
+    "state": "frozen",
+    "closed": false,
+    "observedUnfinishedRequests": 0,
+    "openSockets": 0,
+    "blockedRequests": 0,
+    "blockedSockets": 0,
+    "openedSockets": 0,
+    "frozen": true,
+    "activeTransportSockets": 0,
+    "openedTunnels": 31,
+    "rejectedConnections": 0,
+    "allowedReadQueries": [
+      "ApiJobPosting",
+      "ApiOrganizationFromHostedJobsPageName",
+      "ApiOrganizationFromHostedJobsPageName"
+    ],
+    "blockedLoadWrites": 3,
+    "blockedLoadSockets": 0
+  },
+  "observation": [
+    {
+      "ref": "f7",
+      "label": "Which country do you intend to work from? Please list your city and country.",
+      "kind": "unsupported-combobox",
+      "group": "",
+      "required": false,
+      "disabled": false,
+      "readOnly": false,
+      "supported": false,
+      "valid": true,
+      "pending": false,
+      "value": ""
+    }
+  ],
+  "afterGuard": {
+    "state": "frozen",
+    "closed": false,
+    "observedUnfinishedRequests": 0,
+    "openSockets": 0,
+    "blockedRequests": 0,
+    "blockedSockets": 0,
+    "openedSockets": 0,
+    "frozen": true,
+    "activeTransportSockets": 0,
+    "openedTunnels": 31,
+    "rejectedConnections": 0,
+    "allowedReadQueries": [
+      "ApiJobPosting",
+      "ApiOrganizationFromHostedJobsPageName",
+      "ApiOrganizationFromHostedJobsPageName"
+    ],
+    "blockedLoadWrites": 4,
+    "blockedLoadSockets": 0
+  },
+  "diagnostic": {
+    "submits": 0,
+    "choiceClicks": 0
+  },
+  "completed": true
+}

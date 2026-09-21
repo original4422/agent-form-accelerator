@@ -1,5 +1,17 @@
 # 持续探索状态（2026-09-21）
 
+## 当前接续点：地点调查发现必须处理服务器表单更新，尚未实现适配
+
+- 本轮 progress：实际冻结页面输入/选择行为、独立匿名公共地名读请求及精确回放，证据改变下一步优先级。没有生产代码修改、没有Codex新任务或速度测量，完整目标 active，非阻塞。
+- ashby-location-audit：冻结后输入London UK触发query ApiAutocompleteGeoLocation，UI显示No results但nativeValid=true，Escape/blur又清空。只因请求被拦截，不能当目录无结果或自动换词依据。控件是input.ashby-application-form-input-autocomplete[role=combobox][aria-autocomplete=list][aria-haspopup=listbox]，位于.field-entry data-field-path=_systemfield_location，label for同path但input无id。popup打开时兄弟/背景aria-hidden=true；通过aria-controls连接role=listbox，里面role=option+公共autocomplete-popup-result类。
+- 查询operation和完整querydocument已从被阻止请求观察到；变量text string与locationTypes [Country,Region,City]。公共read查询不含申请信息。新ashby-location-catalog固定该只读query，Node匿名POST读取通用London UK地名，无浏览器cookies/auth/申请人源/写操作，200返回5项：英国London完整限定名、UK、London Ontario Canada/Kiribati/Kentucky US，原响应+hash存ashby-location-catalog.json。生产不导入候选/答案。
+- ashby-location-replay-audit仅在新冻结page上对与记录完全一致的query+变量返回这份原响应，其余一律仍被冻结。真实DOM有5可见候选，唯一完整标签点击英国London；选中并blur后文本为London, Greater London, England, United Kingdom；再输入不匹配地名并Escape/blur，原选中值恢复。
+- **关键新依赖**：选中后尝试 mutation ApiSetFormValue，变量键含organizationHostedJobsPageName/formRenderIdentifier/path/value/formDefinitionIdentifier；返回片段请求FormRender，包括fields/isRequired/isHidden/描述/formErrors等。此写入被拦截net::ERR_FAILED、没有mutation响应，UI仍保留选中值。没有放行/直接调用/伪造mutation，也未保存写入变量值。不能证明此具体地点确实新增题目，只能确认请求服务端表单更新且响应缺失。
+- 强断言重复回放通过：响应hash一致、唯一候选点击、两次关闭后值保留、mutation确实失败且response数0、传输socket0、submit0。报告ashby-location-replay-audit.json findings observedSelection=true, selectionPersistsAfterFailedUpdate=true, serverUpdateConfirmed=false, fullApplicationVerified=false。这个回放是组件行为实验，不是完整在线申请或速度基线。
+- 文档ASHBY-LOCATION-BOUNDARY.md与README写清：不要马上把此input升级为普通可写文本，或仅凭DOM值/菜单关闭宣称成功。下一步先建立已观察表单更新的有界成功/失败/等待信号，测试成功/延迟/失败/动态新字段，然后再接地点选择。机械等待留本地，服务器返回新问题/新含义要交给宿主，不能旧计划继续猜。不要实现读取React内部状态；可被动观察已发生请求状态，但不拿隐藏返回的候选替代DOM选项。
+- 所有进程已结束，无待轮询句柄。无新模型测试，无相关生产改动所以未重跑旧回归。仍未支持地点、文件和视觉必填，也未达三类完整任务2×；先前可选公司名/URL问题未回，不重复催问；还有可自主实施的本地更新状态与适配验证，非阻塞。
+
+
 ## 当前接续点：真实 Ashby Yes/No 可执行，两个 Codex 任务各一次调用
 
 - 本轮 progress：新受限适配器、81项检查、冻结后的真实六目标确定性验证、两次真实Codex。完整目标 active，非阻塞；无完整三类任务2×证据，不能以六目标/一次调用宣布完成。

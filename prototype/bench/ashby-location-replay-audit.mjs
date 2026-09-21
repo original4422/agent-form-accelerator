@@ -1,0 +1,21 @@
+import assert from 'node:assert/strict';import {readFile,writeFile} from 'node:fs/promises';import {createHash} from 'node:crypto';import {createAshbyFrozenHarness} from './ashby-frozen-harness.mjs';
+const catalog=JSON.parse(await readFile('prototype/reports/ashby-location-catalog.json','utf8')),report={date:new Date().toISOString(),scope:'Actual Ashby component under permanent network freeze, replaying one exact anonymously-read public geography response. UI behavior only, no live application or speed claim.',responseHash:catalog.responseHash,replays:0,otherPostOperations:[],failedOperations:[],mutationResponses:[],stages:[]};let h;
+try{
+ assert.equal(createHash('sha256').update(JSON.stringify(catalog.response)).digest('hex'),catalog.responseHash);h=await createAshbyFrozenHarness();report.beforeGuard=h.guard();
+ h.page.on('requestfailed',r=>{let body;try{body=r.postDataJSON();}catch{}if(body?.operationName)report.failedOperations.push({operation:body.operationName,error:r.failure()?.errorText});});
+ h.page.on('response',r=>{let body;try{body=r.request().postDataJSON();}catch{}if(body?.operationName==='ApiSetFormValue')report.mutationResponses.push({operation:body.operationName,status:r.status()});});
+ await h.page.route('https://jobs.ashbyhq.com/api/non-user-graphql*',route=>{
+  let body;try{body=route.request().postDataJSON();}catch{}
+  if(route.request().method()==='POST'&&JSON.stringify(body)===JSON.stringify(catalog.request)){report.replays++;return route.fulfill({status:200,contentType:'application/json',body:JSON.stringify(catalog.response)});}
+  if(body?.operationName)report.otherPostOperations.push({name:body.operationName,variableKeys:Object.keys(body.variables??{}),queryPrefix:body.query?.slice(0,1200)});return route.fallback();
+ });
+ const input=h.page.getByRole('combobox'),snapshot=async stage=>report.stages.push({stage,...await input.evaluate(el=>({value:el.value,expanded:el.getAttribute('aria-expanded'),controls:el.getAttribute('aria-controls'),parentHtml:el.parentElement.outerHTML,questionHtml:el.parentElement.parentElement.outerHTML.slice(0,7000),visiblePopups:[...document.querySelectorAll('[role=listbox]')].filter(n=>n.getClientRects().length).map(n=>n.outerHTML.slice(0,7000))}))});
+ await snapshot('initial');await input.fill(catalog.request.variables.text);await h.page.getByRole('option').first().waitFor({timeout:5000});await snapshot('suggestions');
+ const desired=catalog.response.data.result.suggestions.find(s=>s.name==='London, Greater London, England, United Kingdom');assert.ok(desired);
+ const options=h.page.getByRole('listbox').getByRole('option'),names=await options.allInnerTexts(),index=names.findIndex(n=>n.trim()===desired.name);report.optionLabels=names;assert.equal(names.filter(n=>n.trim()===desired.name).length,1);
+ await options.nth(index).click();await h.page.waitForTimeout(500);await input.blur();await snapshot('selected-and-blurred');assert.equal(await input.inputValue(),desired.name);assert.equal(await input.getAttribute('aria-expanded'),'false');
+ // A second search is dismissed, to reveal whether the selected value persists.
+ await input.fill('Unmatched diagnostic place');await h.page.waitForTimeout(600);await input.press('Escape');await input.blur();await snapshot('dismissed-other-query');assert.equal(await input.inputValue(),desired.name);
+ report.afterGuard=h.guard();report.diagnostic=await h.page.evaluate(()=>window.__afaPressedDiagnostic);assert.equal(report.afterGuard.activeTransportSockets,0);assert.equal(report.diagnostic.submits,0);assert.ok(report.otherPostOperations.some(o=>o.name==='ApiSetFormValue'&&o.queryPrefix.startsWith('mutation ApiSetFormValue')));assert.ok(report.failedOperations.some(o=>o.operation==='ApiSetFormValue'));assert.equal(report.mutationResponses.length,0);report.completed=true;report.findings={observedSelection:true,selectionPersistsAfterFailedUpdate:true,serverUpdateConfirmed:false,fullApplicationVerified:false};console.log(JSON.stringify({replays:report.replays,stages:report.stages.map(({stage,value,expanded})=>({stage,value,expanded})),otherPostOperations:report.otherPostOperations},null,2));
+}catch(e){report.error=e.stack;process.exitCode=1;console.error(e.message);}
+finally{await h?.close();await writeFile('prototype/reports/ashby-location-replay-audit.json',JSON.stringify(report,null,2));}

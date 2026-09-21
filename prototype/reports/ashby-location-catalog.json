@@ -1,0 +1,123 @@
+{
+  "date": "2026-09-21T06:24:21.092Z",
+  "scope": "Anonymous public geographic directory read; no applicant data, browser cookies or application submission.",
+  "request": {
+    "operationName": "ApiAutocompleteGeoLocation",
+    "variables": {
+      "text": "London, United Kingdom",
+      "locationTypes": [
+        "Country",
+        "Region",
+        "City"
+      ]
+    },
+    "query": "query ApiAutocompleteGeoLocation($text: String!, $locationTypes: [GeoLocationType!]) {\n  result: autocompleteGeoLocation(text: $text, locationTypes: $locationTypes) {\n    ...AutocompleteLocationResultParts\n    __typename\n  }\n}\n\nfragment AutocompleteGeoLocationParts on GeoLocation {\n  name\n  type\n  providerLocationId\n  __typename\n}\n\nfragment AutocompleteLocationParts on AutocompleteLocation {\n  name\n  geoLocationPath {\n    ...AutocompleteGeoLocationParts\n    __typename\n  }\n  __typename\n}\n\nfragment AutocompleteLocationResultParts on AutocompleteLocationResult {\n  suggestions {\n    ...AutocompleteLocationParts\n    __typename\n  }\n  __typename\n}"
+  },
+  "response": {
+    "data": {
+      "result": {
+        "__typename": "AutocompleteLocationResult",
+        "suggestions": [
+          {
+            "__typename": "AutocompleteLocation",
+            "name": "London, Greater London, England, United Kingdom",
+            "geoLocationPath": [
+              {
+                "__typename": "GeoLocation",
+                "name": "United Kingdom",
+                "type": "Country",
+                "providerLocationId": "united_kingdom"
+              },
+              {
+                "__typename": "GeoLocation",
+                "name": "England",
+                "type": "Region",
+                "providerLocationId": "united_kingdom/england"
+              },
+              {
+                "__typename": "GeoLocation",
+                "name": "London",
+                "type": "City",
+                "providerLocationId": "united_kingdom/england/london"
+              }
+            ]
+          },
+          {
+            "__typename": "AutocompleteLocation",
+            "name": "United Kingdom",
+            "geoLocationPath": [
+              {
+                "__typename": "GeoLocation",
+                "name": "United Kingdom",
+                "type": "Country",
+                "providerLocationId": "united_kingdom"
+              }
+            ]
+          },
+          {
+            "__typename": "AutocompleteLocation",
+            "name": "London, Ontario, Canada",
+            "geoLocationPath": [
+              {
+                "__typename": "GeoLocation",
+                "name": "Canada",
+                "type": "Country",
+                "providerLocationId": "canada"
+              },
+              {
+                "__typename": "GeoLocation",
+                "name": "Ontario",
+                "type": "Region",
+                "providerLocationId": "canada/ontario"
+              },
+              {
+                "__typename": "GeoLocation",
+                "name": "London",
+                "type": "City",
+                "providerLocationId": "canada/ontario/london"
+              }
+            ]
+          },
+          {
+            "__typename": "AutocompleteLocation",
+            "name": "London, Kiribati",
+            "geoLocationPath": [
+              {
+                "__typename": "GeoLocation",
+                "name": "Kiribati",
+                "type": "Country",
+                "providerLocationId": "kiribati"
+              }
+            ]
+          },
+          {
+            "__typename": "AutocompleteLocation",
+            "name": "London, Kentucky, United States",
+            "geoLocationPath": [
+              {
+                "__typename": "GeoLocation",
+                "name": "United States",
+                "type": "Country",
+                "providerLocationId": "united_states"
+              },
+              {
+                "__typename": "GeoLocation",
+                "name": "Kentucky",
+                "type": "Region",
+                "providerLocationId": "united_states/kentucky"
+              },
+              {
+                "__typename": "GeoLocation",
+                "name": "London",
+                "type": "City",
+                "providerLocationId": "united_states/kentucky/london"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "status": 200,
+  "responseHash": "97c33cec7484a78e5d9e3590f4296f72bfc42491799088da83f685c093c59f5a"
+}

@@ -1,0 +1,148 @@
+{
+  "date": "2026-09-21T06:32:19.936Z",
+  "scope": "Actual Ashby component under permanent network freeze, replaying one exact anonymously-read public geography response. UI behavior only, no live application or speed claim.",
+  "responseHash": "97c33cec7484a78e5d9e3590f4296f72bfc42491799088da83f685c093c59f5a",
+  "replays": 1,
+  "otherPostOperations": [
+    {
+      "name": "ApiSetFormValue",
+      "variableKeys": [
+        "organizationHostedJobsPageName",
+        "formRenderIdentifier",
+        "path",
+        "value",
+        "formDefinitionIdentifier"
+      ],
+      "queryPrefix": "mutation ApiSetFormValue($organizationHostedJobsPageName: String!, $formRenderIdentifier: String!, $path: String!, $value: JSON, $formDefinitionIdentifier: String) {\n  setFormValue(\n    organizationHostedJobsPageName: $organizationHostedJobsPageName\n    formRenderIdentifier: $formRenderIdentifier\n    path: $path\n    value: $value\n    formDefinitionIdentifier: $formDefinitionIdentifier\n  ) {\n    ...FormRenderParts\n    __typename\n  }\n}\n\nfragment JSONBoxParts on JSONBox {\n  value\n  __typename\n}\n\nfragment FileParts on File {\n  id\n  filename\n  __typename\n}\n\nfragment FormFieldEntryParts on FormFieldEntry {\n  id\n  field\n  fieldValue {\n    ... on JSONBox {\n      ...JSONBoxParts\n      __typename\n    }\n    ... on File {\n      ...FileParts\n      __typename\n    }\n    ... on FileList {\n      files {\n        ...FileParts\n        __typename\n      }\n      __typename\n    }\n    __typename\n  }\n  isRequired\n  descriptionHtml\n  isHidden\n  __typename\n}\n\nfragment FormRenderParts on FormRender {\n  id\n  formControls {\n    identifier\n    title\n    __typename\n  }\n  errorMessages\n  formErrors {\n    message\n    fieldEntryId\n    __typename\n  }\n  sections {\n    title\n    descriptionHtml\n    fieldEntries {\n      "
+    },
+    {
+      "name": "ApiAutocompleteGeoLocation",
+      "variableKeys": [
+        "text",
+        "locationTypes"
+      ],
+      "queryPrefix": "query ApiAutocompleteGeoLocation($text: String!, $locationTypes: [GeoLocationType!]) {\n  result: autocompleteGeoLocation(text: $text, locationTypes: $locationTypes) {\n    ...AutocompleteLocationResultParts\n    __typename\n  }\n}\n\nfragment AutocompleteGeoLocationParts on GeoLocation {\n  name\n  type\n  providerLocationId\n  __typename\n}\n\nfragment AutocompleteLocationParts on AutocompleteLocation {\n  name\n  geoLocationPath {\n    ...AutocompleteGeoLocationParts\n    __typename\n  }\n  __typename\n}\n\nfragment AutocompleteLocationResultParts on AutocompleteLocationResult {\n  suggestions {\n    ...AutocompleteLocationParts\n    __typename\n  }\n  __typename\n}"
+    },
+    {
+      "name": "ApiAutocompleteGeoLocation",
+      "variableKeys": [
+        "text",
+        "locationTypes"
+      ],
+      "queryPrefix": "query ApiAutocompleteGeoLocation($text: String!, $locationTypes: [GeoLocationType!]) {\n  result: autocompleteGeoLocation(text: $text, locationTypes: $locationTypes) {\n    ...AutocompleteLocationResultParts\n    __typename\n  }\n}\n\nfragment AutocompleteGeoLocationParts on GeoLocation {\n  name\n  type\n  providerLocationId\n  __typename\n}\n\nfragment AutocompleteLocationParts on AutocompleteLocation {\n  name\n  geoLocationPath {\n    ...AutocompleteGeoLocationParts\n    __typename\n  }\n  __typename\n}\n\nfragment AutocompleteLocationResultParts on AutocompleteLocationResult {\n  suggestions {\n    ...AutocompleteLocationParts\n    __typename\n  }\n  __typename\n}"
+    }
+  ],
+  "failedOperations": [
+    {
+      "operation": "ApiSetFormValue",
+      "error": "net::ERR_FAILED"
+    },
+    {
+      "operation": "ApiAutocompleteGeoLocation",
+      "error": "net::ERR_FAILED"
+    },
+    {
+      "operation": "ApiAutocompleteGeoLocation",
+      "error": "net::ERR_FAILED"
+    }
+  ],
+  "mutationResponses": [],
+  "stages": [
+    {
+      "stage": "initial",
+      "value": "",
+      "expanded": "false",
+      "controls": null,
+      "parentHtml": "<div class=\"_inputContainer_d7ago_28\"><input class=\"_input_d7ago_28 ashby-application-form-input-autocomplete\" placeholder=\"Start typing...\" aria-autocomplete=\"list\" aria-expanded=\"false\" aria-haspopup=\"listbox\" role=\"combobox\" value=\"\"><button class=\"_container_pjyt6_1 _toggleButton_d7ago_32\"><svg viewBox=\"0 0 640 640\" fill=\"none\" height=\"1em\"><path d=\"M303.5 473C312.9 482.4 328.1 482.4 337.4 473L537.4 273C546.8 263.6 546.8 248.4 537.4 239.1C528 229.8 512.8 229.7 503.5 239.1L320.5 422.1L137.5 239.1C128.1 229.7 112.9 229.7 103.6 239.1C94.3 248.5 94.2 263.7 103.6 273L303.6 473z\"></path></svg></button></div>",
+      "questionHtml": "<div class=\"_fieldEntry_1e3gg_28 ashby-application-form-field-entry\" data-field-path=\"_systemfield_location\" data-field-entry-id=\"c940069a-a936-48cf-bec9-3ca8cb7fe9fb__systemfield_location\"><label class=\"_heading_f7cvd_52 _required_f7cvd_91 _label_1e3gg_42 ashby-application-form-question-title\" for=\"_systemfield_location\">Which country do you intend to work from?</label><div class=\"_description_1e3gg_48 ashby-application-form-question-description\"><p>Please list your city and country.</p></div><div class=\"_inputContainer_d7ago_28\"><input class=\"_input_d7ago_28 ashby-application-form-input-autocomplete\" placeholder=\"Start typing...\" aria-autocomplete=\"list\" aria-expanded=\"false\" aria-haspopup=\"listbox\" role=\"combobox\" value=\"\"><button class=\"_container_pjyt6_1 _toggleButton_d7ago_32\"><svg viewBox=\"0 0 640 640\" fill=\"none\" height=\"1em\"><path d=\"M303.5 473C312.9 482.4 328.1 482.4 337.4 473L537.4 273C546.8 263.6 546.8 248.4 537.4 239.1C528 229.8 512.8 229.7 503.5 239.1L320.5 422.1L137.5 239.1C128.1 229.7 112.9 229.7 103.6 239.1C94.3 248.5 94.2 263.7 103.6 273L303.6 473z\"></path></svg></button></div></div>",
+      "visiblePopups": []
+    },
+    {
+      "stage": "suggestions",
+      "value": "London, United Kingdom",
+      "expanded": "true",
+      "controls": ":r0:",
+      "parentHtml": "<div class=\"_inputContainer_d7ago_28\"><input class=\"_input_d7ago_28 ashby-application-form-input-autocomplete\" placeholder=\"Start typing...\" aria-autocomplete=\"list\" aria-expanded=\"true\" aria-haspopup=\"listbox\" role=\"combobox\" value=\"London, United Kingdom\" aria-controls=\":r0:\"><button class=\"_container_pjyt6_1 _toggleButton_d7ago_32\" data-aria-hidden=\"true\" aria-hidden=\"true\"><svg viewBox=\"0 0 640 640\" fill=\"none\" height=\"1em\"><path d=\"M303.5 473C312.9 482.4 328.1 482.4 337.4 473L537.4 273C546.8 263.6 546.8 248.4 537.4 239.1C528 229.8 512.8 229.7 503.5 239.1L320.5 422.1L137.5 239.1C128.1 229.7 112.9 229.7 103.6 239.1C94.3 248.5 94.2 263.7 103.6 273L303.6 473z\"></path></svg></button></div>",
+      "questionHtml": "<div class=\"_fieldEntry_1e3gg_28 ashby-application-form-field-entry\" data-field-path=\"_systemfield_location\" data-field-entry-id=\"c940069a-a936-48cf-bec9-3ca8cb7fe9fb__systemfield_location\"><label class=\"_heading_f7cvd_52 _required_f7cvd_91 _label_1e3gg_42 ashby-application-form-question-title\" for=\"_systemfield_location\" data-aria-hidden=\"true\" aria-hidden=\"true\">Which country do you intend to work from?</label><div class=\"_description_1e3gg_48 ashby-application-form-question-description\" data-aria-hidden=\"true\" aria-hidden=\"true\"><p>Please list your city and country.</p></div><div class=\"_inputContainer_d7ago_28\"><input class=\"_input_d7ago_28 ashby-application-form-input-autocomplete\" placeholder=\"Start typing...\" aria-autocomplete=\"list\" aria-expanded=\"true\" aria-haspopup=\"listbox\" role=\"combobox\" value=\"London, United Kingdom\" aria-controls=\":r0:\"><button class=\"_container_pjyt6_1 _toggleButton_d7ago_32\" data-aria-hidden=\"true\" aria-hidden=\"true\"><svg viewBox=\"0 0 640 640\" fill=\"none\" height=\"1em\"><path d=\"M303.5 473C312.9 482.4 328.1 482.4 337.4 473L537.4 273C546.8 263.6 546.8 248.4 537.4 239.1C528 229.8 512.8 229.7 503.5 239.1L320.5 422.1L137.5 239.1C128.1 229.7 112.9 229.7 103.6 239.1C94.3 248.5 94.2 263.7 103.6 273L303.6 473z\"></path></svg></button></div></div>",
+      "visiblePopups": [
+        "<div tabindex=\"-1\" id=\":r0:\" role=\"listbox\" aria-orientation=\"vertical\" class=\"_floatingContainer_d7ago_103\" style=\"position: absolute; left: 0px; top: 0px; transform: translate(456px, 1106px); --autocomplete-max-height: calc(969.40625px - 16px); width: 668px; max-height: var(--autocomplete-max-height);\"><div class=\"_resultContainer_d7ago_116 ashby-application-form-input-autocomplete-popup\"><div role=\"option\" id=\":r3:\" aria-selected=\"true\" class=\"_result_d7ago_107 _active_d7ago_88 ashby-application-form-input-autocomplete-popup-result\">London, Greater London, England, United Kingdom</div><div role=\"option\" id=\":r4:\" aria-selected=\"false\" class=\"_result_d7ago_107 ashby-application-form-input-autocomplete-popup-result\">United Kingdom</div><div role=\"option\" id=\":r5:\" aria-selected=\"false\" class=\"_result_d7ago_107 ashby-application-form-input-autocomplete-popup-result\">London, Ontario, Canada</div><div role=\"option\" id=\":r6:\" aria-selected=\"false\" class=\"_result_d7ago_107 ashby-application-form-input-autocomplete-popup-result\">London, Kiribati</div><div role=\"option\" id=\":r7:\" aria-selected=\"false\" class=\"_result_d7ago_107 ashby-application-form-input-autocomplete-popup-result\">London, Kentucky, United States</div></div></div>"
+      ]
+    },
+    {
+      "stage": "selected-and-blurred",
+      "value": "London, Greater London, England, United Kingdom",
+      "expanded": "false",
+      "controls": null,
+      "parentHtml": "<div class=\"_inputContainer_d7ago_28\"><input class=\"_input_d7ago_28 ashby-application-form-input-autocomplete\" placeholder=\"Start typing...\" aria-autocomplete=\"list\" aria-expanded=\"false\" aria-haspopup=\"listbox\" role=\"combobox\" value=\"London, Greater London, England, United Kingdom\"><button class=\"_container_pjyt6_1 _toggleButton_d7ago_32\"><svg viewBox=\"0 0 640 640\" fill=\"none\" height=\"1em\"><path d=\"M303.5 473C312.9 482.4 328.1 482.4 337.4 473L537.4 273C546.8 263.6 546.8 248.4 537.4 239.1C528 229.8 512.8 229.7 503.5 239.1L320.5 422.1L137.5 239.1C128.1 229.7 112.9 229.7 103.6 239.1C94.3 248.5 94.2 263.7 103.6 273L303.6 473z\"></path></svg></button></div>",
+      "questionHtml": "<div class=\"_fieldEntry_1e3gg_28 ashby-application-form-field-entry\" data-field-path=\"_systemfield_location\" data-field-entry-id=\"c940069a-a936-48cf-bec9-3ca8cb7fe9fb__systemfield_location\"><label class=\"_heading_f7cvd_52 _required_f7cvd_91 _label_1e3gg_42 ashby-application-form-question-title\" for=\"_systemfield_location\">Which country do you intend to work from?</label><div class=\"_description_1e3gg_48 ashby-application-form-question-description\"><p>Please list your city and country.</p></div><div class=\"_inputContainer_d7ago_28\"><input class=\"_input_d7ago_28 ashby-application-form-input-autocomplete\" placeholder=\"Start typing...\" aria-autocomplete=\"list\" aria-expanded=\"false\" aria-haspopup=\"listbox\" role=\"combobox\" value=\"London, Greater London, England, United Kingdom\"><button class=\"_container_pjyt6_1 _toggleButton_d7ago_32\"><svg viewBox=\"0 0 640 640\" fill=\"none\" height=\"1em\"><path d=\"M303.5 473C312.9 482.4 328.1 482.4 337.4 473L537.4 273C546.8 263.6 546.8 248.4 537.4 239.1C528 229.8 512.8 229.7 503.5 239.1L320.5 422.1L137.5 239.1C128.1 229.7 112.9 229.7 103.6 239.1C94.3 248.5 94.2 263.7 103.6 273L303.6 473z\"></path></svg></button></div></div>",
+      "visiblePopups": []
+    },
+    {
+      "stage": "dismissed-other-query",
+      "value": "London, Greater London, England, United Kingdom",
+      "expanded": "false",
+      "controls": null,
+      "parentHtml": "<div class=\"_inputContainer_d7ago_28\"><input class=\"_input_d7ago_28 ashby-application-form-input-autocomplete\" placeholder=\"Start typing...\" aria-autocomplete=\"list\" aria-expanded=\"false\" aria-haspopup=\"listbox\" role=\"combobox\" value=\"London, Greater London, England, United Kingdom\"><button class=\"_container_pjyt6_1 _toggleButton_d7ago_32\"><svg viewBox=\"0 0 640 640\" fill=\"none\" height=\"1em\"><path d=\"M303.5 473C312.9 482.4 328.1 482.4 337.4 473L537.4 273C546.8 263.6 546.8 248.4 537.4 239.1C528 229.8 512.8 229.7 503.5 239.1L320.5 422.1L137.5 239.1C128.1 229.7 112.9 229.7 103.6 239.1C94.3 248.5 94.2 263.7 103.6 273L303.6 473z\"></path></svg></button></div>",
+      "questionHtml": "<div class=\"_fieldEntry_1e3gg_28 ashby-application-form-field-entry\" data-field-path=\"_systemfield_location\" data-field-entry-id=\"c940069a-a936-48cf-bec9-3ca8cb7fe9fb__systemfield_location\"><label class=\"_heading_f7cvd_52 _required_f7cvd_91 _label_1e3gg_42 ashby-application-form-question-title\" for=\"_systemfield_location\">Which country do you intend to work from?</label><div class=\"_description_1e3gg_48 ashby-application-form-question-description\"><p>Please list your city and country.</p></div><div class=\"_inputContainer_d7ago_28\"><input class=\"_input_d7ago_28 ashby-application-form-input-autocomplete\" placeholder=\"Start typing...\" aria-autocomplete=\"list\" aria-expanded=\"false\" aria-haspopup=\"listbox\" role=\"combobox\" value=\"London, Greater London, England, United Kingdom\"><button class=\"_container_pjyt6_1 _toggleButton_d7ago_32\"><svg viewBox=\"0 0 640 640\" fill=\"none\" height=\"1em\"><path d=\"M303.5 473C312.9 482.4 328.1 482.4 337.4 473L537.4 273C546.8 263.6 546.8 248.4 537.4 239.1C528 229.8 512.8 229.7 503.5 239.1L320.5 422.1L137.5 239.1C128.1 229.7 112.9 229.7 103.6 239.1C94.3 248.5 94.2 263.7 103.6 273L303.6 473z\"></path></svg></button></div></div>",
+      "visiblePopups": []
+    }
+  ],
+  "beforeGuard": {
+    "state": "frozen",
+    "closed": false,
+    "observedUnfinishedRequests": 0,
+    "openSockets": 0,
+    "blockedRequests": 0,
+    "blockedSockets": 0,
+    "openedSockets": 0,
+    "frozen": true,
+    "activeTransportSockets": 0,
+    "openedTunnels": 30,
+    "rejectedConnections": 0,
+    "allowedReadQueries": [
+      "ApiJobPosting",
+      "ApiOrganizationFromHostedJobsPageName",
+      "ApiOrganizationFromHostedJobsPageName"
+    ],
+    "blockedLoadWrites": 2,
+    "blockedLoadSockets": 0
+  },
+  "optionLabels": [
+    "London, Greater London, England, United Kingdom",
+    "United Kingdom",
+    "London, Ontario, Canada",
+    "London, Kiribati",
+    "London, Kentucky, United States"
+  ],
+  "afterGuard": {
+    "state": "frozen",
+    "closed": false,
+    "observedUnfinishedRequests": 0,
+    "openSockets": 0,
+    "blockedRequests": 0,
+    "blockedSockets": 0,
+    "openedSockets": 0,
+    "frozen": true,
+    "activeTransportSockets": 0,
+    "openedTunnels": 30,
+    "rejectedConnections": 0,
+    "allowedReadQueries": [
+      "ApiJobPosting",
+      "ApiOrganizationFromHostedJobsPageName",
+      "ApiOrganizationFromHostedJobsPageName"
+    ],
+    "blockedLoadWrites": 5,
+    "blockedLoadSockets": 0
+  },
+  "diagnostic": {
+    "submits": 0,
+    "choiceClicks": 0
+  },
+  "completed": true,
+  "findings": {
+    "observedSelection": true,
+    "selectionPersistsAfterFailedUpdate": true,
+    "serverUpdateConfirmed": false,
+    "fullApplicationVerified": false
+  }
+}

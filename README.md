@@ -6,6 +6,8 @@
 
 ## 看结果
 
+- [地点选择的服务器更新边界](prototype/reports/ASHBY-LOCATION-BOUNDARY.md)：真实页面在查询失败时仍显示“No results”，地点选中后的写请求被阻止时仍保留选中文本。公开目录回放验证了反例；下一步需先处理异步表单更新，尚未开放地点支持或新增速度结论。
+
 - [真实 Ashby 的 Yes/No 执行](prototype/reports/ASHBY-PRESSED-CHOICES.md)：两份相反资格事实，Codex 均一次调用正确填写六个目标，地点仍明确未完成；81 项检查通过。只支持核对过的公共控件结构，普通按钮不开放，尚非完整申请或速度对照。
 
 - [让首次观察包含页面规则](prototype/reports/FORM-CONTEXT.md)：真实 Ashby 提取到“三题只答一题”等说明；四次 Codex 对照中，旧上下文两次多填，新上下文正确完成三选一/三选二且各一次调用。79 项检查通过，错误基线不用于计算提速倍数。
