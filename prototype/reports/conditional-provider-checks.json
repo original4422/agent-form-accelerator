@@ -1,0 +1,37 @@
+{
+  "date": "2026-09-21T02:03:24.379Z",
+  "results": [
+    {
+      "mode": "observed",
+      "passed": true,
+      "contextHash": "5d89863a3da5947b1b07fb67449ca252af34ce7587f7d540b5dc2cefd687012f",
+      "contextBytes": 5281,
+      "tools": 4,
+      "oracle": {
+        "passed": true,
+        "errors": [],
+        "knownTargets": 10,
+        "requiredUnanswered": 1,
+        "searches": 6,
+        "submits": 0
+      },
+      "conditionalChoices": 0
+    },
+    {
+      "mode": "conditional",
+      "passed": true,
+      "contextHash": "5d89863a3da5947b1b07fb67449ca252af34ce7587f7d540b5dc2cefd687012f",
+      "contextBytes": 5281,
+      "tools": 4,
+      "oracle": {
+        "passed": true,
+        "errors": [],
+        "knownTargets": 10,
+        "requiredUnanswered": 1,
+        "searches": 6,
+        "submits": 0
+      },
+      "conditionalChoices": 3
+    }
+  ]
+}

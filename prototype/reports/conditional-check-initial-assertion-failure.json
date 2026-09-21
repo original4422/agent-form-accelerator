@@ -1,0 +1,50 @@
+{
+  "date": "2026-09-21T02:01:01.308Z",
+  "results": [
+    {
+      "name": "literal phrase conditions normalize case/punctuation/fullwidth and respect word boundaries",
+      "passed": true
+    },
+    {
+      "name": "truncated, disabled, ambiguous and blocked results never supply a selection",
+      "passed": true
+    },
+    {
+      "name": "all source facts and two education entities filled in one conditional apply",
+      "passed": true
+    },
+    {
+      "name": "missing qualifier returns candidates without writing even otherwise-known facts",
+      "passed": true
+    },
+    {
+      "name": "wrong predicted qualifier is not silently weakened",
+      "passed": true
+    },
+    {
+      "name": "duplicate visible city labels block the entire planned fill",
+      "passed": true
+    },
+    {
+      "name": "all conditional sources validate before any query",
+      "passed": true
+    },
+    {
+      "name": "source modified during search blocks subsequent writes",
+      "passed": true
+    },
+    {
+      "name": "field relabel during discovery returns to host before fact writes",
+      "passed": true
+    },
+    {
+      "name": "disappearance between discovery and selected-label recheck cannot complete",
+      "passed": true
+    },
+    {
+      "name": "ordinary mode rejects conditional overrides without any query or fact write",
+      "passed": false,
+      "error": "AssertionError [ERR_ASSERTION]: The input did not match the regular expression /CHOICE_NOT_OBSERVED/. Input:\n\n'Error: INVALID_OPTION_REFERENCE'\n\n    at async file:///Users/original/Project/github/personal_project/agent-form-accelerator/prototype/bench/conditional-check.mjs:58:53\n    at async check (file:///Users/original/Project/github/personal_project/agent-form-accelerator/prototype/bench/conditional-check.mjs:15:34)\n    at async file:///Users/original/Project/github/personal_project/agent-form-accelerator/prototype/bench/conditional-check.mjs:57:2"
+    }
+  ]
+}

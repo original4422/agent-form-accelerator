@@ -2,9 +2,11 @@
 
 给 Codex 和 Claude Code 共用的网页填表执行工具。已有 Agent 负责理解资料、匹配字段，本地扩展负责批量填写和回读校验，不另行调用模型 API。
 
-**当前状态：工程原型。已能用 Codex 将未映射的中文 Markdown 资料绑定到英文表单。React/Radix 样本中，复用重复组模板把两次宿主请求合并为一次，完整中位耗时减少约 27%。官方工具生成脚本出现了定位错误，不能用恢复造成的差距宣称稳定倍数。尚未证明真实招聘页完整流程稳定提速 2 倍。**
+**当前状态：工程原型。已能用 Codex 将未映射的中文 Markdown 资料绑定到英文表单。React Select 别名/校区样本中，把条件搜索与填写合为一次宿主请求，完整中位耗时 47.32→30.53 秒，减少约 35.5%，六次结果均正确。官方工具生成脚本出现了定位错误，不能用恢复造成的差距宣称稳定倍数。尚未证明真实招聘页完整流程稳定提速 2 倍。**
 
 ## 看结果
+
+- [把条件搜索放进填写计划](prototype/reports/CONDITIONAL-SELECTION.md)：来源已确定名称和校区时，本地搜索并核对唯一匹配项；歧义回到Codex，保持完整回读和缺失事实报告。三组对照完整中位47.32→30.53秒，约减35.5%。
 
 - [按问题表达复选集合](prototype/reports/DECISION-CONTEXT.md)：同样59目标、相同Codex权限，三组对照中位49.24→42.61秒，约减少13.5%；完整任务两倍目标仍未达成。
 - [Codex与工具之间的耗时分解](prototype/reports/HOST-PHASES.md)：浏览器执行约2.3秒，主要等待发生在宿主侧；不再用本地执行提速代替用户体验。
@@ -153,3 +155,10 @@ prototype/skills/       两端共用的工作流说明
 ```
 
 代码在 `prototype/validation` 分支，项目名与正式 API 尚未定稿。依赖锁定在 `package-lock.json`。这是测量原型，不是已发布产品。
+
+
+## 条件搜索实验
+
+运行 `AFA_FIXTURE=alias-form node prototype/scripts/demo-search.mjs`，在它打印的临时 Codex 命令末尾追加 `-c 'mcp_servers.afa.env.AFA_SELECTION_MODE="conditional"'`。这只为本次隔离演示开放条件选择，默认接口未变。
+
+让 Codex 根据资料填写全部已知字段和两段教育经历，保留缺失日期，并使用来源中的机构名与校区限定词。它可以在一次 apply 中提出 `choices[ref].search = {query, labelParts}`；只有唯一观察选项满足全部字面条件才执行。若候选歧义或条件不满足，返回真实候选让 Codex 决定，不自动弱化条件。该路径仍使用已有 Codex 登录，无新增模型 API Key；未接入日常浏览器扩展。

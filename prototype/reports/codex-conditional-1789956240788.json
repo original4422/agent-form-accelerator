@@ -1,0 +1,1310 @@
+{
+  "batchId": 1789956240788,
+  "protocol": "conditional-intent-v1",
+  "date": "2026-09-21T02:08:17.237Z",
+  "aborted": false,
+  "scope": "Alternating existing batch discovery followed by apply versus source-derived conditional search choices inside apply. Same React Select alias/campus task, source, guard backend, existing approval/configuration and return evidence. Conditional choices require all literal phrases to match one observed enabled label; ambiguity returns actual options before fact writes. Three pairs. All host startup, model, tools, recovery and exit included; initial browser load/preflight excluded. Ten supplied targets must match entity IDs; one required date remains blank and must be reported; zero submits.",
+  "preflight": [
+    {
+      "mode": "observed",
+      "passed": true,
+      "contextHash": "6abc26af73de0f926d1d4f4fb9195cc5df6f899e1b270439e39d9246efd0fa4a",
+      "contextBytes": 5281,
+      "tools": 4
+    },
+    {
+      "mode": "conditional",
+      "passed": true,
+      "contextHash": "6abc26af73de0f926d1d4f4fb9195cc5df6f899e1b270439e39d9246efd0fa4a",
+      "contextBytes": 5281,
+      "tools": 4
+    },
+    {
+      "mode": "conditional",
+      "passed": true,
+      "contextHash": "6abc26af73de0f926d1d4f4fb9195cc5df6f899e1b270439e39d9246efd0fa4a",
+      "contextBytes": 5281,
+      "tools": 4
+    },
+    {
+      "mode": "observed",
+      "passed": true,
+      "contextHash": "6abc26af73de0f926d1d4f4fb9195cc5df6f899e1b270439e39d9246efd0fa4a",
+      "contextBytes": 5281,
+      "tools": 4
+    },
+    {
+      "mode": "observed",
+      "passed": true,
+      "contextHash": "6abc26af73de0f926d1d4f4fb9195cc5df6f899e1b270439e39d9246efd0fa4a",
+      "contextBytes": 5281,
+      "tools": 4
+    },
+    {
+      "mode": "conditional",
+      "passed": true,
+      "contextHash": "6abc26af73de0f926d1d4f4fb9195cc5df6f899e1b270439e39d9246efd0fa4a",
+      "contextBytes": 5281,
+      "tools": 4
+    }
+  ],
+  "rows": [
+    {
+      "startedEpochMs": 1789956243265.1082,
+      "serverTimings": [
+        {
+          "stage": "server_start",
+          "epochMs": 1789956244775.038,
+          "atMs": 1509.929931640625
+        },
+        {
+          "stage": "prefetch_start",
+          "epochMs": 1789956244778.5479,
+          "atMs": 1513.439697265625
+        },
+        {
+          "stage": "prefetch_done",
+          "epochMs": 1789956244787.6702,
+          "atMs": 1522.56201171875
+        },
+        {
+          "stage": "server_connected",
+          "epochMs": 1789956244788.1199,
+          "atMs": 1523.01171875
+        },
+        {
+          "stage": "transport_send_start",
+          "epochMs": 1789956244791.1235,
+          "responseKind": "initialize",
+          "atMs": 1526.015380859375
+        },
+        {
+          "stage": "transport_send_done",
+          "epochMs": 1789956244791.2908,
+          "responseKind": "initialize",
+          "atMs": 1526.1826171875
+        },
+        {
+          "stage": "transport_send_start",
+          "epochMs": 1789956244795.708,
+          "responseKind": "tools_list",
+          "atMs": 1530.599853515625
+        },
+        {
+          "stage": "transport_send_done",
+          "epochMs": 1789956244795.8513,
+          "responseKind": "tools_list",
+          "atMs": 1530.7431640625
+        },
+        {
+          "stage": "handler_received",
+          "epochMs": 1789956262816.673,
+          "tool": "form_search",
+          "requestId": 1,
+          "atMs": 19551.56494140625
+        },
+        {
+          "stage": "handler_execute",
+          "epochMs": 1789956262817.6086,
+          "tool": "form_search",
+          "requestId": 1,
+          "atMs": 19552.50048828125
+        },
+        {
+          "stage": "handler_resolved",
+          "epochMs": 1789956264394.002,
+          "tool": "form_search",
+          "requestId": 1,
+          "atMs": 21128.893798828125
+        },
+        {
+          "stage": "handler_encoded",
+          "epochMs": 1789956264394.298,
+          "tool": "form_search",
+          "requestId": 1,
+          "bytes": 6164,
+          "atMs": 21129.18994140625
+        },
+        {
+          "stage": "transport_send_start",
+          "epochMs": 1789956264395.1694,
+          "responseKind": "tool_result",
+          "atMs": 21130.061279296875
+        },
+        {
+          "stage": "transport_send_done",
+          "epochMs": 1789956264395.2937,
+          "responseKind": "tool_result",
+          "atMs": 21130.185546875
+        },
+        {
+          "stage": "handler_received",
+          "epochMs": 1789956277144.9521,
+          "tool": "form_apply_bindings",
+          "requestId": 2,
+          "atMs": 33879.843994140625
+        },
+        {
+          "stage": "handler_execute",
+          "epochMs": 1789956277145.932,
+          "tool": "form_apply_bindings",
+          "requestId": 2,
+          "atMs": 33880.82373046875
+        },
+        {
+          "stage": "handler_resolved",
+          "epochMs": 1789956279208.1567,
+          "tool": "form_apply_bindings",
+          "requestId": 2,
+          "atMs": 35943.048583984375
+        },
+        {
+          "stage": "handler_encoded",
+          "epochMs": 1789956279208.5103,
+          "tool": "form_apply_bindings",
+          "requestId": 2,
+          "bytes": 7106,
+          "atMs": 35943.402099609375
+        },
+        {
+          "stage": "transport_send_start",
+          "epochMs": 1789956279208.8525,
+          "responseKind": "tool_result",
+          "atMs": 35943.744384765625
+        },
+        {
+          "stage": "transport_send_done",
+          "epochMs": 1789956279209.0164,
+          "responseKind": "tool_result",
+          "atMs": 35943.908203125
+        }
+      ],
+      "calls": [
+        {
+          "tool": "form_search",
+          "argumentBytes": 249
+        },
+        {
+          "tool": "form_apply_bindings",
+          "argumentBytes": 397
+        }
+      ],
+      "equalWork": true,
+      "attempt": "1789956240788-0-conditional-observed",
+      "repetition": 0,
+      "mode": "observed",
+      "elapsedMs": 43152.474458000004,
+      "exitCode": 0,
+      "timedOut": false,
+      "aborted": false,
+      "passed": true,
+      "errors": [],
+      "knownTargets": 10,
+      "requiredUnanswered": 1,
+      "searches": 6,
+      "submits": 0,
+      "coverageCorrect": true,
+      "reportsMissingDate": true,
+      "finalText": "Filled and verified all source-supported fields, including both education experiences in order with Shenzhen and Beijing campus matches.\n\nRequired information still missing: **Earliest available start date**, left blank because no source fact supplied it.\n\nThe application was not submitted.",
+      "toolCalls": [
+        {
+          "tool": "form_search",
+          "status": "completed",
+          "startMs": 14298.15775,
+          "endMs": 21134.0505,
+          "durationMs": 6835.892750000001,
+          "returnedBytes": 6164
+        },
+        {
+          "tool": "form_apply_bindings",
+          "status": "completed",
+          "startMs": 28310.303791000002,
+          "endMs": 35944.867708,
+          "durationMs": 7634.563916999996,
+          "returnedBytes": 7106,
+          "executionMs": 2059.6142499999987,
+          "complete": true,
+          "primitiveCalls": 5
+        }
+      ],
+      "usage": {
+        "input_tokens": 97500,
+        "cached_input_tokens": 76288,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 400,
+        "reasoning_output_tokens": 0
+      },
+      "timeline": [
+        {
+          "atMs": 1276.8044999999997,
+          "event": "thread.started"
+        },
+        {
+          "atMs": 1292.2826250000003,
+          "event": "turn.started"
+        },
+        {
+          "atMs": 8741.471875,
+          "event": "item.completed",
+          "itemId": "item_0",
+          "itemType": "agent_message"
+        },
+        {
+          "atMs": 14298.15775,
+          "event": "item.started",
+          "itemId": "item_1",
+          "itemType": "mcp_tool_call",
+          "tool": "form_search",
+          "status": "in_progress"
+        },
+        {
+          "atMs": 21134.0505,
+          "event": "item.completed",
+          "itemId": "item_1",
+          "itemType": "mcp_tool_call",
+          "tool": "form_search",
+          "status": "completed"
+        },
+        {
+          "atMs": 28310.303791000002,
+          "event": "item.started",
+          "itemId": "item_2",
+          "itemType": "mcp_tool_call",
+          "tool": "form_apply_bindings",
+          "status": "in_progress"
+        },
+        {
+          "atMs": 35944.867708,
+          "event": "item.completed",
+          "itemId": "item_2",
+          "itemType": "mcp_tool_call",
+          "tool": "form_apply_bindings",
+          "status": "completed"
+        },
+        {
+          "atMs": 40717.015458,
+          "event": "item.completed",
+          "itemId": "item_3",
+          "itemType": "agent_message"
+        },
+        {
+          "atMs": 40718.881291,
+          "event": "turn.completed"
+        }
+      ]
+    },
+    {
+      "startedEpochMs": 1789956288810.4158,
+      "serverTimings": [
+        {
+          "stage": "server_start",
+          "epochMs": 1789956289149.1184,
+          "atMs": 338.70263671875
+        },
+        {
+          "stage": "prefetch_start",
+          "epochMs": 1789956289152.496,
+          "atMs": 342.080322265625
+        },
+        {
+          "stage": "prefetch_done",
+          "epochMs": 1789956289160.1157,
+          "atMs": 349.699951171875
+        },
+        {
+          "stage": "server_connected",
+          "epochMs": 1789956289160.508,
+          "atMs": 350.09228515625
+        },
+        {
+          "stage": "transport_send_start",
+          "epochMs": 1789956289163.2363,
+          "responseKind": "initialize",
+          "atMs": 352.820556640625
+        },
+        {
+          "stage": "transport_send_done",
+          "epochMs": 1789956289163.3328,
+          "responseKind": "initialize",
+          "atMs": 352.9169921875
+        },
+        {
+          "stage": "transport_send_start",
+          "epochMs": 1789956289165.5076,
+          "responseKind": "tools_list",
+          "atMs": 355.091796875
+        },
+        {
+          "stage": "transport_send_done",
+          "epochMs": 1789956289165.632,
+          "responseKind": "tools_list",
+          "atMs": 355.21630859375
+        },
+        {
+          "stage": "handler_received",
+          "epochMs": 1789956315176.577,
+          "tool": "form_apply_bindings",
+          "requestId": 1,
+          "atMs": 26366.1611328125
+        },
+        {
+          "stage": "handler_execute",
+          "epochMs": 1789956315177.1338,
+          "tool": "form_apply_bindings",
+          "requestId": 1,
+          "atMs": 26366.718017578125
+        },
+        {
+          "stage": "handler_resolved",
+          "epochMs": 1789956318718.627,
+          "tool": "form_apply_bindings",
+          "requestId": 1,
+          "atMs": 29908.211181640625
+        },
+        {
+          "stage": "handler_encoded",
+          "epochMs": 1789956318719.023,
+          "tool": "form_apply_bindings",
+          "requestId": 1,
+          "bytes": 7855,
+          "atMs": 29908.607177734375
+        },
+        {
+          "stage": "transport_send_start",
+          "epochMs": 1789956318720.3699,
+          "responseKind": "tool_result",
+          "atMs": 29909.9541015625
+        },
+        {
+          "stage": "transport_send_done",
+          "epochMs": 1789956318720.5596,
+          "responseKind": "tool_result",
+          "atMs": 29910.143798828125
+        }
+      ],
+      "calls": [
+        {
+          "tool": "form_apply_bindings",
+          "argumentBytes": 605
+        }
+      ],
+      "equalWork": true,
+      "attempt": "1789956240788-0-conditional-conditional",
+      "repetition": 0,
+      "mode": "conditional",
+      "elapsedMs": 37082.83891600001,
+      "exitCode": 0,
+      "timedOut": false,
+      "aborted": false,
+      "passed": true,
+      "errors": [],
+      "knownTargets": 10,
+      "requiredUnanswered": 1,
+      "searches": 6,
+      "submits": 0,
+      "coverageCorrect": true,
+      "reportsMissingDate": true,
+      "finalText": "Filled and verified all source-supported fields, including both education experiences in order with the correct Shenzhen and Beijing campuses.\n\nLeft the required **Earliest available start date** blank because no date was supplied. The application was not submitted.",
+      "toolCalls": [
+        {
+          "tool": "form_apply_bindings",
+          "status": "completed",
+          "startMs": 16603.069875,
+          "endMs": 29912.070208000005,
+          "durationMs": 13309.000333000004,
+          "returnedBytes": 7855,
+          "executionMs": 3540.432499999999,
+          "complete": true,
+          "primitiveCalls": 5
+        }
+      ],
+      "usage": {
+        "input_tokens": 68982,
+        "cached_input_tokens": 49536,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 341,
+        "reasoning_output_tokens": 0
+      },
+      "timeline": [
+        {
+          "atMs": 112.39495800000441,
+          "event": "thread.started"
+        },
+        {
+          "atMs": 114.13337500000489,
+          "event": "turn.started"
+        },
+        {
+          "atMs": 6583.231333000003,
+          "event": "item.completed",
+          "itemId": "item_0",
+          "itemType": "agent_message"
+        },
+        {
+          "atMs": 16603.069875,
+          "event": "item.started",
+          "itemId": "item_1",
+          "itemType": "mcp_tool_call",
+          "tool": "form_apply_bindings",
+          "status": "in_progress"
+        },
+        {
+          "atMs": 29912.070208000005,
+          "event": "item.completed",
+          "itemId": "item_1",
+          "itemType": "mcp_tool_call",
+          "tool": "form_apply_bindings",
+          "status": "completed"
+        },
+        {
+          "atMs": 34368.268541,
+          "event": "item.completed",
+          "itemId": "item_2",
+          "itemType": "agent_message"
+        },
+        {
+          "atMs": 34369.445250000004,
+          "event": "turn.completed"
+        }
+      ]
+    },
+    {
+      "startedEpochMs": 1789956328310.0146,
+      "serverTimings": [
+        {
+          "stage": "server_start",
+          "epochMs": 1789956328695.2861,
+          "atMs": 385.271484375
+        },
+        {
+          "stage": "prefetch_start",
+          "epochMs": 1789956328698.5815,
+          "atMs": 388.56689453125
+        },
+        {
+          "stage": "prefetch_done",
+          "epochMs": 1789956328706.8325,
+          "atMs": 396.81787109375
+        },
+        {
+          "stage": "server_connected",
+          "epochMs": 1789956328707.2327,
+          "atMs": 397.218017578125
+        },
+        {
+          "stage": "transport_send_start",
+          "epochMs": 1789956328709.8755,
+          "responseKind": "initialize",
+          "atMs": 399.86083984375
+        },
+        {
+          "stage": "transport_send_done",
+          "epochMs": 1789956328709.9568,
+          "responseKind": "initialize",
+          "atMs": 399.942138671875
+        },
+        {
+          "stage": "transport_send_start",
+          "epochMs": 1789956328712.2383,
+          "responseKind": "tools_list",
+          "atMs": 402.2236328125
+        },
+        {
+          "stage": "transport_send_done",
+          "epochMs": 1789956328712.3643,
+          "responseKind": "tools_list",
+          "atMs": 402.349609375
+        },
+        {
+          "stage": "handler_received",
+          "epochMs": 1789956348966.5632,
+          "tool": "form_apply_bindings",
+          "requestId": 1,
+          "atMs": 20656.548583984375
+        },
+        {
+          "stage": "handler_execute",
+          "epochMs": 1789956348967.3662,
+          "tool": "form_apply_bindings",
+          "requestId": 1,
+          "atMs": 20657.3515625
+        },
+        {
+          "stage": "handler_resolved",
+          "epochMs": 1789956352520.9675,
+          "tool": "form_apply_bindings",
+          "requestId": 1,
+          "atMs": 24210.952880859375
+        },
+        {
+          "stage": "handler_encoded",
+          "epochMs": 1789956352521.6003,
+          "tool": "form_apply_bindings",
+          "requestId": 1,
+          "bytes": 7839,
+          "atMs": 24211.585693359375
+        },
+        {
+          "stage": "transport_send_start",
+          "epochMs": 1789956352523.1184,
+          "responseKind": "tool_result",
+          "atMs": 24213.103759765625
+        },
+        {
+          "stage": "transport_send_done",
+          "epochMs": 1789956352523.4575,
+          "responseKind": "tool_result",
+          "atMs": 24213.44287109375
+        }
+      ],
+      "calls": [
+        {
+          "tool": "form_apply_bindings",
+          "argumentBytes": 586
+        }
+      ],
+      "equalWork": true,
+      "attempt": "1789956240788-1-conditional-conditional",
+      "repetition": 1,
+      "mode": "conditional",
+      "elapsedMs": 29883.371667,
+      "exitCode": 0,
+      "timedOut": false,
+      "aborted": false,
+      "passed": true,
+      "errors": [],
+      "knownTargets": 10,
+      "requiredUnanswered": 1,
+      "searches": 6,
+      "submits": 0,
+      "coverageCorrect": true,
+      "reportsMissingDate": true,
+      "finalText": "Filled and verified all source-supported fields, including both education experiences in order with the correct Shenzhen and Beijing campuses.\n\nRequired information still missing: **Earliest available start date**. Left blank because no source fact supplies it.\n\nNothing was submitted.",
+      "toolCalls": [
+        {
+          "tool": "form_apply_bindings",
+          "status": "completed",
+          "startMs": 16146.317208000008,
+          "endMs": 24215.15316700001,
+          "durationMs": 8068.835959000004,
+          "returnedBytes": 7839,
+          "executionMs": 3552.4965840000004,
+          "complete": true,
+          "primitiveCalls": 5
+        }
+      ],
+      "usage": {
+        "input_tokens": 68950,
+        "cached_input_tokens": 49536,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 337,
+        "reasoning_output_tokens": 0
+      },
+      "timeline": [
+        {
+          "atMs": 132.45208300001104,
+          "event": "thread.started"
+        },
+        {
+          "atMs": 134.22779200000514,
+          "event": "turn.started"
+        },
+        {
+          "atMs": 6815.488500000007,
+          "event": "item.completed",
+          "itemId": "item_0",
+          "itemType": "agent_message"
+        },
+        {
+          "atMs": 16146.317208000008,
+          "event": "item.started",
+          "itemId": "item_1",
+          "itemType": "mcp_tool_call",
+          "tool": "form_apply_bindings",
+          "status": "in_progress"
+        },
+        {
+          "atMs": 24215.15316700001,
+          "event": "item.completed",
+          "itemId": "item_1",
+          "itemType": "mcp_tool_call",
+          "tool": "form_apply_bindings",
+          "status": "completed"
+        },
+        {
+          "atMs": 27682.615042000005,
+          "event": "item.completed",
+          "itemId": "item_2",
+          "itemType": "agent_message"
+        },
+        {
+          "atMs": 27683.54183300001,
+          "event": "turn.completed"
+        }
+      ]
+    },
+    {
+      "startedEpochMs": 1789956360584.6855,
+      "serverTimings": [
+        {
+          "stage": "server_start",
+          "epochMs": 1789956361882.2002,
+          "atMs": 1297.5146484375
+        },
+        {
+          "stage": "prefetch_start",
+          "epochMs": 1789956361885.9656,
+          "atMs": 1301.280029296875
+        },
+        {
+          "stage": "prefetch_done",
+          "epochMs": 1789956361894.1533,
+          "atMs": 1309.4677734375
+        },
+        {
+          "stage": "server_connected",
+          "epochMs": 1789956361894.5627,
+          "atMs": 1309.877197265625
+        },
+        {
+          "stage": "transport_send_start",
+          "epochMs": 1789956361897.2078,
+          "responseKind": "initialize",
+          "atMs": 1312.522216796875
+        },
+        {
+          "stage": "transport_send_done",
+          "epochMs": 1789956361897.2913,
+          "responseKind": "initialize",
+          "atMs": 1312.605712890625
+        },
+        {
+          "stage": "transport_send_start",
+          "epochMs": 1789956361899.3896,
+          "responseKind": "tools_list",
+          "atMs": 1314.7041015625
+        },
+        {
+          "stage": "transport_send_done",
+          "epochMs": 1789956361899.5125,
+          "responseKind": "tools_list",
+          "atMs": 1314.826904296875
+        },
+        {
+          "stage": "handler_received",
+          "epochMs": 1789956377471.4626,
+          "tool": "form_search",
+          "requestId": 1,
+          "atMs": 16886.777099609375
+        },
+        {
+          "stage": "handler_execute",
+          "epochMs": 1789956377472.1033,
+          "tool": "form_search",
+          "requestId": 1,
+          "atMs": 16887.417724609375
+        },
+        {
+          "stage": "handler_resolved",
+          "epochMs": 1789956379052.2415,
+          "tool": "form_search",
+          "requestId": 1,
+          "atMs": 18467.555908203125
+        },
+        {
+          "stage": "handler_encoded",
+          "epochMs": 1789956379052.6653,
+          "tool": "form_search",
+          "requestId": 1,
+          "bytes": 6164,
+          "atMs": 18467.979736328125
+        },
+        {
+          "stage": "transport_send_start",
+          "epochMs": 1789956379053.6973,
+          "responseKind": "tool_result",
+          "atMs": 18469.01171875
+        },
+        {
+          "stage": "transport_send_done",
+          "epochMs": 1789956379053.8064,
+          "responseKind": "tool_result",
+          "atMs": 18469.120849609375
+        },
+        {
+          "stage": "handler_received",
+          "epochMs": 1789956402361.7693,
+          "tool": "form_apply_bindings",
+          "requestId": 2,
+          "atMs": 41777.083740234375
+        },
+        {
+          "stage": "handler_execute",
+          "epochMs": 1789956402362.1228,
+          "tool": "form_apply_bindings",
+          "requestId": 2,
+          "atMs": 41777.437255859375
+        },
+        {
+          "stage": "handler_resolved",
+          "epochMs": 1789956404388.0005,
+          "tool": "form_apply_bindings",
+          "requestId": 2,
+          "atMs": 43803.31494140625
+        },
+        {
+          "stage": "handler_encoded",
+          "epochMs": 1789956404388.449,
+          "tool": "form_apply_bindings",
+          "requestId": 2,
+          "bytes": 7077,
+          "atMs": 43803.763427734375
+        },
+        {
+          "stage": "transport_send_start",
+          "epochMs": 1789956404388.827,
+          "responseKind": "tool_result",
+          "atMs": 43804.141357421875
+        },
+        {
+          "stage": "transport_send_done",
+          "epochMs": 1789956404388.9944,
+          "responseKind": "tool_result",
+          "atMs": 43804.308837890625
+        }
+      ],
+      "calls": [
+        {
+          "tool": "form_search",
+          "argumentBytes": 249
+        },
+        {
+          "tool": "form_apply_bindings",
+          "argumentBytes": 397
+        }
+      ],
+      "equalWork": true,
+      "attempt": "1789956240788-1-conditional-observed",
+      "repetition": 1,
+      "mode": "observed",
+      "elapsedMs": 53956.73637500001,
+      "exitCode": 0,
+      "timedOut": false,
+      "aborted": false,
+      "passed": true,
+      "errors": [],
+      "knownTargets": 10,
+      "requiredUnanswered": 1,
+      "searches": 6,
+      "submits": 0,
+      "coverageCorrect": true,
+      "reportsMissingDate": true,
+      "finalText": "Filled and verified all source-supported fields, including both education experiences in order:\n\n1. Southern Example College — Shenzhen campus\n2. Northern Example University — Beijing campus\n\nRequired information still missing: **Earliest available start date**. Left blank because no source fact supplies it.\n\nNothing was submitted.",
+      "toolCalls": [
+        {
+          "tool": "form_search",
+          "status": "completed",
+          "startMs": 12298.29595900001,
+          "endMs": 18470.814542000007,
+          "durationMs": 6172.518582999997,
+          "returnedBytes": 6164
+        },
+        {
+          "tool": "form_apply_bindings",
+          "status": "completed",
+          "startMs": 33058.34945899999,
+          "endMs": 43806.21258399999,
+          "durationMs": 10747.863125000003,
+          "returnedBytes": 7077,
+          "executionMs": 2023.6031670000011,
+          "complete": true,
+          "primitiveCalls": 5
+        }
+      ],
+      "usage": {
+        "input_tokens": 97317,
+        "cached_input_tokens": 76288,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 412,
+        "reasoning_output_tokens": 0
+      },
+      "timeline": [
+        {
+          "atMs": 1056.422166999997,
+          "event": "thread.started"
+        },
+        {
+          "atMs": 1059.3998750000028,
+          "event": "turn.started"
+        },
+        {
+          "atMs": 6772.769333999997,
+          "event": "item.completed",
+          "itemId": "item_0",
+          "itemType": "agent_message"
+        },
+        {
+          "atMs": 12298.29595900001,
+          "event": "item.started",
+          "itemId": "item_1",
+          "itemType": "mcp_tool_call",
+          "tool": "form_search",
+          "status": "in_progress"
+        },
+        {
+          "atMs": 18470.814542000007,
+          "event": "item.completed",
+          "itemId": "item_1",
+          "itemType": "mcp_tool_call",
+          "tool": "form_search",
+          "status": "completed"
+        },
+        {
+          "atMs": 33058.34945899999,
+          "event": "item.started",
+          "itemId": "item_2",
+          "itemType": "mcp_tool_call",
+          "tool": "form_apply_bindings",
+          "status": "in_progress"
+        },
+        {
+          "atMs": 43806.21258399999,
+          "event": "item.completed",
+          "itemId": "item_2",
+          "itemType": "mcp_tool_call",
+          "tool": "form_apply_bindings",
+          "status": "completed"
+        },
+        {
+          "atMs": 50943.54291700001,
+          "event": "item.completed",
+          "itemId": "item_3",
+          "itemType": "agent_message"
+        },
+        {
+          "atMs": 51329.73587500001,
+          "event": "turn.completed"
+        }
+      ]
+    },
+    {
+      "startedEpochMs": 1789956416966.6458,
+      "serverTimings": [
+        {
+          "stage": "server_start",
+          "epochMs": 1789956418658.3298,
+          "atMs": 1691.68408203125
+        },
+        {
+          "stage": "prefetch_start",
+          "epochMs": 1789956418661.772,
+          "atMs": 1695.126220703125
+        },
+        {
+          "stage": "prefetch_done",
+          "epochMs": 1789956418677.6033,
+          "atMs": 1710.95751953125
+        },
+        {
+          "stage": "server_connected",
+          "epochMs": 1789956418678.0588,
+          "atMs": 1711.4130859375
+        },
+        {
+          "stage": "transport_send_start",
+          "epochMs": 1789956418681.236,
+          "responseKind": "initialize",
+          "atMs": 1714.59033203125
+        },
+        {
+          "stage": "transport_send_done",
+          "epochMs": 1789956418681.3752,
+          "responseKind": "initialize",
+          "atMs": 1714.7294921875
+        },
+        {
+          "stage": "transport_send_start",
+          "epochMs": 1789956418683.8354,
+          "responseKind": "tools_list",
+          "atMs": 1717.189697265625
+        },
+        {
+          "stage": "transport_send_done",
+          "epochMs": 1789956418684.0403,
+          "responseKind": "tools_list",
+          "atMs": 1717.39453125
+        },
+        {
+          "stage": "handler_received",
+          "epochMs": 1789956435242.5134,
+          "tool": "form_search",
+          "requestId": 1,
+          "atMs": 18275.86767578125
+        },
+        {
+          "stage": "handler_execute",
+          "epochMs": 1789956435243.1562,
+          "tool": "form_search",
+          "requestId": 1,
+          "atMs": 18276.510498046875
+        },
+        {
+          "stage": "handler_resolved",
+          "epochMs": 1789956436792.3457,
+          "tool": "form_search",
+          "requestId": 1,
+          "atMs": 19825.699951171875
+        },
+        {
+          "stage": "handler_encoded",
+          "epochMs": 1789956436792.6958,
+          "tool": "form_search",
+          "requestId": 1,
+          "bytes": 6164,
+          "atMs": 19826.050048828125
+        },
+        {
+          "stage": "transport_send_start",
+          "epochMs": 1789956436793.5369,
+          "responseKind": "tool_result",
+          "atMs": 19826.89111328125
+        },
+        {
+          "stage": "transport_send_done",
+          "epochMs": 1789956436793.6423,
+          "responseKind": "tool_result",
+          "atMs": 19826.99658203125
+        },
+        {
+          "stage": "handler_received",
+          "epochMs": 1789956455896.2427,
+          "tool": "form_apply_bindings",
+          "requestId": 2,
+          "atMs": 38929.596923828125
+        },
+        {
+          "stage": "handler_execute",
+          "epochMs": 1789956455896.9639,
+          "tool": "form_apply_bindings",
+          "requestId": 2,
+          "atMs": 38930.318115234375
+        },
+        {
+          "stage": "handler_resolved",
+          "epochMs": 1789956457914.3171,
+          "tool": "form_apply_bindings",
+          "requestId": 2,
+          "atMs": 40947.67138671875
+        },
+        {
+          "stage": "handler_encoded",
+          "epochMs": 1789956457915.0156,
+          "tool": "form_apply_bindings",
+          "requestId": 2,
+          "bytes": 7106,
+          "atMs": 40948.369873046875
+        },
+        {
+          "stage": "transport_send_start",
+          "epochMs": 1789956457915.3835,
+          "responseKind": "tool_result",
+          "atMs": 40948.73779296875
+        },
+        {
+          "stage": "transport_send_done",
+          "epochMs": 1789956457915.6865,
+          "responseKind": "tool_result",
+          "atMs": 40949.040771484375
+        }
+      ],
+      "calls": [
+        {
+          "tool": "form_search",
+          "argumentBytes": 249
+        },
+        {
+          "tool": "form_apply_bindings",
+          "argumentBytes": 397
+        }
+      ],
+      "equalWork": true,
+      "attempt": "1789956240788-2-conditional-observed",
+      "repetition": 2,
+      "mode": "observed",
+      "elapsedMs": 47315.163042,
+      "exitCode": 0,
+      "timedOut": false,
+      "aborted": false,
+      "passed": true,
+      "errors": [],
+      "knownTargets": 10,
+      "requiredUnanswered": 1,
+      "searches": 6,
+      "submits": 0,
+      "coverageCorrect": true,
+      "reportsMissingDate": true,
+      "finalText": "Filled and verified all source-supported fields, including both education entries in order:\n\n1. Southern Example College — Shenzhen campus; 软件工程\n2. Northern Example University — Beijing campus; 计算机科学\n\nRequired information still missing: **Earliest available start date**, left blank because no source fact supplies it.\n\nThe application was not submitted.",
+      "toolCalls": [
+        {
+          "tool": "form_search",
+          "status": "completed",
+          "startMs": 12933.656041999988,
+          "endMs": 19829.016082999995,
+          "durationMs": 6895.360041000007,
+          "returnedBytes": 6164
+        },
+        {
+          "tool": "form_apply_bindings",
+          "status": "completed",
+          "startMs": 31203.28704199998,
+          "endMs": 40951.27599999998,
+          "durationMs": 9747.988958000002,
+          "returnedBytes": 7106,
+          "executionMs": 2015.0823339999988,
+          "complete": true,
+          "primitiveCalls": 5
+        }
+      ],
+      "usage": {
+        "input_tokens": 97335,
+        "cached_input_tokens": 76288,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 423,
+        "reasoning_output_tokens": 0
+      },
+      "timeline": [
+        {
+          "atMs": 1459.299417000002,
+          "event": "thread.started"
+        },
+        {
+          "atMs": 1468.2487919999985,
+          "event": "turn.started"
+        },
+        {
+          "atMs": 6884.756416999997,
+          "event": "item.completed",
+          "itemId": "item_0",
+          "itemType": "agent_message"
+        },
+        {
+          "atMs": 12933.656041999988,
+          "event": "item.started",
+          "itemId": "item_1",
+          "itemType": "mcp_tool_call",
+          "tool": "form_search",
+          "status": "in_progress"
+        },
+        {
+          "atMs": 19829.016082999995,
+          "event": "item.completed",
+          "itemId": "item_1",
+          "itemType": "mcp_tool_call",
+          "tool": "form_search",
+          "status": "completed"
+        },
+        {
+          "atMs": 31203.28704199998,
+          "event": "item.started",
+          "itemId": "item_2",
+          "itemType": "mcp_tool_call",
+          "tool": "form_apply_bindings",
+          "status": "in_progress"
+        },
+        {
+          "atMs": 40951.27599999998,
+          "event": "item.completed",
+          "itemId": "item_2",
+          "itemType": "mcp_tool_call",
+          "tool": "form_apply_bindings",
+          "status": "completed"
+        },
+        {
+          "atMs": 45053.72687499999,
+          "event": "item.completed",
+          "itemId": "item_3",
+          "itemType": "agent_message"
+        },
+        {
+          "atMs": 45107.928958000004,
+          "event": "turn.completed"
+        }
+      ]
+    },
+    {
+      "startedEpochMs": 1789956466693.2808,
+      "serverTimings": [
+        {
+          "stage": "server_start",
+          "epochMs": 1789956467046.7112,
+          "atMs": 353.430419921875
+        },
+        {
+          "stage": "prefetch_start",
+          "epochMs": 1789956467049.9155,
+          "atMs": 356.634765625
+        },
+        {
+          "stage": "prefetch_done",
+          "epochMs": 1789956467057.7146,
+          "atMs": 364.433837890625
+        },
+        {
+          "stage": "server_connected",
+          "epochMs": 1789956467058.1082,
+          "atMs": 364.827392578125
+        },
+        {
+          "stage": "transport_send_start",
+          "epochMs": 1789956467060.7368,
+          "responseKind": "initialize",
+          "atMs": 367.4560546875
+        },
+        {
+          "stage": "transport_send_done",
+          "epochMs": 1789956467060.8237,
+          "responseKind": "initialize",
+          "atMs": 367.54296875
+        },
+        {
+          "stage": "transport_send_start",
+          "epochMs": 1789956467062.976,
+          "responseKind": "tools_list",
+          "atMs": 369.6953125
+        },
+        {
+          "stage": "transport_send_done",
+          "epochMs": 1789956467063.1162,
+          "responseKind": "tools_list",
+          "atMs": 369.83544921875
+        },
+        {
+          "stage": "handler_received",
+          "epochMs": 1789956487443.0496,
+          "tool": "form_apply_bindings",
+          "requestId": 1,
+          "atMs": 20749.768798828125
+        },
+        {
+          "stage": "handler_execute",
+          "epochMs": 1789956487444.8838,
+          "tool": "form_apply_bindings",
+          "requestId": 1,
+          "atMs": 20751.60302734375
+        },
+        {
+          "stage": "handler_resolved",
+          "epochMs": 1789956491014.9863,
+          "tool": "form_apply_bindings",
+          "requestId": 1,
+          "atMs": 24321.70556640625
+        },
+        {
+          "stage": "handler_encoded",
+          "epochMs": 1789956491015.3435,
+          "tool": "form_apply_bindings",
+          "requestId": 1,
+          "bytes": 7857,
+          "atMs": 24322.062744140625
+        },
+        {
+          "stage": "transport_send_start",
+          "epochMs": 1789956491016.7551,
+          "responseKind": "tool_result",
+          "atMs": 24323.474365234375
+        },
+        {
+          "stage": "transport_send_done",
+          "epochMs": 1789956491016.937,
+          "responseKind": "tool_result",
+          "atMs": 24323.65625
+        }
+      ],
+      "calls": [
+        {
+          "tool": "form_apply_bindings",
+          "argumentBytes": 605
+        }
+      ],
+      "equalWork": true,
+      "attempt": "1789956240788-2-conditional-conditional",
+      "repetition": 2,
+      "mode": "conditional",
+      "elapsedMs": 30534.293292000017,
+      "exitCode": 0,
+      "timedOut": false,
+      "aborted": false,
+      "passed": true,
+      "errors": [],
+      "knownTargets": 10,
+      "requiredUnanswered": 1,
+      "searches": 6,
+      "submits": 0,
+      "coverageCorrect": true,
+      "reportsMissingDate": true,
+      "finalText": "Filled and verified all source-supported fields, including both education experiences in order with the correct Shenzhen and Beijing campuses.\n\nRequired information still missing: **Earliest available start date**. Left blank because the source provides no date.\n\nThe application was not submitted.",
+      "toolCalls": [
+        {
+          "tool": "form_apply_bindings",
+          "status": "completed",
+          "startMs": 15542.05458300002,
+          "endMs": 24326.27475000001,
+          "durationMs": 8784.220166999992,
+          "returnedBytes": 7857,
+          "executionMs": 3568.561084000001,
+          "complete": true,
+          "primitiveCalls": 5
+        }
+      ],
+      "usage": {
+        "input_tokens": 68818,
+        "cached_input_tokens": 49536,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 346,
+        "reasoning_output_tokens": 0
+      },
+      "timeline": [
+        {
+          "atMs": 114.26604200000293,
+          "event": "thread.started"
+        },
+        {
+          "atMs": 116.08679200001643,
+          "event": "turn.started"
+        },
+        {
+          "atMs": 6344.612332999997,
+          "event": "item.completed",
+          "itemId": "item_0",
+          "itemType": "agent_message"
+        },
+        {
+          "atMs": 15542.05458300002,
+          "event": "item.started",
+          "itemId": "item_1",
+          "itemType": "mcp_tool_call",
+          "tool": "form_apply_bindings",
+          "status": "in_progress"
+        },
+        {
+          "atMs": 24326.27475000001,
+          "event": "item.completed",
+          "itemId": "item_1",
+          "itemType": "mcp_tool_call",
+          "tool": "form_apply_bindings",
+          "status": "completed"
+        },
+        {
+          "atMs": 28394.98208300001,
+          "event": "item.completed",
+          "itemId": "item_2",
+          "itemType": "agent_message"
+        },
+        {
+          "atMs": 28402.385958,
+          "event": "turn.completed"
+        }
+      ]
+    }
+  ]
+}

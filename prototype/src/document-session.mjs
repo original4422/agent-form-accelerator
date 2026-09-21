@@ -1,7 +1,8 @@
 import {readFile} from 'node:fs/promises';
 import {parseDocument} from './document-source.mjs';
 import {fieldKey,summarizeCoverage} from './coverage.mjs';
-export async function createDocumentSession({sourcePath, request}) {
+import {validateSearchCondition,chooseObservedOption} from './conditional-choice.mjs';
+export async function createDocumentSession({sourcePath, request,conditionalSelection=false}) {
   const source = parseDocument(await readFile(sourcePath, 'utf8'));
   let observation;
   let nextOption=0;
@@ -125,5 +126,34 @@ export async function createDocumentSession({sourcePath, request}) {
     if(result.results[0]?.status!=='expanded')throw new Error(result.results[0]?.reason||'EXPANSION_FAILED');
     return {source,page:observation,expanded:true};
   };
-  return {source,context,apply,expand,search};
+  const applyWithConditions=async args=>{
+    await freshSource();if(!observation)throw new Error('CONTEXT_REQUIRED');
+    if(args.url!==observation.url)throw new Error('WRONG_PAGE');
+    const started=performance.now(),resolved=structuredClone(args),plans=[];
+    if(!Array.isArray(resolved.repeatGroups??[])||(resolved.repeatGroups?.length??0)>8)throw new Error('Expected at most 8 repeated groups');
+    for(const mapping of [resolved,...resolved.repeatGroups??[]]){
+      for(const [ref,choice]of Object.entries(mapping.choices??{})){
+        if(!choice||typeof choice!=='object'||!Object.hasOwn(choice,'search'))continue;
+        const sourceId=mapping.bindings?.[ref];if(!sourceId)throw new Error('CHOICE_WITHOUT_BINDING');
+        // search() validates every field/source before any browser query.
+        plans.push({ref,sourceId,condition:validateSearchCondition(choice.search),choices:mapping.choices});
+      }
+    }
+    if(!plans.length)return apply(args);
+    const discovered=await search({url:args.url,queries:plans.map(p=>({ref:p.ref,sourceId:p.sourceId,query:p.condition.query}))});
+    const decisions=plans.map((p,i)=>({...chooseObservedOption(discovered.searches[i],p.condition),ref:p.ref,sourceId:p.sourceId,condition:p.condition}));
+    // Querying may edit a transient search box; no supplied form facts are
+    // written until ALL conditional choices resolve uniquely.
+    if(decisions.some(d=>!d.option))return {complete:false,reason:'CONDITIONAL_SELECTION_UNRESOLVED',
+      completionScope:'requested-targets',sourceHash:source.sha256,bindings:[],evidence:[],
+      conditionalSelections:decisions,searches:discovered.searches,observation,
+      coverage:summarizeCoverage(observation,verified),discoveryCalls:1,elapsedMs:performance.now()-started};
+    for(const [i,p]of plans.entries())p.choices[p.ref]={optionRef:decisions[i].option.optionRef};
+    // apply() checks source freshness again and uses the ordinary observed-option
+    // path, including field identity guards and a repeated unique-label query.
+    const selectionMs=performance.now()-started,result=await apply(resolved);
+    return {...result,conditionalSelections:decisions,discoveryCalls:1,selectionMs,
+      goalElapsedMs:result.elapsedMs,elapsedMs:performance.now()-started};
+  };
+  return {source,context,apply:conditionalSelection?applyWithConditions:apply,expand,search};
 }
