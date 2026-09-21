@@ -1,0 +1,49 @@
+{
+  "date": "2026-09-21T03:46:00.623Z",
+  "results": [
+    {
+      "name": "invalid URLs and unsupported documents fail before browser creation",
+      "passed": true
+    },
+    {
+      "name": "private session file, profile, and printed command do not expose credentials",
+      "passed": true
+    },
+    {
+      "name": "wrong token, any Origin, wrong Host, invalid types and oversized bodies rejected",
+      "passed": true
+    },
+    {
+      "name": "UTF-8 values survive fragmented request chunks",
+      "passed": true
+    },
+    {
+      "name": "actual companion MCP performs source-backed conditional search and two education rows",
+      "passed": true
+    },
+    {
+      "name": "manual navigation rejects old page writes and other tabs do not change target",
+      "passed": true
+    },
+    {
+      "name": "closing selected tab revokes endpoint and removes temporary profile and session",
+      "passed": true
+    },
+    {
+      "name": "persistent separate profile survives restart with an expiring test cookie",
+      "passed": true
+    },
+    {
+      "name": "cancellation during startup cleans temporary artifacts",
+      "passed": true
+    },
+    {
+      "name": "CLI explicit page starts and SIGINT exits zero with cleanup",
+      "passed": true
+    },
+    {
+      "name": "CLI demo starts and SIGINT exits zero with cleanup",
+      "passed": true
+    }
+  ]
+}

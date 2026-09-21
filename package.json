@@ -13,7 +13,9 @@
     "demo": "node prototype/scripts/demo.mjs",
     "bench": "node prototype/bench/run.mjs",
     "check": "node prototype/bench/check.mjs",
-    "build:fixtures": "node prototype/scripts/build-fixtures.mjs"
+    "build:fixtures": "node prototype/scripts/build-fixtures.mjs",
+    "browser": "node prototype/scripts/browser.mjs",
+    "browser:demo": "node prototype/scripts/browser.mjs --demo"
   },
   "dependencies": {
     "@modelcontextprotocol/sdk": "1.30.0",

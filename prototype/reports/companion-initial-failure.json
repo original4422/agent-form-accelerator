@@ -1,0 +1,47 @@
+{
+  "date": "2026-09-21T03:36:40.995Z",
+  "results": [
+    {
+      "name": "invalid URLs and unsupported documents fail before browser creation",
+      "passed": false,
+      "error": "AssertionError [ERR_ASSERTION]: The input did not match the regular expression /没有可读取/. Input:\n\n'Error: Expected 1–100 source entries'\n\n    at async file:///Users/original/Project/github/personal_project/agent-form-accelerator/prototype/bench/companion-check.mjs:22:70\n    at async check (file:///Users/original/Project/github/personal_project/agent-form-accelerator/prototype/bench/companion-check.mjs:18:34)\n    at async file:///Users/original/Project/github/personal_project/agent-form-accelerator/prototype/bench/companion-check.mjs:20:3"
+    },
+    {
+      "name": "private session file, profile, and printed command do not expose credentials",
+      "passed": true
+    },
+    {
+      "name": "wrong token, any Origin, wrong Host, invalid types and oversized bodies rejected",
+      "passed": false,
+      "error": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n\n200 !== 403\n\n    at file:///Users/original/Project/github/personal_project/agent-form-accelerator/prototype/bench/companion-check.mjs:33:126\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at async check (file:///Users/original/Project/github/personal_project/agent-form-accelerator/prototype/bench/companion-check.mjs:18:34)\n    at async file:///Users/original/Project/github/personal_project/agent-form-accelerator/prototype/bench/companion-check.mjs:32:3"
+    },
+    {
+      "name": "UTF-8 values survive fragmented request chunks",
+      "passed": true
+    },
+    {
+      "name": "actual companion MCP performs source-backed conditional search and two education rows",
+      "passed": true
+    },
+    {
+      "name": "manual navigation rejects old page writes and other tabs do not change target",
+      "passed": true
+    },
+    {
+      "name": "closing selected tab revokes endpoint and removes temporary profile and session",
+      "passed": true
+    },
+    {
+      "name": "persistent separate profile survives restart with an expiring test cookie",
+      "passed": true
+    },
+    {
+      "name": "cancellation during startup cleans temporary artifacts",
+      "passed": true
+    },
+    {
+      "name": "CLI printed connection starts and SIGINT exits zero with cleanup",
+      "passed": true
+    }
+  ]
+}

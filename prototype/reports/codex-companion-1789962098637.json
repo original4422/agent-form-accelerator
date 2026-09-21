@@ -1,0 +1,51 @@
+{
+  "batchId": 1789962098637,
+  "date": "2026-09-21T03:41:38.638Z",
+  "scope": "One actual Codex integration task through the user-facing browser companion and its real local authenticated MCP provider. Local fictional alias/campus form, two education rows, ten source-backed targets, missing date left unresolved, no submits. Integration correctness only, not a speed comparison or real application validation.",
+  "elapsedMs": 47700.079792,
+  "exitCode": 0,
+  "timedOut": false,
+  "aborted": false,
+  "toolCalls": [
+    {
+      "tool": "form_apply_bindings",
+      "status": "completed",
+      "startMs": 18131.34775,
+      "endMs": 25467.459167,
+      "durationMs": 7336.111417,
+      "returnedBytes": 4872,
+      "executionMs": 2032.1674160000002,
+      "complete": false,
+      "reason": "CONDITIONAL_SELECTION_UNRESOLVED"
+    },
+    {
+      "tool": "form_apply_bindings",
+      "status": "completed",
+      "startMs": 32544.118292000003,
+      "endMs": 40631.146541999995,
+      "durationMs": 8087.028249999992,
+      "returnedBytes": 7096,
+      "executionMs": 2639.114916000006,
+      "complete": true,
+      "primitiveCalls": 5
+    }
+  ],
+  "usage": {
+    "input_tokens": 96044,
+    "cached_input_tokens": 75392,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 553,
+    "reasoning_output_tokens": 0
+  },
+  "oracle": {
+    "passed": true,
+    "errors": [],
+    "knownTargets": 10,
+    "requiredUnanswered": 1,
+    "searches": 7,
+    "submits": 0
+  },
+  "missingReported": true,
+  "finalText": "Filled and verified all 10 source-backed targets, including both education experiences in order:\n\n1. Southern Example College — Shenzhen campus; 软件工程\n2. Northern Example University — Beijing campus; 计算机科学\n\nRequired information still missing: **Earliest available start date**, absent from the source and left blank. Verified 7 of 8 visible required fields.\n\nThe application was not submitted.",
+  "passed": true
+}

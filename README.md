@@ -1,10 +1,12 @@
 # Agent Form Accelerator — 验证原型
 
-给 Codex 和 Claude Code 共用的网页填表执行工具。已有 Agent 负责理解资料、匹配字段，本地扩展负责批量填写和回读校验，不另行调用模型 API。
+网页填表执行工具，当前只验证 Codex。已有 Agent 负责理解资料、匹配字段，本地浏览器执行器负责批量填写和回读校验，不另行调用模型 API。
 
 **当前状态：工程原型。已能用 Codex 将未映射的中文 Markdown 资料绑定到英文表单。React Select 别名/校区样本中，把条件搜索与填写合为一次宿主请求，完整中位耗时 47.32→30.53 秒，减少约 35.5%，六次结果均正确。官方工具生成脚本出现了定位错误，不能用恢复造成的差距宣称稳定倍数。尚未证明真实招聘页完整流程稳定提速 2 倍。**
 
 ## 看结果
+
+- [独立浏览器试用入口](prototype/reports/BROWSER-COMPANION.md)：已有条件搜索、重复组和回读检查接入临时 Codex 会话；11 项检查通过，真实 Codex 本地任务两次调用完成 10 个目标。单次集成结果不作速度对照。
 
 - [精简回执没有显示净提速](prototype/reports/RECEIPT-PROJECTION.md)：返回体积减少39%，但同一任务三组对照中位44.57→45.44秒；保持完整回执为默认，转向实际试用集成。
 
@@ -37,7 +39,33 @@
 - [功能检查](prototype/reports/functional-checks.json)：真实 Chromium 扩展、页面自身数据状态与 MCP 协议。
 - [产品与验证决策](prototype/DECISIONS.md)：已确定的范围、未验证假设与下一步门槛。
 
-## 一分钟启动本地演示
+## 先试用新的 Codex 浏览器入口
+
+需要 Node.js 20+、已安装并登录的 Codex CLI。初次准备：
+
+```bash
+npm ci
+PLAYWRIGHT_SKIP_BROWSER_GC=1 npx playwright install chromium
+npm run browser:demo
+```
+
+保持这个终端运行，在另一终端执行它打印的 `codex ...` 命令，再按提示让 Codex 填写。演示自动打开本地虚构表单和资料，包含两段教育经历及同校不同校区。正确结果应填好 10 个已知目标，保留并报告未提供的到岗日期。关闭最初的标签页或按 Ctrl+C 结束，临时浏览器资料随之删除。
+
+使用自己的 Markdown 资料和指定页面：
+
+```bash
+npm run browser -- --url "https://招聘页地址" --source "/绝对路径/资料.md"
+```
+
+先在打开的独立浏览器中手动登录、进入待填页面，再执行打印的 Codex 命令。默认在 `.profiles/companion` 保留这套独立浏览器资料；加 `--temporary` 可在退出时删除。不会导入日常 Chrome 的登录资料。同一套资料目录同时只运行一个浏览器入口，一个页面只交给一个 Codex 会话填写。
+
+资料格式支持标题、单行“名称：值”和自然段，最多 10 万字符、100 个条目，不支持 PDF/DOCX。页面字段及指定资料会提供给当前 Codex。原型只控制最初打开的标签页；手动导航后让 Codex 调用 `form_context` 刷新，修改资料后重新启动 Codex 连接。在线页面可能在输入时自动保存；本项目的虚构公开页实验均在断网后进行，演示只用 localhost。
+
+这个入口复用 Playwright 后端，已接入条件搜索、重复组和独立分组，默认完整回执。独立分组不能与重复组混用；未知组件仍可能需要手工处理。没有提交、文件上传或跨页导航工具，最终申请由你检查处理。命令仅为当前 Codex 进程添加配置，无需新的模型 API Key。
+
+接入检查：`node prototype/bench/companion-check.mjs`。真实 Codex 集成检查：`node prototype/bench/codex-companion.mjs`，会使用当前 Codex 账户用量。
+
+## 原扩展本地演示
 
 需要 Node.js 20+。
 
