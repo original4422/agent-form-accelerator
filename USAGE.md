@@ -242,3 +242,22 @@ prototype/skills/       两端共用的工作流说明
 ## 许可
 
 项目代码采用 [MIT](LICENSE)；依赖及实验素材归属见 [THIRD_PARTY.md](THIRD_PARTY.md)。
+
+### 本地填写回执
+
+Playwright companion 的启动输出现在附带一条回执命令。连接 Codex 后，`form_context`、来源填写、搜索和扩展产生的最后一份完整结果保留在 companion 内存中。回执无需模型总结，浏览器保持打开时，即使 Codex 已退出也能导出：
+
+```sh
+npm --silent run receipt -- --session /启动输出中的连接文件.json
+npm --silent run receipt -- --session /启动输出中的连接文件.json --format json --out /你的目录/receipt.json
+```
+
+默认只向终端输出 Markdown。`--out` 只创建新文件（权限 `0600`），已有文件会报错；关闭 companion 后内存记录随连接清理。回执包含来源 hash、实际被引用的原文条目、字段回读、来源绑定、未解决项及页面公开保存原文；PDF 的 `partial-text` 与未解析图像位置原样保留。页面标识只保留 origin/path，移除查询和片段；不导出连接 token、资料文件路径或浏览器 profile 路径。
+
+**这是带 `asOf` 时间的历史回执。** 导出不重新观察、不刷新 snapshot、不改变正在执行的填写计划。人手修改、动态分支、导航或原资料修改后，旧回执仍然只描述当时；`currentState` 始终是 `not-revalidated`。让 Codex 显式调用 `form_context` 后，下一份回执记录该次新观察及原台账判断。上下文结果没有上一操作的 bindings/evidence 时，对应表为空，不推断补齐。仅导出 bindings、会话目标或搜索决策实际引用的来源条目；未绑定的上下文回执可没有原文条目。
+
+回执分别列出本次请求目标 `complete`、会话目标 `task.complete`（若存在）、可见必填覆盖 `coverage`、资料提取覆盖和页面公开保存文字。缺失项显示 `—`；目标完成不表示整个表单完成，页面保存原文和 DOM 回读也不表示独立验证了服务器接受。页面及资料文字均作为数据转义。内存捕获失败会在原工具结果的 `receiptCapture` 中给出错误，不重试填写动作。
+
+[虚构资料示例回执](prototype/examples/local-receipt.md)展示 Markdown 输出。
+
+无模型验收：`npm run check:receipt`；PDF 真实来源附加验收见 `AFA_RECEIPT_PDF=1 npm run check:receipt`（需 PDF 可选依赖）。

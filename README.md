@@ -84,6 +84,7 @@ npm run check:online    # 在线保存、状态关联与三种招聘控件
 
 `check:try` 在 macOS/Linux 上验证生命周期。入口退出码：0 正常结束，1 运行失败，2 参数错误，3 准备未完成。通过 npm 按 Ctrl+C 时，npm 包装进程在部分平台以 SIGINT（shell 中为 130）结束；这属于用户中断，入口仍完成清理。
 
+- 本地历史回执：启动入口会打印导出命令，直接读取字段、来源原文、未解决项与页面保存文字；默认只打印，可显式保存 Markdown/JSON。回执标明观察时间，不刷新或打断正在执行的填写计划。
 - [指定自己的页面与资料、PDF 实验、扩展及完整检查命令](USAGE.md)：PDF 默认严格提取；含照片的文字 PDF 可显式启用部分文字来源，回执保留未读图像位置。
 - [完整实验与工程报告索引](prototype/reports/INDEX.md)
 - [后续接续状态](prototype/CONTINUATION.md)

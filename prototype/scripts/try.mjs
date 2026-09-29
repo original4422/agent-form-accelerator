@@ -38,7 +38,7 @@ async function main(){
   if(login.status!==0)throw fail('Codex 登录检查未通过。请先运行 codex login status；尚未登录时运行 codex login。\n只看本地示例可加 --preview。',3);
  }
  // Runtime dependencies are loaded only after the actionable preflight.
- const {createBrowserCompanion,companionCommand}=await import('../src/browser-companion.mjs');
+ const {createBrowserCompanion,companionCommand,receiptCommand}=await import('../src/browser-companion.mjs');
  const root=await mkdtemp(path.join(os.tmpdir(),'afa-try-')),abort=new AbortController();let app,companion;
  const stop=()=>abort.abort();for(const sig of ['SIGINT','SIGTERM','SIGHUP'])process.on(sig,stop);
  try{
@@ -56,6 +56,7 @@ async function main(){
   if(values.preview)console.log(`\n预览模式：只打开本地页面。虚构资料：${sourcePath}`);
   else console.log(`\nCodex 登录检查通过。保持本终端运行，在另一个终端复制：\n\n${companionCommand(companion.configPath)}\n\n进入 Codex 后复制任务：\n\n${tasks[scenario]}`);
   console.log(`\n${scenario==='recruitment'?'预期：10 个已知目标填写正确，未提供的到岗日期留空。':`预期：页面显示 Draft saved.，总额 GBP ${scenario==='rail'?'42.75':'50.45'}。`}\n关闭示例标签页/浏览器或按 Ctrl+C 结束；临时浏览器资料、连接和草稿随后删除。`);
+  console.log(`\n导出历史回执（连接 Codex 后可用）：\n${receiptCommand(companion.configPath)}\n默认仅打印；--out /绝对路径/新文件.md 显式保存，--format json 输出 JSON。`);
   await companion.done;
  }catch(e){if(!abort.signal.aborted)throw e;}
  finally{

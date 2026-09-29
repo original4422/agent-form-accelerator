@@ -17,3 +17,7 @@ jobs:
       - run: npm ci
       - run: python -m pip install -r prototype/requirements-pdf.txt
       - run: npm run check:pdf
+      - run: npx playwright install --with-deps chromium
+      - run: npm run check:receipt
+        env:
+          AFA_RECEIPT_PDF: '1'

@@ -7,12 +7,21 @@ import {factorPage} from './decision-context.mjs';
 import {projectReceipt} from './receipt-projection.mjs';
 
 // Shared semantic interface: backend selection does not change model-visible tools.
-export async function serveBindings({request,sourcePath,repeatMode,contextMode,discoveryMode,optionMode,decisionMode,selectionMode,receiptMode,queryVariants=false,onTiming}) {
+export async function serveBindings({request,sourcePath,repeatMode,contextMode,discoveryMode,optionMode,decisionMode,selectionMode,receiptMode,queryVariants=false,onTiming,onReceipt}) {
 const timing=(stage,details={})=>{try{onTiming?.({stage,epochMs:performance.timeOrigin+performance.now(),...details});}catch{}};
 timing('server_start');
 const independent=selectionMode==='independent';
 const conditional=independent||selectionMode==='conditional';
 const session=await createDocumentSession({sourcePath:sourcePath,request,conditionalSelection:conditional,independentSelection:independent,queryVariants});
+// Optional local archival hook. A failed capture never retries a browser action
+// or changes the executor's verdict; it is reported alongside that result.
+if(onReceipt)for(const operation of ['context','apply','search','expand']){
+ const original=session[operation];session[operation]=async(...args)=>{
+  const result=await original(...args);
+  try{await onReceipt(operation,result,session.source);}catch(error){result.receiptCapture={status:'failed',reason:error.message};}
+  return result;
+ };
+}
 const server=new McpServer({name:'afa-document-bindings',version:'0.0.1'});
 // A single tab/source session is mutable. Concurrent MCP requests may be issued
 // by one host turn; serialize them so observation/option references do not race.
@@ -26,7 +35,7 @@ const wrap=(fn,tool)=>async(args)=>{
 };
 const grouped=decisionMode==='grouped';
 let publishedPage,publishedDocumentId;
-const compact=({source,page,coverage,task})=>{const projected=projectPage(page,source,{optionMode});publishedPage=projected;publishedDocumentId=page.documentId;return {source,coverage,...(task?{task}:{}),page:grouped?factorPage(projected):projected};};
+const compact=({source,page,coverage,task,receiptCapture})=>{const projected=projectPage(page,source,{optionMode});publishedPage=projected;publishedDocumentId=page.documentId;return {source,coverage,...(receiptCapture?{receiptCapture}:{}),...(task?{task}:{}),page:grouped?factorPage(projected):projected};};
 const repeatsEnabled=repeatMode!=='explicit';
 const discoveryEnabled=['single','batch'].includes(discoveryMode);
 const sourceParts=session.source.format==='pdf-text-runs-v1';
