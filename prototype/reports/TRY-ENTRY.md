@@ -22,3 +22,8 @@ README、USAGE、报告索引及本报告共 59 个本地 Markdown 链接逐项�
 
 
 首次 [Linux CI](https://github.com/original4422/agent-form-accelerator/actions/runs/36628760052) 揭示 npm 包装层的退出表示差异：macOS / Node 26.8.1 的 npm Ctrl+C 返回 0；Linux / Node 22.23.3 的 npm 包装进程由 SIGINT 结束，Node 的 close code 为 null（shell 表示为 130）。检查现在区分包装进程的正常中断与入口故障，仍要求完整清理，不接受其他信号或失败退出码。直接 Node 入口和关闭浏览器仍要求 0。
+
+
+[第二次 Linux CI](https://github.com/original4422/agent-form-accelerator/actions/runs/36629002839) 的 npm 中断和清理已通过，随后暴露关闭浏览器时的真实错误。增加聚合错误详情后，[诊断运行](https://github.com/original4422/agent-form-accelerator/actions/runs/36629227217) 确认子错误为 `browserContext.close: Target page, context or browser has been closed`。浏览器退出时 page 的关闭回调会与 context 通道关闭竞争；cleanup 现在只在 context 已关闭/关闭中且错误明确为 target closed 时视为关闭完成，其他错误仍报告，资料和服务清理仍必须通过。
+
+修复后本地 `check:try` 全部通过，已有 11 项 companion 检查也通过，包含关闭所选标签页、持久 profile 的测试 cookie 重启恢复、启动取消、实际 MCP 填写与原 CLI 退出。关闭竞态的修复没有改变填写逻辑或持久资料保留契约。
