@@ -21,3 +21,6 @@ jobs:
       - run: npm run check:receipt
         env:
           AFA_RECEIPT_PDF: '1'
+      - run: npm run check:reload
+        env:
+          AFA_RELOAD_PDF: '1'

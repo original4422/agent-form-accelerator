@@ -26,7 +26,8 @@
     "check:try": "node prototype/bench/try-check.mjs",
     "check:pdf": "node prototype/bench/pdf-source-check.mjs && node prototype/bench/pdf-mixed-check.mjs",
     "receipt": "node prototype/scripts/receipt.mjs",
-    "check:receipt": "node prototype/bench/local-receipt-check.mjs"
+    "check:receipt": "node prototype/bench/local-receipt-check.mjs",
+    "check:reload": "node prototype/bench/source-reload-check.mjs"
   },
   "dependencies": {
     "@modelcontextprotocol/sdk": "1.30.0",

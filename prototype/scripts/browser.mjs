@@ -24,7 +24,7 @@ if(values.help||(!values.demo&&(!values.url||!values.source))){
         if(!ready){await app.close();process.exitCode=0;}else await app.freezeAndConnect();
       }finally{lines.close();}
     }
-    if(app.configPath)console.log(`${offlineAfterReady?'页面 HTTP(S)/WebSocket 连接已切断。远程搜索和懒加载可能不可用，不能据此认定网站不支持该字段。':'浏览器已打开。可先在该标签页登录并进入填写页面。'}在另一终端执行：\n\n${companionCommand(app.configPath)}\n\n向 Codex 说明：根据提供的资料填写当前页${values.demo?'，包含两段教育经历并保留校区限定词':''}，批量处理可确定字段，缺少事实或不能验证的项目留空并报告，保留提交给我检查。\n\n仅连接最初打开的标签页；同一标签页导航后让 Codex 刷新 form_context。资料修改后重新连接 Codex。\n关闭该标签页/浏览器或按 Ctrl+C 结束本次连接。${offlineAfterReady||values.temporary||values.demo?'临时浏览器资料会删除。':'独立登录资料保留在 .profiles/companion。'}`);
+    if(app.configPath)console.log(`${offlineAfterReady?'页面 HTTP(S)/WebSocket 连接已切断。远程搜索和懒加载可能不可用，不能据此认定网站不支持该字段。':'浏览器已打开。可先在该标签页登录并进入填写页面。'}在另一终端执行：\n\n${companionCommand(app.configPath)}\n\n向 Codex 说明：根据提供的资料填写当前页${values.demo?'，包含两段教育经历并保留校区限定词':''}，批量处理可确定字段，缺少事实或不能验证的项目留空并报告，保留提交给我检查。\n\n仅连接最初打开的标签页；同一标签页导航后让 Codex 刷新 form_context。资料修改后让 Codex 显式调用 form_reload_source，再根据新版资料继续填写。\n关闭该标签页/浏览器或按 Ctrl+C 结束本次连接。${offlineAfterReady||values.temporary||values.demo?'临时浏览器资料会删除。':'独立登录资料保留在 .profiles/companion。'}`);
     if(app.configPath)console.log(`\n导出最近一次历史回执（不刷新页面，默认仅打印）：\n${receiptCommand(app.configPath)}\n加 --format json 或 --out /绝对路径/新文件.md 可选择格式与保存。`);
     await app.done;
   }catch(e){if(e.code!=='ABORT_ERR'){console.error(e.message);process.exitCode=1;}await app?.close().catch(()=>{});}

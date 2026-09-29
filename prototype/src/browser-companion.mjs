@@ -49,7 +49,7 @@ export async function createBrowserCompanion({url,sourcePath,temporary=false,off
     available();
     if(offlineAfterReady)await guard.freeze();
     available();if(page.isClosed())throw new Error('BROWSER_CLOSED');controller=await createBrowserController(page);
-    available();await writeFile(configPath,JSON.stringify({kind:'afa-browser-session-v1',endpoint:controller.endpoint,token:controller.token,sourcePath,...(offlineAfterReady?{networkMode:'frozen'}:{})}),{mode:0o600,flag:'wx'});
+    available();await writeFile(configPath,JSON.stringify({kind:'afa-browser-session-v1',sourceReload:true,endpoint:controller.endpoint,token:controller.token,sourcePath,...(offlineAfterReady?{networkMode:'frozen'}:{})}),{mode:0o600,flag:'wx'});
     available();connected=true;return {configPath,...(guard?{network:guard.status()}:{})};
   })();
   const onAbort=()=>{if(initializing)context?.close().catch(()=>{});else close().catch(()=>{});};

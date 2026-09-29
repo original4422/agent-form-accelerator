@@ -8,8 +8,8 @@ export function captureLocalReceipt(operation,result,source,asOf=new Date().toIS
  for(const key of ['bindings','task','searches','conditionalSelections'])collect(result[key]);
  return {format:'afa-local-receipt-v1',asOf,operation,currentState:'not-revalidated',
   scope:'Historical observation and source-binding verdicts as of asOf. Later edits, navigation, source changes and server acceptance are not verified.',
-  source:{...pick(source,['sha256','format','extractionCoverage']),entries:source.entries.filter(e=>referenced.has(e.id)).map(e=>pick(e,['id','context','label','value','line','page','bbox']))},
-  result:{...pick(result,['complete','partial','appliedSubsetComplete','reason','completionScope','task','coverage','sourceCoverage','bindings','evidence','searches','conditionalSelections','expanded']),
+  source:{...pick(source,['sha256','version','generation','format','extractionCoverage']),entries:source.entries.filter(e=>referenced.has(e.id)).map(e=>pick(e,['id','context','label','value','line','page','bbox']))},
+  result:{...pick(result,['sourceVersion','sourceReload','complete','partial','appliedSubsetComplete','reason','completionScope','task','coverage','sourceCoverage','bindings','evidence','searches','conditionalSelections','expanded']),
    page:{url:pageIdentity(page.url),...pick(page,['title','fields','controls','formContext','formStatus','limitations','formUpdate'])}}};
 }
 const text=value=>value===undefined?'—':typeof value==='string'?value:JSON.stringify(value);
@@ -27,7 +27,7 @@ export function renderLocalReceipt(receipt) {
   '## Requested source targets (historical ledger)','',table(['Ref','Group','Label','Source IDs','Exact quote','Status','Reason','Presence'],(r.task?.targets??[]).map(t=>[t.ref,t.group,t.label,t.sourceIds??t.sourceId,t.sourceQuote,t.status,t.reason,t.currentPresence])), '',
   '## Read-back evidence (last operation)','',table(['Group','Label','Expected','Actual','Status','Reason'],(r.evidence??[]).map(e=>[e.group,e.label,e.expected,e.actual,e.status,e.reason])), '',
   '## Unresolved required fields (historical)','',table(['Group','Label','Reason'],(r.coverage?.unresolvedRequired??[]).map(f=>[f.group,f.label,f.reason])), '',
-  '## Referenced source entries','',`SHA-256: ${cell(source.sha256)}`,'',table(['ID','Context / label','Original text','Line / page / bounds'],source.entries.map(e=>[e.id,[e.context,e.label].filter(Boolean).join(' / '),e.value,{line:e.line,page:e.page,bbox:e.bbox}])), '',
+  '## Referenced source entries','',`SHA-256: ${cell(source.sha256)}`, '', `Source version: ${cell(source.version)}; generation: ${cell(source.generation)}`,'',table(['ID','Context / label','Original text','Line / page / bounds'],source.entries.map(e=>[e.id,[e.context,e.label].filter(Boolean).join(' / '),e.value,{line:e.line,page:e.page,bbox:e.bbox}])), '',
   '## Source extraction and unread image regions','',cell(source.extractionCoverage??'No extraction coverage object for this source format.'),'',
   '## Public page save/status wording (historical; not server acceptance)','',cell(r.page.formStatus??'No public status observed.'),'',
   '## Operation outcome / limitations','',cell({reason:r.reason,coverage:r.coverage,formUpdate:r.page.formUpdate,limitations:r.page.limitations}),''];

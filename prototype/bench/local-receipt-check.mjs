@@ -22,7 +22,7 @@ try {
  const bindings=Object.fromEntries(c.page.fields.filter(f=>f.label!=='Start date').map(f=>[f.ref,c.source.entries.find(e=>e.label===f.label).id]));
  // An export between context and apply must not invalidate the runtime snapshot.
  const before=await readdir(path.join(root,'.runtime'));assert.equal(JSON.parse(await cli('--format','json')).source.entries.length,0);assert.deepEqual(await readdir(path.join(root,'.runtime')),before);
- const applied=await call('form_apply_bindings',{url:c.page.url,bindings});assert.equal(applied.complete,true);assert.equal(applied.coverage.visibleRequiredCovered,false);
+ const applied=await call('form_apply_bindings',{sourceVersion:c.source.version,url:c.page.url,bindings});assert.equal(applied.complete,true);assert.equal(applied.coverage.visibleRequiredCovered,false);
  const receipt=JSON.parse(await cli('--format','json'));assert.equal(receipt.currentState,'not-revalidated');assert.equal(receipt.result.complete,true);assert.equal(receipt.result.coverage.unresolvedRequired[0].label,'Start date');assert.equal(receipt.result.page.formStatus.messages[0].text,'Unsaved | draft <example>');
  const cfg=JSON.parse(await readFile(app.configPath,'utf8')),encoded=JSON.stringify(receipt);for(const secret of [cfg.token,sourcePath,app.profilePath,'?secret=query','#fragment'])assert.ok(!encoded.includes(secret));
  assert.equal(receipt.source.entries.length,2);assert.ok(!encoded.includes('private unrelated fact'));assert.equal(receipt.source.entries[0].value,'Alex | <script> & **Example**');
@@ -35,13 +35,13 @@ try {
  await client.close();client=undefined;assert.deepEqual(JSON.parse(await cli('--format','json')),refreshed,'receipt remains available after MCP exits');
  await writeFile(sourcePath,'Name: changed source\n');assert.deepEqual(JSON.parse(await cli('--format','json')),refreshed,'historical source hash is never described as fresh');
  await app.page.goto(`http://127.0.0.1:${server.address().port}/other`);assert.deepEqual(JSON.parse(await cli('--format','json')),refreshed,'navigation leaves the explicitly historical page identity');
- const source={sha256:'hash',entries:[{id:'s1',label:'text',value:'literal | <b>\nnext'}],extractionCoverage:{status:'partial-text',unparsedImages:[{page:1,bbox:[1,2,3,4]}]}};
+ const source={sha256:'hash',entries:[{id:applied.bindings[0].sourceId,label:'text',value:'literal | <b>\nnext'}],extractionCoverage:{status:'partial-text',unparsedImages:[{page:1,bbox:[1,2,3,4]}]}};
  const partial=captureLocalReceipt('apply',{...applied,sourceCoverage:source.extractionCoverage},source);assert.deepEqual(partial.source.extractionCoverage,source.extractionCoverage);assert.ok(renderLocalReceipt(partial).includes('partial-text'));assert.ok(renderLocalReceipt(partial).includes('unparsedImages'));assert.ok(renderLocalReceipt(partial).includes('literal &#124; &lt;b&gt;<br>next'));
  if(process.env.AFA_RECEIPT_PDF==='1'){
   await app.close();process.env.AFA_PDF_SOURCE='1';process.env.AFA_PDF_ALLOW_IMAGES='1';
   app=await createBrowserCompanion({url:`http://127.0.0.1:${server.address().port}/pdf`,sourcePath:path.resolve('prototype/fixtures/pdf/image-facts.pdf'),temporary:true,headless:true,baseDir:root});
   await connect();const pdfContext=await call('form_context');const email=pdfContext.source.entries.find(e=>e.value.includes('@'));const field=pdfContext.page.fields.find(f=>f.label==='Email');
-  const appliedPdf=await call('form_apply_bindings',{url:pdfContext.page.url,bindings:{[field.ref]:email.id}});assert.equal(appliedPdf.complete,true);
+  const appliedPdf=await call('form_apply_bindings',{sourceVersion:pdfContext.source.version,url:pdfContext.page.url,bindings:{[field.ref]:email.id}});assert.equal(appliedPdf.complete,true);
   const exported=JSON.parse(await cli('--format','json'));assert.equal(exported.source.extractionCoverage.status,'partial-text');assert.deepEqual(exported.source.extractionCoverage,pdfContext.source.extractionCoverage);assert.equal(exported.source.entries.length,1);assert.equal(exported.source.entries[0].value,'candidate@example.test');assert.ok(exported.result.coverage.unresolvedRequired.some(f=>f.label==='Start date'));assert.ok(!(await cli()).includes('2030-07-19'));
   console.log('PASS real mixed PDF through companion/MCP retains unparsed images and does not invent image-only start date');
  }
