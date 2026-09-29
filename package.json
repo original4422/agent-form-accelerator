@@ -27,7 +27,9 @@
     "check:pdf": "node prototype/bench/pdf-source-check.mjs && node prototype/bench/pdf-mixed-check.mjs",
     "receipt": "node prototype/scripts/receipt.mjs",
     "check:receipt": "node prototype/bench/local-receipt-check.mjs",
-    "check:reload": "node prototype/bench/source-reload-check.mjs"
+    "check:reload": "node prototype/bench/source-reload-check.mjs",
+    "check:continuous": "node prototype/bench/app-server-driver-check.mjs",
+    "bench:continuous": "node prototype/bench/codex-continuous-source.mjs"
   },
   "dependencies": {
     "@modelcontextprotocol/sdk": "1.30.0",

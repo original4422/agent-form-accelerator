@@ -1,0 +1,118 @@
+{
+  "sourceHashes": {
+    "prototype/bench/app-server-driver.mjs": "05fc1a212e59a3ea62bcf459eef26bb9143c56c8dc978c39a3be43d4ce5f0b39",
+    "prototype/bench/mcp-observer.mjs": "c332fe66241b74dc064801f45367854ff2631118438e222bc2a937d2c1c44189",
+    "prototype/bench/codex-continuous-source.mjs": "29daf1a92baef5b96f9f2f45e454f2aa05c76a30e44091da60a294d5e328ccef",
+    "prototype/src/bindings-server.mjs": "3409f74d8c2d9af1903cd03b6114a6088615214bdb36b5a2c556583c05d4ce98",
+    "prototype/src/document-session.mjs": "58fe6440fb796310f178e0b5c43e040deb2ca54196995c00a44785b560129205"
+  },
+  "baseCommit": "be5f6605e56b0bafc94ca998d1e04e157e63b6ff",
+  "kind": "afa-continuous-source-v1",
+  "mode": "preflight",
+  "cli": "codex-cli 0.155.1",
+  "checks": {
+    "ephemeralReadOnly": true,
+    "onlyAfaTools": true,
+    "configUnchangedBeforeTurns": true,
+    "continuousMcpBrowser": true,
+    "ownedProcessesExited": true,
+    "configUnchangedAfterCleanup": true,
+    "sessionConfigRemoved": true,
+    "profileRemoved": true
+  },
+  "turns": [],
+  "approvals": [],
+  "pageTimeOrigin": 1790725747342.6,
+  "threadId": "01a0ef92-7ce0-70c0-84ec-b13ebc9fc092",
+  "model": "gpt-6-astra",
+  "reasoningEffort": "high",
+  "toolCount": 5,
+  "identities": [
+    {
+      "appServer": {
+        "pid": 76944,
+        "started": "Wed Sep 30 07:49:07 2026"
+      },
+      "mcp": {
+        "pid": 77024,
+        "started": "Wed Sep 30 07:49:10 2026"
+      },
+      "chromium": {
+        "pid": 76920,
+        "started": "Wed Sep 30 07:49:06 2026"
+      },
+      "mcpNonce": "350e088c-abb6-47a7-93c8-6d677c6e8d16"
+    },
+    {
+      "appServer": {
+        "pid": 76944,
+        "started": "Wed Sep 30 07:49:07 2026"
+      },
+      "mcp": {
+        "pid": 77024,
+        "started": "Wed Sep 30 07:49:10 2026"
+      },
+      "chromium": {
+        "pid": 76920,
+        "started": "Wed Sep 30 07:49:06 2026"
+      },
+      "mcpNonce": "350e088c-abb6-47a7-93c8-6d677c6e8d16"
+    },
+    {
+      "appServer": {
+        "pid": 76944,
+        "started": "Wed Sep 30 07:49:07 2026"
+      },
+      "mcp": {
+        "pid": 77024,
+        "started": "Wed Sep 30 07:49:10 2026"
+      },
+      "chromium": {
+        "pid": 76920,
+        "started": "Wed Sep 30 07:49:06 2026"
+      },
+      "mcpNonce": "350e088c-abb6-47a7-93c8-6d677c6e8d16"
+    }
+  ],
+  "source": {
+    "beforeVersion": "ad1aa157aee15382.1",
+    "afterVersion": "ad1aa157aee15382.2",
+    "beforeHash": "659e19492a48fc8d213856ddf5ca9cc002b226fef43d600332d2e4766e4ec781",
+    "afterHash": "3c2d995cfe92a7d650e48446927643b2d5542e38e7cbcd0613e00debfc1aa1cc"
+  },
+  "calls": [
+    {
+      "tool": "form_context"
+    },
+    {
+      "tool": "form_reload_source"
+    }
+  ],
+  "schemaRefresh": {
+    "notifications": 1,
+    "toolsListRequestsAfterNotification": 0
+  },
+  "cleanup": [
+    {
+      "name": "app-server",
+      "ok": true
+    },
+    {
+      "name": "cdp",
+      "ok": true
+    },
+    {
+      "name": "companion",
+      "ok": true
+    },
+    {
+      "name": "fixture",
+      "ok": true
+    },
+    {
+      "name": "temporary-cwd",
+      "ok": true
+    }
+  ],
+  "passed": true
+}

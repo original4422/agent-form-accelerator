@@ -1,0 +1,159 @@
+{
+  "sourceHashes": {
+    "prototype/bench/app-server-driver.mjs": "05fc1a212e59a3ea62bcf459eef26bb9143c56c8dc978c39a3be43d4ce5f0b39",
+    "prototype/bench/mcp-observer.mjs": "c332fe66241b74dc064801f45367854ff2631118438e222bc2a937d2c1c44189",
+    "prototype/bench/codex-continuous-source.mjs": "29daf1a92baef5b96f9f2f45e454f2aa05c76a30e44091da60a294d5e328ccef",
+    "prototype/src/bindings-server.mjs": "3409f74d8c2d9af1903cd03b6114a6088615214bdb36b5a2c556583c05d4ce98",
+    "prototype/src/document-session.mjs": "58fe6440fb796310f178e0b5c43e040deb2ca54196995c00a44785b560129205"
+  },
+  "baseCommit": "be5f6605e56b0bafc94ca998d1e04e157e63b6ff",
+  "kind": "afa-continuous-source-v1",
+  "mode": "model",
+  "cli": "codex-cli 0.155.1",
+  "checks": {
+    "ephemeralReadOnly": true,
+    "onlyAfaTools": true,
+    "configUnchangedBeforeTurns": true,
+    "firstTurnReportsMissingDate": true,
+    "firstReceiptImmutable": true,
+    "dateAndPreviousFieldsCorrect": true,
+    "newVersionApplied": true,
+    "continuousMcpBrowser": true,
+    "ownedProcessesExited": true,
+    "configUnchangedAfterCleanup": true,
+    "sessionConfigRemoved": true,
+    "profileRemoved": true
+  },
+  "turns": [
+    {
+      "id": "01a0ef92-cb3b-7a93-8e7f-8fc67bcb2580",
+      "status": "completed",
+      "durationMs": 28895
+    },
+    {
+      "id": "01a0ef93-3c45-7c01-b2ad-c8274bdd9a7c",
+      "status": "completed",
+      "durationMs": 15004
+    }
+  ],
+  "approvals": [
+    {
+      "turnId": "01a0ef92-cb3b-7a93-8e7f-8fc67bcb2580",
+      "tool": "form_apply_bindings",
+      "action": "accept",
+      "persisted": false
+    },
+    {
+      "turnId": "01a0ef93-3c45-7c01-b2ad-c8274bdd9a7c",
+      "tool": "form_apply_bindings",
+      "action": "accept",
+      "persisted": false
+    }
+  ],
+  "pageTimeOrigin": 1790725769579.7,
+  "threadId": "01a0ef92-ca1d-7fd0-ad01-9de3cb4e50a8",
+  "model": "gpt-6-astra",
+  "reasoningEffort": "high",
+  "toolCount": 5,
+  "identities": [
+    {
+      "appServer": {
+        "pid": 77550,
+        "started": "Wed Sep 30 07:49:29 2026"
+      },
+      "mcp": {
+        "pid": 77628,
+        "started": "Wed Sep 30 07:49:29 2026"
+      },
+      "chromium": {
+        "pid": 77528,
+        "started": "Wed Sep 30 07:49:29 2026"
+      },
+      "mcpNonce": "7e1ee73c-64f6-4cd3-89cd-480279c6b40a"
+    },
+    {
+      "appServer": {
+        "pid": 77550,
+        "started": "Wed Sep 30 07:49:29 2026"
+      },
+      "mcp": {
+        "pid": 77628,
+        "started": "Wed Sep 30 07:49:29 2026"
+      },
+      "chromium": {
+        "pid": 77528,
+        "started": "Wed Sep 30 07:49:29 2026"
+      },
+      "mcpNonce": "7e1ee73c-64f6-4cd3-89cd-480279c6b40a"
+    },
+    {
+      "appServer": {
+        "pid": 77550,
+        "started": "Wed Sep 30 07:49:29 2026"
+      },
+      "mcp": {
+        "pid": 77628,
+        "started": "Wed Sep 30 07:49:29 2026"
+      },
+      "chromium": {
+        "pid": 77528,
+        "started": "Wed Sep 30 07:49:29 2026"
+      },
+      "mcpNonce": "7e1ee73c-64f6-4cd3-89cd-480279c6b40a"
+    }
+  ],
+  "firstOracle": {
+    "passed": true,
+    "errors": [],
+    "knownTargets": 10,
+    "requiredUnanswered": 1,
+    "searches": 6,
+    "submits": 0
+  },
+  "source": {
+    "beforeVersion": "cd2bc5c326df4fcd.1",
+    "afterVersion": "cd2bc5c326df4fcd.2",
+    "beforeHash": "659e19492a48fc8d213856ddf5ca9cc002b226fef43d600332d2e4766e4ec781",
+    "afterHash": "3c2d995cfe92a7d650e48446927643b2d5542e38e7cbcd0613e00debfc1aa1cc"
+  },
+  "calls": [
+    {
+      "tool": "form_apply_bindings",
+      "sourceVersion": "cd2bc5c326df4fcd.1"
+    },
+    {
+      "tool": "form_reload_source"
+    },
+    {
+      "tool": "form_apply_bindings",
+      "sourceVersion": "cd2bc5c326df4fcd.2"
+    }
+  ],
+  "schemaRefresh": {
+    "notifications": 1,
+    "toolsListRequestsAfterNotification": 0
+  },
+  "cleanup": [
+    {
+      "name": "app-server",
+      "ok": true
+    },
+    {
+      "name": "cdp",
+      "ok": true
+    },
+    {
+      "name": "companion",
+      "ok": true
+    },
+    {
+      "name": "fixture",
+      "ok": true
+    },
+    {
+      "name": "temporary-cwd",
+      "ok": true
+    }
+  ],
+  "passed": true
+}

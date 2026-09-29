@@ -45,6 +45,7 @@ npm run try -- rail --preview
 | SurveyJS 两种报销分支 | 8/8 任务通过服务器值、金额、刷新恢复与零提交验收；4/4 绑定来源覆盖完整 | [完整对照](prototype/reports/SURVEYJS-SPEED-COMPARISON.md) |
 | 在线招聘草稿三种控件 | 两轮 12/12 正确；六次绑定均两次调用，服务器独立核验 13 值及教育记录 | [公开保存状态](prototype/reports/PUBLIC-FORM-STATUS.md) |
 | 真实 Greenhouse 页面 | 断网后虚构资料局部填写；远程查询、附件等保留未完成 | [验证范围](prototype/reports/GREENHOUSE-MIGRATION.md) |
+| 同会话补充资料 | Codex 两 turn：先填已知项、补原文件、reload 后填日期；MCP/浏览器不重启 | [连续填写验证](prototype/reports/CONTINUOUS-SOURCE.md) |
 
 SurveyJS 本批完整耗时中位数为官方 Playwright **116.28 秒**、绑定 **41.44 秒**；四次官方任务都发生局部超时并恢复，报告逐次保留这些成本。在线招聘原生控件的另一批中位数为 **83.96→47.31 秒**。数据分别属于不同协议，不能合并成一个通用提速倍数。
 
@@ -80,11 +81,13 @@ prototype/reports/     逐次证据、失败记录与测量源码
 npm run check:try       # 三种示例启动、退出与清理；准备失败退出码
 npm run check:expense   # 控件反例、两条绑定/官方流程与刷新恢复
 npm run check:online    # 在线保存、状态关联与三种招聘控件
+npm run check:continuous # app-server 启动失败、取消、敏感响应日志与单次审批边界
 ```
 
 `check:try` 在 macOS/Linux 上验证生命周期。入口退出码：0 正常结束，1 运行失败，2 参数错误，3 准备未完成。通过 npm 按 Ctrl+C 时，npm 包装进程在部分平台以 SIGINT（shell 中为 130）结束；这属于用户中断，入口仍完成清理。
 
 - 补充原资料后可在同一 Codex/浏览器连接调用 `form_reload_source`，再按新版条目继续填写；重载保留网页值，旧计划与旧来源引用失效。
+- 连续会话复现：`npm run bench:continuous -- --preflight` 使用真实 app-server/MCP/浏览器但不调用模型；`--model` 运行一组真实两 turn。已测 Codex 0.155.1 依据 reload 回包继续填写，没有观察到工具目录通知后的自动重取。
 - 本地历史回执：启动入口会打印导出命令，直接读取字段、来源原文、未解决项与页面保存文字；默认只打印，可显式保存 Markdown/JSON。回执标明观察时间，不刷新或打断正在执行的填写计划。
 - [指定自己的页面与资料、PDF 实验、扩展及完整检查命令](USAGE.md)：PDF 默认严格提取；含照片的文字 PDF 可显式启用部分文字来源，回执保留未读图像位置。
 - [完整实验与工程报告索引](prototype/reports/INDEX.md)
