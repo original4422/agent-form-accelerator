@@ -87,7 +87,7 @@ export async function executeGoal(request, primitive) {
         const r = await call({op: 'fill', snapshot: observation.snapshot, url: request.url, deadline, actions});
         observation = r.observation;
         trace.push({round, operation: 'fill', statuses: r.results.map((x) => x.status)});
-        const updateBlocked=r.results.find(x=>/^(FORM_UPDATE_|SERVER_FORM_CHANGED)/.test(x.reason??''));
+        const updateBlocked=r.results.find(x=>/^(FORM_UPDATE_|SERVER_FORM_CHANGED|FORM_CHANGED_AFTER_WAIT)/.test(x.reason??''));
         if(updateBlocked)throw new Error(updateBlocked.reason);
         guard();
         for (let i = 0; i < actionTargets.length; i++) {
@@ -126,7 +126,7 @@ export async function executeGoal(request, primitive) {
   try {
     evidence = fields.map((target) => {
       const s = resolve(target);
-      const updateReason=/^(FORM_UPDATE_|SERVER_FORM_CHANGED)/.test(reason??'')?reason:observation.formUpdate?.reason;
+      const updateReason=/^(FORM_UPDATE_|SERVER_FORM_CHANGED|FORM_CHANGED_AFTER_WAIT)/.test(reason??'')?reason:observation.formUpdate?.reason;
       const verified = !updateReason && !s.reason && !!s.field && valuesEquivalent(s.field.kind,s.field.value,s.value) && s.field.valid !== false;
       return {group: target.group, label: target.label, expected: target.value, actual: s.field?.value,
         equivalence:verified&&s.field?.value!==s.value?'telephone-punctuation':undefined,

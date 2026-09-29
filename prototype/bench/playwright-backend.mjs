@@ -182,11 +182,13 @@ export function createPlaywrightBackend(page,{validationMode='guard'}={}) {
     const results = [], written = [];
     const contract=o=>{
       const keys=new Map(o.fields.map(f=>[f.ref,JSON.stringify([f.group,f.label,f.kind])]));
-      const item=({group,label,kind,required,supported,readOnly,options,choiceIdentity})=>({group,label,kind,required,supported,readOnly,options,choiceIdentity});
+      // Popup option caches are populated by selection itself. Native select
+      // options are an observed closed list; newly learned popup caches are not.
+      const item=({group,label,kind,required,supported,readOnly,options,choiceIdentity})=>({group,label,kind,required,supported,readOnly,options:kind==='select'?options:undefined,choiceIdentity});
       return JSON.stringify({fields:o.fields.map(item),controls:o.controls.map(item),context:(o.formContext?.blocks??[]).map(b=>({text:b.text,relation:b.relation,fields:b.fieldRefs.map(ref=>keys.get(ref))}))});
     };
     for (const action of request.actions) {
-      let el;
+      let el,busyMonitor;
       try {
         if (request.deadline && Date.now() >= request.deadline) throw new Error('GOAL_DEADLINE');
         if(updates.status().reason)throw new Error(updates.status().reason);
@@ -204,6 +206,14 @@ export function createPlaywrightBackend(page,{validationMode='guard'}={}) {
         }
         if (action.op !== 'set' || field.kind === 'add-row') throw new Error('Expected set action');
         const updateCount=updates.status().observed;
+        // Record explicit public busy transitions even when a widget's own
+        // selection helper waits long enough for the transition to finish.
+        busyMonitor=await el.evaluateHandle(el=>{
+          const root=el.closest('form,[role="form"],[aria-busy]')??el;
+          const state={seen:root.getAttribute('aria-busy')==='true'};
+          state.consume=records=>{if(records.some(r=>r.oldValue==='true'||r.target.getAttribute('aria-busy')==='true'))state.seen=true;};
+          state.observer=new MutationObserver(state.consume);state.observer.observe(root,{subtree:true,attributes:true,attributeFilter:['aria-busy'],attributeOldValue:true});return state;
+        });
         let expected = action.value;
         if (field.kind === 'autocomplete') await selectAutocomplete(el,field,expected,request,{query:action.query??expected});
         else if(field.kind==='pressed-choice')await selectPressedChoice(el,field,expected,request);
@@ -221,7 +231,8 @@ export function createPlaywrightBackend(page,{validationMode='guard'}={}) {
         }
         // Only observed known writes incur this wait. No model polling and no
         // speculative network calls. Failures remain sticky across inspections.
-        if(updates.status().observed!==updateCount){
+        const publicWait=await busyMonitor.evaluate(s=>{s.consume(s.observer.takeRecords());return s.seen;});
+        if(updates.status().observed!==updateCount||publicWait){
           const deadline=Math.min(Date.now()+1500,request.deadline??Infinity);
           let settledCount;
           do{
@@ -230,17 +241,18 @@ export function createPlaywrightBackend(page,{validationMode='guard'}={}) {
           settledCount=update.observed;
           // Give public rendering a bounded quiet window after the body finished.
           // This cannot prove arbitrary future/debounced work will never occur.
-          await page.evaluate(async deadline=>{
+          const publiclySettled=await page.evaluate(async deadline=>{
             let changed=Date.now();const observer=new MutationObserver(()=>changed=Date.now());
             observer.observe(document.documentElement,{childList:true,subtree:true,attributes:true,characterData:true});
-            try{while(Date.now()<deadline){await new Promise(r=>setTimeout(r,20));if(Date.now()-changed>=120)break;}}
+            const pending=()=>[...globalThis.__afaPrototype.nodes.values()].some(({el})=>el.isConnected&&el.closest('[aria-busy="true"]'));
+            try{while(Date.now()<deadline){await new Promise(r=>setTimeout(r,20));if(!pending()&&Date.now()-changed>=120)return true;}return false;}
             finally{observer.disconnect();}
           },deadline);
-          if(Date.now()>=deadline)throw new Error('FORM_UPDATE_RENDER_TIMEOUT');
+          if(!publiclySettled||Date.now()>=deadline)throw new Error('FORM_UPDATE_RENDER_TIMEOUT');
           }while(updates.status().pending||updates.status().observed!==settledCount);
           const after=await observe({op:'inspect'});
           if(after.url!==initial.url||after.documentId!==initial.documentId)throw new Error('PAGE_CHANGED');
-          if(contract(after)!==contract(initial))throw new Error('SERVER_FORM_CHANGED');
+          if(contract(after)!==contract(initial))throw new Error(updates.status().observed!==updateCount?'SERVER_FORM_CHANGED':'FORM_CHANGED_AFTER_WAIT');
           if(after.fields.some(f=>f.pending))throw new Error('FORM_UPDATE_RENDER_PENDING');
           if(updates.status().reason)throw new Error(updates.status().reason);
           current=after;
@@ -249,7 +261,7 @@ export function createPlaywrightBackend(page,{validationMode='guard'}={}) {
       } catch (e) {
         const reason = /STALE_SNAPSHOT|FIELD_CHANGED/.test(e.message) ? 'FIELD_CHANGED' : e.message;
         results.push({ref:action.ref,status:'blocked',reason}); break;
-      } finally { await el?.dispose(); }
+      } finally {if(busyMonitor){await busyMonitor.evaluate(s=>s.observer.disconnect()).catch(()=>{});await busyMonitor.dispose();}await el?.dispose(); }
     }
     // Same quiet-window rule used by the original primitive; actual completion
     // still depends on the shared planner's explicit pending/invalid checks.
@@ -260,7 +272,7 @@ export function createPlaywrightBackend(page,{validationMode='guard'}={}) {
       finally { observer.disconnect(); }
     }, request.deadline);
     const observation = await observe({op:'inspect'});
-    const updateReason=results.find(r=>/^(FORM_UPDATE_|SERVER_FORM_CHANGED)/.test(r.reason??''))?.reason??observation.formUpdate?.reason;
+    const updateReason=results.find(r=>/^(FORM_UPDATE_|SERVER_FORM_CHANGED|FORM_CHANGED_AFTER_WAIT)/.test(r.reason??''))?.reason??observation.formUpdate?.reason;
     for (const {ref,expected} of written) {
       const result=results.find(r=>r.ref===ref),field=observation.fields.find(f=>f.ref===ref);
       if(updateReason)Object.assign(result,{status:'needs-review',reason:updateReason});

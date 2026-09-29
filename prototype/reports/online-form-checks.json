@@ -1,0 +1,546 @@
+{
+  "date": "2026-09-29T18:10:40.007Z",
+  "scope": "Owned online draft; 13 values, two education rows, server-driven authorization question, one-of-three essay, no attachments/submission.",
+  "results": [
+    {
+      "variant": "native",
+      "passed": true,
+      "first": {
+        "complete": false,
+        "reason": "FORM_CHANGED_AFTER_WAIT",
+        "server": {
+          "draft": {
+            "country": "uk"
+          },
+          "questions": [
+            {
+              "key": "authorization",
+              "label": "UK work authorization",
+              "options": [
+                {
+                  "value": "authorized",
+                  "label": "Yes, authorized without sponsorship"
+                },
+                {
+                  "value": "sponsorship",
+                  "label": "Sponsorship required"
+                }
+              ]
+            }
+          ],
+          "rows": 1,
+          "revision": 1,
+          "events": [
+            {
+              "key": "country",
+              "receivedAt": 1790705425514,
+              "overlap": false,
+              "revision": 0
+            }
+          ],
+          "inFlight": 0,
+          "submissions": 0
+        }
+      },
+      "result": {
+        "complete": true,
+        "coverage": {
+          "scope": "Visible enabled required fields only; hidden steps and server acceptance are not covered.",
+          "limitations": {
+            "requiredness": "Native required and aria-required only; visual-only markers may be missed.",
+            "iframes": 0,
+            "shadowRoots": false
+          },
+          "requiredUnits": 12,
+          "verifiedRequiredUnits": 12,
+          "unresolvedRequired": [],
+          "visibleRequiredCovered": true,
+          "unsupported": []
+        }
+      },
+      "server": {
+        "draft": {
+          "country": "uk",
+          "authorization": "authorized",
+          "name": "Alex Fictional",
+          "email": "alex.fictional@example.test",
+          "city": "london",
+          "degree": "master",
+          "available": "2027-07-01",
+          "school0": "north-london",
+          "major0": "Computer Science",
+          "summary": "I am a fictional graduate who built an accessible campus events directory. I interviewed student volunteers, implemented keyboard navigation, and documented how event owners could correct outdated dates.",
+          "decision": "In a fictional campus project, I proposed a preview screen. Volunteers used it to catch incorrect event dates before publishing, so our team adopted the design.",
+          "school1": "south-bristol",
+          "major1": "Mathematics"
+        },
+        "questions": [
+          {
+            "key": "authorization",
+            "label": "UK work authorization",
+            "options": [
+              {
+                "value": "authorized",
+                "label": "Yes, authorized without sponsorship"
+              },
+              {
+                "value": "sponsorship",
+                "label": "Sponsorship required"
+              }
+            ]
+          }
+        ],
+        "rows": 2,
+        "revision": 14,
+        "events": [
+          {
+            "key": "country",
+            "receivedAt": 1790705425514,
+            "overlap": false,
+            "revision": 0
+          },
+          {
+            "key": "authorization",
+            "receivedAt": 1790705426242,
+            "overlap": false,
+            "revision": 1
+          },
+          {
+            "key": "name",
+            "receivedAt": 1790705426496,
+            "overlap": false,
+            "revision": 2
+          },
+          {
+            "key": "email",
+            "receivedAt": 1790705426760,
+            "overlap": false,
+            "revision": 3
+          },
+          {
+            "key": "city",
+            "receivedAt": 1790705427021,
+            "overlap": false,
+            "revision": 4
+          },
+          {
+            "key": "degree",
+            "receivedAt": 1790705427254,
+            "overlap": false,
+            "revision": 5
+          },
+          {
+            "key": "available",
+            "receivedAt": 1790705427488,
+            "overlap": false,
+            "revision": 6
+          },
+          {
+            "key": "school0",
+            "receivedAt": 1790705427746,
+            "overlap": false,
+            "revision": 7
+          },
+          {
+            "key": "major0",
+            "receivedAt": 1790705427969,
+            "overlap": false,
+            "revision": 8
+          },
+          {
+            "key": "summary",
+            "receivedAt": 1790705428208,
+            "overlap": false,
+            "revision": 9
+          },
+          {
+            "key": "decision",
+            "receivedAt": 1790705428447,
+            "overlap": false,
+            "revision": 10
+          },
+          {
+            "key": "rows",
+            "receivedAt": 1790705428722,
+            "overlap": false,
+            "revision": 11
+          },
+          {
+            "key": "school1",
+            "receivedAt": 1790705428830,
+            "overlap": false,
+            "revision": 12
+          },
+          {
+            "key": "major1",
+            "receivedAt": 1790705429070,
+            "overlap": false,
+            "revision": 13
+          }
+        ],
+        "inFlight": 0,
+        "submissions": 0
+      }
+    },
+    {
+      "variant": "radix",
+      "passed": true,
+      "first": {
+        "complete": false,
+        "reason": "FORM_CHANGED_AFTER_WAIT",
+        "server": {
+          "draft": {
+            "country": "uk"
+          },
+          "questions": [
+            {
+              "key": "authorization",
+              "label": "UK work authorization",
+              "options": [
+                {
+                  "value": "authorized",
+                  "label": "Yes, authorized without sponsorship"
+                },
+                {
+                  "value": "sponsorship",
+                  "label": "Sponsorship required"
+                }
+              ]
+            }
+          ],
+          "rows": 1,
+          "revision": 1,
+          "events": [
+            {
+              "key": "country",
+              "receivedAt": 1790705429764,
+              "overlap": false,
+              "revision": 0
+            }
+          ],
+          "inFlight": 0,
+          "submissions": 0
+        }
+      },
+      "result": {
+        "complete": true,
+        "coverage": {
+          "scope": "Visible enabled required fields only; hidden steps and server acceptance are not covered.",
+          "limitations": {
+            "requiredness": "Native required and aria-required only; visual-only markers may be missed.",
+            "iframes": 0,
+            "shadowRoots": false
+          },
+          "requiredUnits": 12,
+          "verifiedRequiredUnits": 12,
+          "unresolvedRequired": [],
+          "visibleRequiredCovered": true,
+          "unsupported": []
+        }
+      },
+      "server": {
+        "draft": {
+          "country": "uk",
+          "authorization": "authorized",
+          "name": "Alex Fictional",
+          "email": "alex.fictional@example.test",
+          "city": "london",
+          "degree": "master",
+          "available": "2027-07-01",
+          "school0": "north-london",
+          "major0": "Computer Science",
+          "summary": "I am a fictional graduate who built an accessible campus events directory. I interviewed student volunteers, implemented keyboard navigation, and documented how event owners could correct outdated dates.",
+          "decision": "In a fictional campus project, I proposed a preview screen. Volunteers used it to catch incorrect event dates before publishing, so our team adopted the design.",
+          "school1": "south-bristol",
+          "major1": "Mathematics"
+        },
+        "questions": [
+          {
+            "key": "authorization",
+            "label": "UK work authorization",
+            "options": [
+              {
+                "value": "authorized",
+                "label": "Yes, authorized without sponsorship"
+              },
+              {
+                "value": "sponsorship",
+                "label": "Sponsorship required"
+              }
+            ]
+          }
+        ],
+        "rows": 2,
+        "revision": 14,
+        "events": [
+          {
+            "key": "country",
+            "receivedAt": 1790705429764,
+            "overlap": false,
+            "revision": 0
+          },
+          {
+            "key": "authorization",
+            "receivedAt": 1790705430483,
+            "overlap": false,
+            "revision": 1
+          },
+          {
+            "key": "name",
+            "receivedAt": 1790705430723,
+            "overlap": false,
+            "revision": 2
+          },
+          {
+            "key": "email",
+            "receivedAt": 1790705430986,
+            "overlap": false,
+            "revision": 3
+          },
+          {
+            "key": "city",
+            "receivedAt": 1790705431257,
+            "overlap": false,
+            "revision": 4
+          },
+          {
+            "key": "degree",
+            "receivedAt": 1790705431516,
+            "overlap": false,
+            "revision": 5
+          },
+          {
+            "key": "available",
+            "receivedAt": 1790705431758,
+            "overlap": false,
+            "revision": 6
+          },
+          {
+            "key": "school0",
+            "receivedAt": 1790705432033,
+            "overlap": false,
+            "revision": 7
+          },
+          {
+            "key": "major0",
+            "receivedAt": 1790705432275,
+            "overlap": false,
+            "revision": 8
+          },
+          {
+            "key": "summary",
+            "receivedAt": 1790705432538,
+            "overlap": false,
+            "revision": 9
+          },
+          {
+            "key": "decision",
+            "receivedAt": 1790705432801,
+            "overlap": false,
+            "revision": 10
+          },
+          {
+            "key": "rows",
+            "receivedAt": 1790705433112,
+            "overlap": false,
+            "revision": 11
+          },
+          {
+            "key": "school1",
+            "receivedAt": 1790705433237,
+            "overlap": false,
+            "revision": 12
+          },
+          {
+            "key": "major1",
+            "receivedAt": 1790705433479,
+            "overlap": false,
+            "revision": 13
+          }
+        ],
+        "inFlight": 0,
+        "submissions": 0
+      }
+    },
+    {
+      "variant": "search",
+      "passed": true,
+      "first": {
+        "complete": false,
+        "reason": "FORM_CHANGED_AFTER_WAIT",
+        "server": {
+          "draft": {
+            "country": "uk"
+          },
+          "questions": [
+            {
+              "key": "authorization",
+              "label": "UK work authorization",
+              "options": [
+                {
+                  "value": "authorized",
+                  "label": "Yes, authorized without sponsorship"
+                },
+                {
+                  "value": "sponsorship",
+                  "label": "Sponsorship required"
+                }
+              ]
+            }
+          ],
+          "rows": 1,
+          "revision": 1,
+          "events": [
+            {
+              "key": "country",
+              "receivedAt": 1790705434137,
+              "overlap": false,
+              "revision": 0
+            }
+          ],
+          "inFlight": 0,
+          "submissions": 0
+        }
+      },
+      "result": {
+        "complete": true,
+        "coverage": {
+          "scope": "Visible enabled required fields only; hidden steps and server acceptance are not covered.",
+          "limitations": {
+            "requiredness": "Native required and aria-required only; visual-only markers may be missed.",
+            "iframes": 0,
+            "shadowRoots": false
+          },
+          "requiredUnits": 9,
+          "verifiedRequiredUnits": 9,
+          "unresolvedRequired": [],
+          "visibleRequiredCovered": true,
+          "unsupported": []
+        }
+      },
+      "server": {
+        "draft": {
+          "country": "uk",
+          "authorization": "authorized",
+          "name": "Alex Fictional",
+          "email": "alex.fictional@example.test",
+          "city": "london",
+          "degree": "master",
+          "available": "2027-07-01",
+          "school0": "north-london",
+          "major0": "Computer Science",
+          "summary": "I am a fictional graduate who built an accessible campus events directory. I interviewed student volunteers, implemented keyboard navigation, and documented how event owners could correct outdated dates.",
+          "decision": "In a fictional campus project, I proposed a preview screen. Volunteers used it to catch incorrect event dates before publishing, so our team adopted the design.",
+          "school1": "south-bristol",
+          "major1": "Mathematics"
+        },
+        "questions": [
+          {
+            "key": "authorization",
+            "label": "UK work authorization",
+            "options": [
+              {
+                "value": "authorized",
+                "label": "Yes, authorized without sponsorship"
+              },
+              {
+                "value": "sponsorship",
+                "label": "Sponsorship required"
+              }
+            ]
+          }
+        ],
+        "rows": 2,
+        "revision": 14,
+        "events": [
+          {
+            "key": "country",
+            "receivedAt": 1790705434137,
+            "overlap": false,
+            "revision": 0
+          },
+          {
+            "key": "authorization",
+            "receivedAt": 1790705435692,
+            "overlap": false,
+            "revision": 1
+          },
+          {
+            "key": "name",
+            "receivedAt": 1790705435938,
+            "overlap": false,
+            "revision": 2
+          },
+          {
+            "key": "email",
+            "receivedAt": 1790705436185,
+            "overlap": false,
+            "revision": 3
+          },
+          {
+            "key": "city",
+            "receivedAt": 1790705436710,
+            "overlap": false,
+            "revision": 4
+          },
+          {
+            "key": "degree",
+            "receivedAt": 1790705436988,
+            "overlap": false,
+            "revision": 5
+          },
+          {
+            "key": "available",
+            "receivedAt": 1790705437218,
+            "overlap": false,
+            "revision": 6
+          },
+          {
+            "key": "school0",
+            "receivedAt": 1790705437741,
+            "overlap": false,
+            "revision": 7
+          },
+          {
+            "key": "major0",
+            "receivedAt": 1790705438015,
+            "overlap": false,
+            "revision": 8
+          },
+          {
+            "key": "summary",
+            "receivedAt": 1790705438282,
+            "overlap": false,
+            "revision": 9
+          },
+          {
+            "key": "decision",
+            "receivedAt": 1790705438536,
+            "overlap": false,
+            "revision": 10
+          },
+          {
+            "key": "rows",
+            "receivedAt": 1790705438839,
+            "overlap": false,
+            "revision": 11
+          },
+          {
+            "key": "school1",
+            "receivedAt": 1790705439224,
+            "overlap": false,
+            "revision": 12
+          },
+          {
+            "key": "major1",
+            "receivedAt": 1790705439496,
+            "overlap": false,
+            "revision": 13
+          }
+        ],
+        "inFlight": 0,
+        "submissions": 0
+      }
+    }
+  ]
+}
