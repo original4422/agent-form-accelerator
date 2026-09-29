@@ -3,7 +3,7 @@ import {mkdtemp,mkdir,chmod,readFile,writeFile,access} from 'node:fs/promises';
 import {createHash} from 'node:crypto';
 import {execFileSync} from 'node:child_process';
 import path from 'node:path';import os from 'node:os';
-import {appServer,isolatedConfig,approveFixtureCall} from './app-server-driver.mjs';
+import {appServer,isolatedConfig,approveFixtureCall,beginTurn} from './app-server-driver.mjs';
 import {createBridge,projectRoot} from '../src/bridge.mjs';
 import {createBrowserCompanion} from '../src/browser-companion.mjs';
 import {aliasOracle} from './alias-cases.mjs';
@@ -50,8 +50,9 @@ async function checkpoint(){
  return {appServer:hostId,mcp:mcpId,chromium:browserId,mcpNonce:starts[0].nonce};
 }
 async function turn(text){
- const began=Date.now(),eventStart=host.events.length;const r=await host.request('turn/start',{threadId,input:[{type:'text',text,text_elements:[]}]});turnId=r.turn.id;
+ const began=Date.now(),eventStart=host.events.length;const r=await beginTurn(host,{threadId,text,signal:abort.signal});turnId=r.turn.id;
  const onAbort=()=>{void host.request('turn/interrupt',{threadId,turnId}).catch(()=>{});};abort.signal.addEventListener('abort',onAbort,{once:true});
+ if(abort.signal.aborted)onAbort();
  try{
   const done=await host.waitFor(e=>e.method==='turn/completed'&&e.params.threadId===threadId&&e.params.turn.id===turnId);
   report.turns.push({id:turnId,status:done.params.turn.status,durationMs:Date.now()-began});assert.equal(done.params.turn.status,'completed');

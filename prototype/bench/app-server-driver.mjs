@@ -1,16 +1,18 @@
 import {spawn} from 'node:child_process';
 import {createInterface} from 'node:readline';
 import {open} from 'node:fs/promises';
-import {EventEmitter,once} from 'node:events';
+import {EventEmitter} from 'node:events';
 
 // Small stdio client for the continuous-source experiment, not the speed bench.
 export async function appServer({cwd,logPath,command='codex',args=['app-server','--listen','stdio://'],initializeTimeoutMs=30000,onRequest}) {
  const log=await open(logPath,'wx',0o600),events=[],pending=new Map(),sensitiveIds=new Set(),bus=new EventEmitter();let serial=0,ended=false,failure;
  const child=spawn(command,args,{cwd,env:process.env,stdio:['pipe','pipe','pipe']});
- const closed=once(child,'close');
+ // spawn errors also emit close; EventEmitter.once(close) would reject on error.
+ const closed=new Promise(resolve=>child.once('close',resolve));
  const record=(direction,message)=>{void log.write(JSON.stringify({at:Date.now(),direction,message})+'\n');};
  const fail=error=>{failure=error;for(const p of pending.values())p.reject(error);pending.clear();bus.emit('event');};
  child.on('error',fail);child.on('close',()=>{ended=true;fail(new Error('APP_SERVER_CLOSED'));});
+ child.stdin.on('error',fail);
  child.stderr.on('data',data=>record('stderr',data.toString()));
  const lines=createInterface({input:child.stdout});
  lines.on('line',line=>{
@@ -42,8 +44,8 @@ export async function appServer({cwd,logPath,command='codex',args=['app-server',
   });
  }
  async function close(){
-  if(!ended){child.stdin.end();const timer=setTimeout(()=>child.kill('SIGTERM'),3000),hard=setTimeout(()=>child.kill('SIGKILL'),6000);await closed;clearTimeout(timer);clearTimeout(hard);}
-  lines.close();await log.close();
+  try{if(!ended){child.stdin.end();const timer=setTimeout(()=>child.kill('SIGTERM'),3000),hard=setTimeout(()=>child.kill('SIGKILL'),6000);await closed;clearTimeout(timer);clearTimeout(hard);}}
+  finally{lines.close();await log.close();}
  }
  try{await request('initialize',{clientInfo:{name:'afa_continuous_check',version:'1'},capabilities:{experimentalApi:true}},initializeTimeoutMs);}catch(error){await close();throw error;}
  send({method:'initialized',params:{}});
@@ -66,7 +68,14 @@ export function approveFixtureCall(message,{threadId,turnId,url,sourceVersion}) 
  const match=/^Allow the afa MCP server to run tool "(form_apply_bindings|form_search|form_expand)"\?$/.exec(p?.message??'');
  if(message.method!=='mcpServer/elicitation/request'||!threadId||!turnId||!sourceVersion||
   p?.threadId!==threadId||p.turnId!==turnId||p.serverName!=='afa'||p.mode!=='form'||meta?.codex_approval_kind!=='mcp_tool_call'||!match||
-  !schema||Object.keys(schema).sort().join(',')!=='properties,type'||schema.type!=='object'||!schema.properties||Array.isArray(schema.properties)||Object.keys(schema.properties).length||
+  !schema||Object.keys(schema).sort().join(',')!=='properties,type'||schema.type!=='object'||!schema.properties||typeof schema.properties!=='object'||Array.isArray(schema.properties)||Object.keys(schema.properties).length||
   meta.tool_params?.url!==url||meta.tool_params?.sourceVersion!==sourceVersion)throw new Error('OUT_OF_SCOPE_APPROVAL');
  return {action:'accept',content:{}};
+}
+
+export async function beginTurn(host,{threadId,text,signal}) {
+ if(signal?.aborted)throw new Error('TURN_ABORTED');
+ const result=await host.request('turn/start',{threadId,input:[{type:'text',text,text_elements:[]}]});
+ if(signal?.aborted){await host.request('turn/interrupt',{threadId,turnId:result.turn.id});throw new Error('TURN_ABORTED');}
+ return result;
 }

@@ -25,6 +25,8 @@
 
 两次真实尝试分别冻结、核对了 42 项运行源码。最终批次测前后 hash 一致，见 [最终指纹](continuous-final-hashes.json)；首次驱动与指纹单独保留在 [初次指纹](continuous-initial-hashes.json) 和 `source-snapshots/continuous-initial/`。生产代码在两次尝试之间未改。
 
+真实成功样本对应可追溯提交 [51cedd2](https://github.com/original4422/agent-form-accelerator/commit/51cedd2)。随后独立审查发现并修复三个失败处理边界：turn/start 等待期间取消后立即 interrupt，以及取消后不再开新 turn；拒绝 `properties:true/1` 等非对象审批 schema；缺失 Codex 命令时等待真实 close 事件并关闭日志。这些后续修复只跑了无模型回归，没有重跑实测；上面的 hash 与成功结果对应测量提交。
+
 ## 保留的失败与修复
 
 首次真实尝试在第一轮收到 `mcpServer/elicitation/request` 时停止，尚未执行填写、未进入第二轮：[失败记录](continuous-source-model-1790725580165.json)。请求是当前 AFA 在指定 localhost 页面执行 `form_apply_bindings`；最初驱动没有处理原生 MCP 工具审批协议。该结果不计作两 turn 成功。
@@ -49,7 +51,7 @@ npm run bench:continuous -- --preflight  # 真实 app-server/MCP/浏览器，无
 npm run bench:continuous -- --model      # 一组真实两 turn，使用当前默认模型和额度
 ```
 
-检查包括 3 个允许与 12 个拒绝审批用例、初始化无响应时关闭自有子进程、超时后迟到的 config/read 响应不进入日志、turn/interrupt 通知和定向退出。`check:continuous` 已加入 CI。
+最终检查包括 3 个允许与 18 个拒绝审批用例、缺失可执行文件、初始化无响应时关闭自有子进程、超时后迟到的 config/read 响应不进入日志、启动 turn 前/等待响应时取消、turn/interrupt 通知和定向退出。`check:continuous` 已加入 CI。
 
 驱动创建专用 stdio app-server，持续保留 stdin；不调用 exec resume、MCP 配置 reload 或全局配置写接口。用户认证正常复用，不复制凭据。只读 sandbox 与审批保持原生协议；测试所有者在模型外修改虚构资料。
 

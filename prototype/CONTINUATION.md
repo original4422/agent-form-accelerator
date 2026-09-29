@@ -4,7 +4,7 @@
 
 - 新入口 `npm run check:continuous` / `npm run bench:continuous -- --preflight|--model`；生产 source reload 基线 `be5f660` 未改，旧 host-driver/速度实验未改。
 - 一组真实 `gpt-6-astra/high` 两 turn：第一轮 10 已知目标与缺日期报告正确，owner 修改同一路径资料；第二轮 reload→新版本 apply，日期正确、旧字段与历史回执保持。app-server/thread/MCP/Chromium/page timeOrigin 不变，全部自有进程与临时连接清理。
-- 初次真实 run 因驱动缺原生工具审批处理停止，记录保留；修复后只对本任务同 thread/turn/URL/version 的 apply/search/expand 单次批准，3允许/12拒绝反例及生命周期检查通过。
+- 初次真实 run 因驱动缺原生工具审批处理停止，记录保留；修复后只对本任务同 thread/turn/URL/version 的 apply/search/expand 单次批准。真实测量版本保存在 `51cedd2`；随后补取消竞态、schema 类型与缺失命令清理，3允许/18拒绝反例及生命周期检查通过，未再跑模型。
 - AFA 发出一次 tools/list_changed，Codex 没有重取 tools/list；成功依赖 reload 的完整新版回包。42项运行源码前后指纹一致。详见 [CONTINUOUS-SOURCE.md](reports/CONTINUOUS-SOURCE.md)。没有新的速度结论或后续模型采样。
 
 ## 上轮接续记录
