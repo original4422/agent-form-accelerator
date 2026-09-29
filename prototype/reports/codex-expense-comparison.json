@@ -1,0 +1,1740 @@
+{
+  "batchId": 1790712610965,
+  "date": "2026-09-29T20:10:10.965Z",
+  "scope": "Owned localhost travel reimbursement application using SurveyJS 3.1.2. Two branches, two reversed-order repetitions, production bindings versus official Playwright with the same source and initial observations. Independent server draft, arithmetic, and reload checks. Source ledger coverage is reported separately.",
+  "runs": [
+    {
+      "rep": 0,
+      "name": "rail",
+      "mode": "official",
+      "setupMs": 3407.525417,
+      "totalMs": 121106.86925,
+      "toolCount": 25,
+      "toolsHash": "22d36d6dccd47a151011edccd6157361bed917ed0f86985babdde900b9ca6297",
+      "sourceCoverage": null,
+      "elapsedMs": 117560.5865,
+      "exitCode": 0,
+      "timedOut": false,
+      "toolCalls": [
+        {
+          "tool": "browser_run_code_unsafe",
+          "status": "failed",
+          "startMs": 20189.474542,
+          "endMs": 53957.37424999999,
+          "durationMs": 33767.899708,
+          "returnedBytes": 1547
+        },
+        {
+          "tool": "browser_run_code_unsafe",
+          "status": "failed",
+          "startMs": 59381.719709,
+          "endMs": 93788.25270900001,
+          "durationMs": 34406.53300000001,
+          "returnedBytes": 152
+        },
+        {
+          "tool": "browser_snapshot",
+          "status": "completed",
+          "startMs": 95713.630625,
+          "endMs": 95722.585625,
+          "durationMs": 8.955000000001746,
+          "returnedBytes": 1861
+        },
+        {
+          "tool": "browser_run_code_unsafe",
+          "status": "completed",
+          "startMs": 104441.983292,
+          "endMs": 111724.17450000001,
+          "durationMs": 7282.191208000004,
+          "returnedBytes": 759
+        }
+      ],
+      "usage": {
+        "input_tokens": 169193,
+        "cached_input_tokens": 152832,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 1401,
+        "reasoning_output_tokens": 186
+      },
+      "actual": {
+        "draft": {
+          "mode": "rail",
+          "employee": "Alex Fictional",
+          "purpose": "Review the fictional community library accessibility plan.",
+          "date": "2027-06-10",
+          "note": "The fictional visit included a review of the step-free entrance.",
+          "fare": 42.75
+        },
+        "totalPence": 4275,
+        "saves": 6,
+        "inFlight": 0,
+        "submissions": 0,
+        "events": [
+          {
+            "mode": "rail",
+            "keys": [
+              "mode"
+            ]
+          },
+          {
+            "mode": "rail",
+            "keys": [
+              "mode",
+              "employee"
+            ]
+          },
+          {
+            "mode": "rail",
+            "keys": [
+              "mode",
+              "employee",
+              "purpose"
+            ]
+          },
+          {
+            "mode": "rail",
+            "keys": [
+              "mode",
+              "employee",
+              "purpose",
+              "date"
+            ]
+          },
+          {
+            "mode": "rail",
+            "keys": [
+              "mode",
+              "employee",
+              "purpose",
+              "date",
+              "note"
+            ]
+          },
+          {
+            "mode": "rail",
+            "keys": [
+              "mode",
+              "employee",
+              "purpose",
+              "date",
+              "note",
+              "fare"
+            ]
+          }
+        ]
+      },
+      "visible": {
+        "status": "Draft saved.",
+        "total": "Saved reimbursement total: GBP 42.75",
+        "busy": "false",
+        "invalid": 0,
+        "values": {
+          "employee": "Alex Fictional",
+          "purpose": "Review the fictional community library accessibility plan.",
+          "date": "2027-06-10",
+          "mode": "rail",
+          "fare": 42.75,
+          "note": "The fictional visit included a review of the step-free entrance."
+        }
+      },
+      "restored": {
+        "status": "Draft saved.",
+        "total": "Saved reimbursement total: GBP 42.75",
+        "busy": "false",
+        "invalid": 0,
+        "values": {
+          "employee": "Alex Fictional",
+          "purpose": "Review the fictional community library accessibility plan.",
+          "date": "2027-06-10",
+          "mode": "rail",
+          "fare": 42.75,
+          "note": "The fictional visit included a review of the step-free entrance."
+        }
+      },
+      "checks": {
+        "process": true,
+        "serverValues": true,
+        "serverTotal": true,
+        "settled": true,
+        "zeroSubmits": true,
+        "visibleSaved": true,
+        "restored": true
+      },
+      "passed": true,
+      "finalText": "The fictional travel reimbursement is saved as a **draft**. I verified the selected mode is Rail and that the employee, purpose, date, \u00a342.75 fare, and additional explanation match the supplied source. The page shows **\u201cDraft saved\u201d** and a saved reimbursement total of **GBP 42.75**, which matches the page\u2019s rail fare rule.\n\nNo supplied facts are missing or unsupported. I did not submit the draft or navigate away.",
+      "promptHash": "659a8e83d763e54026c323a04abd1426e201273bb1ae981660c73843c9851eef",
+      "sourceHash": "bb62f1bf547d8288ab53ecce384c385460a43c1fab0a4a2655e09cf4ecf4616a"
+    },
+    {
+      "rep": 0,
+      "name": "rail",
+      "mode": "bindings",
+      "setupMs": 897.7688749999943,
+      "totalMs": 46730.946416000006,
+      "toolCount": 4,
+      "toolsHash": "af880878093a35388f953c93f3149873843f9486badcf23dd88d26e71a25b1c5",
+      "sourceCoverage": {
+        "coverage": {
+          "scope": "Visible enabled required fields only; hidden steps and server acceptance are not covered.",
+          "limitations": {
+            "requiredness": "Native required and aria-required only; visual-only markers may be missed.",
+            "iframes": 0,
+            "shadowRoots": false
+          },
+          "requiredUnits": 5,
+          "verifiedRequiredUnits": 5,
+          "unresolvedRequired": [],
+          "visibleRequiredCovered": true,
+          "unsupported": []
+        },
+        "bindings": [
+          {
+            "ref": "f1",
+            "sourceId": "s1",
+            "sourceLabel": "\u5458\u5de5",
+            "targetGroup": ""
+          },
+          {
+            "ref": "f2",
+            "sourceId": "s2",
+            "sourceLabel": "\u4e8b\u7531",
+            "targetGroup": ""
+          },
+          {
+            "ref": "f3",
+            "sourceId": "s3",
+            "sourceLabel": "\u51fa\u884c\u65e5\u671f",
+            "targetGroup": ""
+          },
+          {
+            "ref": "f4",
+            "sourceId": "s4",
+            "sourceLabel": "\u4ea4\u901a\u65b9\u5f0f",
+            "targetGroup": "Travel mode"
+          },
+          {
+            "ref": "f7",
+            "sourceId": "s5",
+            "sourceLabel": "\u706b\u8f66\u7968\u91d1\u989d\uff08\u82f1\u9551\uff09",
+            "targetGroup": ""
+          },
+          {
+            "ref": "f6",
+            "sourceId": "s6",
+            "sourceLabel": "\u8865\u5145\u8bf4\u660e",
+            "targetGroup": ""
+          }
+        ]
+      },
+      "elapsedMs": 45688.65275000001,
+      "exitCode": 0,
+      "timedOut": false,
+      "toolCalls": [
+        {
+          "tool": "list_mcp_resources",
+          "status": "completed",
+          "startMs": 7347.147207999995,
+          "endMs": 7683.242832999997,
+          "durationMs": 336.09562500000175,
+          "returnedBytes": 30179
+        },
+        {
+          "tool": "form_apply_bindings",
+          "status": "completed",
+          "startMs": 12842.643749999988,
+          "endMs": 19985.489415999997,
+          "durationMs": 7142.845666000008,
+          "returnedBytes": 3874,
+          "executionMs": 458.8727080000099,
+          "complete": false,
+          "reason": "FORM_CHANGED_AFTER_WAIT",
+          "primitiveCalls": 2
+        },
+        {
+          "tool": "form_apply_bindings",
+          "status": "completed",
+          "startMs": 24431.59383299999,
+          "endMs": 33414.62933299999,
+          "durationMs": 8983.035499999998,
+          "returnedBytes": 4612,
+          "executionMs": 1516.7069170000032,
+          "complete": true,
+          "primitiveCalls": 3
+        }
+      ],
+      "usage": {
+        "input_tokens": 143536,
+        "cached_input_tokens": 107008,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 418,
+        "reasoning_output_tokens": 48
+      },
+      "actual": {
+        "draft": {
+          "mode": "rail",
+          "employee": "Alex Fictional",
+          "purpose": "Review the fictional community library accessibility plan.",
+          "date": "2027-06-10",
+          "fare": 42.75,
+          "note": "The fictional visit included a review of the step-free entrance."
+        },
+        "totalPence": 4275,
+        "saves": 6,
+        "inFlight": 0,
+        "submissions": 0,
+        "events": [
+          {
+            "mode": "rail",
+            "keys": [
+              "mode"
+            ]
+          },
+          {
+            "mode": "rail",
+            "keys": [
+              "mode",
+              "employee"
+            ]
+          },
+          {
+            "mode": "rail",
+            "keys": [
+              "mode",
+              "employee",
+              "purpose"
+            ]
+          },
+          {
+            "mode": "rail",
+            "keys": [
+              "mode",
+              "employee",
+              "purpose",
+              "date"
+            ]
+          },
+          {
+            "mode": "rail",
+            "keys": [
+              "mode",
+              "employee",
+              "purpose",
+              "date",
+              "fare"
+            ]
+          },
+          {
+            "mode": "rail",
+            "keys": [
+              "mode",
+              "employee",
+              "purpose",
+              "date",
+              "fare",
+              "note"
+            ]
+          }
+        ]
+      },
+      "visible": {
+        "status": "Draft saved.",
+        "total": "Saved reimbursement total: GBP 42.75",
+        "busy": "false",
+        "invalid": 0,
+        "values": {
+          "employee": "Alex Fictional",
+          "purpose": "Review the fictional community library accessibility plan.",
+          "date": "2027-06-10",
+          "mode": "rail",
+          "fare": 42.75,
+          "note": "The fictional visit included a review of the step-free entrance."
+        }
+      },
+      "restored": {
+        "status": "Draft saved.",
+        "total": "Saved reimbursement total: GBP 42.75",
+        "busy": "false",
+        "invalid": 0,
+        "values": {
+          "employee": "Alex Fictional",
+          "purpose": "Review the fictional community library accessibility plan.",
+          "date": "2027-06-10",
+          "mode": "rail",
+          "fare": 42.75,
+          "note": "The fictional visit included a review of the step-free entrance."
+        }
+      },
+      "checks": {
+        "process": true,
+        "serverValues": true,
+        "serverTotal": true,
+        "settled": true,
+        "zeroSubmits": true,
+        "visibleSaved": true,
+        "restored": true
+      },
+      "passed": true,
+      "finalText": "The fictional travel reimbursement draft is saved and remains unsubmitted. All supplied passages and values are visible, including the selected **Rail** mode and GBP 42.75 fare. The page shows \u201cDraft saved\u201d and a saved reimbursement total of **GBP 42.75**, matching its rail fare rule. No required fields are missing, and no supplied facts were unsupported.",
+      "promptHash": "659a8e83d763e54026c323a04abd1426e201273bb1ae981660c73843c9851eef",
+      "sourceHash": "bb62f1bf547d8288ab53ecce384c385460a43c1fab0a4a2655e09cf4ecf4616a"
+    },
+    {
+      "rep": 0,
+      "name": "car",
+      "mode": "bindings",
+      "setupMs": 923.3581249999988,
+      "totalMs": 43791.23304200001,
+      "toolCount": 4,
+      "toolsHash": "fcc4377e97010603aacb782505a13918f196bd4d3a5edbf490c48d20e638a73b",
+      "sourceCoverage": {
+        "coverage": {
+          "scope": "Visible enabled required fields only; hidden steps and server acceptance are not covered.",
+          "limitations": {
+            "requiredness": "Native required and aria-required only; visual-only markers may be missed.",
+            "iframes": 0,
+            "shadowRoots": false
+          },
+          "requiredUnits": 7,
+          "verifiedRequiredUnits": 7,
+          "unresolvedRequired": [],
+          "visibleRequiredCovered": true,
+          "unsupported": []
+        },
+        "bindings": [
+          {
+            "ref": "f1",
+            "sourceId": "s1",
+            "sourceLabel": "\u5458\u5de5",
+            "targetGroup": ""
+          },
+          {
+            "ref": "f2",
+            "sourceId": "s2",
+            "sourceLabel": "\u4e8b\u7531",
+            "targetGroup": ""
+          },
+          {
+            "ref": "f3",
+            "sourceId": "s3",
+            "sourceLabel": "\u51fa\u884c\u65e5\u671f",
+            "targetGroup": ""
+          },
+          {
+            "ref": "f5",
+            "sourceId": "s4",
+            "sourceLabel": "\u4ea4\u901a\u65b9\u5f0f",
+            "targetGroup": "Travel mode"
+          },
+          {
+            "ref": "f7",
+            "sourceId": "s5",
+            "sourceLabel": "\u91cc\u7a0b\uff08\u516c\u91cc\uff09",
+            "targetGroup": ""
+          },
+          {
+            "ref": "f8",
+            "sourceId": "s6",
+            "sourceLabel": "\u8f66\u724c",
+            "targetGroup": ""
+          },
+          {
+            "ref": "f9",
+            "sourceId": "s7",
+            "sourceLabel": "\u505c\u8f66\u8d39\uff08\u82f1\u9551\uff09",
+            "targetGroup": ""
+          },
+          {
+            "ref": "f6",
+            "sourceId": "s8",
+            "sourceLabel": "\u8865\u5145\u8bf4\u660e",
+            "targetGroup": ""
+          }
+        ]
+      },
+      "elapsedMs": 42733.62849999999,
+      "exitCode": 0,
+      "timedOut": false,
+      "toolCalls": [
+        {
+          "tool": "form_apply_bindings",
+          "status": "completed",
+          "startMs": 16573.85158300001,
+          "endMs": 22684.236458,
+          "durationMs": 6110.384874999989,
+          "returnedBytes": 4460,
+          "executionMs": 437.8037079999922,
+          "complete": false,
+          "reason": "FORM_CHANGED_AFTER_WAIT",
+          "primitiveCalls": 2
+        },
+        {
+          "tool": "form_apply_bindings",
+          "status": "completed",
+          "startMs": 28346.491750000016,
+          "endMs": 35360.53483300001,
+          "durationMs": 7014.043082999997,
+          "returnedBytes": 5416,
+          "executionMs": 2050.287250000023,
+          "complete": true,
+          "primitiveCalls": 3
+        }
+      ],
+      "usage": {
+        "input_tokens": 110094,
+        "cached_input_tokens": 89728,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 425,
+        "reasoning_output_tokens": 38
+      },
+      "actual": {
+        "draft": {
+          "mode": "car",
+          "employee": "Morgan Fictional",
+          "purpose": "Visit the fictional campus archive for an accessibility review.",
+          "date": "2027-06-12",
+          "kilometres": 86.5,
+          "registration": "EXAMPLE-42",
+          "parking": 7.2,
+          "note": "The fictional archive visit required transporting a portable scanner."
+        },
+        "totalPence": 5045,
+        "saves": 8,
+        "inFlight": 0,
+        "submissions": 0,
+        "events": [
+          {
+            "mode": "car",
+            "keys": [
+              "mode"
+            ]
+          },
+          {
+            "mode": "car",
+            "keys": [
+              "mode",
+              "employee"
+            ]
+          },
+          {
+            "mode": "car",
+            "keys": [
+              "mode",
+              "employee",
+              "purpose"
+            ]
+          },
+          {
+            "mode": "car",
+            "keys": [
+              "mode",
+              "employee",
+              "purpose",
+              "date"
+            ]
+          },
+          {
+            "mode": "car",
+            "keys": [
+              "mode",
+              "employee",
+              "purpose",
+              "date",
+              "kilometres"
+            ]
+          },
+          {
+            "mode": "car",
+            "keys": [
+              "mode",
+              "employee",
+              "purpose",
+              "date",
+              "kilometres",
+              "registration"
+            ]
+          },
+          {
+            "mode": "car",
+            "keys": [
+              "mode",
+              "employee",
+              "purpose",
+              "date",
+              "kilometres",
+              "registration",
+              "parking"
+            ]
+          },
+          {
+            "mode": "car",
+            "keys": [
+              "mode",
+              "employee",
+              "purpose",
+              "date",
+              "kilometres",
+              "registration",
+              "parking",
+              "note"
+            ]
+          }
+        ]
+      },
+      "visible": {
+        "status": "Draft saved.",
+        "total": "Saved reimbursement total: GBP 50.45",
+        "busy": "false",
+        "invalid": 0,
+        "values": {
+          "employee": "Morgan Fictional",
+          "purpose": "Visit the fictional campus archive for an accessibility review.",
+          "date": "2027-06-12",
+          "mode": "car",
+          "kilometres": 86.5,
+          "registration": "EXAMPLE-42",
+          "parking": 7.2,
+          "note": "The fictional archive visit required transporting a portable scanner."
+        }
+      },
+      "restored": {
+        "status": "Draft saved.",
+        "total": "Saved reimbursement total: GBP 50.45",
+        "busy": "false",
+        "invalid": 0,
+        "values": {
+          "employee": "Morgan Fictional",
+          "purpose": "Visit the fictional campus archive for an accessibility review.",
+          "date": "2027-06-12",
+          "mode": "car",
+          "kilometres": 86.5,
+          "registration": "EXAMPLE-42",
+          "parking": 7.2,
+          "note": "The fictional archive visit required transporting a portable scanner."
+        }
+      },
+      "checks": {
+        "process": true,
+        "serverValues": true,
+        "serverTotal": true,
+        "settled": true,
+        "zeroSubmits": true,
+        "visibleSaved": true,
+        "restored": true
+      },
+      "passed": true,
+      "finalText": "The reimbursement is saved as a draft. All supplied passages are present, **Personal car** is selected, and no required fields remain.\n\nThe page shows **\u201cDraft saved\u201d** and a saved total of **GBP 50.45**: 86.5 km \u00d7 GBP 0.50 + GBP 7.20 parking. There are no missing or unsupported facts.",
+      "promptHash": "659a8e83d763e54026c323a04abd1426e201273bb1ae981660c73843c9851eef",
+      "sourceHash": "f1e6d6e35e64eaa588cba45a47a406c507658d3ae4b97acecc7b6461711cc38d"
+    },
+    {
+      "rep": 0,
+      "name": "car",
+      "mode": "official",
+      "setupMs": 3073.5356249999895,
+      "totalMs": 118183.368666,
+      "toolCount": 25,
+      "toolsHash": "35d124495e09afc55c8618e7c2aab0449c605daa1c919475905c1fa5ed9729b4",
+      "sourceCoverage": null,
+      "elapsedMs": 115001.80729099998,
+      "exitCode": 0,
+      "timedOut": false,
+      "toolCalls": [
+        {
+          "tool": "browser_run_code_unsafe",
+          "status": "failed",
+          "startMs": 15363.395665999997,
+          "endMs": 53526.324250000005,
+          "durationMs": 38162.92858400001,
+          "returnedBytes": 1554
+        },
+        {
+          "tool": "browser_run_code_unsafe",
+          "status": "completed",
+          "startMs": 57382.071958000015,
+          "endMs": 64319.84525000001,
+          "durationMs": 6937.773291999998,
+          "returnedBytes": 2425
+        },
+        {
+          "tool": "browser_run_code_unsafe",
+          "status": "failed",
+          "startMs": 71470.85033300001,
+          "endMs": 89926.381,
+          "durationMs": 18455.530666999985,
+          "returnedBytes": 163
+        },
+        {
+          "tool": "browser_snapshot",
+          "status": "completed",
+          "startMs": 91556.81829099997,
+          "endMs": 91580.37337500002,
+          "durationMs": 23.555084000050556,
+          "returnedBytes": 2324
+        },
+        {
+          "tool": "browser_run_code_unsafe",
+          "status": "completed",
+          "startMs": 99424.25141600001,
+          "endMs": 108228.57829099998,
+          "durationMs": 8804.32687499997,
+          "returnedBytes": 1498
+        }
+      ],
+      "usage": {
+        "input_tokens": 172725,
+        "cached_input_tokens": 155008,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 1306,
+        "reasoning_output_tokens": 108
+      },
+      "actual": {
+        "draft": {
+          "mode": "car",
+          "employee": "Morgan Fictional",
+          "purpose": "Visit the fictional campus archive for an accessibility review.",
+          "date": "2027-06-12",
+          "kilometres": 86.5,
+          "registration": "EXAMPLE-42",
+          "parking": 7.2,
+          "note": "The fictional archive visit required transporting a portable scanner."
+        },
+        "totalPence": 5045,
+        "saves": 8,
+        "inFlight": 0,
+        "submissions": 0,
+        "events": [
+          {
+            "mode": "car",
+            "keys": [
+              "mode"
+            ]
+          },
+          {
+            "mode": "car",
+            "keys": [
+              "mode",
+              "employee"
+            ]
+          },
+          {
+            "mode": "car",
+            "keys": [
+              "mode",
+              "employee",
+              "purpose"
+            ]
+          },
+          {
+            "mode": "car",
+            "keys": [
+              "mode",
+              "employee",
+              "purpose",
+              "date"
+            ]
+          },
+          {
+            "mode": "car",
+            "keys": [
+              "mode",
+              "employee",
+              "purpose",
+              "date",
+              "kilometres"
+            ]
+          },
+          {
+            "mode": "car",
+            "keys": [
+              "mode",
+              "employee",
+              "purpose",
+              "date",
+              "kilometres",
+              "registration"
+            ]
+          },
+          {
+            "mode": "car",
+            "keys": [
+              "mode",
+              "employee",
+              "purpose",
+              "date",
+              "kilometres",
+              "registration",
+              "parking"
+            ]
+          },
+          {
+            "mode": "car",
+            "keys": [
+              "mode",
+              "employee",
+              "purpose",
+              "date",
+              "kilometres",
+              "registration",
+              "parking",
+              "note"
+            ]
+          }
+        ]
+      },
+      "visible": {
+        "status": "Draft saved.",
+        "total": "Saved reimbursement total: GBP 50.45",
+        "busy": "false",
+        "invalid": 0,
+        "values": {
+          "employee": "Morgan Fictional",
+          "purpose": "Visit the fictional campus archive for an accessibility review.",
+          "date": "2027-06-12",
+          "mode": "car",
+          "kilometres": 86.5,
+          "registration": "EXAMPLE-42",
+          "parking": 7.2,
+          "note": "The fictional archive visit required transporting a portable scanner."
+        }
+      },
+      "restored": {
+        "status": "Draft saved.",
+        "total": "Saved reimbursement total: GBP 50.45",
+        "busy": "false",
+        "invalid": 0,
+        "values": {
+          "employee": "Morgan Fictional",
+          "purpose": "Visit the fictional campus archive for an accessibility review.",
+          "date": "2027-06-12",
+          "mode": "car",
+          "kilometres": 86.5,
+          "registration": "EXAMPLE-42",
+          "parking": 7.2,
+          "note": "The fictional archive visit required transporting a portable scanner."
+        }
+      },
+      "checks": {
+        "process": true,
+        "serverValues": true,
+        "serverTotal": true,
+        "settled": true,
+        "zeroSubmits": true,
+        "visibleSaved": true,
+        "restored": true
+      },
+      "passed": true,
+      "finalText": "The fictional travel reimbursement is saved as a **draft**. I selected **Personal car** and verified all supplied values on the page. The saved total is **GBP 50.45**: 86.5 km \u00d7 GBP 0.50, plus GBP 7.20 parking.\n\nNo required facts are missing. I did not submit the draft.",
+      "promptHash": "659a8e83d763e54026c323a04abd1426e201273bb1ae981660c73843c9851eef",
+      "sourceHash": "f1e6d6e35e64eaa588cba45a47a406c507658d3ae4b97acecc7b6461711cc38d"
+    },
+    {
+      "rep": 1,
+      "name": "rail",
+      "mode": "bindings",
+      "setupMs": 874.0728339999914,
+      "totalMs": 34949.65341700002,
+      "toolCount": 4,
+      "toolsHash": "00b9d4887fd83fbb9e76e2f97f67529beaa1e3af12e74f244526c05dfcf6d58d",
+      "sourceCoverage": {
+        "coverage": {
+          "scope": "Visible enabled required fields only; hidden steps and server acceptance are not covered.",
+          "limitations": {
+            "requiredness": "Native required and aria-required only; visual-only markers may be missed.",
+            "iframes": 0,
+            "shadowRoots": false
+          },
+          "requiredUnits": 5,
+          "verifiedRequiredUnits": 5,
+          "unresolvedRequired": [],
+          "visibleRequiredCovered": true,
+          "unsupported": []
+        },
+        "bindings": [
+          {
+            "ref": "f1",
+            "sourceId": "s1",
+            "sourceLabel": "\u5458\u5de5",
+            "targetGroup": ""
+          },
+          {
+            "ref": "f2",
+            "sourceId": "s2",
+            "sourceLabel": "\u4e8b\u7531",
+            "targetGroup": ""
+          },
+          {
+            "ref": "f3",
+            "sourceId": "s3",
+            "sourceLabel": "\u51fa\u884c\u65e5\u671f",
+            "targetGroup": ""
+          },
+          {
+            "ref": "f4",
+            "sourceId": "s4",
+            "sourceLabel": "\u4ea4\u901a\u65b9\u5f0f",
+            "targetGroup": "Travel mode"
+          },
+          {
+            "ref": "f7",
+            "sourceId": "s5",
+            "sourceLabel": "\u706b\u8f66\u7968\u91d1\u989d\uff08\u82f1\u9551\uff09",
+            "targetGroup": ""
+          },
+          {
+            "ref": "f6",
+            "sourceId": "s6",
+            "sourceLabel": "\u8865\u5145\u8bf4\u660e",
+            "targetGroup": ""
+          }
+        ]
+      },
+      "elapsedMs": 33974.33066699997,
+      "exitCode": 0,
+      "timedOut": false,
+      "toolCalls": [
+        {
+          "tool": "form_apply_bindings",
+          "status": "completed",
+          "startMs": 12083.750166999991,
+          "endMs": 19068.872999999963,
+          "durationMs": 6985.122832999972,
+          "returnedBytes": 5024,
+          "executionMs": 1246.2099160000216,
+          "complete": false,
+          "reason": "FORM_CHANGED_AFTER_WAIT",
+          "primitiveCalls": 2
+        },
+        {
+          "tool": "form_apply_bindings",
+          "status": "completed",
+          "startMs": 22850.35924999998,
+          "endMs": 26342.121249999967,
+          "durationMs": 3491.761999999988,
+          "returnedBytes": 4578,
+          "executionMs": 720.1962500000373,
+          "complete": true,
+          "primitiveCalls": 3
+        }
+      ],
+      "usage": {
+        "input_tokens": 75261,
+        "cached_input_tokens": 53504,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 480,
+        "reasoning_output_tokens": 101
+      },
+      "actual": {
+        "draft": {
+          "employee": "Alex Fictional",
+          "purpose": "Review the fictional community library accessibility plan.",
+          "date": "2027-06-10",
+          "mode": "rail",
+          "fare": 42.75,
+          "note": "The fictional visit included a review of the step-free entrance."
+        },
+        "totalPence": 4275,
+        "saves": 6,
+        "inFlight": 0,
+        "submissions": 0,
+        "events": [
+          {
+            "keys": [
+              "employee"
+            ]
+          },
+          {
+            "keys": [
+              "employee",
+              "purpose"
+            ]
+          },
+          {
+            "keys": [
+              "employee",
+              "purpose",
+              "date"
+            ]
+          },
+          {
+            "mode": "rail",
+            "keys": [
+              "employee",
+              "purpose",
+              "date",
+              "mode"
+            ]
+          },
+          {
+            "mode": "rail",
+            "keys": [
+              "employee",
+              "purpose",
+              "date",
+              "mode",
+              "fare"
+            ]
+          },
+          {
+            "mode": "rail",
+            "keys": [
+              "employee",
+              "purpose",
+              "date",
+              "mode",
+              "fare",
+              "note"
+            ]
+          }
+        ]
+      },
+      "visible": {
+        "status": "Draft saved.",
+        "total": "Saved reimbursement total: GBP 42.75",
+        "busy": "false",
+        "invalid": 0,
+        "values": {
+          "employee": "Alex Fictional",
+          "purpose": "Review the fictional community library accessibility plan.",
+          "date": "2027-06-10",
+          "mode": "rail",
+          "fare": 42.75,
+          "note": "The fictional visit included a review of the step-free entrance."
+        }
+      },
+      "restored": {
+        "status": "Draft saved.",
+        "total": "Saved reimbursement total: GBP 42.75",
+        "busy": "false",
+        "invalid": 0,
+        "values": {
+          "employee": "Alex Fictional",
+          "purpose": "Review the fictional community library accessibility plan.",
+          "date": "2027-06-10",
+          "mode": "rail",
+          "fare": 42.75,
+          "note": "The fictional visit included a review of the step-free entrance."
+        }
+      },
+      "checks": {
+        "process": true,
+        "serverValues": true,
+        "serverTotal": true,
+        "settled": true,
+        "zeroSubmits": true,
+        "visibleSaved": true,
+        "restored": true
+      },
+      "passed": true,
+      "finalText": "The reimbursement is saved as a draft. I verified all supplied values, including **Rail** as the travel mode and the **GBP 42.75** fare. The page shows \u201cDraft saved\u201d and a saved reimbursement total of **GBP 42.75**, matching the stated rail reimbursement rate.\n\nNo required fields remain, and no supplied facts were unsupported or missing. I did not submit the draft or navigate away.",
+      "promptHash": "659a8e83d763e54026c323a04abd1426e201273bb1ae981660c73843c9851eef",
+      "sourceHash": "bb62f1bf547d8288ab53ecce384c385460a43c1fab0a4a2655e09cf4ecf4616a"
+    },
+    {
+      "rep": 1,
+      "name": "rail",
+      "mode": "official",
+      "setupMs": 3032.708875000011,
+      "totalMs": 129437.53625,
+      "toolCount": 25,
+      "toolsHash": "42a8bf84a5a60b60b0777d247753c67f67cd4ef45f13a198cad8edd4cf7157dc",
+      "sourceCoverage": null,
+      "elapsedMs": 126297.352083,
+      "exitCode": 0,
+      "timedOut": false,
+      "toolCalls": [
+        {
+          "tool": "browser_run_code_unsafe",
+          "status": "failed",
+          "startMs": 13358.458875000011,
+          "endMs": 48590.18304100004,
+          "durationMs": 35231.72416600003,
+          "returnedBytes": 1547
+        },
+        {
+          "tool": "browser_run_code_unsafe",
+          "status": "completed",
+          "startMs": 52531.46179100004,
+          "endMs": 58549.597750000015,
+          "durationMs": 6018.135958999977,
+          "returnedBytes": 563
+        },
+        {
+          "tool": "browser_run_code_unsafe",
+          "status": "failed",
+          "startMs": 65112.891,
+          "endMs": 102845.91516600002,
+          "durationMs": 37733.02416600002,
+          "returnedBytes": 140
+        },
+        {
+          "tool": "browser_snapshot",
+          "status": "completed",
+          "startMs": 104662.55595800001,
+          "endMs": 104684.48450000002,
+          "durationMs": 21.928542000008747,
+          "returnedBytes": 1991
+        },
+        {
+          "tool": "browser_run_code_unsafe",
+          "status": "completed",
+          "startMs": 112656.25754100003,
+          "endMs": 120601.26795800001,
+          "durationMs": 7945.010416999983,
+          "returnedBytes": 893
+        }
+      ],
+      "usage": {
+        "input_tokens": 190768,
+        "cached_input_tokens": 166016,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 1397,
+        "reasoning_output_tokens": 104
+      },
+      "actual": {
+        "draft": {
+          "mode": "rail",
+          "employee": "Alex Fictional",
+          "purpose": "Review the fictional community library accessibility plan.",
+          "date": "2027-06-10",
+          "fare": 42.75,
+          "note": "The fictional visit included a review of the step-free entrance."
+        },
+        "totalPence": 4275,
+        "saves": 6,
+        "inFlight": 0,
+        "submissions": 0,
+        "events": [
+          {
+            "mode": "rail",
+            "keys": [
+              "mode"
+            ]
+          },
+          {
+            "mode": "rail",
+            "keys": [
+              "mode",
+              "employee"
+            ]
+          },
+          {
+            "mode": "rail",
+            "keys": [
+              "mode",
+              "employee",
+              "purpose"
+            ]
+          },
+          {
+            "mode": "rail",
+            "keys": [
+              "mode",
+              "employee",
+              "purpose",
+              "date"
+            ]
+          },
+          {
+            "mode": "rail",
+            "keys": [
+              "mode",
+              "employee",
+              "purpose",
+              "date",
+              "fare"
+            ]
+          },
+          {
+            "mode": "rail",
+            "keys": [
+              "mode",
+              "employee",
+              "purpose",
+              "date",
+              "fare",
+              "note"
+            ]
+          }
+        ]
+      },
+      "visible": {
+        "status": "Draft saved.",
+        "total": "Saved reimbursement total: GBP 42.75",
+        "busy": "false",
+        "invalid": 0,
+        "values": {
+          "employee": "Alex Fictional",
+          "purpose": "Review the fictional community library accessibility plan.",
+          "date": "2027-06-10",
+          "mode": "rail",
+          "fare": 42.75,
+          "note": "The fictional visit included a review of the step-free entrance."
+        }
+      },
+      "restored": {
+        "status": "Draft saved.",
+        "total": "Saved reimbursement total: GBP 42.75",
+        "busy": "false",
+        "invalid": 0,
+        "values": {
+          "employee": "Alex Fictional",
+          "purpose": "Review the fictional community library accessibility plan.",
+          "date": "2027-06-10",
+          "mode": "rail",
+          "fare": 42.75,
+          "note": "The fictional visit included a review of the step-free entrance."
+        }
+      },
+      "checks": {
+        "process": true,
+        "serverValues": true,
+        "serverTotal": true,
+        "settled": true,
+        "zeroSubmits": true,
+        "visibleSaved": true,
+        "restored": true
+      },
+      "passed": true,
+      "finalText": "The fictional travel reimbursement is saved as a **draft** with Rail selected. I verified every supplied value on the form, including both passages, and the page shows **\u201cDraft saved\u201d** and a saved reimbursement total of **GBP 42.75**. That matches the page\u2019s Rail rule: reimbursement equals the \u00a342.75 fare.\n\nAll required fields are filled. No supplied facts were missing or unsupported. The draft was not submitted.",
+      "promptHash": "659a8e83d763e54026c323a04abd1426e201273bb1ae981660c73843c9851eef",
+      "sourceHash": "bb62f1bf547d8288ab53ecce384c385460a43c1fab0a4a2655e09cf4ecf4616a"
+    },
+    {
+      "rep": 1,
+      "name": "car",
+      "mode": "official",
+      "setupMs": 3007.5009999999893,
+      "totalMs": 91760.340875,
+      "toolCount": 25,
+      "toolsHash": "3fafe559311147e09483edbaf7532a3f0bfd06f821ecb169496f9fe123de8f96",
+      "sourceCoverage": null,
+      "elapsedMs": 88620.78891699994,
+      "exitCode": 0,
+      "timedOut": false,
+      "toolCalls": [
+        {
+          "tool": "browser_run_code_unsafe",
+          "status": "failed",
+          "startMs": 17154.430667000008,
+          "endMs": 51824.22220900003,
+          "durationMs": 34669.79154200002,
+          "returnedBytes": 1554
+        },
+        {
+          "tool": "browser_run_code_unsafe",
+          "status": "completed",
+          "startMs": 57011.86254200002,
+          "endMs": 64906.07954199996,
+          "durationMs": 7894.216999999946,
+          "returnedBytes": 1714
+        },
+        {
+          "tool": "browser_run_code_unsafe",
+          "status": "completed",
+          "startMs": 72512.28083399998,
+          "endMs": 83112.51112499996,
+          "durationMs": 10600.230290999985,
+          "returnedBytes": 3264
+        }
+      ],
+      "usage": {
+        "input_tokens": 125295,
+        "cached_input_tokens": 108928,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 1243,
+        "reasoning_output_tokens": 132
+      },
+      "actual": {
+        "draft": {
+          "mode": "car",
+          "employee": "Morgan Fictional",
+          "purpose": "Visit the fictional campus archive for an accessibility review.",
+          "date": "2027-06-12",
+          "kilometres": 86.5,
+          "registration": "EXAMPLE-42",
+          "parking": 7.2,
+          "note": "The fictional archive visit required transporting a portable scanner."
+        },
+        "totalPence": 5045,
+        "saves": 8,
+        "inFlight": 0,
+        "submissions": 0,
+        "events": [
+          {
+            "mode": "car",
+            "keys": [
+              "mode"
+            ]
+          },
+          {
+            "mode": "car",
+            "keys": [
+              "mode",
+              "employee"
+            ]
+          },
+          {
+            "mode": "car",
+            "keys": [
+              "mode",
+              "employee",
+              "purpose"
+            ]
+          },
+          {
+            "mode": "car",
+            "keys": [
+              "mode",
+              "employee",
+              "purpose",
+              "date"
+            ]
+          },
+          {
+            "mode": "car",
+            "keys": [
+              "mode",
+              "employee",
+              "purpose",
+              "date",
+              "kilometres"
+            ]
+          },
+          {
+            "mode": "car",
+            "keys": [
+              "mode",
+              "employee",
+              "purpose",
+              "date",
+              "kilometres",
+              "registration"
+            ]
+          },
+          {
+            "mode": "car",
+            "keys": [
+              "mode",
+              "employee",
+              "purpose",
+              "date",
+              "kilometres",
+              "registration",
+              "parking"
+            ]
+          },
+          {
+            "mode": "car",
+            "keys": [
+              "mode",
+              "employee",
+              "purpose",
+              "date",
+              "kilometres",
+              "registration",
+              "parking",
+              "note"
+            ]
+          }
+        ]
+      },
+      "visible": {
+        "status": "Draft saved.",
+        "total": "Saved reimbursement total: GBP 50.45",
+        "busy": "false",
+        "invalid": 0,
+        "values": {
+          "employee": "Morgan Fictional",
+          "purpose": "Visit the fictional campus archive for an accessibility review.",
+          "date": "2027-06-12",
+          "mode": "car",
+          "kilometres": 86.5,
+          "registration": "EXAMPLE-42",
+          "parking": 7.2,
+          "note": "The fictional archive visit required transporting a portable scanner."
+        }
+      },
+      "restored": {
+        "status": "Draft saved.",
+        "total": "Saved reimbursement total: GBP 50.45",
+        "busy": "false",
+        "invalid": 0,
+        "values": {
+          "employee": "Morgan Fictional",
+          "purpose": "Visit the fictional campus archive for an accessibility review.",
+          "date": "2027-06-12",
+          "mode": "car",
+          "kilometres": 86.5,
+          "registration": "EXAMPLE-42",
+          "parking": 7.2,
+          "note": "The fictional archive visit required transporting a portable scanner."
+        }
+      },
+      "checks": {
+        "process": true,
+        "serverValues": true,
+        "serverTotal": true,
+        "settled": true,
+        "zeroSubmits": true,
+        "visibleSaved": true,
+        "restored": true
+      },
+      "passed": true,
+      "finalText": "The reimbursement is saved as a draft with **Personal car** selected. All supplied passages and values are visible in their fields, including 86.5 km and GBP 7.20 parking. The page shows **Draft saved** and a saved total of **GBP 50.45** (86.5 \u00d7 GBP 0.50 + GBP 7.20).\n\nNo supplied facts were missing or unsupported. The draft was not submitted.",
+      "promptHash": "659a8e83d763e54026c323a04abd1426e201273bb1ae981660c73843c9851eef",
+      "sourceHash": "f1e6d6e35e64eaa588cba45a47a406c507658d3ae4b97acecc7b6461711cc38d"
+    },
+    {
+      "rep": 1,
+      "name": "car",
+      "mode": "bindings",
+      "setupMs": 889.8878339999355,
+      "totalMs": 41132.87041699991,
+      "toolCount": 4,
+      "toolsHash": "827cc2c856892074083f2731df40b233ddac484cfc0272cec4fd9f8ff6b3958b",
+      "sourceCoverage": {
+        "coverage": {
+          "scope": "Visible enabled required fields only; hidden steps and server acceptance are not covered.",
+          "limitations": {
+            "requiredness": "Native required and aria-required only; visual-only markers may be missed.",
+            "iframes": 0,
+            "shadowRoots": false
+          },
+          "requiredUnits": 7,
+          "verifiedRequiredUnits": 7,
+          "unresolvedRequired": [],
+          "visibleRequiredCovered": true,
+          "unsupported": []
+        },
+        "bindings": [
+          {
+            "ref": "f1",
+            "sourceId": "s1",
+            "sourceLabel": "\u5458\u5de5",
+            "targetGroup": ""
+          },
+          {
+            "ref": "f2",
+            "sourceId": "s2",
+            "sourceLabel": "\u4e8b\u7531",
+            "targetGroup": ""
+          },
+          {
+            "ref": "f3",
+            "sourceId": "s3",
+            "sourceLabel": "\u51fa\u884c\u65e5\u671f",
+            "targetGroup": ""
+          },
+          {
+            "ref": "f5",
+            "sourceId": "s4",
+            "sourceLabel": "\u4ea4\u901a\u65b9\u5f0f",
+            "targetGroup": "Travel mode"
+          },
+          {
+            "ref": "f7",
+            "sourceId": "s5",
+            "sourceLabel": "\u91cc\u7a0b\uff08\u516c\u91cc\uff09",
+            "targetGroup": ""
+          },
+          {
+            "ref": "f8",
+            "sourceId": "s6",
+            "sourceLabel": "\u8f66\u724c",
+            "targetGroup": ""
+          },
+          {
+            "ref": "f9",
+            "sourceId": "s7",
+            "sourceLabel": "\u505c\u8f66\u8d39\uff08\u82f1\u9551\uff09",
+            "targetGroup": ""
+          },
+          {
+            "ref": "f6",
+            "sourceId": "s8",
+            "sourceLabel": "\u8865\u5145\u8bf4\u660e",
+            "targetGroup": ""
+          }
+        ]
+      },
+      "elapsedMs": 40142.224000000046,
+      "exitCode": 0,
+      "timedOut": false,
+      "toolCalls": [
+        {
+          "tool": "list_mcp_resources",
+          "status": "completed",
+          "startMs": 8501.55695800006,
+          "endMs": 8903.49904200004,
+          "durationMs": 401.94208399998024,
+          "returnedBytes": 30179
+        },
+        {
+          "tool": "form_apply_bindings",
+          "status": "completed",
+          "startMs": 17263.221541999956,
+          "endMs": 22638.365417000023,
+          "durationMs": 5375.143875000067,
+          "returnedBytes": 4461,
+          "executionMs": 410.92225000006147,
+          "complete": false,
+          "reason": "FORM_CHANGED_AFTER_WAIT",
+          "primitiveCalls": 2
+        },
+        {
+          "tool": "form_apply_bindings",
+          "status": "completed",
+          "startMs": 26990.808667000034,
+          "endMs": 32335.92512499995,
+          "durationMs": 5345.116457999917,
+          "returnedBytes": 5416,
+          "executionMs": 2075.944125000038,
+          "complete": true,
+          "primitiveCalls": 3
+        }
+      ],
+      "usage": {
+        "input_tokens": 158761,
+        "cached_input_tokens": 133632,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 547,
+        "reasoning_output_tokens": 91
+      },
+      "actual": {
+        "draft": {
+          "mode": "car",
+          "employee": "Morgan Fictional",
+          "purpose": "Visit the fictional campus archive for an accessibility review.",
+          "date": "2027-06-12",
+          "kilometres": 86.5,
+          "registration": "EXAMPLE-42",
+          "parking": 7.2,
+          "note": "The fictional archive visit required transporting a portable scanner."
+        },
+        "totalPence": 5045,
+        "saves": 8,
+        "inFlight": 0,
+        "submissions": 0,
+        "events": [
+          {
+            "mode": "car",
+            "keys": [
+              "mode"
+            ]
+          },
+          {
+            "mode": "car",
+            "keys": [
+              "mode",
+              "employee"
+            ]
+          },
+          {
+            "mode": "car",
+            "keys": [
+              "mode",
+              "employee",
+              "purpose"
+            ]
+          },
+          {
+            "mode": "car",
+            "keys": [
+              "mode",
+              "employee",
+              "purpose",
+              "date"
+            ]
+          },
+          {
+            "mode": "car",
+            "keys": [
+              "mode",
+              "employee",
+              "purpose",
+              "date",
+              "kilometres"
+            ]
+          },
+          {
+            "mode": "car",
+            "keys": [
+              "mode",
+              "employee",
+              "purpose",
+              "date",
+              "kilometres",
+              "registration"
+            ]
+          },
+          {
+            "mode": "car",
+            "keys": [
+              "mode",
+              "employee",
+              "purpose",
+              "date",
+              "kilometres",
+              "registration",
+              "parking"
+            ]
+          },
+          {
+            "mode": "car",
+            "keys": [
+              "mode",
+              "employee",
+              "purpose",
+              "date",
+              "kilometres",
+              "registration",
+              "parking",
+              "note"
+            ]
+          }
+        ]
+      },
+      "visible": {
+        "status": "Draft saved.",
+        "total": "Saved reimbursement total: GBP 50.45",
+        "busy": "false",
+        "invalid": 0,
+        "values": {
+          "employee": "Morgan Fictional",
+          "purpose": "Visit the fictional campus archive for an accessibility review.",
+          "date": "2027-06-12",
+          "mode": "car",
+          "kilometres": 86.5,
+          "registration": "EXAMPLE-42",
+          "parking": 7.2,
+          "note": "The fictional archive visit required transporting a portable scanner."
+        }
+      },
+      "restored": {
+        "status": "Draft saved.",
+        "total": "Saved reimbursement total: GBP 50.45",
+        "busy": "false",
+        "invalid": 0,
+        "values": {
+          "employee": "Morgan Fictional",
+          "purpose": "Visit the fictional campus archive for an accessibility review.",
+          "date": "2027-06-12",
+          "mode": "car",
+          "kilometres": 86.5,
+          "registration": "EXAMPLE-42",
+          "parking": 7.2,
+          "note": "The fictional archive visit required transporting a portable scanner."
+        }
+      },
+      "checks": {
+        "process": true,
+        "serverValues": true,
+        "serverTotal": true,
+        "settled": true,
+        "zeroSubmits": true,
+        "visibleSaved": true,
+        "restored": true
+      },
+      "passed": true,
+      "finalText": "The fictional travel reimbursement is saved as a **draft**. All eight supplied facts are visible in the form, including the selected **Personal car** mode, and no required fields remain.\n\nThe page shows \u201cDraft saved\u201d and a saved reimbursement total of **GBP 50.45**, matching 86.5 km \u00d7 GBP 0.50 plus GBP 7.20 parking. No facts were missing or unsupported. I did not submit or navigate.",
+      "promptHash": "659a8e83d763e54026c323a04abd1426e201273bb1ae981660c73843c9851eef",
+      "sourceHash": "f1e6d6e35e64eaa588cba45a47a406c507658d3ae4b97acecc7b6461711cc38d"
+    }
+  ],
+  "before": {
+    "package-lock.json": "f973bcd48422d9c8519a7efa6f70e417ded075f5596391d70ff3118cacbb646e",
+    "package.json": "dba8dc5cc752fe87a1b0434bb5e9c9e576f356958fcb1fb2b999299e5fc1b304",
+    "prototype/bench/ashby-yesno-state.mjs": "9580855b4eaa0e45767c931ca3eee90ea3c60ac44c6ff82d808aa2c043291e3a",
+    "prototype/bench/codex-expense-comparison.mjs": "95ef55f2fa496bd9641167b265565fe90ab222dc1561a977b665a58a39df7557",
+    "prototype/bench/expense-evidence.mjs": "840cf903cb7e2f71e5e993bfcc85752c5f563b12f93a1619f1c9ae4619b38796",
+    "prototype/bench/expense-server.mjs": "6aec2755b7efea9e58d3fae653bb2ae774b4344e27615dca721d96895687be39",
+    "prototype/bench/form-update-tracker.mjs": "16bb81c7ce7421505092702edbbae8c74468c560e4135c82a0274a30fe29a479",
+    "prototype/bench/host-driver.mjs": "60a33c71bebba9d422a1bffab3ad151bba172e8a58bb04a614951fb3df7cf0b4",
+    "prototype/bench/online-playwright-mcp.mjs": "f55e4c07aabf0af2c237b3f980c72039968e74047f58b7f4dc0930d25a333696",
+    "prototype/bench/playwright-backend.mjs": "89b8932c36eb0463b8113a8a0fee9b519255b89f108013f88180a76fbb93a7d3",
+    "prototype/bench/react-select-state.mjs": "6ff0cf093f2f84fa9c256aa12c782c473b72bee60e4e5378ce3ea0667d65d1cb",
+    "prototype/extension/background.js": "0c9c955b15cc1bcab0074efe9f0cb74e4378124e9949a3dd904f8224e21a6aeb",
+    "prototype/extension/form-runtime.js": "69bd9884f5de20cf61fb35e5706bf975f73789076365ee934003fe56335d025b",
+    "prototype/extension/goal-executor.js": "d71e03cec464f605c78a2c070ff7eb29c6df76b1e49ca8fec3632053146be724",
+    "prototype/extension/plan-executor.js": "0f50d2ffb7ec7ce0787ef8f158015b0d8ebf33019bb53c76f13da0d0bcee03c4",
+    "prototype/extension/popup.js": "07daaf136fa8b36227024e00d1eb26d5b631e3ee6aa374bd008fe9ac23ca4725",
+    "prototype/fixtures/framework-src/expense-form.jsx": "5cac9400220081b420c612a9a3e4ccbb004347a8d3be3d9d98002f1de20d5768",
+    "prototype/src/bindings-mcp.mjs": "1cd1343c4f2b02fb77e09153bbbc3902613754ca42d45f4ded22450ab21413be",
+    "prototype/src/bindings-server.mjs": "503d29f2106415605360676ced08c3c161165fe5cc10bdefaa01f3a30bad4d63",
+    "prototype/src/bridge.mjs": "34e2ec16bbcd1ea21553acdae33e18b3ddde811a0121c5989e1b469936af016e",
+    "prototype/src/browser-bindings-mcp.mjs": "cd326d5d2a8ca6c734407c26883f99decc32ba362c1bef4c9c70e80630b6559d",
+    "prototype/src/browser-companion.mjs": "e738b851568471117bb460b4ae77fe0b4c679c58f2fb591d65b0ef50c7ac72d5",
+    "prototype/src/browser-controller.mjs": "557f66ca4f9328913e5003bae3d20fb56e8b4400ac37c2f9c832651489adbb25",
+    "prototype/src/conditional-choice.mjs": "3a401d78465e247e488f0739ac03f67acf773a8ef9d8fd3e677e1ea9b6d327e9",
+    "prototype/src/context-projection.mjs": "1e2bba84e8d682a0d1b71c88bc9feebde6619b21852728cf7dc90e7e04861c11",
+    "prototype/src/coverage.mjs": "1c0050e16fa42e10fb395b1e5eaa75d04d13487f2fb92fb2696f27e65c9cce0a",
+    "prototype/src/decision-context.mjs": "52eb7ba8bed761216f2fe66e67d5cc5532d562c69e45c9e920340221d2ad7271",
+    "prototype/src/document-session.mjs": "411db55a91cfcd49fb08ebf43185b1b29a76b1b9545a6efd9056c28dfbe359f1",
+    "prototype/src/document-source.mjs": "e6426296ce2890903c9acdea172c93dd4d64c3e1a1b2b735ac83b73608d0a993",
+    "prototype/src/freeze-proxy.mjs": "2ec4b6fc528dd4ecfe7483a7e8202ee5ce6c6f163580e8af7367f356b4a0a2ed",
+    "prototype/src/independent-plan.mjs": "9b097fd86472587c9bb005cacb7f8284a0bbaf34c5bf33bf0b498f879c110bdb",
+    "prototype/src/mcp.mjs": "881d66ceece558cff0b0d7c6e0bbee69a25c553eb352da3143c055287bc3f57b",
+    "prototype/src/network-freeze.mjs": "7969ac0a0e1dc35c3bb6d075e93c9749aa7db7dcdbbac442cb9de9e25f892e93",
+    "prototype/src/pdf-source.py": "3bf55ad81bff7e8c584f165feb388ad2b486148218f4e00c8ce47c2ab3818231",
+    "prototype/src/query-variants.mjs": "f6bf27d2149429e4ea73b9092be67f4ba4647172d8b722ceb975a1d046ce61ce",
+    "prototype/src/receipt-projection.mjs": "2c0a51c363db40a04361aa97cd0fb995c4cdcd44fcdf2010d2cd4d7d2b108023",
+    "prototype/src/source-mcp.mjs": "00f13c76817411e2f977688136c034d1353f79cf1bea680589e64fddb9a5bcb5",
+    "prototype/src/source-quote.mjs": "ab2e3f21de130c559eed98be7fb2c591f2e72095bfde43a7343bf6e8dcc3547e",
+    "prototype/src/source-reader.mjs": "1df7dc8672d54928c6f356cf2fc44b4eb6f578bb0c510ad6c38ae86b52bacc7a"
+  },
+  "model": "gpt-6-sol",
+  "reasoningEffort": "low",
+  "codexVersion": "0.155.1",
+  "protocol": {
+    "repeats": 2,
+    "timeoutMs": 240000,
+    "order": "rep0 rail official/bindings; car bindings/official; rep1 reverses both",
+    "prompt": "Prepare this owned local fictional travel reimbursement draft from the supplied unmapped source facts. Read the page instructions and choose the travel mode before filling the resulting cost branch. Preserve all supplied passages. Use the fewest host calls needed: batch supported work or write a reasonable Playwright script with local waits and checks if that tool is provided. Use source references/the provided source argument rather than rewriting passages. Source and initial observations are prefetched; no target mapping is supplied. After a branch change, verify all requested values again, including the selected mode; if a source ledger is provided, rebind entries whose prior verification was invalidated. Verify visible values, remaining required fields, public saving status and the saved reimbursement total using the rate stated on the page. Leave it as a draft. Do not use hidden application state, direct application APIs, shell, web, unrelated files or network interception. Do not submit or navigate. Report any unsupported or missing facts. The runner independently checks the server draft and reloads the page after you finish."
+  },
+  "after": {
+    "package-lock.json": "f973bcd48422d9c8519a7efa6f70e417ded075f5596391d70ff3118cacbb646e",
+    "package.json": "dba8dc5cc752fe87a1b0434bb5e9c9e576f356958fcb1fb2b999299e5fc1b304",
+    "prototype/bench/ashby-yesno-state.mjs": "9580855b4eaa0e45767c931ca3eee90ea3c60ac44c6ff82d808aa2c043291e3a",
+    "prototype/bench/codex-expense-comparison.mjs": "95ef55f2fa496bd9641167b265565fe90ab222dc1561a977b665a58a39df7557",
+    "prototype/bench/expense-evidence.mjs": "840cf903cb7e2f71e5e993bfcc85752c5f563b12f93a1619f1c9ae4619b38796",
+    "prototype/bench/expense-server.mjs": "6aec2755b7efea9e58d3fae653bb2ae774b4344e27615dca721d96895687be39",
+    "prototype/bench/form-update-tracker.mjs": "16bb81c7ce7421505092702edbbae8c74468c560e4135c82a0274a30fe29a479",
+    "prototype/bench/host-driver.mjs": "60a33c71bebba9d422a1bffab3ad151bba172e8a58bb04a614951fb3df7cf0b4",
+    "prototype/bench/online-playwright-mcp.mjs": "f55e4c07aabf0af2c237b3f980c72039968e74047f58b7f4dc0930d25a333696",
+    "prototype/bench/playwright-backend.mjs": "89b8932c36eb0463b8113a8a0fee9b519255b89f108013f88180a76fbb93a7d3",
+    "prototype/bench/react-select-state.mjs": "6ff0cf093f2f84fa9c256aa12c782c473b72bee60e4e5378ce3ea0667d65d1cb",
+    "prototype/extension/background.js": "0c9c955b15cc1bcab0074efe9f0cb74e4378124e9949a3dd904f8224e21a6aeb",
+    "prototype/extension/form-runtime.js": "69bd9884f5de20cf61fb35e5706bf975f73789076365ee934003fe56335d025b",
+    "prototype/extension/goal-executor.js": "d71e03cec464f605c78a2c070ff7eb29c6df76b1e49ca8fec3632053146be724",
+    "prototype/extension/plan-executor.js": "0f50d2ffb7ec7ce0787ef8f158015b0d8ebf33019bb53c76f13da0d0bcee03c4",
+    "prototype/extension/popup.js": "07daaf136fa8b36227024e00d1eb26d5b631e3ee6aa374bd008fe9ac23ca4725",
+    "prototype/fixtures/framework-src/expense-form.jsx": "5cac9400220081b420c612a9a3e4ccbb004347a8d3be3d9d98002f1de20d5768",
+    "prototype/src/bindings-mcp.mjs": "1cd1343c4f2b02fb77e09153bbbc3902613754ca42d45f4ded22450ab21413be",
+    "prototype/src/bindings-server.mjs": "503d29f2106415605360676ced08c3c161165fe5cc10bdefaa01f3a30bad4d63",
+    "prototype/src/bridge.mjs": "34e2ec16bbcd1ea21553acdae33e18b3ddde811a0121c5989e1b469936af016e",
+    "prototype/src/browser-bindings-mcp.mjs": "cd326d5d2a8ca6c734407c26883f99decc32ba362c1bef4c9c70e80630b6559d",
+    "prototype/src/browser-companion.mjs": "e738b851568471117bb460b4ae77fe0b4c679c58f2fb591d65b0ef50c7ac72d5",
+    "prototype/src/browser-controller.mjs": "557f66ca4f9328913e5003bae3d20fb56e8b4400ac37c2f9c832651489adbb25",
+    "prototype/src/conditional-choice.mjs": "3a401d78465e247e488f0739ac03f67acf773a8ef9d8fd3e677e1ea9b6d327e9",
+    "prototype/src/context-projection.mjs": "1e2bba84e8d682a0d1b71c88bc9feebde6619b21852728cf7dc90e7e04861c11",
+    "prototype/src/coverage.mjs": "1c0050e16fa42e10fb395b1e5eaa75d04d13487f2fb92fb2696f27e65c9cce0a",
+    "prototype/src/decision-context.mjs": "52eb7ba8bed761216f2fe66e67d5cc5532d562c69e45c9e920340221d2ad7271",
+    "prototype/src/document-session.mjs": "411db55a91cfcd49fb08ebf43185b1b29a76b1b9545a6efd9056c28dfbe359f1",
+    "prototype/src/document-source.mjs": "e6426296ce2890903c9acdea172c93dd4d64c3e1a1b2b735ac83b73608d0a993",
+    "prototype/src/freeze-proxy.mjs": "2ec4b6fc528dd4ecfe7483a7e8202ee5ce6c6f163580e8af7367f356b4a0a2ed",
+    "prototype/src/independent-plan.mjs": "9b097fd86472587c9bb005cacb7f8284a0bbaf34c5bf33bf0b498f879c110bdb",
+    "prototype/src/mcp.mjs": "881d66ceece558cff0b0d7c6e0bbee69a25c553eb352da3143c055287bc3f57b",
+    "prototype/src/network-freeze.mjs": "7969ac0a0e1dc35c3bb6d075e93c9749aa7db7dcdbbac442cb9de9e25f892e93",
+    "prototype/src/pdf-source.py": "3bf55ad81bff7e8c584f165feb388ad2b486148218f4e00c8ce47c2ab3818231",
+    "prototype/src/query-variants.mjs": "f6bf27d2149429e4ea73b9092be67f4ba4647172d8b722ceb975a1d046ce61ce",
+    "prototype/src/receipt-projection.mjs": "2c0a51c363db40a04361aa97cd0fb995c4cdcd44fcdf2010d2cd4d7d2b108023",
+    "prototype/src/source-mcp.mjs": "00f13c76817411e2f977688136c034d1353f79cf1bea680589e64fddb9a5bcb5",
+    "prototype/src/source-quote.mjs": "ab2e3f21de130c559eed98be7fb2c591f2e72095bfde43a7343bf6e8dcc3547e",
+    "prototype/src/source-reader.mjs": "1df7dc8672d54928c6f356cf2fc44b4eb6f578bb0c510ad6c38ae86b52bacc7a"
+  },
+  "runtimeUnchanged": true,
+  "passed": true,
+  "postMeasurementArchives": {
+    "prototype/bench/codex-expense-comparison.mjs": "prototype/reports/source-snapshots/expense-comparison-measured/codex-expense-comparison.mjs"
+  }
+}

@@ -1,5 +1,15 @@
 # 持续探索状态（2026-09-30）
 
+## 当前接续点：SurveyJS 两分支八次端到端对照完成
+
+- 新报告 [SURVEYJS-SPEED-COMPARISON.md](reports/SURVEYJS-SPEED-COMPARISON.md)。固定 Codex CLI 0.155.1 / gpt-6-sol / low，两个分支 × 两方法 × 两轮反向顺序，共 8 次；批次 1790712610965 全部业务验收正确，绑定来源覆盖 4/4 全绿。交通方式在新题目出现后显式重绑，生产台账契约未修改。
+- 完整中位官方 116.28 秒、绑定 41.44 秒；四次官方都因装饰 radio 的 check 超时恢复，另有三次状态/日期 blur/数值角色问题。不能把该差值解释为纯工具调用合并收益，或用减去失败时间制造无失败基线。无干净官方样本，不追加样本追倍数。
+- 39 项测前后 hash 一致。测后只把 runner 的 CLI 版本元数据改为实际读取；精确计时源码已归档，postMeasurementArchives 映射全部通过。全部模型/浏览器/服务器进程关闭；已释放性能窗口。
+- 官方 localhost adapter 扩展 /expense；新增官方两分支确定性检查，测前 getByLabel 定位失败单独留档，改公开角色定位后通过。npm run check:expense 已含该检查，npm run bench:expense:compare 是固定八次入口。
+- 后续应优先验证新任务或日常使用价值；这页的稳定适配现已成立，不继续围绕同页追逐倍数。原三种真实完整实现稳定 2× 目标仍未满足。
+
+## 上轮接续记录
+
 ## 当前接续点：SurveyJS 独立报销工作流完成
 
 - 报告 [SURVEYJS-EXPENSE.md](reports/SURVEYJS-EXPENSE.md)。自建 localhost 业务应用使用真实 SurveyJS 3.1.2，不是现成商用报销应用迁移。rail / car 分支、服务器费率计算、删除失效分支、逐字段刷新恢复已验证。

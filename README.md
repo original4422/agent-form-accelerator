@@ -6,6 +6,7 @@
 
 ## 看结果
 
+- [SurveyJS 报销速度对照](prototype/reports/SURVEYJS-SPEED-COMPARISON.md)：两分支反向顺序共八次，业务验收 8/8、绑定来源覆盖 4/4；完整耗时中位官方 116.28 秒、绑定 41.44 秒。四次官方都经历控件或保存状态恢复，分开报告失败成本。
 - [SurveyJS 独立报销流程](prototype/reports/SURVEYJS-EXPENSE.md)：真实组件库、火车/私家车动态分支，两次 Codex 的服务器草稿、计算总额与刷新逐值恢复全部正确；来源台账未重绑项单独说明，无速度对照。
 
 - [公开保存状态与反向重复验证](prototype/reports/PUBLIC-FORM-STATUS.md)：状态观察、局部关联、完整/差量回执与两轮 12 次 Codex 对照；原始来源字段和服务器草稿独立核验。
@@ -115,8 +116,9 @@ npm run expense:demo -- car
 浏览器打开后，在另一终端执行打印的 Codex 命令，让它根据资料准备报销草稿并核对保存总额。演示复用现有临时浏览器入口，草稿保存在本次本地服务进程内，退出即删除。
 
 ```bash
-npm run check:expense   # 不调用模型：控件反例、两个完整分支、逐值刷新恢复
+npm run check:expense   # 不调用模型：控件反例、绑定/官方两分支、逐值刷新恢复
 npm run bench:expense   # 当前 Codex 账户：rail / car 各一次真实集成任务
+npm run bench:expense:compare # 固定模型与交替顺序，八次完整速度对照
 ```
 
 本次新增支持装饰层覆盖的原生单选/复选框，通过唯一关联标签激活并回读；原生 radio 也继承 `role=radiogroup` 的 `aria-required`。这是一页动态工作流，使用本仓库的业务规则和后端；没有把现成商业报销系统作为已验证对象。实验与失败记录见 [SurveyJS 报销验证](prototype/reports/SURVEYJS-EXPENSE.md)。
