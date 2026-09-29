@@ -2,9 +2,11 @@
 
 网页填表执行工具，当前只验证 Codex。已有 Agent 负责理解资料、匹配字段，本地浏览器执行器负责批量填写和回读校验，不另行调用模型 API。
 
-**当前状态：工程原型。支持动态问题、重复教育经历与异步搜索，并把页面公开的保存/拒绝提示返回 Codex。本版本两轮在线对照 12/12 正确，六次原型均两次调用；原生控件完整耗时中位数 83.96→47.31 秒。全部逐次结果及基线恢复记录见下方工程报告。**
+**当前状态：工程原型。支持动态问题、重复教育经历与异步搜索，并把页面公开的保存/拒绝提示返回 Codex。保存状态版本的两轮在线对照 12/12 正确，六次原型均两次调用；原生控件完整耗时中位数 83.96→47.31 秒。全部逐次结果及基线恢复记录见下方工程报告。**
 
 ## 看结果
+
+- [SurveyJS 独立报销流程](prototype/reports/SURVEYJS-EXPENSE.md)：真实组件库、火车/私家车动态分支，两次 Codex 的服务器草稿、计算总额与刷新逐值恢复全部正确；来源台账未重绑项单独说明，无速度对照。
 
 - [公开保存状态与反向重复验证](prototype/reports/PUBLIC-FORM-STATUS.md)：状态观察、局部关联、完整/差量回执与两轮 12 次 Codex 对照；原始来源字段和服务器草稿独立核验。
 
@@ -99,6 +101,25 @@ Codex 可以一次提供最多三个查询词与一套固定限定条件；只�
 如需在登录后用虚构资料诊断已加载的表单，加 `--offline-after-ready`：先手动进入最终表单，回终端按 Enter，冻结页面 HTTP(S)/WebSocket 后才打印 Codex 命令，并强制临时 profile。远程搜索和跨页可能不可用；这不是系统级网络沙箱，详见[验证范围](prototype/reports/OFFLINE-AFTER-READY.md)。
 
 接入检查：`node prototype/bench/companion-check.mjs`。真实 Codex 集成检查：`node prototype/bench/codex-companion.mjs`，会使用当前 Codex 账户用量。
+
+## 独立业务流程：SurveyJS 差旅报销草稿
+
+本仓库自建的本地报销应用使用真实 **SurveyJS 3.1.2** 渲染器。选择火车后填写票价；选择私家车后出现里程、车牌和停车费。服务器按票价或每公里 GBP 0.50 加停车费计算报销总额；切换交通方式会清除失效分支，刷新页面从服务器恢复草稿。
+
+```bash
+npm run expense:demo -- rail
+# 或另一份资料 / 另一分支
+npm run expense:demo -- car
+```
+
+浏览器打开后，在另一终端执行打印的 Codex 命令，让它根据资料准备报销草稿并核对保存总额。演示复用现有临时浏览器入口，草稿保存在本次本地服务进程内，退出即删除。
+
+```bash
+npm run check:expense   # 不调用模型：控件反例、两个完整分支、逐值刷新恢复
+npm run bench:expense   # 当前 Codex 账户：rail / car 各一次真实集成任务
+```
+
+本次新增支持装饰层覆盖的原生单选/复选框，通过唯一关联标签激活并回读；原生 radio 也继承 `role=radiogroup` 的 `aria-required`。这是一页动态工作流，使用本仓库的业务规则和后端；没有把现成商业报销系统作为已验证对象。实验与失败记录见 [SurveyJS 报销验证](prototype/reports/SURVEYJS-EXPENSE.md)。
 
 ## 读取页面保存状态
 
@@ -259,7 +280,7 @@ prototype/reports/      可追溯的测量结果
 prototype/skills/       两端共用的工作流说明
 ```
 
-代码在 `prototype/validation` 分支，项目名与正式 API 尚未定稿。依赖锁定在 `package-lock.json`。这是测量原型，不是已发布产品。
+当前代码位于 `main`，项目名与正式 API 尚未定稿。依赖锁定在 `package-lock.json`。这是测量原型，不是已发布产品。
 
 
 ## 条件搜索实验

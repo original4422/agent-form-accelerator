@@ -14,6 +14,7 @@ Dependencies are installed from their package registries, not vendored here.
 | esbuild | MIT |
 | react / react-dom | MIT |
 | react-select | MIT |
+| survey-core / survey-react-ui | MIT |
 
 Versions and transitive dependencies are recorded in `package-lock.json`.
 The optional PDF reader installs `pdfplumber` using
@@ -25,3 +26,7 @@ included in this repository.
 project's code. Public-page reports record observations for engineering
 experiments. The PDF fixtures and demo screenshot use fictional source facts;
 PDF generation is in `prototype/bench/pdf/build.py`.
+
+The expense workflow is this project's own local application, rendered by the
+unmodified [SurveyJS Form Library](https://github.com/surveyjs/survey-library).
+It does not include Survey Creator or another commercial SurveyJS component.

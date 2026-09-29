@@ -17,7 +17,10 @@
     "browser": "node prototype/scripts/browser.mjs",
     "browser:demo": "node prototype/scripts/browser.mjs --demo",
     "check:online": "node prototype/bench/online-fixture-check.mjs && node prototype/bench/form-status-check.mjs && node prototype/bench/online-form-check.mjs",
-    "bench:online": "node prototype/bench/codex-online-form.mjs"
+    "bench:online": "node prototype/bench/codex-online-form.mjs",
+    "expense:demo": "node prototype/scripts/expense-demo.mjs",
+    "check:expense": "node prototype/bench/native-toggle-check.mjs && node prototype/bench/expense-check.mjs",
+    "bench:expense": "node prototype/bench/codex-expense.mjs"
   },
   "dependencies": {
     "@modelcontextprotocol/sdk": "1.30.0",
@@ -31,7 +34,9 @@
     "playwright": "1.63.0",
     "react": "19.3.0",
     "react-dom": "19.3.0",
-    "react-select": "5.10.2"
+    "react-select": "5.10.2",
+    "survey-core": "3.1.2",
+    "survey-react-ui": "3.1.2"
   },
   "license": "MIT"
 }

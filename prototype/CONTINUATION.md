@@ -1,5 +1,16 @@
 # 持续探索状态（2026-09-30）
 
+## 当前接续点：SurveyJS 独立报销工作流完成
+
+- 报告 [SURVEYJS-EXPENSE.md](reports/SURVEYJS-EXPENSE.md)。自建 localhost 业务应用使用真实 SurveyJS 3.1.2，不是现成商用报销应用迁移。rail / car 分支、服务器费率计算、删除失效分支、逐字段刷新恢复已验证。
+- 两处生产修复：装饰 native radio/checkbox 通过唯一且无其他交互后代的 label 激活并回读；radio 继承 radiogroup 显式 aria-required，required 加入字段签名。8 项选择/禁用/取消/歧义/提交按钮/要求变化检查通过。未增加任意按钮或跨页 API。
+- 模型批次 1790711073470 两次全部业务验收正确：rail 41.69s / 2 calls，car 43.45s / 2 calls。服务器 6 / 8 值、金额 42.75 / 50.45、零提交、公开逐字段 reload 恢复全部正确，36 运行文件测前后 hash 一致。无速度对照，不与招聘旧批混算倍数。
+- 来源覆盖另有未重绑项：首选交通方式触发新题目后旧来源 ledger 失效，模型第二轮未重绑 mode，所以 coverage 保留 mode；car 最终如实报告。独立服务端正确不代表来源 ledger 全绿。确定性流程证明显式重绑已选 mode 后覆盖全绿，无需改变自动清空契约。
+- npm run expense:demo -- rail|car / npm run check:expense / npm run bench:expense 已接入；demo 实际启动和退出清理通过。旧 guard16/context12/checkbox21+MCP/online11 回归通过。公开 GitHub CI 只跑确定性检查。
+- 后续优先做真实试用与来源 ledger 的明确续接语义；当前 milestone 不新增多页框架、上传、自动提交、额外速度采样。
+
+## 上轮接续记录
+
 ## 当前接续点：公开保存状态已实现，两轮反向对照完成
 
 - 本轮工程报告 [PUBLIC-FORM-STATUS.md](reports/PUBLIC-FORM-STATUS.md)。共享观察器新增 `formStatus`，原文与显式 busy 进入初始 context、完整/差量回执；不从 idle 或缺失状态生成 saved。

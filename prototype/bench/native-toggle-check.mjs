@@ -1,0 +1,22 @@
+import assert from 'node:assert/strict';
+import {chromium} from 'playwright';
+import {writeFile} from 'node:fs/promises';
+import {createExpenseServer} from './expense-server.mjs';
+import {createPlaywrightBackend} from './playwright-backend.mjs';
+const app=await createExpenseServer();
+const browser=await chromium.launch({headless:true}),page=await browser.newPage(),results=[];
+const check=async(name,fn)=>{try{await fn();results.push({name,passed:true});console.log('PASS '+name);}catch(e){results.push({name,passed:false,error:e.stack});console.error('FAIL '+name,e.message);}};
+await page.goto(app.origin+'/expense');
+const html='<style>label{display:block;position:relative;width:180px;height:40px}label span{position:absolute;inset:0;background:white}</style><form><fieldset role="radiogroup" aria-label="Travel mode" aria-required="true"><label><input id="rail" type="radio" name="mode"><span>Rail</span></label><label><input id="car" type="radio" name="mode"><span>Car</span></label></fieldset><label><input id="flag" type="checkbox"><span>Include parking</span></label><label for="plain">Plain</label><input id="plain" type="checkbox"></form>';
+async function run(id,value,prepare){await page.setContent(html);const backend=createPlaywrightBackend(page);try{await prepare?.();const o=await backend.request({op:'inspect'});const r=await backend.request({op:'fill',url:o.url,snapshot:o.snapshot,actions:[{op:'set',ref:o.fields.find(f=>f.domId===id).ref,value}]});return {o,r};}finally{backend.dispose();}}
+try{
+ await check('decorated radio uses its unique native label and reads checked state',async()=>{const {o,r}=await run('rail',true);assert.ok(o.fields.filter(f=>f.kind==='radio').every(f=>f.required));assert.ok(!o.fields.find(f=>f.domId==='flag').required);assert.equal(r.results[0].status,'verified');assert.equal(await page.locator('#rail').isChecked(),true);});
+ await check('decorated checkbox supports check and uncheck',async()=>{await run('flag',true);const {r}=await run('flag',false,()=>page.locator('#flag').evaluate(n=>n.checked=true));assert.equal(r.results[0].status,'verified');assert.equal(await page.locator('#flag').isChecked(),false);});
+ await check('external associated label activates native checkbox',async()=>{const {r}=await run('plain',true);assert.equal(r.results[0].status,'verified');});
+ await check('a cancelled label click is never verified',async()=>{const {r}=await run('rail',true,()=>page.locator('#rail').evaluate(n=>n.labels[0].addEventListener('click',e=>e.preventDefault())));assert.equal(r.results[0].status,'blocked');assert.equal(r.results[0].reason,'VALUE_NOT_RETAINED');});
+ await check('disabled native control remains blocked through label',async()=>{const {r}=await run('rail',true,()=>page.locator('#rail').evaluate(n=>n.disabled=true));assert.equal(r.results[0].reason,'NOT_EDITABLE');assert.equal(await page.locator('#rail').isChecked(),false);});
+ await check('a label containing a submit button is not activated',async()=>{const {r}=await run('rail',true,async()=>{await page.locator('#rail').evaluate(n=>{n.labels[0].insertAdjacentHTML('beforeend','<button type="submit" style="position:absolute;inset:0">Submit</button>');globalThis.testSubmissions=0;n.form.addEventListener('submit',e=>{e.preventDefault();globalThis.testSubmissions++;});});});assert.equal(r.results[0].status,'blocked');assert.equal(await page.evaluate(()=>globalThis.testSubmissions),0);});
+ await check('multiple associated labels do not select an arbitrary label',async()=>{const {r}=await run('rail',true,()=>page.locator('form').evaluate(n=>n.insertAdjacentHTML('beforeend','<label for="rail">Second label</label>')));assert.equal(r.results[0].status,'blocked');assert.equal(await page.locator('#rail').isChecked(),false);});
+ await check('radio group requirement changes invalidate old plan',async()=>{await page.setContent(html);const backend=createPlaywrightBackend(page);try{const o=await backend.request({op:'inspect'});await page.locator('fieldset').evaluate(n=>n.setAttribute('aria-required','false'));await assert.rejects(backend.request({op:'fill',url:o.url,snapshot:o.snapshot,actions:[{op:'set',ref:o.fields[0].ref,value:true}]}),/FIELD_CHANGED/);}finally{backend.dispose();}});
+}finally{await browser.close();await app.close();await writeFile('prototype/reports/native-toggle-checks.json',JSON.stringify({date:new Date().toISOString(),results},null,2));}
+if(results.some(r=>!r.passed))process.exitCode=1;

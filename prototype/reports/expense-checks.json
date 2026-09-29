@@ -1,0 +1,251 @@
+{
+  "date": "2026-09-29T19:47:08.442Z",
+  "results": [
+    {
+      "name": "rail",
+      "first": {
+        "complete": false,
+        "reason": "FORM_CHANGED_AFTER_WAIT"
+      },
+      "passed": true,
+      "result": {
+        "complete": true,
+        "coverage": {
+          "scope": "Visible enabled required fields only; hidden steps and server acceptance are not covered.",
+          "limitations": {
+            "requiredness": "Native required and aria-required only; visual-only markers may be missed.",
+            "iframes": 0,
+            "shadowRoots": false
+          },
+          "requiredUnits": 5,
+          "verifiedRequiredUnits": 5,
+          "unresolvedRequired": [],
+          "visibleRequiredCovered": true,
+          "unsupported": []
+        }
+      },
+      "restored": {
+        "status": "Draft saved.",
+        "total": "Saved reimbursement total: GBP 42.75",
+        "busy": "false",
+        "invalid": 0,
+        "values": {
+          "employee": "Alex Fictional",
+          "purpose": "Review the fictional community library accessibility plan.",
+          "date": "2027-06-10",
+          "mode": "rail",
+          "fare": 42.75,
+          "note": "The fictional visit included a review of the step-free entrance."
+        }
+      },
+      "server": {
+        "draft": {
+          "mode": "rail",
+          "employee": "Alex Fictional",
+          "purpose": "Review the fictional community library accessibility plan.",
+          "date": "2027-06-10",
+          "fare": 42.75,
+          "note": "The fictional visit included a review of the step-free entrance."
+        },
+        "totalPence": 4275,
+        "saves": 6,
+        "inFlight": 0,
+        "submissions": 0,
+        "events": [
+          {
+            "mode": "rail",
+            "keys": [
+              "mode"
+            ]
+          },
+          {
+            "mode": "rail",
+            "keys": [
+              "mode",
+              "employee"
+            ]
+          },
+          {
+            "mode": "rail",
+            "keys": [
+              "mode",
+              "employee",
+              "purpose"
+            ]
+          },
+          {
+            "mode": "rail",
+            "keys": [
+              "mode",
+              "employee",
+              "purpose",
+              "date"
+            ]
+          },
+          {
+            "mode": "rail",
+            "keys": [
+              "mode",
+              "employee",
+              "purpose",
+              "date",
+              "fare"
+            ]
+          },
+          {
+            "mode": "rail",
+            "keys": [
+              "mode",
+              "employee",
+              "purpose",
+              "date",
+              "fare",
+              "note"
+            ]
+          }
+        ]
+      },
+      "additionalChecks": [
+        "dirty before blur",
+        "invalid cost never reaches saved draft",
+        "returning to saved value clears dirty status",
+        "branch switch clears inactive fare",
+        "reload restores changed branch"
+      ]
+    },
+    {
+      "name": "car",
+      "first": {
+        "complete": false,
+        "reason": "FORM_CHANGED_AFTER_WAIT"
+      },
+      "passed": true,
+      "result": {
+        "complete": true,
+        "coverage": {
+          "scope": "Visible enabled required fields only; hidden steps and server acceptance are not covered.",
+          "limitations": {
+            "requiredness": "Native required and aria-required only; visual-only markers may be missed.",
+            "iframes": 0,
+            "shadowRoots": false
+          },
+          "requiredUnits": 7,
+          "verifiedRequiredUnits": 7,
+          "unresolvedRequired": [],
+          "visibleRequiredCovered": true,
+          "unsupported": []
+        }
+      },
+      "restored": {
+        "status": "Draft saved.",
+        "total": "Saved reimbursement total: GBP 50.45",
+        "busy": "false",
+        "invalid": 0,
+        "values": {
+          "employee": "Morgan Fictional",
+          "purpose": "Visit the fictional campus archive for an accessibility review.",
+          "date": "2027-06-12",
+          "mode": "car",
+          "kilometres": 86.5,
+          "registration": "EXAMPLE-42",
+          "parking": 7.2,
+          "note": "The fictional archive visit required transporting a portable scanner."
+        }
+      },
+      "server": {
+        "draft": {
+          "mode": "car",
+          "employee": "Morgan Fictional",
+          "purpose": "Visit the fictional campus archive for an accessibility review.",
+          "date": "2027-06-12",
+          "kilometres": 86.5,
+          "registration": "EXAMPLE-42",
+          "parking": 7.2,
+          "note": "The fictional archive visit required transporting a portable scanner."
+        },
+        "totalPence": 5045,
+        "saves": 8,
+        "inFlight": 0,
+        "submissions": 0,
+        "events": [
+          {
+            "mode": "car",
+            "keys": [
+              "mode"
+            ]
+          },
+          {
+            "mode": "car",
+            "keys": [
+              "mode",
+              "employee"
+            ]
+          },
+          {
+            "mode": "car",
+            "keys": [
+              "mode",
+              "employee",
+              "purpose"
+            ]
+          },
+          {
+            "mode": "car",
+            "keys": [
+              "mode",
+              "employee",
+              "purpose",
+              "date"
+            ]
+          },
+          {
+            "mode": "car",
+            "keys": [
+              "mode",
+              "employee",
+              "purpose",
+              "date",
+              "kilometres"
+            ]
+          },
+          {
+            "mode": "car",
+            "keys": [
+              "mode",
+              "employee",
+              "purpose",
+              "date",
+              "kilometres",
+              "registration"
+            ]
+          },
+          {
+            "mode": "car",
+            "keys": [
+              "mode",
+              "employee",
+              "purpose",
+              "date",
+              "kilometres",
+              "registration",
+              "parking"
+            ]
+          },
+          {
+            "mode": "car",
+            "keys": [
+              "mode",
+              "employee",
+              "purpose",
+              "date",
+              "kilometres",
+              "registration",
+              "parking",
+              "note"
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
