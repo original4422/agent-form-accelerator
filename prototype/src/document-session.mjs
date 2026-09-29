@@ -206,5 +206,9 @@ export async function createDocumentSession({sourcePath, request,conditionalSele
     return {...result,...(deferred.size?{complete:false,partial:(result.evidence??[]).some(e=>e.status==='verified'),appliedSubsetComplete:result.complete,reason:result.complete?'INDEPENDENT_TARGETS_UNRESOLVED':result.reason,searches:discovered.searches}:{}),conditionalSelections:decisions,discoveryCalls,selectionMs,
       goalElapsedMs:result.elapsedMs,elapsedMs:performance.now()-started};
   };
-  return {source,context,apply:conditionalSelection?applyWithConditions:apply,expand,search};
+  const applyReceipt=async args=>{
+    const result=await (conditionalSelection?applyWithConditions:apply)(args);
+    return source.extractionCoverage?{...result,sourceCoverage:source.extractionCoverage}:result;
+  };
+  return {source,context,apply:applyReceipt,expand,search};
 }

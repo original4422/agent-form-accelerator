@@ -23,7 +23,8 @@
     "bench:expense": "node prototype/bench/codex-expense.mjs",
     "bench:expense:compare": "node prototype/bench/codex-expense-comparison.mjs",
     "try": "node prototype/scripts/try.mjs",
-    "check:try": "node prototype/bench/try-check.mjs"
+    "check:try": "node prototype/bench/try-check.mjs",
+    "check:pdf": "node prototype/bench/pdf-source-check.mjs && node prototype/bench/pdf-mixed-check.mjs"
   },
   "dependencies": {
     "@modelcontextprotocol/sdk": "1.30.0",

@@ -1,0 +1,57 @@
+{
+  "date": "2026-09-29T22:16:11.413Z",
+  "results": [
+    {
+      "name": "strict default rejects a text CV with a portrait",
+      "passed": true
+    },
+    {
+      "name": "printed Codex command carries explicit image opt-in",
+      "passed": true
+    },
+    {
+      "name": "inline image parser omissions reject in both modes, including nested Forms",
+      "passed": true
+    },
+    {
+      "name": "literal BI text is not an image operator",
+      "passed": true
+    },
+    {
+      "name": "portrait is unparsed content with exact page and region, never decorative by assumption",
+      "passed": true
+    },
+    {
+      "name": "image-only facts cannot become source entries or exact quotes",
+      "passed": true
+    },
+    {
+      "name": "all-scan and mixed text/scan pages still fail explicitly with opt-in",
+      "passed": true
+    },
+    {
+      "name": "duplicate names remain distinct spatial entries, without inferred identity",
+      "passed": true
+    },
+    {
+      "name": "full and delta apply receipts retain partial-source coverage despite complete target",
+      "passed": true
+    },
+    {
+      "name": "unresolved conditional result retains image regions without a write",
+      "passed": true
+    },
+    {
+      "name": "actual MCP prefetch and apply wire carry partial text coverage",
+      "passed": true
+    },
+    {
+      "name": "changed mixed PDF invalidates source before writing",
+      "passed": true
+    },
+    {
+      "name": "pure-text entries are identical with and without image opt-in",
+      "passed": true
+    }
+  ]
+}

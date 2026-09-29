@@ -78,6 +78,6 @@ export async function createBrowserCompanion({url,sourcePath,temporary=false,off
 
 export function companionCommand(configPath) {
   const quote=s=>"'"+s.replaceAll("'","'\\''")+"'";
-  const settings={command:process.execPath,args:[path.join(projectRoot,'prototype/src/browser-bindings-mcp.mjs')],'env.AFA_BROWSER_SESSION':configPath,...(process.env.AFA_QUERY_VARIANTS==='1'?{'env.AFA_QUERY_VARIANTS':'1'}:{}),...(process.env.AFA_PDF_SOURCE==='1'?{'env.AFA_PDF_SOURCE':'1',...(process.env.AFA_PYTHON?{'env.AFA_PYTHON':process.env.AFA_PYTHON}:{})}: {})};
+  const settings={command:process.execPath,args:[path.join(projectRoot,'prototype/src/browser-bindings-mcp.mjs')],'env.AFA_BROWSER_SESSION':configPath,...(process.env.AFA_QUERY_VARIANTS==='1'?{'env.AFA_QUERY_VARIANTS':'1'}:{}),...(process.env.AFA_PDF_SOURCE==='1'?{'env.AFA_PDF_SOURCE':'1',...(process.env.AFA_PDF_ALLOW_IMAGES==='1'?{'env.AFA_PDF_ALLOW_IMAGES':'1'}:{}),...(process.env.AFA_PYTHON?{'env.AFA_PYTHON':process.env.AFA_PYTHON}:{})}: {})};
   return 'codex '+Object.entries(settings).map(([key,value])=>'-c '+quote(`mcp_servers.afa.${key}=${JSON.stringify(value)}`)).join(' ');
 }

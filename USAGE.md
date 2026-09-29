@@ -93,7 +93,15 @@ AFA_PDF_SOURCE=1 AFA_PYTHON="$PWD/.venv-pdf/bin/python" npm run browser -- --url
 
 浏览器入口打印的 Codex 命令会携带本次实验配置，不修改全局配置。使用虚构资料诊断真实站点时，仍需加 `--offline-after-ready`，先手动登录并加载最终表单再断开页面网络。
 
-目前只支持有限的纯文字 PDF：保留页码和文字位置，Codex 可在同一次填写请求中引用精确原文或连接同一段落的完整行。最多 5 MB、10 页、300 个片段；含图片（包括照片）、扫描件、旋转文字和无文字页拒绝处理，不支持 DOCX/OCR。位置分段是启发式，不能保证任意双栏/表格都解析正确。详见[验证记录与失败边界](prototype/reports/PDF-SOURCE.md)。
+默认拒绝含图像的 PDF。对于每页都有文字、另含照片等普通 Image XObject 的资料，可显式只使用文字层：
+
+```bash
+AFA_PDF_SOURCE=1 AFA_PDF_ALLOW_IMAGES=1 AFA_PYTHON="$PWD/.venv-pdf/bin/python" npm run browser -- --url "https://招聘页地址" --source "/绝对路径/简历.pdf"
+```
+
+开启后，来源的 `extractionCoverage` 与每次填写回执的 `sourceCoverage` 均标记 `partial-text`，列出未解析图像的页码和坐标。Codex 只能引用提取的文字，并应报告这些未读区域；图像可能包含额外或冲突事实，不会被假定为装饰。目标字段 `complete=true` 不代表简历已完整读取。
+
+保留页码和文字位置，同一次填写请求可引用精确原文或连接同一段落的完整行。最多 5 MB、10 页、300 个片段；任一无文字页（包括文字页混扫描页）、旋转文字仍拒绝。内嵌图像（inline image，含 Form 中的内嵌图像）在两种模式下均返回 `PDF_INLINE_IMAGES_UNSUPPORTED`；不支持 DOCX/OCR。位置分段是启发式；文字层、向量图形和页面视觉之间的语义关系不由提取器验证。详见[纯文字验证记录](prototype/reports/PDF-SOURCE.md)及[混合 PDF 边界与反例](prototype/reports/PDF-MIXED-SOURCE.md)。
 
 ## 原扩展本地演示
 
