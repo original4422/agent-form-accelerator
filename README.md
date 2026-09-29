@@ -82,7 +82,7 @@ npm run check:expense   # 控件反例、两条绑定/官方流程与刷新恢�
 npm run check:online    # 在线保存、状态关联与三种招聘控件
 ```
 
-`check:try` 在 macOS/Linux 上验证生命周期。退出码：0 正常结束，1 运行失败，2 参数错误，3 准备未完成。
+`check:try` 在 macOS/Linux 上验证生命周期。入口退出码：0 正常结束，1 运行失败，2 参数错误，3 准备未完成。通过 npm 按 Ctrl+C 时，npm 包装进程在部分平台以 SIGINT（shell 中为 130）结束；这属于用户中断，入口仍完成清理。
 
 - [指定自己的页面与资料、PDF 实验、扩展及完整检查命令](USAGE.md)
 - [完整实验与工程报告索引](prototype/reports/INDEX.md)

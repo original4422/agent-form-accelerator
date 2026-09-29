@@ -30,7 +30,7 @@ try{
     const row=rows.find(l=>l.includes('--user-data-dir='+path.join(root,'.profiles',profiles[0]))&&!l.includes('--type='));assert.ok(row,'owned browser process');
     process.kill(Number(row.trim().split(/\s+/)[0]),'SIGTERM');
    }else{process.kill(-child.pid,'SIGINT');}
-   const result=await ended;assert.equal(result.code,0,err);await assert.rejects(access(root));await assert.rejects(fetch(url));await assert.rejects(fetch(config.endpoint));
+   const result=await ended;assert.ok(result.code===0||(npm&&result.signal==='SIGINT'),JSON.stringify(result)+err);await assert.rejects(access(root));await assert.rejects(fetch(url));await assert.rejects(fetch(config.endpoint));
    console.log(`PASS ${scenario}: public fields ready, ${scenario==='car'?'browser close':'Ctrl+C'}, server/profile/session cleanup`);
   }finally{clearTimeout(timer);if(child.exitCode===null&&child.signalCode===null){process.kill(-child.pid,'SIGKILL');await ended;}if(root)await rm(root,{recursive:true,force:true});}
  }
