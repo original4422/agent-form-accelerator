@@ -62,4 +62,4 @@ async function main(){
   try{await companion?.close();}finally{try{await app?.close();}finally{await rm(root,{recursive:true,force:true});for(const sig of ['SIGINT','SIGTERM','SIGHUP'])process.removeListener(sig,stop);}}
  }
 }
-try{await main();}catch(e){console.error(e.message);process.exitCode=e.exitCode??1;}
+try{await main();}catch(e){console.error(e instanceof AggregateError?[e.message,...e.errors.map(cause=>`${cause.code??cause.name}: ${cause.message}`)].join('\n'):e.message);process.exitCode=e.exitCode??1;}
