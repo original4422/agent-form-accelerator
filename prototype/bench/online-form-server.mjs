@@ -18,6 +18,9 @@ export const onlineSource=`姓名：Alex Fictional
 专业：Mathematics
 `;
 export const onlineExpected={name:'Alex Fictional',email:'alex.fictional@example.test',country:'uk',city:'london',degree:'master',available:'2027-07-01',authorization:'authorized',summary:onlineSource.split('个人介绍：')[1].split('\n')[0],decision:onlineSource.split('项目决策：')[1].split('\n')[0],school0:'north-london',major0:'Computer Science',school1:'south-bristol',major1:'Mathematics'};
+export function onlineDraftMatches(draft){
+ return Object.entries(onlineExpected).every(([key,value])=>draft[key]===value)&&Object.entries(draft).every(([key,value])=>key in onlineExpected||(['challenge','lesson'].includes(key)&&value===''));
+}
 export async function createOnlineFormServer({delay=90,failKey,branch=true}={}){
  const compiled=await build({entryPoints:['prototype/fixtures/framework-src/online-form.jsx'],bundle:true,write:false,format:'iife',platform:'browser',jsx:'automatic',define:{'process.env.NODE_ENV':'"production"'}});
  const draft={},events=[];let inFlight=0,revision=0,submissions=0,questions=[],rows=1;
