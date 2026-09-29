@@ -160,13 +160,10 @@ export async function executeFormRequest(request) {
   const formStatus = nodes => {
     const entries=Array.from(nodes,([ref,{el}])=>({ref,el}));
     const refsFor=node=>{
-      const described=entries.filter(({el})=>node.id&&(el.getAttribute('aria-describedby')??'').split(/\s+/).includes(node.id)).map(({ref})=>ref);
-      if(described.length)return described;
-      const owner=node.closest('form,[role="form"]');
-      for(let scope=node;scope&&!scope.matches('body,html');scope=scope.parentElement){
-        const refs=entries.filter(({el})=>el.closest('form,[role="form"]')===owner&&scope.contains(el)).map(({ref})=>ref);
+      for(let scope=node.closest('form,[role="form"]')??node.parentElement;scope;scope=scope.parentElement){
+        const refs=entries.filter(({el})=>scope.contains(el)).map(({ref})=>ref);
         if(refs.length)return refs;
-        if(scope===owner)break;
+        if(scope.matches('form,[role="form"]'))break;
       }
       return [];
     };

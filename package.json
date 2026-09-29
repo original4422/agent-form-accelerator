@@ -15,7 +15,9 @@
     "check": "node prototype/bench/check.mjs",
     "build:fixtures": "node prototype/scripts/build-fixtures.mjs",
     "browser": "node prototype/scripts/browser.mjs",
-    "browser:demo": "node prototype/scripts/browser.mjs --demo"
+    "browser:demo": "node prototype/scripts/browser.mjs --demo",
+    "check:online": "node prototype/bench/online-fixture-check.mjs && node prototype/bench/form-status-check.mjs && node prototype/bench/online-form-check.mjs",
+    "bench:online": "node prototype/bench/codex-online-form.mjs"
   },
   "dependencies": {
     "@modelcontextprotocol/sdk": "1.30.0",
@@ -30,5 +32,6 @@
     "react": "19.3.0",
     "react-dom": "19.3.0",
     "react-select": "5.10.2"
-  }
+  },
+  "license": "MIT"
 }

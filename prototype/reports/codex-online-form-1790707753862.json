@@ -1,0 +1,637 @@
+{
+  "batchId": 1790707753862,
+  "date": "2026-09-29T18:49:13.862Z",
+  "scope": "Owned localhost online draft across native controls, Radix and React Select. Same source and task; production bindings versus official Playwright with source argument and initial snapshot. Server oracle checks all 13 values and two education rows. No attachments or submission; no claim about complete real recruiting workflows.",
+  "runs": [
+    {
+      "rep": 0,
+      "variant": "native",
+      "mode": "bindings",
+      "setupMs": 1304.281458,
+      "elapsedMs": 56567.100708000005,
+      "totalMs": 57881.416791,
+      "exitCode": 0,
+      "timedOut": false,
+      "toolCalls": [
+        {
+          "tool": "form_apply_bindings",
+          "status": "completed",
+          "startMs": 23770.906457999998,
+          "endMs": 28637.452541,
+          "durationMs": 4866.546083000001,
+          "returnedBytes": 9785,
+          "executionMs": 734.5707089999996,
+          "complete": false,
+          "reason": "FORM_CHANGED_AFTER_WAIT",
+          "primitiveCalls": 2
+        },
+        {
+          "tool": "form_apply_bindings",
+          "status": "completed",
+          "startMs": 38299.034875000005,
+          "endMs": 45798.598625000006,
+          "durationMs": 7499.563750000001,
+          "returnedBytes": 10149,
+          "executionMs": 3460.5558329999985,
+          "complete": true,
+          "primitiveCalls": 6
+        }
+      ],
+      "usage": {
+        "input_tokens": 126565,
+        "cached_input_tokens": 94720,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 590,
+        "reasoning_output_tokens": 15
+      },
+      "actual": {
+        "draft": {
+          "country": "uk",
+          "authorization": "authorized",
+          "name": "Alex Fictional",
+          "email": "alex.fictional@example.test",
+          "city": "london",
+          "degree": "master",
+          "available": "2027-07-01",
+          "school0": "north-london",
+          "major0": "Computer Science",
+          "summary": "I am a fictional graduate who built an accessible campus events directory. I interviewed student volunteers, implemented keyboard navigation, and documented how event owners could correct outdated dates.",
+          "decision": "In a fictional campus project, I proposed a preview screen. Volunteers used it to catch incorrect event dates before publishing, so our team adopted the design.",
+          "school1": "south-bristol",
+          "major1": "Mathematics"
+        },
+        "questions": [
+          {
+            "key": "authorization",
+            "label": "UK work authorization",
+            "options": [
+              {
+                "value": "authorized",
+                "label": "Yes, authorized without sponsorship"
+              },
+              {
+                "value": "sponsorship",
+                "label": "Sponsorship required"
+              }
+            ]
+          }
+        ],
+        "rows": 2,
+        "revision": 14,
+        "events": [
+          {
+            "key": "country",
+            "receivedAt": 1790707783122,
+            "overlap": false,
+            "revision": 0
+          },
+          {
+            "key": "authorization",
+            "receivedAt": 1790707797536,
+            "overlap": false,
+            "revision": 1
+          },
+          {
+            "key": "name",
+            "receivedAt": 1790707797819,
+            "overlap": false,
+            "revision": 2
+          },
+          {
+            "key": "email",
+            "receivedAt": 1790707798150,
+            "overlap": false,
+            "revision": 3
+          },
+          {
+            "key": "city",
+            "receivedAt": 1790707798372,
+            "overlap": false,
+            "revision": 4
+          },
+          {
+            "key": "degree",
+            "receivedAt": 1790707798621,
+            "overlap": false,
+            "revision": 5
+          },
+          {
+            "key": "available",
+            "receivedAt": 1790707798854,
+            "overlap": false,
+            "revision": 6
+          },
+          {
+            "key": "school0",
+            "receivedAt": 1790707799088,
+            "overlap": false,
+            "revision": 7
+          },
+          {
+            "key": "major0",
+            "receivedAt": 1790707799323,
+            "overlap": false,
+            "revision": 8
+          },
+          {
+            "key": "summary",
+            "receivedAt": 1790707799581,
+            "overlap": false,
+            "revision": 9
+          },
+          {
+            "key": "decision",
+            "receivedAt": 1790707799820,
+            "overlap": false,
+            "revision": 10
+          },
+          {
+            "key": "rows",
+            "receivedAt": 1790707800171,
+            "overlap": false,
+            "revision": 11
+          },
+          {
+            "key": "school1",
+            "receivedAt": 1790707800326,
+            "overlap": false,
+            "revision": 12
+          },
+          {
+            "key": "major1",
+            "receivedAt": 1790707800582,
+            "overlap": false,
+            "revision": 13
+          }
+        ],
+        "inFlight": 0,
+        "submissions": 0
+      },
+      "dom": {
+        "busy": "false",
+        "status": "Changes saved.",
+        "invalid": [],
+        "emptyEssays": [
+          "In a fictional campus project, I proposed a preview screen. Volunteers used it to catch incorrect event dates before publishing, so our team adopted the design.",
+          "",
+          ""
+        ],
+        "files": 0
+      },
+      "diagnostics": {
+        "writeConflicts": 0
+      },
+      "checks": {
+        "process": true,
+        "serverValues": true,
+        "twoRows": true,
+        "serverSettled": true,
+        "zeroSubmits": true,
+        "visibleValidity": true,
+        "oneOfThree": true
+      },
+      "passed": true,
+      "finalText": "Filled the draft, including both education experiences in order and the newly appearing UK work authorization question. Preserved complete passages and geographic/campus qualifiers; answered exactly one project question.\n\nAll 12 visible required fields pass validation. The page shows “Changes saved.” with no busy state. No missing facts or unsupported tasks remain. Nothing was submitted or navigated; server acceptance remains for the runner’s independent check.",
+      "toolCount": 4,
+      "promptHash": "59fbee07bea3dad26fedf0aac90c65ee4e70eaee76e038bf0d8e84e767aad0ce",
+      "sourceHash": "d783c4f7a014f44711b3d01f696507b37d886a0434986ba7ed5f05d9b964dfed"
+    },
+    {
+      "rep": 0,
+      "variant": "native",
+      "mode": "official",
+      "setupMs": 3495.5831249999974,
+      "elapsedMs": 82823.889125,
+      "totalMs": 86337.195,
+      "exitCode": 0,
+      "timedOut": false,
+      "toolCalls": [
+        {
+          "tool": "browser_run_code_unsafe",
+          "status": "completed",
+          "startMs": 18371.689709,
+          "endMs": 24378.725875000004,
+          "durationMs": 6007.036166000005,
+          "returnedBytes": 1029
+        },
+        {
+          "tool": "browser_run_code_unsafe",
+          "status": "completed",
+          "startMs": 37087.20212500001,
+          "endMs": 46649.324292000005,
+          "durationMs": 9562.122166999994,
+          "returnedBytes": 1194
+        },
+        {
+          "tool": "browser_run_code_unsafe",
+          "status": "completed",
+          "startMs": 67192.10312500001,
+          "endMs": 76036.108417,
+          "durationMs": 8844.005291999987,
+          "returnedBytes": 4972
+        }
+      ],
+      "usage": {
+        "input_tokens": 123297,
+        "cached_input_tokens": 94080,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 1182,
+        "reasoning_output_tokens": 20
+      },
+      "actual": {
+        "draft": {
+          "country": "uk",
+          "authorization": "authorized",
+          "name": "Alex Fictional",
+          "email": "alex.fictional@example.test",
+          "city": "london",
+          "degree": "master",
+          "available": "2027-07-01",
+          "school0": "north-london",
+          "major0": "Computer Science",
+          "school1": "south-bristol",
+          "major1": "Mathematics",
+          "summary": "I am a fictional graduate who built an accessible campus events directory. I interviewed student volunteers, implemented keyboard navigation, and documented how event owners could correct outdated dates.",
+          "decision": "In a fictional campus project, I proposed a preview screen. Volunteers used it to catch incorrect event dates before publishing, so our team adopted the design."
+        },
+        "questions": [
+          {
+            "key": "authorization",
+            "label": "UK work authorization",
+            "options": [
+              {
+                "value": "authorized",
+                "label": "Yes, authorized without sponsorship"
+              },
+              {
+                "value": "sponsorship",
+                "label": "Sponsorship required"
+              }
+            ]
+          }
+        ],
+        "rows": 2,
+        "revision": 14,
+        "events": [
+          {
+            "key": "country",
+            "receivedAt": 1790707837958,
+            "overlap": false,
+            "revision": 0
+          },
+          {
+            "key": "authorization",
+            "receivedAt": 1790707859332,
+            "overlap": false,
+            "revision": 1
+          },
+          {
+            "key": "name",
+            "receivedAt": 1790707859541,
+            "overlap": false,
+            "revision": 2
+          },
+          {
+            "key": "email",
+            "receivedAt": 1790707859729,
+            "overlap": false,
+            "revision": 3
+          },
+          {
+            "key": "city",
+            "receivedAt": 1790707859927,
+            "overlap": false,
+            "revision": 4
+          },
+          {
+            "key": "degree",
+            "receivedAt": 1790707860112,
+            "overlap": false,
+            "revision": 5
+          },
+          {
+            "key": "available",
+            "receivedAt": 1790707860308,
+            "overlap": false,
+            "revision": 6
+          },
+          {
+            "key": "school0",
+            "receivedAt": 1790707860505,
+            "overlap": false,
+            "revision": 7
+          },
+          {
+            "key": "major0",
+            "receivedAt": 1790707860697,
+            "overlap": false,
+            "revision": 8
+          },
+          {
+            "key": "rows",
+            "receivedAt": 1790707860902,
+            "overlap": false,
+            "revision": 9
+          },
+          {
+            "key": "school1",
+            "receivedAt": 1790707889612,
+            "overlap": false,
+            "revision": 10
+          },
+          {
+            "key": "major1",
+            "receivedAt": 1790707889806,
+            "overlap": false,
+            "revision": 11
+          },
+          {
+            "key": "summary",
+            "receivedAt": 1790707890007,
+            "overlap": false,
+            "revision": 12
+          },
+          {
+            "key": "decision",
+            "receivedAt": 1790707890203,
+            "overlap": false,
+            "revision": 13
+          }
+        ],
+        "inFlight": 0,
+        "submissions": 0
+      },
+      "dom": {
+        "busy": "false",
+        "status": "Changes saved.",
+        "invalid": [],
+        "emptyEssays": [
+          "In a fictional campus project, I proposed a preview screen. Volunteers used it to catch incorrect event dates before publishing, so our team adopted the design.",
+          "",
+          ""
+        ],
+        "files": 0
+      },
+      "diagnostics": {
+        "writeConflicts": 0
+      },
+      "checks": {
+        "process": true,
+        "serverValues": true,
+        "twoRows": true,
+        "serverSettled": true,
+        "zeroSubmits": true,
+        "visibleValidity": true,
+        "oneOfThree": true
+      },
+      "passed": true,
+      "finalText": "Filled both education experiences in order, preserving complete passages and geographic/campus qualifiers. Completed the newly appearing UK authorization question and exactly one optional essay.\n\nAll visible values match the source; no required fields or validation issues remain. “Changes saved.” is visible with no busy state. No missing facts or unsupported tasks. Did not submit or navigate.",
+      "toolCount": 25,
+      "promptHash": "59fbee07bea3dad26fedf0aac90c65ee4e70eaee76e038bf0d8e84e767aad0ce",
+      "sourceHash": "d783c4f7a014f44711b3d01f696507b37d886a0434986ba7ed5f05d9b964dfed"
+    },
+    {
+      "rep": 0,
+      "variant": "radix",
+      "mode": "official",
+      "setupMs": 3372.542167000007,
+      "elapsedMs": 90236.777042,
+      "totalMs": 93623.56270799998,
+      "exitCode": 0,
+      "timedOut": false,
+      "toolCalls": [
+        {
+          "tool": "browser_run_code_unsafe",
+          "status": "completed",
+          "startMs": 17155.627875000006,
+          "endMs": 21594.89712499999,
+          "durationMs": 4439.269249999983,
+          "returnedBytes": 963
+        },
+        {
+          "tool": "browser_run_code_unsafe",
+          "status": "completed",
+          "startMs": 26488.59033399998,
+          "endMs": 31727.114166999992,
+          "durationMs": 5238.523833000014,
+          "returnedBytes": 1037
+        },
+        {
+          "tool": "browser_run_code_unsafe",
+          "status": "completed",
+          "startMs": 43363.48245899999,
+          "endMs": 51033.162458999985,
+          "durationMs": 7669.679999999993,
+          "returnedBytes": 1295
+        },
+        {
+          "tool": "browser_run_code_unsafe",
+          "status": "completed",
+          "startMs": 73152.85525,
+          "endMs": 81467.93433399999,
+          "durationMs": 8315.079083999997,
+          "returnedBytes": 2760
+        }
+      ],
+      "usage": {
+        "input_tokens": 175910,
+        "cached_input_tokens": 146432,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 1387,
+        "reasoning_output_tokens": 16
+      },
+      "actual": {
+        "draft": {
+          "country": "uk",
+          "authorization": "authorized",
+          "name": "Alex Fictional",
+          "email": "alex.fictional@example.test",
+          "city": "london",
+          "degree": "master",
+          "available": "2027-07-01",
+          "school0": "north-london",
+          "major0": "Computer Science",
+          "school1": "south-bristol",
+          "major1": "Mathematics",
+          "summary": "I am a fictional graduate who built an accessible campus events directory. I interviewed student volunteers, implemented keyboard navigation, and documented how event owners could correct outdated dates.",
+          "decision": "In a fictional campus project, I proposed a preview screen. Volunteers used it to catch incorrect event dates before publishing, so our team adopted the design."
+        },
+        "questions": [
+          {
+            "key": "authorization",
+            "label": "UK work authorization",
+            "options": [
+              {
+                "value": "authorized",
+                "label": "Yes, authorized without sponsorship"
+              },
+              {
+                "value": "sponsorship",
+                "label": "Sponsorship required"
+              }
+            ]
+          }
+        ],
+        "rows": 2,
+        "revision": 14,
+        "events": [
+          {
+            "key": "country",
+            "receivedAt": 1790707931583,
+            "overlap": false,
+            "revision": 0
+          },
+          {
+            "key": "authorization",
+            "receivedAt": 1790707949728,
+            "overlap": false,
+            "revision": 1
+          },
+          {
+            "key": "name",
+            "receivedAt": 1790707949934,
+            "overlap": false,
+            "revision": 2
+          },
+          {
+            "key": "email",
+            "receivedAt": 1790707950136,
+            "overlap": false,
+            "revision": 3
+          },
+          {
+            "key": "city",
+            "receivedAt": 1790707950379,
+            "overlap": false,
+            "revision": 4
+          },
+          {
+            "key": "degree",
+            "receivedAt": 1790707950648,
+            "overlap": false,
+            "revision": 5
+          },
+          {
+            "key": "available",
+            "receivedAt": 1790707950859,
+            "overlap": false,
+            "revision": 6
+          },
+          {
+            "key": "school0",
+            "receivedAt": 1790707951093,
+            "overlap": false,
+            "revision": 7
+          },
+          {
+            "key": "major0",
+            "receivedAt": 1790707951279,
+            "overlap": false,
+            "revision": 8
+          },
+          {
+            "key": "rows",
+            "receivedAt": 1790707951491,
+            "overlap": false,
+            "revision": 9
+          },
+          {
+            "key": "school1",
+            "receivedAt": 1790707981301,
+            "overlap": false,
+            "revision": 10
+          },
+          {
+            "key": "major1",
+            "receivedAt": 1790707981505,
+            "overlap": false,
+            "revision": 11
+          },
+          {
+            "key": "summary",
+            "receivedAt": 1790707981707,
+            "overlap": false,
+            "revision": 12
+          },
+          {
+            "key": "decision",
+            "receivedAt": 1790707981892,
+            "overlap": false,
+            "revision": 13
+          }
+        ],
+        "inFlight": 0,
+        "submissions": 0
+      },
+      "dom": {
+        "busy": "false",
+        "status": "Changes saved.",
+        "invalid": [],
+        "emptyEssays": [
+          "In a fictional campus project, I proposed a preview screen. Volunteers used it to catch incorrect event dates before publishing, so our team adopted the design.",
+          "",
+          ""
+        ],
+        "files": 0
+      },
+      "diagnostics": {
+        "writeConflicts": 0
+      },
+      "checks": {
+        "process": true,
+        "serverValues": true,
+        "twoRows": true,
+        "serverSettled": true,
+        "zeroSubmits": true,
+        "visibleValidity": true,
+        "oneOfThree": true
+      },
+      "passed": true,
+      "finalText": "Filled the draft, including both education experiences in order and the newly appearing UK work authorization question. Preserved complete passages and geographic/campus qualifiers.\n\nVerified visible values; no validation issues or missing required facts found. Status shows “Changes saved.” with no busy state. Left the other two optional questions empty as required. Did not submit or navigate.",
+      "toolCount": 25,
+      "promptHash": "59fbee07bea3dad26fedf0aac90c65ee4e70eaee76e038bf0d8e84e767aad0ce",
+      "sourceHash": "d783c4f7a014f44711b3d01f696507b37d886a0434986ba7ed5f05d9b964dfed"
+    }
+  ],
+  "before": {
+    "package-lock.json": "b2e3f6468883d35752a9f488e0d290e5647b6aa44fe6d78cb9e6ae0522a51bd2",
+    "prototype/bench/ashby-yesno-state.mjs": "9580855b4eaa0e45767c931ca3eee90ea3c60ac44c6ff82d808aa2c043291e3a",
+    "prototype/bench/codex-online-form.mjs": "57b59ddaeb381760206543f1e2a7bb1f0ccde2b2ea0e2f53f14578301a665532",
+    "prototype/bench/form-update-tracker.mjs": "16bb81c7ce7421505092702edbbae8c74468c560e4135c82a0274a30fe29a479",
+    "prototype/bench/online-form-server.mjs": "969d332137cb072abc0cad184f7d66d4eb8c9a8e8e6775f675a80f87a11d6719",
+    "prototype/bench/online-playwright-mcp.mjs": "f4c0bece95854eeb7680fa10e8ecb9b3b7e447f34b0a97a923f16a072ca7b7db",
+    "prototype/bench/playwright-backend.mjs": "ea7bc005d82703c9a745c1449e27ff4a7a13ce9c3300da0d769ef824d78832d4",
+    "prototype/bench/react-select-state.mjs": "6ff0cf093f2f84fa9c256aa12c782c473b72bee60e4e5378ce3ea0667d65d1cb",
+    "prototype/extension/background.js": "0c9c955b15cc1bcab0074efe9f0cb74e4378124e9949a3dd904f8224e21a6aeb",
+    "prototype/extension/form-runtime.js": "853f87bb30dc3901cefe5a2e4a60a8df024ec0c378b58dca0ae4a3dd63c600d3",
+    "prototype/extension/goal-executor.js": "d71e03cec464f605c78a2c070ff7eb29c6df76b1e49ca8fec3632053146be724",
+    "prototype/extension/plan-executor.js": "0f50d2ffb7ec7ce0787ef8f158015b0d8ebf33019bb53c76f13da0d0bcee03c4",
+    "prototype/extension/popup.js": "07daaf136fa8b36227024e00d1eb26d5b631e3ee6aa374bd008fe9ac23ca4725",
+    "prototype/fixtures/framework-src/online-form.jsx": "63764e6b0308121f7f2eae202882465d3765ddd962501935273ec4f6447b39fb",
+    "prototype/src/bindings-mcp.mjs": "1cd1343c4f2b02fb77e09153bbbc3902613754ca42d45f4ded22450ab21413be",
+    "prototype/src/bindings-server.mjs": "503d29f2106415605360676ced08c3c161165fe5cc10bdefaa01f3a30bad4d63",
+    "prototype/src/bridge.mjs": "34e2ec16bbcd1ea21553acdae33e18b3ddde811a0121c5989e1b469936af016e",
+    "prototype/src/browser-bindings-mcp.mjs": "cd326d5d2a8ca6c734407c26883f99decc32ba362c1bef4c9c70e80630b6559d",
+    "prototype/src/browser-companion.mjs": "e738b851568471117bb460b4ae77fe0b4c679c58f2fb591d65b0ef50c7ac72d5",
+    "prototype/src/browser-controller.mjs": "557f66ca4f9328913e5003bae3d20fb56e8b4400ac37c2f9c832651489adbb25",
+    "prototype/src/conditional-choice.mjs": "3a401d78465e247e488f0739ac03f67acf773a8ef9d8fd3e677e1ea9b6d327e9",
+    "prototype/src/context-projection.mjs": "1e2bba84e8d682a0d1b71c88bc9feebde6619b21852728cf7dc90e7e04861c11",
+    "prototype/src/coverage.mjs": "1c0050e16fa42e10fb395b1e5eaa75d04d13487f2fb92fb2696f27e65c9cce0a",
+    "prototype/src/decision-context.mjs": "52eb7ba8bed761216f2fe66e67d5cc5532d562c69e45c9e920340221d2ad7271",
+    "prototype/src/document-session.mjs": "411db55a91cfcd49fb08ebf43185b1b29a76b1b9545a6efd9056c28dfbe359f1",
+    "prototype/src/document-source.mjs": "e6426296ce2890903c9acdea172c93dd4d64c3e1a1b2b735ac83b73608d0a993",
+    "prototype/src/freeze-proxy.mjs": "2ec4b6fc528dd4ecfe7483a7e8202ee5ce6c6f163580e8af7367f356b4a0a2ed",
+    "prototype/src/independent-plan.mjs": "9b097fd86472587c9bb005cacb7f8284a0bbaf34c5bf33bf0b498f879c110bdb",
+    "prototype/src/mcp.mjs": "881d66ceece558cff0b0d7c6e0bbee69a25c553eb352da3143c055287bc3f57b",
+    "prototype/src/network-freeze.mjs": "7969ac0a0e1dc35c3bb6d075e93c9749aa7db7dcdbbac442cb9de9e25f892e93",
+    "prototype/src/pdf-source.py": "3bf55ad81bff7e8c584f165feb388ad2b486148218f4e00c8ce47c2ab3818231",
+    "prototype/src/query-variants.mjs": "f6bf27d2149429e4ea73b9092be67f4ba4647172d8b722ceb975a1d046ce61ce",
+    "prototype/src/receipt-projection.mjs": "2c0a51c363db40a04361aa97cd0fb995c4cdcd44fcdf2010d2cd4d7d2b108023",
+    "prototype/src/source-mcp.mjs": "00f13c76817411e2f977688136c034d1353f79cf1bea680589e64fddb9a5bcb5",
+    "prototype/src/source-quote.mjs": "ab2e3f21de130c559eed98be7fb2c591f2e72095bfde43a7343bf6e8dcc3547e",
+    "prototype/src/source-reader.mjs": "1df7dc8672d54928c6f356cf2fc44b4eb6f578bb0c510ad6c38ae86b52bacc7a"
+  },
+  "orderOffset": 1,
+  "repeats": 2,
+  "error": "locator.evaluate: Target page, context or browser has been closed\n    at /Users/original/Project/github/personal_project/agent-form-accelerator/prototype/bench/codex-online-form.mjs:28:60"
+}

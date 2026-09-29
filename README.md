@@ -2,9 +2,11 @@
 
 网页填表执行工具，当前只验证 Codex。已有 Agent 负责理解资料、匹配字段，本地浏览器执行器负责批量填写和回读校验，不另行调用模型 API。
 
-**当前状态：工程原型。Codex 在有在线保存、动态问题与两段教育经历的受控表单上，三种控件变体各完成一组正确配对，完整耗时比官方 Playwright MCP 减少 33.4%–37.6%；六次服务器草稿全部正确。原型尚未向宿主返回公开保存状态，下一步补齐该证据并重复采样。真实招聘页完整流程稳定提速 2 倍的目标仍待验证。**
+**当前状态：工程原型。支持动态问题、重复教育经历与异步搜索，并把页面公开的保存/拒绝提示返回 Codex。本版本两轮在线对照 12/12 正确，六次原型均两次调用；原生控件完整耗时中位数 83.96→47.31 秒。全部逐次结果及基线恢复记录见下方工程报告。**
 
 ## 看结果
+
+- [公开保存状态与反向重复验证](prototype/reports/PUBLIC-FORM-STATUS.md)：状态观察、局部关联、完整/差量回执与两轮 12 次 Codex 对照；原始来源字段和服务器草稿独立核验。
 
 - [在线草稿的完整速度对照](prototype/reports/ONLINE-DRAFT-COMPARISON.md)：原生 77.64→51.73 秒、Radix 84.10→55.36 秒、异步搜索 95.33→59.53 秒；六次服务器 13 值与两段教育记录全部正确。官方脚本无失败恢复，收益来自减少模型往返。
 
@@ -97,6 +99,28 @@ Codex 可以一次提供最多三个查询词与一套固定限定条件；只�
 如需在登录后用虚构资料诊断已加载的表单，加 `--offline-after-ready`：先手动进入最终表单，回终端按 Enter，冻结页面 HTTP(S)/WebSocket 后才打印 Codex 命令，并强制临时 profile。远程搜索和跨页可能不可用；这不是系统级网络沙箱，详见[验证范围](prototype/reports/OFFLINE-AFTER-READY.md)。
 
 接入检查：`node prototype/bench/companion-check.mjs`。真实 Codex 集成检查：`node prototype/bench/codex-companion.mjs`，会使用当前 Codex 账户用量。
+
+## 读取页面保存状态
+
+`form_context` 和填写回执现在返回 `formStatus`：可见 `role=status` / `role=alert` 的原文、相关字段引用，以及页面显式提供的 `aria-busy` 值。Codex 能区分页面显示的“保存中”“已保存”“未保存”或“拒绝”，完整回执和差量回执均保留这些信息。
+
+状态文字单独记录，不作为稳定题目说明；保存提示变化不会让原计划被误判为题意变化。工具保留原文，不按关键词给任意网站生成“已保存”结论；没有状态文字或 `busy=false` 也不会生成该结论。
+
+运行在线保存的本地验证（不调用模型）：
+
+```bash
+npm run check:online
+```
+
+用当前登录的 Codex 做三种控件的对照：
+
+```bash
+npm run bench:online
+# 每种两组配对，首轮反向、下一轮交替
+AFA_ONLINE_ORDER_OFFSET=1 AFA_ONLINE_REPEATS=2 npm run bench:online
+```
+
+对照使用 localhost 虚构资料，独立验证服务器草稿中的 13 个值、两段教育经历、选答规则和未提交状态。编号 JSON 与最新结果保存在 `prototype/reports/`，原始模型轨迹保存在 Git 忽略的 `prototype/reports/private/`。
 
 ## PDF 简历输入实验
 
@@ -247,3 +271,7 @@ prototype/skills/       两端共用的工作流说明
 对仅涉及当前已有字段的批次，可把实验开关改为 `AFA_SELECTION_MODE="independent"`。Codex 可以提供 `independentGroups`，将电话国家与电话等有关联的字段放在同组；一组查询无法完成时暂缓整组，继续核验其他独立组。`complete:false` 表示原请求仍未完成，`task.unresolvedTargets` 在上下文刷新后仍保留。该选项不能和新增重复组或 `checkboxGroups` 混用；省略它则保持原来的全部条件先成功才填写的行为。
 
 空结果恢复实验：在上述 `demo-search.mjs` 打印的命令末尾同时添加 `-c 'mcp_servers.afa.env.AFA_SELECTION_MODE="conditional"'` 和 `-c 'mcp_servers.afa.env.AFA_QUERY_VARIANTS="1"'`。新增 `search:{queries:["杭州","Hangzhou"],labelParts:["Hangzhou"]}` 表示一套固定匹配条件及最多三个查询词，只有完整观察到空结果才换词；歧义、非空冲突、截断或加载失败返回 Codex 判断。整批最多十二个预声明查询，共享八秒发现预算。独立浏览器 companion 现在也支持同一显式开关，默认仍关闭。
+
+## 许可
+
+项目代码采用 [MIT](LICENSE)；依赖及实验素材归属见 [THIRD_PARTY.md](THIRD_PARTY.md)。
