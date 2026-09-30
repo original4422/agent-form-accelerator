@@ -10,7 +10,7 @@ export function captureLocalReceipt(operation,result,source,asOf=new Date().toIS
   scope:'Historical observation and source-binding verdicts as of asOf. Later edits, navigation, source changes and server acceptance are not verified.',
   source:{...pick(source,['sha256','version','generation','format','extractionCoverage']),entries:source.entries.filter(e=>referenced.has(e.id)).map(e=>pick(e,['id','context','label','value','line','page','bbox']))},
   result:{...pick(result,['sourceVersion','sourceReload','complete','partial','appliedSubsetComplete','reason','completionScope','task','coverage','sourceCoverage','bindings','evidence','searches','conditionalSelections','expanded']),
-   page:{url:pageIdentity(page.url),...pick(page,['title','fields','controls','formContext','formStatus','limitations','formUpdate'])}}};
+   page:{url:pageIdentity(page.url),...pick(page,['title','fields','controls','formContext','formStatus','limitations','formUpdate']),...(page.attachments?{attachments:page.attachments.map(attachment=>({...attachment,target:{...attachment.target,url:pageIdentity(attachment.target.url)}}))}:{})}}};
 }
 const text=value=>value===undefined?'—':typeof value==='string'?value:JSON.stringify(value);
 // User/page text remains literal table text, including pipes, HTML and line breaks.
@@ -23,6 +23,7 @@ export function renderLocalReceipt(receipt) {
   `Page: ${cell(r.page.url)}`,'',
   table(['Historical verdict','Value'],[['Last operation requested targets complete',r.complete],['Accumulated requested targets complete',r.task?.complete],['Visible required coverage',r.coverage?.visibleRequiredCovered],['Source extraction coverage',source.extractionCoverage??'text entries; no image coverage reported'],['Server acceptance','not verified; public wording below is page data']]),'',
   '## Observed fields (as of snapshot)','',table(['Ref','Group','Label','Kind','Observed value','Required','Valid','Pending'],r.page.fields.map(f=>[f.ref,f.group,f.label,f.kind,f.value,f.required,f.valid,f.pending])), '',
+  ...(r.page.attachments?['## Owner-selected attachment (historical local file verification)','',table(['File','SHA-256','Bytes','Target','Status','Reason','Observed bytes'],r.page.attachments.map(a=>[a.filename,a.sha256,a.bytes,`${a.target.group} / ${a.target.label}`,a.status,a.reason,a.actual])),'']:[]),
   '## Source bindings (last operation)','',table(['Ref','Source IDs','Exact quote','Source label','Target group'],(r.bindings??[]).map(b=>[b.ref,b.sourceIds??b.sourceId,b.sourceQuote,b.sourceLabel,b.targetGroup])), '',
   '## Requested source targets (historical ledger)','',table(['Ref','Group','Label','Source IDs','Exact quote','Status','Reason','Presence'],(r.task?.targets??[]).map(t=>[t.ref,t.group,t.label,t.sourceIds??t.sourceId,t.sourceQuote,t.status,t.reason,t.currentPresence])), '',
   '## Read-back evidence (last operation)','',table(['Group','Label','Expected','Actual','Status','Reason'],(r.evidence??[]).map(e=>[e.group,e.label,e.expected,e.actual,e.status,e.reason])), '',

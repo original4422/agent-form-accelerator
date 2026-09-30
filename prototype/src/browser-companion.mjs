@@ -6,14 +6,16 @@ import {projectRoot} from './bridge.mjs';
 import {readDocumentSource} from './source-reader.mjs';
 import {createBrowserController} from './browser-controller.mjs';
 import {createFreezeProxy} from './freeze-proxy.mjs';
+import {registerAttachment} from './attachment.mjs';
 import {createNetworkFreeze} from './network-freeze.mjs';
 
-export async function createBrowserCompanion({url,sourcePath,temporary=false,offlineAfterReady=false,headless=false,baseDir=projectRoot,signal}) {
+export async function createBrowserCompanion({url,sourcePath,temporary=false,offlineAfterReady=false,headless=false,baseDir=projectRoot,signal,attachment}) {
   // Offline test edits may be queued in local storage. Never retain this profile
   // for a later online run that could transmit those fictional edits.
   if(offlineAfterReady)temporary=true;
   const target=new URL(url);
   if(!['http:','https:'].includes(target.protocol)||target.username||target.password)throw new Error('请提供不含用户名密码的 HTTP/HTTPS 页面地址');
+  const registeredAttachment=attachment?await registerAttachment(attachment,target.href):undefined;
   sourcePath=await realpath(sourcePath);
   if(!/\.(md|markdown|pdf)$/i.test(sourcePath))throw new Error('资料需为 Markdown；PDF 需显式启用实验模式');
   try{await readDocumentSource(sourcePath);}catch(e){if(!/\.pdf$/i.test(sourcePath)&&/^Expected /.test(e.message))throw new Error('资料需包含 1–100 个条目，且不超过 10 万字符');throw e;}
@@ -48,8 +50,8 @@ export async function createBrowserCompanion({url,sourcePath,temporary=false,off
   const connect=()=>activation??=(async()=>{
     available();
     if(offlineAfterReady)await guard.freeze();
-    available();if(page.isClosed())throw new Error('BROWSER_CLOSED');controller=await createBrowserController(page);
-    available();await writeFile(configPath,JSON.stringify({kind:'afa-browser-session-v1',sourceReload:true,endpoint:controller.endpoint,token:controller.token,sourcePath,...(offlineAfterReady?{networkMode:'frozen'}:{})}),{mode:0o600,flag:'wx'});
+    available();if(page.isClosed())throw new Error('BROWSER_CLOSED');controller=await createBrowserController(page,{attachment:registeredAttachment});
+    available();await writeFile(configPath,JSON.stringify({kind:'afa-browser-session-v1',sourceReload:true,...(registeredAttachment?{attachmentEnabled:true}:{}),endpoint:controller.endpoint,token:controller.token,sourcePath,...(offlineAfterReady?{networkMode:'frozen'}:{})}),{mode:0o600,flag:'wx'});
     available();connected=true;return {configPath,...(guard?{network:guard.status()}:{})};
   })();
   const onAbort=()=>{if(initializing)context?.close().catch(()=>{});else close().catch(()=>{});};

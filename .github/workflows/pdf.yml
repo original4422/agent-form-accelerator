@@ -24,3 +24,6 @@ jobs:
       - run: npm run check:reload
         env:
           AFA_RELOAD_PDF: '1'
+      - run: npm run check:attachment
+        env:
+          AFA_ATTACHMENT_PDF: '1'

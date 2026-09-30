@@ -29,7 +29,9 @@
     "check:receipt": "node prototype/bench/local-receipt-check.mjs",
     "check:reload": "node prototype/bench/source-reload-check.mjs",
     "check:continuous": "node prototype/bench/app-server-driver-check.mjs",
-    "bench:continuous": "node prototype/bench/codex-continuous-source.mjs"
+    "bench:continuous": "node prototype/bench/codex-continuous-source.mjs",
+    "attachment:demo": "node prototype/scripts/attachment-demo.mjs",
+    "check:attachment": "node prototype/bench/attachment-unit-check.mjs && node prototype/bench/attachment-check.mjs"
   },
   "dependencies": {
     "@modelcontextprotocol/sdk": "1.30.0",

@@ -49,7 +49,19 @@ npm run try -- rail --preview
 
 SurveyJS 本批完整耗时中位数为官方 Playwright **116.28 秒**、绑定 **41.44 秒**；四次官方任务都发生局部超时并恢复，报告逐次保留这些成本。在线招聘原生控件的另一批中位数为 **83.96→47.31 秒**。数据分别属于不同协议，不能合并成一个通用提速倍数。
 
-产品工具没有提交、上传和跨页导航操作；iframe、shadow DOM 及未知组件尚未实现。公开保存提示和 DOM 回读分别记录，服务器接受由有权限的独立验收确认。报销应用是本仓库基于真实 SurveyJS 库创建的 localhost 示例。
+默认工具没有附件动作；单独登记的 PDF 可在 localhost 原生单文件控件上选择并核对字节。产品工具没有提交和跨页导航操作；iframe、shadow DOM 及未知组件尚未实现。公开保存提示和 DOM 回读分别记录，服务器接受由有权限的独立验收确认。报销应用是本仓库基于真实 SurveyJS 库创建的 localhost 示例。
+
+## 单独登记附件
+
+```bash
+npm run attachment:demo
+```
+
+打开虚构 localhost 表单，并单独登记仓库中的 `image-facts.pdf` 到 `Application / Resume/CV`。复制终端的临时 Codex 连接命令后，`form_context` 返回 opaque 附件 ID 和唯一授权控件；`form_attach_file` 只接受该 ID 与 ref。自动解析简历和 Cover letter 是另两个入口，不能使用这份登记。
+
+工具设置已核对 SHA-256 的文件 Buffer，并回读 `input.files` 的实际字节、原生校验和公开页面状态。`verified` 表示该观察时点的本地文件身份与有效性；文件被清空、替换、标为 invalid 或 pending 时返回 `needs-review`。历史回执保留附件 hash、大小、控件和时间，导出不重新读取页面；新的 context 会再次核对文件。PDF 的 `partial-text` 来源覆盖与附件字节状态分别记录。
+
+`npm run check:attachment` 运行纯文件及真实 stdio/Chromium 正确性检查，不调用模型。[验收记录](prototype/reports/LOCAL-ATTACHMENT.md)使用 localhost 虚构文件，不加入已有速度实验。自定义 localhost 页面入口见 [附件使用](USAGE.md#显式-localhost-附件)。
 
 ## 架构
 
