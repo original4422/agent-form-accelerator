@@ -31,7 +31,9 @@
     "check:continuous": "node prototype/bench/app-server-driver-check.mjs",
     "bench:continuous": "node prototype/bench/codex-continuous-source.mjs",
     "attachment:demo": "node prototype/scripts/attachment-demo.mjs",
-    "check:attachment": "node prototype/bench/attachment-unit-check.mjs && node prototype/bench/attachment-check.mjs"
+    "check:attachment": "node prototype/bench/attachment-unit-check.mjs && node prototype/bench/attachment-check.mjs",
+    "check:attachment:smoke": "node prototype/bench/attachment-smoke-guards-check.mjs",
+    "bench:attachment": "node prototype/bench/codex-local-attachment.mjs"
   },
   "dependencies": {
     "@modelcontextprotocol/sdk": "1.30.0",

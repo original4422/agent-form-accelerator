@@ -61,7 +61,7 @@ npm run attachment:demo
 
 工具设置已核对 SHA-256 的文件 Buffer，并回读 `input.files` 的实际字节、原生校验和公开页面状态。`verified` 表示该观察时点的本地文件身份与有效性；文件被清空、替换、标为 invalid 或 pending 时返回 `needs-review`。历史回执保留附件 hash、大小、控件和时间，导出不重新读取页面；新的 context 会再次核对文件。PDF 的 `partial-text` 来源覆盖与附件字节状态分别记录。
 
-`npm run check:attachment` 运行纯文件及真实 stdio/Chromium 正确性检查，不调用模型。[验收记录](prototype/reports/LOCAL-ATTACHMENT.md)使用 localhost 虚构文件，不加入已有速度实验。自定义 localhost 页面入口见 [附件使用](USAGE.md#显式-localhost-附件)。
+`npm run check:attachment` 运行纯文件及真实 stdio/Chromium 正确性检查，不调用模型。[验收记录](prototype/reports/LOCAL-ATTACHMENT.md)使用 localhost 虚构文件，不加入已有速度实验。`npm run bench:attachment -- --preflight` 还可经过真实 Codex app-server 检查六工具目录和连接清理，不调用模型。自定义 localhost 页面入口见 [附件使用](USAGE.md#显式-localhost-附件)。
 
 ## 架构
 
