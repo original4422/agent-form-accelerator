@@ -155,6 +155,39 @@ export async function executeFormRequest(request) {
     }
     return {data:{blocks,truncated,scope:'Headings, paragraphs, list items, legends and explicit descriptions near observed fields. Container refs show proximity, not a parsed constraint. Other page text and visual-only rules may be absent.'},signature:JSON.stringify(complete)};
   };
+  // Transient public feedback stays separate from stable question requirements.
+  // Preserve page wording; an idle aria-busy flag is not a saved-state verdict.
+  const formStatus = nodes => {
+    const entries=Array.from(nodes,([ref,{el}])=>({ref,el}));
+    const refsFor=node=>{
+      const described=entries.filter(({el})=>node.id&&(el.getAttribute('aria-describedby')??'').split(/\s+/).includes(node.id)).map(({ref})=>ref);
+      if(described.length)return described;
+      const owner=node.closest('form,[role="form"]');
+      for(let scope=node;scope&&!scope.matches('body,html');scope=scope.parentElement){
+        const refs=entries.filter(({el})=>el.closest('form,[role="form"]')===owner&&scope.contains(el)).map(({ref})=>ref);
+        if(refs.length)return refs;
+        if(scope===owner)break;
+      }
+      return [];
+    };
+    const messages=[],busy=[];let truncated=false;
+    for(const node of document.querySelectorAll('[role="status"],[role="alert"],[aria-busy]')){
+      if(!visible(node))continue;
+      const fieldRefs=refsFor(node);if(!fieldRefs.length)continue;
+      const role=node.getAttribute('role');
+      if(role==='status'||role==='alert'){
+        const text=textOf(node);if(text){
+          if(messages.length<32){messages.push({role,text:text.slice(0,1200),fieldRefs});if(text.length>1200)truncated=true;}
+          else truncated=true;
+        }
+      }
+      const value=node.getAttribute('aria-busy');
+      if(value==='true'||value==='false'){
+        if(busy.length<32)busy.push({value:value==='true',fieldRefs});else truncated=true;
+      }
+    }
+    return {messages,busy,truncated};
+  };
   const contextChanged = () => state.contextSignature!==undefined&&formContext(state.nodes).signature!==state.contextSignature;
   const observe = () => {
     const fields = [], controls = [], nodes = new Map();
@@ -173,7 +206,7 @@ export async function executeFormRequest(request) {
     const context=formContext(nodes);state.contextSignature=context.signature;
     state.snapshot = crypto.randomUUID();
     return {snapshot: state.snapshot, documentId: state.documentId, url: location.href,
-      title: document.title, fields, controls,formContext:context.data,
+      title: document.title, fields, controls,formContext:context.data,formStatus:formStatus(nodes),
       limitations: {requiredness:'Native required and aria-required only; visual-only markers may be missed.',iframes: document.querySelectorAll('iframe').length,
         shadowRoots: Array.from(document.querySelectorAll('*')).some((el) => !!el.shadowRoot)},
     };

@@ -1,0 +1,99 @@
+{
+  "date": "2026-09-21T07:06:28.534Z",
+  "scope": "Owned online draft; 13 values, two education rows, server-driven authorization question, one-of-three essay, no attachments/submission.",
+  "results": [
+    {
+      "variant": "native",
+      "passed": false,
+      "first": {
+        "complete": false,
+        "reason": "HTML_VALIDATION_FAILED",
+        "server": {
+          "draft": {},
+          "questions": [],
+          "rows": 1,
+          "revision": 0,
+          "events": [
+            {
+              "key": "country",
+              "receivedAt": 1789974387851,
+              "overlap": false,
+              "revision": 0
+            },
+            {
+              "key": "name",
+              "receivedAt": 1789974387857,
+              "overlap": true,
+              "revision": 0
+            }
+          ],
+          "inFlight": 1,
+          "submissions": 0
+        }
+      },
+      "error": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n+ actual - expected\n\n+ 'HTML_VALIDATION_FAILED'\n- 'FORM_CHANGED_AFTER_WAIT'\n\n    at file:///Users/original/Project/github/personal_project/agent-form-accelerator/prototype/bench/online-form-check.mjs:21:46"
+    },
+    {
+      "variant": "radix",
+      "passed": false,
+      "first": {
+        "complete": false,
+        "reason": "HTML_VALIDATION_FAILED",
+        "server": {
+          "draft": {},
+          "questions": [],
+          "rows": 1,
+          "revision": 0,
+          "events": [
+            {
+              "key": "country",
+              "receivedAt": 1789974388137,
+              "overlap": false,
+              "revision": 0
+            },
+            {
+              "key": "name",
+              "receivedAt": 1789974388149,
+              "overlap": true,
+              "revision": 0
+            }
+          ],
+          "inFlight": 1,
+          "submissions": 0
+        }
+      },
+      "error": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n+ actual - expected\n\n+ 'HTML_VALIDATION_FAILED'\n- 'FORM_CHANGED_AFTER_WAIT'\n\n    at file:///Users/original/Project/github/personal_project/agent-form-accelerator/prototype/bench/online-form-check.mjs:21:46"
+    },
+    {
+      "variant": "search",
+      "passed": false,
+      "first": {
+        "complete": false,
+        "reason": "HTML_VALIDATION_FAILED",
+        "server": {
+          "draft": {},
+          "questions": [],
+          "rows": 1,
+          "revision": 0,
+          "events": [
+            {
+              "key": "country",
+              "receivedAt": 1789974388436,
+              "overlap": false,
+              "revision": 0
+            },
+            {
+              "key": "name",
+              "receivedAt": 1789974388443,
+              "overlap": true,
+              "revision": 0
+            }
+          ],
+          "inFlight": 1,
+          "submissions": 0
+        }
+      },
+      "error": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n+ actual - expected\n\n+ 'HTML_VALIDATION_FAILED'\n- 'FORM_CHANGED_AFTER_WAIT'\n\n    at file:///Users/original/Project/github/personal_project/agent-form-accelerator/prototype/bench/online-form-check.mjs:21:46"
+    }
+  ]
+}

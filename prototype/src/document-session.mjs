@@ -128,7 +128,7 @@ export async function createDocumentSession({sourcePath, request,conditionalSele
     const result=await request({op:'goal',url,snapshot:observation.snapshot,expansions,
       fields:targets.map(({group,label,kind,value,query})=>({group,label,kind,value,...(query?{query}:{})}))});
     observation=result.observation??observation;
-    if(observation.formUpdate?.reason||/^(FORM_UPDATE_|SERVER_FORM_CHANGED)/.test(result.reason??''))verified.clear();
+    if(observation.formUpdate?.reason||/^(FORM_UPDATE_|SERVER_FORM_CHANGED|FORM_CHANGED_AFTER_WAIT)/.test(result.reason??''))verified.clear();
     // A closed-set decision must not become "complete" if the final observation
     // gained/lost/relabelled an option after the last per-action freshness guard.
     const changedGroups=[...groupContracts].filter(([group,contract])=>groupContract(observation.fields.filter(f=>f.group===group))!==contract).map(([group])=>group);

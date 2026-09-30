@@ -1,0 +1,8 @@
+{
+  "scope": "Native initial tools/list. Compare exact current object to the same object with only the added formStatus and its guidance removed; not a second model run.",
+  "currentToolsListBytes": 20249,
+  "withoutStatusFeatureBytes": 19538,
+  "addedWireBytes": 711,
+  "initialStatusJsonBytes": 280,
+  "inputSchemasEqual": true
+}

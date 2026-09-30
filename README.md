@@ -2,9 +2,13 @@
 
 网页填表执行工具，当前只验证 Codex。已有 Agent 负责理解资料、匹配字段，本地浏览器执行器负责批量填写和回读校验，不另行调用模型 API。
 
-**当前状态：工程原型。已能用 Codex 将未映射的中文 Markdown 资料绑定到英文表单。React Select 别名/校区样本中，把条件搜索与填写合为一次宿主请求，完整中位耗时 47.32→30.53 秒，减少约 35.5%，六次结果均正确。官方工具生成脚本出现了定位错误，不能用恢复造成的差距宣称稳定倍数。尚未证明真实招聘页完整流程稳定提速 2 倍。**
+**当前状态：工程原型。支持动态问题、重复教育经历与异步搜索，并把页面公开的保存/拒绝提示返回 Codex。本版本两轮在线对照 12/12 正确，六次原型均两次调用；原生控件完整耗时中位数 83.96→47.31 秒。全部逐次结果及基线恢复记录见下方工程报告。**
 
 ## 看结果
+
+- [公开保存状态与反向重复验证](prototype/reports/PUBLIC-FORM-STATUS.md)：状态观察、局部关联、完整/差量回执与两轮 12 次 Codex 对照；原始来源字段和服务器草稿独立核验。
+
+- [在线草稿的完整速度对照](prototype/reports/ONLINE-DRAFT-COMPARISON.md)：原生 77.64→51.73 秒、Radix 84.10→55.36 秒、异步搜索 95.33→59.53 秒；六次服务器 13 值与两段教育记录全部正确。官方脚本无失败恢复，收益来自减少模型往返。
 
 - [把服务器更新等待留在执行器](prototype/reports/FORM-UPDATES.md)：本地11项成功/失败/动态变化检查通过；真实页面证明姓名也会触发更新。新检查会在冻结页面的第一次失败后停止，旧六目标记录仅是 DOM 局部证据。
 
@@ -95,6 +99,28 @@ Codex 可以一次提供最多三个查询词与一套固定限定条件；只�
 如需在登录后用虚构资料诊断已加载的表单，加 `--offline-after-ready`：先手动进入最终表单，回终端按 Enter，冻结页面 HTTP(S)/WebSocket 后才打印 Codex 命令，并强制临时 profile。远程搜索和跨页可能不可用；这不是系统级网络沙箱，详见[验证范围](prototype/reports/OFFLINE-AFTER-READY.md)。
 
 接入检查：`node prototype/bench/companion-check.mjs`。真实 Codex 集成检查：`node prototype/bench/codex-companion.mjs`，会使用当前 Codex 账户用量。
+
+## 读取页面保存状态
+
+`form_context` 和填写回执现在返回 `formStatus`：可见 `role=status` / `role=alert` 的原文、相关字段引用，以及页面显式提供的 `aria-busy` 值。Codex 能区分页面显示的“保存中”“已保存”“未保存”或“拒绝”，完整回执和差量回执均保留这些信息。
+
+状态文字单独记录，不作为稳定题目说明；保存提示变化不会让原计划被误判为题意变化。工具保留原文，不按关键词给任意网站生成“已保存”结论；没有状态文字或 `busy=false` 也不会生成该结论。
+
+运行在线保存的本地验证（不调用模型）：
+
+```bash
+npm run check:online
+```
+
+用当前登录的 Codex 做三种控件的对照：
+
+```bash
+npm run bench:online
+# 每种两组配对，首轮反向、下一轮交替
+AFA_ONLINE_ORDER_OFFSET=1 AFA_ONLINE_REPEATS=2 npm run bench:online
+```
+
+对照使用 localhost 虚构资料，独立验证服务器草稿中的 13 个值、两段教育经历、选答规则和未提交状态。编号 JSON 与最新结果保存在 `prototype/reports/`，原始模型轨迹保存在 Git 忽略的 `prototype/reports/private/`。
 
 ## PDF 简历输入实验
 
@@ -245,3 +271,7 @@ prototype/skills/       两端共用的工作流说明
 对仅涉及当前已有字段的批次，可把实验开关改为 `AFA_SELECTION_MODE="independent"`。Codex 可以提供 `independentGroups`，将电话国家与电话等有关联的字段放在同组；一组查询无法完成时暂缓整组，继续核验其他独立组。`complete:false` 表示原请求仍未完成，`task.unresolvedTargets` 在上下文刷新后仍保留。该选项不能和新增重复组或 `checkboxGroups` 混用；省略它则保持原来的全部条件先成功才填写的行为。
 
 空结果恢复实验：在上述 `demo-search.mjs` 打印的命令末尾同时添加 `-c 'mcp_servers.afa.env.AFA_SELECTION_MODE="conditional"'` 和 `-c 'mcp_servers.afa.env.AFA_QUERY_VARIANTS="1"'`。新增 `search:{queries:["杭州","Hangzhou"],labelParts:["Hangzhou"]}` 表示一套固定匹配条件及最多三个查询词，只有完整观察到空结果才换词；歧义、非空冲突、截断或加载失败返回 Codex 判断。整批最多十二个预声明查询，共享八秒发现预算。独立浏览器 companion 现在也支持同一显式开关，默认仍关闭。
+
+## 许可
+
+项目代码采用 [MIT](LICENSE)；依赖及实验素材归属见 [THIRD_PARTY.md](THIRD_PARTY.md)。

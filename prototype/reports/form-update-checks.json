@@ -1,12 +1,12 @@
 {
-  "date": "2026-09-21T06:59:41.075Z",
+  "date": "2026-09-21T07:08:51.505Z",
   "scope": "Local controlled protocol fixture; success envelope unconfirmed on live Ashby.",
   "results": [
     {
       "scenario": "success",
       "passed": true,
       "complete": true,
-      "elapsedMs": 458.13675,
+      "elapsedMs": 507.8182079999999,
       "actual": {
         "first": "Fictional Place",
         "second": "Fictional Name",
@@ -45,7 +45,7 @@
       "scenario": "delayed",
       "passed": true,
       "complete": true,
-      "elapsedMs": 1127.355708,
+      "elapsedMs": 1872.225458,
       "actual": {
         "first": "Fictional Place",
         "second": "Fictional Name",
@@ -85,7 +85,7 @@
       "passed": true,
       "complete": false,
       "reason": "FORM_UPDATE_NETWORK_FAILED",
-      "elapsedMs": 84.61166599999979,
+      "elapsedMs": 121.88037500000019,
       "actual": {
         "first": "Fictional Place",
         "second": "",
@@ -128,7 +128,7 @@
       "passed": true,
       "complete": false,
       "reason": "FORM_UPDATE_HTTP_FAILED",
-      "elapsedMs": 108.52712500000007,
+      "elapsedMs": 197.6697919999997,
       "actual": {
         "first": "Fictional Place",
         "second": "",
@@ -171,7 +171,7 @@
       "passed": true,
       "complete": false,
       "reason": "FORM_UPDATE_GRAPHQL_FAILED",
-      "elapsedMs": 108.69100000000026,
+      "elapsedMs": 119.48354199999994,
       "actual": {
         "first": "Fictional Place",
         "second": "",
@@ -214,7 +214,7 @@
       "passed": true,
       "complete": false,
       "reason": "FORM_UPDATE_RESPONSE_UNCONFIRMED",
-      "elapsedMs": 106.13662499999964,
+      "elapsedMs": 124.86479099999997,
       "actual": {
         "first": "Fictional Place",
         "second": "",
@@ -257,7 +257,7 @@
       "passed": true,
       "complete": false,
       "reason": "FORM_UPDATE_REJECTED",
-      "elapsedMs": 104.30579100000023,
+      "elapsedMs": 131.43479200000002,
       "actual": {
         "first": "Fictional Place",
         "second": "",
@@ -300,7 +300,7 @@
       "passed": true,
       "complete": false,
       "reason": "FORM_UPDATE_TIMEOUT",
-      "elapsedMs": 1580.0922919999998,
+      "elapsedMs": 1588.1547919999994,
       "actual": {
         "first": "Fictional Place",
         "second": "",
@@ -343,7 +343,7 @@
       "passed": true,
       "complete": false,
       "reason": "SERVER_FORM_CHANGED",
-      "elapsedMs": 314.64841700000034,
+      "elapsedMs": 316.3942909999996,
       "actual": {
         "first": "Fictional Place",
         "second": "",
@@ -385,7 +385,7 @@
       "passed": true,
       "complete": false,
       "reason": "SERVER_FORM_CHANGED",
-      "elapsedMs": 311.1765830000004,
+      "elapsedMs": 310.4200840000012,
       "actual": {
         "first": "Fictional Place",
         "second": "",
@@ -429,7 +429,7 @@
         },
         {
           "ref": "f2",
-          "status": "needs-review",
+          "status": "blocked",
           "reason": "FORM_UPDATE_NETWORK_FAILED"
         }
       ]
