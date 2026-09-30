@@ -1,0 +1,235 @@
+{
+  "kind": "afa-local-attachment-model-v1",
+  "mode": "model",
+  "baseCommit": "949c61a94072e523d8a3e17c39ae3a00e6909fb3",
+  "cli": "codex-cli 0.155.1",
+  "sourceHashes": {
+    "prototype/bench/app-server-driver.mjs": "0bd52ce39ef8105f136a8cbedac06e49865acb0a370bcdfea0945d3b9206ea3d",
+    "prototype/bench/mcp-observer.mjs": "d6dbcf199fad72a30f25a278abfe9ad99e5bf3b7e45ff0c6a7511aff425e4249",
+    "prototype/bench/attachment-smoke-guards.mjs": "31954bbc2fe6db2065724bcde5b5befbe4465b69b4845b6714ebc909e1c86f4e",
+    "prototype/bench/codex-local-attachment.mjs": "06d321bcb7280a818d128be27e58ff42dc4e12851dfdb8d9c6702c33d9df0170",
+    "prototype/bench/playwright-backend.mjs": "89b8932c36eb0463b8113a8a0fee9b519255b89f108013f88180a76fbb93a7d3",
+    "prototype/bench/form-update-tracker.mjs": "16bb81c7ce7421505092702edbbae8c74468c560e4135c82a0274a30fe29a479",
+    "prototype/fixtures/attachment-form.html": "ab72ef6aa386817cf0f48a705ee3a7b19aa74d280edb02cd62532b550e2bf832",
+    "prototype/src/attachment.mjs": "8b7e5f2a30f7adc0a9543a84ce153a6edf6b5e6cecb9225511772eb0813574df",
+    "prototype/src/bindings-mcp.mjs": "1cd1343c4f2b02fb77e09153bbbc3902613754ca42d45f4ded22450ab21413be",
+    "prototype/src/bindings-server.mjs": "51823c1b96aa709004eae6ee4df3151cf9c402f0551187c0a0704b3b786592f7",
+    "prototype/src/bridge.mjs": "34e2ec16bbcd1ea21553acdae33e18b3ddde811a0121c5989e1b469936af016e",
+    "prototype/src/browser-bindings-mcp.mjs": "9dab4261541ab44eac1b069db47a07f45d1a62ed2f99ad6a9c90a5048445fc05",
+    "prototype/src/browser-companion.mjs": "6afd0f814e91945ce74e09a59059e1358cfde0961e614b468c7f23340ad8a9c1",
+    "prototype/src/browser-controller.mjs": "25979b59b460b32b9389a388618e740df8a894f1051efd92472d96d5552124e0",
+    "prototype/src/conditional-choice.mjs": "3a401d78465e247e488f0739ac03f67acf773a8ef9d8fd3e677e1ea9b6d327e9",
+    "prototype/src/context-projection.mjs": "6e70c35fcb1c4db3a4d168d2380cd2110ec0c005094bd5176d0b6bdd54fabc5d",
+    "prototype/src/coverage.mjs": "1c0050e16fa42e10fb395b1e5eaa75d04d13487f2fb92fb2696f27e65c9cce0a",
+    "prototype/src/decision-context.mjs": "52eb7ba8bed761216f2fe66e67d5cc5532d562c69e45c9e920340221d2ad7271",
+    "prototype/src/document-session.mjs": "5e104f4991e15e67a2775c3a6112723f0b2c188559819dac79c216fbe1de3d0b",
+    "prototype/src/document-source.mjs": "e6426296ce2890903c9acdea172c93dd4d64c3e1a1b2b735ac83b73608d0a993",
+    "prototype/src/freeze-proxy.mjs": "2ec4b6fc528dd4ecfe7483a7e8202ee5ce6c6f163580e8af7367f356b4a0a2ed",
+    "prototype/src/independent-plan.mjs": "9b097fd86472587c9bb005cacb7f8284a0bbaf34c5bf33bf0b498f879c110bdb",
+    "prototype/src/local-receipt.mjs": "d1fcb1790252beda1da1163a445f27dea27ff04241f3527116c6aa593f868ca0",
+    "prototype/src/mcp.mjs": "881d66ceece558cff0b0d7c6e0bbee69a25c553eb352da3143c055287bc3f57b",
+    "prototype/src/network-freeze.mjs": "7969ac0a0e1dc35c3bb6d075e93c9749aa7db7dcdbbac442cb9de9e25f892e93",
+    "prototype/src/pdf-source.py": "81156b027bc9297006291858d81cf7da4d03ef81aa98ece4b810a3f5ca3ae4b2",
+    "prototype/src/query-variants.mjs": "f6bf27d2149429e4ea73b9092be67f4ba4647172d8b722ceb975a1d046ce61ce",
+    "prototype/src/receipt-projection.mjs": "2c0a51c363db40a04361aa97cd0fb995c4cdcd44fcdf2010d2cd4d7d2b108023",
+    "prototype/src/source-mcp.mjs": "00f13c76817411e2f977688136c034d1353f79cf1bea680589e64fddb9a5bcb5",
+    "prototype/src/source-quote.mjs": "ab2e3f21de130c559eed98be7fb2c591f2e72095bfde43a7343bf6e8dcc3547e",
+    "prototype/src/source-reader.mjs": "1df7dc8672d54928c6f356cf2fc44b4eb6f578bb0c510ad6c38ae86b52bacc7a",
+    "prototype/extension/background.js": "0c9c955b15cc1bcab0074efe9f0cb74e4378124e9949a3dd904f8224e21a6aeb",
+    "prototype/extension/form-runtime.js": "69bd9884f5de20cf61fb35e5706bf975f73789076365ee934003fe56335d025b",
+    "prototype/extension/goal-executor.js": "d71e03cec464f605c78a2c070ff7eb29c6df76b1e49ca8fec3632053146be724",
+    "prototype/extension/plan-executor.js": "0f50d2ffb7ec7ce0787ef8f158015b0d8ebf33019bb53c76f13da0d0bcee03c4",
+    "prototype/extension/popup.js": "07daaf136fa8b36227024e00d1eb26d5b631e3ee6aa374bd008fe9ac23ca4725"
+  },
+  "limits": {
+    "turns": 1,
+    "seconds": 180,
+    "forwardedToolCalls": 12,
+    "approvals": 1
+  },
+  "checks": {
+    "ephemeralReadOnly": true,
+    "onlySixAfaTools": true,
+    "configUnchangedBeforeTurn": true,
+    "singleMcpBrowser": true,
+    "modelCalledAttachmentAndOraclePassed": true,
+    "ownedProcessesExited": true,
+    "configUnchangedAfterCleanup": true,
+    "sessionConfigRemoved": true,
+    "profileRemoved": true
+  },
+  "approvals": [
+    {
+      "threadId": "01a0efde-74a9-78d0-a9ff-c97befed24e8",
+      "turnId": "01a0efde-75fb-7ba0-a65e-437cbced3f64",
+      "tool": "form_attach_file",
+      "action": "accept",
+      "persisted": false
+    }
+  ],
+  "attachment": {
+    "attachmentId": "a2fcc5b7-52cc-4d61-8a67-131addf5ff7d",
+    "sha256": "3bed0b9a1f4d358714165ec8ed932e365db6005ceeee2e47fa3c17568b3491a7",
+    "bytes": 3863,
+    "filename": "fictional.pdf",
+    "ref": "f3",
+    "label": "Resume/CV",
+    "group": "Application"
+  },
+  "before": {
+    "changes": {
+      "autofill": 0,
+      "resume": 0,
+      "cover": 0
+    },
+    "submits": 0,
+    "text": "Fictional Candidate",
+    "files": [
+      {
+        "id": "autofill",
+        "files": []
+      },
+      {
+        "id": "resume",
+        "files": []
+      },
+      {
+        "id": "cover",
+        "files": []
+      }
+    ]
+  },
+  "threadId": "01a0efde-74a9-78d0-a9ff-c97befed24e8",
+  "model": "gpt-6-astra",
+  "reasoningEffort": "low",
+  "turn": {
+    "id": "01a0efde-75fb-7ba0-a65e-437cbced3f64",
+    "status": "completed",
+    "durationMs": 22206
+  },
+  "identities": {
+    "appServer": {
+      "pid": 2591,
+      "started": "Wed Sep 30 09:12:06 2026"
+    },
+    "chromium": {
+      "pid": 2552,
+      "started": "Wed Sep 30 09:12:05 2026"
+    },
+    "mcp": {
+      "pid": 2679,
+      "started": "Wed Sep 30 09:12:08 2026"
+    },
+    "proxy": {
+      "pid": 2675,
+      "started": "Wed Sep 30 09:12:08 2026"
+    },
+    "nonce": "56f66bdc-39f7-4523-b40c-7037bc3b4e1d"
+  },
+  "calls": [
+    {
+      "id": 2,
+      "tool": "form_context",
+      "arguments": {}
+    },
+    {
+      "id": 3,
+      "tool": "form_attach_file",
+      "arguments": {
+        "attachmentId": "a2fcc5b7-52cc-4d61-8a67-131addf5ff7d",
+        "ref": "f3",
+        "url": "http://127.0.0.1:63344/fixtures/attachment-form.html"
+      }
+    }
+  ],
+  "budget": {
+    "at": 1790730743593,
+    "kind": "tool-budget",
+    "attempted": 2,
+    "forwarded": 2,
+    "limit": 12,
+    "allowed": true
+  },
+  "after": {
+    "changes": {
+      "autofill": 0,
+      "resume": 1,
+      "cover": 0
+    },
+    "submits": 0,
+    "text": "Fictional Candidate",
+    "files": [
+      {
+        "id": "autofill",
+        "files": []
+      },
+      {
+        "id": "resume",
+        "files": [
+          {
+            "name": "fictional.pdf",
+            "size": 3863,
+            "sha256": "3bed0b9a1f4d358714165ec8ed932e365db6005ceeee2e47fa3c17568b3491a7"
+          }
+        ]
+      },
+      {
+        "id": "cover",
+        "files": []
+      }
+    ]
+  },
+  "receipt": {
+    "asOf": "2026-09-30T01:12:23.763Z",
+    "operation": "attach",
+    "attachment": {
+      "attachmentId": "a2fcc5b7-52cc-4d61-8a67-131addf5ff7d",
+      "filename": "fictional.pdf",
+      "bytes": 3863,
+      "sha256": "3bed0b9a1f4d358714165ec8ed932e365db6005ceeee2e47fa3c17568b3491a7",
+      "mimeType": "application/pdf",
+      "target": {
+        "url": "http://127.0.0.1:63344/fixtures/attachment-form.html",
+        "documentId": "6e86674b-2c78-4162-9c04-9f4a4c25a353",
+        "ref": "f3",
+        "label": "Resume/CV",
+        "group": "Application"
+      },
+      "asOf": "2026-09-30T01:12:23.755Z",
+      "scope": "Local input.files byte identity and observed native/ARIA validity only",
+      "status": "verified",
+      "actual": {
+        "count": 1,
+        "filename": "fictional.pdf",
+        "bytes": 3863,
+        "sha256": "3bed0b9a1f4d358714165ec8ed932e365db6005ceeee2e47fa3c17568b3491a7",
+        "retained": true,
+        "pending": false,
+        "valid": true
+      }
+    }
+  },
+  "cleanup": [
+    {
+      "name": "app-server",
+      "ok": true
+    },
+    {
+      "name": "cdp",
+      "ok": true
+    },
+    {
+      "name": "companion",
+      "ok": true
+    },
+    {
+      "name": "fixture",
+      "ok": true
+    },
+    {
+      "name": "cwd",
+      "ok": true
+    }
+  ],
+  "passed": true
+}

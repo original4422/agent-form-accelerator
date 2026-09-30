@@ -45,6 +45,7 @@ npm run try -- rail --preview
 | SurveyJS 两种报销分支 | 8/8 任务通过服务器值、金额、刷新恢复与零提交验收；4/4 绑定来源覆盖完整 | [完整对照](prototype/reports/SURVEYJS-SPEED-COMPARISON.md) |
 | 在线招聘草稿三种控件 | 两轮 12/12 正确；六次绑定均两次调用，服务器独立核验 13 值及教育记录 | [公开保存状态](prototype/reports/PUBLIC-FORM-STATUS.md) |
 | 真实 Greenhouse 页面 | 断网后虚构资料局部填写；远程查询、附件等保留未完成 | [验证范围](prototype/reports/GREENHOUSE-MIGRATION.md) |
+| 单独登记附件 | Codex 一 turn 实际选择指定 PDF；正式 Resume/CV 字节与回执一致，另两入口零写入、零提交 | [附件验证](prototype/reports/LOCAL-ATTACHMENT.md#one-actual-codex-turn) |
 | 同会话补充资料 | Codex 两 turn：先填已知项、补原文件、reload 后填日期；MCP/浏览器不重启 | [连续填写验证](prototype/reports/CONTINUOUS-SOURCE.md) |
 
 SurveyJS 本批完整耗时中位数为官方 Playwright **116.28 秒**、绑定 **41.44 秒**；四次官方任务都发生局部超时并恢复，报告逐次保留这些成本。在线招聘原生控件的另一批中位数为 **83.96→47.31 秒**。数据分别属于不同协议，不能合并成一个通用提速倍数。
