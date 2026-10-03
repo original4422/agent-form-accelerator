@@ -1,0 +1,6 @@
+{
+  "phase": "deterministic baseline reachability before model measurement",
+  "failure": "Official script getByLabel Employee name exact did not resolve; fill timed out after 30 seconds.",
+  "resolution": "Use public accessible roles/names for text and numeric inputs, and the unique public date input. No fixture or production executor change.",
+  "modelCalls": 0
+}

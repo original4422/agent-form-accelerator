@@ -220,7 +220,14 @@ export function createPlaywrightBackend(page,{validationMode='guard'}={}) {
         else if (field.kind === 'combobox') await selectCombo(el, expected, request);
         else if (['radio','checkbox'].includes(field.kind)) {
           if (typeof expected !== 'boolean' || (field.kind === 'radio' && !expected)) throw new Error('Expected boolean; radio may only be selected');
-          await el.setChecked(expected, {timeout:1000});
+          if(await el.isChecked()!==expected){
+            // Styled native inputs may be covered by their own decorative SVG.
+            // A unique associated label uses the browser's native activation.
+            const label=await el.evaluateHandle(el=>{const label=el.labels?.length===1?el.labels[0]:null;return label&&![...label.querySelectorAll('a,button,input,select,textarea,[role=button]')].some(n=>n!==el)?label:null;});
+            try{if(label.asElement())await label.asElement().click({timeout:1000});else await el.setChecked(expected,{timeout:1000});}
+            finally{await label.dispose();}
+            if(await el.isChecked()!==expected)throw new Error('VALUE_NOT_RETAINED');
+          }
         } else if (field.kind === 'select') {
           const options = field.options.filter(o => !o.disabled && (o.value === expected || o.label === expected));
           if (options.length !== 1) throw new Error('OPTION_MISSING_OR_AMBIGUOUS');

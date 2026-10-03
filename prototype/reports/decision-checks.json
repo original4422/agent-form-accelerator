@@ -1,5 +1,5 @@
 {
-  "date": "2026-09-21T02:53:40.973Z",
+  "date": "2026-09-29T19:41:35.838Z",
   "rows": [
     {
       "name": "factoring preserves all metadata and field order including exceptions",
@@ -88,8 +88,8 @@
     {
       "name": "public results",
       "passed": true,
-      "encodedBytes": 22786,
-      "decodedBytes": 35471,
+      "encodedBytes": 39435,
+      "decodedBytes": 52120,
       "bindings": 21,
       "checkboxGroups": 2,
       "expandedTargets": 59,
@@ -102,9 +102,9 @@
       },
       "guard": {
         "frozen": true,
-        "allowedReadRequests": 30,
-        "blockedLoadWrites": 2,
-        "blockedAfterFreeze": 12,
+        "allowedReadRequests": 32,
+        "blockedLoadWrites": 12,
+        "blockedAfterFreeze": 0,
         "webSocketsBlocked": 0,
         "pending": 0
       }

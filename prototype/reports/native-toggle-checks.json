@@ -1,0 +1,37 @@
+{
+  "date": "2026-09-29T19:47:02.686Z",
+  "results": [
+    {
+      "name": "decorated radio uses its unique native label and reads checked state",
+      "passed": true
+    },
+    {
+      "name": "decorated checkbox supports check and uncheck",
+      "passed": true
+    },
+    {
+      "name": "external associated label activates native checkbox",
+      "passed": true
+    },
+    {
+      "name": "a cancelled label click is never verified",
+      "passed": true
+    },
+    {
+      "name": "disabled native control remains blocked through label",
+      "passed": true
+    },
+    {
+      "name": "a label containing a submit button is not activated",
+      "passed": true
+    },
+    {
+      "name": "multiple associated labels do not select an arbitrary label",
+      "passed": true
+    },
+    {
+      "name": "radio group requirement changes invalidate old plan",
+      "passed": true
+    }
+  ]
+}

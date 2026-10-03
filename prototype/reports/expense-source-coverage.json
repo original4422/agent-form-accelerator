@@ -1,0 +1,178 @@
+{
+  "batchId": 1790711073470,
+  "scope": "Coverage/task evidence extracted from preserved private model receipts. No re-evaluation or new model run.",
+  "runs": [
+    {
+      "name": "rail",
+      "rawSHA256": "467a50131e9fe91837894a120b7586e1c1403ff3dcbff4466bd460ceb8046d77",
+      "receipts": [
+        {
+          "complete": false,
+          "reason": "FORM_CHANGED_AFTER_WAIT",
+          "coverage": {
+            "scope": "Visible enabled required fields only; hidden steps and server acceptance are not covered.",
+            "limitations": {
+              "requiredness": "Native required and aria-required only; visual-only markers may be missed.",
+              "iframes": 0,
+              "shadowRoots": false
+            },
+            "requiredUnits": 5,
+            "verifiedRequiredUnits": 0,
+            "unresolvedRequired": [
+              {
+                "ref": "f1",
+                "group": "",
+                "label": "Employee name",
+                "kind": "text",
+                "reason": "not-bound-to-source"
+              },
+              {
+                "ref": "f2",
+                "group": "",
+                "label": "Business purpose",
+                "kind": "text",
+                "reason": "not-bound-to-source"
+              },
+              {
+                "ref": "f3",
+                "group": "",
+                "label": "Travel date",
+                "kind": "date",
+                "reason": "not-bound-to-source"
+              },
+              {
+                "ref": "f4",
+                "group": "Travel mode",
+                "label": "Travel mode",
+                "kind": "radio",
+                "reason": "not-bound-to-source"
+              },
+              {
+                "ref": "f7",
+                "group": "",
+                "label": "Rail fare (GBP)",
+                "kind": "number",
+                "reason": "not-bound-to-source"
+              }
+            ],
+            "visibleRequiredCovered": false,
+            "unsupported": []
+          }
+        },
+        {
+          "complete": true,
+          "coverage": {
+            "scope": "Visible enabled required fields only; hidden steps and server acceptance are not covered.",
+            "limitations": {
+              "requiredness": "Native required and aria-required only; visual-only markers may be missed.",
+              "iframes": 0,
+              "shadowRoots": false
+            },
+            "requiredUnits": 5,
+            "verifiedRequiredUnits": 5,
+            "unresolvedRequired": [],
+            "visibleRequiredCovered": true,
+            "unsupported": []
+          }
+        }
+      ]
+    },
+    {
+      "name": "car",
+      "rawSHA256": "158faffb45410408d5974fb904c9cd56604414865fd05aa26e1dc70de5360c50",
+      "receipts": [
+        {
+          "complete": false,
+          "reason": "FORM_CHANGED_AFTER_WAIT",
+          "coverage": {
+            "scope": "Visible enabled required fields only; hidden steps and server acceptance are not covered.",
+            "limitations": {
+              "requiredness": "Native required and aria-required only; visual-only markers may be missed.",
+              "iframes": 0,
+              "shadowRoots": false
+            },
+            "requiredUnits": 7,
+            "verifiedRequiredUnits": 0,
+            "unresolvedRequired": [
+              {
+                "ref": "f1",
+                "group": "",
+                "label": "Employee name",
+                "kind": "text",
+                "reason": "not-bound-to-source"
+              },
+              {
+                "ref": "f2",
+                "group": "",
+                "label": "Business purpose",
+                "kind": "text",
+                "reason": "not-bound-to-source"
+              },
+              {
+                "ref": "f3",
+                "group": "",
+                "label": "Travel date",
+                "kind": "date",
+                "reason": "not-bound-to-source"
+              },
+              {
+                "ref": "f4",
+                "group": "Travel mode",
+                "label": "Travel mode",
+                "kind": "radio",
+                "reason": "not-bound-to-source"
+              },
+              {
+                "ref": "f7",
+                "group": "",
+                "label": "Distance (km)",
+                "kind": "number",
+                "reason": "not-bound-to-source"
+              },
+              {
+                "ref": "f8",
+                "group": "",
+                "label": "Vehicle registration",
+                "kind": "text",
+                "reason": "not-bound-to-source"
+              },
+              {
+                "ref": "f9",
+                "group": "",
+                "label": "Parking (GBP)",
+                "kind": "number",
+                "reason": "not-bound-to-source"
+              }
+            ],
+            "visibleRequiredCovered": false,
+            "unsupported": []
+          }
+        },
+        {
+          "complete": true,
+          "coverage": {
+            "scope": "Visible enabled required fields only; hidden steps and server acceptance are not covered.",
+            "limitations": {
+              "requiredness": "Native required and aria-required only; visual-only markers may be missed.",
+              "iframes": 0,
+              "shadowRoots": false
+            },
+            "requiredUnits": 7,
+            "verifiedRequiredUnits": 6,
+            "unresolvedRequired": [
+              {
+                "ref": "f4",
+                "group": "Travel mode",
+                "label": "Travel mode",
+                "kind": "radio",
+                "reason": "not-bound-to-source"
+              }
+            ],
+            "visibleRequiredCovered": false,
+            "unsupported": []
+          }
+        }
+      ]
+    }
+  ]
+}

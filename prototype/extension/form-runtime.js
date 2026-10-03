@@ -93,8 +93,9 @@ export async function executeFormRequest(request) {
   const supported = new Set(['text', 'email', 'tel', 'url', 'number', 'date', 'month', 'time', 'textarea', 'select', 'combobox', 'checkbox', 'radio', 'add-row']);
   state.comboboxOptions ??= new WeakMap();
   const options = (el) => el.tagName === 'SELECT' ? Array.from(el.options).map((o) => ({value: o.value, label: clean(o.text), disabled: o.disabled})) : state.comboboxOptions.get(el);
+  const required = el => !!el.required || el.getAttribute('aria-required')==='true' || (el.type==='radio' && el.closest('[role="radiogroup"]')?.getAttribute('aria-required')==='true');
   const signature = (el) => JSON.stringify([label(el), kind(el), el.name, el.getAttribute('role'),
-    group(el), el.tagName === 'SELECT' ? options(el) : undefined]);
+    group(el), required(el), el.tagName === 'SELECT' ? options(el) : undefined]);
   const pending = (el) => !!el.closest('[aria-busy="true"]');
   const disabled = (el) => el.matches(':disabled') || !!el.closest('[aria-disabled="true"]');
   const valid = (el) => el.validity?.valid !== false && !pending(el) &&
@@ -196,7 +197,7 @@ export async function executeFormRequest(request) {
       if (el.tagName === 'INPUT' && ['submit', 'button', 'reset', 'image'].includes(el.type)) continue;
       const ref = getRef(el), field = {ref, label: label(el), kind: kind(el),
         group: group(el), domId: el.id || undefined,
-        required: !!el.required || el.getAttribute('aria-required') === 'true',
+        required: required(el),
         disabled: disabled(el),
         readOnly: !!el.readOnly, supported: supported.has(kind(el)), valid: valid(el), pending: pending(el), value: value(el), options: options(el)};
       nodes.set(ref, {el, signature: signature(el)});

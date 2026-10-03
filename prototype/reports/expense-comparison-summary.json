@@ -1,0 +1,157 @@
+{
+  "batchId": 1790712610965,
+  "runs": [
+    {
+      "rep": 0,
+      "branch": "rail",
+      "mode": "official",
+      "seconds": 117.5605865,
+      "setupSeconds": 3.407525417,
+      "toolSeconds": 75.46557891600001,
+      "failedToolSeconds": 68.17443270800001,
+      "calls": 4,
+      "failedCalls": 2,
+      "businessPassed": true,
+      "visibleRequiredCovered": null,
+      "boundSources": null,
+      "errors": [
+        {
+          "tool": "browser_run_code_unsafe",
+          "error": "### Error\nTimeoutError: locator.check: Timeout 30000ms exceeded.\nCall log:\n  - waiting for getByRole('radio', { name: 'Rail' })\n    - locator resolved to <input id=\"sq_4i_0\" type=\"radio\" value=\"rail\" name=\"mode_sq_4\" aria-labelledby=\"sq_4i_0_label\" class=\"sd-visuallyhidden sd-item__control sd-radio__control\"/>\n  - attempting click action\n    2 \u00d7 waiting for element to be visible, enabled and stable\n      - element is visible, enabled and stable\n      - scrolling into view if needed\n      - done scrolling\n      - <svg class=\"sd-item__svg sd-radio__svg\">\u2026</svg> from <span aria-hidden=\"true\" class=\"sd-item__decorator sd-radio__decorator\">\u2026</span> subtree intercepts pointer events\n    - retrying click action\n    - waiting 20ms\n    2 \u00d7 waiting for element to be visible, enabled and stable\n      - element is visible, enabled and stable\n      - scrolling into view if needed\n      - done scrolling\n      - <svg class=\"sd-item__svg sd-radio__svg\">\u2026</svg> from <span aria-hidden=\"true\" class=\"sd-item__decorator sd-radio__decorator\">\u2026</span> subtree intercepts pointer events\n    - retrying click action\n      - waiting 100ms\n    58 \u00d7 waiting for element to be visible, enabled and stable\n       - element is visible, enabled and stable\n       - scrolling into view if needed\n       - done scrolling\n       - <svg class=\"sd-item__svg sd-radio__svg\">\u2026</svg> from <span aria-hidden=\"true\" class=\"sd-item__decorator sd-radio__decorator\">\u2026</span> subtree intercepts pointer events\n     - retrying click action\n       - waiting 500ms\n"
+        },
+        {
+          "tool": "browser_run_code_unsafe",
+          "error": "### Error\nTimeoutError: locator.waitFor: Timeout 30000ms exceeded.\nCall log:\n  - waiting for getByRole('status', { name: /Draft saved/ }) to be visible\n"
+        }
+      ]
+    },
+    {
+      "rep": 0,
+      "branch": "rail",
+      "mode": "bindings",
+      "seconds": 45.68865275000001,
+      "setupSeconds": 0.8977688749999942,
+      "toolSeconds": 16.46197679100001,
+      "failedToolSeconds": 0.0,
+      "calls": 3,
+      "failedCalls": 0,
+      "businessPassed": true,
+      "visibleRequiredCovered": true,
+      "boundSources": 6,
+      "errors": []
+    },
+    {
+      "rep": 0,
+      "branch": "car",
+      "mode": "bindings",
+      "seconds": 42.733628499999995,
+      "setupSeconds": 0.9233581249999988,
+      "toolSeconds": 13.124427957999986,
+      "failedToolSeconds": 0.0,
+      "calls": 2,
+      "failedCalls": 0,
+      "businessPassed": true,
+      "visibleRequiredCovered": true,
+      "boundSources": 8,
+      "errors": []
+    },
+    {
+      "rep": 0,
+      "branch": "car",
+      "mode": "official",
+      "seconds": 115.00180729099998,
+      "setupSeconds": 3.0735356249999897,
+      "toolSeconds": 72.38411450200002,
+      "failedToolSeconds": 56.61845925099999,
+      "calls": 5,
+      "failedCalls": 2,
+      "businessPassed": true,
+      "visibleRequiredCovered": null,
+      "boundSources": null,
+      "errors": [
+        {
+          "tool": "browser_run_code_unsafe",
+          "error": "### Error\nTimeoutError: locator.check: Timeout 30000ms exceeded.\nCall log:\n  - waiting for getByRole('radio', { name: 'Personal car' })\n    - locator resolved to <input value=\"car\" id=\"sq_4i_1\" type=\"radio\" name=\"mode_sq_4\" aria-labelledby=\"sq_4i_1_label\" class=\"sd-visuallyhidden sd-item__control sd-radio__control\"/>\n  - attempting click action\n    2 \u00d7 waiting for element to be visible, enabled and stable\n      - element is visible, enabled and stable\n      - scrolling into view if needed\n      - done scrolling\n      - <svg class=\"sd-item__svg sd-radio__svg\">\u2026</svg> from <span aria-hidden=\"true\" class=\"sd-item__decorator sd-radio__decorator\">\u2026</span> subtree intercepts pointer events\n    - retrying click action\n    - waiting 20ms\n    2 \u00d7 waiting for element to be visible, enabled and stable\n      - element is visible, enabled and stable\n      - scrolling into view if needed\n      - done scrolling\n      - <svg class=\"sd-item__svg sd-radio__svg\">\u2026</svg> from <span aria-hidden=\"true\" class=\"sd-item__decorator sd-radio__decorator\">\u2026</span> subtree intercepts pointer events\n    - retrying click action\n      - waiting 100ms\n    58 \u00d7 waiting for element to be visible, enabled and stable\n       - element is visible, enabled and stable\n       - scrolling into view if needed\n       - done scrolling\n       - <svg class=\"sd-item__svg sd-radio__svg\">\u2026</svg> from <span aria-hidden=\"true\" class=\"sd-item__decorator sd-radio__decorator\">\u2026</span> subtree intercepts pointer events\n     - retrying click action\n       - waiting 500ms\n"
+        },
+        {
+          "tool": "browser_run_code_unsafe",
+          "error": "### Error\nTimeoutError: locator.waitFor: Timeout 15000ms exceeded.\nCall log:\n  - waiting for getByRole('status').filter({ hasText: 'Draft saved.' }) to be visible\n"
+        }
+      ]
+    },
+    {
+      "rep": 1,
+      "branch": "rail",
+      "mode": "bindings",
+      "seconds": 33.974330666999975,
+      "setupSeconds": 0.8740728339999915,
+      "toolSeconds": 10.47688483299996,
+      "failedToolSeconds": 0.0,
+      "calls": 2,
+      "failedCalls": 0,
+      "businessPassed": true,
+      "visibleRequiredCovered": true,
+      "boundSources": 6,
+      "errors": []
+    },
+    {
+      "rep": 1,
+      "branch": "rail",
+      "mode": "official",
+      "seconds": 126.297352083,
+      "setupSeconds": 3.032708875000011,
+      "toolSeconds": 86.94982325000002,
+      "failedToolSeconds": 72.96474833200004,
+      "calls": 5,
+      "failedCalls": 2,
+      "businessPassed": true,
+      "visibleRequiredCovered": null,
+      "boundSources": null,
+      "errors": [
+        {
+          "tool": "browser_run_code_unsafe",
+          "error": "### Error\nTimeoutError: locator.check: Timeout 30000ms exceeded.\nCall log:\n  - waiting for getByRole('radio', { name: 'Rail' })\n    - locator resolved to <input id=\"sq_4i_0\" type=\"radio\" value=\"rail\" name=\"mode_sq_4\" aria-labelledby=\"sq_4i_0_label\" class=\"sd-visuallyhidden sd-item__control sd-radio__control\"/>\n  - attempting click action\n    2 \u00d7 waiting for element to be visible, enabled and stable\n      - element is visible, enabled and stable\n      - scrolling into view if needed\n      - done scrolling\n      - <svg class=\"sd-item__svg sd-radio__svg\">\u2026</svg> from <span aria-hidden=\"true\" class=\"sd-item__decorator sd-radio__decorator\">\u2026</span> subtree intercepts pointer events\n    - retrying click action\n    - waiting 20ms\n    2 \u00d7 waiting for element to be visible, enabled and stable\n      - element is visible, enabled and stable\n      - scrolling into view if needed\n      - done scrolling\n      - <svg class=\"sd-item__svg sd-radio__svg\">\u2026</svg> from <span aria-hidden=\"true\" class=\"sd-item__decorator sd-radio__decorator\">\u2026</span> subtree intercepts pointer events\n    - retrying click action\n      - waiting 100ms\n    58 \u00d7 waiting for element to be visible, enabled and stable\n       - element is visible, enabled and stable\n       - scrolling into view if needed\n       - done scrolling\n       - <svg class=\"sd-item__svg sd-radio__svg\">\u2026</svg> from <span aria-hidden=\"true\" class=\"sd-item__decorator sd-radio__decorator\">\u2026</span> subtree intercepts pointer events\n     - retrying click action\n       - waiting 500ms\n"
+        },
+        {
+          "tool": "browser_run_code_unsafe",
+          "error": "### Error\nTimeoutError: locator.fill: Timeout 30000ms exceeded.\nCall log:\n  - waiting for getByRole('textbox', { name: 'Rail fare (GBP)' })\n"
+        }
+      ]
+    },
+    {
+      "rep": 1,
+      "branch": "car",
+      "mode": "official",
+      "seconds": 88.62078891699994,
+      "setupSeconds": 3.0075009999999893,
+      "toolSeconds": 53.16423883299995,
+      "failedToolSeconds": 34.66979154200002,
+      "calls": 3,
+      "failedCalls": 1,
+      "businessPassed": true,
+      "visibleRequiredCovered": null,
+      "boundSources": null,
+      "errors": [
+        {
+          "tool": "browser_run_code_unsafe",
+          "error": "### Error\nTimeoutError: locator.check: Timeout 30000ms exceeded.\nCall log:\n  - waiting for getByRole('radio', { name: 'Personal car' })\n    - locator resolved to <input value=\"car\" id=\"sq_4i_1\" type=\"radio\" name=\"mode_sq_4\" aria-labelledby=\"sq_4i_1_label\" class=\"sd-visuallyhidden sd-item__control sd-radio__control\"/>\n  - attempting click action\n    2 \u00d7 waiting for element to be visible, enabled and stable\n      - element is visible, enabled and stable\n      - scrolling into view if needed\n      - done scrolling\n      - <svg class=\"sd-item__svg sd-radio__svg\">\u2026</svg> from <span aria-hidden=\"true\" class=\"sd-item__decorator sd-radio__decorator\">\u2026</span> subtree intercepts pointer events\n    - retrying click action\n    - waiting 20ms\n    2 \u00d7 waiting for element to be visible, enabled and stable\n      - element is visible, enabled and stable\n      - scrolling into view if needed\n      - done scrolling\n      - <svg class=\"sd-item__svg sd-radio__svg\">\u2026</svg> from <span aria-hidden=\"true\" class=\"sd-item__decorator sd-radio__decorator\">\u2026</span> subtree intercepts pointer events\n    - retrying click action\n      - waiting 100ms\n    58 \u00d7 waiting for element to be visible, enabled and stable\n       - element is visible, enabled and stable\n       - scrolling into view if needed\n       - done scrolling\n       - <svg class=\"sd-item__svg sd-radio__svg\">\u2026</svg> from <span aria-hidden=\"true\" class=\"sd-item__decorator sd-radio__decorator\">\u2026</span> subtree intercepts pointer events\n     - retrying click action\n       - waiting 500ms\n"
+        }
+      ]
+    },
+    {
+      "rep": 1,
+      "branch": "car",
+      "mode": "bindings",
+      "seconds": 40.14222400000005,
+      "setupSeconds": 0.8898878339999355,
+      "toolSeconds": 11.122202416999965,
+      "failedToolSeconds": 0.0,
+      "calls": 3,
+      "failedCalls": 0,
+      "businessPassed": true,
+      "visibleRequiredCovered": true,
+      "boundSources": 8,
+      "errors": []
+    }
+  ]
+}

@@ -1,5 +1,5 @@
 {
-  "date": "2026-09-29T19:14:31.984Z",
+  "date": "2026-09-29T19:41:57.106Z",
   "scope": "Owned online draft; 13 values, two education rows, server-driven authorization question, one-of-three essay, no attachments/submission.",
   "results": [
     {
@@ -33,7 +33,7 @@
           "events": [
             {
               "key": "country",
-              "receivedAt": 1790709257318,
+              "receivedAt": 1790710903102,
               "overlap": false,
               "revision": 0
             }
@@ -95,85 +95,85 @@
         "events": [
           {
             "key": "country",
-            "receivedAt": 1790709257318,
+            "receivedAt": 1790710903102,
             "overlap": false,
             "revision": 0
           },
           {
             "key": "authorization",
-            "receivedAt": 1790709258040,
+            "receivedAt": 1790710903796,
             "overlap": false,
             "revision": 1
           },
           {
             "key": "name",
-            "receivedAt": 1790709258287,
+            "receivedAt": 1790710904022,
             "overlap": false,
             "revision": 2
           },
           {
             "key": "email",
-            "receivedAt": 1790709258540,
+            "receivedAt": 1790710904247,
             "overlap": false,
             "revision": 3
           },
           {
             "key": "city",
-            "receivedAt": 1790709258781,
+            "receivedAt": 1790710904468,
             "overlap": false,
             "revision": 4
           },
           {
             "key": "degree",
-            "receivedAt": 1790709259040,
+            "receivedAt": 1790710904711,
             "overlap": false,
             "revision": 5
           },
           {
             "key": "available",
-            "receivedAt": 1790709259293,
+            "receivedAt": 1790710904955,
             "overlap": false,
             "revision": 6
           },
           {
             "key": "school0",
-            "receivedAt": 1790709259548,
+            "receivedAt": 1790710905194,
             "overlap": false,
             "revision": 7
           },
           {
             "key": "major0",
-            "receivedAt": 1790709259808,
+            "receivedAt": 1790710905417,
             "overlap": false,
             "revision": 8
           },
           {
             "key": "summary",
-            "receivedAt": 1790709260070,
+            "receivedAt": 1790710905642,
             "overlap": false,
             "revision": 9
           },
           {
             "key": "decision",
-            "receivedAt": 1790709260331,
+            "receivedAt": 1790710905883,
             "overlap": false,
             "revision": 10
           },
           {
             "key": "rows",
-            "receivedAt": 1790709260660,
+            "receivedAt": 1790710906164,
             "overlap": false,
             "revision": 11
           },
           {
             "key": "school1",
-            "receivedAt": 1790709260783,
+            "receivedAt": 1790710906270,
             "overlap": false,
             "revision": 12
           },
           {
             "key": "major1",
-            "receivedAt": 1790709261040,
+            "receivedAt": 1790710906494,
             "overlap": false,
             "revision": 13
           }
@@ -213,7 +213,7 @@
           "events": [
             {
               "key": "country",
-              "receivedAt": 1790709261696,
+              "receivedAt": 1790710907149,
               "overlap": false,
               "revision": 0
             }
@@ -275,85 +275,85 @@
         "events": [
           {
             "key": "country",
-            "receivedAt": 1790709261696,
+            "receivedAt": 1790710907149,
             "overlap": false,
             "revision": 0
           },
           {
             "key": "authorization",
-            "receivedAt": 1790709262440,
+            "receivedAt": 1790710907852,
             "overlap": false,
             "revision": 1
           },
           {
             "key": "name",
-            "receivedAt": 1790709262722,
+            "receivedAt": 1790710908080,
             "overlap": false,
             "revision": 2
           },
           {
             "key": "email",
-            "receivedAt": 1790709262988,
+            "receivedAt": 1790710908303,
             "overlap": false,
             "revision": 3
           },
           {
             "key": "city",
-            "receivedAt": 1790709263266,
+            "receivedAt": 1790710908535,
             "overlap": false,
             "revision": 4
           },
           {
             "key": "degree",
-            "receivedAt": 1790709263523,
+            "receivedAt": 1790710908768,
             "overlap": false,
             "revision": 5
           },
           {
             "key": "available",
-            "receivedAt": 1790709263766,
+            "receivedAt": 1790710908991,
             "overlap": false,
             "revision": 6
           },
           {
             "key": "school0",
-            "receivedAt": 1790709264042,
+            "receivedAt": 1790710909226,
             "overlap": false,
             "revision": 7
           },
           {
             "key": "major0",
-            "receivedAt": 1790709264281,
+            "receivedAt": 1790710909471,
             "overlap": false,
             "revision": 8
           },
           {
             "key": "summary",
-            "receivedAt": 1790709264544,
+            "receivedAt": 1790710909726,
             "overlap": false,
             "revision": 9
           },
           {
             "key": "decision",
-            "receivedAt": 1790709264806,
+            "receivedAt": 1790710909983,
             "overlap": false,
             "revision": 10
           },
           {
             "key": "rows",
-            "receivedAt": 1790709265103,
+            "receivedAt": 1790710910296,
             "overlap": false,
             "revision": 11
           },
           {
             "key": "school1",
-            "receivedAt": 1790709265232,
+            "receivedAt": 1790710910422,
             "overlap": false,
             "revision": 12
           },
           {
             "key": "major1",
-            "receivedAt": 1790709265475,
+            "receivedAt": 1790710910653,
             "overlap": false,
             "revision": 13
           }
@@ -393,7 +393,7 @@
           "events": [
             {
               "key": "country",
-              "receivedAt": 1790709266140,
+              "receivedAt": 1790710911363,
               "overlap": false,
               "revision": 0
             }
@@ -455,85 +455,85 @@
         "events": [
           {
             "key": "country",
-            "receivedAt": 1790709266140,
+            "receivedAt": 1790710911363,
             "overlap": false,
             "revision": 0
           },
           {
             "key": "authorization",
-            "receivedAt": 1790709267647,
+            "receivedAt": 1790710912854,
             "overlap": false,
             "revision": 1
           },
           {
             "key": "name",
-            "receivedAt": 1790709267913,
+            "receivedAt": 1790710913100,
             "overlap": false,
             "revision": 2
           },
           {
             "key": "email",
-            "receivedAt": 1790709268179,
+            "receivedAt": 1790710913328,
             "overlap": false,
             "revision": 3
           },
           {
             "key": "city",
-            "receivedAt": 1790709268698,
+            "receivedAt": 1790710913815,
             "overlap": false,
             "revision": 4
           },
           {
             "key": "degree",
-            "receivedAt": 1790709268958,
+            "receivedAt": 1790710914067,
             "overlap": false,
             "revision": 5
           },
           {
             "key": "available",
-            "receivedAt": 1790709269217,
+            "receivedAt": 1790710914291,
             "overlap": false,
             "revision": 6
           },
           {
             "key": "school0",
-            "receivedAt": 1790709269729,
+            "receivedAt": 1790710914798,
             "overlap": false,
             "revision": 7
           },
           {
             "key": "major0",
-            "receivedAt": 1790709269988,
+            "receivedAt": 1790710915069,
             "overlap": false,
             "revision": 8
           },
           {
             "key": "summary",
-            "receivedAt": 1790709270254,
+            "receivedAt": 1790710915327,
             "overlap": false,
             "revision": 9
           },
           {
             "key": "decision",
-            "receivedAt": 1790709270518,
+            "receivedAt": 1790710915587,
             "overlap": false,
             "revision": 10
           },
           {
             "key": "rows",
-            "receivedAt": 1790709270844,
+            "receivedAt": 1790710915880,
             "overlap": false,
             "revision": 11
           },
           {
             "key": "school1",
-            "receivedAt": 1790709271212,
+            "receivedAt": 1790710916247,
             "overlap": false,
             "revision": 12
           },
           {
             "key": "major1",
-            "receivedAt": 1790709271475,
+            "receivedAt": 1790710916515,
             "overlap": false,
             "revision": 13
           }
