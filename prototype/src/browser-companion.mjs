@@ -30,7 +30,13 @@ export async function createBrowserCompanion({url,sourcePath,temporary=false,off
   const close=()=>{stopped=true;connected=false;return closing??=(async()=>{
     try{
       const errors=[];const clean=async fn=>{try{await fn();}catch(e){errors.push(e);}};
-      await clean(()=>context?.close());await activation?.catch(()=>{});
+      await clean(async()=>{
+        try{await context?.close();}catch(error){
+          // Browser exit can emit page.close before the context channel closes.
+          // Treat only that already-closed target as completed shutdown.
+          if(!context.isClosed()||!error.message.includes('Target page, context or browser has been closed'))throw error;
+        }
+      });await activation?.catch(()=>{});
       await clean(()=>controller?.close());await clean(()=>transport?.close());
       await clean(()=>rm(configPath,{force:true}));if(temporary)await clean(()=>rm(profilePath,{recursive:true,force:true}));
       if(errors.length)throw new AggregateError(errors,'Browser cleanup failed');resolveDone();

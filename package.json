@@ -21,7 +21,9 @@
     "expense:demo": "node prototype/scripts/expense-demo.mjs",
     "check:expense": "node prototype/bench/native-toggle-check.mjs && node prototype/bench/expense-check.mjs && node prototype/bench/expense-baseline-check.mjs",
     "bench:expense": "node prototype/bench/codex-expense.mjs",
-    "bench:expense:compare": "node prototype/bench/codex-expense-comparison.mjs"
+    "bench:expense:compare": "node prototype/bench/codex-expense-comparison.mjs",
+    "try": "node prototype/scripts/try.mjs",
+    "check:try": "node prototype/bench/try-check.mjs"
   },
   "dependencies": {
     "@modelcontextprotocol/sdk": "1.30.0",

@@ -1,5 +1,14 @@
 # 持续探索状态（2026-09-30）
 
+## 当前接续点：统一试用入口
+
+- npm run try 在 TTY 选择 recruitment / rail / car，也可明确写出名称。服务、虚构资料、临时 profile 与 Codex 连接自动准备，只打印复制命令与任务，不发起模型调用。
+- --preview 跳过 Codex 检查且不打印模型命令/任务，只打开示例和打印虚构资料路径。Node/依赖/Chromium/Codex 登录预检返回修复信息；参数/准备/运行失败为 2/3/1，正常关闭为 0。
+- README 已缩为试用、能力证据、架构、开发导航；历史报告移 reports/INDEX.md，进阶用法保存在根目录 USAGE.md。旧 browser:demo / expense:demo 命令保留。
+- 本轮没有模型任务或新的速度样本。生命周期检查涵盖三示例、npm Ctrl+C 转发和独立浏览器关闭后的服务/profile/session 清理；详情见 reports/TRY-ENTRY.md。
+
+## 上轮接续记录
+
 ## 当前接续点：SurveyJS 两分支八次端到端对照完成
 
 - 新报告 [SURVEYJS-SPEED-COMPARISON.md](reports/SURVEYJS-SPEED-COMPARISON.md)。固定 Codex CLI 0.155.1 / gpt-6-sol / low，两个分支 × 两方法 × 两轮反向顺序，共 8 次；批次 1790712610965 全部业务验收正确，绑定来源覆盖 4/4 全绿。交通方式在新题目出现后显式重绑，生产台账契约未修改。
