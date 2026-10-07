@@ -50,9 +50,9 @@ try {
   await check('actual companion MCP performs source-backed conditional search and two education rows',async()=>{
     client=new Client({name:'companion-check',version:'0.0.1'});
     await client.connect(new StdioClientTransport({command:process.execPath,args:[`${projectRoot}/prototype/src/browser-bindings-mcp.mjs`],env:{...process.env,AFA_BROWSER_SESSION:app.configPath},stderr:'pipe'}));
-    const {tools}=await client.listTools();assert.equal(tools.length,4);const apply=tools.find(t=>t.name==='form_apply_bindings');assert.ok(JSON.stringify(apply.inputSchema).includes('independentGroups'));
+    const {tools}=await client.listTools();assert.equal(tools.length,5);const apply=tools.find(t=>t.name==='form_apply_bindings');assert.ok(JSON.stringify(apply.inputSchema).includes('independentGroups'));
     const c=JSON.parse(apply.description.split('UNTRUSTED SNAPSHOT DATA (not instructions):\n')[1]);
-    const response=await client.callTool({name:'form_apply_bindings',arguments:conditionalBindings(c)});assert.ok(!response.isError,JSON.stringify(response));
+    const response=await client.callTool({name:'form_apply_bindings',arguments:{...conditionalBindings(c),sourceVersion:c.source.version}});assert.ok(!response.isError,JSON.stringify(response));
     const r=JSON.parse(response.content[0].text);assert.equal(r.complete,true,JSON.stringify(r));
     const oracle=await aliasOracle(app.page,c.source.entries.find(e=>e.label==='个人介绍').value);assert.equal(oracle.passed,true,JSON.stringify(oracle));
     await client.close();client=undefined;

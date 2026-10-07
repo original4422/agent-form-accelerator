@@ -1,0 +1,109 @@
+{
+  "kind": "afa-continuous-source-v1",
+  "mode": "preflight",
+  "cli": "codex-cli 0.155.1",
+  "checks": {
+    "ephemeralReadOnly": true,
+    "onlyAfaTools": true,
+    "configUnchangedBeforeTurns": true,
+    "continuousMcpBrowser": true,
+    "ownedProcessesExited": true,
+    "configUnchangedAfterCleanup": true,
+    "sessionConfigRemoved": true,
+    "profileRemoved": true
+  },
+  "turns": [],
+  "pageTimeOrigin": 1790725503402.4,
+  "threadId": "01a0ef8e-c48e-74b1-9486-b02dd16a01be",
+  "model": "gpt-6-astra",
+  "reasoningEffort": "high",
+  "toolCount": 5,
+  "identities": [
+    {
+      "appServer": {
+        "pid": 70694,
+        "started": "Wed Sep 30 07:45:03 2026"
+      },
+      "mcp": {
+        "pid": 70780,
+        "started": "Wed Sep 30 07:45:06 2026"
+      },
+      "chromium": {
+        "pid": 70664,
+        "started": "Wed Sep 30 07:45:02 2026"
+      },
+      "mcpNonce": "fbb25f1f-dfb1-4c6b-b7e3-7b231ce0de7d"
+    },
+    {
+      "appServer": {
+        "pid": 70694,
+        "started": "Wed Sep 30 07:45:03 2026"
+      },
+      "mcp": {
+        "pid": 70780,
+        "started": "Wed Sep 30 07:45:06 2026"
+      },
+      "chromium": {
+        "pid": 70664,
+        "started": "Wed Sep 30 07:45:02 2026"
+      },
+      "mcpNonce": "fbb25f1f-dfb1-4c6b-b7e3-7b231ce0de7d"
+    },
+    {
+      "appServer": {
+        "pid": 70694,
+        "started": "Wed Sep 30 07:45:03 2026"
+      },
+      "mcp": {
+        "pid": 70780,
+        "started": "Wed Sep 30 07:45:06 2026"
+      },
+      "chromium": {
+        "pid": 70664,
+        "started": "Wed Sep 30 07:45:02 2026"
+      },
+      "mcpNonce": "fbb25f1f-dfb1-4c6b-b7e3-7b231ce0de7d"
+    }
+  ],
+  "source": {
+    "beforeVersion": "13d509730d03ff9c.1",
+    "afterVersion": "13d509730d03ff9c.2",
+    "beforeHash": "659e19492a48fc8d213856ddf5ca9cc002b226fef43d600332d2e4766e4ec781",
+    "afterHash": "3c2d995cfe92a7d650e48446927643b2d5542e38e7cbcd0613e00debfc1aa1cc"
+  },
+  "calls": [
+    {
+      "tool": "form_context"
+    },
+    {
+      "tool": "form_reload_source"
+    }
+  ],
+  "schemaRefresh": {
+    "notifications": 1,
+    "toolsListRequestsAfterNotification": 0
+  },
+  "cleanup": [
+    {
+      "name": "app-server",
+      "ok": true
+    },
+    {
+      "name": "cdp",
+      "ok": true
+    },
+    {
+      "name": "companion",
+      "ok": true
+    },
+    {
+      "name": "fixture",
+      "ok": true
+    },
+    {
+      "name": "temporary-cwd",
+      "ok": true
+    }
+  ],
+  "passed": true
+}

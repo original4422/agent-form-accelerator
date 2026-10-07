@@ -49,7 +49,7 @@ export async function createBrowserCompanion({url,sourcePath,temporary=false,off
     available();
     if(offlineAfterReady)await guard.freeze();
     available();if(page.isClosed())throw new Error('BROWSER_CLOSED');controller=await createBrowserController(page);
-    available();await writeFile(configPath,JSON.stringify({kind:'afa-browser-session-v1',endpoint:controller.endpoint,token:controller.token,sourcePath,...(offlineAfterReady?{networkMode:'frozen'}:{})}),{mode:0o600,flag:'wx'});
+    available();await writeFile(configPath,JSON.stringify({kind:'afa-browser-session-v1',sourceReload:true,endpoint:controller.endpoint,token:controller.token,sourcePath,...(offlineAfterReady?{networkMode:'frozen'}:{})}),{mode:0o600,flag:'wx'});
     available();connected=true;return {configPath,...(guard?{network:guard.status()}:{})};
   })();
   const onAbort=()=>{if(initializing)context?.close().catch(()=>{});else close().catch(()=>{});};
@@ -78,6 +78,11 @@ export async function createBrowserCompanion({url,sourcePath,temporary=false,off
 
 export function companionCommand(configPath) {
   const quote=s=>"'"+s.replaceAll("'","'\\''")+"'";
-  const settings={command:process.execPath,args:[path.join(projectRoot,'prototype/src/browser-bindings-mcp.mjs')],'env.AFA_BROWSER_SESSION':configPath,...(process.env.AFA_QUERY_VARIANTS==='1'?{'env.AFA_QUERY_VARIANTS':'1'}:{}),...(process.env.AFA_PDF_SOURCE==='1'?{'env.AFA_PDF_SOURCE':'1',...(process.env.AFA_PYTHON?{'env.AFA_PYTHON':process.env.AFA_PYTHON}:{})}: {})};
+  const settings={command:process.execPath,args:[path.join(projectRoot,'prototype/src/browser-bindings-mcp.mjs')],'env.AFA_BROWSER_SESSION':configPath,...(process.env.AFA_QUERY_VARIANTS==='1'?{'env.AFA_QUERY_VARIANTS':'1'}:{}),...(process.env.AFA_PDF_SOURCE==='1'?{'env.AFA_PDF_SOURCE':'1',...(process.env.AFA_PDF_ALLOW_IMAGES==='1'?{'env.AFA_PDF_ALLOW_IMAGES':'1'}:{}),...(process.env.AFA_PYTHON?{'env.AFA_PYTHON':process.env.AFA_PYTHON}:{})}: {})};
   return 'codex '+Object.entries(settings).map(([key,value])=>'-c '+quote(`mcp_servers.afa.${key}=${JSON.stringify(value)}`)).join(' ');
+}
+
+export function receiptCommand(configPath) {
+  const quote=s=>"'"+s.replaceAll("'","'\\''")+"'";
+  return 'node '+quote(path.join(projectRoot,'prototype/scripts/receipt.mjs'))+' --session '+quote(configPath);
 }

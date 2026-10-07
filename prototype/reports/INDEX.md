@@ -1,5 +1,7 @@
 # 实验与工程报告索引
 
+- [同一 Codex 会话补资料后继续填写](CONTINUOUS-SOURCE.md)：原生 app-server 两 turn、单次审批、新 sourceVersion、同 MCP/Chromium 与历史回执；保留首次审批驱动失败，修复后闭环通过，未观察到工具目录自动重取。
+
 - [统一试用入口](TRY-ENTRY.md)：三个示例的一条命令入口、准备检查、启动/退出清理与干净 checkout 验证。
 
 - [SurveyJS 报销速度对照](SURVEYJS-SPEED-COMPARISON.md)：两分支反向顺序共八次，业务验收 8/8、绑定来源覆盖 4/4；完整耗时中位官方 116.28 秒、绑定 41.44 秒。四次官方都经历控件或保存状态恢复，分开报告失败成本。

@@ -22,7 +22,7 @@ npm run browser -- --url "https://招聘页地址" --source "/绝对路径/资�
 
 先在打开的独立浏览器中手动登录、进入待填页面，再执行打印的 Codex 命令。默认在 `.profiles/companion` 保留这套独立浏览器资料；加 `--temporary` 可在退出时删除。不会导入日常 Chrome 的登录资料。同一套资料目录同时只运行一个浏览器入口，一个页面只交给一个 Codex 会话填写。
 
-资料格式支持标题、单行“名称：值”和自然段，最多 10 万字符、100 个条目，默认不支持 PDF/DOCX；下方有受限 PDF 实验入口。页面字段及指定资料会提供给当前 Codex。原型只控制最初打开的标签页；手动导航后让 Codex 调用 `form_context` 刷新，修改资料后重新启动 Codex 连接。在线页面可能在输入时自动保存；本项目的虚构公开页实验均在断网后进行，演示只用 localhost。
+资料格式支持标题、单行“名称：值”和自然段，最多 10 万字符、100 个条目，默认不支持 PDF/DOCX；下方有受限 PDF 实验入口。页面字段及指定资料会提供给当前 Codex。原型只控制最初打开的标签页；手动导航后让 Codex 调用 `form_context` 刷新，修改资料后让 Codex 显式调用 `form_reload_source`，再根据返回的新版资料继续填写。在线页面可能在输入时自动保存；本项目的虚构公开页实验均在断网后进行，演示只用 localhost。
 
 这个入口复用 Playwright 后端，已接入条件搜索、重复组和独立分组，默认完整回执。独立分组不能与重复组混用；未知组件仍可能需要手工处理。没有提交、文件上传或跨页导航工具，最终申请由你检查处理。命令仅为当前 Codex 进程添加配置，无需新的模型 API Key。
 
@@ -93,7 +93,15 @@ AFA_PDF_SOURCE=1 AFA_PYTHON="$PWD/.venv-pdf/bin/python" npm run browser -- --url
 
 浏览器入口打印的 Codex 命令会携带本次实验配置，不修改全局配置。使用虚构资料诊断真实站点时，仍需加 `--offline-after-ready`，先手动登录并加载最终表单再断开页面网络。
 
-目前只支持有限的纯文字 PDF：保留页码和文字位置，Codex 可在同一次填写请求中引用精确原文或连接同一段落的完整行。最多 5 MB、10 页、300 个片段；含图片（包括照片）、扫描件、旋转文字和无文字页拒绝处理，不支持 DOCX/OCR。位置分段是启发式，不能保证任意双栏/表格都解析正确。详见[验证记录与失败边界](prototype/reports/PDF-SOURCE.md)。
+默认拒绝含图像的 PDF。对于每页都有文字、另含照片等普通 Image XObject 的资料，可显式只使用文字层：
+
+```bash
+AFA_PDF_SOURCE=1 AFA_PDF_ALLOW_IMAGES=1 AFA_PYTHON="$PWD/.venv-pdf/bin/python" npm run browser -- --url "https://招聘页地址" --source "/绝对路径/简历.pdf"
+```
+
+开启后，来源的 `extractionCoverage` 与每次填写回执的 `sourceCoverage` 均标记 `partial-text`，列出未解析图像的页码和坐标。Codex 只能引用提取的文字，并应报告这些未读区域；图像可能包含额外或冲突事实，不会被假定为装饰。目标字段 `complete=true` 不代表简历已完整读取。
+
+保留页码和文字位置，同一次填写请求可引用精确原文或连接同一段落的完整行。最多 5 MB、10 页、300 个片段；任一无文字页（包括文字页混扫描页）、旋转文字仍拒绝。内嵌图像（inline image，含 Form 中的内嵌图像）在两种模式下均返回 `PDF_INLINE_IMAGES_UNSUPPORTED`；不支持 DOCX/OCR。位置分段是启发式；文字层、向量图形和页面视觉之间的语义关系不由提取器验证。详见[纯文字验证记录](prototype/reports/PDF-SOURCE.md)及[混合 PDF 边界与反例](prototype/reports/PDF-MIXED-SOURCE.md)。
 
 ## 原扩展本地演示
 
@@ -180,7 +188,7 @@ codex -c 'mcp_servers.afa.command="node"' \
   -c 'mcp_servers.afa.env.AFA_CONTEXT_MODE="prefetch"'
 ```
 
-资料支持 Markdown 标题、单行“名称：值”和自然段。让 Codex 根据资料含义填写连接的页面，保留提交供你检查。这个入口只会复制已提供的片段，不负责生成个性化自我介绍或解析 PDF。页面发生变化时通过 `form_context` 刷新；文档变化后需重启资料会话。
+资料支持 Markdown 标题、单行“名称：值”和自然段。让 Codex 根据资料含义填写连接的页面，保留提交供你检查。这个入口只会复制已提供的片段，不负责生成个性化自我介绍或解析 PDF。页面发生变化时通过 `form_context` 刷新；这个旧扩展入口的文档变化后需重启资料会话；Playwright companion 支持下文的 `form_reload_source`。
 
 
 ## 支持边界
@@ -234,3 +242,37 @@ prototype/skills/       两端共用的工作流说明
 ## 许可
 
 项目代码采用 [MIT](LICENSE)；依赖及实验素材归属见 [THIRD_PARTY.md](THIRD_PARTY.md)。
+
+### 本地填写回执
+
+Playwright companion 的启动输出现在附带一条回执命令。连接 Codex 后，`form_context`、来源填写、搜索和扩展产生的最后一份完整结果保留在 companion 内存中。回执无需模型总结，浏览器保持打开时，即使 Codex 已退出也能导出：
+
+```sh
+npm --silent run receipt -- --session /启动输出中的连接文件.json
+npm --silent run receipt -- --session /启动输出中的连接文件.json --format json --out /你的目录/receipt.json
+```
+
+默认只向终端输出 Markdown。`--out` 只创建新文件（权限 `0600`），已有文件会报错；关闭 companion 后内存记录随连接清理。回执包含来源 hash、实际被引用的原文条目、字段回读、来源绑定、未解决项及页面公开保存原文；PDF 的 `partial-text` 与未解析图像位置原样保留。页面标识只保留 origin/path，移除查询和片段；不导出连接 token、资料文件路径或浏览器 profile 路径。
+
+**这是带 `asOf` 时间的历史回执。** 导出不重新观察、不刷新 snapshot、不改变正在执行的填写计划。人手修改、动态分支、导航或原资料修改后，旧回执仍然只描述当时；`currentState` 始终是 `not-revalidated`。让 Codex 显式调用 `form_context` 后，下一份回执记录该次新观察及原台账判断。上下文结果没有上一操作的 bindings/evidence 时，对应表为空，不推断补齐。仅导出 bindings、会话目标或搜索决策实际引用的来源条目；未绑定的上下文回执可没有原文条目。
+
+回执分别列出本次请求目标 `complete`、会话目标 `task.complete`（若存在）、可见必填覆盖 `coverage`、资料提取覆盖和页面公开保存文字。缺失项显示 `—`；目标完成不表示整个表单完成，页面保存原文和 DOM 回读也不表示独立验证了服务器接受。页面及资料文字均作为数据转义。内存捕获失败会在原工具结果的 `receiptCapture` 中给出错误，不重试填写动作。
+
+[虚构资料示例回执](prototype/examples/local-receipt.md)展示 Markdown 输出。
+
+无模型验收：`npm run check:receipt`；PDF 真实来源附加验收见 `AFA_RECEIPT_PDF=1 npm run check:receipt`（需 PDF 可选依赖）。
+
+
+### 补充资料后继续同一次填写
+
+在 Playwright companion 中，修改最初指定的资料文件后，向当前 Codex 说明：“我已补充到岗日期，请调用 `form_reload_source`，按新版资料填写日期；其他缺失项仍留空。”浏览器和 Codex 连接无需重启。更正邮箱等已有事实时，重载保留页面原值，随后显式绑定新版条目才更新该字段。
+
+`form_reload_source` 无参数，只重读原路径，不编辑文件或自动填写。成功时返回完整页面、新 `source.version`、新版条目 ID 和来源 hash；清除旧选项引用、核验台账和计划。`form_apply_bindings`、`form_search`、`form_expand` 必须携带最新 `sourceVersion`，来源条目 ID 也含版本前缀。开头插入一行后，旧 `sN` 不能变成另一条事实的有效绑定。旧重复组/选择计划同样受版本检查。
+
+每次成功重载都推进 generation，包括未改文件的情况（`sourceReload.changed=false`），恢复旧文件字节也不会复活旧版本。解析、页面观察或第二次来源 hash 核对失败时不发布候选来源；修复原文件后再次显式重载。重载与填写使用同一串行队列。新 `tools/list` 更新预取内容；宿主缓存旧描述时，旧版本请求仍会被拒绝，应使用重载结果或 `form_context`。
+
+历史回执记录来源 `version`、`generation`、hash；已保存旧回执不改变。成功重载后的新回执表示新观察、清空后的核验覆盖，而不是页面已有值已通过新版资料核验。PDF 的显式模式与 `partial-text` 覆盖保留。旧扩展和实验 harness 默认仍使用原工具协议与 `s1/s2` 条目，本功能只在 companion 启用；原速度实验没有重跑。
+
+本轮验证使用实际 stdio MCP 客户端和虚构 localhost 页面；新增版本握手尚未运行 Codex 模型集成样本。
+
+无模型验收：`npm run check:reload`。加入真实含图 PDF：`AFA_RELOAD_PDF=1 AFA_PYTHON=/可选环境/bin/python npm run check:reload`。

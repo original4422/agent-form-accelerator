@@ -1,0 +1,74 @@
+{
+  "sourceHashes": {
+    "prototype/bench/app-server-driver.mjs": "a62e0b96f2535088e05087173e6c96c973dc7e7d05524db2688b51edcfc4acdb",
+    "prototype/bench/mcp-observer.mjs": "c332fe66241b74dc064801f45367854ff2631118438e222bc2a937d2c1c44189",
+    "prototype/bench/codex-continuous-source.mjs": "7443bdbca2713751a081746554a555e3b6e6357b3f5d289471805ce33b341c24",
+    "prototype/src/bindings-server.mjs": "3409f74d8c2d9af1903cd03b6114a6088615214bdb36b5a2c556583c05d4ce98",
+    "prototype/src/document-session.mjs": "58fe6440fb796310f178e0b5c43e040deb2ca54196995c00a44785b560129205"
+  },
+  "baseCommit": "be5f6605e56b0bafc94ca998d1e04e157e63b6ff",
+  "kind": "afa-continuous-source-v1",
+  "mode": "model",
+  "cli": "codex-cli 0.155.1",
+  "checks": {
+    "ephemeralReadOnly": true,
+    "onlyAfaTools": true,
+    "configUnchangedBeforeTurns": true,
+    "ownedProcessesExited": true,
+    "configUnchangedAfterCleanup": true,
+    "sessionConfigRemoved": true,
+    "profileRemoved": true
+  },
+  "turns": [],
+  "pageTimeOrigin": 1790725556068.1,
+  "threadId": "01a0ef8f-91bf-72d2-b036-e71e47dbbab8",
+  "model": "gpt-6-astra",
+  "reasoningEffort": "high",
+  "toolCount": 5,
+  "identities": [
+    {
+      "appServer": {
+        "pid": 72057,
+        "started": "Wed Sep 30 07:45:56 2026"
+      },
+      "mcp": {
+        "pid": 72150,
+        "started": "Wed Sep 30 07:45:58 2026"
+      },
+      "chromium": {
+        "pid": 71989,
+        "started": "Wed Sep 30 07:45:55 2026"
+      },
+      "mcpNonce": "f5c6bb99-5299-4433-b809-f8f78e4bf01e"
+    }
+  ],
+  "error": "UNHANDLED_SERVER_REQUEST:mcpServer/elicitation/request",
+  "cleanup": [
+    {
+      "name": "interrupt",
+      "ok": false,
+      "error": "Error"
+    },
+    {
+      "name": "app-server",
+      "ok": true
+    },
+    {
+      "name": "cdp",
+      "ok": true
+    },
+    {
+      "name": "companion",
+      "ok": true
+    },
+    {
+      "name": "fixture",
+      "ok": true
+    },
+    {
+      "name": "temporary-cwd",
+      "ok": true
+    }
+  ],
+  "passed": false
+}

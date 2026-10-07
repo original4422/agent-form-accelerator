@@ -1,0 +1,41 @@
+{
+  "kind": "afa-continuous-source-v1",
+  "mode": "preflight",
+  "cli": "codex-cli 0.155.1",
+  "checks": {
+    "ephemeralReadOnly": true,
+    "ownedProcessesExited": true,
+    "configUnchangedAfterCleanup": true,
+    "sessionConfigRemoved": true,
+    "profileRemoved": true
+  },
+  "turns": [],
+  "pageTimeOrigin": 1790725376903.4,
+  "threadId": "01a0ef8c-d4d6-78d0-822d-7baf36b89ef4",
+  "model": "gpt-6-astra",
+  "reasoningEffort": "high",
+  "error": "Expected values to be strictly deep-equal:\n+ actual - expected\n\n  [\n    'afa',\n+   'codex_apps'\n  ]\n",
+  "cleanup": [
+    {
+      "name": "app-server",
+      "ok": true
+    },
+    {
+      "name": "cdp",
+      "ok": true
+    },
+    {
+      "name": "companion",
+      "ok": true
+    },
+    {
+      "name": "fixture",
+      "ok": true
+    },
+    {
+      "name": "temporary-cwd",
+      "ok": true
+    }
+  ],
+  "passed": false
+}
