@@ -203,7 +203,7 @@ codex -c 'mcp_servers.afa.command="node"' \
 - 资料绑定可使用 `repeatGroups` 复用已观察的重复组模板，展开后核对精确标签和类型；未知结构用 `form_expand` 返回上下文再判断。
 - 原生/组件字段会等待明确的 aria-busy，检查 aria-invalid；无状态信号的任意异步校验仍不能保证完成。
 - 产品接口没有任意脚本、选择器、提交或导航操作。
-- 已验证 React/Radix 的 select-only 按钮式 combobox：通过 aria-controls 找到关联的 listbox，选择精确且唯一的可用选项，再回读显示值。扩展路径不支持输入型 autocomplete；实验 Playwright 后端已覆盖下述 React Select 单选模式。其他 ARIA 组件、iframe、shadow DOM、文件上传和跨页流程尚未实现。
+- 已验证 React/Radix 的 select-only 按钮式 combobox：通过 aria-controls 找到关联的 listbox，选择精确且唯一的可用选项，再回读显示值。扩展路径不支持输入型 autocomplete；实验 Playwright 后端已覆盖下述 React Select 单选模式。其他 ARIA 组件、iframe、shadow DOM 和跨页流程尚未实现。附件仅在 companion 的显式 localhost 模式支持，见下文。
 - 同一时刻只连接一个标签页；不要让两个宿主同时填写同一张表。
 - 同步回读不能保证应用/服务器接受，也不能捕获任意延迟的异步修改。宿主需最终独立检查。
 
@@ -276,3 +276,21 @@ npm --silent run receipt -- --session /启动输出中的连接文件.json --for
 本轮验证使用实际 stdio MCP 客户端和虚构 localhost 页面；新增版本握手尚未运行 Codex 模型集成样本。
 
 无模型验收：`npm run check:reload`。加入真实含图 PDF：`AFA_RELOAD_PDF=1 AFA_PYTHON=/可选环境/bin/python npm run check:reload`。
+
+
+## 显式 localhost 附件
+
+在 companion 启动时，由用户同时指定附件文件、精确页面和控件 label/group：
+
+```bash
+npm run browser -- --url 'http://127.0.0.1:8000/application' \
+  --source '/绝对路径/facts.md' --temporary \
+  --attachment '/绝对路径/fictional.pdf' \
+  --attachment-label 'Resume/CV' --attachment-group 'Application'
+```
+
+首版为一个 1 byte–10 MiB 的 PDF、主文档中唯一可见的原生单文件 input。页面地址固定到登记 URL（含 query），并绑定原 document 与节点身份；同名歧义、节点替换、标签/分组/accept/multiple 变化、导航都会停止。只使用 localhost、127.0.0.1 或 [::1]。`npm run attachment:demo` 自动准备仓库中的虚构页面和 PDF。
+
+`sourcePath` 只授权提取事实。即便来源就是 PDF，也必须另行指定 `--attachment` 才出现 `form_attach_file`。工具参数只包含 URL、已登记 opaque attachmentId 和授权 ref；不接受路径或选择器。登记后文件字节改变会拒绝旧 ID；重新启动并登记才建立新身份。
+
+附件观察单独存放在 `page.attachments`，不会让文本绑定 coverage 将 file 控件算作已完成。每次 context 和填写后的观察重新读取 File 字节；回执导出只返回最近一次历史观察，保留原时间。已验证附件不会把 PDF 的 partial-text 提取升级为完整来源覆盖。页面若清空 input，工具返回 `ATTACHMENT_NOT_SELECTED`；只有文件名提示不能建立字节证据。

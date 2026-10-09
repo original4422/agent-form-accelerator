@@ -66,3 +66,5 @@
 
 
 [回到快速试用](../../README.md)
+
+- [显式登记的 localhost 单附件与历史回执](LOCAL-ATTACHMENT.md)：真实 stdio/Chromium 字节回读、控件边界和 partial-text 分离；无模型。

@@ -7,15 +7,15 @@ import {factorPage} from './decision-context.mjs';
 import {projectReceipt} from './receipt-projection.mjs';
 
 // Shared semantic interface: backend selection does not change model-visible tools.
-export async function serveBindings({request,sourcePath,repeatMode,contextMode,discoveryMode,optionMode,decisionMode,selectionMode,receiptMode,queryVariants=false,onTiming,onReceipt,sourceReload=false}) {
+export async function serveBindings({request,sourcePath,repeatMode,contextMode,discoveryMode,optionMode,decisionMode,selectionMode,receiptMode,queryVariants=false,onTiming,onReceipt,sourceReload=false,attachmentEnabled=false}) {
 const timing=(stage,details={})=>{try{onTiming?.({stage,epochMs:performance.timeOrigin+performance.now(),...details});}catch{}};
 timing('server_start');
 const independent=selectionMode==='independent';
 const conditional=independent||selectionMode==='conditional';
-const session=await createDocumentSession({sourcePath:sourcePath,request,conditionalSelection:conditional,independentSelection:independent,queryVariants,sourceReload});
+const session=await createDocumentSession({sourcePath:sourcePath,request,conditionalSelection:conditional,independentSelection:independent,queryVariants,sourceReload,attachmentEnabled});
 // Optional local archival hook. A failed capture never retries a browser action
 // or changes the executor's verdict; it is reported alongside that result.
-if(onReceipt)for(const operation of ['context','apply','search','expand',...(sourceReload?['reload']:[])]){
+if(onReceipt)for(const operation of ['context','apply','search','expand',...(sourceReload?['reload']:[]),...(attachmentEnabled?['attach']:[])]){
  const original=session[operation];session[operation]=async(...args)=>{
   const result=await original(...args);
   try{await onReceipt(operation,result,session.source);}catch(error){result.receiptCapture={status:'failed',reason:error.message};}
@@ -57,6 +57,10 @@ const applyTool=server.registerTool('form_apply_bindings',{
  inputSchema:{...versionSchema,url:z.string().url(),bindings:z.record(z.string(),sourceBinding),...(independent?{independentGroups:z.array(z.array(z.string()).min(1).max(100)).min(1).max(100).optional()}:{}),...(grouped?{checkboxGroups:z.array(z.object({group:z.string().min(1),sourceId:z.string(),selectedRefs:z.array(z.string()).max(100)})).max(12).optional()}:{}),choices:z.record(z.string(),choiceSchema).optional(),...(repeatsEnabled?{repeatGroups:z.array(z.object({templateGroup:z.string(),expectGroup:z.string(),controlRef:z.string(),bindings:z.record(z.string(),sourceBinding),choices:z.record(z.string(),choiceSchema).optional()})).max(8).optional()}:{})},
  annotations:{readOnlyHint:false,destructiveHint:false,idempotentHint:false},
 },wrap(async args=>{const r=await session.apply(args);const visible=optionMode==='compact'&&r.observation?{...r,observation:projectPage(r.observation,session.source,{optionMode})}:r;const result=receiptMode==='changes'&&!grouped?projectReceipt(visible,publishedPage,publishedDocumentId,r.observation?.documentId):visible;if(visible.observation){publishedPage=visible.observation;publishedDocumentId=r.observation.documentId;}return result;},'form_apply_bindings'));
+if(attachmentEnabled)server.registerTool('form_attach_file',{
+ description:'Select the separately owner-registered PDF only in its owner-authorized native file input. Use attachmentId and target.ref from page.attachments. Source entries do not authorize uploads. No paths, selectors, automatic parsing, cover-letter substitution, submission or navigation. verified describes input.files bytes and current native/ARIA validity, not server acceptance. Read the returned attachment evidence and public status; report pending, cleared, replaced or invalid files.',
+ inputSchema:{url:z.string().url(),attachmentId:z.string(),ref:z.string()},annotations:{readOnlyHint:false,destructiveHint:false,idempotentHint:false},
+},wrap(async args=>{const r=await session.attach(args);return {...compact(r),attachment:r.attachment};},'form_attach_file'));
 if(sourceReload)server.registerTool('form_reload_source',{
  description:'Explicitly reread only the originally supplied source file after the user edits it. Does not accept a path, edit files or fill fields. Returns a new source.version, versioned entry IDs and full page context. Every successful reload, even unchanged bytes, clears prior plans, option references and verified coverage while retaining page values. Failed parsing/observation/freshness leaves the candidate source unpublished.',
  inputSchema:{},annotations:{readOnlyHint:true,idempotentHint:false},

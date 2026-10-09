@@ -1,0 +1,20 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><title>Fictional attachment check</title>
+<style>body{font:16px system-ui;max-width:720px;margin:40px auto}label{display:block;margin:18px 0}fieldset{padding:20px}</style>
+<h1>Fictional application</h1><form><fieldset><legend>Application</legend>
+<label>Name <input id="name" value="Fictional Candidate"></label>
+<label>Autofill from resume <input id="autofill" type="file" accept="application/pdf"></label>
+<label>Resume/CV <input id="resume" type="file" accept="application/pdf" required></label>
+<label>Cover letter <input id="cover" type="file" accept="application/pdf"></label>
+<p role="status" id="status">No attachment selected</p></fieldset><button type="submit">Submit</button></form>
+<script>
+window.attachmentChanges={autofill:0,resume:0,cover:0};window.submissionCount=0;window.attachmentMode='normal';
+document.querySelector('form').addEventListener('submit',event=>{event.preventDefault();window.submissionCount++});
+for(const input of document.querySelectorAll('input[type=file]'))input.addEventListener('change',()=>{
+ window.attachmentChanges[input.id]++;
+ if(window.attachmentMode==='clear')input.value='';
+ if(window.attachmentMode==='replace'){const transfer=new DataTransfer();transfer.items.add(new File(['different bytes'],input.files[0].name,{type:'application/pdf'}));input.files=transfer.files;}
+ if(window.attachmentMode==='invalid')input.setCustomValidity('Fictional rejection');
+ if(window.attachmentMode==='pending')input.closest('fieldset').setAttribute('aria-busy','true');
+ document.querySelector('#status').textContent=window.attachmentMode==='normal'?'File selected locally':`Fixture state: ${window.attachmentMode}`;
+});
+</script></html>

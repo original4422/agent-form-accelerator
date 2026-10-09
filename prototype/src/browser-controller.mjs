@@ -1,10 +1,12 @@
+import {createAttachmentBinding} from './attachment.mjs';
 import http from 'node:http';
 import {randomBytes,timingSafeEqual} from 'node:crypto';
 import {createPlaywrightBackend} from '../bench/playwright-backend.mjs';
 
 // One explicitly selected Page, no CDP listener, arbitrary JS or navigation API.
-export async function createBrowserController(page) {
+export async function createBrowserController(page,{attachment}={}) {
   const token=randomBytes(32).toString('hex'),backend=createPlaywrightBackend(page);
+  const attachmentBinding=attachment?await createAttachmentBinding(page,backend,attachment):undefined;
   let pending=Promise.resolve(),closing=false,receipt=null;
   const authenticated=value=>{
     const candidate=Buffer.from(value??''),expected=Buffer.from(`Bearer ${token}`);
@@ -23,12 +25,15 @@ export async function createBrowserController(page) {
         if(request?.op==='export')return receipt?send(200,receipt):send(409,{error:'NO_CAPTURED_RECEIPT: connect Codex and request form_context first'});
         return send(400,{error:'UNSUPPORTED_RECEIPT_OPERATION'});
       }
-      if(!request||!['inspect','validate','fill','goal','discover'].includes(request.op))return send(400,{error:'UNSUPPORTED_OPERATION'});
+      if(!request||!['inspect','validate','fill','goal','discover',...(attachmentBinding?['attach']:[])].includes(request.op))return send(400,{error:'UNSUPPORTED_OPERATION'});
       const run=async()=>{
         if(closing||page.isClosed())throw new Error('BROWSER_CLOSED');
         if(!/^https?:\/\//.test(page.url()))throw new Error('HTTP_PAGE_REQUIRED');
         if(request.url&&request.url!==page.url())throw new Error('WRONG_PAGE: refresh form_context after navigation');
-        return backend.request(request);
+        if(request.op==='attach')return attachmentBinding.attach(request);
+        const result=await backend.request(request);
+        if(!attachmentBinding)return result;
+        return result.observation?{...result,observation:await attachmentBinding.decorate(result.observation)}:attachmentBinding.decorate(result);
       };
       // Covers the whole goal/discovery operation, across all local clients.
       const result=pending.then(run);pending=result.catch(()=>{});
@@ -38,5 +43,5 @@ export async function createBrowserController(page) {
   server.requestTimeout=30000;server.headersTimeout=10000;
   await new Promise((resolve,reject)=>{server.once('error',reject);server.listen(0,'127.0.0.1',resolve);});
   return {endpoint:`http://127.0.0.1:${server.address().port}/request`,token,
-    async close(){if(closing)return;closing=true;server.closeAllConnections();await new Promise(resolve=>server.close(resolve));backend.dispose();}};
+    async close(){if(closing)return;closing=true;server.closeAllConnections();await new Promise(resolve=>server.close(resolve));backend.dispose();await attachmentBinding?.dispose();}};
 }

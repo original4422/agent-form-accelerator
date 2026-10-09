@@ -5,7 +5,7 @@ import {fieldKey,summarizeCoverage} from './coverage.mjs';
 import {validateSearchCondition,chooseObservedOption} from './conditional-choice.mjs';
 import {validateIndependentGroups,partitionIndependentPlan,createTargetLedger} from './independent-plan.mjs';
 import {discoverQueryPlans} from './query-variants.mjs';
-export async function createDocumentSession({sourcePath, request,conditionalSelection=false,independentSelection=false,queryVariants=false,sourceReload=false}) {
+export async function createDocumentSession({sourcePath, request,conditionalSelection=false,independentSelection=false,queryVariants=false,sourceReload=false,attachmentEnabled=false}) {
   const sessionId=sourceReload?randomBytes(8).toString('hex'):undefined;
   let generation=1;
   const versioned=(parsed,nextGeneration)=>sourceReload?{...parsed,version:`${sessionId}.${nextGeneration}`,generation:nextGeneration,
@@ -232,5 +232,13 @@ export async function createDocumentSession({sourcePath, request,conditionalSele
     const result=await (conditionalSelection?applyWithConditions:apply)(args);
     return {...result,...(sourceReload?{sourceVersion:source.version}:{}),...(source.extractionCoverage?{sourceCoverage:source.extractionCoverage}:{})};
   };
-  return {get source(){return source;},context,reload,apply:versionGuard(applyReceipt),expand:versionGuard(expand),search:versionGuard(search)};
+  const attach=async ({url,attachmentId,ref})=>{
+    if(!attachmentEnabled)throw new Error('ATTACHMENT_NOT_ENABLED');
+    if(!observation)throw new Error('CONTEXT_REQUIRED');
+    if(url!==observation.url)throw new Error('WRONG_PAGE');
+    const result=await request({op:'attach',url,attachmentId,ref,snapshot:observation.snapshot});
+    observation=result.observation;offers.clear();
+    return {source,page:observation,attachment:result.attachment,...ledger.summary(observation),coverage:summarizeCoverage(observation,verified)};
+  };
+  return {get source(){return source;},context,reload,...(attachmentEnabled?{attach}:{}),apply:versionGuard(applyReceipt),expand:versionGuard(expand),search:versionGuard(search)};
 }
